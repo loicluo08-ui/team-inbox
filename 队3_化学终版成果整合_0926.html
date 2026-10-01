@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>队3化学·三线成果整合报告（件10预览版）</title>
+<style>
+  :root{--p:#0b3d5c;--p2:#146a8f;--acc:#e67e22;--hi:#c0392b;--mid:#f39c12;--lo:#2e86c1;--no:#95a5a6;--bg:#f5f7fa;--line:#dfe6ec;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;background:var(--bg);color:#2c3e50;line-height:1.75;font-size:15px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px;}
+  header.hero{background:linear-gradient(135deg,#0b3d5c 0%,#146a8f 70%,#1a7fa8 100%);color:#fff;border-radius:14px;padding:38px 40px 32px;margin-bottom:26px;box-shadow:0 6px 24px rgba(11,61,92,.25);}
+  header.hero h1{font-size:27px;letter-spacing:1px;margin-bottom:10px;}
+  header.hero .sub{font-size:14.5px;opacity:.92;}
+  header.hero .meta{margin-top:16px;font-size:12.5px;opacity:.8;display:flex;flex-wrap:wrap;gap:8px 22px;}
+  .chip{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:1px 12px;font-size:12px;}
+  h2{font-size:20px;color:var(--p);border-left:6px solid var(--acc);padding:4px 0 4px 14px;margin:38px 0 16px;background:linear-gradient(90deg,rgba(230,126,34,.08),transparent);}
+  h3{font-size:16px;color:var(--p2);margin:20px 0 10px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin-bottom:16px;box-shadow:0 2px 8px rgba(44,62,80,.05);}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 6px;}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 10px;text-align:center;box-shadow:0 2px 8px rgba(44,62,80,.05);}
+  .stat .n{font-size:26px;font-weight:700;color:var(--p);}
+  .stat .n em{font-style:normal;font-size:14px;color:var(--acc);}
+  .stat .l{font-size:12px;color:#7f8c8d;margin-top:3px;}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px;background:#fff;}
+  th{background:var(--p);color:#fff;padding:8px 10px;text-align:left;font-weight:600;}
+  td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr:nth-child(even) td{background:#f8fafc;}
+  .badge{display:inline-block;border-radius:12px;padding:1px 11px;font-size:12px;color:#fff;white-space:nowrap;}
+  .b-hi{background:var(--hi);} .b-mid{background:var(--mid);} .b-lo{background:var(--lo);} .b-no{background:var(--no);} .b-ok{background:#1e8449;} .b-wait{background:#7f8c8d;} .b-acc{background:var(--acc);}
+  blockquote{border-left:4px solid var(--acc);background:rgba(230,126,34,.07);padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;font-size:14px;}
+  blockquote b{color:var(--hi);}
+  .bars{margin:10px 0;}
+  .brow{display:flex;align-items:center;margin:6px 0;font-size:13px;}
+  .brow .bl{width:210px;flex-shrink:0;text-align:right;padding-right:10px;color:#34495e;}
+  .brow .track{flex:1;background:#edf1f5;border-radius:6px;height:18px;position:relative;overflow:hidden;}
+  .brow .fill{height:100%;border-radius:6px 0 0 6px;background:linear-gradient(90deg,var(--p2),#2e9cc4);}
+  .brow .fill.hl{background:linear-gradient(90deg,var(--hi),#e74c3c);}
+  .brow .fill.zero{background:var(--no);width:100%;opacity:.25;}
+  .brow .bv{width:64px;flex-shrink:0;padding-left:8px;font-weight:700;color:var(--p);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .mini{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;}
+  .mini h4{font-size:14.5px;color:var(--p);margin-bottom:8px;}
+  .mini p,.mini li{font-size:13px;color:#4a6274;}
+  ul.clean{list-style:none;}
+  ul.clean li{padding:4px 0 4px 22px;position:relative;}
+  ul.clean li::before{content:"▸";position:absolute;left:4px;color:var(--acc);}
+  ol.insight{padding-left:22px;}
+  ol.insight li{margin:7px 0;font-size:13.8px;}
+  ol.insight li b{color:var(--hi);}
+  .kbd{background:#eef3f7;border:1px solid var(--line);border-radius:6px;padding:0 6px;font-family:ui-monospace,Consolas,monospace;font-size:12.5px;color:var(--p);}
+  .formula{background:#0b3d5c;color:#eaf4fb;border-radius:10px;padding:14px 20px;font-size:14px;letter-spacing:.5px;margin:10px 0;font-family:ui-monospace,Consolas,monospace;}
+  .foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:#95a5a6;text-align:center;}
+  .tag-line{font-size:12.5px;color:#7f8c8d;margin-top:4px;}
+  .link-card{display:flex;gap:10px;align-items:flex-start;background:rgba(20,106,143,.06);border:1px dashed var(--p2);border-radius:10px;padding:12px 16px;margin:10px 0;font-size:13.5px;}
+  .link-card .no{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--p2);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;}
+  @media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr);}.grid2{grid-template-columns:1fr;}.brow .bl{width:150px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>队3化学 · 三线成果整合报告</h1>
+  <div class="sub">件5 教材深化补采 ＋ 件9 一化儿讲法定位 ＋ ② 考频矩阵 v1.3.3 —— 三件旧账全闭合，交叉验收全通过</div>
+  <div class="meta">
+    <span class="chip">汇总侧交付 · 件10预览版</span>
+    <span class="chip">2026-09-26</span>
+    <span class="chip">报告汇总员 出品</span>
+    <span class="chip">数据源=已盖章/复验终版件</span>
+  </div>
+</header>
+
+<h2>〇 · 执行摘要</h2>
+<div class="card">
+  <p>队3化学任务包三件旧账<b>全部闭合</b>：①<b>件5《化学第1章深化补采》</b>——鲁科版必修一影印底本判据级照录，四闸验收全过、抽验战果闭环；②<b>件9《一化儿讲法视频定位总表》</b>——97条讲法视频全量程序化闭合，BV三要素97/97；③<b>②考频矩阵 v1.3.3</b>——182题全账、177对位频级终判，盖章A档＋增量复验双验。三线数据经交叉验证后呈现高度自洽的结构性信号：<b>闽卷最大考点群与讲法资源最大缺口同落于 §1.2</b>，而 <b>9节外内容占闽卷59.3%</b> 与讲法资源主要分布于表外形成镜像——直接指明切片校准与备考投入的主攻方向。</p>
+  <div class="stats">
+    <div class="stat"><div class="n">182</div><div class="l">考频总账（42高考+140模拟）</div></div>
+    <div class="stat"><div class="n">177</div><div class="l">对位题·频级计频基准</div></div>
+    <div class="stat"><div class="n">97</div><div class="l">一化儿讲法视频全量</div></div>
+    <div class="stat"><div class="n">26.0<em>%</em></div><div class="l">§1.2 考点占比（46/177）</div></div>
+    <div class="stat"><div class="n">59.3<em>%</em></div><div class="l">9节外内容占比（105题）</div></div>
+    <div class="stat"><div class="n">15/15</div><div class="l">教材配平独立复算全过</div></div>
+    <div class="stat"><div class="n">97/97</div><div class="l">BV三要素逐条实测</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">编造（宁缺毋编全执行）</div></div>
+  </div>
+</div>
+
+<h2>一 · 项目背景与任务地图</h2>
+<div class="card">
+  <p>用户于 2026-09-26 下发《队3化学·切片任务包（三件旧账优先）》，参考时点当日 21:00，Alex（管理员）统一验收。任务排序：先清三件旧账 → 切片校准（候字幕包，到手48h钟）→ 一化儿字幕切片。全队工时自报=快档，三件旧账已于当日 15:2x 前全部交付并验收通过。</p>
+  <table>
+    <tr><th style="width:120px">角色</th><th>成员</th><th>本线职责</th></tr>
+    <tr><td>管理员/验收</td><td>Alex（用户）</td><td>终验、三裁（参照落位/免抽验/字幕包时点）、件10排期</td></tr>
+    <tr><td>汇总/整合</td><td>报告汇总员</td><td>交叉验证、对账盖章、验收报告、本整合报告</td></tr>
+    <tr><td>搜索员A</td><td>并行搜索员A</td><td>T2-1 卷源锚清单（闽卷种定谳）、件5正本体整理、抽验位</td></tr>
+    <tr><td>搜索员B</td><td>并行搜索员B</td><td>②矩阵 T2-3/4/5 对位/填格/频级判定、成稿责任位</td></tr>
+    <tr><td>搜索员C</td><td>并行搜索员C</td><td>件9 一化儿全链采集、T2-2 闽模拟锚清单、件5底本锁定</td></tr>
+  </table>
+  <p class="tag-line">硬纪律：<span class="chip" style="background:#eef3f7;color:var(--p);border-color:var(--line)">宁缺毋编（编造=全批免验直退）</span> <span class="chip" style="background:#eef3f7;color:var(--p);border-color:var(--line)">锚点四级信任</span> <span class="chip" style="background:#eef3f7;color:var(--p);border-color:var(--line)">主挂唯一节</span> <span class="chip" style="background:#eef3f7;color:var(--p);border-color:var(--line)">照录双通道定谳</span> <span class="chip" style="background:#eef3f7;color:var(--p);border-color:var(--line)">字幕原文照录（切片阶段）</span></p>
+</div>
+
+<h2>二 · 成果① 件5《化学第1章深化补采》</h2>
+<div class="card">
+  <h3>2.1 底本与验真（先决卡 T1）</h3>
+  <table>
+    <tr><th style="width:130px">项</th><th>值</th></tr>
+    <tr><td>底本</td><td>鲁科版《普通高中教科书·化学·必修第一册》影印 PDF（2019版）</td></tr>
+    <tr><td>ISBN</td><td><span class="kbd">978-7-5331-9848-0</span>（书末版权页物理页152视觉实勘）</td></tr>
+    <tr><td>版次印次</td><td>2019年7月第1版 / 2025年7月第3次印刷（山东科学技术出版社）</td></tr>
+    <tr><td>文件形态</td><td>152个PDF物理页 / 45.8MB / InDesign原生导出<b>带完整文本层</b>（页图视觉实勘＋文本层检索双通道互证）</td></tr>
+    <tr><td>三锚验真</td><td>封面锚 ✓ / 目录锚 ✓ / ISBN锚 ✓ 全过</td></tr>
+    <tr><td>页码映射</td><td>印刷页 N = 物理页 N − 6（页脚四点实证）；任务书原件页码存系统性偏移且未注明依据，一律双标处置</td></tr>
+  </table>
+  <h3>2.2 交付结构与实勘要点</h3>
+  <ul class="clean">
+    <li><b>件1 判据级照录</b>：§1.1（8页）＋§1.2（13页逐页实勘台账），教材原句/原式/原表/原栏目全量照录，页锚四级（印刷页·物理页·节位·图号）。</li>
+    <li><b>件2 四步程序×钠案例三元组</b>：四步原词定谳——「<b>观察物质的外部特征 → 预测物质的性质 → 实验和观察 → 解释和结论</b>」（纠正任务书转述口径）；钠=方法载体，<b>氯气（p15-19）=程序主案例</b>，p20 双案例总图为骨架。</li>
+    <li><b>件3 微项目「探秘膨松剂」</b>：§1.2 四步程序在真实情境（蒸馒头/小苏打/复合膨松剂三组分）的完整再走。</li>
+    <li><b>附录A 配平自检15条</b>：汇总侧独立复算 15/15 全过。</li>
+    <li><b>附录B 宁缺毋编登记5项</b>：「绿色化学」仅§3章出现（p122/123/132/133）、「能源化学/材料化学」全册无、「浮熔游响红」口诀教材原句无"红"字、「物理/化学性质」无显式定义对（以判据旁注承载）、版权页位如实注记。</li>
+    <li><b>字词双证定谳</b>：p19「盐酸盐」非「盐酸」；p21练习题为 <span class="kbd">2NaNO₃+10Na=6Na₂O+N₂↑</span>（NaNO₃ 非 NaN₃）。</li>
+  </ul>
+  <h3>2.3 验收链（任务书四点=「3无1有」如实登记）</h3>
+  <blockquote>四闸验收全过（交叉引用可核性/争议结论实证/逻辑边界/版本注齐备）→ A抽验判据级<b>100%零错误</b>，照录级报19处失真——终核定谳 <b>14处成立已改＋5处系误报</b>（语感陷阱："成分分离/衍生药物/包嵌"皆教材原文，拦下误改防固化）→ v1.3 程序化快核全绿 → 正本体四方 diff 互证（汇总/A/C/B）逐字一致。</blockquote>
+  <p class="tag-line">交付资产：成稿正本体 v1（=v1.3逐字承袭）＋底本PDF＋28张实勘页图＋A抽验报告v1.1＋四闸验收报告（汇总侧）。</p>
+</div>
+
+<h2>三 · 成果② 件9《一化儿讲法视频定位总表》v3</h2>
+<div class="card">
+  <h3>3.1 锚点与采集质量</h3>
+  <table>
+    <tr><th style="width:150px">锚/指标</th><th>结果</th></tr>
+    <tr><td>UP主身份锚（双源）</td><td>一化儿（杰哥），UID <span class="kbd">1526560679</span>，粉丝约1000.3万</td></tr>
+    <tr><td>纳入合集</td><td>主合集【高一化学】同步学新课程 <b>46条</b>（新课层）＋【题刷刷】高一同步刷题课 <b>51条</b>（习题/复习层）＝<b>97条全字段</b></td></tr>
+    <tr><td>合集全景判定</td><td>14项全枚举：2纳入 / 12排除（选必一/教辅/高三冲刺等，理由逐项留痕）</td></tr>
+    <tr><td>BV三要素核验</td><td><b>97/97</b> 逐条实测（UP主一致/标题含知识点/时长），3条&lt;10min 为工具/教辅类，如实登记</td></tr>
+    <tr><td>页面双通道抽验</td><td>4/4 全绿（INITIAL_STATE 与 API 逐字段一致）</td></tr>
+    <tr><td>快照时点</td><td>2026-09-26 02:2x（播放量为快照值）；v3 发布列=年月日粒度，97条程序化转换零人工</td></tr>
+  </table>
+  <h3>3.2 9节覆盖矩阵（条数分布）</h3>
+  <div class="bars">
+    <div class="brow"><div class="bl">§1.1 认识化学科学（物质的量）</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="bv">11</div></div>
+    <div class="brow"><div class="bl">§3.2 硫及其化合物</div><div class="track"><div class="fill" style="width:81.8%"></div></div><div class="bv">9</div></div>
+    <div class="brow"><div class="bl">§2.2 电解质/离子反应</div><div class="track"><div class="fill" style="width:72.7%"></div></div><div class="bv">8</div></div>
+    <div class="brow"><div class="bl">§2.3.1 氧化还原·概念</div><div class="track"><div class="fill" style="width:72.7%"></div></div><div class="bv">8</div></div>
+    <div class="brow"><div class="bl">§2.1 元素与物质分类</div><div class="track"><div class="fill" style="width:54.5%"></div></div><div class="bv">6</div></div>
+    <div class="brow"><div class="bl">§3.3 氮及其化合物</div><div class="track"><div class="fill" style="width:54.5%"></div></div><div class="bv">6</div></div>
+    <div class="brow"><div class="bl">§3.1 铁及其化合物</div><div class="track"><div class="fill" style="width:45.5%"></div></div><div class="bv">5</div></div>
+    <div class="brow"><div class="bl">§2.3.2 氧化还原·应用</div><div class="track"><div class="fill" style="width:27.3%"></div></div><div class="bv">3</div></div>
+    <div class="brow"><div class="bl">§1.2 研究方法与程序</div><div class="track"><div class="fill zero"></div></div><div class="bv" style="color:var(--hi)">0</div></div>
+    <div class="brow"><div class="bl">跨节综合复习课</div><div class="track"><div class="fill" style="width:100%;background:linear-gradient(90deg,#7f8c8d,#95a5a6)"></div></div><div class="bv">11</div></div>
+    <div class="brow"><div class="bl">表外（A组16+B组14）</div><div class="track"><div class="fill" style="width:100%;background:linear-gradient(90deg,#b9770e,#f0b27a)"></div></div><div class="bv">30</div></div>
+  </div>
+  <div class="formula">账目闭合：97 = 11+0+6+8+8+3+5+9+6（九节）+ 11（跨节）+ 30（表外） ✓</div>
+  <blockquote><b>§1.2 = 0 为有效考位结论（非缺件）</b>：一化儿「一系列」体系未制作鲁科版特有的方法论课程；延伸素材已登记——主合集#19-23 钠/氯5讲可作鲁科§1.2 钠/氯案例教学参考。</blockquote>
+  <p class="tag-line">版本链：v1初版 → v2（A组16条笔误订正＋主挂计法口径定版消±1歧义）→ v3（发布列升级年月日粒度，程序化全量转换、账目闭合维持）。</p>
+</div>
+
+<h2>四 · 成果③ ②考频矩阵 v1.3.3（频级终判）</h2>
+<div class="card">
+  <h3>4.1 口径与总账</h3>
+  <div class="formula">全账 182 = 三年高考 42 ＋ 模拟10卷×14 = 140 ｜ 对位 177（计频级）= 42+135 ｜ 节计 72 + 9节外 105 = 177 ｜ 每题主挂唯一节 ✓</div>
+  <p class="tag-line">频级阈值：≥4 高 / 2-3 中 / 1 低 / 0 无。卷种三标注（官方全称「福建省普通高中学业水平选择性考试·化学」/俗称福建卷/双NOT警示）；对位口径=骨架判定法＋STSE默认§1.1（中置信）＋复用题登记。</p>
+  <h3>4.2 频级终判（177对位题全量）</h3>
+  <table>
+    <tr><th style="width:250px">节</th><th style="width:70px">高考(42)</th><th style="width:80px">模拟(135)</th><th style="width:70px">合计</th><th style="width:190px">频级</th><th>分布</th></tr>
+    <tr><td>§1.2 研究物质性质的方法和程序</td><td>11</td><td>35</td><td><b>46</b></td><td><span class="badge b-hi">高 · 26.0%</span></td><td><div class="track" style="height:14px"><div class="fill hl" style="width:100%;height:14px"></div></div></td></tr>
+    <tr><td>§1.3 物质的量</td><td>3</td><td>6</td><td><b>9</b></td><td><span class="badge b-hi">高</span></td><td><div class="track" style="height:14px"><div class="fill" style="width:19.6%;height:14px"></div></div></td></tr>
+    <tr><td>§1.1 走进化学科学</td><td>0</td><td>8</td><td><b>8</b></td><td><span class="badge b-hi">高</span></td><td><div class="track" style="height:14px"><div class="fill" style="width:17.4%;height:14px"></div></div></td></tr>
+    <tr><td>§2.2 电解质的电离 离子反应</td><td>0</td><td>2</td><td><b>2</b></td><td><span class="badge b-mid">中</span></td><td><div class="track" style="height:14px"><div class="fill" style="width:4.3%;height:14px"></div></div></td></tr>
+    <tr><td>§2.3.1 氧化还原反应·概念</td><td>1</td><td>1</td><td><b>2</b></td><td><span class="badge b-mid">中</span></td><td><div class="track" style="height:14px"><div class="fill" style="width:4.3%;height:14px"></div></div></td></tr>
+    <tr><td>§3.1 铁的多样性</td><td>1</td><td>1</td><td><b>2</b></td><td><span class="badge b-mid">中</span></td><td><div class="track" style="height:14px"><div class="fill" style="width:4.3%;height:14px"></div></div></td></tr>
+    <tr><td>§2.1 元素与物质分类</td><td>1</td><td>0</td><td><b>1</b></td><td><span class="badge b-lo">低</span></td><td><div class="track" style="height:14px"><div class="fill" style="width:2.2%;height:14px"></div></div></td></tr>
+    <tr><td>§2.3.2 氧化还原反应·应用</td><td>0</td><td>1</td><td><b>1</b></td><td><span class="badge b-lo">低</span></td><td><div class="track" style="height:14px"><div class="fill" style="width:2.2%;height:14px"></div></div></td></tr>
+    <tr><td>§3.3 氮的循环</td><td>1</td><td>0</td><td><b>1</b></td><td><span class="badge b-lo">低</span></td><td><div class="track" style="height:14px"><div class="fill" style="width:2.2%;height:14px"></div></div></td></tr>
+    <tr><td>§3.2 硫的转化</td><td>0</td><td>0</td><td><b>0</b></td><td><span class="badge b-no">无 · 强结论</span></td><td><span style="font-size:12px;color:#95a5a6">177对位零主挂</span></td></tr>
+    <tr><td>9节外（有机/结构/原理/电化学等）</td><td>24</td><td>81</td><td><b>105</b></td><td><span class="badge b-acc">占比 59.3%</span></td><td><div class="track" style="height:14px"><div class="fill" style="width:100%;height:14px;background:linear-gradient(90deg,#b9770e,#f0b27a)"></div></div></td></tr>
+  </table>
+  <h3>4.3 两条强结论（题号级支撑清单在案）</h3>
+  <blockquote><b>§3.2 = 177对位题零主挂</b>：逐题主挂登记中无任一题主挂「硫的转化」；含硫情境5条逐一核对确未考硫转化本体（漳州Q4·Cu₂S冶炼→§1.3；福州二检Q7·海波制备→§1.2；厦门二检Q11·钼精矿流程→§1.2；厦四检Q13·H₂S废气处理→9节外原理；三年卷无硫主挂）。5卡点题均双UP无解析源，§3.2=0 为下界且翻转概率极低。</blockquote>
+  <blockquote><b>§1.1 = 模拟8题×高考三年0主挂</b>（考点位差）：模拟卷STSE/绿色化学情境成惯例，高考不走此形态——模拟跟风信号与高考命题形态的结构性差异，复习策略据此校准。</blockquote>
+  <h3>4.4 复习策略七洞察</h3>
+  <ol class="insight">
+    <li><b>§1.2=46次(26.0%)压倒性第一</b>：实验探究/流程操作是闽卷最大考点群（高考+模拟同构）。</li>
+    <li><b>§1.1=8次全出自模拟、高考三年零主挂</b>：考点位差，模拟跟风STSE、高考不走此形态。</li>
+    <li><b>§1.3=9次</b>：N_A题几乎每卷必配（14卷中11卷有）。</li>
+    <li><b>§3.2=177对位零主挂</b>：硫不作为独立考点，复习降权。</li>
+    <li>§2.2/§3.1靠模拟抬升至「中」：高考以工具渗透方式间接考。</li>
+    <li><b>模拟复用高考题型</b>：2026福州一检5题与2024高考同型（N_A/共存/发酵/电解/吸收曲线）——模拟卷是高考题型风向标。</li>
+    <li><b>9节外占59.3%</b>：闽卷半数以上题目属后续模块，必修一第一章深化的定位=「工具技能＋铁系＋三主频节」。</li>
+  </ol>
+  <p class="tag-line">版本链：v1 → … → v1.3.2（对账①-⑧全采纳，<b>盖章A档定稿基准</b>）→ v1.3.3（厦四检余3张sheet增量并入，与§5.1预期逐字一致；卡点7→5、对位133→135，档位结论零变化）——<b>盖章＋增量复验双验</b>，全版本链数字兼容。剩余卡点5题（福州一检Q13/14＋漳州Q11-13，双UP均未讲评，如实标「无」）。</p>
+</div>
+
+<h2>五 · 三线交叉验证 · 联动分析（汇总侧核心增值）</h2>
+<div class="card">
+  <p>单件数字之外，三线互证揭示出五条结构性信号——这是碎片信息经交叉验证后才可见的图层：</p>
+  <div class="link-card"><div class="no">1</div><div><b>最大考点 × 最大资源缺口，同落于 §1.2</b>：矩阵判定 §1.2=46次(26.0%) 闽卷第一考点群；件9实测一化儿 §1.2 直接讲法视频=<b>0</b>。切片校准阶段应把最优质的标注资源优先投向 §1.2（件9已备好钠/氯5讲延伸素材桥接）。</div></div>
+  <div class="link-card"><div class="no">2</div><div><b>资源冗余区 × 考频谷底</b>：§3.2硫 讲法视频达9条（覆盖最密节之一），但177对位题<b>零主挂</b>——讲法资源充裕与考频极低并存，佐证「复习降权」策略，切片阶段无需为§3.2追加投入。</div></div>
+  <div class="link-card"><div class="no">3</div><div><b>59.3% 的镜像结构</b>：闽卷9节外内容占105/177=59.3%；件9讲法资源同样主要分布于表外（30条）＋选必一4条（候裁）。考什么缺什么的结构在资源侧同构——后续若扩科扩模块，优先补"后续模块×高频题源"象限。</div></div>
+  <div class="link-card"><div class="no">4</div><div><b>教材侧判据级底料恰好压在最大考点上</b>：件5照录的 §1.2 四步程序＋氯气主案例＋p20双案例总图＋膨松剂微项目（程序的真实情境再走），正是 §1.2 第一考点群的教材官方载体——补采件与考频矩阵形成"教材底料→考点→讲法缺口"的闭环证据链。</div></div>
+  <div class="link-card"><div class="no">5</div><div><b>模拟卷=高考题型风向标</b>：矩阵洞察6实证2026福州一检5题与2024高考同型；配合洞察2的"STSE位差"，模拟卷的使用方式应是「学题型形态、弃跟风情境」——为备考端提供可执行的双开关。</div></div>
+</div>
+
+<h2>六 · 质量保障体系（交叉验证战果）</h2>
+<div class="card">
+  <div class="grid2">
+    <div class="mini">
+      <h4>多源互证机制</h4>
+      <ul class="clean">
+        <li>件5正本体：四方独立 diff 互证，256行逐字全等</li>
+        <li>矩阵卷种：A三证据链定谳＋B帧读独立同归</li>
+        <li>同卷识别：开门考/厦门一模/漳州双UP逐题互证，14锚→10卷有效</li>
+        <li>锚清单：T2-1 curl抽验 8/8 全绿；T2-2 15/15 全绿</li>
+      </ul>
+    </div>
+    <div class="mini">
+      <h4>独立复核战果</h4>
+      <ul class="clean">
+        <li>拦下件5照录级5处误报，防止误改教材原文固化</li>
+        <li>识破29s封面废锚（BV1iUbE6WEo4），追出「未含时长」采集口径根因</li>
+        <li>页码映射−6：页脚四点实证收口，终结三方三翻</li>
+        <li>对撞循环消歧：终局锁定＋翻转无效声明机制固化</li>
+      </ul>
+    </div>
+  </div>
+  <blockquote style="margin-top:14px">纪律执行：宁缺毋编5项登记＋任务书四点「3无1有」如实登记＋矩阵5卡点题如实标「无」——<b>「无」是有效结论，不编造补位</b>。本报告所有数字均可在对应终版件中回查到题号/页码/BV级锚点。</blockquote>
+</div>
+
+<h2>七 · 剩余事项与后续排期</h2>
+<div class="card">
+  <table>
+    <tr><th style="width:220px">事项</th><th style="width:110px">状态</th><th>说明</th></tr>
+    <tr><td>三件旧账（件5/件9/②矩阵）</td><td><span class="badge b-ok">已闭合</span></td><td>全部验收通过；②矩阵以 v1.3.3 为最新增量基准</td></tr>
+    <tr><td>②矩阵 Alex 终验</td><td><span class="badge b-wait">候验收</span></td><td>支撑清单题号级在案，判空声明：任一题改判即退件重算</td></tr>
+    <tr><td>三裁（Alex）</td><td><span class="badge b-wait">候裁定</span></td><td>物理B总表参照落位 / 一化儿免抽验认定 / 字幕包时点→切片校准48h钟</td></tr>
+    <tr><td>切片校准</td><td><span class="badge b-wait">候字幕包</span></td><td>格式模板在位；起止秒对照字幕包JSON from/to；Alex 100%机械全验</td></tr>
+    <tr><td>矩阵 v1.3.4 候选</td><td><span class="badge b-acc">随缘</span></td><td>URL字符串补录/命题方待证，纯留痕级，不阻塞任何下游</td></tr>
+    <tr><td>件10 正式整合定稿</td><td><span class="badge b-acc">本报告即预览</span></td><td>终验通过后按本框架定稿；格式可按需转PDF/Word</td></tr>
+  </table>
+  <h3>随包交付清单</h3>
+  <table>
+    <tr><th style="width:290px">文件</th><th>说明</th></tr>
+    <tr><td>队3化学_三线成果整合报告.html</td><td>本报告（自包含、零外部依赖，可直接浏览器打开）</td></tr>
+    <tr><td>件5_化学第1章深化_正本体_v1.md</td><td>件5验收成果正本体（=v1.3定稿逐字承袭）</td></tr>
+    <tr><td>件9_一化儿讲法视频定位总表_v3.md</td><td>件9终版：97条全量＋9节覆盖矩阵＋逐节主表</td></tr>
+    <tr><td>考频矩阵_化学_v1.3.3.md</td><td>②矩阵最新增量基准（题号级逐卷台账）</td></tr>
+    <tr><td>件5_四闸验收报告_汇总侧.html</td><td>件5验收过程全留痕（四闸/抽验/终核记录）</td></tr>
+  </table>
+</div>
+
+<div class="foot">队3化学·三线成果整合报告（件10预览版）｜报告汇总员 2026-09-26｜数字源：件5_v1（四闸全过）· 件9_v3（97/97）· 考频矩阵v1.3.3（盖章A档＋增量复验双验）｜「无」为有效结论，宁缺毋编</div>
+</div>
+</body>
+</html>
