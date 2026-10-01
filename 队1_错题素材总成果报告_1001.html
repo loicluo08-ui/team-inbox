@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>件N1·人教A必修一错题素材补缺线 v5 · 总成果报告</title>
+<style>
+:root{
+  --navy:#0f2b46;--blue:#1a5fa8;--sky:#e8f1fa;--gold:#c9a24b;--ink:#22303e;
+  --line:#dbe4ee;--ok:#1e7e4e;--okbg:#e6f4ec;--warn:#a05a1c;--warnbg:#fdf3e3;
+  --mut:#6b7a8c;--card:#ffffff;--bg:#f4f7fb;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
+/* ---------- 头部 ---------- */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 78%);color:#fff;border-radius:14px;padding:38px 40px 32px;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(15,43,70,.25)}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero::before{content:"";position:absolute;right:40px;bottom:-80px;width:180px;height:180px;border-radius:50%;background:rgba(201,162,75,.15)}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:2px 14px;font-size:12.5px;letter-spacing:2px;margin-bottom:14px}
+.hero h1{font-size:27px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+.hero .sub{font-size:14px;opacity:.85}
+.hero .meta{margin-top:18px;font-size:12.5px;opacity:.75;display:flex;gap:22px;flex-wrap:wrap}
+/* ---------- KPI ---------- */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:-26px auto 26px;position:relative;z-index:2;padding:0 26px}
+.kpi{background:var(--card);border-radius:10px;padding:16px 10px;text-align:center;box-shadow:0 6px 18px rgba(15,43,70,.10);border-top:3px solid var(--gold)}
+.kpi b{display:block;font-size:26px;color:var(--blue);font-weight:700}
+.kpi span{font-size:12px;color:var(--mut)}
+/* ---------- 通用区块 ---------- */
+section{margin-bottom:30px}
+h2{font-size:19px;color:var(--navy);border-left:5px solid var(--gold);padding-left:12px;margin-bottom:14px;letter-spacing:.5px}
+h3{font-size:16px;color:var(--blue);margin:20px 0 10px}
+.card{background:var(--card);border-radius:10px;padding:22px 26px;box-shadow:0 3px 12px rgba(15,43,70,.07);border:1px solid var(--line)}
+p.lead{font-size:14.5px}
+.mut{color:var(--mut);font-size:12.5px}
+.badge{display:inline-block;border-radius:12px;padding:1px 10px;font-size:11.5px;font-weight:600;margin-right:4px}
+.b-ok{background:var(--okbg);color:var(--ok)}
+.b-warn{background:var(--warnbg);color:var(--warn)}
+.b-l1{background:#e3f0ff;color:#155ca8}
+.b-l3{background:#fff3d6;color:#8a6410}
+.b-l4{background:#efe7fb;color:#5b3a8e}
+.b-fam{background:#eef2f6;color:#44566c}
+/* ---------- 表格 ---------- */
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+th{background:var(--navy);color:#fff;padding:9px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f8fafd}
+tr:hover td{background:var(--sky)}
+td a{color:var(--blue);text-decoration:none;word-break:break-all}
+/* ---------- 引用块 ---------- */
+blockquote{background:var(--sky);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:12px 16px;margin:10px 0;font-size:13.5px;color:#173a5c}
+blockquote .src{display:block;margin-top:6px;font-size:12px;color:var(--mut)}
+/* ---------- 图表：CSS条形 ---------- */
+.chart{margin:14px 0}
+.bar-row{display:flex;align-items:center;margin:7px 0}
+.bar-label{width:170px;font-size:12.5px;color:var(--ink);text-align:right;padding-right:12px;flex-shrink:0}
+.bar-track{flex:1;background:#edf2f8;border-radius:6px;height:22px;position:relative}
+.bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--blue),#4a90d9);display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:11.5px;font-weight:600;min-width:34px}
+.bar-fill.gold{background:linear-gradient(90deg,#b08a35,var(--gold))}
+/* ---------- 环形 ---------- */
+.donut-flex{display:flex;gap:34px;align-items:center;flex-wrap:wrap;margin:10px 0}
+.donut{width:150px;height:150px;border-radius:50%;background:conic-gradient(#155ca8 0 96deg,#c9a24b 96deg 178deg,#5b3a8e 178deg 214deg,#44566c 214deg 232deg,#1e7e4e 232deg 246deg);position:relative;flex-shrink:0}
+.donut::after{content:"45锚\A 分布";white-space:pre;position:absolute;inset:28px;background:var(--card);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--navy);text-align:center}
+.legend{font-size:13px}
+.legend li{list-style:none;margin:5px 0}
+.dot{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:8px;vertical-align:-1px}
+/* ---------- 时间线 ---------- */
+.timeline{position:relative;margin:16px 0 6px;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-item::before{content:"";position:absolute;left:-24px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid #fff;box-shadow:0 0 0 2px var(--gold)}
+.tl-item .t{font-weight:700;color:var(--navy);font-size:13.5px}
+.tl-item .d{font-size:13px;color:var(--mut)}
+/* ---------- 条目卡 ---------- */
+.item{border:1px solid var(--line);border-radius:10px;margin:14px 0;overflow:hidden}
+.item-h{background:linear-gradient(90deg,var(--sky),#f6f9fd);padding:11px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line)}
+.item-h .no{font-weight:700;color:var(--navy);font-size:14.5px}
+.item-b{padding:14px 18px}
+.item-b .fld{margin:7px 0;font-size:13.5px}
+.item-b .fld b{color:var(--blue)}
+/* ---------- 考据 ---------- */
+.evidence{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+.ev{border-radius:10px;padding:16px 18px;font-size:13.5px}
+.ev.l1{background:#eef6ff;border:1px solid #bcd6f2}
+.ev.l4{background:#f6f0ff;border:1px solid #d9c8f2}
+.ev b{display:block;margin-bottom:6px;font-size:14px}
+.ev.l1 b{color:#155ca8}.ev.l4 b{color:#5b3a8e}
+.concl{background:linear-gradient(135deg,#fffaf0,#fdf3e3);border:1px solid #ecd9ae;border-radius:10px;padding:16px 20px;margin:14px 0;font-size:14px}
+/* ---------- footer ---------- */
+footer{margin-top:34px;padding-top:18px;border-top:2px solid var(--line);font-size:12.5px;color:var(--mut);text-align:center}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}.evidence{grid-template-columns:1fr}.bar-label{width:110px;font-size:11.5px}}
+@media print{body{background:#fff}.card,.item{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ============ 头部 ============ -->
+<div class="hero">
+  <span class="tag">错题素材补缺线 v5 · 件N1 · 总成果</span>
+  <h1>人教A必修第一册 · 八节高频错型素材汇编与「一正二定三相等」来源考据</h1>
+  <div class="sub">三搜索席并行采集 × 汇总员逐条交叉亲验 × 全册销案终版｜素材结构：现象描述（原文照录）／触发情境／来源锚点／锚点级别 四字段</div>
+  <div class="meta"><span>报告时点：2026-10-01 13:4x（Asia/Shanghai）</span><span>验收位：报告汇总员</span><span>账册状态：12:56 全册闭合</span></div>
+</div>
+
+<!-- ============ KPI ============ -->
+<div class="kpis">
+  <div class="kpi"><b>16/16</b><span>条目全销案（含校准件）</span></div>
+  <div class="kpi"><b>8 节</b><span>必修一全覆盖</span></div>
+  <div class="kpi"><b>45</b><span>来源锚点（全HTTP实测）</span></div>
+  <div class="kpi"><b>8 族</b><span>站族异族交叉达成</span></div>
+  <div class="kpi"><b>100%</b><span>现象描述50-200字达标</span></div>
+</div>
+
+<!-- ============ 执行摘要 ============ -->
+<section>
+  <div class="card">
+    <h2 style="margin-top:0">一、执行摘要</h2>
+    <p class="lead">本报告为「队1数学·错题素材补缺线v5·件N1」任务的<b>总成果汇编</b>。任务目标：对<b>人教A版必修第一册 8 个核心节次</b>（§1.1 集合的概念 ／ §1.2 集合间的基本关系 ／ §1.4 充分条件与必要条件 ／ §2.2 基本不等式 ／ §2.3 一元二次不等式 ／ §3.2 函数的单调性与奇偶性 ／ §4.2 指数函数 ／ §4.3 对数），每节采集 <b>2 条高频错型素材</b>，按 T3 四字段结构（现象描述·原文照录／触发情境／来源锚点／锚点级别）交付，并完成专项考据「<b>一正二定三相等</b>」口诀来源。</p>
+    <p class="lead" style="margin-top:10px">成果账面：搜索员A/B/C三席共交付 <b>6 件 16 条</b>（含 P0 校准件 2 条），全部通过汇总员逐条亲验销案——字数全达标（50-200字）、45 处来源锚点全数 HTTP 实测 200（含301跟随终态）、每条主素材均达成 <b>≥2 异族站交叉</b>、同文档引用全部 ≤2 条上限、判重与既有基线零冲突。专项考据实锤：<b>教材正文无「一正二定三相等」字样，口诀系教辅界对教材三要素的概括（推断标注）</b>；权威首出文献未检得，如实登记为候补项（非阻塞）。</p>
+    <blockquote style="margin-top:14px">验收基准：宁缺毋编（零自编照录）／HTTP实测留痕／双异族交叉／B站锚BV+秒级／判重三查（基线·指纹·同文档）／五退因登记／50-200字硬上限。<span class="src">—— 队1数学线任务书七条硬纪律，全册逐条对表通过</span></blockquote>
+  </div>
+</section>
+
+<!-- ============ 总览表 ============ -->
+<section>
+  <div class="card">
+    <h2 style="margin-top:0">二、16条素材总览</h2>
+    <table>
+      <tr><th>#</th><th>条目ID</th><th>节次</th><th>错误类型（指纹）</th><th>锚点构成</th><th>字数</th><th>状态</th></tr>
+      <tr><td>1</td><td>S-A-1.1-01</td><td>§1.1 集合的概念</td><td>元素/集合符号误用：{0}误用"∈"、0·{0}·∅·{∅}层级混淆</td><td>21cnjy＋作业帮×2＋教材p2</td><td>190</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>2</td><td>S-A-1.1-02</td><td>§1.1 集合的概念</td><td>描述法代表元素意义不清：点集与数集混淆</td><td>原创力＋21cnjy＋作业帮＋教材p4</td><td>155</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>3</td><td>S-A-1.2-01</td><td>§1.2 集合间关系</td><td>非空真子集个数误算：2ⁿ−2与2ⁿ−1混同</td><td>作业帮＋人人文库＋教材p8</td><td>101</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>4</td><td>S-A-1.2-02</td><td>§1.2 集合间关系</td><td>含参子集求参漏讨论空集（a=0时B=∅）</td><td>人人文库＋作业帮＋教材p8</td><td>103</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>5</td><td>S-B-1.4-01</td><td>§1.4 充要条件</td><td>叙述对象颠倒："p是q的充要条件"≠"p的充要条件是q"</td><td>21cnjy×2＋学好网</td><td>178</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>6</td><td>S-B-1.4-02</td><td>§1.4 充要条件</td><td>求参型充要：包含方向搞反＋解集端点等号漏检验</td><td>21cnjy×2＋学好网</td><td>182</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>7</td><td>S-B-2.3-01</td><td>§2.3 二次不等式</td><td>含参漏"a=0退化一次"讨论＋口诀前提（a&gt;0、Δ&gt;0）失效盲区</td><td>B站P12@1981-3260s＋头条</td><td>186</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>8</td><td>S-B-2.3-02</td><td>§2.3 二次不等式</td><td>"三个二次"关系误用：解集端点≠方程根</td><td>B站P12@2796-2908s＋博客园</td><td>172</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>9</td><td>S-B-3.2-01</td><td>§3.2 单调/奇偶</td><td>单调性定义"任意性"误用：特殊值代替任意两值</td><td>21cnjy＋B站P15@47-88s＋头条</td><td>193</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>10</td><td>S-B-3.2-02</td><td>§3.2 单调/奇偶</td><td>奇偶性判断漏验定义域对称："先代-x"跳过前提</td><td>头条＋360文库</td><td>188</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>11</td><td>S-A-4.2-01</td><td>§4.2 指数函数</td><td>定义判别：系数与底数混淆（y=−3ˣ误认指数函数）</td><td>作业帮＋刷刷题＋教材p113/114</td><td>153</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>12</td><td>S-A-4.2-02</td><td>§4.2 指数函数</td><td>比大小策略：异底异指缺"中间量1"过渡</td><td>作业帮＋人人文库＋教材p117</td><td>153</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>13</td><td>S-B-4.3-01</td><td>§4.3 对数</td><td>对数定义约束：真数&gt;0与底数&gt;0且≠1双联立漏验</td><td>B站P22@484-543s＋github.io＋gaokao弱锚</td><td>193</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>14</td><td>S-B-4.3-02</td><td>§4.3 对数</td><td>运算法则误用：非同底直接套用＋"对加法分配"幻觉</td><td>B站P22@817-849s＋github.io</td><td>176</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>15</td><td>S-C-2.2-01</td><td>§2.2 基本不等式</td><td>忽略"一正"前提：含负项式子误用基本不等式致符号错判</td><td>教材p44＋B站P11@505-549s</td><td>164</td><td><span class="badge b-ok">销案</span></td></tr>
+      <tr><td>16</td><td>S-C-2.2-02</td><td>§2.2 基本不等式</td><td>"三相等"失守：多次应用不等式等号条件互不一致</td><td>教材p45＋B站P11@8534-9296s</td><td>186</td><td><span class="badge b-ok">销案</span></td></tr>
+    </table>
+    <p class="mut">注：字数为现象描述汉字数（独立复测口径，与各席自报零偏差）；B站锚均含 BV1Jt411E76i + P码 + 秒级区间，字幕逐字可回查本地语料库；教材锚均为 smartedu 官方影印直链（资源页N−7=印刷页模式）。</p>
+  </div>
+</section>
+
+<!-- ============ 图表 ============ -->
+<section>
+  <div class="card">
+    <h2 style="margin-top:0">三、锚点结构总览</h2>
+    <h3 style="margin-top:6px">3.1 站族分布（按45处锚点计）</h3>
+    <div class="chart">
+      <div class="bar-row"><div class="bar-label">商业教辅文库族（21cnjy/人人文库/原创力/360文库）</div><div class="bar-track"><div class="bar-fill" style="width:100%">13</div></div></div>
+      <div class="bar-row"><div class="bar-label">官方教材族（smartedu 影印直链）</div><div class="bar-track"><div class="bar-fill gold" style="width:62%">8</div></div></div>
+      <div class="bar-row"><div class="bar-label">问答社区族（作业帮）</div><div class="bar-track"><div class="bar-fill" style="width:54%">7</div></div></div>
+      <div class="bar-row"><div class="bar-label">视频族（B站字幕库，4个P码7处）</div><div class="bar-track"><div class="bar-fill" style="width:54%">7</div></div></div>
+      <div class="bar-row"><div class="bar-label">资讯族（头条/学好网）</div><div class="bar-track"><div class="bar-fill" style="width:39%">5</div></div></div>
+      <div class="bar-row"><div class="bar-label">技术博客族（博客园/github.io）</div><div class="bar-track"><div class="bar-fill" style="width:24%">3</div></div></div>
+      <div class="bar-row"><div class="bar-label">教辅题库族（刷刷题）</div><div class="bar-track"><div class="bar-fill" style="width:9%">1</div></div></div>
+      <div class="bar-row"><div class="bar-label">教育媒体族（gaokao.com·域名级弱锚已标注）</div><div class="bar-track"><div class="bar-fill" style="width:9%">1</div></div></div>
+    </div>
+    <h3>3.2 锚点级别分布</h3>
+    <div class="donut-flex">
+      <div class="donut"></div>
+      <ul class="legend">
+        <li><span class="dot" style="background:#155ca8"></span><b>L1 官方教材</b>（smartedu 影印直链，8处＋旁证页p114）：定义句/例题原文，错型的"官方规则依据"</li>
+        <li><span class="dot" style="background:#c9a24b"></span><b>L3 教辅/教案/课件</b>（文库·题库·教育媒体，23处）：易错归纳、学案与评分细则实录</li>
+        <li><span class="dot" style="background:#5b3a8e"></span><b>L4 自媒体/问答/课堂实录</b>（作业帮·头条·B站·博客，10处）：学生真实错解与纠错互动</li>
+        <li><span class="dot" style="background:#44566c"></span><b>L2 型/弱锚</b>（方法论页从严归族6，2处）：已单独标注从严口径</li>
+        <li><span class="dot" style="background:#1e7e4e"></span><b>弱锚</b>（域名级，1处）：B§4.3-01[3]，候具体文URL补强</li>
+      </ul>
+    </div>
+    <p class="mut">异族交叉策略：每条主素材 ≥2 异族（如「问答族×官方族」「视频族×文库族」），同族并存从严不计双；三条 B 站讲解型锚均标注"教师讲解/方法归纳，非学生错解实录"（推演标注规范）；头条 PC 端 JS 壳一律改采移动端 SSR 静态全文并落盘取证 HTML。</p>
+  </div>
+</section>
+
+<!-- ============ 分节明细 ============ -->
+<section>
+  <div class="card">
+    <h2 style="margin-top:0">四、分节明细（8节 × 2条）</h2>
+
+    <h3>§1.1 集合的概念 —— 搜索员A（P0校准件，04:46 终验销案）</h3>
+    <div class="item"><div class="item-h"><span class="no">S-A-1.1-01 · 元素与集合关系符号误用</span><span><span class="badge b-fam">族3×1+问答族×2+官方族×1</span><span class="badge b-ok">190字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>教辅选择题设陷「{0}∈A」；作业帮答句照录：<blockquote>"没有花括号表示的是元素,带花括号的表示一个集合. 元素要么属于集合要么不属于集合,集合之间的关系包含和被包含的关系. 空集是任意集合的子集"<span class="src">—— 作业帮 a9ddf3d1《0,{0},{空集},空集的区别》（渲染zb2.html＋04:22静态SSR双通道可回验）</span></blockquote>关联页照录："∅ 是 {0} 的子集和真子集"；教材p2官方定义句"a属于集合A，记作a∈A"为符号正用之官方依据。</div>
+        <div class="fld"><b>触发：</b>判断0、{0}与 A={x|x&gt;−1} 关系，或将0、{0}、∅、{∅}混写连等时。</div>
+        <div class="fld"><b>验收备注：</b>v1曾现锚点错配（URL署位错位），v1.1改署a9ddf3d1并对齐三元，渲染+静态双通道销案——全程留痕可溯，系本任务第一个P0闸校准案例。</div>
+      </div>
+    </div>
+    <div class="item"><div class="item-h"><span class="no">S-A-1.1-02 · 描述法代表元素意义不清</span><span><span class="badge b-fam">文库族×2+问答族+官方族</span><span class="badge b-ok">155字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>原创力易错点例1分析照录：<blockquote>"分析 上述解法混淆了点集与数集的区别，集合A、B中元素为点集，所以A∩B={(1,2)}"<span class="src">—— max.book118《集合问题中常见易错点归类分析》预览层（OCR伪字"AIB[?]"照录注记规范）</span></blockquote>作业帮关联卡："集合B={y丨y=x²+1}是数集，而C={(x,y)丨y=x²+1}是点集"；教材p4描述法规范句"竖线左侧代表元素即∈之对象"。</div>
+        <div class="fld"><b>触发：</b>点集参与交并运算（两曲线交点集），或判断 B={y|y=f(x)} 与 C={(x,y)|y=f(x)} 是否相同时。</div>
+      </div>
+    </div>
+
+    <h3>§1.2 集合间的基本关系 —— 搜索员A（05:15交件销案）</h3>
+    <div class="item"><div class="item-h"><span class="no">S-A-1.2-01 · 非空真子集个数误算</span><span><span class="badge b-fam">问答族+文库族+官方族</span><span class="badge b-ok">101字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>作业帮真实争议实录：<blockquote>标题"集合A={1,2,3,4},它的非空真子集的个数是?为什么答案是15个而不是14个?" 主答句："是14个,答案有错,子集共有2^4=16个,除空集和本身外,非空真子集就有14个"<span class="src">—— 作业帮 f1e739d6（答问互动即"2ⁿ−2误按2ⁿ−1计"之现成翻车实录）</span></blockquote>人人文库知识梳理："子集2ⁿ、真子集2ⁿ−1、非空真子集2ⁿ−2"；教材p8例1"{a,b}真子集为∅,{a},{b}"即"减2"语义官方依据。</div>
+        <div class="fld"><b>触发：</b>求非空真子集/真子集个数套2ⁿ减法时，混淆"减1"（自身非真子集）与"减2"（再减空集）两层语义。</div>
+      </div>
+    </div>
+    <div class="item"><div class="item-h"><span class="no">S-A-1.2-02 · 含参子集求参漏讨论空集</span><span><span class="badge b-fam">文库族+问答族+官方族</span><span class="badge b-ok">103字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>人人文库警示句照录：<blockquote>"空集是任何集合的子集，在涉及集合关系问题时，必须考虑空集的情况，否则易造成漏解."<span class="src">—— renrendoc 382192847 页内"已知集合关系求参数"节</span></blockquote>作业帮同型题正解把"B=∅即a=0"列首位；教材p8空集规定句"空集是任何集合的子集"为讨论之官方规则依据。</div>
+        <div class="fld"><b>触发：</b>B={x|ax+b=0}型含参集合满足 B⊆A/B⊊A 反求参数——a=0时B=∅仍满足包含，漏讨论即漏解。</div>
+      </div>
+    </div>
+
+    <h3>§1.4 充分条件与必要条件 —— 搜索员B（04:5x交件销案）</h3>
+    <div class="item"><div class="item-h"><span class="no">S-B-1.4-01 · 叙述对象颠倒</span><span><span class="badge b-fam">族3×2+族6</span><span class="badge b-ok">178字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>湘教版《精讲精练》知识辨析直指病灶：<blockquote>"'p是q的充分而不必要条件'与'p的充分而不必要条件是q'的区别在哪里"——①前者p是条件q是结论（p⇒q且q⇏p）；②后者q是条件p是结论（q⇒p且p⇏q）<span class="src">—— 21cnjy 23598911《精讲精练》课件+练习</span></blockquote>叙述主宾一颠倒，推出关系全盘反转。</div>
+        <div class="fld"><b>触发：</b>题干互换"p是q的__条件"与"q的__条件是p"两种叙述时方向搞反；"必要不充分"选择题误把结论当条件。</div>
+      </div>
+    </div>
+    <div class="item"><div class="item-h"><span class="no">S-B-1.4-02 · 求参型充要：方向搞反＋端点漏验</span><span><span class="badge b-fam">族3×2+族6</span><span class="badge b-ok">182字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>21cnjy易错题专节错解链照录：<blockquote>"因为不等式的必要不充分条件是…可得…真子集，所以…选D.【错因】忽略了对端点值…的判断"，正解"经检验…符合题意"改选B；另"四、忽视判别式等号取舍致错"："不等式有解，则Δ≥0，而不是Δ＞0"<span class="src">—— 21cnjy 14248749 高考易错题解析版</span></blockquote>方法句"根据充分/必要条件与集合间关系，转化为集合包含关系求解……最后要注意对解集端点值进行检验"。</div>
+        <div class="fld"><b>触发：</b>"p是q的必要不充分条件"求参方向写反；区间型条件端点等号该取不取；"有解/恒成立"Δ≥0与Δ＞0混用。</div>
+      </div>
+    </div>
+
+    <h3>§2.3 一元二次不等式 —— 搜索员B（04:5x交件销案）</h3>
+    <div class="item"><div class="item-h"><span class="no">S-B-2.3-01 · 含参漏"a=0退化一次"＋口诀前提失效</span><span><span class="badge b-fam">族7+族6</span><span class="badge b-ok">186字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>一数课堂P12照录：<blockquote>"第一步我们要讨论什么呢，Δ等于零或者是Δ不等于零……Δ等于零的时候呢是一个一元一次不等式啊，只有Δ不等于零的时候才是我们的一元二次不等式"（含参先讨论a=0）；恒成立方向"开口向下，而且不能跟X轴有交点"<span class="src">—— B站 BV1Jt411E76i P12@1981-2038s/3241-3260s（字幕逐字可回查）</span></blockquote>头条《吃透底层逻辑》同款警示："含参数题目，第一步先判断a会不会等于0""不要死记口诀，口诀前提必须a＞0、Δ＞0，条件不满足口诀失效"。</div>
+        <div class="fld"><b>触发：</b>含参不等式直接当二次解漏a=0；"大于取两边小于取中间"在a＜0/Δ≤0时误用；恒成立开口方向与Δ配套写反。</div>
+      </div>
+    </div>
+    <div class="item"><div class="item-h"><span class="no">S-B-2.3-02 · "三个二次"关系误用</span><span><span class="badge b-fam">族7+族5</span><span class="badge b-ok">172字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>一数P12"类型四"照录：<blockquote>"一元二次不等式解集的端点，对应的就是我们这个一元二次方程的根，也是与之所对应的二次函数图像与X轴交点的横坐标"<span class="src">—— B站 P12@2796-2810s（例题先讨论a=0情形）</span></blockquote>博客园讲义定位本质："核心是理解不等式、方程、函数'三个二次'的内在联系，这是整个知识点的本质""必须满足a≠0，若a=0退化为一元一次不等式"。</div>
+        <div class="fld"><b>触发：</b>"已知解集反求参数"直接代端点漏验端点是否为根；含参解集题不先讨论a=0；解集区间与开口位置关系记反。</div>
+      </div>
+    </div>
+
+    <h3>§2.2 基本不等式 —— 搜索员C（12:53交闸·12:56销案，含S考据轨）</h3>
+    <div class="item"><div class="item-h"><span class="no">S-C-2.2-01 · 忽略"一正"前提</span><span><span class="badge b-fam">官方族+视频族</span><span class="badge b-ok">164字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>教材p44明文限定照录＋P11口诀第一要素：<blockquote>"特别地，如果a&gt;0，b&gt;0……√ab≤(a+b)/2 (1)，当且仅当a=b时，等号成立。"（教材影印目检在图）／"首先第一个要满足我们的一正〔音误注：一证〕，就是各项必须为正数……这三条条件必须均要满足"<span class="src">—— smartedu 资源页51=印刷p44 ＋ B站P11@505.74-549.51s（sid244-262逐字命中）</span></blockquote>学生高频失误：对含负项式子直接套√ab≤(a+b)/2 或 x+1/x≥2——x&lt;0时后者实为≤−2（本席注：对勾函数负支），套用即符号错判、最值全盘失效。</div>
+        <div class="fld"><b>触发：</b>题目未给符号范围仍套基本不等式；含"一正一负"因子构造；负项须先提取负号化正或改用单调性。</div>
+      </div>
+    </div>
+    <div class="item"><div class="item-h"><span class="no">S-C-2.2-02 · "三相等"失守</span><span><span class="badge b-fam">视频族+官方族</span><span class="badge b-ok">186字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>P11三段锚连环实录：<blockquote>"关键是我们要验证每一次等号都要成立……说白了我们可以把它解释为叫同时成立"（@8534.5s）；三步使用后等号条件互不一致——"等号成立的条件不统一……这个方法就错误了……要保持一致性"（@8727.2s）；联立验证手段"结合这两次等号整理的条件去解AB值，看是否满足题目要求"（@9271.8s）<span class="src">—— B站P11 sid3955-3970/4044-4078/4305-4316（四段锚本席亲验逐字命中）</span></blockquote>教材p45例1规范句"当且仅当x=1/x……因此所求的最小值为2"为等号条件书写范式。</div>
+        <div class="fld"><b>触发：</b>多次链式应用基本不等式求最值，各次等号条件（x=y／y=4x／xy=2）无法同时成立时——须联立验证一致性，否则最值取不到。</div>
+      </div>
+    </div>
+
+    <h3>§3.2 函数的单调性与奇偶性 —— 搜索员B（04:5x交件销案）</h3>
+    <div class="item"><div class="item-h"><span class="no">S-B-3.2-01 · 单调性"任意性"误用</span><span><span class="badge b-fam">族3+族7+族6</span><span class="badge b-ok">193字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>头条月考评分细则实录：<blockquote>"易错点1：步骤缺失——忽视'任意性'，用'特殊代替一般'（扣2-5分）……因缺失4个核心环节，最终得分0分"；学生证f(x)=x²+2x在[1,+∞)为增函数时只代两个点<span class="src">—— 头条7581068313736888872《核心突破》（移动端SSR取证落盘）</span></blockquote>21cnjy教案辨析："必须是'任意'两个自变量，不能仅凭两个特殊值判断"；一数P15@47-88s定义讲解"任取两点都要满足"。</div>
+        <div class="fld"><b>触发：</b>两个特殊值算出f(x₁)＜f(x₂)即断言递增；定义法证明漏"任取"与区间标注；单调区间误用"∪"连接（教案："区间书写用逗号，千万不能用并集"）。</div>
+      </div>
+    </div>
+    <div class="item"><div class="item-h"><span class="no">S-B-3.2-02 · 奇偶性漏验定义域对称</span><span><span class="badge b-fam">族6+族3</span><span class="badge b-ok">188字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>头条《奇偶性最大骗局》铁律照录：<blockquote>"奇偶性判断，看顺序，不看算式！优先级绝对不能乱：先看定义域，再判f(-x)"；陷阱题f(x)=√(1-x²)/(x-1)："左边能取-1，右边取不到1，原点不对称……非奇非偶函数（全程不用化简）"<span class="src">—— 头条7672180049717772802（"90%学生"流量修辞已弃、内核可验保留）</span></blockquote>360文库人教A配套课件印证"定义域关于原点对称，图象关于y轴对称"。</div>
+        <div class="fld"><b>触发：</b>判断奇偶性直接代f(−x)化简不先求定义域；单点集或区间不对称（如[−1,1)）仍判奇偶；分式/根式函数隐藏不对称定义域未察觉。</div>
+      </div>
+    </div>
+
+    <h3>§4.2 指数函数 —— 搜索员A（12:02交件销案）</h3>
+    <div class="item"><div class="item-h"><span class="no">S-A-4.2-01 · 定义判别：系数与底数混淆</span><span><span class="badge b-fam">问答族+题库族+官方族</span><span class="badge b-ok">153字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>作业帮真实提问：<blockquote>"为什么y=-3^x是指数函数,而y=2乘3^x不是指数函数"——答疑仅纠正第二问、第一问负号误判未被纠正<span class="src">—— 作业帮 2cf4d1fd（刷刷题同考点判断题"y=(−2)^x是否为指数函数"在案）</span></blockquote>教材p113定义句"y=aˣ（a&gt;0且a≠1）"即系数须为1之官方依据；p114旁证"形如y=kaˣ（k≠0）是指数型模型"与指数函数定义有别。</div>
+        <div class="fld"><b>触发：</b>"下列函数中是指数函数的是"选项组含 y=(−2)ˣ、y=2·3ˣ、y=−3ˣ 类系数陷阱＋负底数陷阱。</div>
+      </div>
+    </div>
+    <div class="item"><div class="item-h"><span class="no">S-A-4.2-02 · 异底异指缺"中间量1"过渡</span><span><span class="badge b-fam">问答族+文库族+官方族</span><span class="badge b-ok">153字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>作业帮学生提问："1.7的0.3次方与0.9的3.1次方怎么比较?"答句"1.7^0.3比1大. 0.9^3.1比1小!"——借中间量1过渡；教材p117例3(3)分析明示"1.7^0.3和0.9^3.1不能看作某一个指数函数的两个函数值"，须以两函数单调性及"x=0时y=1"性质联系。</div>
+        <div class="fld"><b>触发：</b>不同底不同指数两幂值比较（教材例3同型），学生易直接乱比或漏取中间量1。</div>
+      </div>
+    </div>
+
+    <h3>§4.3 对数 —— 搜索员B（12:1x交件·v2销案）</h3>
+    <div class="item"><div class="item-h"><span class="no">S-B-4.3-01 · 真数与底数取值范围漏验</span><span><span class="badge b-fam">视频族+博客族+媒体弱锚</span><span class="badge b-ok">193字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>一数P22课堂实录：<blockquote>"对数的底一定要大于零且不等于一，真数一定要大于零"——例2情境 log<sub>x+1</sub>(1−x)，"底是x加一，真数是一减x……结合这两个不等式"解得 x∈(−1,0)∪(0,1)<span class="src">—— B站P22@484-543s（字幕音误"大于一"系"大于负一"之误已注记，以解题结果为准）</span></blockquote>github.io避坑指南误区表："log(−x)无定义（实数域）""log₀x或log₁x→底数必须&gt;0且≠1"；gaokao.com易错清单同款提醒（域名级弱锚已标注）。</div>
+        <div class="fld"><b>触发：</b>log<sub>x+1</sub>(1−x)型含参定义域题；判断log(−x)、log₀x、log₁x式子是否合法时。</div>
+      </div>
+    </div>
+    <div class="item"><div class="item-h"><span class="no">S-B-4.3-02 · 非同底套用与"分配律幻觉"</span><span><span class="badge b-fam">视频族+博客族</span><span class="badge b-ok">176字</span></span></div>
+      <div class="item-b">
+        <div class="fld"><b>现象：</b>P22例4第二问 log₂√3＋log₄(8/3)（底不一样）：<blockquote>"一定要注意对数的加减法一定是同底才能用的……先把它转化成同底才能用对数的加减法"；例5辨析A选项直接判错："这个是错的，没有这样的运算啊"<span class="src">—— B站P22@817-849s</span></blockquote>避坑指南误区表："log(a+b)=log a+log b错——对数对乘法分配，不对加法；log(a/b)=log a/log b错；log(aⁿ)=(log a)ⁿ错"。</div>
+        <div class="fld"><b>触发：</b>异底对数相加型，或遇log(M+N)、log(M/N)结构误套"分配律"式伪法则时。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S轨考据 ============ -->
+<section>
+  <div class="card">
+    <h2 style="margin-top:0">五、专项考据 ·「一正二定三相等」来源（S轨）</h2>
+    <p class="lead">考据问题：该口诀是否教材原文？——采用 L1（官方教材）×L4（视频教学实录）双轨取证：</p>
+    <div class="evidence">
+      <div class="ev l1"><b>L1 实锤 · 官方教材（smartedu 影印目检）</b>人教A必修第一册印刷 p44-45 正文（资源页51/52影印件 r51/r52.jpg 本席逐页目检）：仅有正数前提明文"如果a&gt;0，b&gt;0……当且仅当a=b时等号成立"、定值语境（例2"积xy等于定值P"）与等号规范句，<b>全无"一正二定三相等"字样</b>。</div>
+      <div class="ev l4"><b>L4 实锤 · B站课堂实录（P11@505.74-549.51s）</b>UP主"一数"完整口诀教学链逐字在库："第一个要满足我们的一正〔音误注〕……第二个是二定……这三条条件必须均要满足才可以得到它的最值"（sid244-262，本席亲验逐字命中）。</div>
+    </div>
+    <div class="concl"><b>考据结论（已标注推断）：</b>「一正二定三相等」系<b>教辅界对教材三要素（正数前提／定值／等号成立条件）的概括口诀，非教材原文</b>——教材以明文条件句分述三要素，口诀为其经验化压缩。<b>如实声明：</b>口诀权威首出文献未检得（网检通道 502 故障窗期间六组查询词备而未跑），候通道恢复补强；<b>该项为非阻塞候补，不影响上述考据结论的证据强度</b>（L1×L4双实锤已闭环）。</div>
+  </div>
+</section>
+
+<!-- ============ 质量与合规 ============ -->
+<section>
+  <div class="card">
+    <h2 style="margin-top:0">六、质量与合规总账</h2>
+    <h3 style="margin-top:6px">6.1 判重三查（全册）</h3>
+    <table>
+      <tr><th>轨道</th><th>结论</th></tr>
+      <tr><td><b>基线轨</b></td><td>判重基线覆盖一数字幕库 P1-P10（止于§2.1）；本册B站取材 P11（C席§2.2）/P12/P15（B席§2.3/§3.2）/P22（B席§4.3）全部在基线外，<b>零热区触碰</b>。</td></tr>
+      <tr><td><b>指纹轨</b></td><td>16条指纹两两不同型（同节两条亦异：如§2.3"漏a=0退化"vs"三个二次端点"、§3.2"任意性"vs"定义域对称"），同节内零重复。</td></tr>
+      <tr><td><b>同文档轨</b></td><td>全册最高引用=2条（renrendoc 382192847×2／21cnjy 23598911×2／asxue 345250×2／github.io×2／B站P11×2/P12×2/P22×2），全部≤2条上限；B席曾如实自报P12×3风险并附降级备选，经按P计数裁定合规。</td></tr>
+    </table>
+    <h3>6.2 验收流水时间线</h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="t">03:42</div><div class="d">任务书zip两次上传未落盘，用户改群聊正文直贴到件（文件通道异常判例）。</div></div>
+      <div class="tl-item"><div class="t">04:07-04:58</div><div class="d">判重基线v1.1定谳、T3模板下发、放量期口径补丁v1落地（□1-□12追加验收项）。</div></div>
+      <div class="tl-item"><div class="t">04:46</div><div class="d">P0校准件A席§1.1×2终验销案（锚点错配整改：改署a9ddf3d1＋渲染/静态双通道回验）。</div></div>
+      <div class="tl-item"><div class="t">04:5x-05:15</div><div class="d">B席§1.4/§2.3/§3.2六条、A席§1.2×2交件，逐条亲验销案（含字数复核、B站P12计数裁量）。</div></div>
+      <div class="tl-item"><div class="t">11:47-12:1x</div><div class="d">混合案定谳补位§4.2/§4.3/§2.2；A席§4.2×2销案（页码勘误p111-117实域定位）；B席§4.3 v1退改v2（音误注记＋弱锚标注）后销案。</div></div>
+      <div class="tl-item"><div class="t">12:53-12:56</div><div class="d">C席§2.2×2含S轨交闸：字数双测零偏差、四段字幕锚逐字命中、影印目检实锤，销案——<b>件N1全册16/16闭合</b>。</div></div>
+      <div class="tl-item"><div class="t">13:0x</div><div class="d">资产追溯统一：早期两件root属主代修z:z 664，shared交付资产全绿。</div></div>
+    </div>
+    <h3>6.3 通道战况与弃源登记（宁缺毋编留痕）</h3>
+    <p style="font-size:13.5px">全程遭遇平台级 <b>502/504 间歇故障窗</b>（11:52-12:4x 尤甚），三席均以"短命令重试＋nohup后台化＋落盘留痕二次回验"完成，<b>零依赖单次内存取证</b>。弃源如实登记（择要）：知乎专栏40362反爬、book118 SafeLine WAF拦headless、scribd付费墙、zhidao.baidu同族不构成异族交叉、跑偏query结果（s3/s5）、外文教学站语域不符——<b>凡不可回验一律弃用不留锚</b>。</p>
+    <blockquote>本册唯一非阻塞候补：S轨口诀首出文献网检补强（C席候通道恢复自选执行，有增量再报）。<span class="src">—— 不影响16条交付与考据结论</span></blockquote>
+  </div>
+</section>
+
+<!-- ============ 交付清单 ============ -->
+<section>
+  <div class="card">
+    <h2 style="margin-top:0">七、交付物清单（shared/队1数学/错题补缺v5_件N1/）</h2>
+    <table>
+      <tr><th>类型</th><th>文件</th><th>说明</th></tr>
+      <tr><td rowspan="3">素材主件×6</td><td>校准件_搜索A_1.1两条_v1.1.md</td><td>§1.1×2（P0闸校准案例）</td></tr>
+      <tr><td>放量件_搜索A_1.2两条_v1.md ／ 放量件_搜索A_4.2两条_v1.md</td><td>§1.2×2 ／ §4.2×2（含页码勘误实域p111-117）</td></tr>
+      <tr><td>放量件_搜索B_1.4_2.3_3.2六条_v1.md ／ 放量件_搜索B_4.3两条_v1.md ／ 放量件_搜索C_2.2两条_v1.md</td><td>六条 ／ §4.3×2（v2）／ §2.2×2含S轨（v1.1）</td></tr>
+      <tr><td>渲染留痕×3目录</td><td>渲染留痕_A席/（zb1/zb2/t1b/t2/rrd×2/tb42系列＋影印件）／_B席/（tt×3/wk/cnblogs取证）／_C席/（r51/r52.jpg＋字数实测）</td><td>JS壳站取证HTML＋教材影印件＋HTTP实测留痕，属主全数z:z 664</td></tr>
+      <tr><td>工作件×3</td><td>搜索任务分配清单_规划师_v1.md ／ 放量期口径补丁v1_汇总员.md ／ 验收报告_校准件_汇总员_v1.md</td><td>分派依据·验收口径·校准判例</td></tr>
+      <tr><td>总成果</td><td><b>本报告</b>（v5N1_final_report_v1.html）</td><td>16条汇编＋考据＋质量总账，可直接渲染预览</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  队1数学·错题素材补缺线v5·件N1 · 总成果报告 v1.0 ｜ 编制：报告汇总员 ｜ 2026-10-01 ｜ 全册16/16销案 · 交付资产全绿 · 验收判例全程留痕可溯<br>
+  后续建议：16条素材可直接并入 D 件既有条目体系（错因结构与处置口诀由主稿侧统一定稿）；S轨首出文献候补不阻塞。
+</footer>
+
+</div>
+</body>
+</html>
