@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>总验收报告 · 任务书v5 队5语英方法扩容 · 2026-10-01</title>
+<style>
+  :root{
+    --ink:#1a2332; --paper:#f6f8fb; --card:#ffffff; --line:#e3e9f2;
+    --green:#0e9f6e; --green-bg:#e6f7f1; --amber:#d97706; --amber-bg:#fef3e2;
+    --blue:#2563eb; --blue-bg:#e8effd; --red:#dc2626; --red-bg:#fdeaea;
+    --gray:#64748b; --violet:#7c3aed; --violet-bg:#f1eafd;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;background:var(--paper);color:var(--ink);line-height:1.75;padding:28px 14px;}
+  .wrap{max-width:1060px;margin:0 auto;}
+  .hero{background:linear-gradient(135deg,#16213e 0%,#1f3a5f 55%,#24507e 100%);border-radius:16px;color:#fff;padding:36px 38px;position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.06);}
+  .hero .tag{display:inline-block;font-size:12px;letter-spacing:2px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:3px 12px;border-radius:20px;margin-bottom:14px;}
+  .hero h1{font-size:26px;font-weight:700;letter-spacing:.5px;}
+  .hero .sub{margin-top:8px;font-size:13.5px;opacity:.85;}
+  .hero .stats{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap;position:relative;z-index:1;}
+  .stat{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px 20px;min-width:150px;}
+  .stat b{font-size:24px;display:block;line-height:1.2;}
+  .stat span{font-size:12px;opacity:.8;}
+  .ring{width:104px;height:104px;border-radius:50%;background:conic-gradient(var(--green) 0 81.25%, rgba(255,255,255,.18) 81.25% 100%);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .ring>div{width:78px;height:78px;border-radius:50%;background:#16213e;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;}
+  .ring>div b{font-size:22px;} .ring>div span{font-size:10px;opacity:.7;}
+  .hero .stats .stat.ringwrap{display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.08);}
+  section{margin-top:26px;}
+  h2{font-size:19px;margin-bottom:6px;display:flex;align-items:center;gap:9px;}
+  h2::before{content:"";width:5px;height:20px;border-radius:3px;background:linear-gradient(180deg,var(--blue),var(--violet));display:inline-block;}
+  .secsub{font-size:12.5px;color:var(--gray);margin-bottom:14px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px rgba(20,40,80,.04);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr;}}
+  .badge{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 10px;border-radius:12px;vertical-align:middle;}
+  .bg{background:var(--green-bg);color:var(--green);} .ba{background:var(--amber-bg);color:var(--amber);}
+  .bb{background:var(--blue-bg);color:var(--blue);} .bv{background:var(--violet-bg);color:var(--violet);}
+  .block{border-left:5px solid var(--green);} .block.warn{border-left-color:var(--amber);}
+  .block .head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
+  .block .head h3{font-size:16.5px;}
+  .block p{font-size:13.5px;color:#334155;}
+  .chain{display:flex;align-items:stretch;gap:0;margin-top:12px;flex-wrap:wrap;}
+  .step{flex:1;min-width:130px;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12.5px;}
+  .step b{display:block;font-size:13px;margin-bottom:2px;}
+  .step .who{color:var(--blue);font-weight:600;}
+  .arrow{display:flex;align-items:center;padding:0 7px;color:#94a3b8;font-size:17px;}
+  .verdict{margin-top:10px;font-size:13px;background:var(--green-bg);border-radius:8px;padding:8px 12px;color:#065f46;}
+  .kv{font-size:13px;color:#475569;margin-top:6px;} .kv b{color:var(--ink);}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th{background:#f1f5f9;text-align:left;padding:8px 10px;font-size:12px;color:#475569;border-bottom:2px solid var(--line);white-space:nowrap;}
+  td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr:nth-child(even) td{background:#fafbfd;}
+  .case{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:12px;background:#fbfcfe;}
+  .case h4{font-size:14px;margin-bottom:6px;}
+  .case p{font-size:13px;color:#475569;}
+  .callout{border-radius:12px;padding:14px 16px;font-size:13.5px;margin-top:12px;}
+  .callout.red{background:var(--red-bg);color:#7f1d1d;}
+  .callout.blue{background:var(--blue-bg);color:#1e3a8a;}
+  .pend{border:1px dashed var(--amber);background:var(--amber-bg);border-radius:12px;padding:16px 18px;}
+  .pend li{margin:6px 0;font-size:13.5px;}
+  .foot{text-align:center;color:#94a3b8;font-size:12px;margin-top:34px;line-height:1.9;}
+  .src{font-family:ui-monospace,Consolas,monospace;font-size:12px;background:#f1f5f9;padding:1px 6px;border-radius:6px;color:#475569;word-break:break-all;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="tag">FINAL ACCEPTANCE REPORT</span>
+    <h1>任务书v5 · 队5语英方法扩容 · 总验收报告</h1>
+    <div class="sub">语料切片方法扩容 32 条（A语文错题路由12 + B英语学习方法14 + C词汇6）｜三检链多智能体协作｜汇总员裁定 · 2026-10-01</div>
+    <div class="stats">
+      <div class="stat ringwrap">
+        <div class="ring"><div><b>26/32</b><span>收口率 81.25%</span></div></div>
+        <div><b style="font-size:15px;">任务完成度</b><span style="font-size:11.5px;opacity:.75;display:block;margin-top:4px;">余6条= C项词汇，待管理员拍板</span></div>
+      </div>
+      <div class="stat"><b>14</b><span>B项英语学习方法卡 · 全收口 ✅</span></div>
+      <div class="stat"><b>12</b><span>语文条目（文言/现代文/作文/默写）· 全收口 ✅</span></div>
+      <div class="stat"><b>0</b><span>未闭环质量问题（披露条目均裁决归档）</span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>一、验收总览</h2>
+    <div class="secsub">三区块进度 · 全部条目经"生产 → 汇总员主检 → 独立方复核"三检链，无一免检</div>
+    <div class="card">
+      <div class="grid2">
+        <div class="card block" style="margin:0;">
+          <div class="head"><h3>B项 · 英语学习方法卡 14条</h3><span class="badge bg">✅ 全收口</span></div>
+          <p>校准件1 + 听力2 + 阅读2 + 七选五2 + 完形2 + 语法2 + 改错2 + 应用文2 = <b>14条闭合</b>；禁交三条零碰撞。证据执行四级分层（直连回源 &gt; 盘内快照 &gt; 手录复原 &gt; 披露注记），单源/双源如实标注。</p>
+        </div>
+        <div class="card block" style="margin:0;">
+          <div class="head"><h3>A项 · 语文错题路由 12条</h3><span class="badge bg">✅ 全收口</span></div>
+          <p>文言3 + 现代文3 + 作文3 + 默写3，四线三检链全闭环。全部403库原生sid可回溯，AI字幕机器转写级+[?]疑错纪律执行，程序化对账脚本全量可复跑。</p>
+        </div>
+        <div class="card block warn" style="margin:0;grid-column:1/-1;">
+          <div class="head"><h3>C项 · 词汇 ≥6条</h3><span class="badge ba">⏸ 待管理员拍板</span></div>
+          <p>三项前置决策未决：<b>①C项词汇归属线（A线或B线）②T3四字段定义（三源实证旧档零命中）③工时档位</b>。按"宁缺毋编"纪律，C项不预产不虚标，拍板即启。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>二、语文12条 · 四线三检链明细</h2>
+    <div class="secsub">生产/主检/复核三岗分离，回避规则执行（生产方不复自产）；P0=P0级红线，P1=口径缺陷，P2=裁量披露</div>
+
+    <div class="card" style="margin-top:10px;">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;"><h3 style="font-size:15.5px;">文言文 3条</h3><span class="badge bg">收口 · A产 → 汇主检 → B复核</span></div>
+      <div class="chain">
+        <div class="step"><b>生产 <span class="who">A线</span></b>v1.2七处修订落盘（P0幽灵句删除/P0 sid125还原/P1语句体原字/4方法句补回/P2锚点07:09-09:05）</div>
+        <div class="arrow">➜</div>
+        <div class="step"><b>复核 <span class="who">B线</span></b>regression_v12.py <b>14项断言全PASS</b>；INFO附报sid225-226边界句（三选一裁量申请）</div>
+        <div class="arrow">➜</div>
+        <div class="step"><b>终裁 <span class="who">汇总员</span></b>裁c（接受现状+披露）：括注吐槽类难度限定语，非方法内容句，卡头口径自洽</div>
+      </div>
+      <div class="verdict">✅ 链路闭合 · 卡文件原位更新 · 注记9随c案取消</div>
+    </div>
+
+    <div class="card" style="margin-top:12px;">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;"><h3 style="font-size:15.5px;">现代文 3条</h3><span class="badge bg">收口 · 马斯克产 → 汇主检 → A复核</span><span class="badge ba">⭐ 全任务首个收口后返工案例</span></div>
+      <div class="chain">
+        <div class="step"><b>生产 <span class="who">马斯克</span></b>v1落盘后生产方自查披露：卡头"逐字照录"声明不实（覆盖率27.3%/45.4%/49.1%）+P0×1无标注改写（sid18）+方法句25条删节清单</div>
+        <div class="arrow">➜</div>
+        <div class="step"><b>主检 <span class="who">汇总员</span></b><b>撤销初判+改判重检</b>——承认"三检链均漏检段内条目对账"盲区，发收口令③（段内条目对账+删节清单全量核对）</div>
+        <div class="arrow">➜</div>
+        <div class="step"><b>修订 <span class="who">马斯克</span></b>v1.1二次修正落盘：P0改回sid18原字+口径改"选择性照录"+方法句19条全补+例题落注记；覆盖率提升至34.6%/58.5%/61.2%，照录区实质不命中0</div>
+        <div class="arrow">➜</div>
+        <div class="step"><b>复核 <span class="who">A线</span></b>独立复算通过+回归三断言：<b>19/19全绿</b>（sid体系错位经探针实证=文档歧义非缺文，映射P7=N+57/P2=N+575/P8=N+845）</div>
+      </div>
+      <div class="verdict">✅ 二次收口 · 注记8落盘sid体系声明 · 返工案例入档（纠错机制完整运转实证）</div>
+    </div>
+
+    <div class="card" style="margin-top:12px;">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;"><h3 style="font-size:15.5px;">作文 3条</h3><span class="badge bg">收口 · A产 → 汇主检 → B复核</span></div>
+      <div class="chain">
+        <div class="step"><b>侦查 <span class="who">A线</span></b>条1原源BV1Ke411K7SR_P39<b>合规否决</b>（63P合集24.2h＞4h盗版搬运条款+资料引流UP存疑）→ 改源陈sir课P4；条3二选一定案取sid683-745（方法密度×2+现成正反例）</div>
+        <div class="arrow">➜</div>
+        <div class="step"><b>生产 <span class="who">A线</span></b>三卡齐：章法结构递进判定（sid2-132，93.1%）/论据次元切换（sid560-602，100%零省·薄卡如实）/论证次元之辨（sid683-745，81.0%）；13/13段对账全等+[?]8处存档</div>
+        <div class="arrow">➜</div>
+        <div class="step"><b>复核 <span class="who">B线</span></b>三重点全绿：脚本两轮13断言+[?]8/8全量源还原+<b>留省区间方法句专项排查零遗漏</b>；加验底稿237条diff=0</div>
+      </div>
+      <div class="verdict">✅ 链路闭合 · 卡2"三种特殊素材"扩条申请挂起待批（不虚标覆盖面）· 工具演进：v2 sid区间表驱动替代时间戳定位</div>
+    </div>
+
+    <div class="card" style="margin-top:12px;">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;"><h3 style="font-size:15.5px;">默写 3条</h3><span class="badge bg">收口 · B产 → 汇主检 → 马斯克增量复核 → A复核</span></div>
+      <div class="chain">
+        <div class="step"><b>生产 <span class="who">B线</span></b>方案甲单页三卡：课内必背优先（P33）/三段层次+路线画面+易错字情境记法（P9梦游天姥）/时空双维锁定联法（P15登高）；同文去重（Ecu≡x1a取其一）声明</div>
+        <div class="arrow">➜</div>
+        <div class="step"><b>增量复核 <span class="who">马斯克</span></b>全量对账6项全绿+<b>逮出P2-1</b>：注记7"方法句零省略"与sid204-259实况不符（殷/巅/栗/惊四字解析=默写高频易错字）</div>
+        <div class="arrow">➜</div>
+        <div class="step"><b>终裁 <span class="who">汇总员</span></b>裁②补回：与文言c案区分——本案四字与卡2"易错字情境记法"直接同源，价值明确成本低</div>
+        <div class="arrow">➜</div>
+        <div class="step"><b>执行+复核</b>B线补录sid204-212九条62字（扩界说明：截208则四字不全）并入段2；A线<b>独立直连403库段级重建对账7/7全等</b>，边界2条（典故注释/想象手法）维持留省</div>
+      </div>
+      <div class="verdict">✅ 四岗链闭合 · [?]计数口径统一（字符8处/条目6条）· 程序化对账第三次兜住手误漏5字</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>三、B项英语14条 · 收口明细</h2>
+    <div class="secsub">题型全覆盖 · 证据四级分层判例 · 单源/双源如实标注（降标丢真实信息 → 维持分层注记不降单源）</div>
+    <div class="card">
+      <table>
+        <tr><th>题型卡</th><th>条数</th><th>证据承载</th><th>关键裁定</th></tr>
+        <tr><td>校准件</td><td>1</td><td>双直连（sohu998913145 + tt7656 L16代词对应段）</td><td>全任务证据基线件</td></tr>
+        <tr><td>听力①②</td><td>2</td><td>tt7610承载①源2+②源2（跨卡同文复用如实呈现）</td><td>弱锚点升级ROI：jsgkw死链→换tt7610听前段</td></tr>
+        <tr><td>阅读①②</td><td>2</td><td>直连回源+盘内快照</td><td>—</td></tr>
+        <tr><td>七选五①②</td><td>2</td><td>①q10核心方法句+q5考点总纲；②q6细则+框架</td><td>同文异构方法段（tt7656 L18词汇复现）不得作第二源——撞车预拦截</td></tr>
+        <tr><td>完形①②</td><td>2</td><td>承载度分层（①：q10核心+q5总纲）</td><td>维持双源✓+分层注记，不降单源</td></tr>
+        <tr><td>语法①②</td><td>2</td><td>q6细则+q6框架</td><td>163 host级已有q6实核→不投入全URL升级</td></tr>
+        <tr><td>改错①②</td><td>2</td><td>②8:1:1单源如实标</td><td>不虚标双源</td></tr>
+        <tr><td>应用文①②</td><td>2</td><td>直连+存证</td><td>—</td></tr>
+      </table>
+      <div class="kv">存证缺口处理判例：q3源C被直连实证<b>同ID不同文</b> → 手录件降级注记入库，不与直连证据混排（证据分级不豁免）。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>四、质量治理专题 · 机制实绩</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3 style="font-size:15px;">🛠 程序化对账 · 五次实绩</h3>
+        <ul style="margin:8px 0 0 18px;font-size:13px;color:#475569;">
+          <li>文言初检揪漏句 sid178"神奇吧"即修</li>
+          <li>时间口径误报自纠（round vs floor 0差异重跑）</li>
+          <li>默写v1.1落盘手误漏5字，首跑兜住即修</li>
+          <li>作文脚本v1时间戳定位round歧义（sid75单字条0.44s）→ v2改sid区间表驱动</li>
+          <li>v1脚本撤出shared防后线误用</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="font-size:15px;">⚖️ 双向问责实录</h3>
+        <ul style="margin:8px 0 0 18px;font-size:13px;color:#475569;">
+          <li>B线"diff脚本在位"虚报 → 勘误自首（502丢失未落盘）+脚本真落盘烟测</li>
+          <li>A线59条实数认领（覆盖率26.5% vs 报数27.3%差3条，norm口径微差不构成争议）</li>
+          <li>马斯克floor口径误报自纠（B线无责）+[?]计数"7处"笔误归档修正</li>
+          <li>生产方自查披露文化：现代文3条由生产方主动交底触发重检</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="font-size:15px;">🔀 sid体系教训 · 统一规则</h3>
+        <p style="font-size:13px;color:#475569;margin-top:6px;">切片底稿条目号（1-index）≠ 403库原生sid，两套体系并存致回归初跑14/19假miss。探针逐点锚定映射：<b>P7=N+57 / P2=N+575 / P8=N+845</b>（转写拆并条非线性浮动）。<br><br><b>跨线统一规则（收口令③）：</b>引用一律403原生sid；切片号仅限底稿内部对账；跨线归档索引sid体系分列标注。作文/默写线已全量执行。</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:15px;">📏 口径统一声明（后线禁混装）</h3>
+        <ul style="margin:8px 0 0 18px;font-size:13px;color:#475569;">
+          <li><b>时间戳换算</b>：A线round vs B线floor，两线各自自洽（round≠floor条目184/237实证），复用脚本须先声明口径</li>
+          <li><b>[?]计数</b>：字符口径8处 = 条目口径6条，引用须注明口径</li>
+          <li><b>覆盖率</b>：卡头如实标注（34.6%/58.5%/61.2%等），"逐字照录"虚标零容忍</li>
+          <li><b>旧脚本对v1.1+卡必误报</b>（预期内），复跑前核对脚本-卡版本对应表</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout red"><b>红线执法记录：</b>作文条1原源BV1Ke411K7SR_P39双重否决（63P合集24.2h＞任务书"单BV合集＞4h判盗版搬运"硬条款 + 资料引流型矩阵UP存疑档），无裁量空间改源P4。合规红线零豁免。</div>
+    <div class="callout blue"><b>返工案例入档：</b>现代文3条为全任务首个"收口后返工"案例——初判收口 → 生产方自查披露 → 撤销重检 → v1.1二次修正 → 回归19/19 → 二次收口。价值：证实"段内条目对账"为初版三检盲区，收口令③自此成为语文线固定检查项；返工用时与过程如实记档。</div>
+  </section>
+
+  <section>
+    <h2>五、裁决判例汇编（可复制后续批次）</h2>
+    <div class="card">
+      <div class="case"><h4><span class="badge bb">英语线</span> 证据四级分层</h4><p>直连回源级 ＞ 盘内快照级 ＞ 上下文手录级 ＞ 披露级注记；同ID不同文实证 → 手录件降级，不因"存证命中"一揽子背书。</p></div>
+      <div class="case"><h4><span class="badge bb">英语线</span> 承载度分层+撞车拦截</h4><p>跨卡同文复用如实呈现；同文异构方法段不得作第二源（七选五预记与完形②撞车 → 拦截）。</p></div>
+      <div class="case"><h4><span class="badge bv">语文线</span> 留省价值二分法</h4><p>文言sid225-226（括注吐槽，非方法句）→ 裁c留省披露；默写sid204-212（高频易错字解析，与卡内方法直接同源）→ 裁②补回。区分标准：<b>留省内容是否服务卡内方法论</b>。</p></div>
+      <div class="case"><h4><span class="badge bv">语文线</span> 薄卡如实+句完整微扩</h4><p>作文卡2方法句不足撑标准卡 → 薄卡注记如实出卡不硬扩；sid600→602跨条命题句微扩+2条保句完整，披露在注记8。</p></div>
+      <div class="case"><h4><span class="badge bv">语文线</span> 源选择三分法</h4><p>方法密度（×2）+ 可操作判据数量 + 现成正反例定区间取舍（条3弃sid1173-1226听损密集区）；互动噪声段留省+方法句零省声明。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>六、披露备查条目（裁决归档 · 非缺陷）</h2>
+    <div class="card">
+      <table>
+        <tr><th>条目</th><th>线</th><th>内容</th><th>裁决</th></tr>
+        <tr><td>sid225-226</td><td>文言</td><td>"其实是很难做对的"括注难度限定语未补回</td><td>裁c：接受现状+披露</td></tr>
+        <tr><td>sid16-65</td><td>默写</td><td>"文学常识会考"应试提示句留省</td><td>知人论事板块边界，维持留省</td></tr>
+        <tr><td>sid166-177 / 263-268</td><td>默写</td><td>天鸡典故注释 / "发想无端"想象手法讲解</td><td>与三法非直接同源，维持留省</td></tr>
+        <tr><td>sid12-20 / sid684-695</td><td>作文</td><td>催讲义管理段 / 听课纪律段</td><td>零方法句实锤，留省成立</td></tr>
+        <tr><td>卡2扩条</td><td>作文</td><td>"三种特殊素材"正文在sid603+未入卡</td><td>扩条申请挂起，待管理员批</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>七、当日作战时间线（2026-10-01）</h2>
+    <div class="card">
+      <table>
+        <tr><th style="width:110px;">时段</th><th>里程碑</th></tr>
+        <tr><td>上午</td><td>B项英语14条全收口（证据四级分层+禁交零碰撞）</td></tr>
+        <tr><td>12:0x-12:3x</td><td>文言3条v1.2七修落盘→B线14断言回归全绿→c案终裁收口；现代文对账披露实锤</td></tr>
+        <tr><td>12:4x-13:0x</td><td>现代文初判撤销重检→收口令③→v1.1二次修正→A线19/19回归→二次收口</td></tr>
+        <tr><td>13:1x-13:2x</td><td>sid体系三问闭环+映射实证（N+57/575/845）；作文条1合规否决改源P4；B线默写方案甲三卡落盘</td></tr>
+        <tr><td>13:3x</td><td>默写P2-1逮出→裁②→B线补录sid204-212→作文3条A产落盘报主检</td></tr>
+        <tr><td>13:4x-14:0x</td><td>作文主检通过→B线作文复核✅+A线默写复核✅并行闭环→马斯克floor/[?]口径归档修正</td></tr>
+        <tr><td>14:1x</td><td><b>语文线12/12统一终收口令</b>；26/32定档；C项待拍板披露</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>八、待管理员拍板事项</h2>
+    <div class="card pend">
+      <ul style="margin-left:18px;">
+        <li><b>C项词汇≥6条启动</b>：①归属线（A线/B线）②T3四字段定义（三源实证旧档零命中，需定义裁决）③工时档位——三项拍板即启生产，产线零等待就绪；</li>
+        <li><b>作文卡2扩条申请</b>：陈sir课P4"三种特殊素材"（sid603+）如需成体系可另立扩条（预估1-2条），不批则维持薄卡如实现状；</li>
+        <li><b>C项未拍板期间</b>：总验收按26/32定档，C项条目如实标注"待拍板"状态，不虚计不预收。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>九、归档索引（shared/队5语英/）</h2>
+    <div class="card">
+      <table>
+        <tr><th style="width:130px;">类别</th><th>文件</th></tr>
+        <tr><td>语文切片卡</td><td><span class="src">切片_语文_文言3条_并行搜索员A_v1.md · 切片_语文_现代文3条_马斯克_v1.md（注记8）· 切片_语文_作文3条_并行搜索员A_v1.md · 切片_语文_默写3条_并行搜索员B_v1.1.md（v1原件留存）</span></td></tr>
+        <tr><td>复核报告</td><td><span class="src">B线复核报告_文言3条 · A线回归报告_现代文3条_v1.1二次修正 · B线复核报告_作文3条_并行搜索员B_v1.md · 复核报告_默写3条_并行搜索员A_v1.md · 独立复核_默写3条_马斯克_v1.md（含裁决补记节）</span></td></tr>
+        <tr><td>对账脚本</td><td><span class="src">regression_v12（文言·B线私域）· 对账脚本_现代文3条_马斯克_v2.py · 对账脚本_作文3条_A线_v2.py · 对账脚本_默写3条_B线_v1.1.py · 复核_作文3条_机械验证_v1（B线私域）· 复算_现代文3条_A线_v1（A线私域）</span></td></tr>
+        <tr><td>切片底稿</td><td><span class="src">切片底稿_文言3条_A线/（6件）· 切片底稿_现代文3条_马斯克/（3件）· 切片底稿_作文3条_A线/（3件）· 切片底稿_默写3条_B线/（4件含228条全量版）</span></td></tr>
+        <tr><td>英语方法卡</td><td><span class="src">包①P0七选五 · 包③英语余量13条_v1.1验收注记 · 包③补证报告 · 包③v1.2修订件 + 校准件/ + 方法卡/（存证21件）</span></td></tr>
+        <tr><td>披露与自查</td><td><span class="src">生产方自查披露_现代文3条_段内条目对账_马斯克_v1.md · 定位扫描_默写3条_关键词扩展_并行搜索员B_v1.md</span></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <div class="foot">
+    队5语英 · 任务书v5总验收 · 三检链多智能体协作（并行搜索员A / 并行搜索员B / 马斯克线 / 报告汇总员）<br>
+    判定权归汇总员 · 全部结论可由归档脚本与403库原生sid复跑溯源 · 2026-10-01
+  </div>
+</div>
+</body>
+</html>
