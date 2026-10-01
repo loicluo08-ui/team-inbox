@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N4a 科学史定年考据综合报告 · 人教版高中生物学必修1</title>
+<style>
+  :root{
+    --ink:#1c2b26; --sub:#5c6f68; --line:#e2e8e4;
+    --green:#0f5e4a; --green-deep:#0d3b2e; --gold:#b7791f;
+    --bg:#f6f8f6; --card:#ffffff;
+    --c-green:#e6f4ec; --t-green:#1a7a4a;
+    --c-blue:#e8f1fa; --t-blue:#1d5e9e;
+    --c-orange:#fdf1e0; --t-orange:#b45309;
+    --c-purple:#f1ecfa; --t-purple:#6b46a8;
+    --c-gray:#eef1f0; --t-gray:#5c6f68;
+    --c-gold:#fbf3e0; --t-gold:#a16207;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px 64px}
+
+  /* ===== 封面头 ===== */
+  .hero{background:linear-gradient(135deg,#0d3b2e 0%,#0f5e4a 62%,#1b6f52 100%);color:#fff;border-radius:0 0 22px 22px;padding:52px 48px 42px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.05)}
+  .hero::before{content:"";position:absolute;right:40px;bottom:-90px;width:190px;height:190px;border-radius:50%;background:rgba(255,255,255,.04)}
+  .kicker{font-size:12px;letter-spacing:.35em;opacity:.75;margin-bottom:14px;text-transform:uppercase}
+  .hero h1{font-size:31px;font-weight:700;letter-spacing:.02em;line-height:1.4;margin-bottom:12px}
+  .hero .subline{font-size:15px;opacity:.85}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .hero .meta span{font-size:12.5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:5px 14px}
+
+  /* ===== 统计卡 ===== */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-26px auto 0;position:relative;z-index:2}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 8px 22px rgba(13,59,46,.08)}
+  .stat .num{font-size:30px;font-weight:800;color:var(--green);line-height:1.15}
+  .stat .num small{font-size:14px;font-weight:600;color:var(--sub);margin-left:2px}
+  .stat .lbl{font-size:12.5px;color:var(--sub);margin-top:4px}
+
+  /* ===== 章节骨架 ===== */
+  section{margin-top:52px}
+  .sec-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--green);padding-bottom:10px;margin-bottom:22px}
+  .sec-head .no{font-size:13px;font-weight:800;color:#fff;background:var(--green);border-radius:6px;padding:2px 9px;letter-spacing:.05em}
+  .sec-head h2{font-size:21px;font-weight:800;color:var(--green-deep)}
+  h3{font-size:16.5px;font-weight:750;color:var(--green);margin:26px 0 12px}
+  p{margin:8px 0}
+  .muted{color:var(--sub);font-size:13.5px}
+
+  /* ===== 徽章 ===== */
+  .b{display:inline-block;font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 11px;white-space:nowrap}
+  .b-green{background:var(--c-green);color:var(--t-green)}
+  .b-blue{background:var(--c-blue);color:var(--t-blue)}
+  .b-orange{background:var(--c-orange);color:var(--t-orange)}
+  .b-purple{background:var(--c-purple);color:var(--t-purple)}
+  .b-gray{background:var(--c-gray);color:var(--t-gray)}
+  .b-gold{background:var(--c-gold);color:var(--t-gold)}
+
+  /* ===== 卡片 & 提示框 ===== */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin-top:16px}
+  .callout{border-left:4px solid var(--green);background:var(--card);border-radius:0 12px 12px 0;padding:16px 20px;margin:16px 0;font-size:14px}
+  .callout.gold{border-color:var(--gold);background:#fffdf7}
+  .callout b{color:var(--green-deep)}
+
+  /* ===== 摘要要点 ===== */
+  .keys{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  .key{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+  .key .t{font-weight:800;color:var(--green-deep);margin-bottom:6px;font-size:14.5px}
+  .key p{font-size:13.5px;color:#33453e;margin:0}
+
+  /* ===== 表格 ===== */
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:13px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  th{background:var(--green-deep);color:#fff;font-weight:700;padding:10px 12px;text-align:left;white-space:nowrap}
+  td{padding:10px 12px;border-bottom:1px solid #eef2ef;vertical-align:top}
+  tr:nth-child(even) td{background:#fafcfa}
+  tr:last-child td{border-bottom:none}
+  .tbl-note{font-size:12px;color:var(--sub);margin-top:8px}
+  td .yr{font-weight:800;color:var(--green-deep)}
+  .q{font-style:normal;color:#33453e}
+
+  /* ===== 时间轴容器 ===== */
+  .tl-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 18px 10px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:6px 0 4px;padding:0 8px}
+  .legend span{font-size:12px;color:var(--sub);display:inline-flex;align-items:center;gap:5px}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+
+  /* ===== 引文 ===== */
+  blockquote{border-left:3px solid var(--gold);background:#fffdf7;padding:10px 16px;margin:10px 0;border-radius:0 8px 8px 0;font-size:13.5px;color:#4a4433}
+
+  /* ===== 挂账 ===== */
+  .ledger li{margin:7px 0;font-size:13.5px}
+  .ledger{padding-left:20px}
+
+  footer{margin-top:56px;border-top:1px solid var(--line);padding-top:20px;font-size:12.5px;color:var(--sub);display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+
+  @media (max-width:820px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .keys{grid-template-columns:1fr}
+    .hero{padding:40px 26px 36px}
+    .hero h1{font-size:24px}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="kicker">N4a · Evidence-Based Chronology Audit</div>
+  <h1>人教版高中生物学必修1《分子与细胞》<br>科学史定年考据综合报告</h1>
+  <div class="subline">细胞学说 · 酶的本质 · 光合作用 —— 三线十六目「教材锚 × 双学术源」交叉验证</div>
+  <div class="meta">
+    <span>汇总：报告汇总员</span>
+    <span>检索协作：并行搜索员 A / B / C</span>
+    <span>检索时点：2026-10-01</span>
+    <span>版本：v1 正式件</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- 统计卡 -->
+  <div class="stats">
+    <div class="stat"><div class="num">16<small>条</small></div><div class="lbl">考据条目 · 双学术源全部达标</div></div>
+    <div class="stat"><div class="num">39<small>项</small></div><div class="lbl">HTTP 实测留痕（A 15 / B 15 / C 9）</div></div>
+    <div class="stat"><div class="num">5<small>类</small></div><div class="lbl">差异类型 · 逐条如实并列不裁断</div></div>
+    <div class="stat"><div class="num">9<small>项</small></div><div class="lbl">挂账透明登记 · 宁缺毋编</div></div>
+  </div>
+
+  <!-- 01 执行摘要 -->
+  <section>
+    <div class="sec-head"><span class="no">01</span><h2>执行摘要</h2></div>
+    <p>本报告对<b>人教版（2019版）高中生物学必修1《分子与细胞》</b>中三组科学史叙述——<b>细胞学说的建立、酶本质的探索、光合作用原理的探索</b>——共 16 个考据条目，执行「L1 教材照录锚 → L2 学术源直采」四级口径考据。全部条目均取得<b>两个及以上相互独立的学术源</b>（一手文献全文、官方档案、权威综述），并逐条完成教材口径与学术口径的比对。</p>
+    <div class="keys">
+      <div class="key"><div class="t">✅ 五条完全一致</div><p>胡克 1665、施莱登 1838、施旺 1839、巴斯德 1857、鲁宾&amp;卡门 1941 —— 教材定年与学术源零冲突。</p></div>
+      <div class="key"><div class="t">➕ 四条教材留白 · 本考据补定年</div><p>列文虎克 1677、布朗 1831.11、李比希 1839、毕希纳 1897 —— 教材未给年份，考据链补全。</p></div>
+      <div class="key"><div class="t">🕰 三条定年分层</div><p>魏尔肖 1855/1858、恩格尔曼 1881/1882、萨姆纳起点 1917（双口径）——「提出年 vs 成书/总结年」的历史分层，如实并列、不作裁断。</p></div>
+      <div class="key"><div class="t">📐 两类精度差异 ＋ 两条已删条目</div><p>切赫&amp;奥尔特曼「20世纪80年代」vs 1982/1983；卡尔文「20世纪40年代」vs 1940年代后半；普利斯特利、萨克斯在 2019 版教材中已无表述。</p></div>
+    </div>
+    <div class="callout"><b>核心发现：</b>教材定年普遍采用「<b>成果锚定</b>」口径（首报年 / 成书年 / 总结年），而学术史通行「提出—发表—系统化」的分层口径。二者差异是<b>系统性编排规律而非孤例错误</b>，建议终报与教学引用均采用「教材口径照录 + 学术口径分层」双轨呈现。</div>
+  </section>
+
+  <!-- 02 方法 -->
+  <section>
+    <div class="sec-head"><span class="no">02</span><h2>考据方法与证据等级</h2></div>
+    <div class="card">
+      <table>
+        <tr><th style="width:14%">层级</th><th style="width:30%">定义</th><th>本报告应用</th></tr>
+        <tr><td><b>L1</b> 教材锚</td><td>人教2019版必修1影印PDF（20,776,360B）逐字照录，页脚印刷页码锚定（印刷页N = PDF页N+9）</td><td>A线 P2–P4 六锚；B线 P79–80 五条（含跨页拼接补全）；C线 P100–105 三目页锚＋两条「全本零命中」有效结论</td></tr>
+        <tr><td><b>L2</b> 学术源</td><td>一手原始论文 / 官方档案（NobelPrize、皇家学会期刊） / 权威综述，HTTP 实测留痕</td><td>Gutenberg 一手全文、PubMed/eutils 题录、PMC 全文、Photosynthesis Research 学术史专论等，双源独立性逐条判定</td></tr>
+        <tr><td><b>纪律</b></td><td colspan="2">照录禁改写 · 重要定年双源交叉 · 一手直证未获处一律「未找到/未逐字验证」如实标注（负面留痕入档）· 同域名请求间隔≥3s</td></tr>
+      </table>
+      <div class="tbl-note">说明：L1 为第三方学校官网挂载影印件（源层级已声明）；版权页 ISBN 暂为单一旁证（51jiaoxi 预览件「2019年6月第1版 ISBN 978-7-107-33627-0」），挂账待双源核。三线检索全部于 2026-10-01 当日完成并交叉复核。</div>
+    </div>
+  </section>
+
+  <!-- 03 总时间轴 -->
+  <section>
+    <div class="sec-head"><span class="no">03</span><h2>三线总时间轴（1665–1989，按真实比例）</h2></div>
+    <div class="tl-card">
+      <div class="legend">
+        <span><i class="dot" style="background:#1a7a4a"></i>定年一致</span>
+        <span><i class="dot" style="background:#1d5e9e"></i>教材留白 · 本考据补定年</span>
+        <span><i class="dot" style="background:#b45309"></i>定年分层 / 双口径</span>
+        <span><i class="dot" style="background:#6b46a8"></i>精度差异</span>
+        <span><i class="dot" style="background:#8aa096"></i>2019版教材无表述</span>
+        <span><i class="dot" style="background:#a16207"></i>诺贝尔奖</span>
+      </div>
+      <svg viewBox="0 0 1000 358" style="width:100%;height:auto" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+        <!-- 世纪刻度 -->
+        <g stroke="#e3ebe6" stroke-width="1">
+          <line x1="168" y1="42" x2="168" y2="296"/><line x1="304" y1="42" x2="304" y2="296"/>
+          <line x1="441" y1="42" x2="441" y2="296"/><line x1="577" y1="42" x2="577" y2="296"/>
+          <line x1="714" y1="42" x2="714" y2="296"/><line x1="850" y1="42" x2="850" y2="296"/>
+        </g>
+        <g font-size="10" fill="#8aa096" text-anchor="middle">
+          <text x="168" y="312">1700</text><text x="304" y="312">1750</text><text x="441" y="312">1800</text>
+          <text x="577" y="312">1850</text><text x="714" y="312">1900</text><text x="850" y="312">1950</text>
+        </g>
+        <!-- 轨1 细胞学说 y=90 -->
+        <text x="60" y="66" font-size="12" font-weight="800" fill="#0d3b2e">细胞学说</text>
+        <line x1="60" y1="90" x2="960" y2="90" stroke="#d5e3dc" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="74" cy="90" r="5" fill="#1a7a4a"/><text x="74" y="72" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1665 胡克</text>
+        <circle cx="106" cy="90" r="5" fill="#1d5e9e"/><text x="106" y="114" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1677 列文虎克</text>
+        <circle cx="526" cy="90" r="5" fill="#1d5e9e"/><text x="526" y="72" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1831.11 布朗</text>
+        <circle cx="545" cy="90" r="5" fill="#1a7a4a"/><text x="538" y="72" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1838 施莱登</text>
+        <circle cx="550" cy="90" r="5" fill="#1a7a4a"/><text x="558" y="114" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1839 施旺</text>
+        <circle cx="600" cy="90" r="5.5" fill="#b45309"/><text x="600" y="72" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">1855/1858 魏尔肖</text>
+        <!-- 轨2 酶 y=180 -->
+        <text x="60" y="156" font-size="12" font-weight="800" fill="#0d3b2e">酶的本质</text>
+        <line x1="60" y1="180" x2="960" y2="180" stroke="#d5e3dc" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="548" cy="180" r="5" fill="#1d5e9e"/><text x="548" y="162" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1839 李比希</text>
+        <circle cx="597" cy="180" r="5" fill="#1a7a4a"/><text x="597" y="204" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1857 巴斯德</text>
+        <circle cx="655" cy="180" r="5" fill="#1a7a4a"/><text x="655" y="162" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1878 Kühne</text>
+        <circle cx="706" cy="180" r="5" fill="#1d5e9e"/><text x="706" y="204" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1897 毕希纳</text>
+        <circle cx="786" cy="180" r="5.5" fill="#b45309"/><text x="786" y="162" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">1926 萨姆纳</text>
+        <circle cx="941" cy="180" r="5.5" fill="#6b46a8"/><text x="933" y="162" font-size="10.5" fill="#6b46a8" text-anchor="middle" font-weight="700">1982/83 切赫·奥尔特曼</text>
+        <circle cx="958" cy="180" r="5" fill="#a16207"/><text x="958" y="204" font-size="10.5" fill="#a16207" text-anchor="end" font-weight="700">1989 诺奖</text>
+        <!-- 轨3 光合作用 y=270 -->
+        <text x="60" y="246" font-size="12" font-weight="800" fill="#0d3b2e">光合作用</text>
+        <line x1="60" y1="270" x2="960" y2="270" stroke="#d5e3dc" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="364" cy="270" r="5" fill="#8aa096"/><text x="364" y="252" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1771/72 普利斯特利</text>
+        <circle cx="611" cy="270" r="5" fill="#8aa096"/><text x="604" y="252" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1862 萨克斯Ⅰ</text>
+        <circle cx="617" cy="270" r="5" fill="#8aa096"/><text x="624" y="294" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1864 萨克斯Ⅱ</text>
+        <circle cx="663" cy="270" r="5.5" fill="#b45309"/><text x="656" y="252" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">1881 恩格尔曼Ⅰ</text>
+        <circle cx="669" cy="270" r="5" fill="#b45309"/><text x="678" y="294" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">1882 恩格尔曼Ⅱ</text>
+        <circle cx="826" cy="270" r="5" fill="#1a7a4a"/><text x="826" y="252" font-size="10.5" fill="#1c2b26" text-anchor="middle" font-weight="700">1941 鲁宾·卡门</text>
+        <circle cx="851" cy="270" r="5" fill="#6b46a8"/><text x="843" y="294" font-size="10.5" fill="#6b46a8" text-anchor="middle" font-weight="700">1948/50 卡尔文路径</text>
+        <circle cx="884" cy="270" r="5" fill="#a16207"/><text x="892" y="252" font-size="10.5" fill="#a16207" text-anchor="middle" font-weight="700">1961 诺奖</text>
+      </svg>
+      <p class="muted" style="padding:0 10px 8px">可见 19 世纪 30–80 年代为三线共同的密集爆发区；标注橙色的三处即「教材口径 vs 学术口径」定年分层所在。</p>
+    </div>
+  </section>
+
+  <!-- 04 分线明细 -->
+  <section>
+    <div class="sec-head"><span class="no">04</span><h2>分线考据明细</h2></div>
+
+    <h3>线一 · 细胞学说（A线，教材 P2–P4）</h3>
+    <table>
+      <tr><th style="width:16%">人物·事件</th><th style="width:26%">教材口径（L1）</th><th style="width:38%">学术口径（L2 代表源）</th><th>结论</th></tr>
+      <tr><td><b>胡克</b> 命名 cell</td><td>P3：<span class="q">「1665年……把"小室"称为 cell」</span></td><td>Gutenberg #15491《Micrographia》一手全文 916,468B（"little Boxes or Cells"）＋ Wisconsin 影印库 / Christie's 著录 1665</td><td><span class="b b-green">一致 · 1665</span></td></tr>
+      <tr><td><b>列文虎克</b> 微生物观察</td><td>P3：教材<b>未给年份</b></td><td>1676-10-09 致信皇家学会 → <b>1677 年刊布</b>"little animals"（Lane 2015, <i>Philos Trans R Soc B</i> 370(1666), PMID 25750239 / PMC4360124）</td><td><span class="b b-blue">留白补考据 · 1677</span></td></tr>
+      <tr><td><b>施莱登</b></td><td>P2–3：「分别于 1838 年和 1839 年发表的研究结果」</td><td>《Beiträge zur Phytogenesis》刊 Müller's Archiv <b>1838</b>（Sachs 系引证链＋RG 双源）</td><td><span class="b b-green">一致 · 1838</span></td></tr>
+      <tr><td><b>施旺</b></td><td>P2–3 ＋ P4 书名《关于动植物的结构及一致性的显微研究》</td><td>《Mikroskopische Untersuchungen…》<b>1839</b>（RG＋Library and Archives Canada＋英译引证＋Williams 科学史四源交叉）</td><td><span class="b b-green">一致 · 1839</span></td></tr>
+      <tr><td><b>魏尔肖</b></td><td>P5(=P4页)：教材口径 <b>1858</b>「总结出"细胞通过分裂产生新细胞"」</td><td>学术通行：<b>1855 论文</b>（Archiv für pathologische Anatomie Bd.8，snippet级）＋ <b>1858 成书</b>（Die Cellularpathologie，Britannica 著录）；omnis cellula <b>e/a</b> cellula 拉丁变格两式并存</td><td><span class="b b-orange">分层 · 1855提出/1858成书</span></td></tr>
+      <tr><td><b>布朗</b> 发现细胞核</td><td>P3：教材<b>未给年份</b>（细胞核表述落点）</td><td><b>1831 年 11 月</b>林奈学会宣读（《Functional Organization of the Plant Nucleus》三书商引证＋Fern Journal 一致）；正式发表 Trans Linn Soc 16（1833）未双源逐字验证</td><td><span class="b b-blue">留白补考据 · 1831.11</span></td></tr>
+    </table>
+    <p class="tbl-note">附注：CDC《Emerging Infectious Diseases》2025（PMC11878323）指出 omnis cellula 源头之思想常被归予施莱登/施旺、魏尔肖为普及者——供深度分析引用。</p>
+
+    <h3>线二 · 酶的本质（B线，教材 P79–80）</h3>
+    <table>
+      <tr><th style="width:16%">人物·事件</th><th style="width:26%">教材口径（L1）</th><th style="width:38%">学术口径（L2 代表源）</th><th>结论</th></tr>
+      <tr><td><b>巴斯德</b></td><td>P79：<span class="q">「1857年……没有活细胞的参与，糖类是不可能变成酒精的」</span></td><td>Cavaillon &amp; Legrain 2022 <i>Biomolecules</i> Table 1「1857–1879 Studies on fermentation」＋ <i>Hist Philos Life Sci</i> 2026 直引「Pasteur, 1857」；后续：1858 乳酸发酵详文、1861 鹅颈瓶</td><td><span class="b b-green">一致 · 1857</span></td></tr>
+      <tr><td><b>李比希</b></td><td>P79：教材<b>未给年份</b></td><td><b>1839</b> 发酵「原子扰动说」（Annalen der Pharmacie Bd.30；法文版 Ann. Chim. Phys.——1855 年一手文献《Medical Examiner》脚注引证链实锤，PMC10322005）</td><td><span class="b b-blue">留白补考据 · 1839</span></td></tr>
+      <tr><td><b>毕希纳</b></td><td>P79：教材<b>未给年份</b>（石英砂研磨→无细胞提取液→「酿酶」）</td><td><b>1897-01-09</b> 投《Über alkoholische Gärung ohne Hefezellen》于 Berichte（NobelPrize 官方传记）＋ Chem Rev 2024「In 1897…」（PMC11046441）；1907 诺奖</td><td><span class="b b-blue">留白补考据 · 1897</span></td></tr>
+      <tr><td><b>萨姆纳</b></td><td>P79–80：教材口径 <b>1917 启动</b>、<b>1926 结晶</b>（跨页连续句已复校补全；P80 讨论题自证「历时9年」）</td><td><b>1926</b> 双源一致（Hausinger 2025 <i>Crit Rev</i> PMC12936839：JBC 69:435–441；NobelPrize 1946）；<b>1917 起点无诺奖传记直证</b>（仅证 ≤1921），候选出处 Sumner 1937 自述（引文链 R115 实锤在案）</td><td><span class="b b-orange">双口径 · 1926 实证 / 1917 起点</span></td></tr>
+      <tr><td><b>切赫&amp;奥尔特曼</b></td><td>P80：「<b>20世纪80年代</b>」发现少数 RNA 具生物催化功能</td><td>Cech 组 <b>1982</b>（Cell 31:147–157，PMID 6297745）＋ Altman 组 <b>1983</b>（Cell 35:849–857，PMID 6197186）；1989 诺奖「catalytic properties of RNA」</td><td><span class="b b-purple">精度差异 · 1982/1983</span></td></tr>
+    </table>
+
+    <h3>线三 · 光合作用的探索（C线，教材 P100–105）</h3>
+    <table>
+      <tr><th style="width:16%">人物·事件</th><th style="width:26%">教材口径（L1）</th><th style="width:38%">学术口径（L2 代表源）</th><th>结论</th></tr>
+      <tr><td><b>普利斯特利</b></td><td><b>2019 版全本零命中</b>（无独立条目）</td><td><b>1771 发现 / 1772 报告</b> 两段式（Gest 1988 <i>Photosynth Res</i> 19:287–308 ＋ Govindjee &amp; Krogmann 2004 80:15–57，均溯源 Hill 1972 定年文献）</td><td><span class="b b-gray">教材删条 · 学术双段</span></td></tr>
+      <tr><td><b>萨克斯</b></td><td><b>2019 版全本零命中</b></td><td><b>1862</b>（光照与叶绿体淀粉形成，Bot Z 20）→ <b>1864</b>（明暗交替半叶对照，Bot Z 22）；通行教辅常混并作单一年份</td><td><span class="b b-gray">教材删条 · 1862/1864 拆分</span></td></tr>
+      <tr><td><b>恩格尔曼</b></td><td>P100–101：实验1 明示 <b>1881</b>；实验2 以「紧接着」承接、不单独定年</td><td>实验1＝<b>1881</b>（Pflügers Arch 25:285–292，一手论文 200 实测）；实验2（三棱镜显微光谱）＝<b>1882</b>（Bot Z 40:419–426，Drews 2005 文献表）</td><td><span class="b b-orange">分层 · 1881 / 1882</span></td></tr>
+      <tr><td><b>鲁宾&amp;卡门</b></td><td>P102：明示 <b>1941</b>，¹⁸O 分别标记 H₂O 与 CO₂</td><td>1941 一致；Gest 2004 文献表示二人 1939–1941 另辟 ¹⁴C 放射性碳工作（Science 90:570–571 等）</td><td><span class="b b-green">一致 · 1941</span></td></tr>
+      <tr><td><b>卡尔文</b></td><td>P104：「<b>20世纪40年代</b>」用 ¹⁴C 探明 CO₂→有机物路径；正文命名「卡尔文循环」</td><td>1940年代后半启动：1948 Cold Spring Harbor、1950 J Exp Bot / Annu Rev Plant Physiol（Benson 2002 当事人回忆 PMC 文献表）＋ <b>1961 诺奖</b>（Nobel Lecture 1961-12-11 官方档案）</td><td><span class="b b-purple">精度差异 · 年代段可细化</span></td></tr>
+    </table>
+    <p class="tbl-note">附注：①萨克斯 1864 论文卷页两学术源著录微差（289–294 vs 189–294）不裁、并列登记；②教材 P103「相关信息」C3/C5 术语、1928 甲醛毒害、1937 希尔反应、1954/1957 阿尔农 ATP 等旁证素材一并入档。</p>
+  </section>
+
+  <!-- 05 差异点总表 -->
+  <section>
+    <div class="sec-head"><span class="no">05</span><h2>教材 vs 学术 · 差异点总表（16 目全览）</h2></div>
+    <table>
+      <tr><th style="width:8%">类型</th><th style="width:52%">实质</th><th>条目</th></tr>
+      <tr><td><span class="b b-green">一致</span></td><td>教材定年与学术源零冲突，可放心引用</td><td>胡克1665 · 施莱登1838 · 施旺1839 · 巴斯德1857 · 鲁宾&amp;卡门1941</td></tr>
+      <tr><td><span class="b b-blue">留白补考据</span></td><td>教材叙述人物但未给年份；本考据以双源补全定年</td><td>列文虎克1677 · 布朗1831.11 · 李比希1839 · 毕希纳1897</td></tr>
+      <tr><td><span class="b b-orange">定年分层</span></td><td>教材取「成书/总结/起始」口径，学术史分「提出—发表—系统化」两层；两说并列、不作裁断</td><td>魏尔肖 1855论文/1858成书（教材1858）· 恩格尔曼 1881实验1/1882实验2（教材合并1881）· 萨姆纳起点 1917（教材）vs ≤1921（诺奖传记，候选Sumner 1937自述）</td></tr>
+      <tr><td><span class="b b-purple">精度差异</span></td><td>教材以年代段表述，学术可细化到单年；无冲突、可细化</td><td>切赫&amp;奥尔特曼「20世纪80年代」→1982/1983 · 卡尔文「20世纪40年代」→1940年代后半（1948/1950 关键论文）</td></tr>
+      <tr><td><span class="b b-gray">教材删条</span></td><td>2019 版教材无该历史叙述（全本检索零命中），学术史仍是标准叙事</td><td>普利斯特利（1771/1772）· 萨克斯（1862/1864）</td></tr>
+    </table>
+    <div class="callout gold"><b>处理原则：</b>全部差异点按「<b>如实并列、不裁断</b>」交付——教材口径一手照录锚定，学术口径标注证据等级（一手直证 / 题录级 / snippet 级），差异性质归类如上，供教学与终稿按需取用。</div>
+  </section>
+
+  <!-- 06 深度分析 -->
+  <section>
+    <div class="sec-head"><span class="no">06</span><h2>深度分析</h2></div>
+
+    <h3>6.1 「成果锚定」与「历史分层」：教材定年的系统性规律</h3>
+    <p>三线比对显示同一模式反复出现：教材倾向取<b>单一定年点</b>以服务教学叙事——魏尔肖取 1858（成书/总结年）而非 1855（论文提出年）；恩格尔曼以首实验 1881 统摄、第二实验「紧接着」；巴斯德取成果首报 1857 而不展开 1858/1861 序列。学术史则保持「提出—发表—系统化」的分层精度。这与 A 线魏尔肖 1855/1858、B 线萨姆纳起点 1917、C 线恩格尔曼 1881/1882 三处同构，属<b>同一类历史分层问题</b>，可视为教材编排的通用规律，而非个别疏漏。</p>
+
+    <h3>6.2 教材留白的考据价值：李比希 1839 与毕希纳 1897 的补全</h3>
+    <p>教材 P79「两种观点争执不下」「结束这一争论的是……」均未给年份。本考据以 1855 年一手文献（《Medical Examiner》PMC10322005）脚注引证链补定<b>李比希 1839 原子扰动说</b>；以诺奖官方档案＋ACS 综述补定<b>毕希纳 1897-01-09 无细胞发酵论文</b>。至此 P79–80 栏目五位人物的完整时间序列为：</p>
+    <blockquote>李比希 1839（化学阵营立论）→ 巴斯德 1857（活细胞论）→ Kühne 1878（首创 "enzyme" 一词，概念与活细胞脱钩）→ 毕希纳 1897（无细胞发酵终结二元论战）→ 萨姆纳 1926（脲酶结晶，酶=蛋白质实体化）→ 切赫 &amp; 奥尔特曼 1982/1983（RNA 催化修正边界）——1989、1946、1907 三座诺奖节点在案。</blockquote>
+    <p>该序列即一部浓缩的「酶本质认知史」：教材栏目以五人物承载了从二元论战到边界修正的完整科学史逻辑。</p>
+
+    <h3>6.3 2019 版删减的叙事落差：普利斯特利与萨克斯</h3>
+    <p>两人在 2019 版全本 142 页检索零命中（B 席全本检索＋C 席 P100–105 整页复核双席一致）。而学术侧仍将 1771/1772 列为产氧光合发现的起点、1862/1864 列为淀粉示踪的经典工作。教材由「科学史叙述」转向「探究活动导向」的编排取舍，与学术史脉络形成落差——<b>此为取舍差异而非定年冲突</b>，但教学中若需还原历史脉络，须依托外部学术源（本报告已备齐双源）。</p>
+
+    <h3>6.4 微观细节的学术纵深</h3>
+    <ul style="padding-left:22px;font-size:14px">
+      <li><b>拉丁变格两式并存</b>：omnis cellula <b>e</b> cellula 与 omnis cellula <b>a</b> cellula 在权威源中并存（CDC·EID 2025 用 e；medicalantiques.com 用 a），如实登记；</li>
+      <li><b>思想源头归属</b>：CDC·EID 2025 明言该原理「originally proposed by physiologist Theodor Schwann and botanist Matthias Schleiden」、魏尔肖为 popularizer——与教材「魏尔肖总结出」的表述构成值得课堂讨论的学术细节；</li>
+      <li><b>命名并称</b>：Benson 2002 以当事人身份自述路径碳研究，「Calvin–Benson 循环」并称主张存在，教材用「卡尔文循环」——存在性登记、不展开论证；</li>
+      <li><b>诺奖的「一半」</b>：1946 诺奖仅一半授萨姆纳（另半 Northrop / Stanley）；教材未提，属编排取舍。</li>
+    </ul>
+  </section>
+
+  <!-- 07 挂账 -->
+  <section>
+    <div class="sec-head"><span class="no">07</span><h2>挂账与局限（透明登记 · 宁缺毋编）</h2></div>
+    <div class="card">
+      <ul class="ledger">
+        <li><b>T-A1</b>：列文虎克「1674 年首次观察微生物」通行说法未获逐字一手源（本件只实证 1676-10-09 信件与 1677 刊布）。</li>
+        <li><b>T-A2</b>：布朗正式发表卷页（Trans Linn Soc 16, 1833）未获双源逐字验证（「1831.11 宣读」本身已双源实证）。</li>
+        <li><b>T-A3</b>：魏尔肖 1855 论文卷页一手直证未找到（archive.org 超时×2、Springer 引用表无卷页、Britannica 403、PubMed 无 1855 德文原刊题录——4 路负面留痕在案），1855 说按 snippet 级标注。</li>
+        <li><b>T-A4</b>：q_pmc_lane.json 为早期误抓快照，Lane 2015 题录已由 eutils 独立验证替代，不作为源。</li>
+        <li><b>T-M①</b>：萨克斯 1864 论文卷页两学术源著录微差（289–294 vs 189–294），不裁、并列留痕。</li>
+        <li><b>T-M②</b>：Benson 2002 命名争议正文原句未提取（仅存在性登记）。</li>
+        <li><b>T-M③</b>：2004 版教材「曾有光合探究历程叙述、2019 版删改」为 L1 基建结论，未独立复证 2004 版原文。</li>
+        <li><b>B线·Sumner 1917</b>：研究起点双口径如实呈现（教材 1917 vs 诺奖传记仅证 ≤1921；候选出处 Sumner 1937 自述，引文链经 Hausinger 2025 R115 实锤）。</li>
+        <li><b>B线·ISBN</b>：版权页 ISBN 978-7-107-33627-0 暂为单一旁证（扫描图层未入文本层），不影响任何页码锚。</li>
+      </ul>
+      <p class="muted">以上 9 项均为「如实标注、不作终值裁断」事项；N4b（补第二源核验清单）候用户指令启动。另声明：L1 教材源为第三方学校官网影印件（源层级 L1 影印转录），三线均以页脚印刷页码实测锚定。</p>
+    </div>
+  </section>
+
+  <!-- 08 结论建议 -->
+  <section>
+    <div class="sec-head"><span class="no">08</span><h2>结论与建议</h2></div>
+    <div class="card">
+      <p><b>结论：</b>16 个考据条目全部以「教材照录锚＋双学术源」达标交付；39 项 HTTP 实测留痕全程可复验；5 条完全一致、4 条留白补全、3 条定年分层、2 条精度差异、2 条教材删条——差异全部归类并如实并列。</p>
+      <p><b>建议一 · 双轨口径：</b>凡涉及魏尔肖、恩格尔曼、萨姆纳、切赫&amp;奥尔特曼、卡尔文的定年表述，采用「教材口径照录＋学术口径分层」双轨呈现，避免单一年份的强行裁断。</p>
+      <p><b>建议二 · 留白引用：</b>李比希 1839、毕希纳 1897、列文虎克 1677、布朗 1831.11 可作为教材留白处的权威补强引注（双源在档）。</p>
+      <p><b>建议三 · 挂账闭环：</b>N4b 清单（1855 卷页直证、布朗 1833 发表源、Benson 原句、2004 版复证、ISBN 第二源）建议列入下一轮任务，候用户指令。</p>
+      <p><b>建议四 · 验收方式：</b>本报告所有定年结论均可按第 02/04 节所列源（Gutenberg 编号、PMID/PMCID、DOI、NobelPrize 页）独立复验。</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>报告汇总员 编制 ｜ 并行搜索员 A（细胞学说）· B（酶）· C（光合作用）协作</span>
+    <span>N4a 综合终报 v1 · 2026-10-01 ｜ 素材三线正式件均存 shared/队4生物/ 可回溯</span>
+  </footer>
+
+</div>
+</body>
+</html>
