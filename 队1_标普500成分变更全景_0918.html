@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>标普500成分变更全景报告（2016–2026.9）</title>
+<style>
+  :root{
+    --navy:#0d1f33; --navy2:#16324f; --ink:#1e293b; --muted:#5b6b7d;
+    --accent:#2f6fed; --gold:#c9a227; --green:#0e9f6e; --red:#dc2626;
+    --bg:#f4f6f9; --card:#ffffff; --line:#e3e8ef;
+    --it:#2563eb; --ind:#64748b; --fin:#059669; --hc:#dc2626; --cd:#d97706;
+    --comm:#7c3aed; --re:#0d9488; --mat:#a16207; --en:#334155; --util:#0891b2; --st:#be185d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px 64px;}
+  /* ===== Cover ===== */
+  .cover{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 62%,#1d4370 100%);color:#fff;border-radius:0 0 22px 22px;padding:56px 48px 44px;position:relative;overflow:hidden;}
+  .cover::after{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.28),transparent 70%);}
+  .cover .kicker{letter-spacing:.35em;font-size:12px;color:#d8c477;text-transform:uppercase;margin-bottom:14px;}
+  .cover h1{font-size:34px;font-weight:800;line-height:1.3;letter-spacing:.02em;}
+  .cover .sub{margin-top:12px;font-size:16px;color:#c3d2e5;max-width:720px;}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .badge{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 16px;font-size:13px;color:#eaf1fa;}
+  .badge b{color:#ffd97a;font-weight:700;}
+  .stamp{margin-top:22px;font-size:12.5px;color:#9fb3ca;}
+  /* ===== Sections ===== */
+  section{margin-top:46px;}
+  h2{font-size:22px;font-weight:800;color:var(--navy);padding-left:14px;border-left:5px solid var(--gold);margin-bottom:6px;}
+  h2 .en{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.14em;margin-left:10px;text-transform:uppercase;}
+  .lead{color:var(--muted);font-size:14.5px;margin:6px 0 18px;padding-left:19px;}
+  h3{font-size:16.5px;font-weight:700;color:var(--navy2);margin:26px 0 10px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;box-shadow:0 1px 3px rgba(13,31,51,.05);}
+  /* ===== KPI ===== */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 1px 3px rgba(13,31,51,.05);}
+  .kpi .v{font-size:27px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;}
+  .kpi .v small{font-size:14px;font-weight:700;color:var(--muted);}
+  .kpi .l{font-size:12.5px;color:var(--muted);margin-top:2px;}
+  .kpi.gold .v{color:var(--gold);} .kpi.green .v{color:var(--green);} .kpi.blue .v{color:var(--accent);} .kpi.red .v{color:var(--red);}
+  ul.findings{margin:14px 0 0 4px;list-style:none;}
+  ul.findings li{padding:7px 0 7px 26px;position:relative;border-bottom:1px dashed var(--line);}
+  ul.findings li:last-child{border-bottom:none;}
+  ul.findings li::before{content:"◆";position:absolute;left:2px;color:var(--gold);font-size:12px;top:10px;}
+  /* ===== Tables ===== */
+  table{width:100%;border-collapse:collapse;font-size:13.8px;margin-top:10px;}
+  th{background:var(--navy2);color:#fff;font-weight:600;padding:9px 12px;text-align:left;white-space:nowrap;}
+  td{padding:8.5px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr:nth-child(even) td{background:#f8fafc;}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .tag{display:inline-block;border-radius:6px;padding:1px 9px;font-size:12px;font-weight:600;}
+  .tag.b{background:#e8effd;color:var(--accent);} .tag.g{background:#e2f6ee;color:var(--green);} .tag.r{background:#fdeaea;color:var(--red);} .tag.gr{background:#eeeef5;color:#64748b;} .tag.y{background:#faf3dd;color:#8a6d1a;}
+  /* ===== Charts ===== */
+  .chart{margin-top:14px;}
+  .barrow{display:flex;align-items:center;gap:10px;margin:7px 0;}
+  .barrow .yl{width:52px;font-weight:700;color:var(--navy2);font-size:13px;text-align:right;font-variant-numeric:tabular-nums;}
+  .barrow .track{flex:1;display:flex;gap:3px;align-items:center;}
+  .bar{height:16px;border-radius:3px 4px 4px 3px;min-width:2px;}
+  .bar.add{background:linear-gradient(90deg,#2f6fed,#5b8df5);}
+  .bar.del{background:linear-gradient(90deg,#e08a8a,#dc2626);}
+  .barrow .val{width:78px;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .legend{display:flex;gap:18px;margin-top:10px;font-size:12.5px;color:var(--muted);flex-wrap:wrap;}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;}
+  .hbar .name{width:118px;font-size:13px;font-weight:600;color:var(--navy2);flex-shrink:0;}
+  .hbar .pair{display:flex;flex-direction:column;gap:3px;}
+  .hbar .pair .bar{height:11px;}
+  .net{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .chip{border-radius:999px;padding:4px 13px;font-size:12.5px;font-weight:700;border:1px solid;}
+  .chip.up{color:var(--green);border-color:#bfe8d8;background:#eefaf5;}
+  .chip.dn{color:var(--red);border-color:#f3c6c6;background:#fdf1f1;}
+  .donut-flex{display:flex;gap:34px;align-items:center;margin-top:16px;flex-wrap:wrap;}
+  .donut{width:210px;height:210px;border-radius:50%;flex-shrink:0;position:relative;background:
+    conic-gradient(var(--it) 0 20.1%,var(--ind) 20.1% 38.0%,var(--fin) 38.0% 50.9%,var(--hc) 50.9% 63.8%,
+    var(--cd) 63.8% 73.2%,var(--comm) 73.2% 79.5%,var(--re) 79.5% 85.3%,var(--mat) 85.3% 90.7%,
+    var(--en) 90.7% 94.3%,var(--util) 94.3% 97.4%,var(--st) 97.4% 100%);}
+  .donut::after{content:"纳入 224 只·按现行GICS";position:absolute;inset:52px;background:var(--card);border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;color:var(--navy);line-height:1.5;padding:10px;}
+  .dlegend{font-size:12.8px;color:var(--muted);display:grid;grid-template-columns:1fr 1fr;gap:4px 22px;}
+  .dlegend b{color:var(--ink);font-variant-numeric:tabular-nums;}
+  .dlegend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px;}
+  /* ===== Case cards ===== */
+  .cases{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;}
+  .case{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:18px 20px;}
+  .case:nth-child(odd){border-left-color:var(--gold);}
+  .case h4{font-size:15px;color:var(--navy);margin-bottom:6px;}
+  .case p{font-size:13.4px;color:#3a4a5c;}
+  .case .dt{font-size:11.5px;color:var(--muted);letter-spacing:.08em;margin-bottom:4px;}
+  blockquote{background:#f2f6fd;border-left:4px solid var(--accent);border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0;font-size:14px;color:#2b3f57;}
+  blockquote b{color:var(--navy);}
+  .foot-note{font-size:12.5px;color:var(--muted);}
+  ol.refs{margin:12px 0 0 22px;font-size:13px;color:#3a4a5c;}
+  ol.refs li{margin-bottom:7px;}
+  ol.refs a{color:var(--accent);text-decoration:none;word-break:break-all;}
+  ol.refs a:hover{text-decoration:underline;}
+  .refs h3{margin-top:20px;}
+  footer{margin-top:56px;padding-top:20px;border-top:2px solid var(--navy2);font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  @media (max-width:860px){.kpis{grid-template-columns:repeat(2,1fr);}.cases{grid-template-columns:1fr;}.cover{padding:40px 26px;}.cover h1{font-size:26px;}}
+  @media print{body{background:#fff;}.cover{border-radius:0;}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="kicker">S&amp;P 500 CONSTITUENT CHANGES · COMPREHENSIVE REVIEW</div>
+  <h1>标普500成分变更全景报告<br>（2016年1月 – 2026年9月）</h1>
+  <div class="sub">基于三方分段采集（2016–2018 / 2019–2022 / 2023–2026.9）、全量基线（241个事件行 · 449个股键）逐键交叉验证后的终版数据集，覆盖定期调仓、并购、分拆、破产与指数重划等全部调整类型，GICS板块统一按现行结构（2023-03-17锚点）回溯标注。</div>
+  <div class="badges">
+    <span class="badge">事件个股键 <b>449</b></span>
+    <span class="badge">纳入 <b>224</b> · 剔除 <b>225</b></span>
+    <span class="badge">调整日 <b>171</b> 个</span>
+    <span class="badge">交叉验证差异 <b>0</b></span>
+    <span class="badge">数据截至 <b>2026-09-18</b></span>
+  </div>
+  <div class="stamp">编制：报告汇总员 ｜ 数据采集：并行搜索员A / B / C ｜ 口径核验：搜索规划师 ｜ 终验：四方对账全归零</div>
+</div>
+
+<div class="wrap">
+
+<!-- ================= 执行摘要 ================= -->
+<section>
+  <h2>执行摘要<span class="en">Executive Summary</span></h2>
+  <div class="kpis">
+    <div class="kpi blue"><div class="v">449</div><div class="l">事件个股键（含同日纳剔双键）</div></div>
+    <div class="kpi green"><div class="v">224</div><div class="l">纳入事件</div></div>
+    <div class="kpi red"><div class="v">225</div><div class="l">剔除事件</div></div>
+    <div class="kpi gold"><div class="v">0</div><div class="l">基线 vs 三段差分残留</div></div>
+    <div class="kpi"><div class="v">171</div><div class="l">独立调整生效日</div></div>
+    <div class="kpi"><div class="v">241</div><div class="l">基线事件行（一行可含纳剔双格）</div></div>
+    <div class="kpi"><div class="v">176<small> / 224</small></div><div class="l">纳入公司截至2026-09-18仍在册（78.6%）</div></div>
+    <div class="kpi"><div class="v">503</div><div class="l">期末成分股数（多重股权结构致略超500）</div></div>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0;">核心发现</h3>
+    <ul class="findings">
+      <li><b>节奏：</b>十一年间年均约40个个股键变动，2016年最为密集（59键），2020年因疫情期常规审核冻结而最低（34键）；2023年起年节奏稳定回落至30–38键。</li>
+      <li><b>结构：</b>信息技术板块是最大净流入方（纳入45 vs 剔除23，净+22），能源板块净流出最深（8 vs 27，净−19），非必需消费次之（21 vs 39，净−18）——与"科技权重上升、旧能源与零售退潮"的指数演化主线一致。</li>
+      <li><b>动因：</b>并购是第一大触发因素（约187键，占41.7%），市值升降级次之（约127键，28.3%），分拆上市直接入指构成第三类（约51键）。</li>
+      <li><b>口径：</b>全部449键的GICS板块按"现行GICS回溯口径（2023-03-17结构锚点）"统一标注，三次GICS结构修订（2016不动产 / 2018通信 / 2023支付与人力）的影响通过回溯而非历史标签呈现，跨时代可比。</li>
+      <li><b>质量：</b>全案经"三段独立采集 → 基线映射 → 四处板块patch → 官方清单正向回扫 → 差分终验"五道工序，终态<b>板块cell零差异、vintage残留=0</b>；全部裁决与勘误均留痕（见§6审计记录）。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 一、范围与方法论 ================= -->
+<section>
+  <h2>一、研究范围与方法论<span class="en">Scope &amp; Methodology</span></h2>
+  <div class="card">
+    <h3 style="margin-top:0;">1.1 分工与验证链</h3>
+    <table>
+      <tr><th>承担方</th><th>覆盖窗口</th><th>交付</th><th>终验结果</th></tr>
+      <tr><td>并行搜索员A</td><td>2016-01 – 2018-12</td><td>161行（纳81 / 剔80）</td><td><span class="tag g">零差异验收</span></td></tr>
+      <tr><td>并行搜索员B</td><td>2019-01 – 2022-12（兼全量基线241行）</td><td>156行（纳77 / 剔79）＋基线</td><td><span class="tag g">验收闭环</span></td></tr>
+      <tr><td>并行搜索员C</td><td>2023-01 – 2026-09-18</td><td>132行（纳66 / 剔66）</td><td><span class="tag g">零差异验收</span></td></tr>
+      <tr><td>搜索规划师</td><td>全窗口</td><td>口径裁决＋官方出处附录（A/B两卷）</td><td><span class="tag b">核验成立</span></td></tr>
+      <tr><td>报告汇总员</td><td>全窗口</td><td>交叉验证、裁决签发、本报告</td><td><span class="tag y">差分全归零</span></td></tr>
+    </table>
+    <h3>1.2 统一字段口径</h3>
+    <p style="font-size:14px;">统一字段：<b>代码｜名称｜日期｜纳入/剔除｜替换对象与原因｜调整时点GICS板块｜当前GICS板块/当前状态</b>。定期调仓与临时替换全覆盖；排除更名/换代码造成的假阳性；更名追踪示例：FISV→FI（2023）、CDAY→DAY（2024）、FLT→CPAY（2024）。</p>
+    <blockquote><b>板块口径总锚点：</b>全数据集统一按<b>现行GICS（2023-03-17生效结构）回溯标注</b>——即"调整时点GICS板块"列呈现的是该公司按现行结构的归类，而非事件发生当时的历史标签。原始CSV表头（"纳入/剔除板块(时点GICS)"等）字面与本Convention存在历史命名差异，以本报告数据字典为准（详见§6.3注记）。</blockquote>
+    <h3>1.3 窗口内三次GICS结构修订</h3>
+    <table>
+      <tr><th>生效时点</th><th>修订内容</th><th>对本案数据的影响</th></tr>
+      <tr><td class="num">2016-08-31</td><td>不动产（Real Estate）自金融业独立成板块</td><td>创设前已入指的4家RE公司（EXR 2016-01-19、FRT 2016-02-01、UDR 2016-03-07、DLR 2016-05-18）及配对剔除行（PCL 2016-02-22）标签回溯为Real Estate；经规划师勘误，边界认定为<b>5行版</b>（双源互证定稿）</td></tr>
+      <tr><td class="num">2018-09-24</td><td>通信服务（Communication Services）独立成板块</td><td>2017-06-02 TGNA（纳）/TWX（剔）行即属该子行业先例；GOOGL、META等17家2018-09-21收盘后宣布、09-24生效迁移（板块结构变更，非成员变更）</td></tr>
+      <tr><td class="num">2023-03-17</td><td>支付处理→金融，人力资本→工业（2022-03-31宣布）</td><td>14家被重划：9家支付处理（V、MA、PYPL、FIS、FI、GPN、JKHY、FLT、WEX）IT→Financials；5家人力资本（ADP、PAYX、BR、CDAY、PAYC）→Industrials。窗口内涉及该两组的11个基线事件行已全部按现行口径回溯</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= 二、年度节奏 ================= -->
+<section>
+  <h2>二、年度调整节奏<span class="en">Annual Cadence</span></h2>
+  <p class="lead">按生效年份统计的纳入/剔除个股键数（纳入＝蓝，剔除＝红；标注格式：纳 / 剔）。</p>
+  <div class="card chart">
+    <div class="barrow"><div class="yl">2016</div><div class="track"><div class="bar add" style="width:51%"></div><div class="bar del" style="width:49.2%"></div></div><div class="val">30 / 29</div></div>
+    <div class="barrow"><div class="yl">2017</div><div class="track"><div class="bar add" style="width:47.5%"></div><div class="bar del" style="width:47.5%"></div></div><div class="val">28 / 28</div></div>
+    <div class="barrow"><div class="yl">2018</div><div class="track"><div class="bar add" style="width:39%"></div><div class="bar del" style="width:39%"></div></div><div class="val">23 / 23</div></div>
+    <div class="barrow"><div class="yl">2019</div><div class="track"><div class="bar add" style="width:40.7%"></div><div class="bar del" style="width:40.7%"></div></div><div class="val">24 / 24</div></div>
+    <div class="barrow"><div class="yl">2020</div><div class="track"><div class="bar add" style="width:28.8%"></div><div class="bar del" style="width:28.8%"></div></div><div class="val">17 / 17</div></div>
+    <div class="barrow"><div class="yl">2021</div><div class="track"><div class="bar add" style="width:32.2%"></div><div class="bar del" style="width:32.2%"></div></div><div class="val">19 / 19</div></div>
+    <div class="barrow"><div class="yl">2022</div><div class="track"><div class="bar add" style="width:28.8%"></div><div class="bar del" style="width:32.2%"></div></div><div class="val">17 / 19</div></div>
+    <div class="barrow"><div class="yl">2023</div><div class="track"><div class="bar add" style="width:25.4%"></div><div class="bar del" style="width:25.4%"></div></div><div class="val">15 / 15</div></div>
+    <div class="barrow"><div class="yl">2024</div><div class="track"><div class="bar add" style="width:27.1%"></div><div class="bar del" style="width:27.1%"></div></div><div class="val">16 / 16</div></div>
+    <div class="barrow"><div class="yl">2025</div><div class="track"><div class="bar add" style="width:32.2%"></div><div class="bar del" style="width:32.2%"></div></div><div class="val">19 / 19</div></div>
+    <div class="barrow"><div class="yl">2026*</div><div class="track"><div class="bar add" style="width:27.1%"></div><div class="bar del" style="width:27.1%"></div></div><div class="val">16 / 16</div></div>
+    <div class="legend"><span><i style="background:#2f6fed"></i>纳入（只）</span><span><i style="background:#dc2626"></i>剔除（只）</span><span>* 2026年数据截至09-18；09-21生效批次（Bloom Energy、Illumina、Everpure等）未计入</span></div>
+  </div>
+  <div class="card">
+    <p style="font-size:14px;"><b>解读：</b>① 2016年为窗口峰值（59键），其中含当年多次季度调仓与并购密集落地；② 2020年骤降至34键，系疫情期标普道琼斯指数公司暂停季度审核中市值门槛的常规执行、并购节奏放缓所致；③ 单日最大规模为<b>2017-07-26（10键：RIG/BBBY/MUR/MNK/RAI 剔出，DRE/AOS/PKG/RMD/MGM 替补）</b>；2021-03-22、2026-03-23各8键并列其后；④ 窗口合计净变动<b>−1</b>（224纳 vs 225剔），与期末成分股503只（2026年2月官方口径）自洽。</p>
+  </div>
+</section>
+
+<!-- ================= 三、板块结构 ================= -->
+<section>
+  <h2>三、板块结构：谁在流入、谁在流出<span class="en">Sector Flows</span></h2>
+  <p class="lead">449个事件键按现行GICS板块（2023-03-17锚点）回溯后的分布：每组上条＝纳入，下条＝剔除。</p>
+  <div class="card chart hbar">
+    <div class="barrow"><div class="name">信息技术</div><div class="pair"><div class="bar add" style="width:100%"></div><div class="bar del" style="width:51.1%"></div></div><div class="val">45 / 23</div></div>
+    <div class="barrow"><div class="name">工业</div><div class="pair"><div class="bar add" style="width:88.9%"></div><div class="bar del" style="width:57.8%"></div></div><div class="val">40 / 26</div></div>
+    <div class="barrow"><div class="name">金融</div><div class="pair"><div class="bar add" style="width:64.4%"></div><div class="bar del" style="width:48.9%"></div></div><div class="val">29 / 22</div></div>
+    <div class="barrow"><div class="name">医疗保健</div><div class="pair"><div class="bar add" style="width:64.4%"></div><div class="bar del" style="width:60%"></div></div><div class="val">29 / 27</div></div>
+    <div class="barrow"><div class="name">非必需消费</div><div class="pair"><div class="bar add" style="width:46.7%"></div><div class="bar del" style="width:86.7%"></div></div><div class="val">21 / 39</div></div>
+    <div class="barrow"><div class="name">通信服务</div><div class="pair"><div class="bar add" style="width:31.1%"></div><div class="bar del" style="width:48.9%"></div></div><div class="val">14 / 22</div></div>
+    <div class="barrow"><div class="name">房地产</div><div class="pair"><div class="bar add" style="width:28.9%"></div><div class="bar del" style="width:17.8%"></div></div><div class="val">13 / 8</div></div>
+    <div class="barrow"><div class="name">原材料</div><div class="pair"><div class="bar add" style="width:26.7%"></div><div class="bar del" style="width:28.9%"></div></div><div class="val">12 / 13</div></div>
+    <div class="barrow"><div class="name">能源</div><div class="pair"><div class="bar add" style="width:17.8%"></div><div class="bar del" style="width:60%"></div></div><div class="val">8 / 27</div></div>
+    <div class="barrow"><div class="name">公用事业</div><div class="pair"><div class="bar add" style="width:15.6%"></div><div class="bar del" style="width:11.1%"></div></div><div class="val">7 / 5</div></div>
+    <div class="barrow"><div class="name">必需消费</div><div class="pair"><div class="bar add" style="width:13.3%"></div><div class="bar del" style="width:28.9%"></div></div><div class="val">6 / 13</div></div>
+    <div class="legend"><span><i style="background:#2f6fed"></i>纳入</span><span><i style="background:#dc2626"></i>剔除</span><span>条长以纳入最大值45为基准</span></div>
+    <div class="net">
+      <span class="chip up">信息技术 +22</span><span class="chip up">工业 +14</span><span class="chip up">金融 +7</span><span class="chip up">房地产 +5</span><span class="chip up">医疗 +2</span><span class="chip up">公用 +2</span>
+      <span class="chip dn">原材料 −1</span><span class="chip dn">必需消费 −7</span><span class="chip dn">通信服务 −8</span><span class="chip dn">非必需消费 −18</span><span class="chip dn">能源 −19</span>
+    </div>
+  </div>
+  <div class="donut-flex">
+    <div class="donut"></div>
+    <div class="dlegend">
+      <span><i style="background:var(--it)"></i>信息技术 <b>45 · 20.1%</b></span><span><i style="background:var(--ind)"></i>工业 <b>40 · 17.9%</b></span>
+      <span><i style="background:var(--fin)"></i>金融 <b>29 · 12.9%</b></span><span><i style="background:var(--hc)"></i>医疗保健 <b>29 · 12.9%</b></span>
+      <span><i style="background:var(--cd)"></i>非必需消费 <b>21 · 9.4%</b></span><span><i style="background:var(--comm)"></i>通信服务 <b>14 · 6.3%</b></span>
+      <span><i style="background:var(--re)"></i>房地产 <b>13 · 5.8%</b></span><span><i style="background:var(--mat)"></i>原材料 <b>12 · 5.4%</b></span>
+      <span><i style="background:var(--en)"></i>能源 <b>8 · 3.6%</b></span><span><i style="background:var(--util)"></i>公用事业 <b>7 · 3.1%</b></span>
+      <span><i style="background:var(--st)"></i>必需消费 <b>6 · 2.7%</b></span>
+    </div>
+  </div>
+  <div class="card">
+    <p style="font-size:14px;"><b>解读：</b>① 房地产板块2016-08-31才创设，仍在窗口内录得13次纳入（净+5），是"新板块扩容"的直接体现；② 能源板块净流出−19为十一站最深，传统能源市值长期跑输门槛线；③ 通信服务净−8看似矛盾，实因2018-09板块重构前，多数传媒/通信公司计入IT或非必需消费——回溯口径已将其结构调整影响消解，剩余净流出反映的是传统电信与传媒的退出；④ 信息技术45只纳入中，半导体与软件占比最高（含2026-06-22首次入指的MRVL）。</p>
+  </div>
+</section>
+
+<!-- ================= 四、触发动因 ================= -->
+<section>
+  <h2>四、触发动因<span class="en">Trigger Analysis</span></h2>
+  <p class="lead">按"触发原因"文本关键词对449键归类（同一事件的纳入与剔除双方同因计键，属近似口径）。</p>
+  <div class="card chart hbar">
+    <div class="barrow"><div class="name" style="width:150px">并购触发/对手方</div><div class="pair"><div class="bar add" style="width:100%;background:linear-gradient(90deg,#c9a227,#e0be55)"></div></div><div class="val">187键 · 41.7%</div></div>
+    <div class="barrow"><div class="name" style="width:150px">市值升降级</div><div class="pair"><div class="bar add" style="width:67.9%;background:linear-gradient(90deg,#c9a227,#e0be55)"></div></div><div class="val">127键 · 28.3%</div></div>
+    <div class="barrow"><div class="name" style="width:150px">定期调仓/其他</div><div class="pair"><div class="bar add" style="width:43.3%;background:linear-gradient(90deg,#c9a227,#e0be55)"></div></div><div class="val">81键 · 18.0%</div></div>
+    <div class="barrow"><div class="name" style="width:150px">分拆上市直入</div><div class="pair"><div class="bar add" style="width:27.3%;background:linear-gradient(90deg,#c9a227,#e0be55)"></div></div><div class="val">51键 · 11.4%</div></div>
+    <div class="barrow"><div class="name" style="width:150px">破产/重组退出</div><div class="pair"><div class="bar add" style="width:1.6%;background:linear-gradient(90deg,#c9a227,#e0be55)"></div></div><div class="val">3键 · 0.7%</div></div>
+    <div class="legend"><span>条长以并购类187为基准</span><span>关键词归类的近似口径，精确归因以逐行"替换对象与原因"字段为准</span></div>
+  </div>
+</section>
+
+<!-- ================= 五、标志性案例 ================= -->
+<section>
+  <h2>五、标志性案例研究<span class="en">Case Studies</span></h2>
+  <p class="lead">以下八个案例覆盖了本案全部类型的特殊裁决，均可回溯至官方出处（§7）。</p>
+  <div class="cases">
+    <div class="case"><div class="dt">GICS结构变更 · 2016-08-31</div><h4>① 不动产板块创设</h4><p>Real Estate自金融业独立。此为纯结构变更（成员名单不变），但创设前已有4家RE公司在窗口内入指（EXR、FRT、UDR、DLR），其板块标签经规划师勘误（16行清单自查纠正为5行边界版）并经A段CSV逐行独立复核，双源互证定稿。</p></div>
+    <div class="case"><div class="dt">先例行 · 2017-06-02</div><h4>② 通信服务独立的"预告行"</h4><p>TGNA（纳）/TWX（剔）同日配对，两司均属媒体通信业——2018-09-21收盘后宣布、09-24生效的通信服务板块重构在此前一年即有其行业先例。该基线行L43/L71为"一行纳剔双格"结构，是本案行号勘误的关键物证。</p></div>
+    <div class="case"><div class="dt">板块回溯 · 2021-03 / 2022-03-02</div><h4>③ INFO（IHS Markit）双锚点案</h4><p>2017-06-02入指时标签为Industrials；2021年3月公司级GICS重划至金融业"Financial Exchanges &amp; Data"子行业。按现行口径回溯，其纳入与剔除（2022-03-02，S&amp;P Global并购完成）两行均标注Financials。官方公告原文经5轮检索未命中，按月粒度表述并诚实披露，佐证链：MSCI DEF 14A、SPGI年报、Baron基金13F。</p></div>
+    <div class="case"><div class="dt">重划样本 · 2018-06-20 / 2023-03-17</div><h4>④ FLT（FleetCor→Corpay）案</h4><p>2018-06-20入指时属IT；2023-03-17支付处理重划后归金融业"Transaction &amp; Payment Processing Services"，2024年更名Corpay（CPAY）仍在册。其基线纳入行（2018-06-20，与TWX剔行同格对偶）是全案最后一处patch落点，A段明细行"CPAY｜Financials"自证闭环。</p></div>
+    <div class="case"><div class="dt">重划全景 · 2023-03-17生效</div><h4>⑤ 14家GICS重划的正向回扫</h4><p>以官方两组清单（9家支付处理＋5家人力资本）对基线241行正向回扫：命中11行全部合规终态（GPN 2016纳=Fin、BR 2018纳=Ind、TSS 2019剔=Fin、PAYC 2020纳=Ind、CDAY 2021纳=Ind、INFO 2022剔=Fin、DAY/PAYC 2026剔=Ind等）；清单内8家（V、MA、PYPL、FIS、FI、ADP、PAYX、WEX——重划后窗口内无入剔事件）＋清单外2家（NDAQ、PCTY）共10家确认零基线事件行——<b>两组范围内vintage残留＝0</b>。</p></div>
+    <div class="case"><div class="dt">首纳实证 · 2026-06-22</div><h4>⑥ MRVL（Marvell）首次入指案</h4><p>基线中2026-06-22"MRVL纳入"一度因"自2015持续在指"的疑议触发裁决。经2026-06-05官方PR＋四家财经媒体＋Wikipedia现行表三方实证：Marvell系<b>首次入指标普500</b>（与Flex同批），此前仅属纳斯达克指数体系。裁决成立，基线行保留，POOL顶替关系以官方PR为准。</p></div>
+    <div class="case"><div class="dt">日期口径 · 2022-11-01 / 2024-09-23</div><h4>⑦ TWTR公告日口径与BIO换席</h4><p>Twitter（TWTR）因马斯克收购完成退出——<b>官方生效日2022-11-08，数据记录采用公告日2022-11-01并存档</b>（官方月粒度无法区分公告日与生效日，C段另有5条同类存档）。BIO（Bio-Rad）于2024-09-23被ERIE（Erie Indemnity）替换，属常规市值降级换席。</p></div>
+    <div class="case"><div class="dt">单司标本 · 2020-01-28 / 2026-03-23</div><h4>⑧ PAYC（Paycom）的"两段人生"</h4><p>2020-01-28以IT身份入指，2023-03-17被重划至工业（人力资本），2026-03-23以Industrials身份退出——单家公司完整横跨一次GICS重划周期，是"现行口径回溯"优于历史标签的最直观标本（纳入、剔除两行终态一致标注Industrials）。</p></div>
+  </div>
+</section>
+
+<!-- ================= 六、数据质量与审计 ================= -->
+<section>
+  <h2>六、数据质量与审计记录<span class="en">Data Quality &amp; Audit</span></h2>
+  <div class="card">
+    <h3 style="margin-top:0;">6.1 全程审计台账</h3>
+    <table>
+      <tr><th>#</th><th>事项</th><th>裁决/处置</th><th>状态</th></tr>
+      <tr><td class="num">1</td><td>镜像污染案：2017-08-29 "CenturyLink (Q)"实为QuintilesIMS（Q）</td><td>源数据混淆甄别：Q系QuintilesIMS（2017-11更名IQVIA，Health Care），CenturyLink标签为镜像误植，A/B两段patch闭环</td><td><span class="tag g">已结案</span></td></tr>
+      <tr><td class="num">2</td><td>D（Dominion 2016-11-30）/ SRE（Sempra 2017-03-17）Date added异常</td><td>两行无配对剔除、基线零记录，判定为数据源异常，<b>不收录</b>，报告加脚注</td><td><span class="tag g">已结案</span></td></tr>
+      <tr><td class="num">3</td><td>MRVL 2026-06-22纳入行真伪</td><td>官方PR＋媒体＋Wikipedia三方实证首次入指，行保留</td><td><span class="tag g">已结案</span></td></tr>
+      <tr><td class="num">4</td><td>板块口径之争（vintage改写 vs 现行回溯）</td><td>采信<b>方案②现行GICS回溯（2023-03-17锚点）</b>，方法论脚注披露三次修订</td><td><span class="tag g">已结案</span></td></tr>
+      <tr><td class="num">5</td><td>四处板块patch：PAYC纳→Ind、TSS剔→Fin、FLT纳→Fin、INFO纳/剔→Fin</td><td>全部三键定位（代码＋日期＋纳剔）执行，pandas全表回读验收</td><td><span class="tag g">已结案</span></td></tr>
+      <tr><td class="num">6</td><td>RE边界勘误（4行版→5行版，补DLR 2016-05-18）</td><td>规划师自查勘误＋A段CSV逐行独立复核，双源互证</td><td><span class="tag g">已结案</span></td></tr>
+      <tr><td class="num">7</td><td>终局差分：基线449键 vs 三段并集</td><td>三键并集100%吻合、段内零重复、缺于基线=0、板块cell<b>零差异</b>（"唯一例外NWL/Q"升级为全部归零）</td><td><span class="tag y">终验归零</span></td></tr>
+    </table>
+    <h3>6.2 在册率分段统计</h3>
+    <table>
+      <tr><th>段</th><th>窗口</th><th>纳入数</th><th>截至2026-09-18仍在册</th><th>在册率</th></tr>
+      <tr><td>A段</td><td>2016–2018</td><td class="num">81</td><td class="num">54</td><td class="num">66.7%</td></tr>
+      <tr><td>B段</td><td>2019–2022</td><td class="num">77</td><td class="num">56</td><td class="num">72.7%</td></tr>
+      <tr><td>C段</td><td>2023–2026.9</td><td class="num">66</td><td class="num">66</td><td class="num">100%</td></tr>
+      <tr><td><b>合计</b></td><td>—</td><td class="num"><b>224</b></td><td class="num"><b>176</b></td><td class="num"><b>78.6%</b></td></tr>
+    </table>
+    <h3>6.3 数据边界与存档注记</h3>
+    <ul class="findings">
+      <li><b>D/SRE排除：</b>Wikipedia现行表Date added列中D=2016-11-30、SRE=2017-03-17为无配对、无基线记录的数据异常，不收录（见审计#2）。</li>
+      <li><b>公告日 vs 生效日：</b>TWTR（公告日2022-11-01、官方生效日2022-11-08）及C段5条事件因官方月粒度无法区分两口径，统一按公告日记录并存档。</li>
+      <li><b>2026-09-21批次边界：</b>2026-09-04官方宣布、09-21生效的批次（Bloom Energy、Illumina、Everpure等）因数据截至2026-09-18而未计入本期统计。</li>
+      <li><b>"Q"代码复用：</b>2017年QuintilesIMS（现IQVIA）与2025年Qnity两度使用代码Q，属合法复用，非数据错误。</li>
+      <li><b>表头字面注记：</b>基线表头"纳入/剔除板块(时点GICS)"与三段CSV表头系历史命名，实际口径为"现行GICS回溯口径·2023-03结构锚点"，以本数据字典为准（认证态冻结，原文件不再更名）。</li>
+      <li><b>更名追踪：</b>FISV→FI（2023）、CDAY→DAY（2024）、FLT→CPAY（2024）、WLTW→WTW（2019）均在"当前状态"列闭环。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 七、参考来源 ================= -->
+<section>
+  <h2>七、主要参考来源<span class="en">References</span></h2>
+  <div class="card">
+    <h3 style="margin-top:0;">指数官方（S&amp;P Dow Jones Indices）</h3>
+    <ol class="refs">
+      <li>S&amp;P DJI官方PR（2026-06-05）：Marvell Technology and Flex Set to Join S&amp;P 500 —— <a href="https://press.spglobal.com/2026-06-05-Marvell-Technology-and-Flex-Set-to-Join-S-P-500-Others-to-Join">press.spglobal.com</a></li>
+      <li>S&amp;P DJI官方PR（2026-09-04）：Bloom Energy, Illumina, and Everpure Set to Join S&amp;P 500 —— <a href="https://press.spglobal.com">press.spglobal.com</a></li>
+      <li>S&amp;P 500指数页（成分股数503）—— <a href="https://www.spglobal.com/spdji/en/indices/equity/sp-500/">spglobal.com/spdji</a></li>
+    </ol>
+    <h3>GICS结构官方</h3>
+    <ol class="refs" start="4">
+      <li>S&amp;P DJI / MSCI《GICS Structure Changes》（2022-03-31宣布，2023-03-17收盘后生效）—— <a href="https://press.spglobal.com">press.spglobal.com</a></li>
+      <li>S&amp;P DJI / MSCI《GICS Structure Consultation》（2017-07-11咨询公告，2018-09-21收盘后宣布／09-24生效通信服务拆分之源头）—— <a href="https://press.spglobal.com">press.spglobal.com</a></li>
+      <li>S&amp;P DJI《Bloom Energy, Illumina, and Everpure Set to Join S&amp;P 500…》（2026-09-04，2026-09-21批次边界存档依据）—— <a href="https://press.spglobal.com/2026-09-04-Bloom-Energy,-Illumina,-and-Everpure-Set-to-Join-S-P-500-Others-to-Join-S-P-100,-S-P-MidCap-400,-and-S-P-SmallCap-600">press.spglobal.com</a>（官方指数公告PDF：<a href="https://www.spglobal.com/spdji/en/documents/indexnews/announcements/20260904-1484999/1484999_shuffle5461-sept2026.pdf">spdji/en/documents</a>）</li>
+      <li>S&amp;P DJI GICS官方页 —— <a href="https://www.spglobal.com/spdji/en/indices/gics/">spglobal.com/spdji/en/indices/gics</a></li>
+      <li>MSCI GICS官方页（2016-08-31不动产创设等历次修订）—— <a href="https://www.msci.com/our-solutions/indexes/gics">msci.com/our-solutions/indexes/gics</a></li>
+    </ol>
+    <h3>INFO案佐证链</h3>
+    <ol class="refs" start="7">
+      <li>MSCI DEF 14A（2022，IHS Markit列于Financial Exchanges &amp; Data桶）—— <a href="https://www.sec.gov/Archives/edgar/data/1408198/000120677422000723/msci4002911-def14a.htm">sec.gov（EDGAR）</a></li>
+      <li>SPGI《2021 Financial Performance》年报 —— <a href="https://www.spglobal.com">spglobal.com</a></li>
+      <li>Baron基金报告（SEC EDGAR）—— <a href="https://www.sec.gov">sec.gov</a></li>
+    </ol>
+    <h3>MRVL案媒体佐证</h3>
+    <ol class="refs" start="10">
+      <li>CNBC（2026-06-05）—— <a href="https://www.cnbc.com/2026/06/05/marvell-technology-flex-sp-500-campbells-pool.html">cnbc.com</a>；Bloomberg（2026-06-05）—— <a href="https://www.bloomberg.com/news/articles/2026-06-05/marvell-technology-flex-set-to-join-s-p-500-later">bloomberg.com</a></li>
+      <li>Yahoo Finance（2026-06-05）—— <a href="https://finance.yahoo.com/markets/stocks/articles/marvell-join-p-500-ai-212422827.html">finance.yahoo.com</a>；Investing.com（2026-06-16）—— <a href="https://www.investing.com/news/stock-market-news/marvells-sp-500-inclusion-tests-whether-forced-buying-will-win-over-fundamentals-93CH-4127601">investing.com</a></li>
+    </ol>
+    <h3>重划与口径二手佐证</h3>
+    <ol class="refs" start="12">
+      <li>Refinitiv/Lipper（2023-03-27）：2023 GICS Classification Change: Impact on S&amp;P 500 Earnings —— <a href="https://lipperalpha.refinitiv.com">lipperalpha.refinitiv.com</a></li>
+      <li>Marquette Associates（2023-04-20）："Effective after the close on March 17, 2023, 14 firms were reclassified" —— <a href="https://www.marquetteassociates.com">marquetteassociates.com</a></li>
+      <li>Global X（2023-03-20）：GICS Change Adds Growth to Financials —— <a href="https://globalxetfs.co">globalxetfs.co</a></li>
+      <li>Investopedia：Nasdaq Inc. has been in the S&amp;P 500 since 2008（NDAQ零事件核验）—— <a href="https://www.investopedia.com">investopedia.com</a></li>
+      <li>Wikipedia：List of S&amp;P 500 companies（现行成分对照，仅作交叉核对非采信源）—— <a href="https://en.wikipedia.org/wiki/List_of_S%26P_500_companies">en.wikipedia.org</a></li>
+    </ol>
+    <p class="foot-note" style="margin-top:14px;">完整证据链与逐项出处详见《附录_板块口径证据与官方出处_搜索规划师》（附录A裁决书／附录B参考来源B1–B3），已随数据集归档。</p>
+  </div>
+</section>
+
+<footer>
+  <span>标普500成分变更全景报告（2016–2026.9）· 终版 V1.0</span>
+  <span>编制：报告汇总员 ｜ 交叉验证：三方搜索员 × 全量基线 ｜ 口径签核：搜索规划师 ｜ 2026-09-18</span>
+</footer>
+
+</div>
+</body>
+</html>
