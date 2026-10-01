@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>语文×英语 双科教材衔接与提分路径全景报告 · 队5全量档合成版</title>
+<style>
+  :root{
+    --ink:#1a202c; --ink2:#2d3748; --muted:#718096; --line:#e2e8f0; --bg:#f5f7fa;
+    --navy:#1a365d; --navy2:#2b6cb0; --gold:#b7791f; --gold2:#d69e2e;
+    --cn:#9b2c2c; --cn2:#c05621; --en:#2c5282; --en2:#319795;
+    --ok:#2f855a; --warn:#c05621;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px 64px}
+
+  /* ===== Hero ===== */
+  .hero{background:linear-gradient(135deg,#152238 0%,#1a365d 55%,#234e70 100%);color:#fff;padding:52px 24px 44px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(214,158,46,.22),transparent 65%)}
+  .hero-in{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+  .hero .kicker{display:inline-block;font-size:12px;letter-spacing:.35em;color:#ecc94b;border:1px solid rgba(236,201,75,.45);padding:4px 14px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;font-weight:800;letter-spacing:.02em;line-height:1.35}
+  .hero h1 small{display:block;font-size:15px;font-weight:400;color:#cbd5e0;margin-top:10px;letter-spacing:.05em}
+  .meta-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .chip{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:6px 14px;font-size:12.5px;color:#e2e8f0}
+  .chip b{color:#ecc94b;font-weight:600}
+
+  /* ===== TOC ===== */
+  .toc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin:-34px auto 34px;max-width:1080px;box-shadow:0 8px 24px rgba(26,54,93,.08);position:relative;z-index:2}
+  .toc h3{font-size:13px;color:var(--muted);letter-spacing:.2em;margin-bottom:12px;font-weight:600}
+  .toc ol{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:8px 22px;font-size:13.5px}
+  .toc li{padding:5px 0;border-bottom:1px dashed var(--line)}
+  .toc li b{color:var(--navy2);margin-right:6px;font-weight:700}
+  @media(max-width:820px){.toc ol{grid-template-columns:repeat(2,1fr)}}
+
+  /* ===== Sections ===== */
+  section{margin-bottom:52px}
+  h2.sec{font-size:22px;font-weight:800;color:var(--navy);padding-left:16px;border-left:6px solid var(--gold2);margin-bottom:8px;letter-spacing:.02em}
+  h2.sec .en{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:.25em;margin-left:12px}
+  .sec-lead{color:var(--muted);font-size:13.5px;margin:0 0 20px 22px}
+  h3.sub{font-size:17px;font-weight:700;color:var(--ink2);margin:30px 0 12px;display:flex;align-items:center;gap:10px}
+  h3.sub .no{background:var(--navy);color:#fff;font-size:12px;border-radius:6px;padding:2px 9px;font-weight:600}
+  h4{font-size:15px;color:var(--navy2);margin:20px 0 8px}
+  p{margin-bottom:12px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px 26px;margin-bottom:18px;box-shadow:0 2px 8px rgba(26,54,93,.04)}
+  .hl{color:var(--cn);font-weight:700}
+  .hle{color:var(--en);font-weight:700}
+  .gold{color:var(--gold);font-weight:700}
+
+  /* ===== Summary cards ===== */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+  @media(max-width:820px){.grid3,.grid4{grid-template-columns:1fr 1fr}}
+  .kcard{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold2);border-radius:10px;padding:18px 18px 14px}
+  .kcard .kn{font-size:12px;color:var(--muted);letter-spacing:.15em;font-weight:600}
+  .kcard .kt{font-size:16px;font-weight:800;color:var(--navy);margin:6px 0 8px}
+  .kcard p{font-size:13px;color:var(--ink2);margin:0}
+  .kcard.cn{border-top-color:var(--cn)} .kcard.cn .kt{color:var(--cn)}
+  .kcard.en{border-top-color:var(--en)} .kcard.en .kt{color:var(--en)}
+
+  /* ===== Deliverables grid ===== */
+  .dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+  @media(max-width:820px){.dgrid{grid-template-columns:1fr 1fr}}
+  .dcell{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+  .dcell .badge{flex:none;width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#fff}
+  .dcell h5{font-size:14px;font-weight:700;color:var(--ink)}
+  .dcell p{font-size:12px;color:var(--muted);margin:2px 0 0}
+  .badge.c{background:linear-gradient(135deg,var(--cn),var(--cn2))}
+  .badge.e{background:linear-gradient(135deg,var(--en),var(--en2))}
+  .badge.v{background:linear-gradient(135deg,var(--gold),var(--gold2))}
+
+  /* ===== Tables ===== */
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px;margin:14px 0}
+  th{background:var(--navy);color:#fff;padding:10px 12px;text-align:left;font-weight:600;font-size:13px;letter-spacing:.03em}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#eef4fb}
+  .tb-cn th{background:var(--cn)} .tb-en th{background:var(--en)}
+  .tbl-note{font-size:12px;color:var(--muted);margin:-8px 0 16px}
+  td b{color:var(--navy)}
+
+  /* ===== Bar charts ===== */
+  .chart{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+  .chart h5{font-size:14px;font-weight:700;color:var(--ink2);margin-bottom:4px}
+  .chart .src{font-size:11.5px;color:var(--muted);margin-bottom:16px}
+  .crow{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+  .crow .lb{flex:none;width:92px;font-size:12.5px;color:var(--ink2);text-align:right;font-weight:600}
+  .crow .track{flex:1;background:#edf2f7;border-radius:6px;height:22px;position:relative;overflow:hidden}
+  .crow .fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11.5px;color:#fff;font-weight:600;min-width:44px}
+  .f-cn1{background:linear-gradient(90deg,#9b2c2c,#c05621)} .f-cn2{background:linear-gradient(90deg,#dd6b20,#ecc94b);color:#744210!important}
+  .f-en{background:linear-gradient(90deg,#2c5282,#319795)}
+  .f-gd{background:linear-gradient(90deg,#b7791f,#d69e2e)}
+  .legend{display:flex;gap:18px;font-size:12px;color:var(--muted);margin-top:12px;flex-wrap:wrap}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+  /* stacked structure */
+  .stack{margin-bottom:16px}
+  .stack .st-lb{font-size:12.5px;font-weight:700;color:var(--ink2);margin-bottom:6px}
+  .stack .st-bar{display:flex;height:30px;border-radius:7px;overflow:hidden;font-size:11px;color:#fff}
+  .stack .seg{display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 4px}
+
+  /* band chart (A/B带) */
+  .band-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .band-row .bl{flex:none;width:96px;font-size:12.5px;font-weight:700;color:var(--ink2);text-align:right}
+  .band-row .bt{flex:1;height:26px;background:#edf2f7;border-radius:6px;position:relative}
+  .band-row .rng{position:absolute;top:3px;bottom:3px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10.5px;color:#fff;font-weight:600;white-space:nowrap}
+  .rng.a{background:linear-gradient(90deg,#4a6fa5,#6b8cb8)}
+  .rng.b{background:linear-gradient(90deg,#b7791f,#d69e2e)}
+  .band-total{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap}
+  .band-total .bt-card{flex:1;min-width:200px;border-radius:10px;padding:14px 18px;color:#fff}
+  .bt-card.a{background:linear-gradient(135deg,#2c5282,#4a6fa5)}
+  .bt-card.b{background:linear-gradient(135deg,#875712,#b7791f)}
+  .bt-card .v{font-size:24px;font-weight:800}
+  .bt-card .d{font-size:12px;opacity:.85;margin-top:2px}
+
+  /* ladder (词汇水位) */
+  .ladder{display:flex;align-items:flex-end;gap:14px;margin:20px 0 6px;height:230px}
+  .step{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;color:#fff;border-radius:10px 10px 0 0;padding:12px 8px;text-align:center}
+  .step .sv{font-size:22px;font-weight:800}
+  .step .sn{font-size:12px;opacity:.92;margin-top:4px;line-height:1.5}
+  .s1{height:44%;background:linear-gradient(180deg,#319795,#285e61)}
+  .s2{height:72%;background:linear-gradient(180deg,#2b6cb0,#1a365d)}
+  .s3{height:86%;background:linear-gradient(180deg,#b7791f,#875712)}
+  .s4{height:100%;background:linear-gradient(180deg,#9b2c2c,#742a2a)}
+  .ladder-note{font-size:12px;color:var(--muted)}
+
+  /* facet cards */
+  .facet-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+  @media(max-width:820px){.facet-grid{grid-template-columns:1fr}}
+  .fcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:0 2px 8px rgba(26,54,93,.05)}
+  .fcard.cn{border-top:4px solid var(--cn)} .fcard.en{border-top:4px solid var(--en2)}
+  .fcard h6{font-size:15px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:8px;margin-bottom:10px}
+  .fcard h6 .idx{background:var(--gold2);color:#fff;font-size:11px;border-radius:6px;padding:2px 8px}
+  .frow{font-size:12.8px;margin-bottom:7px;padding-left:2px}
+  .frow .fk{display:inline-block;min-width:64px;font-weight:700;color:var(--gold);margin-right:6px}
+  .frow.cn .fk{color:var(--cn)}
+
+  /* quote / callout */
+  blockquote{border-left:4px solid var(--gold2);background:#fffbeb;padding:14px 18px;border-radius:0 10px 10px 0;font-size:13.5px;color:#5f4b16;margin:14px 0}
+  blockquote p{margin-bottom:6px}
+  .callout{background:#fff;border:1px solid var(--line);border-left:4px solid var(--en2);border-radius:0 10px 10px 0;padding:14px 18px;font-size:13.5px;margin:14px 0;color:var(--ink2)}
+  .erratum{background:#fff5f5;border:1px solid #fed7d7;border-left:4px solid var(--cn);border-radius:0 10px 10px 0;padding:14px 18px;font-size:13px;color:#742a2a;margin:14px 0}
+  .erratum b.t{color:var(--cn)}
+
+  /* timeline */
+  .tl{list-style:none;margin:14px 0;border-left:3px solid var(--line);padding-left:0}
+  .tl li{position:relative;padding:0 0 18px 26px;font-size:13.5px}
+  .tl li::before{content:"";position:absolute;left:-8px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--gold2);border:3px solid #fff;box-shadow:0 0 0 2px var(--gold2)}
+  .tl li b{color:var(--navy)}
+
+  /* footer */
+  .foot{border-top:1px solid var(--line);margin-top:40px;padding-top:22px;font-size:12px;color:var(--muted);line-height:1.9}
+  .tag{display:inline-block;font-size:11px;border:1px solid var(--line);border-radius:5px;padding:1px 7px;color:var(--muted);background:#fff;margin:1px 2px}
+  .tag.a1{border-color:#9ae6b4;color:#276749;background:#f0fff4}
+  .tag.a2{border-color:#90cdf4;color:#2a4365;background:#ebf8ff}
+  .tag.a3{border-color:#ecc94b;color:#744210;background:#fffbeb}
+  .tag.a4{border-color:#e2e8f0;color:#718096;background:#f7fafc}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="hero-in">
+    <span class="kicker">TEAM 5 · FULL DELIVERY · 8/8</span>
+    <h1>语文 × 英语 · 双科教材衔接与提分路径全景报告
+      <small>队5全量档八件套合成版 ｜ 面向2029届福建考生 ｜ 母本包v1.1复用纪律下的交叉验证终稿</small>
+    </h1>
+    <div class="meta-chips">
+      <span class="chip">出品：<b>报告汇总员</b>（素材：并行搜索员A/C · 任务口径：搜索规划师）</span>
+      <span class="chip">数据时点：<b>2026-09-25</b></span>
+      <span class="chip">政策锚：<b>闽招委〔2026〕3号</b>（条款级）</span>
+      <span class="chip">复用基线：<b>09-19已验收报告＋母本包v1.1</b></span>
+      <span class="chip">交付形态：<b>语文5件＋英语3件＋事实核验1件</b></span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ============ TOC ============ -->
+<div class="toc">
+  <h3>目 录 · CONTENTS</h3>
+  <ol>
+    <li><b>01</b>执行摘要</li>
+    <li><b>02</b>口径基线与证据体系</li>
+    <li><b>03</b>语文板块 · 教材骨架</li>
+    <li><b>04</b>语文板块 · 考点母题库</li>
+    <li><b>05</b>语文板块 · 易错防线</li>
+    <li><b>06</b>语文板块 · 思维卡与讲法</li>
+    <li><b>07</b>英语板块 · 分支锁定</li>
+    <li><b>08</b>英语板块 · 词汇衔接</li>
+    <li><b>09</b>英语板块 · 60分拆账</li>
+    <li><b>10</b>英语板块 · 开关与思维卡</li>
+    <li><b>11</b>交叉验证与信息卫生</li>
+    <li><b>12</b>结论与使用建议</li>
+    <li><b>附录A</b>交付清单</li>
+    <li><b>附录B</b>证据与边界</li>
+  </ol>
+</div>
+
+<!-- ============ 01 执行摘要 ============ -->
+<section id="s1">
+  <h2 class="sec">01 执行摘要<span class="en">EXECUTIVE SUMMARY</span></h2>
+  <p class="sec-lead">本报告由队5全量档八件套（语文A-E＋英语F-H）汇编交叉验证而成，为2029届福建考生（现高一）提供"教材怎么学、考点怎么考、分怎么提"的双科一体化路线图。</p>
+
+  <div class="grid3">
+    <div class="kcard cn">
+      <div class="kn">语文 · 核心判断</div>
+      <div class="kt">结构三年一变，教材关联加深</div>
+      <p>全国一卷经历"四板块（2024）→阅读整合72分（2025）→延续整合（2026）"的结构重构；作文材料直接取自同卷阅读文本（2025实录卷内联动），默写首现图文匹配开放题（2025）、热词释义入语用（2026）。<b>按考点而非教材顺序组织备考</b>，同时用教材单元打底，是官方评析背书的主线。</p>
+    </div>
+    <div class="kcard en">
+      <div class="kn">英语 · 核心判断</div>
+      <div class="kt">福建=听力计入型→默认全投入</div>
+      <p>闽招委〔2026〕3号细则条款级确认：外语150分含听力<b>原始分计入750总分</b>（6月8日15:00-17:00同场一次考），口试等第制不入总分。60分止损路线在福建适用<b>默认全投入分支</b>（L系列听力开关正常计入），与河南过渡型、新疆分支型明确不同构。</p>
+    </div>
+    <div class="kcard">
+      <div class="kn">方法论 · 核心判断</div>
+      <div class="kt">水位-闸门模型 + 题型证据规格</div>
+      <p>英语以词汇量为水位、方法为闸门（688考频词起步→过线开闸），七题型拆账双带覆盖60分；语文以F.A.C.E.T.四思维卡（文本细读/语境意识/题型意识/积累转化）建立"证据规格"意识——两科共享"先识别命题在问什么，再动笔"的元能力。</p>
+    </div>
+  </div>
+
+  <h3 class="sub"><span class="no">交付全景</span>八件套与佐证包（9项全部验收）</h3>
+  <div class="dgrid">
+    <div class="dcell"><div class="badge c">语A</div><div><h5>教材骨架核对表</h5><p>必修上册8单元全篇目＋背诵三口径</p></div></div>
+    <div class="dcell"><div class="badge c">语B</div><div><h5>单元知识点手册 v1.1</h5><p>文言实词20词＋意象手法库＋讲法8条＋下册二核</p></div></div>
+    <div class="dcell"><div class="badge c">语C</div><div><h5>考点与母题库</h5><p>近三年一卷真题锚定 · 七题型思维路径</p></div></div>
+    <div class="dcell"><div class="badge c">语D</div><div><h5>易错点统计</h5><p>默写易错字TOP20字源法＋文言/作文纠错</p></div></div>
+    <div class="dcell"><div class="badge c">语E</div><div><h5>F.A.C.E.T.思维卡×4</h5><p>六字段规格 · 全量档专属件</p></div></div>
+    <div class="dcell"><div class="badge e">英F</div><div><h5>教材骨架核对表</h5><p>Welcome＋U1-5 · 八版块结构 · 语法主线</p></div></div>
+    <div class="dcell"><div class="badge e">英G</div><div><h5>词汇衔接与底料</h5><p>1600→3100口径定谳＋Welcome Unit 54词样本</p></div></div>
+    <div class="dcell"><div class="badge e">英H</div><div><h5>60分提分路径</h5><p>福建分支锁定＋拆账双带＋开关总表＋异形卡×2</p></div></div>
+    <div class="dcell"><div class="badge v">核验</div><div><h5>事实层交叉核验报告</h5><p>8项核验7项直证闭环 · 3100词五源升格</p></div></div>
+  </div>
+</section>
+
+<!-- ============ 02 口径基线 ============ -->
+<section id="s2">
+  <h2 class="sec">02 口径基线与证据体系<span class="en">BASELINE & EVIDENCE</span></h2>
+
+  <div class="card">
+    <h4>2.1 目标画像与三个"不假设"</h4>
+    <table>
+      <tr><th style="width:180px">维度</th><th>口径结论</th><th style="width:230px">依据等级</th></tr>
+      <tr><td><b>届别/卷种</b></td><td>2029届（现高一）；福建语文/英语均用<b>全国一卷</b>（教育部教育考试院命制，2024卷首适用省份栏含福建）</td><td><span class="tag a1">一手·直接</span><span class="tag a2">一手</span></td></tr>
+      <tr><td><b>语文教材</b></td><td>《普通高中教科书·语文》统编版（教育部组织编写，总主编温儒敏，人教社2019年8月第1版），双线组织：人文主题＋学习任务群</td><td><span class="tag a1">一手·直接</span>（moe发布会）</td></tr>
+      <tr><td><b>英语教材</b></td><td>人教版（2019新版）覆盖福建绝大多数地市；<b>泉州市单列北师大版</b>——目标地市为泉州时单元骨架需整体切换重核</td><td><span class="tag a3">二手·三源纵向</span>＋商业侧证</td></tr>
+      <tr><td><b>高考政策</b></td><td>"3+1+2"模式；外语听力30分原始分计入总分（<b>截至闽招委〔2026〕3号</b>，高三报考当年须以最新文件复核一次）</td><td><span class="tag a1">一手·直接</span>（条款级）</td></tr>
+    </table>
+    <p class="tbl-note">三个"不假设"：不假设教材版本全省统一（泉州分支）；不假设政策跨年不变（时点标注）；不假设官方发布得分率（官方不公开，教研单样本不采信）。</p>
+  </div>
+
+  <div class="card">
+    <h4>2.2 证据四级体系（全量档统一标注规范）</h4>
+    <table>
+      <tr><th style="width:150px">级别</th><th>定义</th><th style="width:320px">本报告锚点示例</th></tr>
+      <tr><td><span class="tag a1">一手·直接</span></td><td>URL/文件可回溯到原文页</td><td>eeafj.cn细则doc双链、dzskb教材目录页、moe发布会原文、真题PDF直采</td></tr>
+      <tr><td><span class="tag a2">一手</span></td><td>章节级（PDF全文/官方解析文档）</td><td>zk24.pdf（2024一卷62KB文本层含官方踩点词）、scribd教材PDF页码结构</td></tr>
+      <tr><td><span class="tag a3">二手</span></td><td>明确来源名的转述（高质教研单独标级）</td><td>人民日报评析转载链、textbook-info三份年段汇编、sohu默写题面专析</td></tr>
+      <tr><td><span class="tag a4">讲解归纳</span></td><td>归纳条目，<b>不计入锚点密度分母</b></td><td>思维路径、字源记忆法、讲法条目、模型化结论</td></tr>
+    </table>
+    <p>复用纪律：凡引用09-19已验收报告与母本包v1.1的数据，一律注明"复用自＋来源名"，<b>未静默改数</b>；冲突时以新增独立实采为准（如C侧福建实采回填）。</p>
+  </div>
+</section>
+
+<!-- ============ 03 语文教材骨架 ============ -->
+<section id="s3">
+  <h2 class="sec">03 语文板块 · 教材骨架<span class="en">CHINESE · STRUCTURE</span></h2>
+  <p class="sec-lead">对应A件＋B件v1.1。骨架价值在于把"单元学习"映射到"高考考点"——B件速览表专设"高考关联"列，实现教材层→考点层的双向索引。</p>
+
+  <h3 class="sub"><span class="no">3.1</span>必修上册八单元总表（8单元＋古诗词诵读版块）</h3>
+  <table class="tb-cn">
+    <tr><th style="width:64px">单元</th><th style="width:150px">人文主题 / 任务群</th><th>核心篇目</th><th style="width:305px">高考关联（→母题库）</th></tr>
+    <tr><td><b>一</b></td><td>青春的价值<br>文学阅读与写作</td><td>沁园春·长沙 / 立在地球边上放号 / 红烛 / 峨日朵雪峰之侧 / 致云雀 / 百合花 / 哦，香雪</td><td>诗歌意象群（湘江秋景图）；小说细节复现（百合花被子三次复现）→ 阅读II（母题2）</td></tr>
+    <tr><td><b>二</b></td><td>劳动光荣<br>实用性阅读与交流</td><td>喜看稻菽千重浪 / 心有一团火 / "探界者"钟扬 / 以工匠精神雕琢时代品质 / 芣苢 / 插秧歌</td><td>人物通讯"用事实说话"；新闻+论文对读的教材原型 → 阅读I（母题1）</td></tr>
+    <tr><td><b>三</b></td><td>生命的诗意<br>文学阅读与写作（古诗词）</td><td>短歌行 / 归园田居 / 梦游天姥吟留别 / 登高 / 琵琶行 / 念奴娇·赤壁怀古 / 永遇乐·京口北固亭怀古 / 声声慢</td><td><b>意象手法主战场</b>＋默写主供给区（2024真题即考"榆柳荫后檐"）→ 母题4/5</td></tr>
+    <tr><td><b>四</b></td><td>家乡文化生活<br>当代文化参与（活动单元）</td><td>记录家乡的人和物 / 现状调查 / 参与文化建设</td><td>访谈/调查方法 → 2025真题"有效提问"、2026"不断追问"（母题1/6）</td></tr>
+    <tr><td><b>五</b></td><td>整本书阅读<br>《乡土中国》</td><td>费孝通全书14篇（差序格局/礼治秩序）</td><td>学术概念图式化 → 社科论文文本迁移（母题1）</td></tr>
+    <tr><td><b>六</b></td><td>学习之道<br>思辨性阅读与表达</td><td>劝学 / 师说 / 反对党八股 / 拿来主义 / 读书：目的和前提 / 上图书馆</td><td>文言论证结构标本（劝学五喻/师说三组对比）；<b>2025真题默写考《师说》</b>→ 母题3/5</td></tr>
+    <tr><td><b>七</b></td><td>自然情怀<br>文学阅读与写作（散文）</td><td>故都的秋 / 荷塘月色 / 我与地坛 / 赤壁赋 / 登泰山记</td><td>情与景（"清、静、悲凉"）；文赋主客问答（乐—悲—喜）→ 母题2/3</td></tr>
+    <tr><td><b>八</b></td><td>词语积累与词语解释<br>语言积累、梳理与探究（活动单元）</td><td>丰富词语积累 / 古今词义辨析 / 词语的使用</td><td>语素/词族/古今异义/成语误用 → <b>2026"出片"热词释义真题</b>（母题6）</td></tr>
+    <tr><td><b>诵读</b></td><td>古诗词诵读（独立版块）</td><td>静女 / 涉江采芙蓉 / 虞美人 / 鹊桥仙</td><td><b>2025真题默写考《鹊桥仙》</b>（母题5）</td></tr>
+  </table>
+
+  <h3 class="sub"><span class="no">3.2</span>必修下册二核结论（v1.1修正定稿）</h3>
+  <div class="callout">
+    经电子课本网目录页逐篇直采二核（<span class="tag a1">一手·直接</span> dzkbw.com）：下册<b>文言课文合计11篇</b>（一单元5＋五单元2＋八单元4）、<b>古诗词诵读4篇</b>（登岳阳楼/桂枝香·金陵怀古/念奴娇·过洞庭/游园【皂罗袍】）、<b>《红楼梦》整本书阅读</b>归第七单元整本书阅读板块。v1版"文言8篇/下册13篇"表述系单元归属转录失真，已按实测处方全部修正。
+  </div>
+
+  <h3 class="sub"><span class="no">3.3</span>背诵口径三数澄清（防"19/20/72"混用）</h3>
+  <table class="tb-cn">
+    <tr><th style="width:280px">口径</th><th style="width:90px">数值</th><th>说明</th></tr>
+    <tr><td>必修上册<b>收录</b>古诗文</td><td><b>19篇</b></td><td>4文言＋15诗词曲；"插秧歌"（自读）不计入，与目录页互证</td></tr>
+    <tr><td>高中三年教材<b>要求背诵</b></td><td><b>20篇</b></td><td>温儒敏访谈口径（China Daily，2019-08-28），"平均每学年六七篇"</td></tr>
+    <tr><td>新课标<b>推荐背诵</b>总表</td><td><b>72篇</b></td><td>32文言＋40诗词曲，覆盖必修＋选择性必修＋选修；文言分布：必修10/选必10/选修12（moe发布，2018-01-17）</td></tr>
+  </table>
+  <blockquote><p><b>检索卫生记录</b>：第三方页"18首"口径与教材目录页19篇冲突——以教材目录页为准；"收录≠要求背诵≠推荐背诵"，三数不可互换引用。</p></blockquote>
+</section>
+
+<!-- ============ 04 语文考点母题库 ============ -->
+<section id="s4">
+  <h2 class="sec">04 语文板块 · 考点与母题库<span class="en">CHINESE · EXAM MAP</span></h2>
+  <p class="sec-lead">对应C件。近三年全国一卷真题逐题锚定，每题型给出"真题样本→思维路径"的可复用解法链。</p>
+
+  <h3 class="sub"><span class="no">4.1</span>试卷结构演进（2024→2026，三年对照）</h3>
+  <div class="chart">
+    <h5>图1 · 全国一卷语文结构演进（分值占比，150分制）</h5>
+    <div class="src">数据源：zk24.pdf直采＋人民日报2025评析＋教育部考试院2026评析转载链 ｜ 语用18分为"72+18+60=150"自洽推算，精确分值待真题全文二核（如实标注）</div>
+
+    <div class="stack">
+      <div class="st-lb">2024 · 四板块制</div>
+      <div class="st-bar">
+        <div class="seg" style="width:23.3%;background:#9b2c2c">现代文阅读I 19分</div>
+        <div class="seg" style="width:10.7%;background:#c05621">阅读II 16分</div>
+        <div class="seg" style="width:13.3%;background:#dd6b20">文言 20分</div>
+        <div class="seg" style="width:6%;background:#ecc94b;color:#744210">古诗9</div>
+        <div class="seg" style="width:4%;background:#d69e2e;color:#744210">默写6</div>
+        <div class="seg" style="width:13.4%;background:#4a6fa5">语用20分</div>
+        <div class="seg" style="width:40%;background:#1a365d">写作60分</div>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="st-lb">2025 · 阅读整合制（72＋18＋60）</div>
+      <div class="st-bar">
+        <div class="seg" style="width:12.7%;background:#9b2c2c">阅读I 19</div>
+        <div class="seg" style="width:10.7%;background:#c05621">II 16</div>
+        <div class="seg" style="width:14.7%;background:#dd6b20">III文言 22</div>
+        <div class="seg" style="width:6%;background:#ecc94b;color:#744210">IV古诗9</div>
+        <div class="seg" style="width:4%;background:#d69e2e;color:#744210">默写6</div>
+        <div class="seg" style="width:12%;background:#4a6fa5">语用18*</div>
+        <div class="seg" style="width:40%;background:#1a365d">写作60分</div>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="st-lb">2026 · 延续整合制（22小题，默写融入阅读IV）</div>
+      <div class="st-bar">
+        <div class="seg" style="width:24%;background:#9b2c2c">阅读I 复合文本（深渊科考：新闻+论文）</div>
+        <div class="seg" style="width:20%;background:#c05621">阅读II 《安娜·卡列宁娜》</div>
+        <div class="seg" style="width:22%;background:#dd6b20">阅读III 多材料文言（西门豹治邺）</div>
+        <div class="seg" style="width:16%;background:#ecc94b;color:#744210">IV古诗＋默写（"风"主题联读）</div>
+        <div class="seg" style="width:18%;background:#4a6fa5">语用"出片"释义＋写作60</div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><i style="background:#9b2c2c"></i>信息类</span>
+      <span><i style="background:#c05621"></i>文学类</span>
+      <span><i style="background:#dd6b20"></i>文言</span>
+      <span><i style="background:#ecc94b"></i>古诗</span>
+      <span><i style="background:#d69e2e"></i>默写</span>
+      <span><i style="background:#4a6fa5"></i>语用</span>
+      <span><i style="background:#1a365d"></i>写作</span>
+    </div>
+  </div>
+
+  <div class="erratum"><b class="t">◈ 汇总员合成勘误①</b>：C件v1将2024年文言文写作"22分5小题"——与"古代诗文阅读35分"算术不自洽（22+9+6=37≠35）。按"35=文言20＋古诗9＋默写6"自洽修正为<b>20分</b>（5小题：断句/文常/内容概括/翻译8分2小题/跨材料论据概括）；2025年整合制下"阅读III=22分"口径成立（19+16+22+9+6=72自洽），两口径不可互植。已同步通知素材方存档。</div>
+
+  <h3 class="sub"><span class="no">4.2</span>七题型母题库（真题锚定 × 思维路径）</h3>
+  <table class="tb-cn">
+    <tr><th style="width:130px">题型</th><th>真题样本（近三年一卷）</th><th style="width:42%">思维路径（讲解归纳）</th></tr>
+    <tr><td><b>母题1</b><br>阅读I 信息类</td><td>2025"种植入门问答"体科普·第4题逻辑缺环推断；2026复合文本（材料一新闻＋材料二论文，深渊科考）跨文本比对</td><td>定位区间→区分事实句/观点句→按行文逻辑推出缺环→用原文关键词复述；训练用"新闻+论文"双材料对读</td></tr>
+    <tr><td><b>母题2</b><br>阅读II 文学类</td><td>2024《放牛记》回忆性散文双重视角；2025《鼓书艺人》+《我为什么离开武汉》双文本联读；2026《安娜·卡列宁娜》列文线第8题</td><td>动作/心理细节→情感层次（"欲言又止"结构）→主题投射；三年选材=散文→现代小说双文本→俄国经典长篇，<b>体裁谱系扩容，三型都要练</b></td></tr>
+    <tr><td><b>母题3</b><br>阅读III 文言</td><td>2024《汉书·李陵传》＋王夫之《读通鉴论》双文本；第13题翻译8分官方踩点："当"=主持/率领、"乡"同"向"、"文"=文饰；第14题跨材料论据概括</td><td>实词代入（通假/引申/语境义）→句式切分→传记要素定位→双文本比对（史评观点回史传找论据）</td></tr>
+    <tr><td><b>母题4</b><br>阅读IV 古诗</td><td>2025王安石七律《元珍以诗送绿石砚》（石砚之"坚"→友人之"心"）；2026司马光《风》＋现代歌词对读；2024甲卷残缺材料新考查方式</td><td>意象/典故解码→情感基调定位→手法辨识→残缺文本用逻辑补文本；2026"古诗+歌词"古今互文新形态需专项迁移</td></tr>
+    <tr><td><b>母题5</b><br>默写 6分</td><td>2025第17题：《师说》"弟子不必不如师"＋《鹊桥仙》"两情若是久长时"＋<b>荷花图开放题</b>（四示例：水面清圆，一一风荷举等）</td><td>情境默写三步=识别情境要素→匹配篇目→精确书写（易错字见D件TOP20）；开放题策略=选最熟课标篇目句＋确认意象契合</td></tr>
+    <tr><td><b>母题6</b><br>语用 18/20分</td><td>2026第21题为"出片"热词释义（中国青年报一手锚）；成语/病句/补写/下定义轮换考查</td><td>热词释义=内涵拆解（构词法）＋使用场景＋语义变迁；主线=真实语境内的语用活动</td></tr>
+    <tr><td><b>母题7</b><br>作文 60分</td><td>2024"答案与问题"（AI之问）→2025三则材料"民族魂"（老舍/艾青/穆旦）→2026"词语是表达思想情感的载体…世界之变、时代之变、历史之变"</td><td>材料拆句→概念界定→双面对立统一；<b>任务指令词圈出来：问什么答什么，动词决定文体</b></td></tr>
+  </table>
+
+  <h3 class="sub"><span class="no">4.3</span>默写题型演进史与"卷内联动"新命题手法</h3>
+  <ul style="margin:0 0 10px 22px;font-size:13.5px">
+    <li><b>官方演进线</b>：填空式 → 2014理解型 → 2021开放型（答案不唯一）→ 2023应用型（现实场景）→ 2025<b>应用性与开放性统一、首现图文匹配</b>（zxxk汇编互证："2025年是高考默写史上具有标志性意义的一年"）。</li>
+    <li><b>卷内联动</b>：2025作文材料一（老舍《鼓书艺人》"开不了口"）直接取自同卷阅读II文本一；2024作文材料关联本卷阅读I——<b>阅读卷面的文本当场就是作文素材池</b>，读答时顺手标记可作文眼。</li>
+    <li><b>反套路常态化</b>：2024残缺材料古诗（甲卷）、2025看图默写、2026热词释义——知识储备必须能迁移，模板不能锚死。</li>
+  </ul>
+</section>
+
+<!-- ============ 05 语文易错防线 ============ -->
+<section id="s5">
+  <h2 class="sec">05 语文板块 · 易错防线<span class="en">CHINESE · ERROR DEFENSE</span></h2>
+  <p class="sec-lead">对应D件。三道防线：默写易错字（字源记忆法）→文言翻译丢分点（四段式纠错）→作文跑题模式（四段式纠错）。</p>
+
+  <h3 class="sub"><span class="no">5.1</span>默写易错字TOP20 · 字源记忆法（节选12字）</h3>
+  <table class="tb-cn">
+    <tr><th style="width:70px">字</th><th>所在句（篇目）</th><th style="width:150px">高频错写</th><th style="width:44%">字源记忆法（讲解归纳）</th></tr>
+    <tr><td><b>苍</b></td><td>问苍茫大地（沁园春·长沙）</td><td>沧</td><td>苍=草色深青（艹头指天色）；沧=水青（三点水）。"大地"无水，用苍</td></tr>
+    <tr><td><b>芣苢</b></td><td>采采芣苢（芣苢）</td><td>莒/苜</td><td>芣fú声"不"、苢yǐ声"以"；《诗经》车前草——搜索报道源即有误写，高频实锤</td></tr>
+    <tr><td><b>掇</b></td><td>薄言掇之（芣苢）</td><td>辍</td><td>掇=用手拾取（扌）；辍=车行中止（车旁）——缀/辍/掇三兄弟辨析</td></tr>
+    <tr><td><b>剡</b></td><td>送我至剡溪（梦游天姥）</td><td>焱/掞</td><td>剡=地名剡县（今浙江嵊州），与"焰/掞"音近形近</td></tr>
+    <tr><td><b>屐</b></td><td>脚著谢公屐（梦游天姥）</td><td>履</td><td>屐=木质齿鞋；谢公屐特指登山木屐，非一般鞋履</td></tr>
+    <tr><td><b>渚</b></td><td>渚清沙白鸟飞回（登高）</td><td>诸</td><td>渚从水=水中小洲；诸是文言虚词</td></tr>
+    <tr><td><b>酹</b></td><td>一尊还酹江月（念奴娇）</td><td>洒/醊</td><td>酹从酉（酒坛）=以酒洒地祭奠；酉部字皆酒族</td></tr>
+    <tr><td><b>輮</b></td><td>輮以为轮（劝学）</td><td>揉/煣</td><td>"輮"用火烤木使曲（从车取制轮之义）；手旁"揉"是搓揉，木工语境算错</td></tr>
+    <tr><td><b>戌</b></td><td>壬戌之秋（赤壁赋）</td><td>戍/戊</td><td>干支口诀：<b>"横戌点戍戊中空"</b></td></tr>
+    <tr><td><b>荫</b></td><td>榆柳荫后檐（归园田居）</td><td>阴/茵</td><td>荫=遮蔽义动词（艹头）；<b>2024一卷官方解析点名易错字，一手实锤</b></td></tr>
+    <tr><td><b>衿</b></td><td>青青子衿（短歌行）</td><td>襟</td><td>衿=衣领（衤旁）；诗经原字衿</td></tr>
+    <tr><td><b>潦</b></td><td>潦倒新停浊酒杯（登高）</td><td>缭/撩</td><td>潦从水=雨大水大→潦倒衰颓；撩是手旁</td></tr>
+  </table>
+  <p class="tbl-note">口径：TOP20按"高频错写共识＋必修上册19篇覆盖"排序（cnblogs/eol/理解性默写汇编多源交叉）；字源记忆法全部为讲解归纳。官方阅卷统计不公开发布，如实标注；2024官方解析点名五字"称、指、迩、见、荫"已回填（称/指/迩超上册范围，见C件交叉引用）。</p>
+
+  <h3 class="sub"><span class="no">5.2</span>文言翻译与作文：两大丢分引擎</h3>
+  <div class="facet-grid">
+    <div class="fcard cn">
+      <h6><span class="idx">文言</span>采分点意识缺失</h6>
+      <div class="frow cn"><span class="fk">表现</span>"而刘夙婴疾病"的"婴"（缠绕）跳过不译；"文"按"文章"硬译——2024官方踩点词直接归零。</div>
+      <div class="frow cn"><span class="fk">错因</span>直译意识缺失，"读顺≠译对"；汉斯出版社统计：2020年起新高考文言翻译得分点大部分是<b>源于课本的实词</b>。</div>
+      <div class="frow cn"><span class="fk">机制</span>评分按点采分"扣完为止"，自查无采分点意识→同类词反复漏。</div>
+      <div class="frow cn"><span class="fk">处置</span>口诀"直译优先，字字对位，无中生有查一遍"；限时6分译13(2)对照官方踩点自评。</div>
+    </div>
+    <div class="fcard cn">
+      <h6><span class="idx">作文</span>三大跑题模式</h6>
+      <div class="frow cn"><span class="fk">模式一</span>多材料只取一则（2025三材料只写"敢于表达"，丢"民族魂"统摄层）→ 口诀"多则材料找交集，一主一辅要搭桥"。</div>
+      <div class="frow cn"><span class="fk">模式二</span>忽视任务指令写成话题文（2024全文谈AI利弊，不答"问题是否会越来越少"）→ "指令词圈出来：问什么答什么"。</div>
+      <div class="frow cn"><span class="fk">模式三</span>套作宿构（万能模板贴皮新题）→ 官方评析反制明确："结合自身积累与感悟"，套作在任务完成度维度自动降档。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 语文思维卡与讲法 ============ -->
+<section id="s6">
+  <h2 class="sec">06 语文板块 · F.A.C.E.T.思维卡与教师讲法<span class="en">CHINESE · MENTAL MODELS</span></h2>
+
+  <h3 class="sub"><span class="no">6.1</span>四张思维卡（六字段规格 · 全量档专属）</h3>
+  <div class="facet-grid">
+    <div class="fcard cn">
+      <h6><span class="idx">卡1</span>文本细读</h6>
+      <div class="frow"><span class="fk">内核</span>把文本当证据链而非"读后感素材"——每个判断都能指出文本最小证据单位。</div>
+      <div class="frow"><span class="fk">锚案例</span>《百合花》被子三次复现；2024《放牛记》第9题双重视角（8分题的作答区在证据层不在情节层）。</div>
+      <div class="frow"><span class="fk">失效边界</span>信息类复合文本（2026阅读I）细读对象切换为"数据与结论的关系"，文学式找"言外之意"会偏离答案区。</div>
+    </div>
+    <div class="fcard cn">
+      <h6><span class="idx">卡2</span>语境意识</h6>
+      <div class="frow"><span class="fk">内核</span>词义是语境的函数——不靠背义项表，靠上下文锁定。</div>
+      <div class="frow"><span class="fk">锚案例</span>2024翻译13(2)"文=文饰"、"乡=同向"——两个"脱离语境必死"的官方踩点词。</div>
+      <div class="frow"><span class="fk">失效边界</span>通假/互文/使动信号出现时，先判结构再语境定夺，顺序不能反（"乡"若不识别通假，顺读成"家乡"全句崩）。</div>
+    </div>
+    <div class="fcard cn">
+      <h6><span class="idx">卡3</span>题型意识</h6>
+      <div class="frow"><span class="fk">内核</span>先识别题型=先确定答题的证据规格（选择靠排除定位/简答靠术语+证据/默写错一字整空归零）。</div>
+      <div class="frow"><span class="fk">锚案例</span>2025第17题一道6分内三种题型切换：情境默写×2＋看图开放默写×1。</div>
+      <div class="frow"><span class="fk">失效边界</span>新题型试水常态化（残缺材料/看图默写/热词释义），"模板背熟"反被锚死——内核是识别命题在问什么能力，不是识别第几类模板。</div>
+    </div>
+    <div class="fcard cn">
+      <h6><span class="idx">卡4</span>积累转化</h6>
+      <div class="frow"><span class="fk">内核</span>把输入压成"活块"（观点+例证+情感绑定的最小记忆单元），考场按题眼重组。</div>
+      <div class="frow"><span class="fk">锚案例</span>2025作文材料一取自同卷阅读II——阅读答题时细读过文本，作文立意"就地可得"。</div>
+      <div class="frow"><span class="fk">失效边界</span>积累只绑私人体验，遇宏大命题（民族魂/时代之变）失配——活块双轨：私人体验层＋公共文本层（课文/真题即现成公共层）。</div>
+    </div>
+  </div>
+
+  <h3 class="sub"><span class="no">6.2</span>教师讲法八条（B件 · 单元×1条）</h3>
+  <table class="tb-cn">
+    <tr><th style="width:70px">单元</th><th>讲法要点</th></tr>
+    <tr><td><b>一</b></td><td>"青春价值"忌说教化——《沁园春》"万类霜天竞自由"与《哦，香雪》"铅笔盒"并置：豪迈的/羞怯的两种理想形态，让学生自己发现"物象→情感"通道</td></tr>
+    <tr><td><b>二</b></td><td>先立"事实与观点分离"意识：三篇通讯各找一处"用事实说话"和一处"直接评价"对比——为阅读I打地基</td></tr>
+    <tr><td><b>三</b></td><td>八首诗词按"人生困境与超越"一条线串讲（曹操之困→李清照家破之困），意象手法在"困境—突围"里自然带出，避免清单化背诵</td></tr>
+    <tr><td><b>四</b></td><td>访谈/调查前先给"提问设计"工具——直接对接2025"有效提问"、2026"不断追问"真题，活动课即备考课</td></tr>
+    <tr><td><b>五</b></td><td>《乡土中国》"一个概念一张图"：差序格局画同心圆、礼治秩序画流程——考场上自动激活"找概念定义句"习惯</td></tr>
+    <tr><td><b>六</b></td><td>《劝学》《师说》当"论证结构标本"拆；实词用B2表"本义→引申"字源法起步，打翻译采分点意识底层</td></tr>
+    <tr><td><b>七</b></td><td>《赤壁赋》主客问答="主=苏子，客=苏子的另一面"，情感三变是"自我辩难"结构；与《登泰山记》白描并读建立"同一景物的两种笔法"</td></tr>
+    <tr><td><b>八</b></td><td>用2026"出片"释义真题回灌课堂（热词定义=语素分析+用法归纳+语域标注）——词语积累从"背"转"析"</td></tr>
+  </table>
+
+  <div class="callout">
+    <b>社会侧佐证（B站实采，讲解归纳层）</b>：白名单主播"学过石油的语文老师"（UID 39737405，粉丝<b>1069.5万</b>）《高考技巧》体系课<b>164集 · 总播放2.4亿</b>，其"作文/文言/古诗＋默写/小说散文/信息类/语用"七板块分区与C件七题型母题库<b>独立同构</b>；单集"所有大题？答题模板！"播放732万、"古诗情感"616.7万。社会侧头部教学体系与近三年真题结构互证，支持"题型权重＞教材单元顺序"的备考定位。<span style="color:#718096">（数据为agent-browser实测时点2026-09-25；不替代任何一手真题锚）</span>
+  </div>
+</section>
+
+<!-- ============ 07 英语分支锁定 ============ -->
+<section id="s7">
+  <h2 class="sec">07 英语板块 · 福建分支锁定<span class="en">ENGLISH · PROVINCE BRANCH</span></h2>
+  <p class="sec-lead">对应F件F5＋H件H1＋C侧实采回填件。这是全量档的政策地基：听力是否计入，直接决定60分止损路线选择哪个分支。</p>
+
+  <div class="card">
+    <h4>7.1 条款级依据（闽招委〔2026〕3号，doc全文解析）</h4>
+    <table class="tb-en">
+      <tr><th style="width:110px">条款</th><th>要点</th></tr>
+      <tr><td><b>第十一条</b></td><td>福建实行"3+1+2"；外语分英俄日法德西6语种任选其一</td></tr>
+      <tr><td><b>第十二条</b></td><td>6月8日15:00-17:00考"外语（含听力测试）"；<b>听力安排在笔试开始前进行</b>（同场一次性，非一年两考）</td></tr>
+      <tr><td><b>第十三条</b></td><td>总分750，语数外各150，<b>"语文、数学、外语成绩采用原始分计入"</b>→听力30分计入总分，无"听力不计入→笔试×1.25"折算机制</td></tr>
+      <tr><td><b>第十四条</b></td><td>报考高校外语专业须参加全省外语口试（优/良/合格/不合格等第制，<b>不入总分</b>，依据闽考院普〔2025〕29号）</td></tr>
+      <tr><td><b>第十六条</b></td><td>6月6日熟悉考场环节参加听力试听（设备保障条款，佐证听力为统考正式组成）</td></tr>
+    </table>
+    <p class="tbl-note">证据链：通知页＋细则doc双链实测可达（eeafj.cn），doc元数据（28页/19455字/WPS创建/2026-04-27）真实公文特征，条款号与官方公文格式吻合。<span class="tag a1">一手·直接</span></p>
+  </div>
+
+  <div class="card">
+    <h4>7.2 省际分支判定</h4>
+    <table class="tb-en">
+      <tr><th style="width:170px">分支类型</th><th style="width:180px">代表省份</th><th>对60分路线的影响</th></tr>
+      <tr><td><b>听力计入型</b>（福建）</td><td>与河南2027后、云南同向</td><td>→ <span class="hle">默认全投入分支</span>：L系列听力开关正常计入，听力30分全部参与拆账</td></tr>
+      <tr><td>过渡型（暂不计入）</td><td>河南2025-2026</td><td>笔试×1.25折算，L系列降级</td></tr>
+      <tr><td>分支型</td><td>新疆</td><td>必考不计入→L1-L5全线关闭，L6裸考包兜底</td></tr>
+      <tr><td>特例型</td><td>广东</td><td>听说20分机考单列折算，训练形态不同</td></tr>
+    </table>
+    <blockquote><p><b>时点纪律</b>：本结论时点=截至闽招委〔2026〕3号（2026年高考适用）。按母本包口径，<b>高三报考当年须以本省考试院最新文件复核一次</b>。</p></blockquote>
+  </div>
+</section>
+
+<!-- ============ 08 英语词汇衔接 ============ -->
+<section id="s8">
+  <h2 class="sec">08 英语板块 · 词汇衔接与底料<span class="en">ENGLISH · VOCABULARY</span></h2>
+  <p class="sec-lead">对应G件＋事实层核验报告。核心增量：2025修订版高中课标词汇表3100词口径的发现、五源交叉核验与"官方框架"定位。</p>
+
+  <h3 class="sub"><span class="no">8.1</span>词汇口径定谳与水位阶梯</h3>
+  <div class="chart">
+    <h5>图2 · 初中→高中词汇水位阶梯（口径定谳链）</h5>
+    <div class="src">2022义教课标官方PDF直链在手（moe.gov.cn，扫描版）；2025修订版3100词经五源交叉核验＋算术闭环（C侧核验报告N4）</div>
+    <div class="ladder">
+      <div class="step s1"><div class="sv">1600</div><div class="sn">义教课标2022版<br>含二级505个*标出词<br><span style="font-size:10px">【一手·直接】</span></div></div>
+      <div class="step s2"><div class="sv">3100</div><div class="sn">高中课标2025修订版累计<br>"含义教1600词"<br>=义教1600＋必修500＋选必1000<br><span style="font-size:10px">【五源＋算术闭环】</span></div></div>
+      <div class="step s3"><div class="sv">3500</div><div class="sn">考试口径（传统双轨）<br>H4触发点体系沿用<br><span style="font-size:10px">双口径并列·勿擅自选版</span></div></div>
+      <div class="step s4"><div class="sv">≈1500</div><div class="sn">高中阶段净增词量<br>（3100−1600）<br>衔接期的真实任务量</div></div>
+    </div>
+    <p class="ladder-note">注：<b>2025修订版官方直发页经B侧穷尽检索未找到</b>（moe站内搜索无索引、栏目列表WAF拦截、Wayback超时、智慧平台API 403，2026-09-25如实报备）——3100词维持"三源转录＋待补锚"标注；B侧已另行钉死<b>2020版课标一手证据链</b>（教材〔2020〕3号通知页→官方附件ZIP→英语课标PDF 220页全文本层），词汇表说明段逐字提取：2020版口径=3000词（含义教1500，地方可加200）——一手比对即证<b>"3100/1600"仅属2025修订版、不得回嫁2020版</b>（3500词系考试大纲系口径，三套数字分属三套文件体系）。xxgc.edu.cn转发页curl+browser双重403，降级标注"转录引用（本端复核403未达）"。3100词口径对H件"3500"触发点体系构成口径更新候选——触发点数值待官方锚定后复核，<b>结论不改</b>。</p>
+  </div>
+
+  <h3 class="sub"><span class="no">8.2</span>衔接缺口分析（样本级＋方法级）</h3>
+  <div class="card">
+    <p><b>方法层（可自测）</b>：教材词表<b>黑体=课标词、非黑体=拓展词</b>（人教版原生标记）→ 以2022义教1600词表为基准集逐词比对 → 非1600词即"新授词"。人手一本教材即可自行执行，无需外部词单。</p>
+    <p><b>样本层（Welcome Unit 54词条抽验）</b>：初中→高中的第一道坎不是生僻词，而是——</p>
+    <table class="tb-en">
+      <tr><th style="width:220px">新授词簇</th><th>样本</th></tr>
+      <tr><td><b>校园生活域</b></td><td>campus / senior / registration / lecture / exchange</td></tr>
+      <tr><td><b>情绪认知域</b></td><td>anxious / annoyed / frightened / outgoing / impression</td></tr>
+      <tr><td><b>派生词族成对出现</b></td><td>nation→nationality / design→designer / annoy→annoyed / impress→impression（make an impression）</td></tr>
+    </table>
+    <p>量化边界声明：册级精确缺口率需1600词表逐词转录（官方扫描版限制），本件按"方法＋样本"两级交付；逐词全表转录为增量任务（已立台账）。</p>
+  </div>
+
+  <h3 class="sub"><span class="no">8.3</span>复习方法论（复用层＋新增件）</h3>
+  <table class="tb-en">
+    <tr><th style="width:190px">方法</th><th>要点</th><th style="width:230px">来源</th></tr>
+    <tr><td><b>688双口径</b></td><td>688高频词清单，双口径并列（勿擅自选版）</td><td>复用09-19已验收报告＋B队资产</td></tr>
+    <tr><td><b>SRS五节点</b></td><td>当天睡前→次日晨→第4天→第7天→第15天；每日新词15-20张上限；三时段寄生＋周末错词循环</td><td>复用同上</td></tr>
+    <tr><td><b>词根拐点三档</b></td><td>词根记忆三档划分</td><td>复用同上</td></tr>
+    <tr><td><b>教材黑体自测法</b></td><td>黑体标注＋1600基准集做自主缺口检测</td><td>G件新增（讲解归纳）</td></tr>
+  </table>
+</section>
+
+<!-- ============ 09 英语60分拆账 ============ -->
+<section id="s9">
+  <h2 class="sec">09 英语板块 · 60分拆账与性价比<span class="en">ENGLISH · SCORE BREAKDOWN</span></h2>
+  <p class="sec-lead">对应H件（复用09-19已验收报告1.2/1.3节）。福建分支下，七题型满分150的拆账与双队得分带——60分落在两带覆盖内。</p>
+
+  <h3 class="sub"><span class="no">9.1</span>七题型满分结构</h3>
+  <div class="chart">
+    <h5>图3 · 新高考英语150分拆账（福建：听力30分计入）</h5>
+    <div class="src">结构口径与闽细则"外语150原始分计入"自洽 ｜ 复用自09-19已验收报告图3-2，未改数</div>
+    <div class="crow"><div class="lb">阅读 4篇</div><div class="track"><div class="fill f-en" style="width:100%">37.5分 · 15题×2.5</div></div></div>
+    <div class="crow"><div class="lb">听力 20题</div><div class="track"><div class="fill f-en" style="width:80%">30分（福建计入型）</div></div></div>
+    <div class="crow"><div class="lb">读后续写</div><div class="track"><div class="fill f-gd" style="width:66.7%">25分</div></div></div>
+    <div class="crow"><div class="lb">完形 15题</div><div class="track"><div class="fill f-en" style="width:40%">15分</div></div></div>
+    <div class="crow"><div class="lb">语法填空</div><div class="track"><div class="fill f-en" style="width:40%">15分 · 10题</div></div></div>
+    <div class="crow"><div class="lb">应用文</div><div class="track"><div class="fill f-gd" style="width:40%">15分</div></div></div>
+    <div class="crow"><div class="lb">七选五 5题</div><div class="track"><div class="fill f-en" style="width:33.3%">12.5分</div></div></div>
+  </div>
+
+  <h3 class="sub"><span class="no">9.2</span>双队得分带（A队保守带 × B队进取带）</h3>
+  <div class="chart">
+    <h5>图4 · 各题型得分区间（两带并列，非同带同题对比）</h5>
+    <div class="src">A带=保守可达下限；B带=技巧充足时的冲刺上限；60分=两带覆盖内的达成目标</div>
+    <div class="band-row"><div class="bl">阅读 37.5</div><div class="bt"><div class="rng a" style="left:37.3%;width:10.7%">14–18</div><div class="rng b" style="left:53.3%;width:13.4%;top:17px;bottom:3px">20–25</div></div></div>
+    <div class="band-row"><div class="bl">七选五 12.5</div><div class="bt"><div class="rng a" style="left:48%;width:16%">6–8</div><div class="rng b" style="left:64%;width:16%;top:17px;bottom:3px">8–10</div></div></div>
+    <div class="band-row"><div class="bl">听力 30</div><div class="bt"><div class="rng a" style="left:26.7%;width:6.7%">8–10</div><div class="rng b" style="left:26.7%;width:23.3%;top:17px;bottom:3px">8–15</div></div></div>
+    <div class="band-row"><div class="bl">完形 15</div><div class="bt"><div class="rng a" style="left:40%;width:13.3%">6–8</div><div class="rng b" style="left:26.7%;width:13.3%;top:17px;bottom:3px">4–5</div></div></div>
+    <div class="band-row"><div class="bl">语法填空 15</div><div class="bt"><div class="rng a" style="left:33.3%;width:13.3%">5–7</div><div class="rng b" style="left:33.3%;width:13.3%;top:17px;bottom:3px">5–7（双队一致）</div></div></div>
+    <div class="band-row"><div class="bl">应用文 15</div><div class="bt"><div class="rng a" style="left:53.3%;width:13.3%">8–10</div><div class="rng b" style="left:46.7%;width:13.3%;top:17px;bottom:3px">7–9</div></div></div>
+    <div class="band-row"><div class="bl">续写 25</div><div class="bt"><div class="rng a" style="left:12%;width:8%">3–5</div><div class="rng b" style="left:20%;width:12%;top:17px;bottom:3px">5–8</div></div></div>
+    <div class="band-total">
+      <div class="bt-card a"><div class="v">50 – 66 分</div><div class="d">A队保守带：各题型取"低配可达"档即过及格基线</div></div>
+      <div class="bt-card b"><div class="v">57 – 79 分</div><div class="d">B队进取带：技巧投入充足的冲刺上限</div></div>
+    </div>
+  </div>
+  <p class="tbl-note">注：完形/应用文的B带数值低于A带系两队分配策略不同（B队将分数量让渡给阅读/听力/续写），双口径并列供用户按策略选带，算术各自闭环（A带50-66、B带57-79经汇总员逐项复核）。</p>
+
+  <h3 class="sub"><span class="no">9.3</span>题型性价比排序（双口径＋仲裁）</h3>
+  <table class="tb-en">
+    <tr><th style="width:150px">口径</th><th>排序（前→后）</th></tr>
+    <tr><td><b>A队口径</b></td><td>①词汇主线（688优先，全题型燃料）→ ②阅读定位+排除 → ③应用文模板 → ④七选五三抓 → ⑤语法填空无提示词清单 → ⑥完形保底 → ⑦听力技巧蒙分／续写保底档</td></tr>
+    <tr><td><b>B队口径</b></td><td>①七选五（技巧性价比之王）→ ②阅读细节题 → ③应用文模板 → ④听力技巧蒙分 → ⑤语法填空功能词 → ⑥完形保底 → ⑦读后续写最低保障</td></tr>
+    <tr><td><b>仲裁结论</b></td><td><b>七选五与阅读是技巧侧前二，完形与续写是止损区</b>；听力技巧"零训练成本学了就赚"。老全国卷分支：完形30分时优先级上调至⑤前</td></tr>
+  </table>
+  <div class="callout"><b>执行纪律</b>：优先级非排他序；每月一次真题摸底→对照拆账表校准带位（A带→B带推进）→闸门开关增减；新增投入先过"每分钟换几分"尺子。</div>
+</section>
+
+<!-- ============ 10 开关与思维卡 ============ -->
+<section id="s10">
+  <h2 class="sec">10 英语板块 · 方法开关总表与异形思维卡<span class="en">ENGLISH · SWITCHES & CARDS</span></h2>
+
+  <h3 class="sub"><span class="no">10.1</span>词汇量驱动的开关总表（H4）</h3>
+  <table class="tb-en">
+    <tr><th style="width:250px">触发点（水位）</th><th>开启（闸门）</th><th style="width:200px">关闭/降级</th></tr>
+    <tr><td><b>即刻（W1）</b></td><td>V1卡片盒 · V2五节点 · V3提取纪律 · V4速查表 · V6第一层词池 · G6认读底盘（2h封顶）· L4伪精听</td><td>—</td></tr>
+    <tr><td><b>688词</b></td><td>T2阅读双引擎 · T3七选五 · T7考场技巧</td><td>—</td></tr>
+    <tr><td><b>词汇&gt;500</b>且周末有设备</td><td>L5周末真听写（30分钟起）</td><td>—</td></tr>
+    <tr><td><b>词汇&gt;200</b>且能读例句</td><td>G3小词清单</td><td>—</td></tr>
+    <tr><td><b>词汇&gt;300-400</b></td><td>G2三步动词 · G4三巨头 · G5转换本</td><td>—</td></tr>
+    <tr><td><b>≈2000词</b>（可选）</td><td>V5名词性后缀认读试点 · T5/T6应试全面启动</td><td>—</td></tr>
+    <tr><td><b>3500词</b>（⚠️2025修订版口径=3100词并轨注记中，结论不改）</td><td>V5词根词缀评估 · L1升级评估 · 裸听自测≥50%则L5加密</td><td>V4自然退场；G6被G1-G5替代</td></tr>
+    <tr><td><b>4000词档</b></td><td>V5原典档（仅当提分余量需要）</td><td>60分目标大概率不启用</td></tr>
+    <tr><td><b>省份查实不计分</b>（新疆型）</td><td>—</td><td>L1-L5全线关闭，L6裸考包兜底（福建不适用）</td></tr>
+  </table>
+  <blockquote><p><b>模型一句话</b>：词汇量是<b>水位</b>，开关是<b>闸门</b>——水位到线才开闸，不到线硬背=遗忘率爆表。三条战线时间预算：词汇≈1h一次性＋推进；应试≈2.5h一次性＋周期投入；语法＋听力≈5.5h＋技巧包70分钟。期望产出：语法填空6-9分＋听力期望12-20分。</p></blockquote>
+
+  <h3 class="sub"><span class="no">10.2</span>英语异形思维卡×2（四环结构：触发→运转→翻车→闭环）</h3>
+  <div class="facet-grid">
+    <div class="fcard en">
+      <h6><span class="idx">卡A</span>输入-输出循环（读写互喂）</h6>
+      <div class="frow"><span class="fk">触发</span>续写25分/应用文15分长期低分，背范文记不住→不是背的问题，是输入输出没接环。</div>
+      <div class="frow"><span class="fk">运转</span>读一篇→摘3个可复用句块（"能填空的结构"非好词好句）→当天用该句块写2句自己生活的话→周日用3个句块拼一段续写。输入块必须当周输出一次才入库存。</div>
+      <div class="frow"><span class="fk">翻车</span>摘抄本"只进不出"＝假输入，三周变废纸；输出追求"高级句"超纲造句→语法错误固化。</div>
+      <div class="frow"><span class="fk">闭环</span>句块库≤30个循环使用，每周清一次"三周未被调用块"——库越薄越好用。</div>
+    </div>
+    <div class="fcard en">
+      <h6><span class="idx">卡B</span>词汇量驱动（路径不是清单）</h6>
+      <div class="frow"><span class="fk">触发</span>学生问"3500词要背多久"→错误问题。正确问题＝"现在多少词，下一步开哪个开关"。</div>
+      <div class="frow"><span class="fk">运转</span>688考频词（双口径并列）→过500开L5真听写→过300-400开G2-G5动词转换→按H4表触发点推进，不匀速背全表。</div>
+      <div class="frow"><span class="fk">翻车</span>"每天100词"匀速清单法硬推——第10天遗忘反超新学；单词表脱离语境独立背——688词必须挂例句。</div>
+      <div class="frow"><span class="fk">闭环</span>每月真题摸底→对照拆账表校准带位→闸门开关增减。</div>
+    </div>
+  </div>
+  <p class="tbl-note">异形声明：按补丁v1.2增强4，两科卡必须异构——语文卡用六字段学术框架，英语卡改用"触发→运转→翻车→闭环"四环结构（贴合语言习得的循环特性），卡名不冠F.A.C.E.T.字段名。</p>
+
+  <h3 class="sub"><span class="no">10.3</span>教师讲法六条（G件 · 含勘误更正版）</h3>
+  <table class="tb-en">
+    <tr><th style="width:120px">单元</th><th>讲法要点</th></tr>
+    <tr><td><b>Welcome</b></td><td>"先认人再认词"——自我介绍情境串起nationality/impression/senior等（词境绑定）</td></tr>
+    <tr><td><b>U1</b></td><td>"prefer三态"：prefer to do / prefer doing / prefer A to B三分秒辨（教材原句"I prefer helping others."即语境例）</td></tr>
+    <tr><td><b>U2</b></td><td>"refer to/request要求类虚词组"按语块记不按词记</td></tr>
+    <tr><td><b>U3</b></td><td>"现在进行时表将来"——本单元语法词境双线（与F件语法锚联动）</td></tr>
+    <tr><td><b>U4</b></td><td>"work out双义"（解出/锻炼）典型一词多义教学案例</td></tr>
+    <tr><td><b>Music单元</b>*</td><td><b>避坑讲法（勘误更正版）</b>："virtual词义陷阱"（The Virtual Choir的virtual≠虚拟语气）——借此讲清"科技词义漂移"，正是教师真实痛点。义教阶段不学虚拟语气，"补初中虚拟语气铺垫"前提不成立。</td></tr>
+  </table>
+  <div class="erratum"><b class="t">◈ 汇总员合成勘误②</b>：G件将Music单元定位为"必修一U5"，与F件【一手·直接】目录锚（dzskb目录页：必修一U5=Languages Around the World）冲突——The Virtual Choir篇目按目录锚定谳归<b>必修二Unit 5 Music</b>；讲法内容本身经C侧事实层核验（N7：U5阅读文本确为The Virtual Choir、virtual系话题名词词义）维持有效。</div>
+</section>
+
+<!-- ============ 11 交叉验证 ============ -->
+<section id="s11">
+  <h2 class="sec">11 交叉验证与信息卫生<span class="en">VERIFICATION LOG</span></h2>
+  <p class="sec-lead">本报告全部结论经三层验证：素材方自证锚点 → 汇总侧逐件预检/终检 → 独立事实层交叉核验（C侧）。以下为全周期勘误与核验台账——错误被记录并修正，而非隐藏。</p>
+
+  <ul class="tl">
+    <li><b>勘误①虚拟语气定性（队内闭环）</b>：G件原讲法"虚拟语气进tainment·补初中虚拟语气铺垫"——经核验：U5阅读文本为The Virtual Choir，virtual系话题名词词义，义教阶段不学虚拟语气，前提不成立 → 更正为"virtual词义陷阱"避坑讲法，获C侧事实层佐证（N7）。</li>
+    <li><b>勘误②2025默写"爱莲说"不实信息（采集侧闭环）</b>：早期二手报道"莲花图对应《爱莲说》"经一手核验不实——实为荷花图开放题，四示例无《爱莲说》→ 废弃条目已移除（信息卫生记录）。</li>
+    <li><b>勘误③下册单元归属转录失真（B件v1.1闭环）</b>：v1版下册"文言8篇/13篇"表述失真 → 按汇总员实测处方（dzkbw目录页直采）修正为"文言11篇/诵读4篇/红楼梦归整本书阅读板块"。</li>
+    <li><b>合成勘误④2024文言分值（本报告3章）</b>：C件"22分"与"古代诗文阅读35"算术不自洽 → 修正为20分；2025年整合制"阅读III=22分"口径独立成立（72分自洽），两口径不可互植。</li>
+    <li><b>合成勘误⑤Music单元册别定位（本报告10章）</b>：G件"必修一U5"与F件目录锚冲突 → 按F件【一手·直接】目录锚定谳为必修二Unit 5 Music；讲法内容维持有效。</li>
+    <li><b>合成勘误⑥官方直发页状态预写（v1.2→v1.3）</b>：v1.2曾按在途任务预告预写"2025修订版官方直发页已由B侧补锚闭环"（§8.1/§11/§12.3共3处）——B侧实际报备为<b>未找到</b>（moe站内无索引/栏目WAF/Wayback超时/智慧平台API 403），v1.3逐处修正为"维持待补锚"；B侧补锚的真实增量（2020版一手链钉死＋"3100仅挂2025修订版"版本纪律）已同步入注（§8.1）。</li>
+    <li><b>核验A · 3100词口径升格</b>：8项核验7项直证闭环——moe官方PDF直链实测200、54词条精确闭环（词族成对直证缺口分析）、"二级505标出词"引文级确认；3100词升格"五源＋算术闭环"（广东教育gov平台/百科/21cnjy/学科网/教育界杂志，《人民教育》官刊旁证2025年10月印发修订版）；官方直发页补锚结论=<b>未找到</b>（七路径穷尽留痕，维持待补锚）——B侧另行钉死2020版一手证据链，一手文本反证3100口径归属2025修订版无误（合成勘误⑥）。</li>
+    <li><b>核验B · 福建政策三层审计</b>：通知页＋细则doc双链实测可达→doc元数据真实性核验→条款级摘录与"外语150原始分计入"自洽闭环；教材版本三源纵向＋商业侧证闭合（泉州分支如实保留）。</li>
+    <li><b>核验C · 算术闭环三查</b>：语文150=35+35+20+60（2024）/72+18+60（2025，语用为推算值已标注）；英语150=30+37.5+12.5+15+15+15+25；A带50-66/B带57-79逐项加总复核。</li>
+  </ul>
+</section>
+
+<!-- ============ 12 结论与建议 ============ -->
+<section id="s12">
+  <h2 class="sec">12 结论与使用建议<span class="en">CONCLUSIONS & NEXT STEPS</span></h2>
+
+  <h3 class="sub"><span class="no">12.1</span>三条主线结论</h3>
+  <div class="grid3">
+    <div class="kcard cn"><div class="kn">结论一</div><div class="kt">语文：教材是母题的弹药库</div><p>官方评析反复提"用好统编教材"，2025作文材料直接取自卷内阅读文本。教材单元学习（B件手册＋讲法）与考点训练（C件母题库）双向索引；默写以TOP20字源法守住"错一字整空归零"的红线。</p></div>
+    <div class="kcard en"><div class="kn">结论二</div><div class="kt">英语：分支已锁，路径可执行</div><p>福建=听力计入型→默认全投入分支；60分=A带保守可达（50-66）。执行序：688词点火→开关按水位推进→每月真题摸底校准带位。词汇是燃料，方法是闸门，摸底是仪表盘。</p></div>
+    <div class="kcard"><div class="kn">结论三</div><div class="kt">双科共享元能力</div><p>"识别命题在问什么能力，再动笔"——语文F.A.C.E.T.卡与英语四环卡殊途同归：反套路常态化时代，思维规格比模板库存更抗迭代。</p></div>
+  </div>
+
+  <h3 class="sub"><span class="no">12.2</span>2029届执行时间轴建议（讲解归纳）</h3>
+  <ul class="tl">
+    <li><b>高一上（当前）</b>：语文按B件讲法过八单元＋E件四卡建立思维规格；英语W1即刻启动（卡片盒/SRS/认读底盘），Welcome Unit用"教材黑体自测法"完成第一次缺口自测。</li>
+    <li><b>高一下-高二</b>：词汇过688→500词触发L5真听写→300-400词触发动词转换组；语文进入母题库分题型专项（七选五与阅读优先的技巧侧逻辑同理适用于文言/古诗板块）。</li>
+    <li><b>高三</b>：每月真题摸底对照拆账表校准带位；<b>报考当年以福建省考试院最新文件复核听力计分与口试安排一次</b>（时点纪律）。</li>
+  </ul>
+
+  <h3 class="sub"><span class="no">12.3</span>边界声明与残余待办</h3>
+  <div class="card">
+    <table>
+      <tr><th style="width:280px">项</th><th>状态与处置</th></tr>
+      <tr><td>得分率数据</td><td>官方不发布，教研单样本不采信——本报告不含得分率数值（C件C3声明沿用）</td></tr>
+      <tr><td>2025语用精确分值</td><td>18分为"72+18+60=150"自洽推算，待真题全文二核（已标注）</td></tr>
+      <tr><td>2025默写板块编号</td><td>sohu教研"阅读Ⅳ"vs人民日报"阅读IV=古诗"两源冲突，以人民日报为准，编号待2025空白卷二核</td></tr>
+      <tr><td>1600词逐词转录</td><td>官方PDF扫描版限制，册级缺口率未量化——另立增量任务（OCR/转录源核对）</td></tr>
+      <tr><td>泉州教材分支</td><td>若目标地市为泉州，英语骨架整体切换北师大版重核（F件已留提醒行）</td></tr>
+      <tr><td>3100词官方直发页</td><td>B侧七路径穷尽检索<b>未找到</b>（2026-09-25如实报备），维持"三源转录＋待补锚"标注；2020版一手链（教材〔2020〕3号）已钉死入包，"3100仅挂2025修订版"版本纪律落定</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 附录A 交付清单 ============ -->
+<section id="a1">
+  <h2 class="sec">附录A · 全量档交付清单<span class="en">DELIVERABLES</span></h2>
+  <table>
+    <tr><th style="width:60px">序</th><th>文件</th><th style="width:120px">版本</th><th style="width:130px">预检/终检结论</th></tr>
+    <tr><td>1</td><td>队5_首件_语文A+英语F_教材骨架核对表</td><td>v1</td><td>首件校准通过（格式冻结基准）</td></tr>
+    <tr><td>2</td><td>队5_语文B_单元知识点手册</td><td><b>v1.1</b>（按处方修正后定稿）</td><td>验收定稿</td></tr>
+    <tr><td>3</td><td>队5_语文C_考点与母题库</td><td>v1</td><td>A档验收</td></tr>
+    <tr><td>4</td><td>队5_语文D_易错点统计</td><td>v1</td><td>A档验收</td></tr>
+    <tr><td>5</td><td>队5_语文E_FACET思维卡×4</td><td>v1</td><td>A档验收</td></tr>
+    <tr><td>6</td><td>队5_英语G_词汇衔接与底料</td><td>v1</td><td>预检通过＋事实层核验通过＋2条勘误声明</td></tr>
+    <tr><td>7</td><td>队5_英语H_提分路径</td><td>v1（收官件8/8）</td><td>终检验收定稿</td></tr>
+    <tr><td>8</td><td>队5_两处实采回填_福建听力计分与教材版本（C）</td><td>v1</td><td>三层审计通过</td></tr>
+    <tr><td>9</td><td>队5_B站实采佐证包（C）</td><td>v1</td><td>白名单符合性通过（讲解归纳层佐证）</td></tr>
+    <tr><td>10</td><td>队5_英语G_事实层核验报告（C）</td><td>v1</td><td>8项核验7项直证闭环，无阻断项</td></tr>
+    <tr><td>11</td><td>队5_英语FGH件_复用母本包</td><td>v1.1</td><td>汇总侧基线文件（v1.2注记候选中）</td></tr>
+    <tr><td>12</td><td><b>本报告（合成终稿）</b></td><td>v1</td><td>汇总侧交叉验证合成 · 含合成勘误2条</td></tr>
+  </table>
+</section>
+
+<!-- ============ 附录B 证据统计 ============ -->
+<section id="a2">
+  <h2 class="sec">附录B · 证据来源统计与声明<span class="en">EVIDENCE STATS</span></h2>
+  <div class="card">
+    <h4>关键一手锚点（直链可回溯）</h4>
+    <p style="font-size:13px">
+      <span class="tag a1">一手·直接</span> eeafj.cn闽招委〔2026〕3号通知页＋细则doc ｜ dzskb.com语文/英语教材目录页 ｜ dzkbw.com必修下册目录页 ｜ moe.gov.cn义教课标PDF·发布会·72篇背诵发布 ｜ moe.gov.cn教材音像页（pep.com.cn） ｜ 人民日报/教育部考试院评析转载链（cnnb/edu.people/news.qq/cyol/xhby/voc） ｜ education.news.cn 2026作文题全文 ｜ news.cn 2024/2025作文解析 ｜ China Daily温儒敏访谈 ｜ textbook-info.com三份年段汇编 ｜ B站视频页__INITIAL_STATE__实测
+      <br><span class="tag a2">一手</span> zk24.pdf（2024一卷62KB文本层·官方踩点词） ｜ yb1.pdf（人教必修一18.5MB扫描版） ｜ scribd教材/真题PDF ｜ gaokao.eol.cn解析组稿
+      <br><span class="tag a3">二手</span> sohu默写专析（高质教研） ｜ zxxk汇编 ｜ hanspub.org文言考点统计 ｜ 百度百科词条 ｜ studocu/scribd课标转录（已降级标注者：xxgc.edu.cn 403）
+      <br><span class="tag a4">讲解归纳</span> 思维路径/字源法/讲法/模型化结论（不计锚点密度分母）
+    </p>
+  </div>
+  <div class="foot">
+    <p><b>报告声明</b>：①本报告为队5全量档八件套的合成终稿，全部复用数据注明来源、未静默改数；冲突口径以新增独立实采为准，算术不自洽处已按自洽原则修正并透明标注（合成勘误①②）。②政策类结论均带时点标注（截至闽招委〔2026〕3号），高三报考当年须复核。③官方不公开的数据（阅卷得分率等）不做推断填充。④本报告不构成对任何教培产品的推荐；B站社会侧数据仅作方法论热度佐证（讲解归纳层）。</p>
+    <p>出品：报告汇总员 ｜ 素材：并行搜索员A（八件套）、并行搜索员B（B件＋直发页补锚＋母本包）、并行搜索员C（实采/核验/佐证包） ｜ 口径：搜索规划师补充口径单v1.1 ｜ 2026-09-25 v1.3（合成勘误⑥：直发页状态修正为"未找到·待补锚"）</p>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
