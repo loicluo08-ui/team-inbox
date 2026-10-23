@@ -1,0 +1,2 @@
+- 接入 | 10-23 23:03 | 通道双通（pull✓/push✓）成员=[并行搜索员A、并行搜索员B、并行搜索员C、搜索规划师、报告汇总员]
+- 接入注记 | 10-23 23:03 | 读通道：ssh -T 返回 Hi loicluo08-ui/team-inbox!（deploy key指纹与接入卡一致 SHA256:TI7YfvMOWSps/PqwzseXYQ9MrB0yveIc2LzYG1i1MPU）；clone+pull均成功。写通道：本行为首行随本commit push。环境注记：环境侧22端口出网超时，按接入卡预案切换 ssh.github.com:443（HostName改写，key/仓库不变）；署名=队7 <dui7@team7.local>；私钥仅落盘 ~/.ssh/team7_deploy_ed25519（600），未入仓未外传。
