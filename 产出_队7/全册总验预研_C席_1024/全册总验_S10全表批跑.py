@@ -18,11 +18,23 @@ def audit(path, skip_machine):
     sw = [w for w in STATEWORDS if w in s]
     if sw: r.append(f'🄰2状态词(软)命中{sw}·候人工判读（内容短语如"母题骨架"系合法课程语言）')  # 软项不计入硬伤
     if not skip_machine:
-        qc = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'qc_金融语域机检_v1.py')
-        p = subprocess.run(['python3', qc, path], capture_output=True, text=True)
-        ok = '0 个待修' in p.stdout or '0个待修' in p.stdout
-        r.append(f'🄰3机检{"✅" if ok else "⚠️待修"}')
-        if not ok: hard += 1
+        # 1024晚收官批工具债修复（管理员20:47队6认领令§二-B）：机检调用直接import
+        # qc_金融语域机检_v1.py(内容=v1.1)的scan函数，单一信源（词表+白名单随源同步），
+        # 弃subprocess+stdout字符串判定旧法；白名单'一套现成'豁免地理2.1装配件"套现"跨词假阳
+        _root = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+        if _root not in sys.path:
+            sys.path.insert(0, _root)
+        try:
+            from qc_金融语域机检_v1 import scan as _qc_scan
+            _hits = _qc_scan(path)
+            if _hits:
+                r.append(f'🄰3机检⚠️待修{len(_hits)}处:' + '；'.join(f'[{w}]{c[:26]}' for w, c in _hits[:3]))
+                hard += 1
+            else:
+                r.append('🄰3机检✅(import qc_v1.1单一信源·白名单敞口瓶/稳定存在/一套现成已同步)')
+        except Exception as e:
+            r.append(f'🄰3机检⚠️调用失败(qc_v1.1不可达·机检必须真实执行勿静默跳过):{type(e).__name__}')
+            hard += 1
     h2 = re.findall(r'<h2[^>]*>(.*?)</h2>', s)
     plain = [re.sub(r'<[^>]+>', '', x) for x in h2]
     r.append(f'🄱1开篇页{"✅" if plain and "开篇" in plain[0] else "无"}')
