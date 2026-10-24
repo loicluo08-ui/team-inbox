@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜研究物质性质的方法和程序｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1e2733; --sub:#5a6b7d; --line:#d9e2ea; --paper:#ffffff; --wash:#f3f7fa;
+    --accent:#0d5c8a; --accent-soft:#e2eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eceff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(30,39,51,.08);}
+  .head{background:linear-gradient(135deg,#0d5c8a 0%,#11699c 55%,#1a7ab0 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:26px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  .slice .honest{font-size:12.5px; color:var(--sub); background:var(--accent-soft); border-radius:8px;
+                 padding:8px 12px; margin-top:8px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">化学</span><span class="chip">鲁科版 · 必修第一册</span><span class="chip">第一章 走进化学科学</span>
+    </div>
+    <h1>第二节 研究物质性质的方法和程序</h1>
+    <div class="kicker">讲法锚点 · 切片卡 —— 视频切片 · 考点定位 · 易错收口</div>
+    <div class="anchor-line">节名照录：鲁科版《普通高中教科书 · 化学 · 必修第一册》目录（v18原册 · 鲁科节对应表）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 150" width="100%" role="img" aria-label="本卡锚点布局图">
+          <!-- 视频时间轴示意 -->
+          <rect x="42" y="16" width="120" height="24" rx="6" fill="#eef2f5" stroke="#b9c8d4" stroke-width="1" stroke-dasharray="4 3"/>
+          <rect x="166" y="16" width="200" height="24" rx="6" fill="#eef2f5" stroke="#b9c8d4" stroke-width="1" stroke-dasharray="4 3"/>
+          <rect x="370" y="16" width="308" height="24" rx="6" fill="#eef2f5" stroke="#b9c8d4" stroke-width="1" stroke-dasharray="4 3"/>
+          <text x="266" y="32" font-size="12.5" fill="#5a6b7d" text-anchor="middle">无节级切片 · 秒窗未标定</text>
+          <text x="102" y="32" font-size="11" fill="#5a6b7d" text-anchor="middle">未标定区</text>
+          <text x="524" y="32" font-size="11" fill="#5a6b7d" text-anchor="middle">未标定区</text>
+          <!-- 考点定位轴线 -->
+          <text x="42" y="74" font-size="11.5" fill="#5a6b7d">考点定位</text>
+          <line x1="118" y1="70" x2="620" y2="70" stroke="#9db3c2" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="200" cy="70" r="8" fill="#0d5c8a"/>
+          <circle cx="360" cy="70" r="8" fill="#0d5c8a"/>
+          <circle cx="520" cy="70" r="8" fill="#0d5c8a"/>
+          <rect x="640" y="62" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="200" y="96" font-size="12" fill="#1e2733" text-anchor="middle">Na₂O₂供氧反应</text>
+          <text x="200" y="112" font-size="11.5" fill="#5a6b7d" text-anchor="middle">潜水艇呼吸面具</text>
+          <text x="360" y="96" font-size="12" fill="#1e2733" text-anchor="middle">碳酸盐对鉴别转化</text>
+          <text x="360" y="112" font-size="11.5" fill="#5a6b7d" text-anchor="middle">三道分水岭</text>
+          <text x="520" y="96" font-size="12" fill="#1e2733" text-anchor="middle">焰色反应</text>
+          <text x="520" y="112" font-size="11.5" fill="#5a6b7d" text-anchor="middle">物理变化·检Na/K</text>
+          <text x="648" y="96" font-size="12" fill="#1e2733" text-anchor="middle">易错收口</text>
+          <text x="648" y="112" font-size="11.5" fill="#5a6b7d" text-anchor="middle">先与水反应</text>
+          <text x="42" y="140" font-size="11" fill="#5a6b7d">亮窗＝本卡切片窗；虚线区＝全片时长未录，不虚标</text>
+        </svg>
+        <figcaption>灰窗＝锚点示意（本节无节级切片——组织信号锚，无秒窗可指，不虚标）；圆点＝考频定位的三个考点；方点＝易错收口条。用卡顺序＝教材通读→按三考点自测→易错自查。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频锚</span></h2>
+      <div class="slice">
+        <span class="tag">缺口声明态 · 学考锚态</span>
+        <p><b>组织信号锚：一化儿谱系表"钠及其化合物"条（人教编号组织·对应本节）</b>——P22把钠单质与两种氧化物并作一课（组织信号·一手照录）。对口节级切片未取得，秒窗未标定。</p>
+        <p>组织信号：钠单质与Na₂O／Na₂O₂并课讲——"常温Na₂O／加热Na₂O₂"条件对比是讲课重点。通用衔接：<a href="https://www.bilibili.com/video/BV1fDTu6yE9m" target="_blank" rel="noopener">BV1fDTu6yE9m</a> 大合集可作全书级兜底。</p>
+        <div class="meta">锚态：缺口声明（无节级秒窗）｜ UP粉丝 1032.4 万（2026-10-04 照录）｜ 源：v18原册 · 附录谱系（一手照录）</div>
+        <div class="honest">如实声明：本节对口节级切片未取得；组织信号系谱系层一手照录，无秒窗可指——不虚标起止秒、不代引原话；题号级真题锚候卷源批次就位后补。</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>考点定位<span class="en">v18原册高考接口 · 原文照录</span></h2>
+      <table>
+        <thead>
+          <tr><th>考点</th><th>考频定位（原文照录）</th><th>对应本卡</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>① Na₂O₂与水／CO₂的反应</td>
+            <td>供氧剂·潜水艇和呼吸面具真实应用</td>
+            <td>易错收口·组织信号</td>
+          </tr>
+          <tr>
+            <td>② 碳酸盐对的鉴别与转化</td>
+            <td>Ca²⁺／H⁺／热稳定性三道分水岭</td>
+            <td>考点定位</td>
+          </tr>
+          <tr>
+            <td>③ 焰色反应</td>
+            <td>检验Na／K的物理方法</td>
+            <td>考点定位·易错自查</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">源：v18原册§1.2"为什么需要它"（原文照录·正件"怎么考"行）。如实声明：题号级真题锚候卷源批次就位后补，本卡不代拟。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 1</span>
+        <p><b>钠与CuSO₄溶液写成"2Na+CuSO₄=Na₂SO₄+Cu"</b>——钠遇盐溶液先与水反应：生成的NaOH再与CuSO₄复分解放Cu(OH)₂。活泼金属置换金属的旧模板在此失效。</p>
+        <p class="punch">最常丢分：套初中"置换反应"模板一步出铜。先写钠与水的方程式，再走两步式。</p>
+        <p class="meta">源：v18原册§1.2（正件易错卡症状区同源照录）</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>教材通读四步程序（观察→预测→实验与观察→解释与结论）与钠的示范。</li>
+        <li>按三考点自测：Na₂O₂两步式、碳酸盐对三道分水岭、焰色反应，各答一句。</li>
+        <li>易错自查：钠＋盐溶液谁先反应？两步式写一遍。</li>
+        <li>考前把"浮熔游响红"与钠的两个方程式（与水／与氧气点燃）各默写一遍。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：锚点＝一化儿谱系表"钠及其化合物"条（人教编号组织·对应本节）（缺口声明态·学考锚态，无节级秒窗）；UP数据＝一化儿粉丝1032.4万（2026-10-04照录）；考点定位＝v18原册§1.2（原文照录）；易错条＝正件易错卡症状区；组织信号＝v18原册·教师讲法采集；节名＝鲁科版《化学·必修第一册》目录（v18原册·鲁科节对应表）。本卡与正件《研究物质性质的方法和程序》互为补充：核心内容已在正件完整展开，本卡供锚点索引与考前回炉。
+  </div>
+
+</div>
+</body>
+</html>

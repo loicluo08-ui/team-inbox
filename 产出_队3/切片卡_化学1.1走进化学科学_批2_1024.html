@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜走进化学科学｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1e2733; --sub:#5a6b7d; --line:#d9e2ea; --paper:#ffffff; --wash:#f3f7fa;
+    --accent:#0d5c8a; --accent-soft:#e2eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eceff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(30,39,51,.08);}
+  .head{background:linear-gradient(135deg,#0d5c8a 0%,#11699c 55%,#1a7ab0 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:26px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  .slice .honest{font-size:12.5px; color:var(--sub); background:var(--accent-soft); border-radius:8px;
+                 padding:8px 12px; margin-top:8px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">化学</span><span class="chip">鲁科版 · 必修第一册</span><span class="chip">第一章 走进化学科学</span>
+    </div>
+    <h1>第一节 走进化学科学</h1>
+    <div class="kicker">讲法锚点 · 切片卡 —— 视频切片 · 考点定位 · 易错收口</div>
+    <div class="anchor-line">节名照录：鲁科版《普通高中教科书 · 化学 · 必修第一册》目录（v18原册 · 鲁科节对应表）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 150" width="100%" role="img" aria-label="本卡锚点布局图">
+          <!-- 视频时间轴示意 -->
+          <rect x="42" y="16" width="120" height="24" rx="6" fill="#eef2f5" stroke="#b9c8d4" stroke-width="1" stroke-dasharray="4 3"/>
+          <rect x="166" y="16" width="200" height="24" rx="6" fill="#eef2f5" stroke="#b9c8d4" stroke-width="1" stroke-dasharray="4 3"/>
+          <rect x="370" y="16" width="308" height="24" rx="6" fill="#eef2f5" stroke="#b9c8d4" stroke-width="1" stroke-dasharray="4 3"/>
+          <text x="266" y="32" font-size="12.5" fill="#5a6b7d" text-anchor="middle">无节级切片 · 秒窗未标定</text>
+          <text x="102" y="32" font-size="11" fill="#5a6b7d" text-anchor="middle">未标定区</text>
+          <text x="524" y="32" font-size="11" fill="#5a6b7d" text-anchor="middle">未标定区</text>
+          <!-- 考点定位轴线 -->
+          <text x="42" y="74" font-size="11.5" fill="#5a6b7d">考点定位</text>
+          <line x1="118" y1="70" x2="620" y2="70" stroke="#9db3c2" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="200" cy="70" r="8" fill="#0d5c8a"/>
+          <circle cx="360" cy="70" r="8" fill="#0d5c8a"/>
+          <circle cx="520" cy="70" r="8" fill="#0d5c8a"/>
+          <rect x="640" y="62" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="200" y="96" font-size="12" fill="#1e2733" text-anchor="middle">物化变化判据</text>
+          <text x="200" y="112" font-size="11.5" fill="#5a6b7d" text-anchor="middle">判据看分子层面</text>
+          <text x="360" y="96" font-size="12" fill="#1e2733" text-anchor="middle">绿色化学内涵</text>
+          <text x="360" y="112" font-size="11.5" fill="#5a6b7d" text-anchor="middle">源头防止污染</text>
+          <text x="520" y="96" font-size="12" fill="#1e2733" text-anchor="middle">三线归属</text>
+          <text x="520" y="112" font-size="11.5" fill="#5a6b7d" text-anchor="middle">全书观察框架</text>
+          <text x="648" y="96" font-size="12" fill="#1e2733" text-anchor="middle">易错收口</text>
+          <text x="648" y="112" font-size="11.5" fill="#5a6b7d" text-anchor="middle">当判据</text>
+          <text x="42" y="140" font-size="11" fill="#5a6b7d">亮窗＝本卡切片窗；虚线区＝全片时长未录，不虚标</text>
+        </svg>
+        <figcaption>灰窗＝锚点示意（本节无节级切片——全书级兜底锚，分P对应未标定，不虚标秒窗）；圆点＝考频定位的三个考点；方点＝易错收口条。用卡顺序＝教材通读→按三考点自测→易错自查。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频锚</span></h2>
+      <div class="slice">
+        <span class="tag">缺口声明态 · 学考锚态</span>
+        <p><b>全书级兜底锚：《【高一化学】必修一+必修二 大合集》</b>——UP主：一化儿（粉丝1032.4万，<a href="https://www.bilibili.com/video/BV1fDTu6yE9m" target="_blank" rel="noopener">BV1fDTu6yE9m</a>）。本节对口节级切片未取得，秒窗未标定。</p>
+        <p>谱系主载体通用衔接：全书级兜底串讲资源，可按合集目录自行检索与本节对应分P。本节为全书第一节——三线观察框架（宏观／微观／符号）在此建立，第3章起每条知识都挂三线标签。</p>
+        <div class="meta">锚态：缺口声明（无节级秒窗）｜ UP粉丝 1032.4 万（2026-10-04 照录）｜ 源：v18原册 · 附录谱系（一手照录）</div>
+        <div class="honest">如实声明：本节对口教师讲法未取得（正件缺口声明沿用）；兜底合集的分P与本节对应关系未标定——不虚标秒窗、不代指分P；真题频次候真题库合流标定（正件原句）。</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>考点定位<span class="en">v18原册高考接口 · 原文照录</span></h2>
+      <table>
+        <thead>
+          <tr><th>考点</th><th>考频定位（原文照录）</th><th>对应本卡</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>① 物理变化／化学变化判断</td>
+            <td>同素异形体转变是常设陷阱</td>
+            <td>易错收口</td>
+          </tr>
+          <tr>
+            <td>② 绿色化学内涵（选择题）</td>
+            <td>认"从源头防止污染"</td>
+            <td>考点定位</td>
+          </tr>
+          <tr>
+            <td>③ 三线归属初高衔接小题</td>
+            <td>三线＝全书观察框架</td>
+            <td>考点定位·用法预告</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">源：v18原册·易错速查补遗触发情境（原文照录·正件"怎么考"行）。如实声明：真题频次候真题库合流标定——题号级锚本卡不代拟。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 1</span>
+        <p><b>同素异形体转变（O₂→O₃）用"元素没变"当判据</b>——判据在分子层面：有没有生成新分子。O₂变O₃元素没变，但分子变了，是化学变化。</p>
+        <p class="punch">最常丢分：把"元素相同"当物理变化的理由。先问"新分子出来没有"，再下结论。</p>
+        <p class="meta">源：v18原册§1.1（正件易错区同源照录）</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>教材通读本节，圈出三线框架（宏观／微观／符号）三处。</li>
+        <li>按三考点自测：同素异形体转变判据、绿色化学内涵、三线归属，各答一句。</li>
+        <li>易错自查：O₂→O₃有没有新分子？答不出回正文重看。</li>
+        <li>预告：三线框架全书复用——本节学的是观察工具，不是孤立考点。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：锚点＝《【高一化学】必修一+必修二 大合集》（缺口声明态·学考锚态，无节级秒窗）；UP数据＝一化儿粉丝1032.4万（2026-10-04照录）；考点定位＝v18原册易错速查补遗（原文照录）；易错条＝v18原册§1.1；节名＝鲁科版《化学·必修第一册》目录（v18原册·鲁科节对应表）。本卡与正件《走进化学科学》互为补充：核心内容已在正件完整展开，本卡供锚点索引与考前回炉。
+  </div>
+
+</div>
+</body>
+</html>
