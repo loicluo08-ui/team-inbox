@@ -2,6 +2,9 @@
 # 物理1章章级装配器（队4·B席·1024）——md→HTML·产线方言：#系列/表格/列表/粗体/code/hr/引用/图规格块
 # C5机制：table/card/blockquote page-break-inside:avoid 注入；C7页码：playwright footer driver
 import re, html, sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from importlib import import_module
+pur = import_module("工具_装配净化器_队4_1024")  # W2净化器（16:07裁定②·A2口径清除留痕）
 
 SECS = [
     ("1.1", "质点 参考系", "产出_队4/物理-1.1.md"),
@@ -96,10 +99,11 @@ def main():
     toc.append(f"<b style=\"color:#7ec9a0\">{CHAP}</b>（六节）")
     for idx, (num, title, path) in enumerate(SECS, 1):
         md = open(path).read()
+        md = pur.purify_md(md)  # W2净化：v18挂接注/簇编制名/装配批注A2口径清除（canonical源件零触碰）
         blocks = md_to_html(md, idx)
         sid = f"sec{idx}"
         toc.append(f"<b style=\"color:#fff\">{num} {title}</b>：" + " · ".join(
-            f"<a href=\"#{bid}\" style=\"color:#4da3ff;text-decoration:none\">{re.sub(r'<[^>]+>','',bh)[3:20].strip('（ ')}</a>"
+            f"<a href=\"#{bid}\" style=\"color:#4da3ff;text-decoration:none\">{re.sub(r'<[^>]+>','',bh).strip()}</a>"
             for kind, bid, bh in blocks if bid))
         parts.append(f"<div class=\"secdiv\" id=\"{sid}\">◆ ◆ ◆　{num}　{title}</div>")
         parts.extend(bh for _, _, bh in blocks)
@@ -117,8 +121,8 @@ def main():
                 "<tr><td>1.5</td><td>读图三看：先认轴、再看线、后看点；斜率=变化率，面积=累积</td><td>x-t交点=相遇、v-t交点=共速，两者永不混；轴下面积记负</td></tr>"
                 "<tr><td>1.6</td><td>统一参考系＋统一时间零点是第一纪律；共速=距离极值临界</td><td>幽灵解必须物理筛；刹车截断位移封顶</td></tr></table>")
     selftest = ("<h2 id=\"chaptest\">全章自测三题（跨节串联·先做再看出处）</h2><ol>"
-                "<li>（1.1×1.2桥）商场扶梯以v₁=1 m/s匀速上行，人以相对扶梯v₂=2 m/s沿梯上行，扶梯长L=6 m。分别以扶梯、地面为参考系求通行时间，并说明研究对象能否视为质点。<br>出处与解：1.1跨簇连接题（两系一致t=3 s；人需视为质点——本题不关心肢体姿态）。</li>"
-                "<li>（1.2×1.5桥）v-t图上甲以4 m/s匀速、乙同时静止以2 m/s²加速，何时相距最远、最远多少？用面积差与位移公式双轨验证。<br>出处与解：1.2跨簇连接题（t=2 s共速相距最远4 m；面积差读距离=二次函数顶点两张脸）。</li>"
+                "<li>（1.1×1.2桥）商场扶梯以v₁=1 m/s匀速上行，人以相对扶梯v₂=2 m/s沿梯上行，扶梯长L=6 m。分别以扶梯、地面为参考系求通行时间，并说明研究对象能否视为质点。<br>出处与解：1.1跨节连接题（两系一致t=3 s；人需视为质点——本题不关心肢体姿态）。</li>"
+                "<li>（1.2×1.5桥）v-t图上甲以4 m/s匀速、乙同时静止以2 m/s²加速，何时相距最远、最远多少？用面积差与位移公式双轨验证。<br>出处与解：1.2跨节连接题（t=2 s共速相距最远4 m；面积差读距离=二次函数顶点两张脸）。</li>"
                 "<li>（1.4×1.6桥）汽车以20 m/s行驶、刹车加速度大小5 m/s²，求刹车后6 s内位移——并解释为何不能直接代t=6。<br>出处与解：1.4最小验证①（t停=4 s截断，x=40 m；直接代6 s得30 m系“倒车幽灵解”——1.6刹车封顶同款纪律）。</li></ol>")
     css = """<style>
 body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;margin:0;padding:18px;background:#0d1117;color:#c9d1d9;line-height:1.75;}
