@@ -38,7 +38,44 @@ INVERT_JS = """
   document.querySelectorAll('svg').forEach(svg=>{
     svg.style.background='#fff';
     svg.style.border='0.6pt solid #aaa';
+    // fill full-invert branch (v1.2, 2026-10-24 admin-approved): dark shape fills -> near-white; light text -> dark
+    svg.style.setProperty('background','#fff','important');
+    const pe=svg.parentElement;
+    if(pe&&pe.tagName!=='BODY'){pe.style.setProperty('background','#fff','important');}
+    svg.querySelectorAll('rect,circle,ellipse,polygon,polyline').forEach(el=>{
+      const v=el.getAttribute('fill')||'#000';
+      if(v){
+        const n=invColor(v);
+        if(n){
+          const m=n.match(/(\d+),/);
+          if(m){
+            const g2=parseInt(m[1]);
+            if(g2<110){
+              const wv=243+Math.round(g2*0.04);
+              el.setAttribute('fill','rgb('+wv+','+wv+','+wv+')');
+            }
+          }
+        }
+      }
+    });
+    svg.querySelectorAll('text,tspan').forEach(el=>{
+      const v=el.getAttribute('fill');
+      if(v){
+        const n=invColor(v);
+        if(n){
+          const m=n.match(/(\d+),/);
+          if(m){
+            const g2=parseInt(m[1]);
+            if(g2>140){
+              const dv=Math.max(24,Math.round(255-g2*0.55));
+              el.setAttribute('fill','rgb('+dv+','+dv+','+dv+')');
+            }
+          }
+        }
+      }
+    });
     svg.querySelectorAll('*').forEach(el=>{
+      if(el.hasAttribute('data-no'))return;
       ['fill','stroke'].forEach(attr=>{
         const v=el.getAttribute(attr);
         if(v){const n=invColor(v); if(n) el.setAttribute(attr,n);}
