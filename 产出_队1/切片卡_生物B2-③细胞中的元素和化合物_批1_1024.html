@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜细胞中的元素和化合物｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1c2530; --sub:#5a6a7a; --line:#d9e0e8; --paper:#ffffff; --wash:#f3f6fa;
+    --accent:#2b6cb0; --accent-soft:#e4eef8; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef1f4; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(28,37,48,.08);}
+  .head{background:linear-gradient(135deg,#2b6cb0 0%,#3178c2 55%,#4185cf 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice .tag.alt{background:#6d5b9e;}
+  .slice p{margin:4px 0;}
+  .slice .quote{background:var(--wash); border-left:3px solid var(--accent); padding:8px 12px; border-radius:0 8px 8px 0;
+                font-size:13.5px; margin:8px 0; color:#24334a;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px; margin-bottom:12px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  .errcard .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  .honest{font-size:12.5px; color:#5a6a7a; background:var(--accent-soft); border-radius:8px;
+                 padding:8px 12px; margin-top:8px;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">生物</span><span class="chip">人教版 · 必修第一册</span><span class="chip">第2章 组成细胞的分子</span>
+    </div>
+    <h1>第1节 细胞中的元素和化合物</h1>
+    <div class="kicker">讲法锚点 · 切片卡 —— 双UP打底 · 秒级切片窗 · 易错收口</div>
+    <div class="anchor-line">节名照录：人教版《普通高中教科书 · 生物学 · 必修 · 第1册 分子与细胞》目录（在库 B2-③ 节件同名）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 138" width="100%" role="img" aria-label="本节锚点布局图"><rect x="42" y="12" width="636" height="24" rx="6" fill="#e8eef6" stroke="#2b6cb0" stroke-width="1.2"/><text x="58" y="28" font-size="12.5" fill="#1c2530">UP① 汉水丑生 · 新授打底（全片 42:24 · AI轨475行覆盖至45.3%）</text><text x="662" y="28" font-size="11.5" fill="#2b6cb0" text-anchor="end">0:00 → 42:24</text><rect x="42" y="42" width="636" height="24" rx="6" fill="#e8eef6" stroke="#6d5b9e" stroke-width="1.2"/><text x="58" y="58" font-size="12.5" fill="#1c2530">UP② 李林生物 · 课本回归（全片 22:44 · AI轨733行全程）</text><text x="662" y="58" font-size="11.5" fill="#6d5b9e" text-anchor="end">0:00 → 22:44</text><rect x="211" y="72" width="150" height="20" rx="5" fill="#2b6cb0"/><text x="286" y="86" font-size="11" fill="#fff" text-anchor="middle">切片窗① 三大检测实验 11:17→14:32</text><rect x="528" y="72" width="134" height="20" rx="5" fill="#8a6d1f"/><text x="595" y="86" font-size="11" fill="#fff" text-anchor="middle">易错收口</text><text x="42" y="112" font-size="11.5" fill="#5a6a7a">▲ 双UP互为镜像：汉水=新授详讲慢节奏；李林=课本回归快节奏。同一概念听两遍讲法，比单UP刷题更能钉牢概念。</text><text x="42" y="130" font-size="11" fill="#5a6a7a">真题锚：本卡未采到节级真题台账——宁缺毋编不虚标，候卷源直读线回填。核验：切片窗画面级核验后置补（候Alex），秒窗与BV已库内对账。</text></svg>
+        <figcaption><b>怎么读这张图：</b>蓝带＝汉水丑生全片锚，紫带＝李林全片锚；蓝块＝已采秒级切片窗（起止秒直接可跳），
+        金块＝易错收口（UP主原话段内照录）。全部起止秒与 BV 已库内对账（采集索引_生物物理.json 在库可查）。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频锚</span></h2>
+      <div class="slice"><span class="tag">新授打底 · 全片</span>
+        <p><b>《必修1第二章第1节 细胞中的元素和化合物（检测生物组织中的还原糖、脂肪和蛋白质）》</b>——UP主：汉水丑生（侯伟），<a href="https://www.bilibili.com/video/BV1UP4y1b7ir" target="_blank">BV1UP4y1b7ir</a>，全片 0:00 → 42:24。</p>
+        <p>AI 字幕轨 475 行（至 1152.78s·全片 45.3%，源侧原生长度如实申报），可逐句对账。</p>
+        <div class="meta">时长 42:24 ｜ 255,913 播放 ｜ 采集链=采集索引_生物物理.json（cid 429282445·字幕轨1）</div></div>
+      <div class="slice"><span class="tag alt">切片窗 · 秒级可跳</span>
+        <p><b>检测生物组织中的糖类、脂肪和蛋白质（三大检测对比主窗）</b>——李林生物 <a href="https://www.bilibili.com/video/BV1tQpgetEwN?t=676" target="_blank">BV1tQpgetEwN</a>，11:17→14:32（3.3分钟）。</p>
+        <div class="quote">都是氢氧化钠和硫酸铜但是原理和使用方法又截然不同啊所以其实这里就有很多题会对他们进行比较</div><div class="quote">甘蔗就不行第二呢颜色要比较浅如果颜色比较深</div>
+        <div class="meta">锚点=字幕 sid349→455（676.84s→872.04s，首行 from→末行 to）｜照录=JSON content 全行直拼 1160 字零省略，生成即直拼全等断言通过（本卡出品时独立复跑实测）；AI字幕原字照录（"非磷试剂"=斐林试剂·"双缩尿"=双缩脲 系误识如实注）</div></div>
+      <div class="slice"><span class="tag">课本回归 · 全片</span>
+        <p><b>《课本回归·必修一 第2章 第1节 细胞中的元素和化合物》</b>——UP主：李林生物，<a href="https://www.bilibili.com/video/BV1tQpgetEwN" target="_blank">BV1tQpgetEwN</a>，全片 0:00 → 22:44。</p>
+        <p>AI 字幕 733 行全程覆盖（1364s 全片），镜像听法用。</p>
+        <div class="meta">时长 22:44 ｜ 69,487 播放 ｜ 采集链=采集索引_生物物理.json（cid 25750864521·字幕轨1）</div></div>
+      <div class="honest">
+        宁缺毋编申报：①主窗系本卡自切（现行校准件未覆盖 B2 系）——照录=库内 JSON content 全行直拼，生成即全等断言（见 meta），无校准件预切窗如实标注；②汉水轨尾段 1152.78s→2544s 无AI字幕语料如实申报（不硬凑）；③节级真题锚未采到台账——不虚标，候卷源直读线回填；④UP②全片另有元素/化合物概念段（i=240 起微量元素段等）未预切，json 在库窗位后置。
+      </div>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">UP主原话 · 考前扫一眼</span></h2>
+      <div class="errcard"><span class="tag">易错卡 · 1</span>
+        <p><b>还原糖检测选材两要求（含糖量高且颜色浅），蔗糖是经典陷阱。</b>UP主原话强调："他们第一呢含糖的比较多而且得是还原性糖啊不能是蔗糖啊甘蔗就不行第二呢颜色要比较浅如果颜色比较深会影响我们对于颜色的观察"。</p>
+        <p class="punch">斐林试剂甲乙液（NaOH+CuSO₄）现配现用、水浴加热→砖红色沉淀（Cu₂O）；双缩脲试剂 A液B液 不加热→紫色络合物。"非磷试剂（斐林）与双缩尿（脲）试剂成分相似原理用法截然不同"是选择题最爱。</p>
+        <p class="meta">源：李林生物 <a href="https://www.bilibili.com/video/BV1tQpgetEwN?t=798" target="_blank">BV1tQpgetEwN</a> 798s→830s 段内原话（窗sid349→455内照录·UP主原话强调级）</p></div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>教材通读本节，先背"大量元素 C/H/O/N/P/S/K/Ca/Mg + 微量元素 Fe/Mn/Zn/Cu/B/Mo"两组口诀。</li>
+        <li>汉水全片跟学一遍（42:24）；赶时间就精听切片窗①三大检测对比（11:16.84→14:32.04）。</li>
+        <li>换李林全片重听一遍（22:44全程有字幕），留意检测实验"试剂→颜色→条件"三列表格的搭法。</li>
+        <li>考前把易错卡扫一遍：默写斐林/双缩脲两试剂的成分、条件、颜色三对照，并说出蔗糖为什么不能用于还原糖检测。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频与字幕＝B站公开视频 <a href="https://www.bilibili.com/video/BV1UP4y1b7ir" target="_blank">BV1UP4y1b7ir</a>／<a href="https://www.bilibili.com/video/BV1tQpgetEwN" target="_blank">BV1tQpgetEwN</a>（AI字幕秒级，采集索引_生物物理.json 在库可查）；切片窗照录=库_生物/BV1tQpgetEwN.json sid349→455 全行直拼（生成即全等断言）＋UP播放量=采集索引实录。本卡与在库 B2-③ 节件互为镜像：节件管"读"，本卡管"看与听"。核验：画面级核验后置补（候Alex·队6承验判读d0b178b支持批1放量核验后置）。
+  </div>
+
+</div>
+</body>
+</html>
