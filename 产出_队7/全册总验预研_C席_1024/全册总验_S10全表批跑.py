@@ -16,9 +16,9 @@ def audit(path, skip_machine):
     ci = [w for w in CIWORDS if w in s]
     if ci: r.append(f'🄰2制作词命中{ci}'); hard += 1
     sw = [w for w in STATEWORDS if w in s]
-    if sw: r.append(f'🄰2状态词命中{sw}')  # 骨架态豁免由启用时口径定·预研如实报
+    if sw: r.append(f'🄰2状态词(软)命中{sw}·候人工判读（内容短语如"母题骨架"系合法课程语言）')  # 软项不计入硬伤
     if not skip_machine:
-        qc = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', 'qc_金融语域机检_v1.py')
+        qc = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'qc_金融语域机检_v1.py')
         p = subprocess.run(['python3', qc, path], capture_output=True, text=True)
         ok = '0 个待修' in p.stdout or '0个待修' in p.stdout
         r.append(f'🄰3机检{"✅" if ok else "⚠️待修"}')
