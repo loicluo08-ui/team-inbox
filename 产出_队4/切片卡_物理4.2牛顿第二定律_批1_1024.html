@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜4.2 牛顿第二定律｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+         border-radius:20px; padding:1px 10px; margin-right:6px; font-size:11.5px;}
+  section{padding:18px 28px; border-top:1px solid var(--line);}
+  section h2{font-size:15px; color:var(--accent); letter-spacing:1px; margin-bottom:10px;}
+  .svgwrap{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:12px 10px 6px;}
+  .readhow{font-size:13px; color:var(--ink); background:var(--accent-soft); border-left:3px solid var(--accent);
+           border-radius:6px; padding:8px 12px; margin-top:10px;}
+  .readhow b{color:var(--accent);}
+  .layer{margin-bottom:16px;}
+  .lt{font-weight:700; font-size:13.5px; margin-bottom:6px;}
+  .lt span{font-weight:400; font-size:12px; color:var(--sub);}
+  table.sl{width:100%; border-collapse:collapse; font-size:12.8px;}
+  table.sl th{background:var(--accent-soft); color:var(--accent); text-align:left; padding:6px 9px; border:1px solid var(--line); font-size:12px;}
+  table.sl td{padding:6px 9px; border:1px solid var(--line); vertical-align:top;}
+  table.sl td.ts{white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--gold); font-weight:700;}
+  .quote{background:var(--wash); border:1px dashed var(--line); border-radius:8px; padding:7px 11px;
+         font-size:12.8px; margin-top:7px; color:#33404d;}
+  .quote .qsrc{color:var(--sub); font-size:11.5px;}
+  ul.gk{list-style:none; font-size:13.3px;}
+  ul.gk li{position:relative; padding:3px 0 3px 26px;}
+  ul.gk li::before{content:"◆"; position:absolute; left:12px; color:var(--accent); font-size:11px; top:9px;}
+  ul.gk li b{color:var(--accent);}
+  .ec{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .eccard{border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--paper);}
+  .eccard .et{font-weight:900; font-size:13.5px; color:#a33d2e; margin-bottom:4px;}
+  .eccard p{font-size:12.8px; color:var(--ink);}
+  .eccard .es{font-size:11.5px; color:var(--sub); margin-top:5px; border-top:1px dashed var(--line); padding-top:4px;}
+  ol.steps{padding-left:22px; font-size:13.5px;}
+  ol.steps li{margin-bottom:6px;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:14px 28px;
+        font-size:12px; color:var(--sub); line-height:1.8;}
+  .punch{color:#a33d2e; font-weight:700;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 讲法锚点</div>
+    <h1>4.2 牛顿第二定律<span style="font-size:13px; font-weight:400; opacity:.85;">｜第四章 运动和力的关系</span></h1>
+    <div class="meta">
+      <span class="badge">视频主线 黄夫人</span><span class="badge">BV1Rt411e7Vv</span><span class="badge">全片1869s（31:09）</span>
+      <span class="badge">播放4,058,356（复测@2026-10-05 15:35）</span>
+      <br>册内照录＋音频转写双层互证 · 例1/例2板书全链帧实证
+    </div>
+  </div>
+
+  <section>
+    <h2>牛二解题闸（五步范式压成四步）</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 740 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="牛二解题四步闸">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2b5a8c"/>
+          </marker>
+        </defs>
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+          <rect x="8"   y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="200" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="392" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="584" y="30" width="148" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <text x="87"  y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸① 受力分析</text>
+          <text x="279" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸② 建系</text>
+          <text x="471" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸③ 写XY总式</text>
+          <text x="658" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸④ 展开代入</text>
+          <text x="87"  y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">G／F_N／f 一个不漏</text>
+          <text x="87"  y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">先画外力再画接触力</text>
+          <text x="87"  y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">"不管什么题都先受力分析"</text>
+          <text x="279" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">x轴沿加速度方向</text>
+          <text x="279" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">垂直a的轴必平衡</text>
+          <text x="279" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">有a的轴不平衡</text>
+          <text x="471" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">x：F合=大力−小力</text>
+          <text x="471" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">y：平衡式 F_N=G…</text>
+          <text x="471" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">先总式再拆开，脑子够用</text>
+          <text x="658" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">μ·F_N里F_N按实际算</text>
+          <text x="658" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">答案必带方向</text>
+          <text x="658" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">"F_N是多少就是多少"</text>
+          <line x1="168" y1="76" x2="196" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="360" y1="76" x2="388" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="552" y1="76" x2="580" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="370" y="150" text-anchor="middle" font-size="11.5" fill="#5b6773">例1（水平减速40kg·μ=0.4→a=4m/s²向左）与例2（斜拉37°双状态）都从这四闸过</text>
+        </g>
+      </svg>
+      <div class="readhow"><b>怎么读这张图：</b>这是把五步范式压进四闸——闸①受力分析一个力都不许漏；闸②建系永远让x轴顺着加速度（"有加速度的方向不平衡，垂直加速度的方向一定平衡"）；闸③先写XY总式再展开（"一下子写展开式脑子不够用"）；闸④展开代入时，μ·F_N里的F_N按这道题的实际值算，最后答案一定要多写一句"方向，水平，向右"这样的收口。例1例2两道板书题全部从这四闸走通。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>视频锚段（双层互证 · 秒窗全带源）</h2>
+    <div class="layer">
+      <div class="lt">A层 · 册内字幕级照录 <span>（v18物理册"切片装配（1005终验）【牛二基本使用两片】"模块）</span></div>
+      <table class="sl">
+        <tr><th>条目</th><th>内容（照录）</th></tr>
+        <tr><td>例2状态②全链</td><td>F_N=mg−F·sin37°=340N ⇒ f=68N ⇒ a=0.3m/s²（板书全链，帧实证）</td></tr>
+        <tr><td>核心易错</td><td>摩擦力μF_N中的F_N按实际算，不能误带80N（误带⇒a=0显谬）</td></tr>
+      </table>
+      <div class="quote">"你只要想把牛顿第二定律题目做出来，你就一定要写一个东西……写这个XY"<span class="qsrc">（"写XY"列式法·照录）</span></div>
+      <div class="quote">"摩擦力直接写80牛进去，答案是错的……F_N是多少就是多少"<span class="qsrc">（F_N实际值计算链·照录）</span></div>
+    </div>
+
+    <div class="layer">
+      <div class="lt">B层 · 音频级切片 ×2 <span>（whisper重转写照录·板书帧校对级；画面对账32帧全过，与A层为异层互证，窗口更宽）</span></div>
+      <table class="sl">
+        <tr><th>弧名</th><th>切片</th><th>互补点（照录）</th></tr>
+        <tr><td>方法弧</td><td class="ts">146→983s</td><td>解题五步范式＋例1完整解（水平减速40kg·μ=0.4→a=4m/s²方向水平向左）＋例2双状态完整解（匀速求μ=0.2→斜拉37°加速：F_N=340N≠mg、a=0.3m/s²方向水平向右）</td></tr>
+        <tr><td>桥梁弧</td><td class="ts">1270→1866s</td><td>力学×运动学双通道求a（"求加速度有两种方式"）＋例4正负号分域（运动学带符号a=−2m/s²，力学取大小μ=0.2）＋例5斜面全链（x=½at²→mg·sin37°−μmg·cos37°=ma→μ=1/8）</td></tr>
+      </table>
+      <div class="quote">"你想要动手写这种类型的题目，你就必须你的第一步就是受力分析。你不管（写）什么题，你都是（先）受力分析"<span class="qsrc">（199.06-213.86s·照录）</span></div>
+      <div class="quote">"首先你要建系，怎么建系？……以加速度的方向为x轴……有加速度的我一定是不平衡的，但是垂直于加速度这个方向上一定是平衡的"<span class="qsrc">（312.68-343.68s·照录）</span></div>
+      <div class="quote">"如果说你一下（子）写特别开（展）的式子的话，你会发现你的脑子有点不够用，所以说这个时候你先写总的式子再把它拆开来"<span class="qsrc">（423.15-436.15s·照录）</span></div>
+      <div class="quote">"很多人（把）摩擦力直接写80牛进去，答案是错的……摩擦力是有一个等式，就是μ乘以F_N，F_N就是你在写这个表达式里面，它的那个F_N是多少，就是多少"<span class="qsrc">（850.86-911.39s·本片核心易错·照录）</span></div>
+      <div class="quote">"F_N等于mg减掉F·sin37°……带进去嘛，等于400减掉100乘以0.6等于340"<span class="qsrc">（911.39-956.39s·照录）</span></div>
+      <div class="quote">"我们在运动学里面是一定要带正负号的，但是你在力学里面，我们不考虑加速度的正负号……力学里面你算出来加速度一定是正的，因为你是用大的力减小的力"<span class="qsrc">（1615.10-1653.70s·板书红线a=−2m/s²与红字μ=0.2双实证·照录）</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 5条）</h2>
+    <ul class="gk">
+      <li><b>动力学两类基本问题</b>——知力求运动／知运动求力，全部计算大题的通用主干。</li>
+      <li><b>连接体整体法/隔离法</b>——先整体求a、再隔离求内力。</li>
+      <li><b>瞬时突变</b>——剪绳/剪弹簧/撤板瞬间各力怎么变。</li>
+      <li><b>传送带与斜面综合</b>——牛二×摩擦两族状态切换。</li>
+      <li><b>§4.2实验</b>（控制变量＋图像法）为实验题常客。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="ec">
+      <div class="eccard">
+        <div class="et">① μ·F_N里的F_N不是每时每刻都等于mg</div>
+        <p>例2状态②：F_N=mg−F·sin37°=340N≠400N；把第一状态的80N当摩擦力带进去⇒40a=80−80=0，a=0显谬。"F_N是多少就是多少"——按这道题的表达式现算。</p>
+        <div class="es">源：v18册"切片装配"模块照录＋B层方法弧850.86→983.39s</div>
+      </div>
+      <div class="eccard">
+        <div class="et">② F是合外力不是推力——竖直起飞要减重力</div>
+        <p>火箭推力6×10⁶N、质量5×10⁵kg：直接a=F/m=12m/s²错——漏减重力，真实a=(F−mg)/m=2m/s²（2025甘T3错项D值照录）。受力分析只画"别的物体给的力"，重力不豁免。</p>
+        <div class="es">源：装配页§4.2易错卡＋v18易错素材⑬-2照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">③ 运动学带正负号，力学不带</div>
+        <p>例4：减速求μ时运动学先写a=Δv/t=(0−4)/2=−2m/s²（带符号）；进力学式只取大小，大减小⇒40a'=μ·400，得μ=0.2——带−2进力学得μ=−0.2&lt;0直接舍。</p>
+        <div class="es">源：B层桥梁弧1615.10→1653.70s照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">④ 读数≠重力——超失重变的是N</div>
+        <p>"牛顿称电梯"：60kg的人，加速上升N=m(g+a)=720N、匀速600N、减速上升480N——重力600N全程没变，变的是"维持运动状态需要的支持力"。秤量的是N不是G。</p>
+        <div class="es">源：v18簇13跨簇连接题照录</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出F=ma的完整信息量（大小·方向·单位制）与"F是合力"身份。</li>
+      <li>视频跟学：先走B层方法弧（146→983s，五步范式＋例1例2板书全链），再补桥梁弧（1270→1866s，力学×运动学双通道）；A层册内照录作旁证。</li>
+      <li>四步闸自测：任取一道动力学小题，30秒走完四闸并写出XY总式。</li>
+      <li>考前扫易错卡：默写"F_N按实际算""F是合力""正负号分域""读数≠重力"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频数据＝B站视频页 BV1Rt411e7Vv《22.【高中物理必修一】【牛二】牛二基本使用》（UP黄夫人mid=23630128；API实测2026-10-05 14:53首测4,058,320／15:35复测4,058,356；池单未载本BV播放数，无差池对账基数，如实注记）；B层双弧与引文＝仓内音频转写交付件（全片311段重转写照录·同音字按板书帧校正·画面对账32帧全过）；A层照录＝v18物理册"切片装配（1005终验）【牛二基本使用两片】"模块；高考接口与易错条＝v18簇13精进模块照录；节名＝第四章装配页§4.2节标"◆ ◆ ◆　4.2　牛顿第二定律"照录。本卡与§3.4合成卡衔接：闸③"写XY"的建轴策略（让尽可能多的力落在轴上）在合成侧另有专窗。
+  </div>
+
+</div>
+</body>
+</html>

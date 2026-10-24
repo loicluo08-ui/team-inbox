@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜3.4 力的合成｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+         border-radius:20px; padding:1px 10px; margin-right:6px; font-size:11.5px;}
+  section{padding:18px 28px; border-top:1px solid var(--line);}
+  section h2{font-size:15px; color:var(--accent); letter-spacing:1px; margin-bottom:10px;}
+  .section-note{font-size:12.5px; color:var(--sub); margin-bottom:10px;}
+  .svgwrap{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:12px 10px 6px;}
+  .readhow{font-size:13px; color:var(--ink); background:var(--accent-soft); border-left:3px solid var(--accent);
+           border-radius:6px; padding:8px 12px; margin-top:10px;}
+  .readhow b{color:var(--accent);}
+  .layer{margin-bottom:16px;}
+  .lt{font-weight:700; font-size:13.5px; margin-bottom:6px;}
+  .lt span{font-weight:400; font-size:12px; color:var(--sub);}
+  table.sl{width:100%; border-collapse:collapse; font-size:12.8px;}
+  table.sl th{background:var(--accent-soft); color:var(--accent); text-align:left; padding:6px 9px; border:1px solid var(--line); font-size:12px;}
+  table.sl td{padding:6px 9px; border:1px solid var(--line); vertical-align:top;}
+  table.sl td.ts{white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--gold); font-weight:700;}
+  .quote{background:var(--wash); border:1px dashed var(--line); border-radius:8px; padding:7px 11px;
+         font-size:12.8px; margin-top:7px; color:#33404d;}
+  .quote .qsrc{color:var(--sub); font-size:11.5px;}
+  ul.gk{list-style:none; font-size:13.3px;}
+  ul.gk li{position:relative; padding:3px 0 3px 26px;}
+  ul.gk li::before{content:"◆"; position:absolute; left:12px; color:var(--accent); font-size:11px; top:9px;}
+  ul.gk li b{color:var(--accent);}
+  .ec{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .eccard{border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--paper);}
+  .eccard .et{font-weight:900; font-size:13.5px; color:#a33d2e; margin-bottom:4px;}
+  .eccard p{font-size:12.8px; color:var(--ink);}
+  .eccard .es{font-size:11.5px; color:var(--sub); margin-top:5px; border-top:1px dashed var(--line); padding-top:4px;}
+  ol.steps{padding-left:22px; font-size:13.5px;}
+  ol.steps li{margin-bottom:6px;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:14px 28px;
+        font-size:12px; color:var(--sub); line-height:1.8;}
+  .punch{color:#a33d2e; font-weight:700;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 讲法锚点</div>
+    <h1>3.4 力的合成<span style="font-size:13px; font-weight:400; opacity:.85;">｜第三章 相互作用——力</span></h1>
+    <div class="meta">
+      <span class="badge">视频主线 黄夫人《12.力的合成取值范围》</span><span class="badge">BV16b411c7op</span>
+      <span class="badge">字幕级双窗 00:52→08:32</span>
+      <br>册内字幕级照录单层 · 播放/时长等接口字段册内未载——未采不虚标（宁缺毋编注记）
+    </div>
+  </div>
+
+  <section>
+    <h2>合力范围闸（四步走一遍）</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 740 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="合力范围四步闸">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2b5a8c"/>
+          </marker>
+        </defs>
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+          <rect x="8"   y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="200" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="392" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="584" y="30" width="148" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <text x="87"  y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸① 等效替身</text>
+          <text x="279" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸② 两力定则</text>
+          <text x="471" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸③ 三力先判0</text>
+          <text x="658" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸④ 多力走正交</text>
+          <text x="87"  y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">合力=替身，不是新增</text>
+          <text x="87"  y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">效果相同才能替代</text>
+          <text x="87"  y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">替身与本人不同台</text>
+          <text x="279" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">平行四边形→对角线</text>
+          <text x="279" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">同向F₁+F₂｜反向|F₁−F₂|</text>
+          <text x="279" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">夹角越大合力越小</text>
+          <text x="471" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">两小力之和≥大力？</text>
+          <text x="471" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">≥→最小值可取0</text>
+          <text x="471" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">"三个力以上第一步先排除"</text>
+          <text x="658" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">轴让多力落上</text>
+          <text x="658" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">逐轴列代数和</text>
+          <text x="658" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">邻cos对sin</text>
+          <line x1="168" y1="76" x2="196" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="360" y1="76" x2="388" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="552" y1="76" x2="580" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="370" y="150" text-anchor="middle" font-size="11.5" fill="#5b6773">两个力画四边形；三个力先想"能不能是0"；更多力——正交分解流水线</text>
+        </g>
+      </svg>
+      <div class="readhow"><b>怎么读这张图：</b>闸①先认定合力的"替身"身份——它不是多出来的一个力；闸②只有两个力时画平行四边形，对角线就是合力，同向相加、反向相减、中间连续可取；闸③题目给三个力，第一步先排除"最小值能不能是0"（两小力之和≥大力才取得到0）；闸④力再多就走正交分解，让尽量多的力落在轴上，逐轴列代数和。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>视频锚段（字幕级双窗 · 册内照录）</h2>
+    <div class="section-note">本节为字幕级单层素材：A层双窗照录如下；B层音频级切片＝0（池内无合成片）——缺料如实申报，不虚标双层。</div>
+    <div class="layer">
+      <div class="lt">A层 · 字幕级秒窗 ×2 <span>（v18物理册簇11"讲法锚点·切片装配"模块·首批装配自切片校准件·锚点=字幕秒级片段，电子版可跳转核验）</span></div>
+      <table class="sl">
+        <tr><th>窗名</th><th>切片</th><th>内容（照录）</th></tr>
+        <tr><td>方法核心</td><td class="ts">00:52→03:36</td><td>二力合力取值范围：最大值同向相加（"最不需要用脑子"），最小值反向相减，中间连续可取</td></tr>
+        <tr><td>易错收口</td><td class="ts">03:36→08:32</td><td>三力合力最小值陷阱：2N+5N+7N直答0N=掉坑，须先判两小力之和≥大力才能取0</td></tr>
+      </table>
+      <div class="quote">"是不是有一句话叫做两边之和一定大于第三边"<span class="qsrc">（方法核心窗·易错原话照录）</span></div>
+      <div class="quote">"只要涉及到了三个力以上，我们首先第一步先排除"<span class="qsrc">（易错收口窗·"最小值能不能为0"方法句·照录）</span></div>
+    </div>
+
+    <div class="layer">
+      <div class="lt">同簇秒答训练 <span>（v18簇11快问快答照录·配合双窗自测）</span></div>
+      <table class="sl">
+        <tr><th>问</th><th>答（照录）</th></tr>
+        <tr><td>F₁=9N、F₂=16N，夹角90°/0°/180°时合力各多大？</td><td>90°：√(9+16)=5N；0°：7N；180°：1N。（3-4-5直角三角形必须秒答）</td></tr>
+        <tr><td>倾角37°斜面上2kg物块，重力两分量各多大？</td><td>沿面分量=mg·sin37°=12N（下滑效果）；压面分量=mg·cos37°=16N（压紧效果）；校验√(12²+16²)=20N=mg✓——勾股回查是防错利器</td></tr>
+      </table>
+      <div class="quote">"平行四边形定则：以两共点力为邻边作平行四边形，对角线即合力。实验根基：两只弹簧秤互成角度拉橡皮筋到同一点，与一只弹簧秤拉到同一点效果相同——合力规则的合法性来自实验而非数学约定。"<span class="qsrc">（v18簇11完整展开照录）</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 4条）</h2>
+    <ul class="gk">
+      <li><b>合力范围与最小值</b>——选择题：三力平衡中某力的最小值=与另两力合力等大反向。</li>
+      <li><b>正交分解</b>——受力分析与动力学大题的必经工序。</li>
+      <li><b>动态平衡图解法</b>——矢量三角形缩放。</li>
+      <li><b>三力平衡封闭三角形条件</b>。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="ec">
+      <div class="eccard">
+        <div class="et">① "合力一定大于分力"</div>
+        <p>F₁=5N、F₂=3N脱口"8N起步"？矢量合成1+1可以=0：反向对顶|5−3|=2N——同向才最大，反向才是真最小。</p>
+        <div class="es">源：装配页§3.4易错卡卡①（v18误解①）</div>
+      </div>
+      <div class="eccard">
+        <div class="et">② 三力最小值直答0=掉坑</div>
+        <p>2N+5N+7N的最小值：先判5+2=7≥7，恰好能取0；若大力&gt;两小力之和，最小值=大力−两小力之和。"三个力以上第一步先排除"。12N+5N+6N取不到0（12&gt;11），最小1N。</p>
+        <div class="es">源：v18簇11切片锚点易错收口窗照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">③ 合力与分力同画=重复计力</div>
+        <p>受力图上"合力"与"分力"绝不同时出现——等效替身与本人不能同台，这是重复计力，高考第一大陷阱。</p>
+        <div class="es">源：v18簇11完整展开照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">④ "随便选轴都一样省事"</div>
+        <p>斜面题开水平竖直轴，支持力、摩擦力逐个二次分解——三行三角函数步步险。选轴标准：让尽可能多的力落在轴上，斜面就沿斜面/垂直斜面，只拆一个重力。</p>
+        <div class="es">源：装配页§3.4易错卡卡②（v18误解③）</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出"等效替换"与"合力范围"两处。</li>
+      <li>视频跟学：A层两窗顺走（00:52→08:32全程约7分40秒，方法核心→易错收口），配合"同簇秒答训练"两题自测。</li>
+      <li>四步闸自测：随手出两个力，30秒内报出合力范围；三力题先判最小值能不能取0。</li>
+      <li>考前扫易错卡：默写"替身不新增""三力先判0""合力分力不同画""选轴省事"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频线＝B站视频 BV16b411c7op（UP黄夫人《12.力的合成取值范围》；播放/时长等接口字段册内模块未载，未采不虚标）；A层双窗与原话＝v18物理册簇11"讲法锚点·切片装配"模块照录（首批装配自切片校准件·字幕秒级·电子版可跳转核验）；B层音频级切片＝0（池内无合成片，缺料如实申报）；高考接口、秒答训练与易错条＝v18簇11精进模块照录；节名＝第三章装配页§3.4节标"◆ ◆ ◆　3.4　力的合成"照录。本卡即§3.1弹力卡源注预告的"合成侧切片"：三力最小值题型两卡互证，正交分解流水线与§4.2牛二卡"写XY"建轴策略衔接。
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜3.2 摩擦力｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+         border-radius:20px; padding:1px 10px; margin-right:6px; font-size:11.5px;}
+  section{padding:18px 28px; border-top:1px solid var(--line);}
+  section h2{font-size:15px; color:var(--accent); letter-spacing:1px; margin-bottom:10px;}
+  .section-note{font-size:12.5px; color:var(--sub); margin-bottom:10px;}
+  .svgwrap{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:12px 10px 6px;}
+  .readhow{font-size:13px; color:var(--ink); background:var(--accent-soft); border-left:3px solid var(--accent);
+           border-radius:6px; padding:8px 12px; margin-top:10px;}
+  .readhow b{color:var(--accent);}
+  .layer{margin-bottom:16px;}
+  .lt{font-weight:700; font-size:13.5px; margin-bottom:6px;}
+  .lt span{font-weight:400; font-size:12px; color:var(--sub);}
+  table.sl{width:100%; border-collapse:collapse; font-size:12.8px;}
+  table.sl th{background:var(--accent-soft); color:var(--accent); text-align:left; padding:6px 9px; border:1px solid var(--line); font-size:12px;}
+  table.sl td{padding:6px 9px; border:1px solid var(--line); vertical-align:top;}
+  table.sl td.ts{white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--gold); font-weight:700;}
+  .quote{background:var(--wash); border:1px dashed var(--line); border-radius:8px; padding:7px 11px;
+         font-size:12.8px; margin-top:7px; color:#33404d;}
+  .quote .qsrc{color:var(--sub); font-size:11.5px;}
+  ul.gk{list-style:none; font-size:13.3px;}
+  ul.gk li{position:relative; padding:3px 0 3px 26px;}
+  ul.gk li::before{content:"◆"; position:absolute; left:12px; color:var(--accent); font-size:11px; top:9px;}
+  ul.gk li b{color:var(--accent);}
+  .ec{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .eccard{border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--paper);}
+  .eccard .et{font-weight:900; font-size:13.5px; color:#a33d2e; margin-bottom:4px;}
+  .eccard p{font-size:12.8px; color:var(--ink);}
+  .eccard .es{font-size:11.5px; color:var(--sub); margin-top:5px; border-top:1px dashed var(--line); padding-top:4px;}
+  ol.steps{padding-left:22px; font-size:13.5px;}
+  ol.steps li{margin-bottom:6px;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:14px 28px;
+        font-size:12px; color:var(--sub); line-height:1.8;}
+  .punch{color:#a33d2e; font-weight:700;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 讲法锚点</div>
+    <h1>3.2 摩擦力<span style="font-size:13px; font-weight:400; opacity:.85;">｜第三章 相互作用——力</span></h1>
+    <div class="meta">
+      <span class="badge">视频主线 黄夫人</span><span class="badge">BV1Ft411f7jm</span><span class="badge">全片1904s</span>
+      <span class="badge">播放5,799,806（复测@2026-10-05 15:35）</span>
+      <br>册内照录＋音频转写双层互证 · 秒窗全部带源可回放核验
+    </div>
+  </div>
+
+  <section>
+    <h2>摩擦方向判定闸（四步走一遍）</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 740 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="摩擦方向判定四步闸">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2b5a8c"/>
+          </marker>
+        </defs>
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+          <rect x="8"   y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="200" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="392" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="584" y="30" width="148" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <text x="87"  y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸① 找接触与弹力</text>
+          <text x="279" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸② 换位到接触面</text>
+          <text x="471" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸③ 定摩擦方向</text>
+          <text x="658" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸④ 平行垂直收口</text>
+          <text x="87"  y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">谁和谁接触？</text>
+          <text x="87"  y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">弹力方向先画好</text>
+          <text x="87"  y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">有摩擦必先有弹力</text>
+          <text x="279" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">站到"另一物体"那边</text>
+          <text x="279" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">看它想怎么相对动</text>
+          <text x="279" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">"保持共处"视角</text>
+          <text x="471" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">滑动：与相对滑动反向</text>
+          <text x="471" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">静止：与相对趋势反向</text>
+          <text x="471" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">先分静、动两族</text>
+          <text x="658" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">必平行接触面</text>
+          <text x="658" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">与弹力互相垂直</text>
+          <text x="658" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">0 ≤ f静 ≤ f_max</text>
+          <line x1="168" y1="76" x2="196" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="360" y1="76" x2="388" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="552" y1="76" x2="580" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="370" y="150" text-anchor="middle" font-size="11.5" fill="#5b6773">九宫格九张图（静止桌面／拉力F／斜面／压墙／对滑／上下木板……）＝同一套四闸</text>
+        </g>
+      </svg>
+      <div class="readhow"><b>怎么读这张图：</b>顺着闸①→闸④走——先把接触面和弹力找准（没有弹力就没有摩擦力的出场资格），再换位站到"另一物体"那边看对方想怎么动（闸②），然后按"动没动起来"分流：滑动了就与相对滑动反向，没滑动就与相对运动趋势反向（闸③），最后用"平行接触面＋垂直弹力"两条铁律收口（闸④）。九宫格里九张图，每一张都是这四闸。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>视频锚段（双层互证 · 秒窗全带源）</h2>
+    <div class="layer">
+      <div class="lt">A层 · 册内字幕级照录 <span>（v18物理册簇10"讲法锚点·切片装配"模块·1005终验入库；该模块仅此1条照录，如实注记不虚标）</span></div>
+      <table class="sl">
+        <tr><th>弧窗标签</th><th>内容（照录）</th></tr>
+        <tr><td>方向判断双弧</td><td>滑动摩擦方向与相对运动方向相反／静摩擦与相对运动趋势相反</td></tr>
+      </table>
+      <div class="quote">"但实际上我喜欢讲的是一种二接触 原因是一个接触面上它会产生谈力和摩擦力两个力"<span class="qsrc">（"谈力"=弹力，ASR字形照录；"一重二接触"顺序法）</span></div>
+    </div>
+
+    <div class="layer">
+      <div class="lt">B层 · 音频级切片 ×2 <span>（whisper转写照录·板书帧校对级；画面对账23帧+1放大帧全过，与本层A层为异层互证，窗口更宽）</span></div>
+      <table class="sl">
+        <tr><th>弧名</th><th>切片</th><th>互补点（照录）</th></tr>
+        <tr><td>方法弧</td><td class="ts">573→1322s</td><td>"保持共处"四步推导（阻碍相对运动→不想要相对运动→想要相对静止→保持共处）＋方向两约束（一定平行接触面＋与弹力一定相互垂直）＋九宫格九图实战（图1静止无摩擦／图2拉力F静摩擦反向／图3斜面静止沿面向上／图5滑动摩擦向左／图8上下表面反向／图9共速匀速无摩擦）</td></tr>
+        <tr><td>易错弧</td><td class="ts">1643→1902s</td><td>判断对错四连×（板书右侧四题全标×实证）＋握水杯／擦黑板双模型＋"摩擦力不一定阻碍运动"反例法</td></tr>
+      </table>
+      <div class="quote">"好，那么我们就讲一下，我们这个视频里面最关键的一个内容，就是摩擦力的方向"<span class="qsrc">（573.38-578.58s·方法弧起·照录）</span></div>
+      <div class="quote">"两个相互接触的物体，当他们发生相对运动，或者具有相对运动的趋势时，就会产生……阻碍相对运动的力"<span class="qsrc">（591.66-604.79s·概念回看·照录）</span></div>
+      <div class="quote">"握水杯嘛……水杯受到的力应该是向上的摩擦力……是不是静摩擦力？你可以在旁边记一下，叫做握水杯"<span class="qsrc">（1762.67-1777.03s·板书红字"握水杯"实证·照录）</span></div>
+      <div class="quote">"你拿黑板擦擦黑板的时候，那个黑板受到的摩擦力是什么摩擦力？……黑板动了吧？黑板是不是没有动？……是不是受到了滑动摩擦力？所以说这个时候我们想着这个模型叫做擦黑板"<span class="qsrc">（1790.63-1817.32s·板书红字"擦黑板"实证·照录）</span></div>
+      <div class="quote">"摩擦力每次都跟我运动方向相反，好反耶，这就是你初中留下来的错误的思想……你想想它的目的……让你们两个在一起"<span class="qsrc">（1823.54-1850.14s·照录）</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 5条）</h2>
+    <ul class="gk">
+      <li><b>静/动摩擦判断与计算</b>——选择高频（先判状态再选公式的门槛题）。</li>
+      <li><b>斜面＋摩擦受力分析</b>——沿面/压面两分量与f=μN配套。</li>
+      <li><b>传送带模型</b>——加速段/共速段/滑动区切换。</li>
+      <li><b>"撤力/突变"瞬间摩擦力重新判定</b>——状态变了先重画。</li>
+      <li><b>与⑬簇牛顿定律复合</b>的动力学大题第一问。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="ec">
+      <div class="eccard">
+        <div class="et">① 推箱不动代f=μmg——"先判后算"倒置</div>
+        <p>木箱20kg、μs=0.5：推15N、25N甚至70N都不动——静摩擦按需供给，门槛是f_max=μs·mg=100N，不是滑动摩擦60N。"70&gt;60所以滑动"是最经典误判。</p>
+        <div class="es">源：装配页§3.2易错卡＋v18簇10例题精讲照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">② "面积大摩擦大"初中迷思</div>
+        <p>三只同规格货箱以不同面接触：f=μN中根本没有面积项——μ同、N同，则f₁=f₂=f₃。口诀照录："摩擦只认μ和N，面积再大不掺和。"</p>
+        <div class="es">源：v18易错素材⑩-2照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">③ "摩擦力一定阻碍运动"是假命题</div>
+        <p>传送带上被加速传送的行李、人走路时地面给人的力——摩擦与（相对）运动方向可以同向，成为动力；握水杯（静）、擦黑板（滑动）才是"阻碍相对"的本义。</p>
+        <div class="es">源：v18簇10快问快答照录＋B层易错弧判断③</div>
+      </div>
+      <div class="eccard">
+        <div class="et">④ F_N不一定等于mg</div>
+        <p>只在水平面且无其他竖直力时成立；斜面上F_N=mg·cosθ，有外力压时更大——F_N是"法向压力"，逐题受力分析定，不能写死。</p>
+        <div class="es">源：v18簇10快问快答照录</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出"产生条件"与"方向两约束"两处。</li>
+      <li>视频跟学：先走B层方法弧（573→1322s，"保持共处"四步＋九宫格九图），再补易错弧（1643→1902s，判断对错四连）；A层册内照录作旁证。</li>
+      <li>四步闸自测：随手指一个场景（推箱／传送带／握杯），30秒走完四闸并报出摩擦方向。</li>
+      <li>考前扫易错卡：默写"先判后算""面积不掺和""摩擦可以是动力""F_N逐题定"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频数据＝B站视频页 BV1Ft411f7jm《3.【高中物理必修一】【力学】摩擦力方向判断》（UP黄夫人mid=23630128；API实测2026-10-05 14:53首测5,799,713／15:35复测5,799,806；池单未载本BV播放数，无差池对账基数，如实注记）；B层双弧与引文＝仓内音频转写交付件（全片802段重转写照录·同音字按板书帧校正·画面对账23帧全过）；A层照录＝v18物理册簇10"讲法锚点·切片装配"模块（1005终验入库）；高考接口与易错条＝v18簇10精进模块照录；节名＝第三章装配页§3.2节标"◆ ◆ ◆　3.2　摩擦力"照录。本卡与§3.1弹力卡互为衔接：弹力管"法向"、摩擦管"切向"，受力分析顺序"一重二接触"两卡同源。
+  </div>
+
+</div>
+</body>
+</html>
