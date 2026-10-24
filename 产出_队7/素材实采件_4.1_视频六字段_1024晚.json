@@ -1,0 +1,49 @@
+[
+ {
+  "bvid": "BV1iD4y1s7qX",
+  "ok": 0,
+  "err": "code=-412 msg=request was banned",
+  "note_line": "星云地理·4.1直配",
+  "fetched_at": "2026-10-24 23:02:38",
+  "attempt": 3
+ },
+ {
+  "bvid": "BV1yWzbYtE5X",
+  "ok": 1,
+  "aid": 113559690418376,
+  "title": "湘教版必修一 4.1 水循环（课时1）",
+  "owner": "地理老师纯纯子呀",
+  "duration": 2040,
+  "view": 2131,
+  "danmaku": 1,
+  "pubdate": 1732784170,
+  "bvid_iso": "BV1yWzbYtE5X",
+  "pages_n": 1,
+  "pages": [
+   {
+    "page": 1,
+    "cid": 27073184393,
+    "part": "湘教版必修一 4.1 水循环（课时1）"
+   }
+  ],
+  "note_line": "纯纯子·4.1直配",
+  "fetched_at": "2026-10-24 23:03:10",
+  "attempt": 1
+ },
+ {
+  "bvid": "BV1Zd4y1F7q6",
+  "ok": 0,
+  "err": "code=-412 msg=request was banned",
+  "note_line": "一地er·4.1通用头部61.7万",
+  "fetched_at": "2026-10-24 23:05:57",
+  "attempt": 3
+ },
+ {
+  "bvid": "BV14wBqYDEie",
+  "ok": 0,
+  "err": "code=-412 msg=request was banned",
+  "note_line": "太阳的地理课堂·4.1直配",
+  "fetched_at": "2026-10-24 23:08:45",
+  "attempt": 3
+ }
+]
