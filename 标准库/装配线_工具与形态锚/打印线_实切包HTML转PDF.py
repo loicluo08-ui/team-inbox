@@ -72,6 +72,7 @@ hr{margin:10px 0 !important;border:0;border-top:.6pt dashed #999 !important;}
 code{background:#efefef !important;color:#000 !important;padding:0 2px;font-size:9.5pt;}
 strong{color:#000 !important;} em{color:#000 !important;font-weight:bold;}
 .map{background:#f2f2f2 !important;border-left:2.5pt solid #333 !important;padding:7px 10px !important;margin:7px 0;}
+.case{background:#f2f2f2 !important;color:#111 !important;border:0.6pt solid #888 !important;border-left:2.5pt solid #333 !important;padding:7px 10px !important;margin:7px 0;}
 .feedback{background:#faf4f4 !important;border:.6pt solid #888 !important;padding:8px 10px !important;margin:8px 0;line-height:1.6 !important;}
 .toc{background:#f6f6f6 !important;border:.6pt solid #999 !important;padding:6px 10px !important;font-size:9.5pt !important;line-height:1.9 !important;}
 .toc a{color:#000 !important;text-decoration:none !important;}
