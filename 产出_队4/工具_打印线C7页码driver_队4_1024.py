@@ -5,6 +5,13 @@ import sys
 from playwright.sync_api import sync_playwright
 
 SRC, OUT = sys.argv[1], sys.argv[2]
+# v1.3参数化修（16:33令·L27硬编码错挂根因）：运行标题随章——argv[3]显式传入或自动解析HTML h1
+RUNTITLE = sys.argv[3] if len(sys.argv) > 3 else None
+if not RUNTITLE:
+    import re as _re
+    _h = open(SRC, encoding="utf-8").read()
+    _m = _re.search(r"<h1[^>]*>([^<]+)", _h)
+    RUNTITLE = _re.sub(r"\s+", " ", _m.group(1)).strip() if _m else "实切包"
 
 INVERT_JS = open("标准库/装配线_工具与形态锚/打印线_实切包HTML转PDF.py").read().split('INVERT_JS = """')[1].split('"""')[0]
 # 源py字符串字面量反转义：\\( → \(（正则转义还原）
@@ -24,7 +31,7 @@ with sync_playwright() as p:
            display_header_footer=True,
            header_template="<span></span>",
            footer_template=("<div style=\"width:100%;font-size:8px;color:#333;text-align:center;\">"
-                            "物理必修一 · 第一章 运动的描述　<span class=\"pageNumber\"></span> / <span class=\"totalPages\"></span></div>"),
+                            + RUNTITLE + "　<span class=\"pageNumber\"></span> / <span class=\"totalPages\"></span></div>"),
            margin={"top": "12mm", "bottom": "14mm", "left": "13mm", "right": "11mm"})
     b.close()
 
