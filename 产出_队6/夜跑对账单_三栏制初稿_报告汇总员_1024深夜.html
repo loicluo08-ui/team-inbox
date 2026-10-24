@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>夜跑对账单·三栏制初稿 v1｜报告汇总员｜10-24深夜→10-25凌晨</title>
+<title>夜跑对账单·三栏制初稿 v3｜报告汇总员｜10-24深夜→10-25凌晨</title>
 <style>
   :root{
     --ink:#1a2233; --paper:#f6f7f9; --line:#dfe3ea;
@@ -61,30 +61,30 @@
   <div style="overflow:hidden;">
     <svg class="donut" viewBox="0 0 42 42">
       <circle cx="21" cy="21" r="15.9" fill="none" stroke="#2e3d63" stroke-width="6"/>
-      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#3fae7a" stroke-width="6" stroke-dasharray="39 61" stroke-dashoffset="25" stroke-linecap="butt"/>
-      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#e6b93c" stroke-width="6" stroke-dasharray="28 72" stroke-dashoffset="-14" stroke-linecap="butt"/>
-      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#d9534f" stroke-width="6" stroke-dasharray="7 93" stroke-dashoffset="-42" stroke-linecap="butt"/>
-      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#7d8aa5" stroke-width="6" stroke-dasharray="18 82" stroke-dashoffset="-49" stroke-linecap="butt"/>
-      <text x="21" y="20.5" text-anchor="middle" font-size="7.5" fill="#fff" font-weight="700">17件</text>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#3fae7a" stroke-width="6" stroke-dasharray="37 63" stroke-dashoffset="25" stroke-linecap="butt"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#e6b93c" stroke-width="6" stroke-dasharray="37 63" stroke-dashoffset="-12" stroke-linecap="butt"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#d9534f" stroke-width="6" stroke-dasharray="5 95" stroke-dashoffset="-49" stroke-linecap="butt"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#7d8aa5" stroke-width="6" stroke-dasharray="21 79" stroke-dashoffset="-54" stroke-linecap="butt"/>
+      <text x="21" y="20.5" text-anchor="middle" font-size="7.5" fill="#fff" font-weight="700">19件</text>
       <text x="21" y="28" text-anchor="middle" font-size="4.2" fill="#c7d0e4">夜跑已判</text>
     </svg>
-    <h1>夜跑对账单 · 三栏制初稿 v1</h1>
+    <h1>夜跑对账单 · 三栏制初稿 v3</h1>
     <div class="sub">任务包§十二-3晨检对账单口径 ｜ 制单：报告汇总员（只验不改）｜ 随验随更·供Alex晨检直接用</div>
     <div class="meta">
-      <span class="chip">夜跑窗口：10-24 22:3x → 10-25 00:1x</span>
-      <span class="chip">基线：p0verify/main = <code style="background:rgba(255,255,255,.14);color:#fff;">b1e8a78</code></span>
+      <span class="chip">夜跑窗口：10-24 22:3x → 10-25 00:4x</span>
+      <span class="chip">基线：p0verify/main = <code style="background:rgba(255,255,255,.14);color:#fff;">fae6042</code></span>
       <span class="chip">判定口径：S8宁缺毋编·滑坡三查硬闸</span>
-      <span class="chip">v1（00:1x）· 五轮6项+二波11件 已入账</span>
+      <span class="chip">v3（00:4x）· 五轮6项+二波13件 已入账</span>
     </div>
     <div class="legend">
-      <i style="background:#3fae7a"></i>PASS 6　<i style="background:#e6b93c"></i>PASS-W 6　<i style="background:#d9534f"></i>FAIL 1　<i style="background:#7d8aa5"></i>收讫 4
+      <i style="background:#3fae7a"></i>PASS 7　<i style="background:#e6b93c"></i>PASS-W 7　<i style="background:#d9534f"></i>FAIL 1　<i style="background:#7d8aa5"></i>收讫 4
     </div>
   </div>
 </header>
 
 <div class="kpi">
-  <div class="card"><div class="num" style="color:var(--pass)">6</div><div class="lbl">PASS（含补验2件）</div></div>
-  <div class="card"><div class="num" style="color:var(--passw)">6</div><div class="lbl">PASS-W（带注记放行）</div></div>
+  <div class="card"><div class="num" style="color:var(--pass)">7</div><div class="lbl">PASS（含补验2件）</div></div>
+  <div class="card"><div class="num" style="color:var(--passw)">7</div><div class="lbl">PASS-W（带注记放行）</div></div>
   <div class="card"><div class="num" style="color:var(--fail)">1</div><div class="lbl">FAIL（化学超链接化回归）</div></div>
   <div class="card"><div class="num" style="color:#5a6272">4</div><div class="lbl">收讫（判读稿/停等登记）</div></div>
   <div class="card"><div class="num" style="color:var(--wait)">3</div><div class="lbl">整批退件项（三查口径）</div></div>
@@ -95,7 +95,7 @@
   <div class="body">
     <table>
       <tr><th style="width:26%">件</th><th style="width:11%">commit</th><th style="width:12%">判定</th><th>复算要点</th></tr>
-      <tr><td colspan="4" style="background:#f4f6fb;font-weight:600;color:#3a4356;">二波·复核队列（00:05令·本席11件）</td></tr>
+      <tr><td colspan="4" style="background:#f4f6fb;font-weight:600;color:#3a4356;">二波·复核队列（00:05令+00:33收口令·本席13件）</td></tr>
       <tr><td>B2-⑦核酸卡（生物批2首张）</td><td><code class="hash">807ef39</code></td><td><span class="badge b-pass">PASS</span></td><td>双窗断言全等复跑（李林61行676字/汉水14行148字·缺行双0）；易错卡1三句+易错卡2双句逐句源库实证（t=779/349=floor）；甲基绿-吡罗红双轨全片0命中实证·汉水28.9%覆盖复算属实；S10硬伤0+金融0+冲突0</td></tr>
       <tr><td>化学批2两件（1.1/1.2缺口声明态卡）</td><td><code class="hash">df04d6f</code></td><td><span class="badge b-pass">PASS</span></td><td>五段同构+学考锚态标注合规（E3两态制）；兜底锚无t如实·秒窗未标定不虚标；1.1考点对v18鲁科主题合；S10硬伤0×2+金融0×2</td></tr>
       <tr><td>化学直读全量补证 2/2</td><td><code class="hash">df04d6f</code></td><td><span class="badge b-pass">PASS</span></td><td>图证sha256双实锚：li2=<code class="hash">f9e64055cfa15890</code>·hkjl2024=<code class="hash">0b8d269a39e6a7cb</code>（本席重算一致）；2019全国ⅡT10官方A=3.1卡"选A"合；2024黑吉辽T4官方D合；<span class="dim">注记：报告表头"化学3.2例1"实指1.3卡同型位·标签口径候澄清（非内容伤）</span></td></tr>
@@ -104,6 +104,9 @@
       <tr><td>精炼样2（B席·T-02"写XY"段）</td><td><code class="hash">b1e8a78</code></td><td><span class="badge b-passw">PASS-W</span></td><td>json档18行与T-02转写源逐行逐字逐秒全等（18/18·本席机械比对）；金句5句+低置信2处在源实证；窗口3.5→134s与4.2牛二卡146→983s零重叠实证；W注记2：#10标注笔误（应"再说→在说"）·"高置信修6处"按词计实9修改点（计法候统一）</td></tr>
       <tr><td>直读试水_数学（本地留痕件）</td><td><code class="hash">ff57b66</code></td><td><span class="badge b-passw">PASS-W</span></td><td>零网络属实（回填位全待）；在库锚双引实证：承验单L21 sha256=<code class="hash">f1f44ecd781b6129</code>+L22轻注1"官方答案C=S∩T=T"逐字；1.2正件例3 T⫋S实证；claim续作行§十一-4在案</td></tr>
       <tr><td>直读试水_语文（本地留痕件）</td><td><code class="hash">6f24199</code></td><td><span class="badge b-passw">PASS-W</span></td><td>零网络属实；在库锚三处实证：v18 L894=R-语.现代-03方法总条单行件·照录子串逐字；装配L255/L293-299逐字；装配1080行+sha256前8=<code class="hash">e2e75adf</code>重算一致</td></tr>
+      <tr><td>直读首件试水·语文科（采集交付）</td><td><code class="hash">71ea9b8</code></td><td><span class="badge b-passw">PASS-W</span><span class="badge b-wip" style="margin-left:4px">通道通</span></td><td>双源闭合：源A eol sha256=<code class="hash">d5be71ac</code>（卷别实锚2025新课标I卷+主旨"坚→心"）+源B sohu sha256=<code class="hash">08a05bd6</code>（选择D+三采分点）；REQ1-10全账（REQ1窗口前违规1次<26s零内容·如实申报已修正unix守窗；REQ2-10全≥30s本席逐笔复核）；弃源留痕3（微信验证码/组卷SPA/知乎403）；对账=一致5+差异2如实+待核1不编（S8设问原版面）；W注记：claim行"一致4"实表列5（计法口径）·原始抓取件未archive（报告级留痕·建议补档）；<b>语文科官方答案双层形态结论</b>（官方评析层+逐题解析层）有价值</td></tr>
+      <tr><td><b>数学批1四张（1.4/2.1/2.2/2.3·html卡型·出厂超链接化）</b></td><td><code class="hash">fae6042</code></td><td><span class="badge b-passw">PASS-W</span></td><td>七段同构对齐1.2首件卡（section5+head+foot·本席逐段比对）；四主锚t=[872/168/620/39]逐值核中台账L48-50+T-09/T-10/T-04双验面板件（14:32→15:32／2:48→4:15／10:20→15:00／弧一0:39→10:21+弧二13:10→23:18·含未收录段621-790与1398-1448原注照录）；foot源注不带t·裸BV=0·嵌套坏链0·div11:11·机检fresh复跑4件exit0；<b>复算零伤</b>：2.2板书四题终答独立复算全对（8／7/4／2√2+1／−8·取等x=−3/2）+段界915裁定原注照录+橙题跳讲不代答；2.3四组含参不等式复算一致（m>3／2&lt;m&lt;7/3／−19/13&lt;m&lt;0／−7/5&lt;m&lt;−5/4）；1.4指针层三源逐字段全同（台账+v18册尾L465+彻查件条目3）；真题锚分层合规：2.3=2023新高考Ⅰ卷T1题干照录（2.3正本L186逐字）·余三卡出处登记=正本L96/L103/L150实位零虚构；ASR校正对全数在面板件声明（T-09弧内3+T-04五对+T-10六对·本席逐对核）；易错卡①×4=正本逐字重挂；<b>W注记3族候选晨检统一</b>：①1.4卡行号引用差一位（卡面"台账L11"实为L12·字段值逐项全同零造）②制作层词面（升格×3/卡系在库"升格重制件正本"文件名引用+1.4工序动词·席×1-3/卡系面板件名与B席复算归属·非1.2首件卡0/0同构形态）③commit申报计数2处系源件全表口径（校正4条=卡面载弧内3条合规·引文5条=卡面载4条合规·卡面自身无虚假陈述）——同B2-⑦ W注记1同族</td></tr>
+      <tr><td><b>对位表v3正式件（地理全册15节·离线编制）</b></td><td><code class="hash">c1306e4</code></td><td><span class="badge b-pass">PASS</span></td><td>纯离线汇编零新增采集属实（全字段注〔底本§x〕〔先报件§x〕留痕·本席抽查4.1真题三锚2022.1-26/2023.6-31/2025.1-28+视频两行播放量13,951/616,819+闽西五源域名与底本逐值一致）；版本链四代核实（v1=7d4cd00｜v2/v2.1=bc15f4a｜v2.2=现行树·本commit仅新增4文件·v2.2本体零触碰）；<b>候实采条目412标注合规</b>：新增5节全部带"候实采状态·412登记中"且指向在库登记件（实采登记_地理第4-5章_412环境阻塞·df04d6f）·§五如实申报帧验采集层全缺+勿硬刷·零虚装窗</td></tr>
       <tr><td>物理批1三卡超链接化（补验）</td><td><code class="hash">c2f83b4</code></td><td><span class="badge b-pass">PASS</span></td><td>6href全合法嵌套0·BV对主线·<b>剥锚后与父commit逐字节一致</b>零漂移；t=0处=六href全片锚条款不触发；§十一-2净面先行合规——同族变换物理侧零伤，缺陷仅限化学重复执行</td></tr>
       <tr><td>57条初筛二批·数学线判读稿</td><td><code class="hash">06e5c94</code></td><td><span class="badge b-recv">收讫·草稿</span></td><td>实伤0·候裁族维持d0b178b在案族；候修项实证成立：<b>数学1.2首件卡L105主锚910s起无t=参数</b>（§七1应触发·出品d88848d线候令）——判读稿候Alex复核</td></tr>
       <tr><td>地理4-5章412阻塞登记</td><td><code class="hash">df04d6f</code></td><td><span class="badge b-recv">收讫·停等</span></td><td>三探针实录（直连412/API风控/浏览器错误页404）＝环境级IP风控定性合理；3次即停＝熔断兑现；json缺件如实申报</td></tr>
@@ -124,10 +127,8 @@
   <div class="body">
     <table>
       <tr><th style="width:24%">在制件</th><th style="width:12%">责任线</th><th style="width:14%">状态</th><th>续作点</th></tr>
-      <tr><td>直读试水采集（数学+语文首件）</td><td>队6（探路者/阿诚）</td><td><span class="badge b-wip">采集窗口已开</span></td><td>00:00窗口已开：四步通道执行中（搜狗主通道+30s间隔+单站3连熔断+412登记切换）→ 结果回填试水件§一至§五+方案§五首件状态总账+claim交付行三处齐；会话中断凭claim续作行续作（§十一-4）</td></tr>
-      <tr><td>数学批1四张（切片卡）</td><td>并行搜索员B线</td><td><span class="badge b-wip">在产</span></td><td>候B席线交（并行会话在产·92b0942认领锁防同席双活）；交后随到随验</td></tr>
-      <tr><td>57条初筛二批（物化生地四线）</td><td>四线分推</td><td><span class="badge b-wip">分线推进</span></td><td>数学线两卡判读稿已收讫（06e5c94）；其余线每批≤5件只判不改·缺口如实申报；物理侧5卡同型候QC线排程</td></tr>
-      <tr><td>C席转产：对位表v3正式件</td><td>并行搜索员C</td><td><span class="badge b-wip">离线编制</span></td><td>底本71b85d3+先报件fb69806为基础·第4-5章候实采条目如实标注（412阻塞期零虚装窗）·v2.2留痕不重写</td></tr>
+      <tr><td>直读试水·数学科采集</td><td>队6（探路者）</td><td><span class="badge b-wip">已交付·候令</span></td><td>14f7d37在库：<b>四步通道✅通</b>（eol官方答案页8分页图3x核读+zizzs PDF旁证逐字节同源独立复算·双引锚双闭）·候令转正式补证放量（承00:33战报候晨检联动）；<b>语文侧71ea9b8已验毕（PASS-W·见成品栏）·生物侧cd8cc83已交付候验</b></td></tr>
+      <tr><td>57条初筛二批（六线）</td><td>多线分推</td><td><span class="badge b-wip">分线推进</span></td><td>数学线判读稿收讫（06e5c94·草稿态）；<b>C席地理化学线判读稿c1306e4本席收讫</b>（草稿态·只判不改·机检×7+S10×3实录·候规划师对账矩阵终版归拢·DWV自产件自判声明候加重复验）；<b>B席物理线5件承00:33收口令在途</b>（每批≤5件只判不改）</td></tr>
       <tr><td>生物批2续张（B2-⑧…）</td><td>夜跑A席块（队1线）</td><td><span class="badge b-wip">候产</span></td><td>B2-⑦首张已验；B3-B6归队1线零触碰（68e921f认领锁）；续产候料候令</td></tr>
       <tr><td>P2批CC普查18枚在途</td><td>A席普查线</td><td><span class="badge b-wip">raw留痕自走</span></td><td>先期14枚实测CC全零已上链（a839f1f）；18枚raw留痕收满补commit·三账对平（53∪25=57·净待31实跑32）</td></tr>
     </table>
@@ -169,6 +170,8 @@
       <tr><td>精炼样1</td><td>转写txt在库逐行核</td><td>非帧验件N/A</td><td>json档未附（W注记·建议终版补）</td><td><span class="badge b-passw">过-W</span></td></tr>
       <tr><td>直读试水×2</td><td>零采集N/A</td><td>N/A</td><td>N/A</td><td><span class="badge b-pass">过</span></td></tr>
       <tr><td>物理三卡超链接化</td><td>锚值未变·剥锚零漂移</td><td>N/A</td><td>N/A</td><td><span class="badge b-pass">过</span></td></tr>
+      <tr><td>数学批1四张</td><td>4BV逐值中台账L48-50+面板件（1.4三源双形态全同）</td><td>1.4指针层无帧验=N/A（卡面"候帧验线补录"如实）·2.1/2.2/2.3帧验属双验面板件在库（卡面"双验在库"不虚标）</td><td>1.4无引文如实申报·2.1/2.2/2.3引文+板书照录随卡可查✓</td><td><span class="badge b-pass">过</span>（W注记3族系词面/行号层·非三查域·另登候选晨检）</td></tr>
+      <tr><td>对位表v3</td><td>零采集N/A（离线汇编·两底料全引用留痕）</td><td>N/A</td><td>N/A（零虚装窗·412登记态如实）</td><td><span class="badge b-pass">过</span></td></tr>
       <tr><td><b>化学超链接化</b></td><td>锚值未变（BV号原样）</td><td>N/A</td><td>N/A</td><td><span class="badge b-fail">三查外新型缺陷</span></td></tr>
     </table>
     <div class="note">三查硬闸下<b>无整批退件项</b>；化学超链接化FAIL系三查覆盖外的新型缺陷（<b>重复工种非幂等回归</b>）——已按单件FAIL登记候整改令，并提名"幂等性守卫"为滑坡三查之外的判据增补候选（候规划师归口）。</div>
@@ -186,11 +189,11 @@
       <li><b>直读试水放量判定</b>——两试水件采集回填后：通道过=直读扩量放量（规划师矩阵收口单候晨检联动）。</li>
       <li><b>遗留三案</b>——B5章⑮⑯处置／工具债确权／标签澄清一句注记。</li>
     </ol>
-    <blockquote class="rule">对账单随验随更：下批到验→本席复验→v2刷新三栏+三查附表（版本号递增）。夜跑再大，晨检一页看清。</blockquote>
+    <blockquote class="rule">对账单随验随更：下批到验→本席复验→三栏+三查附表刷新（版本号递增·本单v3）。夜跑再大，晨检一页看清。</blockquote>
   </div>
 </section>
 
-<footer class="doc-footer footer doc">报告汇总员 · qc6@team6.local · 2026-10-25 00:1x · 基线 b1e8a78 · 本单为§十二-3三栏制初稿v1（随验随更）</footer>
+<footer class="doc-footer footer doc">报告汇总员 · qc6@team6.local · 2026-10-25 00:4x · 基线 fae6042 · 本单为§十二-3三栏制初稿v3（随验随更·v3纳入fae6042数学批1四张PASS-W+c1306e4对位表v3 PASS·412标注合规；v2已含71ea9b8语文试水交付+0ed1e01认领锁）——收口四件对账全闭：B2-⑦与化学两件见v1已判行·数学批1四张与对位表v3见本版成品栏</footer>
 
 </div>
 </body>
