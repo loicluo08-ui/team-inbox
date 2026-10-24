@@ -101,7 +101,8 @@ h2{color:#000 !important;font-size:14pt !important;margin:14px 0 6px !important;
    border-bottom:.6pt solid #888 !important;padding-bottom:3px !important;page-break-after:avoid;break-after:avoid;}
 h3{color:#1a1a1a !important;font-size:12pt !important;margin:10px 0 4px !important;page-break-after:avoid;}
 p{margin:6px 0 !important;}
-table{font-size:9.5pt !important;margin:7px 0 !important;line-height:1.5 !important;}
+table{font-size:9.5pt !important;margin:7px 0 !important;line-height:1.5 !important;
+      page-break-inside:avoid !important;break-inside:avoid !important;} /* 10/24夜 C5表格断页修复：table级防裂（队6三章包QC伤1：3.1易错卡①跨P10/P11·3.3易错卡②跨P31/P32·页首无表头重复），整表推新页，超高表best-effort仍可续分 */
 tr,td,th{page-break-inside:avoid;}
 th,td{padding:4px 6px !important;border:.5pt solid #777 !important;}
 th{background:#e8e8e8 !important;color:#000 !important;}
