@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜质点 参考系｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1e2633; --sub:#5a6a80; --line:#d7dee8; --paper:#ffffff; --wash:#f3f6fa;
+    --accent:#1a4f8b; --accent-soft:#e4edf7; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eceff2; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(30,38,51,.08);}
+  .head{background:linear-gradient(135deg,#1a4f8b 0%,#2560a5 55%,#3a76bd 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border-radius:99px;
+        background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);}
+  .head h1{font-size:24px; font-weight:700; letter-spacing:.02em;}
+  .kicker{margin-top:6px; font-size:13px; opacity:.92;}
+  .anchor-line{margin-top:8px; font-size:11.5px; opacity:.78;}
+  .body{padding:20px 28px 6px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent); padding-bottom:6px; border-bottom:2px solid var(--accent-soft);
+     margin-bottom:14px; display:flex; align-items:baseline; gap:10px;}
+  h2 .en{font-size:11.5px; color:var(--sub); font-weight:400; letter-spacing:.04em;}
+  figure{margin:0;}
+  figure figcaption{font-size:11.5px; color:var(--sub); margin-top:8px; line-height:1.7;}
+  .vitem{background:var(--wash); border:1px solid var(--line); border-left:4px solid var(--accent);
+         border-radius:8px; padding:12px 16px; margin-bottom:10px;}
+  .vitem b{color:var(--accent);}
+  .vitem .meta{font-size:12px; color:var(--sub); margin-top:4px;}
+  .honest{background:#fbf6ea; border:1px dashed #c9a94f; border-radius:8px; padding:10px 14px;
+          font-size:12.5px; color:#6b5a20; line-height:1.8; margin-top:12px;}
+  .honest b{color:#8a6d1f;}
+  table.anchor{width:100%; border-collapse:collapse; font-size:13.5px;}
+  table.anchor th{background:var(--accent-soft); color:var(--ink); font-weight:600; padding:8px 10px;
+                  border:1px solid var(--line); text-align:left; font-size:12.5px;}
+  table.anchor td{padding:9px 10px; border:1px solid var(--line); vertical-align:top; line-height:1.7;}
+  table.anchor td b{color:var(--accent);}
+  .src{font-size:11.5px; color:var(--sub); margin-top:8px;}
+  .errcard{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin-bottom:10px;}
+  .errcard .tag{display:inline-block; font-size:11.5px; color:var(--accent); border:1px solid var(--accent);
+                border-radius:99px; padding:1px 10px; margin-bottom:6px; letter-spacing:.04em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">物理</span><span class="chip">人教版 · 必修第一册</span><span class="chip">第一章 运动的描述</span>
+    </div>
+    <h1>第一节 质点 参考系</h1>
+    <div class="kicker">讲法锚点 · 切片卡 —— 视频打底 · 例题锚 · 易错收口</div>
+    <div class="anchor-line">节名照录：装配_物理必修一_第1章_1024.html 章首地图「1.1 质点 参考系（开工手续：对象简化＋描述起评线）」</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 150" width="100%" role="img" aria-label="本节锚点布局图">
+          <!-- 视频全片条 -->
+          <rect x="42" y="14" width="636" height="26" rx="6" fill="#e6ecf4" stroke="#1a4f8b" stroke-width="1.2"/>
+          <text x="58" y="31" font-size="13" fill="#1e2633">视频全片 · 新授打底（北大学长跳跳 · 基础课「1.质点」）</text>
+          <text x="664" y="31" font-size="12" fill="#1a4f8b" text-anchor="end">0:00 → 19:08</text>
+          <!-- 锚轴线 -->
+          <text x="42" y="66" font-size="11.5" fill="#5a6a80">例题锚</text>
+          <line x1="100" y1="62" x2="620" y2="62" stroke="#9db3c8" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="150" cy="62" r="7" fill="#1a4f8b"/><text x="150" y="82" font-size="11" text-anchor="middle" fill="#1e2633">例1 四连问</text>
+          <circle cx="330" cy="62" r="7" fill="#1a4f8b"/><text x="330" y="82" font-size="11" text-anchor="middle" fill="#1e2633">例2 双参考系</text>
+          <circle cx="520" cy="62" r="7" fill="#8a6d1f"/><text x="520" y="82" font-size="11" text-anchor="middle" fill="#1e2633">高考接口·车过桥</text>
+          <!-- 易错收口点 -->
+          <text x="42" y="112" font-size="11.5" fill="#5a6a80">易错收口</text>
+          <line x1="100" y1="108" x2="620" y2="108" stroke="#9db3c8" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="170" cy="108" r="7" fill="#a33b3b"/><text x="170" y="128" font-size="11" text-anchor="middle" fill="#1e2633">「小」不是通行证</text>
+          <circle cx="420" cy="108" r="7" fill="#a33b3b"/><text x="420" y="128" font-size="11" text-anchor="middle" fill="#1e2633">说「动」先说「相对谁」</text>
+        </svg>
+        <figcaption>怎么读这张图：最上面一条是视频全片时间带（整节跟学打底）；中间一排是三道例题锚——两道册内标杆例＋一个高考组合反例接口；最下一排是考前必扫的两张易错收口点。先看视频，再用例题自查，考前只扫红点。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频打底</span></h2>
+      <div class="vitem">
+        <b>【主锚 · 新授打底】</b>北大学长跳跳《【高中物理必修1基础课】1.质点》BV1W34y1y7qv —— 全片 0:00 → 19:08
+        <div class="meta">时长 19:08（1148s）· 播放 2,611,112 · B站 view API 直连实测 2026-10-24；同UP同系列为 v18 原册物理册在册讲法线（弹力锚 BV1gd4y1y7V2 同源先例）</div>
+      </div>
+      <div class="vitem">
+        <b>【副锚 · 对照讲法】</b>李永乐老师官方《高中物理必修（一）1.1 质点、参考系》BV1Lz42197T1 —— 全片 19:50
+        <div class="meta">时长 19:50（1190s）· 播放 356,378 · B站 view API 直连实测 2026-10-24；主锚卡壳时的第二讲法</div>
+      </div>
+      <div class="honest">
+        <b>宁缺毋编 · 如实申报</b>：①秒级切片窗与 UP 原话照录本卡未采（字幕语料未接入），不虚标起止秒与台词，全片窗口照实标注；②学考真题号级锚本卡未装——物理合格考真题卷不在库（v18 物理册真题锚现存于弹力/牛二等第3章节），真题位以下方册内例题锚代之，<b>三年三锚候采</b>。
+      </div>
+    </section>
+
+    <section>
+      <h2>例题锚（册内标杆代真题位）<span class="en">先做后看</span></h2>
+      <table class="anchor">
+        <tr><th style="width:18%">锚</th><th style="width:44%">要点</th><th>考位与依据</th></tr>
+        <tr>
+          <td><b>例1</b> 质点判断四连问</td>
+          <td>判断流水线全链：一尺（大小形状对当前问题的影响可否忽略）四问，所有质点判断题都是它的换皮</td>
+          <td>高考选择题高频第一题位母题；v18 精进例1 标杆</td>
+        </tr>
+        <tr>
+          <td><b>例2</b> 车厢上抛硬币</td>
+          <td>双参考系各描述一遍：车厢里看是竖直起落，地面看是抛物线——描述变了，落点规律没变</td>
+          <td>v18 最小验证②升级件；「描述相对 ≠ 规律相对」的活标本</td>
+        </tr>
+        <tr>
+          <td><b>接口</b> 列车过桥时间</td>
+          <td>组合反例：车长不可忽略（起止判据=车头上桥到车尾离桥）＋默认地面参考系——两个开关同时拨对</td>
+          <td>高考最爱的「质点化×参考系」组合反例（正件正文高考接口原话）</td>
+        </tr>
+      </table>
+      <p class="src">源：产出_队4/物理-1.1.md 重制正件（v18 原册讲法锚点线同源在库），题干与解答请回到节内例题区完整展开，本卡供自测回炉。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 1</span>
+        <p><b>「小」从来不是通行证——判断句换成「这道题在乎它的大小吗」。</b>原子够小吧？研究电子结构时必须还原。四类必还原场景：自转／各部分差异／尺寸与研究尺度同量级／转动。</p>
+        <p class="punch">最常丢分：凭块头下结论。把「它小不小」换成「题目在乎大小吗」，判断流水线才算开工。</p>
+        <p class="meta">源：v18 原册易错卡第①张（正件物理-1.1.md 同源照录）</p>
+      </div>
+      <div class="errcard">
+        <span class="tag">易错卡 · 2</span>
+        <p><b>说「动」，先说「相对谁」——相对的是描述，不是规律。</b>车厢里的人「静止」和「飞奔」可以同时成立；但换参考系后惯性系内力学规律不变。</p>
+        <p class="punch">最常丢分：「运动是相对的，所以怎么描述都行」——错。描述依赖参考系会变，规律不变。</p>
+        <p class="meta">源：v18 原册易错卡第②③张（正件物理-1.1.md 同源照录）</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>教材通读本节，圈出「建模观四步」和「判断流水线」两处。</li>
+        <li>视频全片跟学一遍（主锚 19:08，卡壳换副锚 19:50 对照），对着教材补笔记。</li>
+        <li>例题锚自测：先做例1四连问与例2双描述，再回节内例题区对答案；顺手把「车过桥」接口判一遍。</li>
+        <li>考前把两张易错卡扫一遍：默写判断句改写＋「相对谁」补全，各一句不落。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频数据＝B站 view API 直连实测（2026-10-24，BV1W34y1y7qv / BV1Lz42197T1，原始 JSON 留痕于工作区）；例题与易错条＝v18 原册_物理.html 讲法锚点线＋产出_队4/物理-1.1.md 重制正件（canonical 在库）；节名＝装配_物理必修一_第1章_1024.html 章首地图照录。本卡与同节讲义《经典例题精讲》互为补充：例1/例2已在节内完整展开，此处供自测回炉；学考真题三年三锚候采后另挂。
+  </div>
+
+</div>
+</body>
+</html>
