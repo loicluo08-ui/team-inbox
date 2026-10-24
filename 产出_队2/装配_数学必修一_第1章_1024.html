@@ -24,10 +24,11 @@ pre{background:#1c2430;border-left:3px solid #7ec9a0;border-radius:6px;padding:1
 <h1 class="chap">第一章 集合与常用逻辑用语 · 实切包 v1</h1>
 <p class="map">章首地图：①集合的概念（本节）→②关系→③运算→④充分必要→⑤量词。本章回答两个开机问题：<strong>怎么把"一群对象"变成可以运算的数学对象？怎么让"推理"从语感变成有判据的规则？</strong>主线读完即可做题；节尾深读区给想深究的因果分析。</p>
 <div class="toc" style="background:#1c2430;border:1px solid #2a3140;border-radius:8px;padding:10px 14px;margin:14px 0;font-size:12px;line-height:2;word-spacing:6px"><b style="color:#fff">本包目录</b>　<a href="#sec0" style="color:#4da3ff;text-decoration:none">1.1 课时开篇页</a> · <a href="#sec1" style="color:#4da3ff;text-decoration:none">速览卡（10秒版）</a> · <a href="#sec2" style="color:#4da3ff;text-decoration:none">正文</a> · <a href="#sec3" style="color:#4da3ff;text-decoration:none">经典例题</a> · <a href="#sec4" style="color:#4da3ff;text-decoration:none">易错卡（4张，考前翻一遍）</a> · <a href="#sec5" style="color:#4da3ff;text-decoration:none">应试打法</a> · <a href="#sec6" style="color:#4da3ff;text-decoration:none">深读区：因果与为什么</a> · <a href="#sec7" style="color:#4da3ff;text-decoration:none">费曼检验</a> · <a href="#sec8" style="color:#4da3ff;text-decoration:none">本节串联图</a>　<span style="color:#5a6472">（1.2-1.5候终验过验后逐节追加）</span></div>
+<div class="toc" style="background:#1c2430;border:1px solid #2a3140;border-radius:8px;padding:8px 14px;margin:10px 0;font-size:11.5px;line-height:2"><b style="color:#fff">细粒度锚点目录</b>　<a href="#ex1" style="color:#7ec9a0;text-decoration:none">例1</a> · <a href="#ex2" style="color:#7ec9a0;text-decoration:none">例2（真题位）</a> · <a href="#card1" style="color:#7ec9a0;text-decoration:none">易错卡① {0}与∅</a> · <a href="#card2" style="color:#7ec9a0;text-decoration:none">卡② 三兄弟辨析</a> · <a href="#card3" style="color:#7ec9a0;text-decoration:none">卡③ {R}错写</a> · <a href="#card4" style="color:#7ec9a0;text-decoration:none">卡④ 含参解集回代</a> · <a href="#fmq" style="color:#7ec9a0;text-decoration:none">费曼整合题</a>　<span style="color:#5a6472">（卡面-锚点两层式·S10 B5/B9）</span></div>
 <p>1.1｜队2｜<mark class="glow">集合的概念</mark>（全册地基节）</p>
 <hr>
 <h2 id="sec0">课时开篇页</h2>
-<div class="mapwrap"><svg viewBox="0 0 760 250" style="width:100%;background:#161b22;border-radius:8px;">
+<div class="mapwrap"><svg viewBox="0 0 760 272" style="width:100%;background:#161b22;border-radius:8px;">
 <defs><marker id="b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#7ec9a0"/></marker></defs>
 <text x="380" y="24" fill="#fff" font-size="15" text-anchor="middle" font-weight="bold">1.1 知识地图：集合 = 数学的第一个容器</text>
 <rect x="20" y="44" width="220" height="52" rx="6" fill="#1e3328"/><text x="130" y="64" fill="#7ec9a0" font-size="12" text-anchor="middle">准入三要素</text><text x="130" y="82" fill="#b8c2ce" font-size="10.5" text-anchor="middle">确定性／互异性／无序性——删一条瘫痪什么</text>
@@ -40,6 +41,8 @@ pre{background:#1c2430;border-left:3px solid #7ec9a0;border-radius:6px;padding:1
 <line x1="380" y1="96" x2="380" y2="126" stroke="#7ec9a0" stroke-width="1.5" marker-end="url(#b)"/>
 <line x1="515" y1="164" x2="440" y2="186" stroke="#7ec9a0" stroke-width="1.5" marker-end="url(#b)"/>
 <text x="380" y="244" fill="#8a919c" font-size="10.5" text-anchor="middle">下游：1.2关系（⊆）／1.3运算（∩∪∁）——全部建立在本节"在不在可判定"之上</text>
+<text x="380" y="264" fill="#e0a34d" font-size="11" text-anchor="middle">怎么读这张图：从左到右＝从立规矩到交付——三要素管"什么有资格打包"，两种写法管"打包后怎么写"；一切判定收束到"归属可判定"</text>
+<text x="380" y="298" fill="#e0a34d" font-size="11" text-anchor="middle">怎么读这张图：箭头＝知识依赖方向——本节是全章地基，下游每节都在"用容器"；学习自上而下，复习时反查依赖</text>
 </svg></div>
 <p><strong>本节知识点清单</strong>：集合与元素（∈/∉）·集合三要素（确定性/互异性/无序性）·列举法·描述法（代表元+共同特征）·数集与点集（代表元三写法辨析）·特殊数集记号（N/Z/Q/R/∅）·集合的合法性边界（归属必须可判定）·{0}与∅层级·含参互异检验</p>
 <p><strong>学完这节你能做到</strong>（4条，全部可自查）：</p>
@@ -119,14 +122,14 @@ pre{background:#1c2430;border-left:3px solid #7ec9a0;border-radius:6px;padding:1
 <p><strong>◎到此记住</strong>：判"是不是集合"，只看一条——归属能不能判定；能，是集合；不能，不是。</p>
 <hr>
 <h2 id="sec3">经典例题</h2>
-<h3>例1 · 教材保底：判定与表示（基础级）</h3>
+<h3 id="ex1">例1 · 教材保底：判定与表示（基础级）</h3>
 <p><strong>【题干】</strong>教材例题链：①判断"所有很大的数"是不是集合，说明理由；②用列举法表示"小于10的所有自然数"；③用描述法表示x-7&lt;3的解集。</p>
 <p><strong>【解答】</strong>①不是集合——"很大"无法判定归属（确定性不满足），换成"身高≥180cm的人"这类可判定描述才合法。②A={0,1,2,3,4,5,6,7,8,9}。③{x∈R｜x＜10}。</p>
 <p><strong>【怎么想到的】</strong>三小问是同一动作的三个出口——"在不在能不能判定"。第①问抓"很大"这个词：模糊判据问"7在不在"答不出，一句话否决；第②③问是"打包写法"的选择：数得完列出来（列举），数不完写规则（描述）；描述法落笔前先声明竖线左边身份（x∈R=实数），再写右边筛选规则（x＜10）。教材追问两个问题就在逼你做这个动作：竖线左边是谁、右边条件怎么翻译成"在不在"的判定。</p>
 <p><strong>【定级】</strong>保底｜教材例题（人教A版必修第一册1.1，p2-3）。</p>
 <p><strong>【同类一题自测】</strong>（先试后看）：解方程 x²-3x+2=0，并用描述法写出其解集。</p>
 <p>答案：x=1或x=2；解集 {x∈R｜x²-3x+2=0}，也可以列举为 {1,2}——同一个集合的两种写法（无序性、互异性已保证）。</p>
-<h3>例2 · 高考真题位：新高考Ⅰ卷T1（中档）</h3>
+<h3 id="ex2">例2 · 高考真题位：新高考Ⅰ卷T1（中档）</h3>
 <p><strong>【题干】</strong>（2024年新高考Ⅰ卷·第1题，原卷核对）设集合A={x|x&gt;0}，B={-1,0,1,2}，则A∩B=？</p>
 <p><strong>【解答】</strong>逐元素过检：-1∉A（-1≤0）、0∉A（0&gt;0为假）、1∈A（1&gt;0✓）、2∈A（2&gt;0✓）。A∩B={1,2}，选A。</p>
 <p><strong>【怎么想到的】</strong>题面给的是"规则集合"（x&gt;0）与"名单集合"（四个数）——名单集合的每个元素都要过一遍规则检验，这正是描述法操作级定义的反向使用："y在B里，问y在不在A里"=把y代入A的右边条件算一遍。四步逐元素过检一步不跳，是本题全部技巧；真正容易卡住的是0的归属——0&gt;0为假，0不进，别被"0好像非负"的语感带跑。岔路提醒：见到A∩B想套运算公式（1.3才学）不是本题路径，逐个检验已经做完全部工作。</p>
@@ -136,10 +139,10 @@ pre{background:#1c2430;border-left:3px solid #7ec9a0;border-radius:6px;padding:1
 <hr>
 <h2 id="sec4">易错卡（4张，考前翻一遍）</h2>
 <table><thead><tr><th>#</th><th>症状（错误说法）</th><th>错因</th><th>维持机制</th><th>钉死</th></tr></thead><tbody>
-<tr><td>1</td><td>"{0}和∅差不多，都是空的"</td><td>"没有内容"与"有零个元素"被混同</td><td>直觉里"空箱子"和"装着0的箱子"都叫"空"</td><td>{0}有一个元素（0），∅零个元素——<mark class="glow">∅⊆任何集合，{0}⊆任何含0的集合</mark>，身份完全不同</td></tr>
-<tr><td>2</td><td>"{x|y=x²}和{y|y=x²}一回事，都是抛物线"</td><td>只读竖线右边条件，没看左边代表元</td><td>两个式子右边长得一样，扫题速度太快</td><td>看左边：x=输入侧数集（R）、y=输出侧数集（[0,+∞)）、(x,y)=点集（抛物线）——身份由竖线左边决定</td></tr>
-<tr><td>3</td><td>"{R}表示实数集"</td><td>把"R"与"装R的箱子"混写</td><td>花括号随手一加，没意识到打包动作创建了新对象</td><td>R=实数集；{R}=以"实数集"为唯一元素的集合（单元素集）——花括号一包就是新身份</td></tr>
-<tr><td>4</td><td>"方程x²=ax的解集是{0,a}"，a=0时也这么写</td><td>解出候选值直接打包，没回代查互异</td><td>"解方程得两根"的动作惯性</td><td>a=0时方程为x²=0，解集{0}——单元素；候选值回代检验互异性，矛盾候选必须剔除</td></tr>
+<tr id="card1"><td>1</td><td>"{0}和∅差不多，都是空的"</td><td>"没有内容"与"有零个元素"被混同</td><td>直觉里"空箱子"和"装着0的箱子"都叫"空"</td><td>{0}有一个元素（0），∅零个元素——<mark class="glow">∅⊆任何集合，{0}⊆任何含0的集合</mark>，身份完全不同</td></tr>
+<tr id="card2"><td>2</td><td>"{x|y=x²}和{y|y=x²}一回事，都是抛物线"</td><td>只读竖线右边条件，没看左边代表元</td><td>两个式子右边长得一样，扫题速度太快</td><td>看左边：x=输入侧数集（R）、y=输出侧数集（[0,+∞)）、(x,y)=点集（抛物线）——身份由竖线左边决定</td></tr>
+<tr id="card3"><td>3</td><td>"{R}表示实数集"</td><td>把"R"与"装R的箱子"混写</td><td>花括号随手一加，没意识到打包动作创建了新对象</td><td>R=实数集；{R}=以"实数集"为唯一元素的集合（单元素集）——花括号一包就是新身份</td></tr>
+<tr id="card4"><td>4</td><td>"方程x²=ax的解集是{0,a}"，a=0时也这么写</td><td>解出候选值直接打包，没回代查互异</td><td>"解方程得两根"的动作惯性</td><td>a=0时方程为x²=0，解集{0}——单元素；候选值回代检验互异性，矛盾候选必须剔除</td></tr>
 </tbody></table>
 <hr>
 <h2 id="sec5">应试打法</h2>
@@ -158,7 +161,7 @@ pre{background:#1c2430;border-left:3px solid #7ec9a0;border-radius:6px;padding:1
 <h2 id="sec7">费曼检验（学完立即做 · 2分钟）</h2>
 <p><mark class="glow">"凡我不能创造之物，我便无法真正理解。"——费曼办公室黑板遗言（1988）</mark><br>你以为你懂了——讲一遍才知道缺口在哪。</p>
 <p><strong>仪式</strong>：先口述录音60-90秒，<strong>说完再往下看</strong>对照。</p>
-<p><strong>系统整合题</strong>（三步引导链）：给同桌讲明白——为什么"所有很大的数"不是集合，而"身高≥180cm的人"是？<br>第一步·先说结论（差别只有一个："在不在"能不能判定）→第二步·再说为什么（子集、交并补、元素检验，全册每个集合操作都建立在"在不在"的二元判定上；判定不了，运算当场停摆——所以这不是较真，是准入门槛）→第三步·举个例子（"高个子"判不了、改"身高≥180cm"拿尺一量即判；⚠简化边界：册内不展开模糊数学，讲的时候一句"数学把模糊问题分给概率统计"带过即可）</p>
+<p id="fmq"><strong>系统整合题</strong>（三步引导链）：给同桌讲明白——为什么"所有很大的数"不是集合，而"身高≥180cm的人"是？<br>第一步·先说结论（差别只有一个："在不在"能不能判定）→第二步·再说为什么（子集、交并补、元素检验，全册每个集合操作都建立在"在不在"的二元判定上；判定不了，运算当场停摆——所以这不是较真，是准入门槛）→第三步·举个例子（"高个子"判不了、改"身高≥180cm"拿尺一量即判；⚠简化边界：册内不展开模糊数学，讲的时候一句"数学把模糊问题分给概率统计"带过即可）</p>
 <p><strong>照妖镜</strong>（讲完对照）：典型错误讲法＝"集合就是一堆数"（丢了容器身份和三要素）或"{0}和∅差不多，反正都'没内容'"（∅没内容、{0}有一件内容）。正确讲法必须守住<strong>打包动作</strong>（花括号一包就是新对象）+<strong>归属可判定</strong>（三要素之首）。两处错误分别可溯易错卡卡③与卡①。</p>
 <p><strong>卡壳路由</strong>：卡在"三要素为什么必须"→回正文三要素节（删掉它会瘫痪什么）；卡在"三兄弟辨析"→回正文代表元节/易错卡卡②；卡在"{0}/∅/{R}"→回正文特殊记号节/易错卡卡①卡③。</p>
 <hr>
