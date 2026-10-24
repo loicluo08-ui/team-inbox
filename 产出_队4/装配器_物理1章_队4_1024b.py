@@ -69,7 +69,12 @@ def md_to_html(md, sn):
                 tb += "</table>"
                 if "这节是什么" in tb:  # B9荧光判据：每节速览卡定场核心词mark（确定性规则·一节一mark）
                     head, sep, tail = tb.partition("这节是什么")
-                    tail = tail.replace("<b>", '<mark class="glow"><b>', 1).replace("</b>", "</b></mark>", 1)
+                    row1 = tail.split("</tr>")[0]
+                    if "<b>" in row1:
+                        tail = tail.replace("<b>", '<mark class="glow"><b>', 1).replace("</b>", "</b></mark>", 1)
+                    else:  # 无粗体定场句（1.4型）：标记定场cell首短句
+                        m = re.search(r'<td>([^<]{8,28}?)[，。；]', row1)
+                        if m: tail = tail.replace(m.group(1), f'<mark class="glow">{m.group(1)}</mark>', 1)
                     tb = head + sep + tail
                 out.append(("table", None, tb))
             continue
