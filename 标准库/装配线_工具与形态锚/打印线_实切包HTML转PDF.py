@@ -10,6 +10,7 @@
 #   3.SVG反色：DOM级fill/stroke/background色值映射（CSS filter打印管线不可靠），目检导图白底深字
 #   4.全页深色占比机检：<1%为净（pdftoppm转图+PIL统计）
 #   5.表格断行：tr/td page-break-inside:avoid，抽查页界
+#   6.课间分页（10/24 22:13逸翔核心规则）：每课完结当页留白，下一课推新页——JS给非首个"课时开篇页"h2注入break-before:page；单节件自然不触发
 #   6.荧光mark：浅底加粗可读
 #   7.页数汇报：输出页数给逸翔（省纸让位于舒适，10/18不偏离原目的）
 import sys, re
@@ -122,6 +123,12 @@ with sync_playwright() as p:
     pg=b.new_page()
     pg.goto(f"file://{SRC}", wait_until="networkidle")
     pg.evaluate(INVERT_JS)
+    # 课间分页（逸翔核心规则22:13）：非首个"课时开篇页"h2前强制分页
+    pg.evaluate("""() => {
+      const hs = [...document.querySelectorAll('h2')].filter(h => h.textContent.includes('课时开篇页'));
+      hs.slice(1).forEach(h => { h.style.breakBefore = 'page'; h.style.pageBreakBefore = 'always'; });
+      return hs.length;
+    }""")
     pg.add_style_tag(content=PRINT_CSS)
     pg.emulate_media(media="print")
     pg.pdf(path=OUT, format="A4", print_background=True,
