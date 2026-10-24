@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # 物理1章章级装配器（队4·B席·1024）——md→HTML·产线方言：#系列/表格/列表/粗体/code/hr/引用/图规格块
 # C5机制：table/card/blockquote page-break-inside:avoid 注入；C7页码：playwright footer driver
-import re, html, sys, os
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from importlib import import_module
-pur = import_module("工具_装配净化器_队4_1024")  # W2净化器（16:07裁定②·A2口径清除留痕）
+import re, html, sys, os, importlib.util
+_p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "工具_装配净化器_队4_1024.py")
+_spec = importlib.util.spec_from_file_location("assembler_purifier", _p)
+pur = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(pur)  # W2净化器（16:07裁定②·A2口径清除留痕）
 
 SECS = [
     ("1.1", "质点 参考系", "产出_队4/物理-1.1.md"),
@@ -179,9 +179,23 @@ b{color:#e6edf3;} li{margin:3px 0;}
     h.append(selftest)
     h.append("<div style=\"margin-top:14px;font-size:11px;color:#8b949e\">第一章完 · 六节（1.1-1.6）｜回收：惯性力→第四章·自由落体→2.4·图像语法→全册</div>")
     h.append("</body></html>")
+    doc = "".join(h)
+    # W3治（16:07裁定④·随重出件顺手修）：规格标题段（"【…规格】"独立段）page-break-after:avoid 防页尾悬垂断行
+    doc, n_w3 = re.subn(r'<p><b>(【[^】]{2,40}】)</b></p>', r'<p style="page-break-after:avoid"><b>\1</b></p>', doc)
+    # W2防复发（16:07裁定②）：A4.3自检断言 v18/簇/装配批注三词面=0，非零阻断出件
+    ok, bad = pur.verify_zero(doc)
+    if not ok:
+        print("A4.3自检FAIL: 词面残留", bad, "——residual_report定位：")
+        for w, ctxs in pur.residual_report(doc).items():
+            for c in ctxs[:6]: print("  [", w, "]", c)
+        sys.exit(1)
     out = "产出_队4/装配_物理必修一_第1章_1024.html"
-    open(out, "w").write("".join(h))
-    print("HTML_OK", out, len("".join(h)), "字节 · 块锚", n_anchor)
+    open(out, "w").write(doc)
+    print("HTML_OK", out, len(doc), "字节 · 块锚", n_anchor)
+    print("W3规格段防悬垂注入", n_w3, "处")
+    print("W2净化清单（A2口径·canonical零触碰·清除留痕）:")
+    for name, n, _s in pur.RULES_REPORT:
+        print("  ", name, "×", n)
 
 if __name__ == "__main__":
     main()
