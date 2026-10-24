@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜3.1 重力与重心、弹力（弹力半场）｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  /* ---- 卡头 ---- */
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;}
+  .chip{background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+        border-radius:999px; padding:2px 12px; font-size:12px; letter-spacing:.5px;}
+  .head h1{font-size:24px; font-weight:900; letter-spacing:.5px;}
+  .kicker{font-size:13px; opacity:.92; margin-top:4px; letter-spacing:2px;}
+  .anchor-line{font-size:12.5px; margin-top:10px; padding-top:8px; border-top:1px dashed rgba(255,255,255,.35); opacity:.95;}
+  /* ---- 主体 ---- */
+  .body{padding:22px 28px 6px;}
+  section{margin-bottom:24px;}
+  section h2{font-size:16.5px; font-weight:900; color:var(--accent);
+             border-left:4px solid var(--accent); padding-left:10px; margin-bottom:12px;}
+  .note{background:var(--wash); border:1px dashed var(--line); border-radius:8px;
+        padding:9px 12px; font-size:13px; color:var(--sub); margin-bottom:12px;}
+  .note b{color:var(--ink);}
+  figure{margin:0 0 4px;}
+  .figcap{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  .figcap b{color:var(--accent);}
+  /* ---- 视频锚 ---- */
+  .vhead{background:var(--accent-soft); border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin-bottom:12px;}
+  .vhead .vt{font-weight:900; font-size:15px;}
+  .vhead .vm{font-size:12.5px; color:var(--sub); margin-top:4px;}
+  .vhead .vm code{font-family:"Sarasa Mono SC",monospace; color:var(--accent); font-weight:700;}
+  .layer{margin-bottom:10px;}
+  .layer .lt{font-size:13px; font-weight:900; color:var(--ink); margin-bottom:6px;}
+  .layer .lt span{font-weight:400; color:var(--sub); font-size:12px;}
+  table.sl{width:100%; border-collapse:collapse; font-size:13px; margin-bottom:6px;}
+  table.sl th{background:var(--wash); color:var(--sub); font-weight:700; padding:6px 8px;
+              border:1px solid var(--line); text-align:left; font-size:12px;}
+  table.sl td{border:1px solid var(--line); padding:6px 8px; vertical-align:top;}
+  table.sl td.ts{font-family:"Sarasa Mono SC",monospace; color:var(--gold); white-space:nowrap; font-weight:700;}
+  .quote{background:#faf8f2; border-left:3px solid #c9b98a; padding:6px 10px; margin:4px 0 8px;
+         font-size:12.5px; color:#4a4433;}
+  .quote .qsrc{color:#8a6d1f; font-size:11.5px;}
+  /* ---- 高考接口 ---- */
+  .gk{list-style:none;}
+  .gk li{padding:7px 10px 7px 34px; position:relative; border-bottom:1px dashed var(--line); font-size:13.5px;}
+  .gk li:last-child{border-bottom:none;}
+  .gk li::before{content:"◆"; position:absolute; left:12px; color:var(--accent); font-size:11px; top:9px;}
+  .gk li b{color:var(--accent);}
+  /* ---- 易错卡 ---- */
+  .ec{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .eccard{border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--paper);}
+  .eccard .et{font-weight:900; font-size:13.5px; color:#a33d2e; margin-bottom:4px;}
+  .eccard p{font-size:12.8px; color:var(--ink);}
+  .eccard .es{font-size:11.5px; color:var(--sub); margin-top:5px; border-top:1px dashed var(--line); padding-top:4px;}
+  /* ---- 怎么用 ---- */
+  ol.steps{padding-left:22px; font-size:13.5px;}
+  ol.steps li{margin-bottom:6px;}
+  /* ---- 页脚 ---- */
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:14px 28px;
+        font-size:12px; color:var(--sub); line-height:1.8;}
+  .punch{color:#a33d2e; font-weight:700;}
+  @media (max-width:640px){ .ec{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">物理 · 必修一</span>
+      <span class="chip">第三章 相互作用——力</span>
+      <span class="chip">S8规格 · 全字段带源</span>
+    </div>
+    <h1>3.1 重力与重心、弹力（两半场合流）——弹力半场</h1>
+    <div class="kicker">讲法锚点 · 切片卡</div>
+    <div class="anchor-line">节名照录自第三章装配页§3.1节标（◆ ◆ ◆　3.1　重力与重心、弹力（两半场合流））；本卡覆盖弹力半场（对应册内"簇09 弹力（含胡克定律）"）。<b>宁缺毋编</b>：重力与重心半场仓内无节级切片素材，缺料不编卡。</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <h2>一图读懂：弹力判断四步闸</h2>
+      <figure>
+        <svg viewBox="0 0 760 252" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="弹力判断四步闸流程图">
+          <defs>
+            <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8 Z" fill="#2b5a8c"/>
+            </marker>
+          </defs>
+          <rect x="0" y="0" width="760" height="252" fill="#ffffff"/>
+          <!-- 四闸 -->
+          <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+            <rect x="14" y="34" width="160" height="118" rx="10" fill="#f4f6f8" stroke="#2b5a8c" stroke-width="1.6"/>
+            <text x="94" y="56" text-anchor="middle" font-size="14" font-weight="900" fill="#2b5a8c">闸① 接触并挤压？</text>
+            <text x="94" y="78" text-anchor="middle" font-size="11.5" fill="#1f242b">直接接触＋相互挤压</text>
+            <text x="94" y="96" text-anchor="middle" font-size="11.5" fill="#1f242b">微形变肉眼看不见也存</text>
+            <text x="94" y="120" text-anchor="middle" font-size="11" fill="#5b6773">看不见？假设法反推：</text>
+            <text x="94" y="136" text-anchor="middle" font-size="11" fill="#5b6773">假设有弹力看是否平衡</text>
+
+            <rect x="216" y="34" width="160" height="118" rx="10" fill="#f4f6f8" stroke="#2b5a8c" stroke-width="1.6"/>
+            <text x="296" y="56" text-anchor="middle" font-size="14" font-weight="900" fill="#2b5a8c">闸② 能恢复原状？</text>
+            <text x="296" y="78" text-anchor="middle" font-size="11.5" fill="#1f242b">弹性形变→有弹力</text>
+            <text x="296" y="96" text-anchor="middle" font-size="11.5" fill="#1f242b">非弹性形变→无弹力</text>
+            <text x="296" y="120" text-anchor="middle" font-size="11" fill="#5b6773">弹力在"恢复原状"</text>
+            <text x="296" y="136" text-anchor="middle" font-size="11" fill="#5b6773">的过程中产生</text>
+
+            <rect x="418" y="34" width="160" height="118" rx="10" fill="#f4f6f8" stroke="#2b5a8c" stroke-width="1.6"/>
+            <text x="498" y="56" text-anchor="middle" font-size="14" font-weight="900" fill="#2b5a8c">闸③ 方向？</text>
+            <text x="498" y="78" text-anchor="middle" font-size="11.5" fill="#1f242b">与形变方向相反</text>
+            <text x="498" y="96" text-anchor="middle" font-size="11.5" fill="#1f242b">＝与外力方向相反</text>
+            <text x="498" y="120" text-anchor="middle" font-size="11" fill="#5b6773">接触面弹力</text>
+            <text x="498" y="136" text-anchor="middle" font-size="11" fill="#5b6773">垂直于接触面</text>
+
+            <rect x="620" y="34" width="126" height="118" rx="10" fill="#f4f6f8" stroke="#2b5a8c" stroke-width="1.6"/>
+            <text x="683" y="56" text-anchor="middle" font-size="14" font-weight="900" fill="#2b5a8c">闸④ 谁形变？</text>
+            <text x="683" y="78" text-anchor="middle" font-size="11.5" fill="#1f242b">施力物＝对方</text>
+            <text x="683" y="96" text-anchor="middle" font-size="11.5" fill="#1f242b">不可能自己打自己</text>
+            <text x="683" y="120" text-anchor="middle" font-size="11" fill="#5b6773">研究对象受的弹力</text>
+            <text x="683" y="136" text-anchor="middle" font-size="11" fill="#5b6773">由施力物形变产生</text>
+
+            <line x1="174" y1="93" x2="212" y2="93" stroke="#2b5a8c" stroke-width="1.6" marker-end="url(#ar)"/>
+            <line x1="376" y1="93" x2="414" y2="93" stroke="#2b5a8c" stroke-width="1.6" marker-end="url(#ar)"/>
+            <line x1="578" y1="93" x2="616" y2="93" stroke="#2b5a8c" stroke-width="1.6" marker-end="url(#ar)"/>
+
+            <!-- 特例带 -->
+            <rect x="14" y="176" width="732" height="58" rx="8" fill="#eef3f8" stroke="#d5dce2"/>
+            <text x="30" y="198" font-size="12.5" font-weight="900" fill="#2b5a8c">方向特例三行（画受力图前对照）</text>
+            <text x="30" y="220" font-size="11.5" fill="#1f242b">绳：沿绳指向收缩方向，只能拉　｜　杆：未必沿杆，由平衡/牛二反推　｜　弹簧：沿轴线 F=kx，形变不能瞬间跳变</text>
+          </g>
+        </svg>
+        <figcaption class="figcap"><b>怎么读这张图</b>：顺着四个闸门从左往右走，每过一闸甩掉一类高频错答——闸①治"看到接触就写弹力"，闸②治"有形变就等于有弹力"，闸③管方向（先反后垂直），闸④管施力物归属；底部特例带是绳、杆、弹簧三类约束的方向口径，画受力图前扫一眼。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 视频切片</h2>
+      <div class="vhead">
+        <div class="vt">北大学长跳跳《【高中物理必修1基础课】33.弹力概念及方向分析（5分35秒开始是高能时刻）》</div>
+        <div class="vm">全片锚：<code>BV1gd4y1y7V2</code>｜全片 1964 秒（约32:44）｜播放 405,639（API实测2026-10-05 15:54；在册装配值 405,352，漂移 +0.07%，照录）｜UP主 mid=439177375（名单外UP，切前已抽验2知识点对照教材通过——册内模块注）</div>
+      </div>
+
+      <div class="layer">
+        <div class="lt">A层 · 字幕级秒窗 ×4 <span>（册内簇09"讲法锚点·切片装配"模块照录：机械全验照录12/12零改写、起止秒全对账、繁转简归一）</span></div>
+        <table class="sl">
+          <tr><th>层标</th><th>秒窗</th><th>讲法一句（照录）</th></tr>
+          <tr><td>【新授打底】</td><td class="ts">00:20→02:50</td><td>弹力产生两条件的完整讲法：微小形变肉眼不可见但存在，"接触≠弹力"由此引出假设法</td></tr>
+          <tr><td>【方法核心】</td><td class="ts">14:25→17:56</td><td>弹力分析三步骤：定研究对象→找接触面→判形变方向</td></tr>
+          <tr><td>【方向规则】</td><td class="ts">20:16→24:21</td><td>接触面弹力垂直于接触面</td></tr>
+          <tr><td>【易错收口】</td><td class="ts">29:21→31:13</td><td>固定杆弹力方向特例——用平衡分析，勿默认沿杆</td></tr>
+        </table>
+        <div class="quote">"只有谈性形变才能产生谈例 因为谈例就是在它恢复原状的这个过程中产生的"<span class="qsrc">（"谈力"=弹力，照录）</span></div>
+        <div class="quote">"注意啊，如果两个物体之间它是有一个接触面的，那它的弹力方向，跟这个接触面一定是垂直的"<span class="qsrc">（方向规则窗·照录）</span></div>
+        <div class="quote">"这个大家注意啊，它的弹力方向它未必沿杆"<span class="qsrc">（固定杆特例·照录）</span></div>
+      </div>
+
+      <div class="layer">
+        <div class="lt">B层 · 音频级切片 ×3 <span>（音频转写照录·错字保留；画面对账16点全过，与A层字幕级为双层互证，窗口更宽）</span></div>
+        <table class="sl">
+          <tr><th>弧名</th><th>切片</th><th>互补点（照录）</th></tr>
+          <tr><td>概念弧</td><td class="ts">28→118s</td><td>弹性形变 vs 非弹性形变（恢复原状与否）判别→"恢复原状的过程中产生"的动态定义链</td></tr>
+          <tr><td>规则弧</td><td class="ts">187→304s</td><td>产生条件两条（直接接触并挤压／弹性形变）与方向判据（与形变方向相反=与外力相反）一页收束</td></tr>
+          <tr><td>易错弧</td><td class="ts">903→1073s</td><td>施力物归属判据＋狗-床垫实战三步分析＋施力物辨析选择题纠偏</td></tr>
+        </table>
+        <div class="quote">"就说产生谈例的两个条件 第一个是直接接触并挤压 第二个就是谈性形变……这个方向很简单 就是与发生形变的方向相反 也就是说与外力相反 这个谈例就是与外力作对抗的"<span class="qsrc">（音频层 236.51→253.67s 照录，"谈例"=弹力、"谈性形变"=弹性形变）</span></div>
+        <div class="quote">"这个要对象他受到了谈力 一定是由于失利物形变产生的 不可能是自己形变让自己受力 不可能自己打自己"<span class="qsrc">（音频层 903.27→919.35s 照录，"要对象"=研究对象、"失利物"=施力物）</span></div>
+      </div>
+
+      <div class="note"><b>缺口如实申报（宁缺毋编）</b>：①题号级学考/高考真题锚＝0覆盖——本节装配页易错卡挂接的"2023山东卷弹簧症状例"系册内易错素材转录，非官方答案核对级，候卷源直读线回填后补锚，不虚标；②点赞/弹幕/投币等视频旁证未采，不虚标；③音频层引文系转写照录（错字保留，"谈例"=弹力），与字幕级归一引文双层互证，两层窗口覆盖段不同，自测建议先A后B。</div>
+    </section>
+
+    <section>
+      <h2>高考接口（册内簇09照录）</h2>
+      <ul class="gk">
+        <li><b>弹力有无与方向判断</b>——受力分析第一关（选择题＋画图题）</li>
+        <li><b>胡克定律计算与 F-x 图像</b>——斜率=k、面积是伏笔</li>
+        <li><b>弹簧串并联与"轻弹簧两端等力"</b>——串联变软（1/k=1/k₁+1/k₂）、并联变硬（k=k₁+k₂），口诀"串软并硬"</li>
+        <li><b>与牛顿定律复合的弹簧瞬时问题</b>——弹簧力不能突变（剪绳瞬间弹簧力保持原值），绳力可突变——簇⑬回收点</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>易错收口 · 四卡</h2>
+      <div class="ec">
+        <div class="eccard">
+          <div class="et">①"长度"≠"伸长量"，一字之差全题错</div>
+          <p>x 是形变量（相对原长的变化），不是总长。例：原长10cm挂3N砝码总长12cm⟹k=3/0.02=150N/m；直接拿总长代公式即翻车。</p>
+          <div class="es">源：册内簇09例题精讲例1（照录）</div>
+        </div>
+        <div class="eccard">
+          <div class="et">②杆的弹力未必沿杆</div>
+          <p>绳只能沿绳拉，杆可拉可压可撑——方向由平衡/牛二反推定，勿默认沿杆。</p>
+          <div class="es">源：A层易错收口窗原话照录＋册内快问快答3</div>
+        </div>
+        <div class="eccard">
+          <div class="et">③施力物归属＝谁形变谁施力</div>
+          <p>研究对象受到的弹力一定由<b>施力物</b>形变产生——"不可能自己打自己"。桌面给书弹力，是桌面形变，不是书形变。</p>
+          <div class="es">源：B层易错弧原话照录＋A层施力物归属判据</div>
+        </div>
+        <div class="eccard">
+          <div class="et">④k 是弹簧身份证，不随 F、x 变</div>
+          <p>把"形变变了"当"k变了"是高频症状：三根弹簧吊盘答 k=mg/Δx=300N/m，漏了"总重由3根分担"——每根承担除以根数。</p>
+          <div class="es">源：装配页§3.1易错卡（册内挂接易错素材⑧-2·2023山东卷症状例）</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>教材通读本节弹力半场，圈出"产生两条件"与"方向判断"两处。</li>
+        <li>视频跟学：先走A层四窗（字幕级，总长约13分钟），再补B层三弧（音频级，窗口更宽）。</li>
+        <li>四步闸自测：随手指一个接触场景（书压桌面/斜面物块/吊灯），30秒走完四闸并报出弹力方向。</li>
+        <li>考前扫易错卡：默写"长度≠伸长量""杆未必沿杆""谁形变谁施力""k是身份证"四条不落。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频数据＝B站视频页 BV1gd4y1y7V2（API实测2026-10-05·播放405,639）；A层秒窗与原话＝v18物理册簇09"讲法锚点·切片装配"模块（机械全验照录12/12、繁转简归一）；B层三弧＝仓内音频转写交付件（转写照录错字保留·画面对账16点全过·双层互证）；高考接口与易错条＝v18物理册簇09精进模块照录；节名＝第三章装配页§3.1节标照录。本卡与同章§3.4"力的合成"例2（镜像黄夫人切片三力最小值题）互为补充：合成侧切片另卡候放。
+  </div>
+
+</div>
+</body>
+</html>
