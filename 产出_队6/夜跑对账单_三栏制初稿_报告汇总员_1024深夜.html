@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夜跑对账单·三栏制初稿 v1｜报告汇总员｜10-24深夜→10-25凌晨</title>
+<style>
+  :root{
+    --ink:#1a2233; --paper:#f6f7f9; --line:#dfe3ea;
+    --pass:#177245; --passbg:#e8f5ee;
+    --passw:#8a6d00; --passwbg:#fdf6dd;
+    --fail:#b3261e; --failbg:#fdecea;
+    --wait:#8a5a00; --waitbg:#fff3e0;
+    --wip:#1c4e8a; --wipbg:#e8f0fa;
+    --muted:#667085;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:14px;padding:28px 18px;}
+  .wrap{max-width:1080px;margin:0 auto;}
+  header.doc{background:linear-gradient(135deg,#1a2233 0%,#25355c 100%);color:#fff;border-radius:14px;padding:26px 30px;margin-bottom:22px;box-shadow:0 6px 18px rgba(26,34,51,.18);}
+  header.doc h1{font-size:22px;letter-spacing:.5px;margin-bottom:6px;}
+  header.doc .sub{font-size:12.5px;opacity:.85;}
+  header.doc .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  header.doc .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px 12px;font-size:12px;}
+  .donut{float:right;width:118px;height:118px;margin:-6px 0 0 18px;}
+  .legend{font-size:11.5px;margin-top:6px;opacity:.92;line-height:1.9;}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;}
+  section.panel{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:20px;overflow:hidden;box-shadow:0 2px 8px rgba(26,34,51,.05);}
+  section.panel>h2{font-size:15.5px;padding:12px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:9px;}
+  .tagc{font-size:11px;font-weight:600;border-radius:6px;padding:2px 9px;letter-spacing:.5px;}
+  .t-done{background:var(--passbg);color:var(--pass);} .t-wip{background:var(--wipbg);color:var(--wip);} .t-wait{background:var(--waitbg);color:var(--wait);} .t-audit{background:#eef0f4;color:#444c5e;}
+  section.panel>div.body{padding:16px 20px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th{background:#f0f2f6;text-align:left;font-weight:600;color:#3a4356;padding:8px 10px;border:1px solid var(--line);font-size:12.5px;white-space:nowrap;}
+  td{padding:8px 10px;border:1px solid var(--line);vertical-align:top;}
+  tr:nth-child(even) td{background:#fafbfc;}
+  .badge{display:inline-block;font-size:11.5px;font-weight:700;border-radius:6px;padding:2px 10px;white-space:nowrap;}
+  .b-pass{background:var(--passbg);color:var(--pass);} .b-passw{background:var(--passwbg);color:var(--passw);}
+  .b-fail{background:var(--failbg);color:var(--fail);} .b-wait{background:var(--waitbg);color:var(--wait);}
+  .b-wip{background:var(--wipbg);color:var(--wip);} .b-recv{background:#eef0f4;color:#5a6272;}
+  code.hash{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background:#eef1f6;border:1px solid #e2e6ee;border-radius:5px;padding:1px 7px;color:#33415c;white-space:nowrap;}
+  .dim{color:var(--muted);font-size:12px;}
+  .note{font-size:12px;color:var(--muted);margin-top:10px;}
+  blockquote.rule{border-left:4px solid #25355c;background:#f4f6fb;border-radius:0 8px 8px 0;padding:10px 14px;margin:0 0 14px;font-size:12.8px;color:#3a4356;}
+  .failcard{border:1.5px solid #f3c2be;background:var(--failbg);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:13px;}
+  .failcard b{color:var(--fail);}
+  .failcard .mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;background:#fff;border:1px solid #f0cbc8;border-radius:6px;padding:6px 10px;display:block;margin-top:8px;word-break:break-all;color:#7a2b26;}
+  ol.decide{margin:4px 0 0 18px;} ol.decide li{margin-bottom:9px;}
+  ol.decide b{color:#25355c;}
+  footer.doc{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;}
+  .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px;}
+  .kpi .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .kpi .num{font-size:26px;font-weight:700;}
+  .kpi .lbl{font-size:12px;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+  <div style="overflow:hidden;">
+    <svg class="donut" viewBox="0 0 42 42">
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#2e3d63" stroke-width="6"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#3fae7a" stroke-width="6" stroke-dasharray="39 61" stroke-dashoffset="25" stroke-linecap="butt"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#e6b93c" stroke-width="6" stroke-dasharray="28 72" stroke-dashoffset="-14" stroke-linecap="butt"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#d9534f" stroke-width="6" stroke-dasharray="7 93" stroke-dashoffset="-42" stroke-linecap="butt"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#7d8aa5" stroke-width="6" stroke-dasharray="18 82" stroke-dashoffset="-49" stroke-linecap="butt"/>
+      <text x="21" y="20.5" text-anchor="middle" font-size="7.5" fill="#fff" font-weight="700">17件</text>
+      <text x="21" y="28" text-anchor="middle" font-size="4.2" fill="#c7d0e4">夜跑已判</text>
+    </svg>
+    <h1>夜跑对账单 · 三栏制初稿 v1</h1>
+    <div class="sub">任务包§十二-3晨检对账单口径 ｜ 制单：报告汇总员（只验不改）｜ 随验随更·供Alex晨检直接用</div>
+    <div class="meta">
+      <span class="chip">夜跑窗口：10-24 22:3x → 10-25 00:1x</span>
+      <span class="chip">基线：p0verify/main = <code style="background:rgba(255,255,255,.14);color:#fff;">b1e8a78</code></span>
+      <span class="chip">判定口径：S8宁缺毋编·滑坡三查硬闸</span>
+      <span class="chip">v1（00:1x）· 五轮6项+二波11件 已入账</span>
+    </div>
+    <div class="legend">
+      <i style="background:#3fae7a"></i>PASS 6　<i style="background:#e6b93c"></i>PASS-W 6　<i style="background:#d9534f"></i>FAIL 1　<i style="background:#7d8aa5"></i>收讫 4
+    </div>
+  </div>
+</header>
+
+<div class="kpi">
+  <div class="card"><div class="num" style="color:var(--pass)">6</div><div class="lbl">PASS（含补验2件）</div></div>
+  <div class="card"><div class="num" style="color:var(--passw)">6</div><div class="lbl">PASS-W（带注记放行）</div></div>
+  <div class="card"><div class="num" style="color:var(--fail)">1</div><div class="lbl">FAIL（化学超链接化回归）</div></div>
+  <div class="card"><div class="num" style="color:#5a6272">4</div><div class="lbl">收讫（判读稿/停等登记）</div></div>
+  <div class="card"><div class="num" style="color:var(--wait)">3</div><div class="lbl">整批退件项（三查口径）</div></div>
+</div>
+
+<section class="panel">
+  <h2><span class="tagc t-audit">栏一</span>成品栏（判定 + hash）</h2>
+  <div class="body">
+    <table>
+      <tr><th style="width:26%">件</th><th style="width:11%">commit</th><th style="width:12%">判定</th><th>复算要点</th></tr>
+      <tr><td colspan="4" style="background:#f4f6fb;font-weight:600;color:#3a4356;">二波·复核队列（00:05令·本席11件）</td></tr>
+      <tr><td>B2-⑦核酸卡（生物批2首张）</td><td><code class="hash">807ef39</code></td><td><span class="badge b-pass">PASS</span></td><td>双窗断言全等复跑（李林61行676字/汉水14行148字·缺行双0）；易错卡1三句+易错卡2双句逐句源库实证（t=779/349=floor）；甲基绿-吡罗红双轨全片0命中实证·汉水28.9%覆盖复算属实；S10硬伤0+金融0+冲突0</td></tr>
+      <tr><td>化学批2两件（1.1/1.2缺口声明态卡）</td><td><code class="hash">df04d6f</code></td><td><span class="badge b-pass">PASS</span></td><td>五段同构+学考锚态标注合规（E3两态制）；兜底锚无t如实·秒窗未标定不虚标；1.1考点对v18鲁科主题合；S10硬伤0×2+金融0×2</td></tr>
+      <tr><td>化学直读全量补证 2/2</td><td><code class="hash">df04d6f</code></td><td><span class="badge b-pass">PASS</span></td><td>图证sha256双实锚：li2=<code class="hash">f9e64055cfa15890</code>·hkjl2024=<code class="hash">0b8d269a39e6a7cb</code>（本席重算一致）；2019全国ⅡT10官方A=3.1卡"选A"合；2024黑吉辽T4官方D合；<span class="dim">注记：报告表头"化学3.2例1"实指1.3卡同型位·标签口径候澄清（非内容伤）</span></td></tr>
+      <tr><td><b>化学超链接化（七卡22处）</b></td><td><code class="hash">df04d6f</code></td><td><span class="badge b-fail">FAIL</span></td><td><b>批1五卡×2处＝10处嵌套坏链</b>：对已锚定卡重复执行超链接化·非幂等变换把合法锚改成href内嵌<a>破链（608280f原态合法零伤在案）·HEAD未修·详见Fail卡片；批2新卡0嵌套</td></tr>
+      <tr><td>精炼样1（A席·T-01黑板擦段）</td><td><code class="hash">a839f1f</code></td><td><span class="badge b-passw">PASS-W</span></td><td>工法三操作（高置信修/低置信[?]保留/亮点保留）成立；W注记3：原话列4处非严格逐字（对照T-01 txt 40-52行逐行核）·表内未逐段挂秒窗（与自提"秒窗必留"不一致）·行区间申报40-51实涉40-52行——<span class="dim">终版规格建议按样2形态统一</span></td></tr>
+      <tr><td>精炼样2（B席·T-02"写XY"段）</td><td><code class="hash">b1e8a78</code></td><td><span class="badge b-passw">PASS-W</span></td><td>json档18行与T-02转写源逐行逐字逐秒全等（18/18·本席机械比对）；金句5句+低置信2处在源实证；窗口3.5→134s与4.2牛二卡146→983s零重叠实证；W注记2：#10标注笔误（应"再说→在说"）·"高置信修6处"按词计实9修改点（计法候统一）</td></tr>
+      <tr><td>直读试水_数学（本地留痕件）</td><td><code class="hash">ff57b66</code></td><td><span class="badge b-passw">PASS-W</span></td><td>零网络属实（回填位全待）；在库锚双引实证：承验单L21 sha256=<code class="hash">f1f44ecd781b6129</code>+L22轻注1"官方答案C=S∩T=T"逐字；1.2正件例3 T⫋S实证；claim续作行§十一-4在案</td></tr>
+      <tr><td>直读试水_语文（本地留痕件）</td><td><code class="hash">6f24199</code></td><td><span class="badge b-passw">PASS-W</span></td><td>零网络属实；在库锚三处实证：v18 L894=R-语.现代-03方法总条单行件·照录子串逐字；装配L255/L293-299逐字；装配1080行+sha256前8=<code class="hash">e2e75adf</code>重算一致</td></tr>
+      <tr><td>物理批1三卡超链接化（补验）</td><td><code class="hash">c2f83b4</code></td><td><span class="badge b-pass">PASS</span></td><td>6href全合法嵌套0·BV对主线·<b>剥锚后与父commit逐字节一致</b>零漂移；t=0处=六href全片锚条款不触发；§十一-2净面先行合规——同族变换物理侧零伤，缺陷仅限化学重复执行</td></tr>
+      <tr><td>57条初筛二批·数学线判读稿</td><td><code class="hash">06e5c94</code></td><td><span class="badge b-recv">收讫·草稿</span></td><td>实伤0·候裁族维持d0b178b在案族；候修项实证成立：<b>数学1.2首件卡L105主锚910s起无t=参数</b>（§七1应触发·出品d88848d线候令）——判读稿候Alex复核</td></tr>
+      <tr><td>地理4-5章412阻塞登记</td><td><code class="hash">df04d6f</code></td><td><span class="badge b-recv">收讫·停等</span></td><td>三探针实录（直连412/API风控/浏览器错误页404）＝环境级IP风控定性合理；3次即停＝熔断兑现；json缺件如实申报</td></tr>
+      <tr><td colspan="4" style="background:#f4f6fb;font-weight:600;color:#3a4356;">五轮·前夜六项（23:0x已出码·e1f1a29复核在链）</td></tr>
+      <tr><td>化学批1四张</td><td><code class="hash">a1462d0</code></td><td><span class="badge b-pass">PASS</span></td><td>四卡锚点逐值中台账L23-26·真题锚在库·机检4件exit0</td></tr>
+      <tr><td>物理批1三卡</td><td><code class="hash">84a8bae</code></td><td><span class="badge b-pass">PASS</span></td><td>四组秒窗逐值中T-01/T-02+v18物理L432·机检3件绿</td></tr>
+      <tr><td>语文批1三卡（专席分支）</td><td><code class="hash">513ba48</code></td><td><span class="badge b-pass">PASS</span></td><td>引文18/18机械比对逐字·[?]照录保留·粒度对源卡</td></tr>
+      <tr><td>地理1.2首张（学考锚态首件）</td><td><code class="hash">daa0dff</code></td><td><span class="badge b-pass">PASS</span></td><td>真题六题全带源·易错5条=G-0底本全量重挂·BV计数0=0</td></tr>
+      <tr><td>规划师div终验（独立复核）</td><td><code class="hash">d0b178b</code></td><td><span class="badge b-pass">PASS</span></td><td>canonical S10复跑四件逐件一致+div开闭14:14栈空</td></tr>
+      <tr><td>生物B1-①+数学1.2双首件</td><td><code class="hash">872eb92</code></td><td><span class="badge b-passw">PASS-W</span></td><td>B1-①补验PASS-W（W注记1·候选晨检统一）；数学1.2=规划师已验对账零重复</td></tr>
+    </table>
+    <div class="note">PASS-W＝带注记放行（注记明细见同commit《QC复验单_夜跑二波复核队列_报告汇总员_1024深夜.md》）。收讫＝工作产物形态核收，非终判。</div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2><span class="tagc t-wip">栏二</span>在制栏（WIP 状态 + 续作点）</h2>
+  <div class="body">
+    <table>
+      <tr><th style="width:24%">在制件</th><th style="width:12%">责任线</th><th style="width:14%">状态</th><th>续作点</th></tr>
+      <tr><td>直读试水采集（数学+语文首件）</td><td>队6（探路者/阿诚）</td><td><span class="badge b-wip">采集窗口已开</span></td><td>00:00窗口已开：四步通道执行中（搜狗主通道+30s间隔+单站3连熔断+412登记切换）→ 结果回填试水件§一至§五+方案§五首件状态总账+claim交付行三处齐；会话中断凭claim续作行续作（§十一-4）</td></tr>
+      <tr><td>数学批1四张（切片卡）</td><td>并行搜索员B线</td><td><span class="badge b-wip">在产</span></td><td>候B席线交（并行会话在产·92b0942认领锁防同席双活）；交后随到随验</td></tr>
+      <tr><td>57条初筛二批（物化生地四线）</td><td>四线分推</td><td><span class="badge b-wip">分线推进</span></td><td>数学线两卡判读稿已收讫（06e5c94）；其余线每批≤5件只判不改·缺口如实申报；物理侧5卡同型候QC线排程</td></tr>
+      <tr><td>C席转产：对位表v3正式件</td><td>并行搜索员C</td><td><span class="badge b-wip">离线编制</span></td><td>底本71b85d3+先报件fb69806为基础·第4-5章候实采条目如实标注（412阻塞期零虚装窗）·v2.2留痕不重写</td></tr>
+      <tr><td>生物批2续张（B2-⑧…）</td><td>夜跑A席块（队1线）</td><td><span class="badge b-wip">候产</span></td><td>B2-⑦首张已验；B3-B6归队1线零触碰（68e921f认领锁）；续产候料候令</td></tr>
+      <tr><td>P2批CC普查18枚在途</td><td>A席普查线</td><td><span class="badge b-wip">raw留痕自走</span></td><td>先期14枚实测CC全零已上链（a839f1f）；18枚raw留痕收满补commit·三账对平（53∪25=57·净待31实跑32）</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="panel">
+  <h2><span class="tagc t-wait">栏三</span>停等栏（候裁汇总）</h2>
+  <div class="body">
+    <div class="failcard">
+      <b>唯一FAIL件·候整改令｜化学超链接化10处嵌套坏链（df04d6f·HEAD未修）</b><br>
+      根因：608280f已对化学批1五卡完成合法锚定（24href零伤在案），df04d6f重复执行超链接化且变换非幂等——regex将合法&lt;a href&gt;属性值内的BV号再次包裹，产生href内嵌&lt;a&gt;破链结构，渲染即破链+字面残渣。波及：1.3/2.1/2.2/2.3/3.1五卡各2处（讲法锚点正文+源注汇总）。物理侧同族变换（c2f83b4）零伤——系化学线重复执行所致。
+      <span class="mono">&lt;a href="https://www.bilibili.com/video/&lt;a href="https://www.bilibili.com/video/BV1Lb4y187RH" target="_blank" rel="noopener"&gt;BV1Lb4y187RH&lt;/a&gt;?t=825" target="_blank"&gt;…（坏链示例·1.3卡两处同型）</span>
+      修复建议：对五卡10处恢复608280f原锚形态（带t参数原样），禁触其他字面；修后href全表复扫+本席复验收口。工法注记：超链接化工具需加幂等守卫（已锚定文件跳过/先剥后包）——候判据增补（§十一-2 F3关联）。
+    </div>
+    <table>
+      <tr><th style="width:30%">候裁项</th><th style="width:16%">候裁人</th><th>案由与实证锚</th></tr>
+      <tr><td>①化学超链接化修复令（见上Fail卡）</td><td>管理员派工</td><td>FAIL件唯一整改项·修后回成品栏复验</td></tr>
+      <tr><td>②数学1.2首件卡L105补t=910令</td><td>管理员→d88848d出品线</td><td>06e5c94候修项·本席grep实读确认（15:10→17:10=910s起·L108自记锚点910s→1030s·§七1应触发位）</td></tr>
+      <tr><td>③精炼规格终版三定：工法认可/[?]保留制定版/样3补位路径</td><td>Alex</td><td>样1样2同按[?]保留制试做；样3=原生AI字幕不可得（CC全零×57枚+登录墙）——路径a候SESSDATA vs 路径b后半夜关键帧窗口</td></tr>
+      <tr><td>④B2-⑦甲基绿-吡罗红段whisper兜底</td><td>Alex</td><td>双轨语料皆缺实证（两UP全片0命中）·窗位不硬凑·whisper兜底候裁定后按门禁入库补切</td></tr>
+      <tr><td>⑤生物批1五张+B2-⑦帧验后置补验窗口</td><td>Alex</td><td>队6判读（d0b178b）支持批1放量帧验后置·卡面"核验后置补"5/5+0/5不虚标——候终裁补验时点</td></tr>
+      <tr><td>⑥地理4-5章实采通道</td><td>Alex/明早</td><td>412环境级阻塞三重探针实录·候Cookie通道或明早IP窗口·维持熔断勿硬刷</td></tr>
+      <tr><td>⑦直读补证报告"化学3.2例1"标签澄清</td><td>出品方一句注记</td><td>实指1.3卡同型位（报告自文"1.3正件考位佐证同源"）·非内容伤</td></tr>
+      <tr><td>⑧B5章⑮⑯缺口处置A/B案（五轮遗留）</td><td>Alex</td><td>A=派单九块升格重装B5四节完整版（推荐）／B=暂挂缺口标随书级TOC申报</td></tr>
+      <tr><td>⑨§九-3工具债拓跋版采纳确权（70276d4）</td><td>Alex一句确权</td><td>S10拓跋版已在用·归口复核推确权候一句裁定</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="panel">
+  <h2><span class="tagc t-audit">附表</span>滑坡三查结果（§十二-2·三查不过=整批退）</h2>
+  <div class="body">
+    <table>
+      <tr><th style="width:20%">批件</th><th>①BV回核率（编造查）</th><th>②帧验存证率（虚标查）</th><th>③字幕实附率（虚报查）</th><th style="width:9%">判</th></tr>
+      <tr><td>B2-⑦核酸卡</td><td>2BV双窗库json对账100%（61+14行缺行0）</td><td>帧验后置如实申报（卡面"核验后置补"·不虚标·候Alex）</td><td>双窗146行随卡可查</td><td><span class="badge b-pass">过</span></td></tr>
+      <tr><td>化学批2两件</td><td>兜底锚库内形态核（608280f在案）</td><td>学考锚态无秒窗=N/A（两态制标注合规）</td><td>无字幕=N/A（缺口如实）</td><td><span class="badge b-pass">过</span></td></tr>
+      <tr><td>精炼样2</td><td>BV回核=4.2牛二卡一致·窗口零重叠</td><td>非帧验件N/A</td><td>json档18行随件100%</td><td><span class="badge b-pass">过</span></td></tr>
+      <tr><td>精炼样1</td><td>转写txt在库逐行核</td><td>非帧验件N/A</td><td>json档未附（W注记·建议终版补）</td><td><span class="badge b-passw">过-W</span></td></tr>
+      <tr><td>直读试水×2</td><td>零采集N/A</td><td>N/A</td><td>N/A</td><td><span class="badge b-pass">过</span></td></tr>
+      <tr><td>物理三卡超链接化</td><td>锚值未变·剥锚零漂移</td><td>N/A</td><td>N/A</td><td><span class="badge b-pass">过</span></td></tr>
+      <tr><td><b>化学超链接化</b></td><td>锚值未变（BV号原样）</td><td>N/A</td><td>N/A</td><td><span class="badge b-fail">三查外新型缺陷</span></td></tr>
+    </table>
+    <div class="note">三查硬闸下<b>无整批退件项</b>；化学超链接化FAIL系三查覆盖外的新型缺陷（<b>重复工种非幂等回归</b>）——已按单件FAIL登记候整改令，并提名"幂等性守卫"为滑坡三查之外的判据增补候选（候规划师归口）。</div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2><span class="tagc t-audit">晨检</span>候Alex一轮裁决清单（按优先序）</h2>
+  <div class="body">
+    <ol class="decide">
+      <li><b>化学超链接化FAIL整改令</b>——10处坏链恢复608280f原锚形态（建议派C席化学线），修后回成品栏。</li>
+      <li><b>数学1.2首件卡L105缺t=910补参令</b>——转d88848d出品线。</li>
+      <li><b>精炼管线三定</b>——工法方向／[?]保留制／样3补位路径（SESSDATA vs 关键帧窗口）。</li>
+      <li><b>B2-⑦甲基绿-吡罗红whisper兜底裁</b>＋<b>生物帧验后置补验窗口</b>。</li>
+      <li><b>直读试水放量判定</b>——两试水件采集回填后：通道过=直读扩量放量（规划师矩阵收口单候晨检联动）。</li>
+      <li><b>遗留三案</b>——B5章⑮⑯处置／工具债确权／标签澄清一句注记。</li>
+    </ol>
+    <blockquote class="rule">对账单随验随更：下批到验→本席复验→v2刷新三栏+三查附表（版本号递增）。夜跑再大，晨检一页看清。</blockquote>
+  </div>
+</section>
+
+<footer class="doc-footer footer doc">报告汇总员 · qc6@team6.local · 2026-10-25 00:1x · 基线 b1e8a78 · 本单为§十二-3三栏制初稿v1（随验随更）</footer>
+
+</div>
+</body>
+</html>
