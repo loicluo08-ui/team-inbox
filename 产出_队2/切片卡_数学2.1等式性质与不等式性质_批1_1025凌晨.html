@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜等式性质与不等式性质｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .quote{background:var(--wash); border-left:3px solid var(--accent); padding:8px 12px; border-radius:0 8px 8px 0;
+                font-size:13.5px; margin:8px 0; color:#33254f;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .ans{font-weight:700; color:var(--accent-deep); white-space:nowrap;}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第二章 一元二次函数、方程和不等式</span>
+    </div>
+    <h1>2.1 等式性质与不等式性质</h1>
+    <div class="kicker">讲法锚点 · 切片卡 —— 名讲片段 · 高考真题锚 · 易错收口</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库第二章包同名节件）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="450" height="26" rx="6" fill="#f0eafc" stroke="#6d3fd4" stroke-width="1.2"/>
+          <text x="58" y="31" font-size="12.5" fill="#24292e">讲法片段 · 等式性质五条板书+例3多选（一数 · 73P系统课 P10）</text>
+          <text x="490" y="31" font-size="12" fill="#6d3fd4" text-anchor="end">2:48 → 4:15</text>
+          <line x1="118" y1="66" x2="470" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="180" cy="66" r="8" fill="#c2452d"/>
+          <text x="180" y="92" font-size="12" fill="#24292e" text-anchor="middle">2019全国Ⅱ卷(理) · 第6题</text>
+          <text x="180" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">性质反例识别+作差法</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">负数区平方翻车</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节=整个高中代数的"交通规则"：保向是默认，翻向（乘除负数）是唯一例外——例外越少越要钉死。</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>紫带＝一数 P10 的等式性质完整弧（87秒：五条性质板书口播＋例3多选全程，起止秒直接可跳）；红点＝高考真题锚（性质反例识别位）；方点＝易错收口条。用卡顺序＝先看87秒弧把五条性质过一遍，再做真题反例识别自测，最后易错自查。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频锚 · 帧验✓双验</span></h2>
+      <div class="slice">
+        <span class="tag">名讲片段 · 秒级可跳</span>
+        <p><b>等式性质五条板书 + 例3多选"已知3x+2y=1"全程讲解</b>——UP主：一数（mid=14229967，《必修一同步全集》73P系统课），<a href="https://www.bilibili.com/video/BV1Jt411E76i/?t=168" target="_blank">BV1Jt411E76i</a>（P10【方法】2.1等式性质与不等式性质），2:48 → 4:15（87秒完整弧）。</p>
+        <div class="quote">"那么我们接下来说一下等式的性质啊｜第一个呢叫交换律啊｜A等于B那那B等于A｜这个大家可能小学初中都学的很多了啊｜如果A和B相等｜它们两边同时加减一个实数｜它依旧相等｜那么A如果等于B｜那么两边同时乘以一个实数｜那么它俩依旧相等对吧｜那么A等于BC在不等于零的前提下｜在等式两边同除相同的一个不等于零的数｜他俩这个等式依旧成立"（官方AI字幕库P10弧内逐字照录·｜=分句边界）</div>
+        <p>五条性质与教材 p40 逐条对齐（T-09影印实读：性质1对称性／性质2传递性／性质3加减／性质4乘／性质5同除非零）；例3多选把"化简成目标式"的验证思路全程演完——A/B/C三选项逐个"两边同乘"验过去，答案选A。</p>
+        <p class="src">转写校正注记（板书帧级·引文照录语义按板书校正标注）："交换律"系口播口误或同音，板书与教材p40性质1实为<b>对称性</b>（f_168/f_180板书帧实锚）；"不满足T"→"不满足题(意)"（whisper交叉）；"3X加2Y等于减 等于是不是等于一"系AI断句噪音，实义=3x+2y=1（例3题干板书）。</p>
+        <div class="meta">锚点=168.0s→255.0s｜溯源=队1_面板T-09_簇⑤等式性质锚点1片_C席_v1_1005.md（帧验✓7件·帧号-时戳可回溯·双验在册）＋资料溯源总台账L48「帧验✓7件·双验」＋段界注记：尾帧0-1s可能闪现知识点④页头，引文严格限168-255s</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">出处登记 + 共享锚</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>题干（照录要点）</th><th>官方答案</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2019年全国Ⅱ卷（理）</td><td>第6题</td>
+            <td>出处登记：题干未随正件入库，宁缺毋编不照录不虚构（候卷源直读线回填）</td>
+            <td class="ans">—</td>
+            <td>性质反例识别+作差法（正本"原卷核对"在案）——反向使用的推论逐条查前提（平方查非负、倒数查同号、ac²查c≠0）</td>
+          </tr>
+          <tr>
+            <td>2020年新高考Ⅰ卷</td><td>第11题</td>
+            <td>出处登记：多选题，与 2.2 基本不等式共享的真题锚（题干照录要点见 2.2 卡）</td>
+            <td class="ans">—</td>
+            <td>均值不等式推论真假判断（与2.2共享锚·卡间互链）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 2.1 节升格重制件正本L96/L226（"原卷核对"在案·题干未照录）。多选反例三件套（负数/零/0.1）先打一轮再逐项判——本卡宁缺毋编只装出处不代拟题干。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 负数区平方翻车（"大数的平方自然大"）</span>
+        <p><b class="punch">条件里只给"a&gt;b"没有"a&gt;b&gt;0"时，一切乘方/开方/取倒数的推论先给反例检验。</b>症状：已知 a&gt;b 判断 a²&gt;b²，答"成立"，理由"大数的平方自然大"——反例 a=−1，b=−2：a&gt;b 但 a²=1&lt;b²=4。平方只在"两边非负"时保向。</p>
+        <p><b>钉死动作</b>：反例三件套（负数、零、0.1）先打一轮再下结论。不修会怎样：这个漏洞在第四章指数函数与对数函数（底数大于1才保向）与第五章三角函数（符号讨论）里都是同型陷阱。</p>
+        <p class="src">源：在库 2.1 节升格重制件正本易错卡①（本节最高频4张之首）</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>看一数 P10 片段（2:48→4:15），跟着板书把五条性质默写一遍，与教材 p40 五条逐条对号（性质1=对称性，别被口播"交换律"带偏）。</li>
+        <li>独立做 2019 全国Ⅱ卷理第6题同型反例识别题：每个推论先问"前提全了吗"（平方查非负/倒数查同号/乘c²查c≠0）。</li>
+        <li>考前扫易错卡：见到乘方/开方/取倒数推论，先抛反例三件套（负数/零/0.1）检验。</li>
+        <li>回第二章包 2.1 节件读"保向/翻向交通规则"正文与例2保向乘法链，视频直觉落回纸面推理。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频=B站公开视频 <a href="https://www.bilibili.com/video/BV1Jt411E76i" target="_blank">BV1Jt411E76i</a>（一数·73P系统课 P10，台账L48在册）；真题=在库 2.1 节升格重制件正本（出处登记·原卷核对在案）；易错=在库 2.1 节升格重制件正本易错卡①；转写=队1_面板T-09件（官方AI字幕库P10 json弧内逐字+板书帧级校正·帧验✓7件双验在库）。本卡与在库第二章包 2.1 节件互为镜像：节件管"读"，本卡管"看与做"。
+  </div>
+
+</div>
+</body>
+</html>

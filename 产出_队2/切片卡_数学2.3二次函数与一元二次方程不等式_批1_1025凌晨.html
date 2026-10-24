@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜二次函数与一元二次方程、不等式｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .quote{background:var(--wash); border-left:3px solid var(--accent); padding:8px 12px; border-radius:0 8px 8px 0;
+                font-size:13.5px; margin:8px 0; color:#33254f;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .ans{font-weight:700; color:var(--accent-deep); white-space:nowrap;}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第二章 一元二次函数、方程和不等式</span>
+    </div>
+    <h1>2.3 二次函数与一元二次方程、不等式</h1>
+    <div class="kicker">讲法锚点 · 切片卡 —— 名讲片段 · 高考真题锚 · 易错收口</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库第二章包同名节件）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 150" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="10" width="380" height="26" rx="6" fill="#f0eafc" stroke="#6d3fd4" stroke-width="1.2"/>
+          <text x="58" y="27" font-size="12.5" fill="#24292e">方法弧 · 韦达快判+画图四步走+例1（一数）</text>
+          <text x="420" y="27" font-size="12" fill="#6d3fd4" text-anchor="end">0:39 → 10:21</text>
+          <rect x="42" y="44" width="380" height="26" rx="6" fill="#f0eafc" stroke="#6d3fd4" stroke-width="1.2"/>
+          <text x="58" y="61" font-size="12.5" fill="#24292e">含参弧 · 例3改题面"根分居4两侧"+终题（一数）</text>
+          <text x="420" y="61" font-size="12" fill="#6d3fd4" text-anchor="end">13:10 → 23:18</text>
+          <circle cx="180" cy="100" r="8" fill="#c2452d"/>
+          <text x="180" y="126" font-size="12" fill="#24292e" text-anchor="middle">2023新高考Ⅰ卷 · 第1题</text>
+          <text x="180" y="141" font-size="11.5" fill="#5f6b76" text-anchor="middle">解二次不等式×集合运算</text>
+          <rect x="560" y="92" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="126" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="141" font-size="11.5" fill="#5f6b76" text-anchor="middle">位置类缺检索槽位</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>上紫带＝方法弧（582秒：题型一韦达快判＋画图四步走总纲＋例1完整解）；下紫带＝含参弧（608秒：例3改题面"一根大于4一根小于4"双支讨论＋终题三特殊点）；红点＝高考真题锚；方点＝易错收口条。两弧主锚秒直接可跳，先方法弧后含参弧。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频锚 · 帧验✓双验</span></h2>
+      <div class="slice">
+        <span class="tag">名讲片段 · 秒级可跳 · 两弧</span>
+        <p><b>根的分布方法弧 + 含参双支弧</b>——UP主：一数（mid=14229967，《【初高衔接】根的分布问题——高中没细讲，初中没学过》），<a href="https://www.bilibili.com/video/BV1fX4y1L7ih/?t=39" target="_blank">BV1fX4y1L7ih</a>，弧一 0:39 → 10:21（582秒）＋ 弧二 13:10 → 23:18（608秒）。</p>
+        <div class="quote">【板书照录】题型一：已知方程 x²−mx−m+3=0 有两个不相等的实数根 x₁,x₂，满足其中一个根大于零，另一个根小于零，求 m 的取值范围——一正一负相乘必小于0 ⇒ x₁x₂&lt;0，韦达定理 x₁x₂=c/a=(−m+3)/1&lt;0 ⇒ m&gt;3。例1：同方程满足 −1&lt;x₁&lt;x₂&lt;2（图象法四步走：开口 a=1&gt;0 向上→对称轴 m/2∈(−1,2)⇒−2&lt;m&lt;4→Δ=(−m)²−4(−m+3)&gt;0⇒m&lt;−6 或 m&gt;2→特殊点 f(−1)=4&gt;0 恒真、f(2)=7−3m&gt;0⇒m&lt;7/3）——四不等式数轴取重叠 ⇒ 终解 2&lt;m&lt;7/3。例3改题面：mx²+2(m+3)x+2m+14=0"一个根大于4一个根小于4"→m&gt;0支矛盾∅／m&lt;0支 −19/13&lt;m&lt;0。终题：x²+2(m−1)x+2m+6=0 满足 0&lt;x₁&lt;1&lt;x₂&lt;4→f(1)=4m+5&lt;0∧f(4)=10m+14&gt;0⇒−7/5&lt;m&lt;−5/4。</div>
+        <p>方法弧把"根住哪"翻成图象语言：韦达快判管"一正一负"型（乘积符号一步出），画图四步走（开口→对称轴→Δ→特殊点）管其余全部位置类；含参弧示范"端点值"双支讨论与"Δ多余"的三图并列判读（同一条件下三种画法两根恒分居4两侧）——设错点之王。</p>
+        <p class="src">转写注记：本BV player.so字幕轨=0实证（无硬CC）→引文以faster-whisper base整片精转写为底（869段），ASR繁体按册惯例归一化为简体，数学同音字按板书帧直接校正：跟的分佈→根的分布／尾達定理→韦达定理／德塔→判别式Δ／使數根·時數跟→实数根／富士13分之19→负19/13／特殊鐵→特殊点；终题口播"比5分之7大比4分之5小"系负号丢失，按复算校正为 −7/5 大、−5/4 小（五题级独立复算✓·T-10件留档）。</p>
+        <div class="meta">锚点=39s→621s＋790s→1398s｜溯源=队1_面板T-10_二次不等式根的分布锚点2片_A席_v1_1005.md（帧验✓16件=13全帧+3放大帧·帧号-时戳可回溯·双验在库）＋资料溯源总台账L49「帧验✓16件·双验」＋未收录段如实注记：621-790s（例2基础型）与1398-1448s（总结卡）未收录候裁（T-10件原注照录）</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">一手 · 原卷核对</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>题干（照录要点）</th><th>官方答案</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2023年新高考Ⅰ卷</td><td>第1题</td>
+            <td>已知集合 M={−2,−1,0,1,2}，N={x | x²−x−6≥0}，则 M∩N=（　）</td>
+            <td class="ans">—</td>
+            <td>解二次不等式×集合运算：先解 N（x≤−2 或 x≥3）再求交——大题第一问常客（正本"原卷核对"在案·题干照录）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 2.3 节升格重制件正本L186（2023新高考Ⅰ卷第1题·原卷核对·题干照录）。本卡只装一锚不硬凑——与1.2卡先例同款宁缺毋编口径。册内接口注记：2023新高考Ⅰ卷T1=方法弧③×⑦联合接口（T-10件"册内接口"行照录）。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 位置类问题缺检索槽位</span>
+        <p><b class="punch">开口轴判式端点值，四个都要看。</b>症状："一根大于1一根小于1"类题没有下手动作——位置类问题在初中从未出现过，解题反射里没有"根住哪"的检索槽位；新框架没挂进旧习惯。</p>
+        <p><b>钉死动作</b>：口诀"开口轴判式端点值，四个都要看"（开口方向／对称轴／判别式／端点函数值）＋几何翻译成区间嵌套；反例训练=先做教材2.3例1打基础，再接节末习题的区间根题。同族陷阱：Δ&lt;0出口前补全主语"谁无解？哪个方向？"；a&lt;0先乘−1翻向再套口诀（显式写翻向步骤）。</p>
+        <p class="src">源：在库 2.3 节升格重制件正本易错卡①（本节最高频4张之首）</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>看方法弧（0:39→10:21）：题型一先自己判一次"一正一负"，再跟韦达快判对照；例1暂停后按四步走画一遍图，数轴取重叠。</li>
+        <li>看含参弧（13:10→23:18）：例3改题面先判开口两支，体会"Δ多余"的图象判读；终题独立列出 f(1)&lt;0、f(4)&gt;0 两条件再对答案。</li>
+        <li>独立做 2023 新高考Ⅰ卷第1题同型题：先解二次不等式再求集合交，端点取舍别丢。</li>
+        <li>考前扫易错卡：位置类题动手先默写"开口轴判式端点值，四个都要看"。</li>
+        <li>回第二章包 2.3 节件读"六组合网格＋三档清单"正文，视频直觉落回纸面推理。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频=B站公开视频 <a href="https://www.bilibili.com/video/BV1fX4y1L7ih" target="_blank">BV1fX4y1L7ih</a>（一数，台账L49在册）；真题=在库 2.3 节升格重制件正本（原卷核对·题干照录）；易错=在库 2.3 节升格重制件正本易错卡①；转写=队1_面板T-10件（faster-whisper整片精转写869段+板书帧校正·帧验✓16件双验在库·五题级独立复算留档）。本卡与在库第二章包 2.3 节件互为镜像：节件管"读"，本卡管"看与做"。
+  </div>
+
+</div>
+</body>
+</html>

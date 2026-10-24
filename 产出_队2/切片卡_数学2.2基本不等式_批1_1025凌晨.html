@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜基本不等式｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .quote{background:var(--wash); border-left:3px solid var(--accent); padding:8px 12px; border-radius:0 8px 8px 0;
+                font-size:13.5px; margin:8px 0; color:#33254f;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .ans{font-weight:700; color:var(--accent-deep); white-space:nowrap;}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第二章 一元二次函数、方程和不等式</span>
+    </div>
+    <h1>2.2 基本不等式</h1>
+    <div class="kicker">讲法锚点 · 切片卡 —— 名讲片段 · 高考真题锚 · 易错收口</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库第二章包同名节件）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="460" height="26" rx="6" fill="#f0eafc" stroke="#6d3fd4" stroke-width="1.2"/>
+          <text x="58" y="31" font-size="12.5" fill="#24292e">讲法片段 · "三相等"取等四题板书实录（三花猫讲数学）</text>
+          <text x="500" y="31" font-size="12" fill="#6d3fd4" text-anchor="end">10:20 → 15:00</text>
+          <line x1="118" y1="66" x2="470" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="180" cy="66" r="8" fill="#c2452d"/>
+          <text x="180" y="92" font-size="12" fill="#24292e" text-anchor="middle">2020新高考Ⅰ卷 · 第11题</text>
+          <text x="180" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">推论真假判断（与2.1共享）</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">口诀裸奔=跳过一正</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节得分分水岭不在套口诀，在"三相等"：界算出来只是半步，取等点可达并回代验证才算完整。</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>紫带＝三花猫讲数学的"三相等"取等专项弧（280秒：四题板书实录，起止秒直接可跳）；红点＝高考真题锚（推论真假判断·与2.1卡共享）；方点＝易错收口条。用卡顺序＝先看280秒弧看"取等怎么验"，再做真题自测，最后易错自查。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频锚 · 帧验✓双验</span></h2>
+      <div class="slice">
+        <span class="tag">名讲片段 · 秒级可跳</span>
+        <p><b>"三相等"取等条件成立性验证 · 四题板书实录</b>——UP主：三花猫讲数学（mid=471922496，《【高一最难】基本不等式，从零彻底掌握！》），<a href="https://www.bilibili.com/video/BV19Tem6kEcS/?t=620" target="_blank">BV19Tem6kEcS</a>，10:20 → 15:00（280秒，面板口径）。</p>
+        <div class="quote">[620.8-622.6s]「一正二定三相等」｜[819.9-824.8s]「而验证一下取等条件是可以取到等号的，所以最小值就是 2√2+1，完美」｜[852.6-860.3s]「x小于−1的话加了一个1，是不是就小于0了呀，它就是一个负数了。那如果你再取一个负号，负负的这个x+1，它就大于0了呀」｜[892.1-899.5s]「它是不是就是这种倒数和的形式啊，我们可以用基本不等式，它是大于等于2倍根号下4t乘以1/t」（ASR照录为底+板书校正·弧内时间戳精确到秒）</div>
+        <p><b>板书四题实录</b>（T-04件照录）：①和积式绿题 ab=2→(a+1)(b+2)=2a+b+4≥2√(2ab)+4=8，取等 a=1, b=2 在域内✓；②和积式红题 x&gt;3/4、(4x−3)(y+2)=9→换元 m=4x−3&gt;0、n=y+2&gt;0（"一正"红字板书）→x+y≥7/4；③配凑绿题 x&gt;1、x+2/(x−1)→加1配凑≥2√2+1，取等 x=1+√2&gt;1 回代✓；④配凑红题 x&lt;−1、4x+1/(x+1)→负化正 t=−(x+1)&gt;0、变号双陷阱→最大值 −8（取等 x=−3/2&lt;−1 回代✓——终答以B席复算注记补全·明确标注非视频引用）。⑤橙题"咱就说太简单了吧"口播跳讲——如实注记不代答不占锚点。</p>
+        <p class="src">段界注记：900-915s为红题同题收尾口播（"这里加了一个负号，不等号方向变了……小于等于−2√4再减4"），本片引文严格限620-900s内；若装配需"当且仅当"收口完整弧，建议延至915s候裁定（T-04件原注照录）。转写校正（板书帧级）：配速法→配凑法／道数合→倒数和／乡等→相等／具有不等式→基本不等式／去刀等→取到等。</p>
+        <div class="meta">锚点=620s→900s（915裁定注记在案）｜溯源=队1_面板T-04_三相等取等专项锚点1片_B席_v1_1005.md（帧验✓12件=8全帧+4放大帧·帧号-时戳可回溯·双验在库）＋资料溯源总台账L50「帧验✓12件·双验」＋段内全为取等场景=聚焦红线自检✓（T-04件）</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">照录要点 + 跨章一瞥</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>题干（照录要点）</th><th>官方答案</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2020年新高考Ⅰ卷</td><td>第11题</td>
+            <td>多选：a²+b²≥1/2、√a+√b≤√2 等推论真假判断（正本照录要点）</td>
+            <td class="ans">—</td>
+            <td>均值不等式推论真假判断——"恒"字先查条件（与 2.1 卡共享的真题锚·卡间互链）</td>
+          </tr>
+          <tr>
+            <td>2021年新高考Ⅰ卷</td><td>第5题</td>
+            <td>椭圆中 |MF₁|·|MF₂| 最大值（跨章高观点·出处级）</td>
+            <td class="ans">—</td>
+            <td>"和定积最大"形态+取等条件可达性——圆锥曲线远亲，学到第三章回看自通（正本"原卷核对"在案·高观点一瞥不作展开）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 2.2 节升格重制件正本L103（"原卷核对"在案）。2020卷题干照录要点系正本显式记录；2021卷系跨章应用位出处级——两锚均不代拟官方答案，宁缺毋编。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 口诀裸奔（跳过"两数均为正"）</span>
+        <p><b class="punch">一正二定三相等，缺一不可再讨论。</b>症状：负数时直接套 √(ab)≤(a+b)/2（不成立）；或等号取不到仍按最值作答（范围求得偏大）。负支是正支的镜像：x+1/x 恒≥2 在 x&lt;0 时错（−0.5−2=−2.5≤−2），负号提取后才用正支结论。</p>
+        <p><b>钉死动作</b>：口诀三查逐条落纸（一正√→二定√→三相等：取等点x=？可达√）——"界＋取等"两段式一步都不能省，写完"≥某值"必走一步"取等时x=？在不在定义域内"。反例训练=教材例3篱笆菜园（p46）。</p>
+        <p class="src">源：在库 2.2 节升格重制件正本易错卡①（本节最高频4张之首）</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>看三花猫片段（10:20→15:00），四题先按暂停自己动手，再对照板书——重点看每题的取等点是怎么"回代验证"的。</li>
+        <li>独立做 2020 新高考Ⅰ卷第11题同型推论判断：每个"恒成立"先查定义域与前提。</li>
+        <li>考前扫易错卡：动笔前默念"一正二定三相等，缺一不可再讨论"，收尾必答"当且仅当x=？"。</li>
+        <li>回第二章包 2.2 节件读"凑定值三板斧＋三查书写模板"正文，视频直觉落回纸面推理。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频=B站公开视频 <a href="https://www.bilibili.com/video/BV19Tem6kEcS" target="_blank">BV19Tem6kEcS</a>（三花猫讲数学，台账L50在册）；真题=在库 2.2 节升格重制件正本（照录要点/出处级）；易错=在库 2.2 节升格重制件正本易错卡①；转写=队1_面板T-04件（faster-whisper base区间精转写159段+板书帧交叉核对级校正·帧验✓12件双验在库·与C席同课92-156.5s口诀弧零重叠互补）。本卡与在库第二章包 2.2 节件互为镜像：节件管"读"，本卡管"看与做"。
+  </div>
+
+</div>
+</body>
+</html>
