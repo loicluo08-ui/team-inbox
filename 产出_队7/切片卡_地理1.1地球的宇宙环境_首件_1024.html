@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜地球的宇宙环境｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f2a28; --sub:#5b6b68; --line:#d8e0de; --paper:#ffffff; --wash:#f4f7f6;
+    --accent:#0f6b5f; --accent-soft:#e3efec; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eceff0; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,42,40,.08);}
+  /* ---- 卡头 ---- */
+  .head{background:linear-gradient(135deg,#0f6b5f 0%,#147a6b 55%,#1c8a77 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:26px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  /* ---- 正文区 ---- */
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  .note{font-size:13px; color:var(--sub);}
+  /* ---- 图 ---- */
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent);}
+  /* ---- 锚点条目 ---- */
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice .tag.alt{background:#6d5b9e;}
+  .slice .tag.err{background:var(--gold);}
+  .slice p{margin:4px 0;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  .slice .honest{font-size:12.5px; color:var(--sub); background:var(--accent-soft); border-radius:8px;
+                 padding:8px 12px; margin-top:8px;}
+  /* ---- 表格 ---- */
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .ans{font-weight:700; color:var(--accent); white-space:nowrap;}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  /* ---- 易错卡 ---- */
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  /* ---- 用法 ---- */
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  /* ---- 页脚 ---- */
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">地理</span><span class="chip">湘教版 · 必修第一册</span><span class="chip">第一章 宇宙中的地球</span>
+    </div>
+    <h1>第一节 地球的宇宙环境</h1>
+    <div class="kicker">讲法锚点 · 切片卡 —— 视频打底 · 真题三锚 · 易错收口</div>
+    <div class="anchor-line">节名照录：湘教版《普通高中教科书 · 地理 · 必修第一册》目录（电子课本网公开页）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 138" width="100%" role="img" aria-label="本节锚点布局图">
+          <!-- 视频全片条 -->
+          <rect x="42" y="14" width="636" height="26" rx="6" fill="#e8eceb" stroke="#0f6b5f" stroke-width="1.2"/>
+          <text x="58" y="31" font-size="13" fill="#1f2a28">视频全片 · 新授打底（三三地理 · 教材详讲）</text>
+          <text x="648" y="31" font-size="12" fill="#0f6b5f" text-anchor="end">0:00 → 15:47</text>
+          <!-- 真题锚轴线 -->
+          <text x="42" y="70" font-size="11.5" fill="#5b6b68">真题直系锚</text>
+          <line x1="118" y1="66" x2="620" y2="66" stroke="#9db3ae" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="200" cy="66" r="8" fill="#0f6b5f"/>
+          <circle cx="360" cy="66" r="8" fill="#0f6b5f"/>
+          <circle cx="520" cy="66" r="8" fill="#0f6b5f"/>
+          <rect x="640" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <!-- 锚点标签 -->
+          <text x="200" y="92" font-size="12" fill="#1f2a28" text-anchor="middle">2022年1月卷 · 第1题</text>
+          <text x="200" y="108" font-size="11.5" fill="#5b6b68" text-anchor="middle">官方答案 B</text>
+          <text x="360" y="92" font-size="12" fill="#1f2a28" text-anchor="middle">2024年6月卷 · 第1题</text>
+          <text x="360" y="108" font-size="11.5" fill="#5b6b68" text-anchor="middle">官方答案 C</text>
+          <text x="520" y="92" font-size="12" fill="#1f2a28" text-anchor="middle">2025年6月卷 · 第6题</text>
+          <text x="520" y="108" font-size="11.5" fill="#5b6b68" text-anchor="middle">官方答案 B</text>
+          <text x="648" y="92" font-size="12" fill="#1f2a28" text-anchor="middle">易错收口</text>
+          <text x="648" y="108" font-size="11.5" fill="#5b6b68" text-anchor="middle">生命条件两组</text>
+          <text x="42" y="130" font-size="11" fill="#5b6b68">三年连续直系 · 合格考必拿分考点</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>灰带＝整节讲解视频，全片即锚（时长15:47）；圆点＝福建合格考三年直系真题锚（年份＋题号＋官方答案，共2分×3）；方点＝易错收口条。用卡顺序＝先视频打底一遍，再三锚自测，最后易错自查。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频锚</span></h2>
+      <div class="slice">
+        <span class="tag">新授打底</span>
+        <p><b>《湘教版必修一 1.1.1 地球的宇宙环境 · 教材详讲》</b>——UP主：三三地理（BV1C3j86NEne），全片 0:00 → 15:47。</p>
+        <p>按教材顺序通讲本节。建议先把教材通读一遍再跟学，带着一个问题看：地球在太阳系里普通在哪、特殊在哪？</p>
+        <div class="meta">时长 15:47 ｜ 7,818 播放 ｜ 3 弹幕（B站视频页，2026-10-23）</div>
+        <div class="honest">本卡只装全片锚与题号级锚：该视频的分段秒级窗口与字幕原话尚未采集——不虚标起止秒，不代引原话；分段切片就位后增补。</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>学考真题锚<span class="en">近三年三卷 · 题号级直系</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号 · 分值</th><th>题干要点（照录）</th><th>官方答案</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2022年1月卷</td><td>第1题 · 2分</td>
+            <td>太阳系唯一具有高级智慧生命的行星</td>
+            <td class="ans">B（地球）</td><td>地球的普通性与特殊性</td>
+          </tr>
+          <tr>
+            <td>2024年6月卷</td><td>第1题 · 2分</td>
+            <td>中国空间站绕转的天体属于行星（神舟18号情境题组首题）</td>
+            <td class="ans">C</td><td>天体与天体系统</td>
+          </tr>
+          <tr>
+            <td>2025年6月卷</td><td>第6题 · 2分</td>
+            <td>地球宜居原因：① 日地距离适中　③ 质量体积合适</td>
+            <td class="ans">B</td><td>地球存在生命的条件</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">题干要点照录＋官方答案锚（福建省普通高中学业水平合格性考试官方参考答案页，高考直通车公开页：2022年1月卷 hid=VMpdZ7M8｜2024年6月卷 id=134615｜2025年6月卷 id=164667）。选项全文未采到的不代拟，以要点＋答案锚为准。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 1</span>
+        <p><b>地球存在生命的条件，两组清单别漏组。</b>外部条件＝<b>稳定的太阳光照</b>＋<b>安全的宇宙环境</b>；内部条件＝<b>液态水、适宜的温度、适合生物呼吸的大气</b>。</p>
+        <p class="punch">最常丢分：漏写"安全的宇宙环境"。答题时两组各归各列——外部管"有没有人来捣乱"，内部管"自己适不适合住"。</p>
+        <p class="meta">源：知乎知识梳理（zhuanlan.zhihu.com/p/268072618）</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>教材通读本节，圈出"天体系统层次"和"存在生命的条件"两处。</li>
+        <li>视频全片跟学一遍（15:47），对着教材补笔记。</li>
+        <li>三锚自测：盖住表格"官方答案"列，先做后批；错题回到对应考点重看。</li>
+        <li>考前把易错卡扫一遍，默写"两组条件"各一条不落。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频数据＝B站视频页 BV1C3j86NEne（2026-10-23实页）；真题＝福建省普通高中学业水平合格性考试官方参考答案页（2022年1月／2024年6月／2025年6月）；易错条＝知乎专栏 zhuanlan.zhihu.com/p/268072618；节名＝湘教版《地理·必修第一册》目录（电子课本网公开页）。本卡与同节《例题精讲》互为补充：2024年6月卷第1题、2025年6月卷第6题已在节内例题区完整展开，此处供自测回炉。
+  </div>
+
+</div>
+</body>
+</html>
