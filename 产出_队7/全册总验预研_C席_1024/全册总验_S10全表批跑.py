@@ -27,10 +27,10 @@ def audit(path, skip_machine):
     plain = [re.sub(r'<[^>]+>', '', x) for x in h2]
     r.append(f'🄱1开篇页{"✅" if plain and "开篇" in plain[0] else "无"}')
     r.append(f'🄱2速览卡{"✅" if any("速览" in x for x in plain[:2]) else "无"}')
-    xh = [x for x in re.findall(r'<h[123][^>]*>([^<]*?)(?:第?[一二三四五六七八九1-9]+)[、.．][^<]{0,14}', s)
-          if not re.match(r'^\s*\d\.\d\s', x) and '–' not in x and '—' not in x]
-    if xh: r.append(f'🄱3序号残留{len(xh)}:{xh[:2]}'); hard += 1
-    else: r.append('🄱3序号残留0(节号照录/版本词豁免)')
+    xh = [m for m in re.findall(r'<h[123][^>]*>([^<]*(?:第?[一二三四五六七八九1-9]+)[、.．][^<]{0,14})', s)
+          if not re.match(r'^\s*\d\.\d\s', m) and '–' not in m and '—' not in m and not re.match(r'^\s*第.{1,3}章', m)]
+    if xh: r.append(f'🄱3序号残留{len(xh)}:{[x[:16] for x in xh[:2]]}'); hard += 1
+    else: r.append('🄱3序号残留0(节号照录/版本词/章序豁免)')
     r.append(f'🄱4四要素=题干{s.count("【题干】")}/解答{s.count("【解答】")}/怎么想到{s.count("怎么想到的")}/定级{s.count("定级")}')
     r.append(f'🄱5易错卡{"✅" if any("易错卡" in x for x in plain) else "无"}')
     r.append(f'🄱7深读区句{"✅" if "不读不影响" in s else "无"}')
