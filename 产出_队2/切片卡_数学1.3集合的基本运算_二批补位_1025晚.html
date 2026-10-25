@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜集合的基本运算｜真题锚×易错收口（双段版）</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+        border-radius:999px; padding:3px 12px; color:#fff;}
+  h1{font-size:24px; letter-spacing:.02em; margin-bottom:6px;}
+  .kicker{font-size:13px; opacity:.92;}
+  .anchor-line{margin-top:10px; font-size:12.5px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:9px;}
+  .body{padding:22px 28px 8px;}
+  h2{font-size:17px; color:var(--accent-deep); margin:26px 0 10px; padding-left:10px; border-left:4px solid var(--accent);}
+  h2 .en{font-size:11.5px; color:var(--sub); font-weight:400; margin-left:8px; letter-spacing:.08em;}
+  .slice{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:6px;}
+  .tag{display:inline-block; font-size:12px; color:var(--gold); background:#fdf6e3; border:1px solid #e8d9a8;
+       border-radius:6px; padding:2px 10px; margin-bottom:8px;}
+  .quote{font-size:13.5px; color:var(--sub); background:#fff; border-left:3px solid var(--accent);
+         border-radius:0 8px 8px 0; padding:8px 12px; margin:8px 0;}
+  .meta{font-size:12px; color:var(--sub); border-top:1px dashed var(--line); margin-top:9px; padding-top:7px;}
+  table{width:100%; border-collapse:collapse; margin:8px 0; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:600;}
+  th,td{border:1px solid var(--line); padding:7px 9px; text-align:left; vertical-align:top;}
+  .errcard{border:1px solid #f2cfcf; background:#fdf7f7; border-radius:10px; padding:14px 16px; margin-bottom:6px;}
+  .errcard b{color:#b03a3a;}
+  .errcard .fix{color:#1e6b41;}
+  .src{font-size:12px; color:var(--sub); margin-top:8px;}
+  ol.steps{margin:6px 0 0 20px;}
+  ol.steps li{margin-bottom:8px;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:13px 28px; font-size:12px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink);}
+  .svgwrap{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:10px 14px 4px; margin-bottom:6px;}
+  .readnote{font-size:12px; color:var(--sub); padding:2px 0 8px;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第一章 集合与常用逻辑用语</span><span class="chip">切片卡 · 双段版</span>
+    </div>
+    <h1>1.3 集合的基本运算</h1>
+    <div class="kicker">真题锚 · 易错收口 —— 交并补的语言系统：高考集合首题的命题主场</div>
+    <div class="anchor-line">节件镜像：在库 1.3 节重制件正本（本卡管"测与收"，节件管"读"）</div>
+  </div>
+
+  <div class="body">
+
+    <div class="svgwrap">
+      <svg viewBox="0 0 720 74" role="img" aria-label="本卡锚点布局">
+        <defs>
+          <marker id="ah" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#5f6b76"/>
+          </marker>
+        </defs>
+        <line x1="30" y1="37" x2="300" y2="37" stroke="#b7c0c9" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#ah)"/>
+        <text x="30" y="16" font-size="12" fill="#8a6d1f">讲法锚 · 缺料豁免（虚线位·候补池回填）</text>
+        <circle cx="356" cy="37" r="11" fill="#b03a3a"/>
+        <text x="356" y="41.5" font-size="11" fill="#fff" text-anchor="middle">真</text>
+        <text x="322" y="64" font-size="12" fill="#5f6b76">2025新高考Ⅰ卷单选2（补集个数·题干照录级）</text>
+        <rect x="560" y="26" width="14" height="14" rx="3" fill="#1e6b41"/>
+        <text x="584" y="38" font-size="12" fill="#5f6b76">易错：数学"或"＝相容或</text>
+        <text x="584" y="56" font-size="12" fill="#5f6b76">＋端点开闭三连问</text>
+      </svg>
+      <div class="readnote">怎么读：虚线位=讲法锚缺料豁免申报（见讲法锚点节）；红点=真题实锚位（本节持题·题干照录级）；方点=易错收口实锚位。</div>
+    </div>
+
+    <section>
+      <h2>讲法锚点 · 缺料豁免注记<span class="en">检索留痕 · 豁免入账</span></h2>
+      <div class="slice">
+        <span class="tag">讲法锚 · 无优质公开素材（宁缺毋编）</span>
+        <p>本节讲法锚缺料如实申报：全库四查（2026-10-25出品时点·第二批同轮全查）无优质公开素材——① 资料溯源总台账_1004.md 全224行，讲法锚层无 §1.3 条目（数学在库已验级4条＋指针层6条全数已用于在库卡，零余量）；② T-05盘点24簇 · 簇①集合域无 1.3 对应已验讲法实体（簇①仅有 1.2 指针层条目已用于在库卡）；③ v18数学册册尾锚点附录6条全数已用于在库卡，零余量；④ 池全量清单数学6条BV全数已用于在库卡，零未用；⑤ 1025新增全量检索无命中。</p>
+        <p>豁免入账：按"缺段豁免注记"口径出品——讲法锚段缺位不虚构不硬凑；真题锚与易错收口两段实锚在库齐备，本卡以双段形态入账（1.1补位卡同批先例：其讲法锚在册照录成三段版）。候讲法锚补池有实体后，本卡补挂讲法锚段成三段版（字段全保留零造，新增不覆盖）。正本正文承担讲法位：本节讲法路径＝在库 1.3 节重制件正本"并集相容或→交集公共性→补集先问全集→德摩根律两条独立路线互验"主线（自读替代视频位）。</p>
+        <div class="meta">检索留痕＝上述四查留痕均可回溯（台账/盘点/册尾附录/池清单均为在库件，路径可查）｜缺段豁免注记 · 豁免入账｜宁缺毋编铁律口径</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">题干照录级 · 出处登记</span></h2>
+      <div class="slice">
+        <span class="tag">本节持题 · 原卷核对</span>
+        <p><b>2025年新高考Ⅰ卷 · 单选2（补集元素个数·题干照录）</b>——已知集合 U={x｜x是小于9的正整数}，A={1,3,5}，则 ∁ᵤA 中元素的个数为（　）(A)0　(B)3　(C)5　(D)8。<b>官方答案：C</b>（在库正本例6四段式·原卷核对定级：∁ᵤA={2,4,6,7,8}共5个；|∁ᵤA|=|U|−|A∩U|=8−3=5）。</p>
+        <table>
+          <tr><th>卷别/题号</th><th>考点</th><th>形态</th><th>考位</th></tr>
+          <tr><td>2025新高考Ⅰ卷·单选2</td><td>补集元素个数</td><td>题干照录（上方）</td><td>集合章首题连续第二年</td></tr>
+          <tr><td>2024新高考Ⅰ卷·单选1</td><td>交集运算（元素检验）</td><td>出处登记（题干由同批 1.1 卡持·题干照录级）</td><td>集合章首题连续第一年</td></tr>
+          <tr><td>2023全国甲卷（理）·第1题</td><td>数集交并运算送分位</td><td>出处登记（题干未随正件入库不照录不虚构）</td><td>送分位</td></tr>
+          <tr><td>2022全国乙卷（理）·第1题</td><td>数集交并运算送分位</td><td>出处登记（同上）</td><td>送分位</td></tr>
+        </table>
+        <p class="src">源：在库 1.3 节重制件正本L30考频行照录（考频高：2024新高考Ⅰ卷单选1（交集）、2025新高考Ⅰ卷单选2（补集），连续两年落在集合章首题【一手·真题统计】；选填高频=数集交并补（端点定生死）、含参交并反求参数（空集×端点双雷合一，压轴选填常客）、新定义运算题；大题不单独成题，作为解集书写与定义域运算的底层工具全程嵌入）＋正本例6（2025单选2原卷核对）＋正本L240另注（两道出处登记·宁缺毋编）。另注：2024单选1题干照录由同批1.1卡承担（其正本例2定级在案），两卡各持一题零重复。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">正本卡①照录</span></h2>
+      <div class="errcard">
+        <p><b>数学"或"当日常"二选一"</b>——症状：求 A∪B 时把 A∩B 部分的元素排除——"两个都满足的，不算'或'吧"；并集漏掉公共元素。错因：把日常排他"或"（"面或饭，选一个"）平移进数学——<b>数学"或"是相容或，"至少一个"含"两个都有"</b>。维持机制：中文"或"的日常用法多为排他，语感先入为主覆盖定义；错一次无负反馈（很多题两元素不重叠，恰好不碍事）。</p>
+        <p class="fix">钉死：并集=所有至少属其一的元素全体，公共元素<b>只写一次但不许消失</b>（互异性在运算层的延续）；配套口令"每个端点单独过堂"——求 ∁ᵣ(A∪B) 时端点1、7三连问："1在原集合里吗？在。→在补集里吗？不在。→写开还是闭？开。"（正本卡壳预判：两个端点都过堂再写答案）。德摩根律不必背：随手取一组小集合代进去，两条独立路线各算一遍对立立见。</p>
+        <p class="src">源：在库 1.3 节重制件正本易错卡表首行（本节4张之首·照录）＋正本L111/L177卡壳预判照录。卡④"端点开闭"整卡同源在案，考前一并过。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 1.3 节重制件正本正文，把"相容或＋先问全集"两闸写在草稿顶端：∪ 是"至少一个"（含两个都有），∁ 的下标是身份牌——没有全集的补集是语义黑洞。</li>
+        <li>自测真题位（2025新高考Ⅰ卷单选2同型）：先展开 U={1,…,8} 再挖洞——|∁ᵤA|=|U|−|A∩U|=8−3=5，选C。动作顺序（展开U→挖洞→数个数）一步都不能省。</li>
+        <li>易错三问过堂：A∪B 的公共元素丢了吗（相容或）？每个端点单独过堂了吗（开闭判定）？德摩根换词后两条路线互验了吗？</li>
+        <li>回 1.1 节件：本卡真题里的元素检验功底在 1.1（判定机器语言）；2024/2025 连续两年集合首题=1.1功底+1.3语言的合卷——两卡连读即覆盖。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：真题锚=在库 1.3 节重制件正本例6（2025年新高考Ⅰ卷·单选2·原卷核对·题干照录级）＋L30考频行照录＋L240另注出处登记；易错=同正本易错卡表首行照录。讲法锚=缺料豁免（四查检索留痕见"讲法锚点"节：台账/T-05/册尾附录/池清单/1025检索，2026-10-25出品时点·第二批同轮全查）。<b>证据状态申报</b>：本卡＝双段版（真题锚实锚在案＋易错收口实锚在案·讲法锚缺料豁免注记·豁免入账）——无视频锚、无?t=参数、零代拟字段。本卡与在库 1.3 节重制件正本互为镜像：节件管"读"，本卡管"测与收"。
+  </div>
+
+</div>
+</body>
+</html>
