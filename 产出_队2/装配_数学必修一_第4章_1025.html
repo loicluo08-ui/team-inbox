@@ -1,0 +1,531 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数学必修一·第4章</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .ans{font-weight:700; color:var(--accent-deep); white-space:nowrap;}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+<style>/* ──装配层壳样式（第4章·双段卡直粘·屏幕态零覆盖卡样式）── */
+h1.chap{text-align:center;font-size:23px;color:#24292e;letter-spacing:.03em;border-bottom:2px solid #6d3fd4;padding-bottom:10px;margin-bottom:14px;}
+p.map{background:#f4f6f8;border:1px solid #dce1e6;border-left:4px solid #6d3fd4;border-radius:10px;padding:12px 16px;margin:0 0 12px;font-size:14px;}
+.toc{background:#f4f6f8;border:1px solid #dce1e6;border-radius:10px;padding:10px 16px;margin:0 0 6px;font-size:13px;line-height:2;}
+.toc a{color:#6d3fd4;text-decoration:none;font-weight:600;}
+.toc .subnote{color:#5f6b76;font-size:12px;}
+p.feedback{background:#f4f6f8;border:1px dashed #b9a5ec;border-radius:10px;padding:10px 16px;margin-top:26px;font-size:12px;color:#5f6b76;}
+/* ──装配层打印适配（@media print·屏幕形态零触碰）── */
+@media print{
+  body{background:#fff !important;padding:0 !important;}
+  .card{box-shadow:none !important;border:1px solid #bbb !important;max-width:100% !important;border-radius:6px !important;}
+  .chap-sec{page-break-before:always !important;break-before:page !important;}
+  .chap-sec.first{page-break-before:auto !important;break-before:auto !important;}
+  .head{background:#f1ecfb !important;}
+  .head h1{color:#3a2a86 !important;border-bottom:0 !important;text-align:left !important;font-size:17pt !important;padding-bottom:0 !important;}
+  .chip{color:#4a3494 !important;border-color:#8a7bb0 !important;background:#fff !important;}
+  .head .kicker,.head .anchor-line{color:#4a4066 !important;border-color:#b9a5ec !important;}
+  .head .anchor-line{border-top:1px dashed #b9a5ec !important;}
+  svg text,svg tspan{fill:#24292e !important;}
+  svg rect{stroke:#8a7bb0 !important;}
+  figure{background:#f7f8fa !important;}
+  p.feedback{background:#fafafa !important;color:#444 !important;}
+}
+</style>
+</head><body>
+<h1 class="chap">第四章 指数函数与对数函数　数学必修一</h1>
+<p class="map">章首地图：①指数→②指数函数→③对数→④对数函数→⑤函数的应用（二）。本章回答两个开机问题：<b>指数与对数这对互逆运算怎么算得又快又稳？两类基本初等函数的图象与性质怎么变成解题时的判断程序？</b>主线读完即可做题；各卡尾部「易错收口」给考前扫一眼的高频雷区，「怎么用这张卡」给使用次序，「高考真题锚出处登记」给每条真题的卷源与出处。</p>
+<div class="toc"><b>本包目录（第4章全五节·双段卡原生形态）</b><br>
+<a href="#sec4_1">4.1 指数</a><a href="#sec4_2">4.2 指数函数</a><a href="#sec4_3">4.3 对数（真题锚全四要素实锚）</a><a href="#sec4_4">4.4 对数函数</a><a href="#sec4_5">4.5 函数的应用（二）</a><br>
+<span class="subnote">装配注记：章末建模卡与1.1/1.3补位候验过验后补装，不入本首件包（管理员19:31:45令）。</span></div>
+
+<div class="chap-sec first" id="sec4_1">
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第四章 指数函数与对数函数</span>
+    </div>
+    <h1>4.1 指数</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（讲法锚缺料豁免）</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 4.1 节重制件正本同名在案 · 队2第4章簇-节对位表簇⑭映射位）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="470" height="26" rx="6" fill="none" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="58" y="31" font-size="12.5" fill="#8a7bb0">讲法锚 · 缺料豁免——无优质公开素材（四查检索留痕见下节）</text>
+          <line x1="118" y1="66" x2="500" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="200" cy="66" r="8" fill="#c2452d"/>
+          <text x="200" y="92" font-size="12" fill="#24292e" text-anchor="middle">运算底座位 · 考频低（单独） · 前置步骤渗透</text>
+          <text x="200" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">出处登记形态 · 正本无真题卷题号载记</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">指数不是除法·偶次根出绝对值</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节无视频锚：双段版＝真题锚＋易错收口两实锚段——底座节单独考少但全章踩它，三查三件套交卷前过堂。</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>空槽虚线＝讲法锚缺料豁免（全库四查无优质公开素材，检索留痕见下节，不虚标不硬凑）；红点＝真题锚（出处登记形态，见下表）；方点＝易错收口条。用卡顺序＝正本正文走"定义推出＋法则延续"全流程，再对考位自测（互化优先指数记号、偶次根符号讨论），最后三查三件套过堂。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 缺料豁免注记<span class="en">检索留痕 · 豁免入账</span></h2>
+      <div class="slice">
+        <span class="tag">讲法锚 · 无优质公开素材（宁缺毋编）</span>
+        <p>本节讲法锚缺料如实申报：全库四查（2026-10-25出品时点）无优质公开素材——</p>
+        <p>① 资料溯源总台账_1004.md 全224行，无4.1指数节讲法锚行（出品时点grep实测零命中）；② T-05盘点24簇 · 簇⑭（指数运算域）无已验讲法实体，类比锚全金融域非讲法锚；③ v18原册_数学.html 册尾锚点附录6条全数已用于在库卡，零余量；④ 池全量清单数学6条BV全数已用于在库卡（1.2/2.1/2.2/2.3/3.1/3.2），零未用；⑤ 出品时点fetch实锚（tip 8e9658f）零新增池件。</p>
+        <p>豁免入账：按"缺段豁免注记"口径出品——讲法锚段缺位不虚构不硬凑；真题锚与易错收口两段实锚在库齐备，本卡以双段形态入账。候讲法锚补池有实体后，本卡沿 3.1/3.2 卡先例补挂讲法锚段成三段版（本卡字段全保留零造，新增不覆盖）。正本正文承担讲法位：本节讲法路径＝在库 4.1 节重制件正本"n次方根→分数指数幂定义两步推进→负指数倒退→无理指数逼近→运算纪律三查"节（自读替代视频位）。</p>
+        <div class="meta">检索留痕＝上述四查留痕均可回溯（台账/盘点/册尾附录/池清单均为在库件，路径可查）｜缺段豁免注记 · 豁免入账｜宁缺毋编铁律口径</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">出处登记 · 宁缺毋编</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>题干（照录要点）</th><th>官方答案</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>—（出处登记态）</td><td>—</td>
+            <td>出处登记：正本考位行照录——考频：低（单独）｜运算能力底座【讲解归纳·经验判断】。考位：①根式与分数指数互化、幂的混合运算化简求值（选填送分题为主）②偶次根出绝对值的符号讨论（√((3−π)⁴)型，暗扣分点）③常作为对数题的前置步骤出现（先化简再取对数）④周期切分类应用以小计算渗透</td>
+            <td class="ans">—</td>
+            <td>运算底座位：互化＋三法则混合运算——本节正本无真题卷名题号载记，宁缺毋编不照录不虚构，候卷源直读线回填题名后定稿（同 3.4 卡先例）；真题锚四要素（题名/出处/官方答案/考位）中卷题名暂缺，考位行已实锚照录</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 4.1 节重制件正本L30（"怎么考"考位行·出处登记形态照录）。台账未采到的节维持宁缺毋编申报态（v3派令首批形态条款），不硬凑。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 指数m/n里的斜杠不是除号——2^(1/2)≈1.414，不是1</span>
+        <p><b class="punch">a^(1/2)读"乘半次"＝√a——把分数指数当成除法，从第一笔就错了。</b>症状：把a^(1/2)算成a/2（2^(1/2)写成1）、2^(3/2)算成2³÷2=4（先乘后除）。错因：把分数指数当成除法——指数m/n里的"/n"触发了分数除法语感；分数指数幂整体是一层记号，不是"幂再除法"两层动作。</p>
+        <p><b>钉死动作</b>：指数语义自检——a^(1/2)是"乘半次"=√a，2^(1/2)≈1.414，若算出1立即报警；a^(m/n)=(ⁿ√a)^m整体读，自检2^(3/2)=√8≈2.83≠4。维持机制："1/2"这个记号在分数世界太熟悉，抄起来就除；"指数=乘几分之几次"的语义从未立住。本节另有高频条目同源正本在案（⁴√(a⁴)直接写a漏绝对值／0⁰与0的负分数指数幂混淆／(−1)^(2/2)负底数未先转正讨论），考前一并过。</p>
+        <p class="src">源：在库 4.1 节重制件正本易错卡表首行（本节6条之首·照录）。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 4.1 节重制件正本"运算纪律：三查与考试规范"节，把三查（查指数奇偶／查底的正负约定／负指数先倒数）与结果规范三件套（正指数、最简分式、底数不含根号）写在草稿顶端——阅卷场上"算对了"和"写规范了"是两件事。</li>
+        <li>互化自测：ⁿ√(ᵐ√a)=a^(1/(mn))一步到底（条件a&gt;0下优先指数记号）；负指数=倒数、0次幂=1是规律递推的结果不是硬规定——正本深读区"0次幂=1的推理链"过一遍。</li>
+        <li>偶次根符号讨论过堂：√((3−π)⁴)=π−3（3−π&lt;0取绝对值——考题专挑"正负看情况"的里层给你）；负底数混算第一步先声明字母为正，(−1)^(2/2)两种读法两个值，纪律就是不让它发生。</li>
+        <li>回 4.2/4.3 节件：指数函数与对数的所有计算都踩在本节的互化与法则上——底座不过关，后面每道计算题都在替这节补课；无理指数幂的不足近似逼近是指数铺满实数轴的最后一块砖。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：考位行=在库 4.1 节重制件正本L30（"怎么考"·出处登记，正本无真题卷名题号载记·宁缺毋编不照录不虚构）；易错=同正本易错卡表首行照录。讲法锚=缺料豁免（四查检索留痕见"讲法锚点"节：台账/T-05/册尾附录/池清单，2026-10-25出品时点·tip 8e9658f零新增池件）。<b>证据状态申报</b>：本卡＝双段版（真题锚＋易错收口实锚在库·讲法锚缺料豁免注记·豁免入账）——无视频锚、无?t=参数、零代拟字段。本卡与在库 4.1 节重制件正本互为镜像：节件管"读"，本卡管"测与收"。
+  </div>
+</div>
+</div>
+<div class="chap-sec" id="sec4_2">
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第四章 指数函数与对数函数</span>
+    </div>
+    <h1>4.2 指数函数</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（讲法锚缺料豁免）</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 4.2 节重制件正本同名在案 · 队2第4章簇-节对位表簇⑮映射位）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="470" height="26" rx="6" fill="none" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="58" y="31" font-size="12.5" fill="#8a7bb0">讲法锚 · 缺料豁免——无优质公开素材（四查检索留痕见下节）</text>
+          <line x1="118" y1="66" x2="500" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="200" cy="66" r="8" fill="#c2452d"/>
+          <text x="200" y="92" font-size="12" fill="#24292e" text-anchor="middle">比大小母型位 · 考频高 · 同底单调/异底中间量</text>
+          <text x="200" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">出处登记形态 · 正本无真题卷题号载记</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">底小于1去指数必反向</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节无视频锚：双段版＝真题锚＋易错收口两实锚段——定义两卡点（系数恰为1 · a&gt;0且a≠1）先过，比大小同底看单调异底借中间量。</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>空槽虚线＝讲法锚缺料豁免（全库四查无优质公开素材，检索留痕见下节，不虚标不硬凑）；红点＝真题锚（出处登记形态，见下表）；方点＝易错收口条。用卡顺序＝正本定义两禁令先行，再过图象三特征与变换三判，最后比大小自测走"同底单调／异底借中间量1或0"两通道。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 缺料豁免注记<span class="en">检索留痕 · 豁免入账</span></h2>
+      <div class="slice">
+        <span class="tag">讲法锚 · 无优质公开素材（宁缺毋编）</span>
+        <p>本节讲法锚缺料如实申报：全库四查（2026-10-25出品时点）无优质公开素材——</p>
+        <p>① 资料溯源总台账_1004.md 全224行，无4.2指数函数节讲法锚行（出品时点grep实测零命中）；② T-05盘点24簇 · 簇⑮（指数函数域）无已验讲法实体，类比锚全金融域非讲法锚；③ v18原册_数学.html 册尾锚点附录6条全数已用于在库卡，零余量；④ 池全量清单数学6条BV全数已用于在库卡（1.2/2.1/2.2/2.3/3.1/3.2），零未用；⑤ 出品时点fetch实锚（tip 8e9658f）零新增池件。</p>
+        <p>豁免入账：按"缺段豁免注记"口径出品——讲法锚段缺位不虚构不硬凑；真题锚与易错收口两段实锚在库齐备，本卡以双段形态入账。候讲法锚补池有实体后，本卡沿 3.1/3.2 卡先例补挂讲法锚段成三段版（本卡字段全保留零造，新增不覆盖）。正本正文承担讲法位：本节讲法路径＝在库 4.2 节重制件正本"两种增长机制→定义两条禁令的必然性→两族图像共同特征→比较大小两通道→图像变换与特殊底e"节（自读替代视频位）。</p>
+        <div class="meta">检索留痕＝上述四查留痕均可回溯（台账/盘点/册尾附录/池清单均为在库件，路径可查）｜缺段豁免注记 · 豁免入账｜宁缺毋编铁律口径</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">出处登记 · 宁缺毋编</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>题干（照录要点）</th><th>官方答案</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>—（出处登记态）</td><td>—</td>
+            <td>出处登记：正本考位行照录——考频：高｜指数比大小为高频小题母型【讲解归纳·经验判断】。考位：①图像过定点（恒过(0,1)型，选填高频）②比较大小（同底看单调／异底借中间量1或0）③指数型复合函数单调区间（与3.2同增异减联考）④定义辨析（系数恰为1＋底数a&gt;0且a≠1两处卡点）</td>
+            <td class="ans">—</td>
+            <td>比大小母型位：单调性＋中间量——本节正本无真题卷名题号载记，宁缺毋编不照录不虚构，候卷源直读线回填题名后定稿（同 3.4 卡先例）；真题锚四要素中卷题名暂缺，考位行已实锚照录</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 4.2 节重制件正本L30（"怎么考"考位行·出处登记形态照录）。台账未采到的节维持宁缺毋编申报态（v3派令首批形态条款），不硬凑。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 解(1/3)ˣ&gt;9得x&gt;−2——底小于1，去指数忘反向</span>
+        <p><b class="punch">底与1比——0&lt;a&lt;1时"值大⇔自变量小"，去指数前先定向。</b>症状：解(1/3)ˣ&gt;9得x&gt;−2（正确：x&lt;−2）。错因：底1/3&lt;1是减函数，去指数忘了反向——增函数解题的肌肉记忆太强，"底小于1反向"从没变成前置检查。</p>
+        <p><b>钉死动作</b>：三步法第二查永不跳——底与1比，0&lt;a&lt;1时反向；(1/3)ˣ&gt;(1/3)⁻²⟹x&lt;−2。边界回验自证：x=−2代入左边=9，不合"&gt;"，反向结论自证。维持机制：比大小多数题底&gt;1，减函数现场从未被强制练习。本节另有高频条目同源正本在案（把y=2·3ˣ当指数函数——系数恰为1卡点／图象"贴着"读成"交着"——值域(0,+∞)渐近线不是交点／增长族衰减族记反），考前一并过。</p>
+        <p class="src">源：在库 4.2 节重制件正本易错卡表首行（本节6条之首·照录）。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 4.2 节重制件正本"指数函数的定义：两条禁令的必然性"节——系数恰为1、a&gt;0且a≠1两卡点逐条过：2·3ˣ（纵向拉伸）、−3ˣ（系数为负）都不是指数函数；定义辨析是选填高频卡点位。</li>
+        <li>比大小自测两通道：同底看单调——(1/3)ˣ&gt;9反向解x&lt;−2；异底借中间量1或0——0.7^0.3与0.7^0.4比完再与1比。正本例1"三类比大小一次走全"四段式过堂。</li>
+        <li>变换三判：x上加减＝左右移（左加右减）、整体加减＝上下移、倍乘＝拉伸——2^(x+1)过(−1,1)（基准点(0,1)左移一格落点），代入验证永不猜方向；渐近线跟上下移搬家（2ˣ+1的渐近线是y=1）。</li>
+        <li>回 3.2/4.3 节件：复合单调区间"同增异减"工具在3.2；本节曲线语言是4.3对数反问的另一半（互逆双问），3.4指数模型回填位在案（4.5例4"翻倍要几年"直接用）。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：考位行=在库 4.2 节重制件正本L30（"怎么考"·出处登记，正本无真题卷名题号载记·宁缺毋编不照录不虚构）；易错=同正本易错卡表首行照录。讲法锚=缺料豁免（四查检索留痕见"讲法锚点"节：台账/T-05/册尾附录/池清单，2026-10-25出品时点·tip 8e9658f零新增池件）。<b>证据状态申报</b>：本卡＝双段版（真题锚＋易错收口实锚在库·讲法锚缺料豁免注记·豁免入账）——无视频锚、无?t=参数、零代拟字段。本卡与在库 4.2 节重制件正本互为镜像：节件管"读"，本卡管"测与收"。
+  </div>
+</div>
+</div>
+<div class="chap-sec" id="sec4_3">
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第四章 指数函数与对数函数</span>
+    </div>
+    <h1>4.3 对数</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（讲法锚缺料豁免）</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 4.3 节重制件正本同名在案 · 队2第4章簇-节对位表簇⑯映射位）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="470" height="26" rx="6" fill="none" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="58" y="31" font-size="12.5" fill="#8a7bb0">讲法锚 · 缺料豁免——无优质公开素材（四查检索留痕见下节）</text>
+          <line x1="118" y1="66" x2="500" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="200" cy="66" r="8" fill="#c2452d"/>
+          <text x="200" y="92" font-size="12" fill="#24292e" text-anchor="middle">2025新高考Ⅰ卷单选8 · 对数比大小压轴位【一手·真题统计】</text>
+          <text x="200" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">全四要素实锚（题名/出处/官方答案/考位）</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">对数只对乘除分发·加法无分配律</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节无视频锚：双段版＝真题锚＋易错收口两实锚段——M4唯一一手真题统计节，公共参量法"参数化+区间化+交集判定，空集即不可能"。</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>空槽虚线＝讲法锚缺料豁免（全库四查无优质公开素材，检索留痕见下节，不虚标不硬凑）；红点＝真题锚（本节为全四要素实锚——2025新高考Ⅰ卷单选8，正本例3题干/解答/定级照录）；方点＝易错收口条。用卡顺序＝正本三法则走"指数法则直译"理解，解方程四步法验真数永跳，最后公共参量法自测真题位。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 缺料豁免注记<span class="en">检索留痕 · 豁免入账</span></h2>
+      <div class="slice">
+        <span class="tag">讲法锚 · 无优质公开素材（宁缺毋编）</span>
+        <p>本节讲法锚缺料如实申报：全库四查（2026-10-25出品时点）无优质公开素材——</p>
+        <p>① 资料溯源总台账_1004.md 全224行，无4.3对数节讲法锚行（出品时点grep实测零命中）；② T-05盘点24簇 · 簇⑯（对数运算域）无已验讲法实体，类比锚全金融域非讲法锚；③ v18原册_数学.html 册尾锚点附录6条全数已用于在库卡，零余量；④ 池全量清单数学6条BV全数已用于在库卡（1.2/2.1/2.2/2.3/3.1/3.2），零未用；⑤ 出品时点fetch实锚（tip 8e9658f）零新增池件。</p>
+        <p>豁免入账：按"缺段豁免注记"口径出品——讲法锚段缺位不虚构不硬凑；真题锚与易错收口两段实锚在库齐备，本卡以双段形态入账。候讲法锚补池有实体后，本卡沿 3.1/3.2 卡先例补挂讲法锚段成三段版（本卡字段全保留零造，新增不覆盖）。正本正文承担讲法位：本节讲法路径＝在库 4.3 节重制件正本"对数是什么：指数的逆向提问器→两条禁令的必然性→三条运算法则直译→换底公式与两个特殊底→比大小与解方程通法起手式"节（自读替代视频位）。</p>
+        <div class="meta">检索留痕＝上述四查留痕均可回溯（台账/盘点/册尾附录/池清单均为在库件，路径可查）｜缺段豁免注记 · 豁免入账｜宁缺毋编铁律口径</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">全四要素实锚 · 一手真题统计</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>题干（照录要点）</th><th>官方答案</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025年新高考Ⅰ卷</td><td>单选8</td>
+            <td>已知2+log₂x=3+log₃y=5+log₅z，则x，y，z的大小关系不可能为（　）(A)x&gt;y&gt;z　(B)x&gt;z&gt;y　(C)y&gt;x&gt;z　(D)y&gt;z&gt;x。正本例3四段式照录：设公共值t参数化（x=2^(t−2)、y=3^(t−3)、z=5^(t−5)），每个"谁比谁大"翻译成t的区间（取对数移项，负系数除过去方向反向），四选项=四组区间交集，空的那个即"不可能"——(B)需t&lt;7.27且t&gt;9.30区间不相交，选B。阈值不必手工精算：lg2≈0.30、lg3≈0.48、lg5≈0.70两三位小数够排大小</td>
+            <td class="ans">B</td>
+            <td>对数比大小压轴单选【一手·真题统计】——对数式互化＋含参移项（负系数反向）＋可行域交集判定；同类自测在正本例3（统一底2指数直接比）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 4.3 节重制件正本L30（考位行：考频高｜2025新高考I单8对数比大小压轴单选【一手·真题统计】·五考位含运算法则化简求值/对数方程验根/换底公式/比大小/指数对数模型大题）＋例3【真题·进阶】四段式（题干/解答/怎么想到的/定级·照录）。真题锚四要素齐备：题名（2025年新高考Ⅰ卷·单选8）/出处（正本例3照录）/官方答案（B）/考位（对数比大小压轴单选）。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · log₂(3+4)≠log₂3+log₂4——对数只对乘除分发，加法没有分配律</span>
+        <p><b class="punch">"乘变加"口诀不许泛化——对加法无分配律，反例当面对不上。</b>症状：log₂(3+4)算成log₂3+log₂4。错因："乘变加"过度泛化成"加也能拆"——法则边界没立住；乘法版口诀念得太熟，遇到加法顺手照搬。</p>
+        <p><b>钉死动作</b>：对数只对乘除分发；反例钉死——log₂(1+1)=1而log₂1+log₂1=0，当面对不上。本节另有高频条目同源正本在案（log₂3·log₃4换底成链中间lg3两头约掉=2／解log₂(x−1)+log₂(x+1)=3得x=±3后逐根验真数，x=−3双双非法舍·四步法第三步永不跳／(lnx)²与lnx²括号位置即含义），考前一并过。</p>
+        <p class="src">源：在库 4.3 节重制件正本易错卡表首行（本节6条之首·照录）。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 4.3 节重制件正本"三条运算法则：指数法则的直译"节——法则边界先行：只对乘除分发，对加法无分配律；换底公式自检口诀 log₂8=lg8/lg2=3（真数上、底数下），代一次数立刻验证。</li>
+        <li>解方程四步法第三步验真数永跳：解log₂(x−1)+log₂(x+1)=3得x=±3后逐根验每个真数位置&gt;0——x=−3时x−1=−4&lt;0双双非法舍，唯一解x=3；"解完代回方程"会伪装通过，验的是定义域。</li>
+        <li>记号阅读过堂：(lnx)²=lnx·lnx（先取对数再平方）≠lnx²=2lnx（幂提系数）——取x=e前者=1后者=2；log_a是动作不是可拆的乘数，对照3.1的f(x)读法。</li>
+        <li>回 4.1/3.4 节件：互化底座在4.1（对数是指数的逆向提问器）；3.4回填位在案——翻倍/减半年限=两个lg相除（正本例4换底公式上岗+70法则精确收口）；真题位自测走正本例3公共参量法（参数化+区间化+交集判定，空集即"不可能"）。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：真题位=在库 4.3 节重制件正本L30＋L164-182（考位行·例3真题四段式·出处登记与题干照录，官方答案B）；易错=同正本易错卡表首行照录。讲法锚=缺料豁免（四查检索留痕见"讲法锚点"节：台账/T-05/册尾附录/池清单，2026-10-25出品时点·tip 8e9658f零新增池件）。<b>证据状态申报</b>：本卡＝双段版（真题锚＋易错收口实锚在库·讲法锚缺料豁免注记·豁免入账）——无视频锚、无?t=参数、零代拟字段。本卡与在库 4.3 节重制件正本互为镜像：节件管"读"，本卡管"测与收"。
+  </div>
+</div>
+</div>
+<div class="chap-sec" id="sec4_4">
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第四章 指数函数与对数函数</span>
+    </div>
+    <h1>4.4 对数函数</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（讲法锚缺料豁免）</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 4.4 节重制件正本同名在案 · 队2第4章簇-节对位表簇⑰映射位）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="470" height="26" rx="6" fill="none" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="58" y="31" font-size="12.5" fill="#8a7bb0">讲法锚 · 缺料豁免——无优质公开素材（四查检索留痕见下节）</text>
+          <line x1="118" y1="66" x2="500" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="200" cy="66" r="8" fill="#c2452d"/>
+          <text x="200" y="92" font-size="12" fill="#24292e" text-anchor="middle">定义域与四步法位 · 考频中（与4.3合并考） · 图象平移</text>
+          <text x="200" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">出处登记形态 · 正本无真题卷题号载记</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">恒过(1,0)不过(0,0)·去对数先查底定向</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节无视频锚：双段版＝真题锚＋易错收口两实锚段——对数题第一笔永远写定义域，同底同增减，反函数不反方向。</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>空槽虚线＝讲法锚缺料豁免（全库四查无优质公开素材，检索留痕见下节，不虚标不硬凑）；红点＝真题锚（出处登记形态，见下表）；方点＝易错收口条。用卡顺序＝正本两族图像（恒过(1,0)与y轴渐近线）先行，四步法查底定向，比大小三策略过堂，复合函数单调性定义域永远第一笔。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 缺料豁免注记<span class="en">检索留痕 · 豁免入账</span></h2>
+      <div class="slice">
+        <span class="tag">讲法锚 · 无优质公开素材（宁缺毋编）</span>
+        <p>本节讲法锚缺料如实申报：全库四查（2026-10-25出品时点）无优质公开素材——</p>
+        <p>① 资料溯源总台账_1004.md 全224行，无4.4对数函数节讲法锚行（出品时点grep实测零命中）；② T-05盘点24簇 · 簇⑰（对数函数域）无已验讲法实体，类比锚全金融域非讲法锚；③ v18原册_数学.html 册尾锚点附录6条全数已用于在库卡，零余量；④ 池全量清单数学6条BV全数已用于在库卡（1.2/2.1/2.2/2.3/3.1/3.2），零未用；⑤ 出品时点fetch实锚（tip 8e9658f）零新增池件。</p>
+        <p>豁免入账：按"缺段豁免注记"口径出品——讲法锚段缺位不虚构不硬凑；真题锚与易错收口两段实锚在库齐备，本卡以双段形态入账。候讲法锚补池有实体后，本卡沿 3.1/3.2 卡先例补挂讲法锚段成三段版（本卡字段全保留零造，新增不覆盖）。正本正文承担讲法位：本节讲法路径＝在库 4.4 节重制件正本"从换底回看两族图像：恒过(1,0)与y轴渐近线→反函数关系与图象对称→单调性与增减判定→对数不等式四步法→复合函数单调性：定义域永远第一笔"节（自读替代视频位）。</p>
+        <div class="meta">检索留痕＝上述四查留痕均可回溯（台账/盘点/册尾附录/池清单均为在库件，路径可查）｜缺段豁免注记 · 豁免入账｜宁缺毋编铁律口径</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">出处登记 · 宁缺毋编</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>题干（照录要点）</th><th>官方答案</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>—（出处登记态）</td><td>—</td>
+            <td>出处登记：正本考位行照录——考频：中｜与4.3合并考·图象平移【讲解归纳·经验判断】。考位：①真数含参数/含式子的定义域（第一笔约束）②恒过(1,0)与平移定点追踪③对数型比大小三策略（同底／同真数／换底）④反函数关系（与4.2互逆双问）⑤对数不等式四步法（含参底数双讨论a&gt;1与0&lt;a&lt;1）</td>
+            <td class="ans">—</td>
+            <td>定义域与四步法位：单调性＋定义域先行——本节正本无真题卷名题号载记，宁缺毋编不照录不虚构，候卷源直读线回填题名后定稿（同 3.4 卡先例）；真题锚四要素中卷题名暂缺，考位行已实锚照录</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 4.4 节重制件正本L30（"怎么考"考位行·出处登记形态照录）。台账未采到的节维持宁缺毋编申报态（v3派令首批形态条款），不硬凑。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 对数函数不过原点——恒过(1,0)，原点根本不在定义域</span>
+        <p><b class="punch">画完图自问一句"真数能取0吗"——原点不在场，恒过的是(1,0)。</b>症状：认为对数函数图像过原点(0,0)。错因：定义域意识缺失——x=0根本不在场；指数函数图像"贴着x轴"的视觉残留迁移过来；画草图不标渐近线。</p>
+        <p><b>钉死动作</b>：恒过(1,0)（log_a 1=0），原点不在定义域；自检动作=画完问"真数能取0吗"。本节另有高频条目同源正本在案（log₁/₂x&lt;2去对数得x&lt;1/4——底&lt;1反向应x&gt;1/4，四步法第③步查底定向永不跳／解log_a(x−2)型题不写x&gt;2——定义域是"入场券"／对数增长是最慢的常见增长——log₂x从3到4，x从8到16），考前一并过。</p>
+        <p class="src">源：在库 4.4 节重制件正本易错卡表首行（本节6条之首·照录）。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 4.4 节重制件正本"两族图像：恒过(1,0)与y轴渐近线"节——对数题第一笔永远写定义域（真数&gt;0逐条列全，解集最后取交）；约束是"入场券"不是"检票口"，代回会伪装通过。</li>
+        <li>四步法查底定向永不跳：log₁/₂x&lt;2底1/2&lt;1反向⟹x&gt;1/4（且定义域x&gt;0）；含参对数不等式底数分a&gt;1与0&lt;a&lt;1双讨论——正本例4"平移分解+定点追踪与代回验证"过堂。</li>
+        <li>比大小三策略过堂：同底看单调／同真数看图象高低（底大图低）／换底统一——log₂3与log₃2同真不同底，图像法一眼定。</li>
+        <li>回 4.3/3.2 节件：互逆保单调方向——y=log_a x与y=aˣ同底同增减（a&gt;1都增、0&lt;a&lt;1都减），图像关于y=x对折不改变上下坡走向；复合函数单调性定义域永远第一笔（正本例3"真数含系数整理+平移分解+定点追踪"四段式自测）。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：考位行=在库 4.4 节重制件正本L30（"怎么考"·出处登记，正本无真题卷名题号载记·宁缺毋编不照录不虚构）；易错=同正本易错卡表首行照录。讲法锚=缺料豁免（四查检索留痕见"讲法锚点"节：台账/T-05/册尾附录/池清单，2026-10-25出品时点·tip 8e9658f零新增池件）。<b>证据状态申报</b>：本卡＝双段版（真题锚＋易错收口实锚在库·讲法锚缺料豁免注记·豁免入账）——无视频锚、无?t=参数、零代拟字段。本卡与在库 4.4 节重制件正本互为镜像：节件管"读"，本卡管"测与收"。
+  </div>
+</div>
+</div>
+<div class="chap-sec" id="sec4_5">
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第四章 指数函数与对数函数</span>
+    </div>
+    <h1>4.5 函数的应用（二）</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（讲法锚缺料豁免）</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 4.5 节重制件正本同名在案 · 队2第4章簇-节对位表簇⑱映射位）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="470" height="26" rx="6" fill="none" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="58" y="31" font-size="12.5" fill="#8a7bb0">讲法锚 · 缺料豁免——无优质公开素材（四查检索留痕见下节）</text>
+          <line x1="118" y1="66" x2="500" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="200" cy="66" r="8" fill="#c2452d"/>
+          <text x="200" y="92" font-size="12" fill="#24292e" text-anchor="middle">零点个数两步收网位 · 考频高 · 解答题小问常客</text>
+          <text x="200" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">出处登记形态 · 正本无真题卷题号载记</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">零点是数不是点·异号连续保一个</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节无视频锚：双段版＝真题锚＋易错收口两实锚段——个数问题两步收网：零点定理锁存在，单调性锁唯一；二分法跑前两问：连续吗？异号吗？</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>空槽虚线＝讲法锚缺料豁免（全库四查无优质公开素材，检索留痕见下节，不虚标不硬凑）；红点＝真题锚（出处登记形态，见下表）；方点＝易错收口条。用卡顺序＝正本"解方程→找零点"视角搬家先行，零点存在定理两要件过堂，二分法步数公式上岗，最后个数两步收网自测。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 缺料豁免注记<span class="en">检索留痕 · 豁免入账</span></h2>
+      <div class="slice">
+        <span class="tag">讲法锚 · 无优质公开素材（宁缺毋编）</span>
+        <p>本节讲法锚缺料如实申报：全库四查（2026-10-25出品时点）无优质公开素材——</p>
+        <p>① 资料溯源总台账_1004.md 全224行，无4.5函数的应用（二）节讲法锚行（出品时点grep实测零命中）；② T-05盘点24簇 · 簇⑱（函数的零点与二分法域）无已验讲法实体，类比锚全金融域非讲法锚；③ v18原册_数学.html 册尾锚点附录6条全数已用于在库卡，零余量；④ 池全量清单数学6条BV全数已用于在库卡（1.2/2.1/2.2/2.3/3.1/3.2），零未用；⑤ 出品时点fetch实锚（tip 8e9658f）零新增池件。</p>
+        <p>豁免入账：按"缺段豁免注记"口径出品——讲法锚段缺位不虚构不硬凑；真题锚与易错收口两段实锚在库齐备，本卡以双段形态入账。候讲法锚补池有实体后，本卡沿 3.1/3.2 卡先例补挂讲法锚段成三段版（本卡字段全保留零造，新增不覆盖）。正本正文承担讲法位：本节讲法路径＝在库 4.5 节重制件正本"从解方程到找零点：一个视角搬家→零点存在定理：什么时候一定有解→定理的三个不管：边界先认清→二分法：对半砍的通用算法→算法思维三件套：解方程的升维"节（自读替代视频位）。</p>
+        <div class="meta">检索留痕＝上述四查留痕均可回溯（台账/盘点/册尾附录/池清单均为在库件，路径可查）｜缺段豁免注记 · 豁免入账｜宁缺毋编铁律口径</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">出处登记 · 宁缺毋编</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>题干（照录要点）</th><th>官方答案</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>—（出处登记态）</td><td>—</td>
+            <td>出处登记：正本考位行照录——考频：高｜零点存在定理+二分法为解答题小问常客【讲解归纳·经验判断】。考位：①零点个数判定（先存在后唯一两步收网）②零点所在区间判定（f(a)·f(b)&lt;0异号筛选）③参数范围与零点个数联立（数形结合收网）④二分法区间收敛与精确度。正本例1=教材实锚：求方程lnx+2x−6=0的实数解的个数（对应值表f(2)=−1.3069&lt;0、f(3)=1.0986&gt;0异号⟹(2,3)至少一个零点，lnx增+2x增=增⟹恰一个——教材例题非真题卷题号，考位照录）</td>
+            <td class="ans">—</td>
+            <td>零点个数两步收网位：零点存在定理＋单调性唯一性——本节正本无真题卷名题号载记，宁缺毋编不照录不虚构，候卷源直读线回填题名后定稿（同 3.4 卡先例）；真题锚四要素中卷题名暂缺，考位行已实锚照录</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 4.5 节重制件正本L26（"怎么考"考位行·出处登记形态照录）＋例1【教材·标准】四段式（教材实锚·考位互证）。台账未采到的节维持宁缺毋编申报态（v3派令首批形态条款），不硬凑。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · "f(x)的零点是(2,0)"——零点是数不是点</span>
+        <p><b class="punch">零点≡f(x)=0的实数根≡实数——异号连续保一个，"有几个"另请单调性。</b>症状：把零点写成坐标点(2,0)。错因结构："点"字字面负迁移＋图象上零点位置的视觉捆绑——零点是让f(x)=0的自变量取值x₀，在图象上是交点的横坐标，不是那个点。</p>
+        <p><b>钉死动作</b>：口诀"零点是数不是点，异号连续保一个"；叙述零点用"x₀是f(x)的零点"不用坐标式；个数问题两步收网——零点存在定理锁存在（f(a)·f(b)&lt;0＋图象连续两要件缺一不可），单调性锁唯一。本节另有高频条目同源正本在案（"两端异号就恰有一个解"——存在定理只保"至少一个"，唯一性必须单调性另证／"两端同号就没零点"——x²−1在[−2,2]两端同号藏两个，定理只是单向保证／二分法不验连续与异号就开跑），考前一并过。</p>
+        <p class="src">源：在库 4.5 节重制件正本易错卡表首行（本节表形态·翻车现场/错因结构/处置动作三列首行·照录——同 3.4 卡表形态取首行先例）。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 4.5 节重制件正本"零点存在定理：什么时候一定有解"节——两要件（f(a)f(b)&lt;0＋图象连续）缺一不可；"定理的三个不管"过堂：不管唯一、不管内部、不管端点是否为零点。</li>
+        <li>个数两步收网自测（正本例1教材实锚）：lnx+2x−6=0的实数解个数——对应值表f(2)&lt;0、f(3)&gt;0异号锁存在，lnx增+2x增=增锁唯一，两步收网答"恰一个"；教材边栏两问（为什么f(2)·f(3)&lt;0还不能说明只有一个？你能证明增函数吗？）必须答得出。</li>
+        <li>二分法过堂：跑前两句自检——这段连续吗？两端异号吗？步数公式2ⁿ&gt;(b−a)/ε一步算死（2的幂背到1024：2¹⁰=1024），正本例2"二分法求√5"四段式走一遍；每砍一次区间减半，精确度ε定步数。</li>
+        <li>回 4.2/3.2 节件：零点是4.1-4.4全部函数工具的出口——2ˣ+x=4自测（f(1)=−1、f(2)=2异号且2ˣ+x增⟹恰一解·同类自测在正本例1）；参数范围零点个数题数形结合，工具在3.2单调性与4.2图象变换。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：考位行=在库 4.5 节重制件正本L26（"怎么考"·出处登记，正本无真题卷名题号载记·宁缺毋编不照录不虚构·例1为教材实锚考位互证）；易错=同正本易错卡表首行照录（表形态取首行·同 3.4 卡先例）。讲法锚=缺料豁免（四查检索留痕见"讲法锚点"节：台账/T-05/册尾附录/池清单，2026-10-25出品时点·tip 8e9658f零新增池件）。<b>证据状态申报</b>：本卡＝双段版（真题锚＋易错收口实锚在库·讲法锚缺料豁免注记·豁免入账）——无视频锚、无?t=参数、零代拟字段。本卡与在库 4.5 节重制件正本互为镜像：节件管"读"，本卡管"测与收"。
+  </div>
+</div>
+</div>
+<p class="feedback">装配注记（装配层·内容零改写）：①五卡canonical字节级直粘零改写（各卡body sha16=cd3fe97af6f6e246/09f5225a4fa169e7/348ac9fa529983bb/9b7046e89fecf293/81462d10278e5fdc·嵌入件与源件子串级逐字节一致·五卡style块字节同一去重合并留一）；②打印适配=装配层@media print调色（卡头浅紫底深字/chip深字/SVG文字深色），屏幕形态零触碰；③章末建模卡与1.1/1.3补位候验过验后补装不入本包；④节间分页=每节卡推新页（课间分页规则沿标准打印线）；⑤荧光mark=0系双段卡原生形态（判据句以加粗与表格承载）如实注记候QC裁。</p>
+</body></html>
