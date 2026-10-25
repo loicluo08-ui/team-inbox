@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜指数函数｜真题锚×易错收口（双段版）</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .ans{font-weight:700; color:var(--accent-deep); white-space:nowrap;}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第四章 指数函数与对数函数</span>
+    </div>
+    <h1>4.2 指数函数</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（讲法锚缺料豁免）</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 4.2 节重制件正本同名在案 · 队2第4章簇-节对位表簇⑮映射位）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="470" height="26" rx="6" fill="none" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="58" y="31" font-size="12.5" fill="#8a7bb0">讲法锚 · 缺料豁免——无优质公开素材（四查检索留痕见下节）</text>
+          <line x1="118" y1="66" x2="500" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="200" cy="66" r="8" fill="#c2452d"/>
+          <text x="200" y="92" font-size="12" fill="#24292e" text-anchor="middle">比大小母型位 · 考频高 · 同底单调/异底中间量</text>
+          <text x="200" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">出处登记形态 · 正本无真题卷题号载记</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">底小于1去指数必反向</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节无视频锚：双段版＝真题锚＋易错收口两实锚段——定义两卡点（系数恰为1 · a&gt;0且a≠1）先过，比大小同底看单调异底借中间量。</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>空槽虚线＝讲法锚缺料豁免（全库四查无优质公开素材，检索留痕见下节，不虚标不硬凑）；红点＝真题锚（出处登记形态，见下表）；方点＝易错收口条。用卡顺序＝正本定义两禁令先行，再过图象三特征与变换三判，最后比大小自测走"同底单调／异底借中间量1或0"两通道。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 缺料豁免注记<span class="en">检索留痕 · 豁免入账</span></h2>
+      <div class="slice">
+        <span class="tag">讲法锚 · 无优质公开素材（宁缺毋编）</span>
+        <p>本节讲法锚缺料如实申报：全库四查（2026-10-25出品时点）无优质公开素材——</p>
+        <p>① 资料溯源总台账_1004.md 全224行，无4.2指数函数节讲法锚行（出品时点grep实测零命中）；② T-05盘点24簇 · 簇⑮（指数函数域）无已验讲法实体，类比锚全金融域非讲法锚；③ v18原册_数学.html 册尾锚点附录6条全数已用于在库卡，零余量；④ 池全量清单数学6条BV全数已用于在库卡（1.2/2.1/2.2/2.3/3.1/3.2），零未用；⑤ 出品时点fetch实锚（tip 8e9658f）零新增池件。</p>
+        <p>豁免入账：按"缺段豁免注记"口径出品——讲法锚段缺位不虚构不硬凑；真题锚与易错收口两段实锚在库齐备，本卡以双段形态入账。候讲法锚补池有实体后，本卡沿 3.1/3.2 卡先例补挂讲法锚段成三段版（本卡字段全保留零造，新增不覆盖）。正本正文承担讲法位：本节讲法路径＝在库 4.2 节重制件正本"两种增长机制→定义两条禁令的必然性→两族图像共同特征→比较大小两通道→图像变换与特殊底e"节（自读替代视频位）。</p>
+        <div class="meta">检索留痕＝上述四查留痕均可回溯（台账/盘点/册尾附录/池清单均为在库件，路径可查）｜缺段豁免注记 · 豁免入账｜宁缺毋编铁律口径</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">出处登记 · 宁缺毋编</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>题干（照录要点）</th><th>官方答案</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>—（出处登记态）</td><td>—</td>
+            <td>出处登记：正本考位行照录——考频：高｜指数比大小为高频小题母型【讲解归纳·经验判断】。考位：①图像过定点（恒过(0,1)型，选填高频）②比较大小（同底看单调／异底借中间量1或0）③指数型复合函数单调区间（与3.2同增异减联考）④定义辨析（系数恰为1＋底数a&gt;0且a≠1两处卡点）</td>
+            <td class="ans">—</td>
+            <td>比大小母型位：单调性＋中间量——本节正本无真题卷名题号载记，宁缺毋编不照录不虚构，候卷源直读线回填题名后定稿（同 3.4 卡先例）；真题锚四要素中卷题名暂缺，考位行已实锚照录</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 4.2 节重制件正本L30（"怎么考"考位行·出处登记形态照录）。台账未采到的节维持宁缺毋编申报态（v3派令首批形态条款），不硬凑。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 解(1/3)ˣ&gt;9得x&gt;−2——底小于1，去指数忘反向</span>
+        <p><b class="punch">底与1比——0&lt;a&lt;1时"值大⇔自变量小"，去指数前先定向。</b>症状：解(1/3)ˣ&gt;9得x&gt;−2（正确：x&lt;−2）。错因：底1/3&lt;1是减函数，去指数忘了反向——增函数解题的肌肉记忆太强，"底小于1反向"从没变成前置检查。</p>
+        <p><b>钉死动作</b>：三步法第二查永不跳——底与1比，0&lt;a&lt;1时反向；(1/3)ˣ&gt;(1/3)⁻²⟹x&lt;−2。边界回验自证：x=−2代入左边=9，不合"&gt;"，反向结论自证。维持机制：比大小多数题底&gt;1，减函数现场从未被强制练习。本节另有高频条目同源正本在案（把y=2·3ˣ当指数函数——系数恰为1卡点／图象"贴着"读成"交着"——值域(0,+∞)渐近线不是交点／增长族衰减族记反），考前一并过。</p>
+        <p class="src">源：在库 4.2 节重制件正本易错卡表首行（本节6条之首·照录）。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 4.2 节重制件正本"指数函数的定义：两条禁令的必然性"节——系数恰为1、a&gt;0且a≠1两卡点逐条过：2·3ˣ（纵向拉伸）、−3ˣ（系数为负）都不是指数函数；定义辨析是选填高频卡点位。</li>
+        <li>比大小自测两通道：同底看单调——(1/3)ˣ&gt;9反向解x&lt;−2；异底借中间量1或0——0.7^0.3与0.7^0.4比完再与1比。正本例1"三类比大小一次走全"四段式过堂。</li>
+        <li>变换三判：x上加减＝左右移（左加右减）、整体加减＝上下移、倍乘＝拉伸——2^(x+1)过(−1,1)（基准点(0,1)左移一格落点），代入验证永不猜方向；渐近线跟上下移搬家（2ˣ+1的渐近线是y=1）。</li>
+        <li>回 3.2/4.3 节件：复合单调区间"同增异减"工具在3.2；本节曲线语言是4.3对数反问的另一半（互逆双问），3.4指数模型回填位在案（4.5例4"翻倍要几年"直接用）。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：考位行=在库 4.2 节重制件正本L30（"怎么考"·出处登记，正本无真题卷名题号载记·宁缺毋编不照录不虚构）；易错=同正本易错卡表首行照录。讲法锚=缺料豁免（四查检索留痕见"讲法锚点"节：台账/T-05/册尾附录/池清单，2026-10-25出品时点·tip 8e9658f零新增池件）。<b>证据状态申报</b>：本卡＝双段版（真题锚＋易错收口实锚在库·讲法锚缺料豁免注记·豁免入账）——无视频锚、无?t=参数、零代拟字段。本卡与在库 4.2 节重制件正本互为镜像：节件管"读"，本卡管"测与收"。
+  </div>
+</div>
+</body>
+</html>
