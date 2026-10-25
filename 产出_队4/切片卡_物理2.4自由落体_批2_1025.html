@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜2.4 自由落体运动｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+         border-radius:20px; padding:1px 10px; margin-right:6px; font-size:11.5px;}
+  section{padding:18px 28px; border-top:1px solid var(--line);}
+  section h2{font-size:15px; color:var(--accent); letter-spacing:1px; margin-bottom:10px;}
+  .section-note{font-size:12.5px; color:var(--sub); margin-bottom:10px;}
+  .svgwrap{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:12px 10px 6px;}
+  .readhow{font-size:13px; color:var(--ink); background:var(--accent-soft); border-left:3px solid var(--accent);
+           border-radius:6px; padding:8px 12px; margin-top:10px;}
+  .readhow b{color:var(--accent);}
+  .layer{margin-bottom:16px;}
+  .lt{font-weight:700; font-size:13.5px; margin-bottom:6px;}
+  .lt span{font-weight:400; font-size:12px; color:var(--sub);}
+  table.sl{width:100%; border-collapse:collapse; font-size:12.8px;}
+  table.sl th{background:var(--accent-soft); color:var(--accent); text-align:left; padding:6px 9px; border:1px solid var(--line); font-size:12px;}
+  table.sl td{padding:6px 9px; border:1px solid var(--line); vertical-align:top;}
+  table.sl td.ts{white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--gold); font-weight:700;}
+  .quote{background:var(--wash); border:1px dashed var(--line); border-radius:8px; padding:7px 11px;
+         font-size:12.8px; margin-top:7px; color:#33404d;}
+  .quote .qsrc{color:var(--sub); font-size:11.5px;}
+  ul.gk{list-style:none; font-size:13.3px;}
+  ul.gk li{position:relative; padding:3px 0 3px 26px;}
+  ul.gk li::before{content:"◆"; position:absolute; left:12px; color:var(--accent); font-size:11px; top:9px;}
+  ul.gk li b{color:var(--accent);}
+  .ec{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .eccard{border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--paper);}
+  .eccard .et{font-weight:900; font-size:13.5px; color:#a33d2e; margin-bottom:4px;}
+  .eccard p{font-size:12.8px; color:var(--ink);}
+  .eccard .es{font-size:11.5px; color:var(--sub); margin-top:5px; border-top:1px dashed var(--line); padding-top:4px;}
+  ol.steps{padding-left:22px; font-size:13.5px;}
+  ol.steps li{margin-bottom:6px;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:14px 28px;
+        font-size:12px; color:var(--sub); line-height:1.8;}
+  .punch{color:#a33d2e; font-weight:700;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 讲法锚点</div>
+    <h1>2.4 自由落体运动<span style="font-size:13px; font-weight:400; opacity:.85;">｜第二章 匀变速直线运动的研究</span></h1>
+    <div class="meta">
+      <span class="badge">双段卡 · 讲法锚段缺如实申报</span><span class="badge">真题锚 0覆盖如实申报</span>
+      <br>册内簇07字段块照录 · 特化款v₀=0·a=g · 宁缺毋编
+    </div>
+  </div>
+
+  <section>
+    <h2>自由落体三步闸（走一遍就锁死）</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 740 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="自由落体三步闸">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2b5a8c"/>
+          </marker>
+        </defs>
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+          <rect x="8"   y="30" width="200" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="256" y="30" width="200" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="504" y="30" width="200" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <text x="108" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸① 验"自由"资格</text>
+          <text x="356" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸② g 取值登记</text>
+          <text x="604" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸③ 套特化式收工</text>
+          <text x="108" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">初速为零＋只受重力</text>
+          <text x="108" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">两个条件缺一不可</text>
+          <text x="108" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">竖直下抛/上抛不是自由落体</text>
+          <text x="356" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">题给g就用题给的</text>
+          <text x="356" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">同一题内g取同一值</text>
+          <text x="356" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">g随纬度高度变（本地性）</text>
+          <text x="604" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">v=gt　h=½gt²　v²=2gh</text>
+          <text x="604" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">比例1:3:5与1:4:9直答</text>
+          <text x="604" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">前一半与后一半用时1:(√2−1)</text>
+          <line x1="210" y1="76" x2="252" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="458" y1="76" x2="500" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="370" y="150" text-anchor="middle" font-size="11.5" fill="#5b6773">自由落体＝匀变速的特化款（v₀=0、a=g代入三公式）——"自由"二字=除重力外不受其他力</text>
+        </g>
+      </svg>
+      <div class="readhow"><b>怎么读这张图：</b>顺着闸①→闸③走——先验"自由"资格（初速为零＋只受重力，缺一就不是本节公式管的场景，闸①）；再登记g的取值（题给g用题给的，同一题内不换值，闸②）；最后直接用特化式 v=gt、h=½gt²、v²=2gh 收工，比例结论（1:3:5、1:4:9、前一半比后一半用时=1:(√2−1)）要能秒答（闸③）。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>真题锚（0覆盖如实申报）</h2>
+    <div class="layer">
+      <div class="lt">本节真题锚＝0 <span>（宁缺毋编·不硬凑）</span></div>
+      <table class="sl">
+        <tr><th>清点范围</th><th>实况（照实登记）</th></tr>
+        <tr><td>2023山东卷全卷题位清点</td><td>卷面p1-p8＋答案页p9-p10逐题目验：18道题位无自由落体直配题（T6匀减速运动学挂2.2卡·T15斜抛系平抛家族非自由落体）——0覆盖如实申报不硬凑；候扩卷源后回填</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>讲法锚段（缺段豁免注记 · 如实申报）</h2>
+    <div class="layer">
+      <div class="lt">本段缺 <span>（宁缺毋编·不硬凑）</span></div>
+      <table class="sl">
+        <tr><th>申报项</th><th>实况（照实登记）</th></tr>
+        <tr><td>册内层</td><td>v18物理册全量检索：本节无"讲法锚点·切片装配"模块（册内该模块仅簇08-13域）</td></tr>
+        <tr><td>池内层</td><td>放量池无本节字幕级已验切片（台账+池单全量检索零命中）</td></tr>
+        <tr><td>新采层</td><td>B站侧新采已启动（agent-browser·限速错峰）：候选已登记池单——黄夫人《24.【匀变速直线运动】自由落体》BV1y64y1i7ei（probe实测2026-10-25：播放4,112,576·全片1251s·CC字幕轨0条）／HE物理课堂《一口气搞懂自由落体运动》BV1eRtSe4EMV——字幕轨0条→引文照录不可得→按双段卡口径缺段豁免注记，候whisper转写线入池后补段</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 4条）</h2>
+    <ul class="gk">
+      <li><b>自由落体基本计算与比例结构</b>——选择题直答位。</li>
+      <li><b>频闪照片/滴水法/纸带测g</b>——实验题三大件。</li>
+      <li><b>与图像复合</b>——v-t过原点直线，斜率=g。</li>
+      <li><b>含阻力落体的定性判断</b>——"哪条v-t图对应纸片下落"。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="ec">
+      <div class="eccard">
+        <div class="et">① "重的物体落得快"</div>
+        <p>真空/阻力可忽略时不成立：硬币与羽毛在真空管同时落地（月球阿波罗实验与太空授课级演示均验证）。纠偏动作：分清"日常经验（有空气）"与"理想条件（无空气）"两套结论各自的适用域。</p>
+        <div class="es">源：v18簇07常见误解①照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">② "刚开始下落瞬间v=0，所以a=0"</div>
+        <p>a由合力决定=mg/m=g，与速度无关。纠偏动作：速度与加速度脱钩三步判断。</p>
+        <div class="es">源：v18簇07常见误解②照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">③ "自由落体是'不受任何力'的运动"</div>
+        <p>恰恰只受重力——"自由"指"除重力外不受其他力"。纠偏动作：逐字读定义。</p>
+        <div class="es">源：v18簇07常见误解③照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">④ "g=9.8N/kg 和 9.8m/s² 是两个东西"</div>
+        <p>它们是同一常数的两种单位写法（1N/kg=1m/s²，因N=kg·m/s²）。g有"本地性"：随纬度、高度变化；同一题内g取同一值。</p>
+        <div class="es">源：v18簇07常见误解④＋适用边界②照录</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>秒答自测（册内最小验证照录）</h2>
+    <table class="sl">
+      <tr><th>问</th><th>答（照录）</th></tr>
+      <tr><td>物体从楼顶自由下落，落地用时2.0s，楼多高？落地速度多大？（g=10）</td><td>h=½gt²=½×10×4=20m；v=gt=20m/s。</td></tr>
+      <tr><td>一物体自由下落，落下前一半高度与后一半高度用时之比？</td><td>前一半t₁=T/√2，后一半t₂=T−T/√2，比=1:(√2−1)≈1:0.414。（越落越快，后一半远快于前一半——比例结构的直接检验。）</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出"初速为零＋只受重力"与"v-t过原点直线斜率=g"两处。</li>
+      <li>三步闸自测：随手指一个落体场景（雨滴/纸片/石子/真空管），30秒走完三闸并报出是否算"自由"。</li>
+      <li>秒答自测两行遮住右列口算，比例结论必须秒答。</li>
+      <li>考前扫易错卡：默写"重的不快""a≠f(v)""自由=只受重力""N/kg=m/s²"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：册内照录＝v18原册_物理.html 簇07（L288-292适用边界/L293常见误解/L294最小验证/L295高考接口）字段块，节域注记＝簇07承载域含1.4/1.5节特化与2.4节（跨节承载如实注记）；真题锚0覆盖申报＝2023山东卷全卷题位清点（证据同2.2卡foot·卷源直读线入仓）；节名＝第二章装配页节标"2.4 自由落体"及"2.4 自由落体＝本节特化（v₀=0、a=g）"照录；讲法锚段缺段申报与池候选登记详见随件池候选登记单（B站probe实测2026-10-25·全程≥30s错峰）。本卡与2.2/2.3卡衔接：本节=匀变速特化款（v₀=0、a=g代入三公式）——2.2/2.3会了，本节只剩"资格判断＋比例秒答"两件事。
+  </div>
+
+</div>
+</body>
+</html>

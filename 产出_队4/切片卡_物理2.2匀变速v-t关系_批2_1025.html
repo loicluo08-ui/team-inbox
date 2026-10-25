@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜2.2 匀变速直线运动的速度与时间的关系｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+         border-radius:20px; padding:1px 10px; margin-right:6px; font-size:11.5px;}
+  section{padding:18px 28px; border-top:1px solid var(--line);}
+  section h2{font-size:15px; color:var(--accent); letter-spacing:1px; margin-bottom:10px;}
+  .section-note{font-size:12.5px; color:var(--sub); margin-bottom:10px;}
+  .svgwrap{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:12px 10px 6px;}
+  .readhow{font-size:13px; color:var(--ink); background:var(--accent-soft); border-left:3px solid var(--accent);
+           border-radius:6px; padding:8px 12px; margin-top:10px;}
+  .readhow b{color:var(--accent);}
+  .layer{margin-bottom:16px;}
+  .lt{font-weight:700; font-size:13.5px; margin-bottom:6px;}
+  .lt span{font-weight:400; font-size:12px; color:var(--sub);}
+  table.sl{width:100%; border-collapse:collapse; font-size:12.8px;}
+  table.sl th{background:var(--accent-soft); color:var(--accent); text-align:left; padding:6px 9px; border:1px solid var(--line); font-size:12px;}
+  table.sl td{padding:6px 9px; border:1px solid var(--line); vertical-align:top;}
+  table.sl td.ts{white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--gold); font-weight:700;}
+  .quote{background:var(--wash); border:1px dashed var(--line); border-radius:8px; padding:7px 11px;
+         font-size:12.8px; margin-top:7px; color:#33404d;}
+  .quote .qsrc{color:var(--sub); font-size:11.5px;}
+  ul.gk{list-style:none; font-size:13.3px;}
+  ul.gk li{position:relative; padding:3px 0 3px 26px;}
+  ul.gk li::before{content:"◆"; position:absolute; left:12px; color:var(--accent); font-size:11px; top:9px;}
+  ul.gk li b{color:var(--accent);}
+  .ec{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .eccard{border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--paper);}
+  .eccard .et{font-weight:900; font-size:13.5px; color:#a33d2e; margin-bottom:4px;}
+  .eccard p{font-size:12.8px; color:var(--ink);}
+  .eccard .es{font-size:11.5px; color:var(--sub); margin-top:5px; border-top:1px dashed var(--line); padding-top:4px;}
+  ol.steps{padding-left:22px; font-size:13.5px;}
+  ol.steps li{margin-bottom:6px;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:14px 28px;
+        font-size:12px; color:var(--sub); line-height:1.8;}
+  .punch{color:#a33d2e; font-weight:700;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 讲法锚点</div>
+    <h1>2.2 匀变速直线运动的速度与时间的关系<span style="font-size:13px; font-weight:400; opacity:.85;">｜第二章 匀变速直线运动的研究</span></h1>
+    <div class="meta">
+      <span class="badge">双段卡 · 讲法锚段缺如实申报</span><span class="badge">真题锚 2023山东卷T6（官方答案核对级）</span>
+      <br>册内簇04/簇05字段块照录 · 真题锚卷源直读可回验 · 宁缺毋编
+    </div>
+  </div>
+
+  <section>
+    <h2>速度式四步闸（走一遍就锁死）</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 740 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="速度式四步闸">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2b5a8c"/>
+          </marker>
+        </defs>
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+          <rect x="8"   y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="200" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="392" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="584" y="30" width="148" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <text x="87"  y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸① 验匀变速资格</text>
+          <text x="279" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸② 定正方向</text>
+          <text x="471" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸③ 列表套①式</text>
+          <text x="658" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸④ 刹车截断检验</text>
+          <text x="87"  y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">题面有"匀加速/匀减速/</text>
+          <text x="87"  y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">恒定加速度"字样才许套</text>
+          <text x="87"  y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">先验证 a 恒定</text>
+          <text x="279" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">第一行写"取v₀方向为正"</text>
+          <text x="279" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">之后所有量带符号运算</text>
+          <text x="279" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">减速运动 a 是负数</text>
+          <text x="471" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">v₀、v、a、t、x 五量知三求二</text>
+          <text x="471" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">速度式 v=v₀+at（①式）</text>
+          <text x="471" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">管"任一时刻多快"</text>
+          <text x="658" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">减速到停：先算 t停=v₀/|a|</text>
+          <text x="658" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">问的时间＞t停 → 已静止</text>
+          <text x="658" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">数学合法解≠物理存在解</text>
+          <line x1="168" y1="76" x2="196" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="360" y1="76" x2="388" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="552" y1="76" x2="580" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="370" y="150" text-anchor="middle" font-size="11.5" fill="#5b6773">①式＝加速度定义 a=(v−v₀)/t 反着用——给出"任一时刻多快"</text>
+        </g>
+      </svg>
+      <div class="readhow"><b>怎么读这张图：</b>顺着闸①→闸④走——先确认题目给了"加速度恒定"的资格（没给就不许套公式），再在第一行写下正方向约定（闸②），然后列"五量表"挑出 v₀、v、a、t 中已知与未知、套①式带符号运算（闸③），最后凡是"减速到停"的题先算 t停 并与问的时间比较，停止后保持静止、不把"倒回"的账算进去（闸④）。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>真题锚（题号级 · 官方答案核对级）</h2>
+    <div class="layer">
+      <div class="lt">2023年山东省普通高中学业水平等级考试·物理 T6 <span>（单项选择题·3分·卷面p2-p3目验照录·官方答案页p9逐字）</span></div>
+      <div class="quote">"6. 如图所示，电动公交车做匀减速直线运动进站，连续经过 R、S、T 三点，已知 ST 间的距离是 RS 的两倍，RS 段的平均速度是 10m/s，ST 段的平均速度是 5m/s，则公交车经过 T 点时的瞬时速度为（　）　A. 3m/s　B. 2m/s　C. 1m/s　D. 0.5m/s"<span class="qsrc">（卷面照录·R/S/T三点示意图在卷面p3页首）</span></div>
+      <div class="quote">【6题答案】【答案】C<span class="qsrc">（官方答案页p9照录·官方版式）</span></div>
+      <table class="sl">
+        <tr><th>独立解算互证（双核对纪律·非卡面内容）</th><th>考点登记</th></tr>
+        <tr><td>匀变速中间时刻速度＝平均速度：v_R+v_S=20、v_S+v_T=10；位移比RS:ST=1:2→时间比=(d/10):(2d/5)=1:4；加速度恒定联立解得 v_S=9、v_T=1m/s＝C ✓（回验：a=20/d 两段全等）</td><td>匀变速直线运动·平均速度=(v₀+v)/2（仅匀变速成立）＋①式带符号运算·本节承载域（平均速度推论与2.3位移式联动）</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>讲法锚段（缺段豁免注记 · 如实申报）</h2>
+    <div class="layer">
+      <div class="lt">本段缺 <span>（宁缺毋编·不硬凑）</span></div>
+      <table class="sl">
+        <tr><th>申报项</th><th>实况（照实登记）</th></tr>
+        <tr><td>册内层</td><td>v18物理册全量检索：本节无"讲法锚点·切片装配"模块（册内该模块仅簇08-13域：弹力/摩擦/合成/受力/牛二）</td></tr>
+        <tr><td>池内层</td><td>放量池无本节字幕级已验切片（台账+池单全量检索零命中）</td></tr>
+        <tr><td>新采层</td><td>B站侧新采已启动（agent-browser·限速错峰）：候选已登记池单——黄夫人《16.【匀变速直线运动】公式推导》BV11P4y1W7LP／HE物理课堂《吃透匀变速直线运动》BV1BqGF6cEb8（probe实测：播放635,879·全片2573s·CC字幕轨0条）——字幕轨0条→引文照录不可得→按双段卡口径缺段豁免注记，候whisper转写线入池后补段</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 4条）</h2>
+    <ul class="gk">
+      <li><b>刹车/停止陷阱选择题</b>——年年出（先算 t停 再比时间）。</li>
+      <li><b>纸带与频闪 Δx=aT² 实验计算</b>——逐差法入口。</li>
+      <li><b>v₀=0 比例结论＋图像复合</b>——1:3:5 与 v-t 图联动。</li>
+      <li><b>追及相遇中匀减速段</b>——公式处理＋共速判据，与簇⑤图像题深度融合。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="ec">
+      <div class="eccard">
+        <div class="et">① "看到直线运动就套三公式"</div>
+        <p>先验证 a 恒定。纠偏动作：读题先划出"匀加速/匀减速/恒定加速度"字样，没有就不许套。</p>
+        <div class="es">源：v18簇04常见误解①照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">② "刹车题直接代所给时间"</div>
+        <p>先算 t停=v₀/|a| 并比较。纠偏动作：见"减速到停止"条件反射写 t停。20m/s刹车（|a|=5m/s²）6s内位移=40m不是30m——公式把已静止后又"倒回"的2s也算进去了。</p>
+        <div class="es">源：v18簇04常见误解②＋最小验证①照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">③ "减速运动把 a 当正数代"</div>
+        <p>符号由正方向约定统一承载。纠偏动作：第一行写"取××方向为正方向"，之后所有量带符号。</p>
+        <div class="es">源：v18簇04常见误解③照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">④ "中间时刻速度=中间位置速度"</div>
+        <p>前者=(v₀+v)/2，后者=√((v₀²+v²)/2)更大。匀加速时后半段走得快→到达"位置中点"的时刻晚于"时间中点"→中点位置的瞬时速度更大，用图像记不用死记。</p>
+        <div class="es">源：v18簇04常见误解④照录</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>秒答自测（册内最小验证照录）</h2>
+    <table class="sl">
+      <tr><th>问</th><th>答（照录）</th></tr>
+      <tr><td>汽车以20m/s行驶，刹车加速度大小5m/s²，求刹车后6s内的位移与6s末速度。</td><td>t停=4s&lt;6s→4s末已停。x=v₀t停−½·|a|·t停²=80−40=40m（或x=v₀²/(2|a|)=40m）；6s末速度为0。</td></tr>
+      <tr><td>纸带连续三段相等时间T=0.1s内位移为8cm、10cm、12cm，求加速度。</td><td>Δx=2cm=0.02m恒定→a=Δx/T²=0.02/0.01=2m/s²，方向与运动方向相同。</td></tr>
+      <tr><td>初速为零的匀加速运动，第1、2、3个T内的位移之比？</td><td>1:3:5（每层梯形逐级加宽；若问前nT内总位移比则是1:4:9）。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出"速度式 v=v₀+at"与"加速度恒定"两处。</li>
+      <li>四步闸自测：随手指一道刹车题，30秒走完四闸（验资格→定正方向→套①式→截断检验）。</li>
+      <li>真题锚回放：卷面p2-p3读T6题面→自己列五量表解一遍→对照官方答案C与独立解算。</li>
+      <li>考前扫易错卡：默写"先验a恒定""先算t停""带符号""两个中点速度不相等"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：真题锚＝中国教育在线 gaokao.eol.cn《2023年高考山东物理试题及答案》卷面p2-p3（T6题面）＋官方答案页p9（T6=C），图片直读证据随卷源证据包入仓（直读证据_2023山东物理卷目录，sdwl02.png sha256前16=b32636484347befe／sdwl03.png=4ef61d7a09e36a96／sdwl09.png=a96602953ea0b941·卷源 https://img1.eol.cn/e_images/gk/2023/2023st/sd/wl02.png 等·本件全程未触B站域采集）；册内照录＝v18原册_物理.html 簇04（L183完整展开/L188常见误解/L189最小验证/L190高考接口）＋簇05（L240-242易错素材口诀）字段块，节域注记＝簇04承载域含1.4节与2.2/2.3节（跨节承载如实注记）；节名＝第二章装配页§2.2节标"2.2 匀变速直线运动的速度与时间的关系"照录；讲法锚段缺段申报与池候选登记详见随件池候选登记单（B站probe实测2026-10-25·全程≥30s错峰）。本卡与2.3卡衔接：本节管"任一时刻多快"（①式），2.3管"任一段走多远"（②式梯形面积推导）。
+  </div>
+
+</div>
+</body>
+</html>

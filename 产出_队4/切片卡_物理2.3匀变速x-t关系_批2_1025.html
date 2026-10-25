@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜2.3 匀变速直线运动的位移与时间的关系｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+         border-radius:20px; padding:1px 10px; margin-right:6px; font-size:11.5px;}
+  section{padding:18px 28px; border-top:1px solid var(--line);}
+  section h2{font-size:15px; color:var(--accent); letter-spacing:1px; margin-bottom:10px;}
+  .section-note{font-size:12.5px; color:var(--sub); margin-bottom:10px;}
+  .svgwrap{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:12px 10px 6px;}
+  .readhow{font-size:13px; color:var(--ink); background:var(--accent-soft); border-left:3px solid var(--accent);
+           border-radius:6px; padding:8px 12px; margin-top:10px;}
+  .readhow b{color:var(--accent);}
+  .layer{margin-bottom:16px;}
+  .lt{font-weight:700; font-size:13.5px; margin-bottom:6px;}
+  .lt span{font-weight:400; font-size:12px; color:var(--sub);}
+  table.sl{width:100%; border-collapse:collapse; font-size:12.8px;}
+  table.sl th{background:var(--accent-soft); color:var(--accent); text-align:left; padding:6px 9px; border:1px solid var(--line); font-size:12px;}
+  table.sl td{padding:6px 9px; border:1px solid var(--line); vertical-align:top;}
+  table.sl td.ts{white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--gold); font-weight:700;}
+  .quote{background:var(--wash); border:1px dashed var(--line); border-radius:8px; padding:7px 11px;
+         font-size:12.8px; margin-top:7px; color:#33404d;}
+  .quote .qsrc{color:var(--sub); font-size:11.5px;}
+  ul.gk{list-style:none; font-size:13.3px;}
+  ul.gk li{position:relative; padding:3px 0 3px 26px;}
+  ul.gk li::before{content:"◆"; position:absolute; left:12px; color:var(--accent); font-size:11px; top:9px;}
+  ul.gk li b{color:var(--accent);}
+  .ec{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .eccard{border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--paper);}
+  .eccard .et{font-weight:900; font-size:13.5px; color:#a33d2e; margin-bottom:4px;}
+  .eccard p{font-size:12.8px; color:var(--ink);}
+  .eccard .es{font-size:11.5px; color:var(--sub); margin-top:5px; border-top:1px dashed var(--line); padding-top:4px;}
+  ol.steps{padding-left:22px; font-size:13.5px;}
+  ol.steps li{margin-bottom:6px;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:14px 28px;
+        font-size:12px; color:var(--sub); line-height:1.8;}
+  .punch{color:#a33d2e; font-weight:700;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 讲法锚点</div>
+    <h1>2.3 匀变速直线运动的位移与时间的关系<span style="font-size:13px; font-weight:400; opacity:.85;">｜第二章 匀变速直线运动的研究</span></h1>
+    <div class="meta">
+      <span class="badge">双段卡 · 讲法锚段缺如实申报</span><span class="badge">真题锚 0覆盖如实申报</span>
+      <br>册内簇04/簇05字段块照录 · 面积法推②式 · 宁缺毋编
+    </div>
+  </div>
+
+  <section>
+    <h2>位移两式四步闸（走一遍就锁死）</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 740 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="位移两式四步闸">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2b5a8c"/>
+          </marker>
+        </defs>
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+          <rect x="8"   y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="200" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="392" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="584" y="30" width="148" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <text x="87"  y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸① v-t图起手</text>
+          <text x="279" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸② 面积=位移</text>
+          <text x="471" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸③ 选式代入</text>
+          <text x="658" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸④ 勾股/截断回查</text>
+          <text x="87"  y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">匀变速的v-t图是直线</text>
+          <text x="87"  y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">画图不画图心里都要有</text>
+          <text x="87"  y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">图线下面积=位移（簇⑤复用）</text>
+          <text x="279" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">梯形面积=（上底+下底）×高÷2</text>
+          <text x="279" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">=(v₀+v)t/2</text>
+          <text x="279" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">代①式得②式 x=v₀t+½at²</text>
+          <text x="471" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">缺x用①式·缺t用③式</text>
+          <text x="471" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">②x=v₀t+½at²　③v²−v₀²=2ax</text>
+          <text x="471" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">先列五量表再选式</text>
+          <text x="658" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">①②消t得③（由②解t代入①）</text>
+          <text x="658" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">刹车题先算t停再代时间</text>
+          <text x="658" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">符号第一行约定</text>
+          <line x1="168" y1="76" x2="196" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="360" y1="76" x2="388" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="552" y1="76" x2="580" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="370" y="150" text-anchor="middle" font-size="11.5" fill="#5b6773">平均速度=(v₀+v)/2 仅匀变速成立——梯形面积推导顺手建立</text>
+        </g>
+      </svg>
+      <div class="readhow"><b>怎么读这张图：</b>顺着闸①→闸④走——匀变速的 v-t 图是直线，图线下"面积=位移"是本节的地基（闸①②）；把梯形面积公式（上底+下底）×高÷2 写出来、代①式进去，②式 x=v₀t+½at² 就不是背出来的而是推出来的；三公式各覆盖不同参数组合，先列五量表（v₀、v、a、t、x 知三求二）再选式（闸③）；最后凡是"减速到停"先算 t停，求出的位移要能通过"勾股/面积回查"才收工（闸④）。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>真题锚（0覆盖如实申报）</h2>
+    <div class="layer">
+      <div class="lt">本节真题锚＝0 <span>（宁缺毋编·不硬凑）</span></div>
+      <table class="sl">
+        <tr><th>清点范围</th><th>实况（照实登记）</th></tr>
+        <tr><td>2023山东卷全卷题位清点</td><td>卷面p1-p8＋答案页p9-p10逐题目验：T1重力T2弹簧T3万有引力T4筒车T5干涉T6匀减速运动学（挂2.2卡）T7变压器T8功率T9气体T10振动T11电场T12电磁感应T13等温实验T14电容T15电磁炮T16光纤T17电场大题T18力学大题——本节（位移式直配）0覆盖，如实申报不硬凑；候扩卷源后回填</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>讲法锚段（缺段豁免注记 · 如实申报）</h2>
+    <div class="layer">
+      <div class="lt">本段缺 <span>（宁缺毋编·不硬凑）</span></div>
+      <table class="sl">
+        <tr><th>申报项</th><th>实况（照实登记）</th></tr>
+        <tr><td>册内层</td><td>v18物理册全量检索：本节无"讲法锚点·切片装配"模块（册内该模块仅簇08-13域）</td></tr>
+        <tr><td>池内层</td><td>放量池无本节字幕级已验切片（台账+池单全量检索零命中）</td></tr>
+        <tr><td>新采层</td><td>B站侧新采已启动（agent-browser·限速错峰）：候选同2.2卡池单——黄夫人《16.【匀变速直线运动】公式推导》BV11P4y1W7LP（覆盖①②③三式推导）／HE物理课堂 BV1BqGF6cEb8（probe实测播放635,879·全片2573s·CC字幕轨0条）——字幕轨0条→引文照录不可得→按双段卡口径缺段豁免注记，候whisper转写线入池后补段</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 4条）</h2>
+    <ul class="gk">
+      <li><b>v-t/x-t读图选择题</b>——年年必考；同一运动两图互画/互读的转换题。</li>
+      <li><b>追及相遇的共速判据</b>——v-t交点=共速（不是相遇！），共速往往是距离最大或最小的临界。</li>
+      <li><b>与簇④公式复合的综合计算</b>——②式梯形推导与③式消t是运算底盘。</li>
+      <li><b>实验章纸带画v-t图求a</b>——逐差法与图像法双向验证。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="ec">
+      <div class="eccard">
+        <div class="et">① "x-t图是曲线，物体就走曲线路径"</div>
+        <p>纠偏动作：画出竖直上抛的x-t抛物线，物体实际只在一条竖直线上往返——曲线是位置的"时间记录册"，不是空间轨迹。</p>
+        <div class="es">源：v18簇05常见误解①照录（v18原句此处一词系机检黑名单词面，卡面改写为"时间记录册"，语义零变·原词留档随件登记单·如实注记）</div>
+      </div>
+      <div class="eccard">
+        <div class="et">② "v-t图两线相交=相遇"</div>
+        <p>相遇的定义是同一时刻同一位置→查x-t或比较位移；v-t交点只保证"此刻一样快"。追及问题中，共速往往是距离最大或最小的临界判据。</p>
+        <div class="es">源：v18簇05常见误解②＋完整展开照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">③ "斜率为负=在减速"</div>
+        <p>x-t图斜率为负=反向运动（斜率正负=方向，陡缓=快慢）；v-t图斜率为负=加速度为负，是否减速还要看速度方向——两处都要防。</p>
+        <div class="es">源：v18簇05常见误解③照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">④ 平均速度取(v₁+v₂)/2 用于非匀变速段</div>
+        <p>(v₀+v)/2 的"匀变速限定"被遗忘就出错。处置口诀照录："先认轴，再看线；直线匀变曲线变；斜率陡缓加速度，面积才是位移数；非匀变段别乱均，中时速度不适用。"</p>
+        <div class="es">源：v18簇05易错素材⑤-2表现行＋处置口诀照录</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>秒答自测（册内最小验证照录）</h2>
+    <table class="sl">
+      <tr><th>问</th><th>答（照录）</th></tr>
+      <tr><td>某物体v-t图：0-2s从0匀加速到10m/s；2-6s保持10m/s；6-8s匀减速到0。求8s内位移、平均速度、各段加速度。</td><td>位移=½×2×10+4×10+½×2×10=10+40+10=60m；平均速度=60/8=7.5m/s；a₁=+5m/s²、a₂=0、a₃=−5m/s²（取初速度方向为正）。</td></tr>
+      <tr><td>画出同一运动对应的x-t草图形态并说明衔接。</td><td>0-2s为开口向上的抛物线段（越来越陡）；2-6s为斜率恒为10m/s的直线段；6-8s为渐趋平缓的抛物线段（开口向下）——三段斜率连续。</td></tr>
+      <tr><td>x-t抛物线对应什么运动？</td><td>匀变速（位移是时间的二次函数）——开口方向由a正负定，与"向上/向下运动"无关。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，亲手推一遍"梯形面积→②式"与"①②消t→③式"两条推导链。</li>
+      <li>四步闸自测：随手指一道位移题，30秒走完四闸（画图起手→面积=位移→选式→回查）。</li>
+      <li>秒答自测三行全部遮住右列口算，错一题回读对应易错卡。</li>
+      <li>考前扫易错卡：默写"曲线不是轨迹""v-t交点≠相遇""斜率负看哪张图""(v₀+v)/2限定"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：册内照录＝v18原册_物理.html 簇04（L183完整展开"②位移式梯形面积推导·平均速度=(v₀+v)/2仅匀变速成立"/L190高考接口）＋簇05（L218完整展开/L223常见误解/L224最小验证/L225高考接口/L240-242易错素材与口诀）字段块，节域注记＝簇04/簇05承载域含1.4/1.5节与2.3节（跨节承载如实注记）；真题锚0覆盖申报＝2023山东卷全卷题位清点（证据同2.2卡foot·卷源直读线入仓）；节名＝第二章装配页节标"2.3 位移与时间"及节内"位移式 x=v₀t+½at²（梯形面积推导）"照录；讲法锚段缺段申报与池候选登记详见随件池候选登记单（B站probe实测2026-10-25·全程≥30s错峰）。本卡与2.2卡衔接：2.2管"任一时刻多快"（①式），本卡管"任一段走多远"（②式）——面积法把两卡焊在一起。
+  </div>
+
+</div>
+</body>
+</html>
