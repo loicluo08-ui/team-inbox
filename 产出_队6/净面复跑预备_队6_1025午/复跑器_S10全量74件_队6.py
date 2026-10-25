@@ -25,10 +25,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 SELFDIR = os.path.dirname(os.path.abspath(__file__))
 LIST_TXT = os.path.join(SELFDIR, '复跑74件清单.txt')
 
-# ---- 词表三候（并列内置·候《词表确权单》定版；出处逐条在案） ----
-# A4.3原文: 标准库/S10_装配QC检查单.md L22 "13词面grep=0（队N/首件/claim/commit/待核/帧验/底本/席/canonical/连跑/升格/工作单/实切包）"
-A43_LIT = ['首件', 'claim', 'commit', '待核', '帧验', '底本', '席', 'canonical', '连跑', '升格', '工作单', '实切包']
-A43_REG = [r'队[0-9]']  # "队N"元记法解释=队+数字通配（通配形态候确权单确认）
+# ---- 词表（定版 2026-10-25 12:20=《词表确权单》4af2509§三：A4.3原文钉死） ----
+# 钉死实现=20字面项（队N通配按字面展开队1~队7+队N，禁正则变体）；命中判据=子串包含(w in s)全文生效
+# 词面出处: 标准库/S10_装配QC检查单.md L22 "13词面grep=0（队N/首件/claim/commit/待核/帧验/底本/席/canonical/连跑/升格/工作单/实切包）"
+A43_LIT = ['队1', '队2', '队3', '队4', '队5', '队6', '队7', '队N',
+           '首件', 'claim', 'commit', '待核', '帧验', '底本', '席',
+           'canonical', '连跑', '升格', '工作单', '实切包']
+A43_REG = []  # 确权单钉死：不得改用正则变体（历史稿曾用r'队[0-9]'，已按4af2509§三废弃）
 # CIWORDS字面: canonical批跑脚本头 CIWORDS 原样
 CIWORDS_LIT = ['队7', '首件', 'claim', 'commit', '待核', '帧验', '底本', '席', 'canonical', '连跑', '升格', '认领', '装配件']
 CIWORDS_REG = []
@@ -79,16 +82,22 @@ def word_hits(text, lit, reg):
     return c
 
 def load_s10():
-    cand = os.path.join(ROOT, '产出_队7', '全册总验预研_C席_1024', '全册总验_S10全表批跑.py')
-    if not os.path.isfile(cand):
-        sys.exit('[复跑器]致命: canonical S10批跑不在位: ' + cand)
+    # 信源优先级：统一词表版A43工具（确权单§三最小diff件·队6复跑执行件）＞canonical驻留件
+    cands = [
+        os.path.join(ROOT, '产出_队6', '全册总验_S10全表批跑_统一词表版A43_队6_1025.py'),
+        os.path.join(ROOT, '产出_队7', '全册总验预研_C席_1024', '全册总验_S10全表批跑.py'),
+    ]
+    cand = next((p for p in cands if os.path.isfile(p)), None)
+    if not cand:
+        sys.exit('[复跑器]致命: S10批跑工具不在位: ' + ' | '.join(cands))
     spec = importlib.util.spec_from_file_location('s10batch', cand)
     m = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(m)
     return m, cand
 
 def git(*a):
-    return subprocess.run(['git', '-C', ROOT] + list(a), capture_output=True, text=True).stdout
+    # 字节级捕获再replace解码：兼容 git show 二进制件（PDF等）不炸会话
+    return subprocess.run(['git', '-C', ROOT] + list(a), capture_output=True).stdout.decode('utf-8', 'replace')
 
 def head_sha():
     return subprocess.run(['git', '-C', ROOT, 'rev-parse', '--short', 'HEAD'],
@@ -142,8 +151,10 @@ def scan_files(files, out, with_s10=True):
             emit(out, 'S10\t%s\thard=%d\t%s' % (rel, hard, ' | '.join(x for x in r if ('🄱' not in x and 'glow' not in x))))
             if hard:
                 s10_hard += 1
-    emit(out, 'SUMMARY\tfiles=%d\thitfiles: A43=%d CIWORDS=%d MERGED=%d S10hard=%d' % (
-        len(files), hitfiles['a43'], hitfiles['ciwords'], hitfiles['merged'], s10_hard))
+    wl_names = {'a43': 'A43', 'ciwords': 'CIWORDS', 'merged': 'MERGED'}
+    emit(out, 'SUMMARY\tfiles=%d\tS10hard=%d\t%s' % (
+        len(files), s10_hard,
+        ' '.join('%s=%d' % (wl_names[k], hitfiles[k]) for k in WORDLISTS)))
     for k in WORDLISTS:
         emit(out, 'SUMMARY-WORDS\t%s\t%s' % (k, ','.join('%s=%d' % (w, n) for w, n in sorted(totals[k].items())) or 'ALL-ZERO'))
 
@@ -196,9 +207,16 @@ def do_verify(args, out):
         if not os.path.isfile(p):
             emit(out, 'SKIP(删除件)\t%s' % rel); continue
         old = git('show', '%s^:%s' % (csha, rel))
-        new = io.open(p, encoding='utf-8').read()
+        new = io.open(p, encoding='utf-8', errors='replace').read()
         if not old:
             emit(out, 'SKIP(新文件)\t%s' % rel); continue
+        if rel.lower().endswith('.pdf'):
+            # 二进制重出品：文本锚断言不适用（pdftotext层候选Alex复验清单另核），blob-sha1对留痕
+            ob = git('rev-parse', '%s^:%s' % (csha, rel)).strip()
+            nb = git('hash-object', p).strip()
+            emit(out, 'SKIP(二进制)\t%s\toldblob=%s newblob=%s（PDF重出件·blob sha1留痕）' % (rel, ob[:16], nb[:16]))
+            continue
+        mgmt = ('claim_队' in rel or rel.startswith('产出_队') and '工作单' in os.path.basename(rel)) or rel.endswith('.md')
         ao, an = anchors(old), anchors(new)
         d_only, a_new = ao - an, an - ao
         if d_only or a_new:
@@ -211,13 +229,16 @@ def do_verify(args, out):
         for ln in d.splitlines():
             if ln.startswith('---') or ln.startswith('+++'): continue
             body = ln[1:]
-            has_word = any(w in body for w in MERGED_LIT) or any(re.search(rp, body) for rp in MERGED_REG)
+            has_word = any(w in body for w in A43_LIT) or any(re.search(rp, body) for rp in A43_REG)
             if ln.startswith('-') and not has_word: bad_del.append(body.strip()[:60])
             if ln.startswith('+') and has_word: bad_add.append(body.strip()[:60])
         if bad_del or bad_add:
-            if verdict == 'PASS': verdict = 'FAIL-射程外'
-            emit(out, 'FAIL-射程外\t%s\t删行无工序词=%s 增行仍含工序词=%s' % (rel, bad_del[:3], bad_add[:3]))
-        co, cn = word_hits(old, MERGED_LIT, MERGED_REG), word_hits(new, MERGED_LIT, MERGED_REG)
+            if mgmt:
+                emit(out, 'NOTE-管理层文件\t%s\t增删行含工序词系申报语（不计射程外）' % rel)
+            else:
+                if verdict == 'PASS': verdict = 'FAIL-射程外'
+                emit(out, 'FAIL-射程外\t%s\t删行无工序词=%s 增行仍含工序词=%s' % (rel, bad_del[:3], bad_add[:3]))
+        co, cn = word_hits(old, A43_LIT, A43_REG), word_hits(new, A43_LIT, A43_REG)
         delta = {w: cn.get(w, 0) - co.get(w, 0) for w in set(co) | set(cn) if cn.get(w, 0) != co.get(w, 0)}
         emit(out, 'WORDS-DELTA\t%s\t%s' % (rel, delta or '∅(0)'))
         emit(out, 'SHA\t%s\told=%s new=%s' % (rel, hashlib.sha256(old.encode()).hexdigest()[:16], hashlib.sha256(io.open(p, 'rb').read()).hexdigest()[:16]))

@@ -1,0 +1,19 @@
+== VERIFY-COMMIT f14e84b HEAD=2e6e6d5 时点=2026-10-25T13:01:04 改动件=9 ==
+NOTE-管理层文件	claim_队3.md	增删行含工序词系申报语（不计射程外）
+WORDS-DELTA	claim_队3.md	{'工作单': 7, '底本': 1, '实切包': 1, '队7': 1, '队3': 4, 'canonical': 2, '席': 2}
+SHA	claim_队3.md	old=f90628f0a366d65f new=73682560947197a2
+NOTE-管理层文件	claim_队4.md	增删行含工序词系申报语（不计射程外）
+WORDS-DELTA	claim_队4.md	{'工作单': 1, '队4': 6, '升格': 1, 'canonical': 2, '席': 4, '待核': 3}
+SHA	claim_队4.md	old=e75820c3eb274bb5 new=54fc4e24d4a70a6b
+WORDS-DELTA	产出_队3/化学-1.3_化学中的常用物理量物质的量_重制版_队3.md	{'工作单': -1}
+SHA	产出_队3/化学-1.3_化学中的常用物理量物质的量_重制版_队3.md	old=10b625f8256f5e06 new=8fd762a8ac71bb1f
+WORDS-DELTA	产出_队3/化学-3.1_铁的多样性_队3.md	{'工作单': -1}
+SHA	产出_队3/化学-3.1_铁的多样性_队3.md	old=be7ad32d26a06cbc new=1abefd1019b4718e
+SKIP(新文件)	产出_队3/工作单_收线净面_队3_工作单词面3处_C席_1025.md
+SKIP(新文件)	产出_队3/装配_化学必修一_第3章_1024.html
+WORDS-DELTA	产出_队4/切片卡_物理1.1质点参考系_首件_1024.html	{'队4': -2}
+SHA	产出_队4/切片卡_物理1.1质点参考系_首件_1024.html	old=f3c60c3e48818fbf new=a348b5d2ea319646
+SKIP(新文件)	产出_队4/工作单_收线净面_队4_本席自组3处_C席_1025.md
+WORDS-DELTA	产出_队4/物理-实验二.md	{'待核': -1}
+SHA	产出_队4/物理-实验二.md	old=628ea1a197dfc2bd new=3bb713395cf869fe
+VERDICT	PASS	commit=f14e84b
