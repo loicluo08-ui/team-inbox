@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜指数｜真题锚×易错收口（双段版）</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第四章 指数函数与对数函数</span>
+    </div>
+    <h1>4.1 指数</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（讲法锚缺料豁免）</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 4.1 节重制件正本同名在案）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="470" height="26" rx="6" fill="none" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="58" y="31" font-size="12.5" fill="#8a7bb0">讲法锚 · 缺料豁免——无优质公开素材（四查检索留痕见下节）</text>
+          <line x1="118" y1="66" x2="500" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="180" cy="66" r="8" fill="#c2452d"/>
+          <text x="180" y="92" font-size="12" fill="#24292e" text-anchor="middle">运算底座位 · 送分与暗扣并存</text>
+          <text x="180" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">考位行照录 · 出处登记态 · 无卷号真题不虚构</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">分数指数≠除法·2^(1/2)≈1.414</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节无视频锚：双段版＝考位锚＋易错收口两实锚段——本节单独考频低，但是对数题的前置步骤，运算三查（合法域／偶次根出|a|／结果规范）是暗扣分点防线。</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>空槽虚线＝讲法锚缺料豁免（全库四查无优质公开素材，检索留痕见下节，不虚标不硬凑）；红点＝考位锚（本节无具体卷号真题实体，考位行照录·出处登记态，见下表）；方点＝易错收口条。用卡顺序＝正本正文走"根式⇄分数指数互译"主线，再对考位自测（化简求值／符号讨论），最后三查过堂。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 缺料豁免注记<span class="en">检索留痕 · 豁免入账</span></h2>
+      <div class="slice">
+        <span class="tag">讲法锚 · 无优质公开素材（宁缺毋编）</span>
+        <p>本节讲法锚缺料如实申报：全库四查（2026-10-25出品时点·第4章六节同轮全查）无优质公开素材——</p>
+        <p>① 资料溯源总台账_1004.md 全224行，讲法锚层无 §4.1 条目（数学在库已验级仅 T-08/T-09/T-10/T-04 四条＋指针层6条，全数已用于批1/批2在库卡）；② T-05盘点24簇 · 簇⑭指数运算域无已验讲法实体；③ v18原册_数学.html 册尾锚点附录6条全数已用于在库卡，零余量；④ 池全量清单数学6条BV全数已用于在库卡（1.2/2.1/2.2/2.3/3.1/3.2），零未用；⑤ 1025新增全量检索无命中。</p>
+        <p>豁免入账：按"缺段豁免注记"口径出品——讲法锚段缺位不虚构不硬凑；考位锚与易错收口两段实锚在库齐备，本卡以双段形态入账。候讲法锚补池有实体后，本卡沿 3.1/3.2 卡先例补挂讲法锚段成三段版（本卡字段全保留零造，新增不覆盖）。正本正文承担讲法位：本节讲法路径＝在库 4.1 节重制件正本"根式⇄分数指数幂互译＋运算法则（a&gt;0合法域）"主线（自读替代视频位）。</p>
+        <div class="meta">检索留痕＝上述四查留痕均可回溯（台账/盘点/册尾附录/池清单均为在库件，路径可查）｜缺段豁免注记 · 豁免入账｜宁缺毋编铁律口径</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考考位锚<span class="en">考位行照录 · 出处登记态</span></h2>
+      <table>
+        <thead>
+          <tr><th>登记位</th><th>内容（正本考位行照录）</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>考频定级</td>
+            <td>低（单独）｜运算能力底座【讲解归纳·经验判断】——本节无具体卷号真题实体在库，宁缺毋编不虚构卷号；常作为对数题的<b>前置步骤</b>出现（先化简再取对数），暗扣分点密度高于显性分值</td>
+          </tr>
+          <tr>
+            <td>考位①</td>
+            <td>根式与分数指数互化、幂的混合运算化简求值（选填送分题为主）——互译等价一桥过：ⁿ√(aᵐ)=a^(m/n)（a&gt;0合法域内双向通行）</td>
+          </tr>
+          <tr>
+            <td>考位②</td>
+            <td>偶次根出绝对值的符号讨论（√((3−π)⁴)型，暗扣分点）——3−π&lt;0，√((3−π)⁴)=(π−3)²：底为负先翻号，直接脱根号当场失分</td>
+          </tr>
+          <tr>
+            <td>考位③</td>
+            <td>对数题前置步骤（先化简再取对数）——4.3/4.4 联考时本节运算质量直接决定对数题成败，回指卡：4.3 对数</td>
+          </tr>
+          <tr>
+            <td>考位④</td>
+            <td>周期切分类应用以小计算渗透（分数指数与周期结构联袂的小题位）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 4.1 节重制件正本L30（"怎么考"考位行·照录）。候卷源直读线回填具体卷号题干后升级四要素实锚（同 1.4/3.1 卡先例）。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 分数指数当除法——2^(1/2)写成1</span>
+        <p><b class="punch">a^(1/2)是"乘半次"＝√a，不是 a÷2——"1/2"这个记号在分数世界太熟，抄起来就除。</b>症状：把 a^(1/2) 算成 a/2（2^(1/2)写成1）；2^(3/2) 算成 2³÷2=4（先乘后除）。错因：指数 m/n 里的"/n"触发了分数除法语感——分数指数幂整体是一层记号，不是"幂再除法"两层动作。</p>
+        <p><b>钉死动作</b>：a^(m/n)=(ⁿ√a)ᵐ 整体读，先立"指数=乘几分之几次"的语义；自检报警器：2^(1/2)≈1.414、2^(3/2)=√8≈2.83≠4——算出整数立即回查。同族守闸：混算第一步先声明字母为正（负底数奇偶分开讨论，不同时套两个法则）。维持机制："'1/2'记号的分数语感太强，法则'适用前提'一栏从没进过眼睛"。</p>
+        <p class="src">源：在库 4.1 节重制件正本易错卡表首行（本节6条之首·照录）。本节另有高频条目（偶次根出|a|三查第一查／0⁰约定与待定型两层次／结果规范三件套）同源正本在案，考前一并过。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 4.1 节重制件正本正文，把"互译等价＋a&gt;0合法域"两闸写在草稿顶端——根式与分数指数是一座桥的两头，混算前提永远先声明。</li>
+        <li>自测考位②：√((3−π)⁴)——底 3−π&lt;0，偶次根出 |3−π|=π−3，结果 (π−3)²。暗扣分点当场过一遍。</li>
+        <li>易错三查过堂：合法域声明了吗（a&gt;0）？偶次根出|a|了吗？交卷前结果规范三件套（正指数／最简分式／底数不含根号）了吗——2^(−1/2)→√2/2，³√(x²)→x^(2/3)。</li>
+        <li>回 4.3/4.4 节件：本节是对数与对数函数的运算底座——对数题"先化简再取对数"，本节质量决定下游成败；4.2 学完指数函数后回填"指数位碾压底数位"的增长直觉。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：考位锚=在库 4.1 节重制件正本L30（考位行·照录·出处登记态·无卷号真题不虚构）；易错=同正本易错卡表首行照录。讲法锚=缺料豁免（四查检索留痕见"讲法锚点"节：台账/T-05/册尾附录/池清单/1025检索，2026-10-25出品时点·第4章六节同轮全查）。<b>证据状态申报</b>：本卡＝双段版（考位锚＋易错收口实锚在库·讲法锚缺料豁免注记·豁免入账）——无视频锚、无?t=参数、零代拟字段。本卡与在库 4.1 节重制件正本互为镜像：节件管"读"，本卡管"测与收"。
+  </div>
+
+</div>
+</body>
+</html>

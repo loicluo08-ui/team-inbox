@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜集合的概念｜讲法锚×真题锚×易错收口（三段版）</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+        border-radius:999px; padding:3px 12px;}
+  .head h1{font-size:26px; font-weight:700; letter-spacing:.02em;}
+  .kicker{margin-top:6px; font-size:13px; opacity:.92; letter-spacing:.04em;}
+  .anchor-line{margin-top:10px; font-size:12.5px; opacity:.85; font-family:"SF Mono",Consolas,monospace;}
+  .body{padding:6px 28px 20px;}
+  section{padding:18px 0 6px;}
+  section + section{border-top:1px dashed var(--line);}
+  h2{font-size:17px; font-weight:700; color:var(--accent-deep); margin-bottom:10px; display:flex; align-items:baseline; gap:10px;}
+  h2 .en{font-size:11px; color:var(--sub); font-weight:400; letter-spacing:.12em; text-transform:uppercase;}
+  .svgwrap{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 10px 6px; margin-bottom:10px;}
+  .svgwrap figcaption{font-size:12px; color:var(--sub); text-align:center; padding:6px 8px 8px;}
+  .slice{background:var(--accent-soft); border-left:4px solid var(--accent); border-radius:0 10px 10px 0; padding:14px 16px;}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:600; color:var(--accent-deep);
+        background:#fff; border:1px solid var(--accent); border-radius:999px; padding:2px 10px; margin-bottom:8px;}
+  .slice p{margin:6px 0;}
+  .slice a{color:var(--accent-deep); font-weight:600; text-decoration:none; border-bottom:1px dashed var(--accent);}
+  .quote{background:#fff; border:1px dashed var(--accent); border-radius:8px; padding:10px 12px;
+        font-size:13.5px; color:#4a4256; margin:8px 0;}
+  .meta{font-size:12px; color:var(--sub); border-top:1px solid rgba(109,63,212,.25); margin-top:8px; padding-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; margin:8px 0;}
+  th,.th{background:var(--wash); font-weight:600; text-align:left;}
+  th,td{border:1px solid var(--line); padding:7px 10px; vertical-align:top;}
+  .errcard{background:#fdf6f6; border:1px solid #e8c8c8; border-left:4px solid #c0392b; border-radius:0 10px 10px 0; padding:13px 16px;}
+  .errcard b.sym{color:#a93226;}
+  .errcard p{margin:5px 0; font-size:14px;}
+  .errcard .src{font-size:12px; color:var(--sub); margin-top:6px;}
+  .steps{counter-reset:s; list-style:none;}
+  .steps li{counter-increment:s; position:relative; padding:8px 0 8px 40px; border-bottom:1px dotted var(--line);}
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{content:counter(s,decimal-leading-zero); position:absolute; left:0; top:9px;
+        width:26px; height:26px; border-radius:8px; background:var(--accent); color:#fff;
+        font-size:12.5px; font-weight:700; display:flex; align-items:center; justify-content:center;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:14px 28px; font-size:12px; color:var(--sub); line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第一章 集合与常用逻辑用语</span><span class="chip">切片卡 · 三段版</span>
+    </div>
+    <h1>1.1 集合的概念</h1>
+    <div class="kicker">讲法锚 · 真题锚 · 易错收口 —— 高考首题的检验功底，从这一节的判定语言开始</div>
+    <div class="anchor-line">节件镜像：在库 1.1 节重制件正本（本卡管"测与收"，节件管"读"）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <h2>本节串联图（文字版）<span class="en">how to read</span></h2>
+      <figure class="svgwrap">
+        <svg viewBox="0 0 700 150" width="100%" role="img" aria-label="锚点布局图">
+          <defs>
+            <marker id="ah" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+              <path d="M0,0 L7,3.5 L0,7 Z" fill="#5f6b76"/>
+            </marker>
+          </defs>
+          <rect x="14" y="34" width="200" height="64" rx="10" fill="#efe9fc" stroke="#8b5cf6" stroke-width="1.5"/>
+          <text x="114" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#6d3fd4">讲法锚点 · 视频位</text>
+          <text x="114" y="80" text-anchor="middle" font-size="12" fill="#5f6b76">一数 · 含参元素判定（203s→263s）</text>
+          <rect x="252" y="34" width="196" height="64" rx="10" fill="#fdf3e3" stroke="#8a6d1f" stroke-width="1.5"/>
+          <text x="350" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#8a6d1f">高考真题锚</text>
+          <text x="350" y="80" text-anchor="middle" font-size="12" fill="#5f6b76">2024新高考Ⅰ卷T1 · 元素检验</text>
+          <rect x="486" y="34" width="200" height="64" rx="10" fill="#fdf6f6" stroke="#c0392b" stroke-width="1.5"/>
+          <text x="586" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#a93226">易错收口</text>
+          <text x="586" y="80" text-anchor="middle" font-size="12" fill="#5f6b76">{0} 与 ∅ 层级 · 先看外层装什么</text>
+          <line x1="214" y1="66" x2="252" y2="66" stroke="#5f6b76" stroke-width="1.5" marker-end="url(#ah)"/>
+          <line x1="448" y1="66" x2="486" y2="66" stroke="#5f6b76" stroke-width="1.5" marker-end="url(#ah)"/>
+          <text x="350" y="128" text-anchor="middle" font-size="12" fill="#5f6b76">听懂概念 → 会做首题 → 不掉层级陷阱，三段一线</text>
+        </svg>
+        <figcaption>三段串联：概念判定语言（讲法锚）→ 离散候选逐个过检（真题锚）→ 花括号层级纪律（易错收口）</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频锚</span></h2>
+      <div class="slice">
+        <span class="tag">名讲片段 · 秒级可跳</span>
+        <p><b>「集合题型拆解讲法」</b>——UP主：一数（播放1858248·在册时点注记），<a href="https://www.bilibili.com/video/BV1h2pEzVEHm?t=203" target="_blank">BV1h2pEzVEHm</a>，3:23 → 4:23（1分整）。</p>
+        <p><b>讲法互补注（在册照录）</b>：含参集合元素判定——把 1.1"元素与集合关系＋描述法确定性"落到含参验算题型；与节件正文互补（正文讲概念与判定语言，本片讲含参题怎么下手）。</p>
+        <div class="meta">锚点=203s→263s｜溯源=资料溯源总台账_1004.md L9 在册（指针层三源实锤：v18数学册册尾anchors-appendix＋v18 PDF p61＋台账L9，10-23彻查复核在案）｜<b>证据状态申报</b>：指针层在册·片段引文缺位如实申报（宁缺毋编不代拟）·片级核验未做候核验线沿在库先例，不阻塞使用——引文以节件正文为准，本锚管"怎么下手"。</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en"> exam anchor </span></h2>
+      <table>
+        <tr><th style="width:96px">卷别·题号</th><td><b>2024年新高考Ⅰ卷 · 第1题</b>（原卷核对·正本在案）</td></tr>
+        <tr><th>题干（照录）</th><td>已知集合 A={x｜−5&lt;x³&lt;5}，B={−3,−1,0,2,3}，则 A∩B=？</td></tr>
+        <tr><th>官方答案</th><td>A∩B={−1,0}（逐个过检：−1、0 满足 −5&lt;x³&lt;5；−3、2、3 不满足）</td></tr>
+        <tr><th>考位</th><td>元素检验（离散候选＋连续条件⟹逐个代入验，不是解不等式）——<b>集合首题连续两年出现</b>（2024单1／2025单2【一手·真题统计】）；2025单2补集元素个数位由 1.3 卡承实锚，两卡各持一题不重复</td></tr>
+      </table>
+      <p style="font-size:12.5px;color:var(--sub)">概念层辨析小题（{0}与∅、代表元三写法）为选填常客考位（节件L30考位行照录·出处登记态），暂无具体卷号实体在库——宁缺毋编不虚构。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">trap fix</span></h2>
+      <div class="errcard">
+        <p><b class="sym">症状</b>：0∈∅ 打勾；把 {0} 当成空集；A={x｜x&gt;−1} 这类题里选"{0}∈A"。</p>
+        <p><b class="sym">错因</b>：只看"空/不空"的语感，不看外层集合里<b>装的是什么</b>——{0} 里装的是数0，{0,{0}} 里装的是两个元素（0 和 {0} 这个集合）。</p>
+        <p><b class="sym">维持机制</b>：日常语言"空=什么都没有"的惯性迁移；∅∈{∅}、{0}∈{0,{0}} 这类"集合装集合"的写法初一从未见过，大脑默认拒绝执行。</p>
+        <p><b class="sym">钉死</b>：口令"<b>先看外层装的是什么</b>"。判定链照录：0∈{0}✓；{0}∈{0,{0}}✓（外层装了0和{0}两样）；∅∈{∅}✓（外层装了∅这一样）；0∈∅✗（∅里什么都没有）——{0}是集合不是数，所以它进不了装数的A。</p>
+        <p class="src">源：在库 1.1 节重制件正本易错卡表首行（本节4张之首·照录）。卡②"代表元三兄弟"（{x｜y=x²}/{y｜y=x²}/{(x,y)｜y=x²}三集合互异）同源在案，考前一并过。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 1.1 节重制件正本正文，把"判定机器"语言写在草稿顶端：描述法 {x｜条件} 的竖线右边是一台判定机器——任何候选对象只有一个动作，<b>代进去过检</b>。</li>
+        <li>自测真题位（2024新高考Ⅰ卷T1同型）：拿到 B={−3,−1,0,2,3}，逐个代 −5&lt;x³&lt;5——(−3)³=−27✗、(−1)³=−1✓、0³=0✓、2³=8✗、3³=27✗，收 {−1,0}。全程没有图像没有解不等式。</li>
+        <li>易错三问过堂：外层装的是什么（{0}里是数0）？∅∈{∅}为什么✓（外层装了∅这一样）？{0}∈A里的A装的是数还是集合？——花括号每见一次问一遍。</li>
+        <li>回 1.3 节件：本卡真题里的"∩"符号正式定义在 1.3——高考把 1.3 的符号放在第 1 题，考的其实是 1.1 的检验功底；学完 1.3 回看本卡，交集语言补全。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：讲法锚=资料溯源总台账_1004.md L9 在册照录（指针层·片段引文缺位如实申报不代拟·片级核验候核验线）；真题锚=在库 1.1 节重制件正本例2（2024年新高考Ⅰ卷·第1题·原卷核对·题干照录级）＋L30考位行照录；易错=同正本易错卡表首行照录。<b>证据状态申报</b>：本卡＝三段版（讲法锚指针层在册＋真题锚实锚在案＋易错收口实锚在案）——BV实链与秒参数为在库md卡同构转装，UP主/播放量/秒段/BV/题名零自填；本卡与在库 1.1 节重制件正本互为镜像：节件管"读"，本卡管"测与收"。
+  </div>
+
+</div>
+</body>
+</html>
