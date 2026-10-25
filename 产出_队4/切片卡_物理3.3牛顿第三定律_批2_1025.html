@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜3.3 牛顿第三定律｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+         border-radius:20px; padding:1px 10px; margin-right:6px; font-size:11.5px;}
+  section{padding:18px 28px; border-top:1px solid var(--line);}
+  section h2{font-size:15px; color:var(--accent); letter-spacing:1px; margin-bottom:10px;}
+  .section-note{font-size:12.5px; color:var(--sub); margin-bottom:10px;}
+  .svgwrap{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:12px 10px 6px;}
+  .readhow{font-size:13px; color:var(--ink); background:var(--accent-soft); border-left:3px solid var(--accent);
+           border-radius:6px; padding:8px 12px; margin-top:10px;}
+  .readhow b{color:var(--accent);}
+  .layer{margin-bottom:16px;}
+  .lt{font-weight:700; font-size:13.5px; margin-bottom:6px;}
+  .lt span{font-weight:400; font-size:12px; color:var(--sub);}
+  table.sl{width:100%; border-collapse:collapse; font-size:12.8px;}
+  table.sl th{background:var(--accent-soft); color:var(--accent); text-align:left; padding:6px 9px; border:1px solid var(--line); font-size:12px;}
+  table.sl td{padding:6px 9px; border:1px solid var(--line); vertical-align:top;}
+  table.sl td.ts{white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--gold); font-weight:700;}
+  .quote{background:var(--wash); border:1px dashed var(--line); border-radius:8px; padding:7px 11px;
+         font-size:12.8px; margin-top:7px; color:#33404d;}
+  .quote .qsrc{color:var(--sub); font-size:11.5px;}
+  ul.gk{list-style:none; font-size:13.3px;}
+  ul.gk li{position:relative; padding:3px 0 3px 26px;}
+  ul.gk li::before{content:"◆"; position:absolute; left:12px; color:var(--accent); font-size:11px; top:9px;}
+  ul.gk li b{color:var(--accent);}
+  .ec{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .eccard{border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--paper);}
+  .eccard .et{font-weight:900; font-size:13.5px; color:#a33d2e; margin-bottom:4px;}
+  .eccard p{font-size:12.8px; color:var(--ink);}
+  .eccard .es{font-size:11.5px; color:var(--sub); margin-top:5px; border-top:1px dashed var(--line); padding-top:4px;}
+  ol.steps{padding-left:22px; font-size:13.5px;}
+  ol.steps li{margin-bottom:6px;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:14px 28px;
+        font-size:12px; color:var(--sub); line-height:1.8;}
+  .punch{color:#a33d2e; font-weight:700;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 讲法锚点</div>
+    <h1>3.3 牛顿第三定律<span style="font-size:13px; font-weight:400; opacity:.85;">｜第三章 相互作用——力</span></h1>
+    <div class="meta">
+      <span class="badge">双段卡 · 讲法锚段缺如实申报</span><span class="badge">真题锚 册内照录级（2021广东卷曲辕犁辨析）</span>
+      <br>册内簇14前半字段块照录 · 直读卷源0覆盖如实申报 · 宁缺毋编
+    </div>
+  </div>
+
+  <section>
+    <h2>成对交互四步闸（走一遍就锁死）</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 740 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="成对交互四步闸">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2b5a8c"/>
+          </marker>
+        </defs>
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+          <rect x="8"   y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="200" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="392" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="584" y="30" width="148" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <text x="87"  y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸① 定对象（谁对谁）</text>
+          <text x="279" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸② 五关键词过账</text>
+          <text x="471" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸③ 同体异体辨析</text>
+          <text x="658" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸④ 永不抵消</text>
+          <text x="87"  y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">每画一个力先标"作用在谁身上"</text>
+          <text x="87"  y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">A对B 与 B对A 是两笔账</text>
+          <text x="87"  y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">不存在的力不能凭空画</text>
+          <text x="279" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">等大｜反向｜共线｜异体</text>
+          <text x="279" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">同生同灭同性质</text>
+          <text x="279" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">异体=灵魂条款</text>
+          <text x="471" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">异体成对＝作用反作用</text>
+          <text x="471" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">同体等大反向＝平衡力</text>
+          <text x="471" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">同体才谈"抵消"</text>
+          <text x="658" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">异体对各自产生各自效果</text>
+          <text x="658" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">判断运动看"自己受的合力"</text>
+          <text x="658" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">马拉车实战版</text>
+          <line x1="168" y1="76" x2="196" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="360" y1="76" x2="388" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="552" y1="76" x2="580" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="370" y="150" text-anchor="middle" font-size="11.5" fill="#5b6773">五关键词＝"与二力平衡的区分"（高考第一辨析点）的判据链</text>
+        </g>
+      </svg>
+      <div class="readhow"><b>怎么读这张图：</b>顺着闸①→闸④走——先对每一个力问"谁对谁"把对象钉死（闸①），再过五关键词账：等大、反向、共线、异体、同生同灭同性质（闸②），然后做同体异体辨析——异体成对才是作用反作用、同体等大反向是平衡力（闸③），最后记住异体对永不抵消、各自产生各自的效果，判断一个物体怎么动永远看"它自己受的合力"（闸④）。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>真题锚（册内照录级 · 直读0覆盖如实申报）</h2>
+    <div class="layer">
+      <div class="lt">2021年广东省普通高中学业水平选择性考试·物理（曲辕犁辨析） <span>（册内⑪-2易错素材照录·跨簇⑪⑭·卷号题号册内未载如实注记）</span></div>
+      <div class="quote">C项「曲辕犁匀速前进时，耕索对犁的拉力小于犁对耕索的拉力」；D项「直辕犁加速前进时，耕索对犁的拉力大于犁对耕索的拉力」<span class="qsrc">（v18原册⑪-2照录·选项原文）</span></div>
+      <table class="sl">
+        <tr><th>册内判读照录（非卡面代拟）</th><th>考点登记</th></tr>
+        <tr><td>耕索对犁的拉力与犁对耕索的拉力＝作用力与反作用力，永远等大反向（与匀速/加速无关）；「曲辕犁省力」真实机理：F与竖直方向夹角更小→竖直分力更大（入土更深、起土效果好），水平分力更小（牛受的横向负担更轻）——口诀：作用反作用，等大共生死，加速匀速都不改；「省力」省在分力巧，不是拉力真的小</td><td>牛三异体等大不随工况变（本节承载域）＋分力结构随夹角变（⑪域·3.5分解联合承载·跨节注记）</td></tr>
+      </table>
+      <div class="quote">直读卷源线：2023山东卷T1-T18全卷题位清点（10-25·卷面p2-p8七页sha留痕入仓）＝牛顿第三定律无直接配题→直读真题锚0覆盖如实申报，宁缺毋编；扩卷源候直读扩量工单，不代拟不虚标。<span class="qsrc">（0覆盖申报行·与2.3/2.4卡同口径）</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>讲法锚段（缺段豁免注记 · 如实申报）</h2>
+    <div class="layer">
+      <div class="lt">本段缺 <span>（宁缺毋编·不硬凑）</span></div>
+      <table class="sl">
+        <tr><th>申报项</th><th>实况（照实登记）</th></tr>
+        <tr><td>册内层</td><td>v18物理册全量检索：簇14前半（牛三半簇）无"讲法锚点·切片装配"模块（册内该模块仅簇08-13域：弹力/摩擦/合成/受力/牛二）</td></tr>
+        <tr><td>池内层</td><td>放量池无本节字幕级已验切片（台账+池单全量检索零命中）</td></tr>
+        <tr><td>新采层</td><td>B站侧新采已启动（agent-browser·限速错峰）：候选已登记池单——北大学长跳跳《42.牛顿第三定律》BV1RG4y1b7uS（与在库牛一 BV1gd4y1y7V2 同UP同系统课家族）probe实测2026-10-25：CC字幕轨0条——字幕轨0条→引文照录不可得→按双段卡口径缺段豁免注记，候whisper转写线入池后补段</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 4条）</h2>
+    <ul class="gk">
+      <li><b>平衡力与作用反作用的辨析</b>——选择题高频（判据：异体成对 vs 同体等大反向）。</li>
+      <li><b>连接体整体-隔离组合</b>——P4大题主干结构，内外两套受力靠第三定律对齐（A对B＝B对A的反）。</li>
+      <li><b>火箭反冲原理</b>——作用反作用成对存在且异体，与"真空"无关（选择性必修回收的伏笔）。</li>
+      <li><b>受力分析的底层合法性</b>——敢画支持力、拉力的依据全在这条定律（画的是"对方给你的那份"）。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="ec">
+      <div class="eccard">
+        <div class="et">① "作用力与反作用力互相平衡（抵消）"</div>
+        <p>异体力永不抵消——平衡只讨论同一物体上的力。纠偏动作：每画一个力先标"作用在谁身上"，跨体不合并。</p>
+        <div class="es">源：v18簇14常见误解①照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">② "马拉车前进，说明马拉车的力大于车拉马的力"</div>
+        <p>两力等大（第三定律，永远）；车加速是因为拉力＞车受的地面摩擦。纠偏动作：把"比较对象"换成"车自己受的合力"。</p>
+        <div class="es">源：v18簇14常见误解②＋易错现场照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">③ "两队互拉，队A对绳与队B对绳是作用反作用"</div>
+        <p>两力作用在同一根绳上（同体），绳平衡时是平衡力；作用反作用是"各队与绳"之间成对。纠偏动作：先数作用对象再归类。</p>
+        <div class="es">源：v18簇14例1②辨析照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">④ "加速前进时耕索的拉力更大"</div>
+        <p>作用反作用等大与匀速/加速无关；"省力"省在分力结构。纠偏动作：区分"拉力本身"与"分力效果"两本账。</p>
+        <div class="es">源：v18⑪-2易错素材照录（跨簇⑪⑭·与3.5分解联合承载）</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>秒答自测（册内最小验证照录）</h2>
+    <table class="sl">
+      <tr><th>问</th><th>答（照录）</th></tr>
+      <tr><td>判断对错并说理："火箭在太空中加速飞行，是因为喷出的燃气推火箭，而火箭没有推燃气——反作用力在真空中不存在。"</td><td>错。火箭向后喷燃气（作用），燃气以等大反向的力推火箭（反作用）——作用反作用成对存在且异体，与"真空"无关；"真空里没有东西可蹬"是直觉残留，第三定律不需要第三者介质。</td></tr>
+      <tr><td>拔河僵持时：绳对甲的拉力与甲对绳的拉力？甲受的重力与地面对甲的支持力？各是什么关系？</td><td>绳↔甲＝作用反作用（异体成对）；重力与支持力同作用在甲上＝平衡力（甲静止）。判据两条：异体成对（作用反作用）vs 同体等大反向（平衡力）；性质相同是作用反作用的附加特征。</td></tr>
+      <tr><td>两队拔河僵持，绳上张力两边怎么算？胜负由什么决定？</td><td>绳上张力两边等大；两队各自受地面摩擦决定胜负——胜负在脚下不在手上。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出"等大、反向、共线、异体、同生同灭同性质"五关键词与"与二力平衡的区分"两处。</li>
+      <li>四步闸自测：随手指一对力，30秒走完四闸（定对象→五关键词→同体异体→永不抵消）。</li>
+      <li>真题锚回放：读曲辕犁C/D两项→先自己判→对照册内判读照录与口诀。</li>
+      <li>考前扫易错卡：默写"异体不抵消""马拉车看合力""同体才是平衡力""拉力不随加速变大"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：真题锚＝v18原册_物理.html ⑪-2易错素材照录（2021广东卷曲辕犁C/D两项判读＋口诀·卷号题号册内未载如实注记·卷源直读候扩量）；直读线＝2023山东卷T1-T18全卷题位清点（10-25·卷面p2-p8七页sha留痕入仓，直读证据_2023山东物理卷目录·sdwl02=b32636484347befe/sdwl03=4ef61d7a09e36a96/sdwl09=a96602953ea0b941等·本件全程未触B站域采集）＝牛三0覆盖如实申报；册内照录＝v18原册_物理.html 簇14前半（牛三半簇：一句话本质/完整展开五关键词与平衡辨析铁律/常见误解①②/最小验证③/例1四连辨/易错现场/快问快答2/深度追问马拉车）字段块，节域注记＝簇14后半（超重失重/连接体）由第4章表接管（跨节承载如实注记）；节名＝第三章装配页§3.3节标"3.3 牛顿第三定律"照录；讲法锚段缺段申报与池候选登记详见随件池候选登记单（B站probe实测2026-10-25·全程≥30s错峰）；机检词面替换1处留痕（v18高考接口一处原词按状态词表口径改写为"主干结构"·语义零变·原词随件登记单留档）。本卡与3.5卡衔接：本节管"力从哪来"（成对交互合法性），3.5管"力怎么拆"（正交分解流水线）——曲辕犁素材两卡共享照录（跨节注记）。
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜3.5 力的分解｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+         border-radius:20px; padding:1px 10px; margin-right:6px; font-size:11.5px;}
+  section{padding:18px 28px; border-top:1px solid var(--line);}
+  section h2{font-size:15px; color:var(--accent); letter-spacing:1px; margin-bottom:10px;}
+  .section-note{font-size:12.5px; color:var(--sub); margin-bottom:10px;}
+  .svgwrap{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:12px 10px 6px;}
+  .readhow{font-size:13px; color:var(--ink); background:var(--accent-soft); border-left:3px solid var(--accent);
+           border-radius:6px; padding:8px 12px; margin-top:10px;}
+  .readhow b{color:var(--accent);}
+  .layer{margin-bottom:16px;}
+  .lt{font-weight:700; font-size:13.5px; margin-bottom:6px;}
+  .lt span{font-weight:400; font-size:12px; color:var(--sub);}
+  table.sl{width:100%; border-collapse:collapse; font-size:12.8px;}
+  table.sl th{background:var(--accent-soft); color:var(--accent); text-align:left; padding:6px 9px; border:1px solid var(--line); font-size:12px;}
+  table.sl td{padding:6px 9px; border:1px solid var(--line); vertical-align:top;}
+  table.sl td.ts{white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--gold); font-weight:700;}
+  .quote{background:var(--wash); border:1px dashed var(--line); border-radius:8px; padding:7px 11px;
+         font-size:12.8px; margin-top:7px; color:#33404d;}
+  .quote .qsrc{color:var(--sub); font-size:11.5px;}
+  ul.gk{list-style:none; font-size:13.3px;}
+  ul.gk li{position:relative; padding:3px 0 3px 26px;}
+  ul.gk li::before{content:"◆"; position:absolute; left:12px; color:var(--accent); font-size:11px; top:9px;}
+  ul.gk li b{color:var(--accent);}
+  .ec{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .eccard{border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--paper);}
+  .eccard .et{font-weight:900; font-size:13.5px; color:#a33d2e; margin-bottom:4px;}
+  .eccard p{font-size:12.8px; color:var(--ink);}
+  .eccard .es{font-size:11.5px; color:var(--sub); margin-top:5px; border-top:1px dashed var(--line); padding-top:4px;}
+  ol.steps{padding-left:22px; font-size:13.5px;}
+  ol.steps li{margin-bottom:6px;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:14px 28px;
+        font-size:12px; color:var(--sub); line-height:1.8;}
+  .punch{color:#a33d2e; font-weight:700;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 讲法锚点</div>
+    <h1>3.5 力的分解<span style="font-size:13px; font-weight:400; opacity:.85;">｜第三章 相互作用——力</span></h1>
+    <div class="meta">
+      <span class="badge">双段卡 · 讲法锚段缺如实申报</span><span class="badge">真题锚 直读0覆盖如实申报</span>
+      <br>册内簇11后半字段块照录 · 正交分解四步流水线 · 宁缺毋编
+    </div>
+  </div>
+
+  <section>
+    <h2>正交分解四步流水线（走一遍就锁死）</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 740 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="正交分解四步流水线">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2b5a8c"/>
+          </marker>
+        </defs>
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+          <rect x="8"   y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="200" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="392" y="30" width="158" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="584" y="30" width="148" height="92" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <text x="87"  y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸① 选对象画受力</text>
+          <text x="279" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸② 建轴策略</text>
+          <text x="471" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸③ 邻cos对sin拆分</text>
+          <text x="658" y="54" text-anchor="middle" font-size="12" fill="#8a6d1f" font-weight="700">闸④ 每轴列方程</text>
+          <text x="87"  y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">每个力问"谁施加、什么性质"</text>
+          <text x="87"  y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">一重二接触，不漏不多</text>
+          <text x="87"  y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">合力分力二选一画</text>
+          <text x="279" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">让尽可能多的力落在轴上</text>
+          <text x="279" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">斜面沿斜面/垂直斜面</text>
+          <text x="279" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">悬挂用水平/竖直</text>
+          <text x="471" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">与轴夹角θ：沿轴=F·cosθ</text>
+          <text x="471" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">垂直轴=F·sinθ</text>
+          <text x="471" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">分量必带符号</text>
+          <text x="658" y="76" text-anchor="middle" font-size="11.5" fill="#1f242b">沿轴代数和=0（平衡）</text>
+          <text x="658" y="95" text-anchor="middle" font-size="11.5" fill="#1f242b">或=ma（动力学·第4章启用）</text>
+          <text x="658" y="114" text-anchor="middle" font-size="10.5" fill="#5b6773">两轴独立记账</text>
+          <line x1="168" y1="76" x2="196" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="360" y1="76" x2="388" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="552" y1="76" x2="580" y2="76" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="370" y="150" text-anchor="middle" font-size="11.5" fill="#5b6773">两轴独立记账的合法性＝正交性本身（垂直⇒任一分量在另一轴投影为零）</text>
+        </g>
+      </svg>
+      <div class="readhow"><b>怎么读这张图：</b>顺着闸①→闸④走——先把研究对象的所有力画全（每个力问"谁施加、什么性质"，合力分力二选一），再按"让尽可能多的力落在轴上"的策略建坐标轴（斜面沿斜面/垂直斜面，悬挂水平/竖直），然后不在轴上的力按"邻cos对sin"拆分（沿轴=F·cosθ、垂直轴=F·sinθ，分量带符号），最后每条轴独立列方程：沿轴代数和=0（平衡）或=ma（动力学）。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>真题锚（直读0覆盖如实申报）</h2>
+    <div class="layer">
+      <div class="lt">直读卷源线 <span>（2023山东卷T1-T18清点·分解无配题·宁缺毋编）</span></div>
+      <table class="sl">
+        <tr><th>申报项</th><th>实况（照实登记）</th></tr>
+        <tr><td>直读卷源</td><td>2023山东卷T1-T18全卷题位清点（10-25·卷面p2-p8七页sha留痕入仓）＝力的分解无直接配题→直读真题锚0覆盖如实申报；扩卷源（其他年份卷）候直读扩量工单，不代拟不虚标</td></tr>
+        <tr><td>册内照录</td><td>v18原册⑪-2易错素材（2021广东卷曲辕犁C/D两项·作用反作用等大＋分力结构判读＋口诀）已由3.3卡真题锚段全量照录（跨节共享注记），本卡易错卡④承接口诀侧——两卡零重复申报</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>讲法锚段（缺段豁免注记 · 如实申报）</h2>
+    <div class="layer">
+      <div class="lt">本段缺 <span>（宁缺毋编·不硬凑）</span></div>
+      <table class="sl">
+        <tr><th>申报项</th><th>实况（照实登记）</th></tr>
+        <tr><td>册内层</td><td>v18物理册全量检索：簇11"讲法锚点·切片装配"模块仅合成域两片（黄夫人《12.力的合成取值范围》BV16b411c7op 00:52→08:32·由3.4卡承载），分解半域无切片装配模块</td></tr>
+        <tr><td>池内层</td><td>放量池无本节字幕级已验切片（台账+池单全量检索零命中）</td></tr>
+        <tr><td>新采层</td><td>B站侧新采已启动（agent-browser·限速错峰）：三候选已登记池单——北大学长跳跳《48.力的分解》BV1FW4y1x73T／黄夫人《13.【高中物理必修一】【力学】力的分解情况》BV1rb411c7FZ／一物儿《力的分解总出错？正交分解》BV1XezpYxE3c——probe实测2026-10-25：CC字幕轨均0条——字幕轨0条→引文照录不可得→按双段卡口径缺段豁免注记，候whisper转写线入池后补段</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 4条）</h2>
+    <ul class="gk">
+      <li><b>合力范围与最小值</b>——选择题：三力平衡中某力的最小值＝与另两力合力等大反向。</li>
+      <li><b>正交分解</b>——受力分析与动力学大题的必经工序（每条轴独立列方程）。</li>
+      <li><b>动态平衡图解法</b>——矢量三角形缩放：一力恒定、一力方向恒定、一力变向，画"圆弧上滑动"看长短变化。</li>
+      <li><b>三力平衡封闭三角形</b>——三力首尾相接成封闭三角形（或共点汇交为零），"力三角形"是解平衡题的快刀。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="ec">
+      <div class="eccard">
+        <div class="et">① "合力一定大于分力"</div>
+        <p>范围是|F₁−F₂|~F₁+F₂，可以小于小分力甚至为零（等大反向）；两等大力夹角＞120°时合力小于分力。纠偏动作：背"夹角越大合力越小"＋范围不等式。</p>
+        <div class="es">源：v18簇11常见误解①＋快问快答6照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">② "受力分析图里把合力也画上"</div>
+        <p>合力是等效替换体，与分力互斥——图上画了分力又画合力＝同一笔账记两遍（重复计力，高考第一大陷阱）。纠偏动作：画图前声明"用分力体系还是合力体系"，全图统一。</p>
+        <div class="es">源：v18簇11常见误解②＋易错现场照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">③ "正交分解随便选轴都一样省事"</div>
+        <p>物理结论一样，计算量天差地别。纠偏动作：默认策略"让多数力沿轴"——斜面沿斜面/垂直斜面，悬挂用水平/竖直。</p>
+        <div class="es">源：v18簇11常见误解③照录</div>
+      </div>
+      <div class="eccard">
+        <div class="et">④ "一个力只有一种分法"</div>
+        <p>分解有无穷多种，按"效果"或"解题需要"选择——斜面上重力常拆为沿面/压面两分量（对应下滑效果与压紧效果）。纠偏动作：先问"我要这两分量去喂哪两个方程"。</p>
+        <div class="es">源：v18簇11常见误解④照录</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>秒答自测（册内最小验证照录）</h2>
+    <table class="sl">
+      <tr><th>问</th><th>答（照录）</th></tr>
+      <tr><td>F₁=3N、F₂=4N共点：夹角90°、0°、180°时合力各多大？</td><td>90°：√(9+16)=5N；0°：7N；180°：1N。（3-4-5直角三角形必须秒答。）</td></tr>
+      <tr><td>倾角37°斜面上质量2kg的物块（g=10），重力沿斜面与垂直斜面两分量各多大？</td><td>沿面分量=mg·sin37°=12N（下滑效果）；压面分量=mg·cos37°=16N（压紧效果）。校验：√(12²+16²)=20N=mg✓（勾股回查是防错利器）。</td></tr>
+      <tr><td>重10N的球用细绳挂在光滑竖直墙上，绳与墙夹角37°，求绳张力与墙支持力。</td><td>竖直：T·cos37°=G⟹T=12.5N；水平：N=T·sin37°=7.5N。检验：力三角形与几何三角形相似（3:4:5边比）——相似三角形快解与正交分解互验。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出"平行四边形定则""按效果分解""正交分解"三处。</li>
+      <li>四步流水线自测：随手指一道斜面题，30秒走完四闸（画受力→建轴→邻cos对sin→列方程）。</li>
+      <li>秒答自测：3-4-5三角形与勾股回查各默做一遍；墙球题两种解法（正交/相似三角形）互验一次。</li>
+      <li>考前扫易错卡：默写"范围不等式""合力分力互斥""让多数力沿轴""按效果分解"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：册内照录＝v18原册_物理.html 簇11后半（分解半域：一句话本质/完整展开平行四边形定则与正交分解四步流水线/常见误解四条/最小验证①②/跨簇连接题墙球37°/高考接口四条/易错现场）字段块＋⑪-2易错素材口诀侧（与3.3卡共享照录·跨节注记·零重复申报）；节域注记＝簇11前半（合成域）由3.4卡承载（黄夫人《12.力的合成取值范围》BV16b411c7op 双窗00:52→08:32在3.4卡）；节名＝第三章装配页§3.5节标"3.5 力的分解"照录；真题锚直读线＝2023山东卷T1-T18全卷题位清点（10-25·卷面p2-p8七页sha留痕入仓，直读证据_2023山东物理卷目录·本件全程未触B站域采集）＝分解0覆盖如实申报；讲法锚段缺段申报与池候选登记详见随件池候选登记单（B站probe实测2026-10-25·全程≥30s错峰）。本卡与3.4卡衔接：3.4管"多力并一笔"（合成·取值范围），本卡管"一力拆多向"（分解·正交流水线）；与3.3卡衔接见⑪-2共享照录注记。
+  </div>
+
+</div>
+</body>
+</html>
