@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜函数的基本性质｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{margin-bottom:10px;}
+  .chip{display:inline-block; font-size:11.5px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+        border-radius:999px; padding:2px 12px; margin-right:6px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .quote{background:var(--wash); border-left:3px solid var(--accent); padding:8px 12px; border-radius:0 8px 8px 0;
+                font-size:13.5px; margin:8px 0; color:#33254f;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第三章 函数的概念与性质</span>
+    </div>
+    <h1>3.2 函数的基本性质</h1>
+    <div class="kicker">讲法锚点 · 切片卡 —— 名讲片段 · 高考真题锚 · 易错收口</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库第三章包同名节件）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="430" height="26" rx="6" fill="#f0eafc" stroke="#6d3fd4" stroke-width="1.2"/>
+          <text x="58" y="31" font-size="12.5" fill="#24292e">讲法片段 · 奇偶性两步法板书（一数 · 73P系统课 P16）</text>
+          <text x="488" y="31" font-size="12" fill="#6d3fd4" text-anchor="end">3:20 → 5:20</text>
+          <line x1="118" y1="66" x2="470" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="150" cy="66" r="8" fill="#c2452d"/>
+          <text x="150" y="92" font-size="12" fill="#24292e" text-anchor="middle">2022新高考Ⅰ卷 · 第7题</text>
+          <text x="150" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">定义法证明单调性</text>
+          <circle cx="300" cy="66" r="8" fill="#c2452d"/>
+          <text x="300" y="92" font-size="12" fill="#24292e" text-anchor="middle">2024新高考Ⅰ卷 · 单选6</text>
+          <text x="300" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">含参数单调</text>
+          <circle cx="450" cy="66" r="8" fill="#c2452d"/>
+          <text x="450" y="92" font-size="12" fill="#24292e" text-anchor="middle">2024单选10＋2022第12题</text>
+          <text x="450" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">奇偶联动 · 脱f三关卡</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">单调区间写"∪"</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节考位＝引擎位：选填1-2题＋大题综合问（性质线）——"证明基本功＋信息接力"两大考核点。</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>紫带＝一数 P16 奇偶性两步法板书片段（2分钟，起止秒直接可跳）；三个红点＝高考真题锚（2022新Ⅰ两题＋2024新Ⅰ两题）；方点＝易错收口条。用卡顺序＝先看2分钟板书建立"两步法"顺序感，再做真题自测，最后易错自查。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频锚</span></h2>
+      <div class="slice">
+        <span class="tag">名讲片段 · 秒级可跳</span>
+        <p><b>数学-3 奇偶性两步法板书：先定义域对称再f(−x)，挖点反例收尾</b>——UP主：一数（《必修一同步全集》73P系统课，合集播放160.75万），<a href="https://www.bilibili.com/video/BV1Jt411E76i?t=200" target="_blank">BV1Jt411E76i</a>（P16 函数的奇偶性），3:20 → 5:20（2分00秒）。</p>
+        <div class="quote">"第一步是先看定义域啊……定义域它是否关于原点对称，假如说它不对称的话，说明它就是个非奇非偶函数""有的同学他忘了看定义域啊，他直接把这个分式给化解了。你看它不是等于二x嘛，所以是个奇函数，那就错了"</div>
+        <p>两步法的顺序是铁律：第一步验定义域对称（不对称＝非奇非偶，直接出局），第二步才算f(−x)。挖点反例（x≠−1型定义域）专治"约分化简后才判奇偶"的经典错——化简前定义域挖了洞，奇偶性就没了。</p>
+        <div class="meta">锚点=200s→320s｜溯源=v18原册_数学.html 册尾锚点附录在册＋在库彻查件独立复核："在册·推翻查无"·秒段串底件唯一命中·字段逐字段一致（2026-10-23/24）｜<b>验态如实注记</b>：本锚为指针层在册（v18册尾＋彻查件双源），帧级核验未做候核验线，不阻塞放量（沿1.1卡先例）；单调性侧无已验实体——本卡讲法锚只覆盖奇偶性切片，如实标注不虚标（沿批次预告口径）</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">出处登记</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>考位（节件登记）</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2022年新高考Ⅰ卷</td><td>第7题</td>
+            <td>定义法证明单调性（三步流水线：任取→作差变形→定号）</td><td>单调证明基本功·缺步扣分</td>
+          </tr>
+          <tr>
+            <td>2022年新高考Ⅰ卷</td><td>第12题</td>
+            <td>抽象函数比大小与解不等式（脱f三关卡）</td><td>脱f＋定义域双重约束</td>
+          </tr>
+          <tr>
+            <td>2024年新高考Ⅰ卷</td><td>单选6</td>
+            <td>含参数单调（对称轴型/接缝型·轴定区间动）</td><td>含参单调求参</td>
+          </tr>
+          <tr>
+            <td>2024年新高考Ⅰ卷</td><td>多选10</td>
+            <td>奇偶＋单调综合（对称与单调信息接力）</td><td>性质联动·大题中高档常客</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 3.2 节重制件正本"高考考位与真题锚"（出处登记级——题干未照录不虚构，宁缺毋编口径：无原卷核对级素材宁少装，四条锚均节件正本在册）。考位全景=定义法证明/抽象函数脱f/含参单调/奇偶判定含陷阱/奇偶×单调联动/最值值域六线。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 单调区间用"∪"连接</span>
+        <p><b>单调区间之间只能用"和"或逗号，不能写∪——这是定义层硬边界，不是书写规范。</b>症状：写"f(x)=1/x在(−∞,0)∪(0,+∞)上递减"——两段递减被合并成一个"全域递减"。</p>
+        <p class="punch">单调性是区间属性：∀x₁,x₂∈D中的两点必须在同一区间内。跨段取点反例直接推翻——x₁=−1<x₂=1，但f(−1)=−1<f(1)=1，"递减"没了。∪的集合语义把"任取"的抽签池扩成了并集，定义当场失效。不修会怎样：含参单调讨论题按∪合并＝讨论逻辑错位，大题整问报废；月考实录此类书写普遍扣2-5分。</p>
+        <p class="meta">源：在库 3.2 节重制件正本易错卡①（本节最高频6张之首）</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>先看一数 P16 片段（3:20→5:20），把"先定义域对称再f(−x)"两步顺序抄在草稿顶端。</li>
+        <li>独立做 2022 新高考Ⅰ卷第7题（定义法证明单调性），对照三步流水线核对"任取→作差变形→定号"是否齐全。</li>
+        <li>用 2024 单选6（含参单调）自查"轴定区间动"分类讨论；用 2022 第12题自查脱f三关卡（定义域先行→同区间归位→保号或反号）。</li>
+        <li>考前扫易错卡：写单调区间动笔前先问自己"连接符是不是∪"——是就改"和"。</li>
+        <li>回第三章包 3.2 节件读"单调性"正文（任取/保序/区间边界三堵承重墙），视频直觉落回纸面推理。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频=B站公开视频 <a href="https://www.bilibili.com/video/BV1Jt411E76i" target="_blank">BV1Jt411E76i</a>（一数·73P系统课 P16，合集播放160.75万，v18册尾锚点附录在册＋彻查件独立复核；指针层验态如实注记）；真题=在库 3.2 节重制件正本"高考考位与真题锚"（出处登记级）；易错=在库 3.2 节重制件正本易错卡①。本卡与在库第三章包 3.2 节件互为镜像：节件管"读"，本卡管"看与做"。
+  </div>
+
+</div>
+</body>
+</html>

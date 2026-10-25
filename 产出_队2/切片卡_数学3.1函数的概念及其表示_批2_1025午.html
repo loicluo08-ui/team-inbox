@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜函数的概念及其表示｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{margin-bottom:10px;}
+  .chip{display:inline-block; font-size:11.5px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+        border-radius:999px; padding:2px 12px; margin-right:6px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .quote{background:var(--wash); border-left:3px solid var(--accent); padding:8px 12px; border-radius:0 8px 8px 0;
+                font-size:13.5px; margin:8px 0; color:#33254f;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第三章 函数的概念与性质</span>
+    </div>
+    <h1>3.1 函数的概念及其表示</h1>
+    <div class="kicker">讲法锚点 · 切片卡 —— 名讲片段 · 高考真题锚 · 易错收口</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库第三章包同名节件）</div>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <figure>
+        <svg viewBox="0 0 720 140" width="100%" role="img" aria-label="本节锚点布局图">
+          <rect x="42" y="14" width="430" height="26" rx="6" fill="#f0eafc" stroke="#6d3fd4" stroke-width="1.2"/>
+          <text x="58" y="31" font-size="12.5" fill="#24292e">讲法片段 · 榨汁机模型图解三要素（清华王欢老师）</text>
+          <text x="488" y="31" font-size="12" fill="#6d3fd4" text-anchor="end">13:50 → 17:45</text>
+          <line x1="118" y1="66" x2="470" y2="66" stroke="#b9a5ec" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <circle cx="170" cy="66" r="8" fill="#c2452d"/>
+          <text x="170" y="92" font-size="12" fill="#24292e" text-anchor="middle">2021浙江卷 · 第7题</text>
+          <text x="170" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">图像辨认 · 数形互译</text>
+          <circle cx="330" cy="66" r="8" fill="#c2452d"/>
+          <text x="330" y="92" font-size="12" fill="#24292e" text-anchor="middle">2021浙江卷 · 第12题</text>
+          <text x="330" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">分段函数综合</text>
+          <rect x="560" y="58" width="16" height="16" fill="#8a6d1f" rx="3"/>
+          <text x="568" y="92" font-size="12" fill="#24292e" text-anchor="middle">易错收口</text>
+          <text x="568" y="108" font-size="11.5" fill="#5f6b76" text-anchor="middle">f(x+1)定义域答成x+1</text>
+          <text x="42" y="132" font-size="11" fill="#5f6b76">▲ 本节考位＝地基位：选填2-3题＋大题第一问（概念线）＋分段线——"分类讨论"思想的第二主战场。</text>
+        </svg>
+        <figcaption><b>怎么读这张图：</b>紫带＝王欢老师"榨汁机模型"讲法片段（3分55秒，起止秒直接可跳）；两个红点＝高考真题锚（2021浙江卷两题，数形互译与分段综合）；方点＝易错收口条。用卡顺序＝先看3分钟模型建立"函数是一台机器"的图景，再做真题自测，最后易错自查。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>讲法锚点 · 切片装配<span class="en">视频锚</span></h2>
+      <div class="slice">
+        <span class="tag">名讲片段 · 秒级可跳</span>
+        <p><b>函数三要素主干＋榨汁机模型（T-08·1005终验）</b>——UP主：清华王欢老师（《【高一数学】函数概念完整精讲｜夯实高中函数的底层基础》全片48:58，播放12,460@10-05时点注记），<a href="https://www.bilibili.com/video/BV1vzgK6TEQU?t=830" target="_blank">BV1vzgK6TEQU</a>，13:50 → 17:45（3分55秒）。</p>
+        <div class="quote">"请大家跟欢老师用红色这个方框，表示这款功能机器。这款功能机器今天可能是个榨汁机，明天是个豆浆机，后天也有可能是洗衣机，种种机器，简而言之它可以完成各项的功能。所以我们把机器写在这里。""左边右边，输进来的这个箭头呢，是x的领地，它指的就是送入机器的原料。而右边产生的就是产物，它自然对应出来的就是y。""刚刚它对应的名字定义域、值域、对应关系，宝子们都已经非常清楚了"</div>
+        <p>榨汁机模型管"输入-加工-输出"的整幅图景：左边＝x的领地（原料＝定义域），中间的机器＝f（对应关系），右边＝产物y（值域）。听完这段，"三要素"从三个要背的名词变成一台机器的三个部位——3.1正文的"任意输入唯一输出"资格审查，就是检查这台机器的出料是否稳定。</p>
+        <div class="meta">锚点=830s→1065s｜溯源=资料溯源总台账_1004.md L47在册（T-08 1005终验入库·验包12件双源）＋在库池筛锚点_v1收录（池内已验·零成本收录）；引文校准级=硬字幕帧交叉核对级（在库T-08面板台账全片转写稿·弧内同音字按底部硬字幕帧同秒对齐校正）</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高考真题锚<span class="en">出处登记</span></h2>
+      <table>
+        <thead>
+          <tr><th>卷别</th><th>题号</th><th>考位（节件登记）</th><th>考点</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2020年山东卷（新高考Ⅰ）</td><td>——</td>
+            <td>求函数定义域（具体函数查运算禁区，抽象函数两层取交）</td><td>定义域求解·大题第一问常客</td>
+          </tr>
+          <tr>
+            <td>2025年北京卷</td><td>——</td>
+            <td>函数概念与定义域</td><td>概念线</td>
+          </tr>
+          <tr>
+            <td>2021年浙江卷</td><td>第7题</td>
+            <td>函数图像/表示法辨析</td><td>图像辨认与竖直线检验·数形互译直接口</td>
+          </tr>
+          <tr>
+            <td>2021年浙江卷</td><td>第12题</td>
+            <td>分段函数综合（求值与定义域值域/含参单调/建模载体）</td><td>分段综合·双重分类讨论</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="src">锚源=在库 3.1 节重制件正本"高考考位与真题锚"（出处登记级——题干未照录不虚构，宁缺毋编口径：无原卷核对级素材宁少装，四条锚均节件正本在册）。考位全景=定义域求解/同一函数判定/f(x+1)型求解析式/图像辨认/分段综合五线。</p>
+    </section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · f(x+1)定义域答成"x+1的范围"</span>
+        <p><b>定义域永远指"原始输入x的范围"——f(x+1)的定义域是x的，不是x+1的。</b>症状：f(x)定义域为[0,2]时求f(x+1)的定义域，学生回答"x+1∈[0,2]"就收工，只对了一半。</p>
+        <p class="punch">三问钉死：①问的是谁的定义域（f(x+1)的定义域是x的）②原始输入的约束是什么（f的括号内整体∈[0,2]）③解出目标变量——解0≤x+1≤2得x∈[−1,1]才是最终答案。不修会怎样：4.4对数函数f(ln x)沿用同一纪律，一步错答案全错。</p>
+        <p class="meta">源：在库 3.1 节重制件正本易错卡①（本节最高频6张之首）</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>先看王欢老师榨汁机片段（13:50→17:45），在草稿上画出"原料-机器-产物"三框图。</li>
+        <li>合上笔记复述三要素对应关系：定义域＝原料领地、对应关系f＝机器、值域＝产物，再回装配件做"同一函数四连"自查（两查：定义域＋法则）。</li>
+        <li>独立做 2021 浙江卷第7题（图像辨析，数形互译），错则回节件"竖直线检验"正文。</li>
+        <li>考前扫易错卡：求f(x+1)定义域动手前先写"问的是谁的定义域"一行。</li>
+        <li>回第三章包 3.1 节件读"定义域求解"正文（具体函数查运算禁区＋抽象函数两层取交），视频直觉落回纸面推理。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <b>源注汇总</b>：视频=B站公开视频 <a href="https://www.bilibili.com/video/BV1vzgK6TEQU" target="_blank">BV1vzgK6TEQU</a>（清华王欢老师·《函数概念完整精讲》全片48:58·播放12,460@10-05时点注记·台账L47＋池筛双源在册·T-08 1005终验入库·验包12件）；真题=在库 3.1 节重制件正本"高考考位与真题锚"（出处登记级）；易错=在库 3.1 节重制件正本易错卡①。本卡与在库第三章包 3.1 节件互为镜像：节件管"读"，本卡管"看与做"。
+  </div>
+
+</div>
+</body>
+</html>
