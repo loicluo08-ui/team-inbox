@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜4.3 牛顿第三定律｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .badges{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;}
+  .badge{font-size:11.5px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+         padding:2px 10px; border-radius:999px;}
+  section{padding:18px 28px; border-bottom:1px solid var(--line);}
+  section h2{font-size:15.5px; color:var(--accent); margin-bottom:10px; letter-spacing:.5px;}
+  .svgbox{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:10px 6px 4px;}
+  .note{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  .lt{display:flex; gap:8px; align-items:baseline; margin-bottom:6px;}
+  .lt b{white-space:nowrap; font-size:13.5px; color:var(--gold);}
+  table{width:100%; border-collapse:collapse; font-size:13px; margin-top:6px;}
+  th,td{border:1px solid var(--line); padding:6px 9px; text-align:left; vertical-align:top;}
+  th{background:var(--wash); font-weight:600; white-space:nowrap;}
+  .steps{counter-reset:s; list-style:none;}
+  .steps li{counter-increment:s; position:relative; padding:5px 0 5px 34px; font-size:14px;}
+  .steps li::before{content:counter(s); position:absolute; left:0; top:6px; width:22px; height:22px;
+        background:var(--accent); color:#fff; border-radius:50%; font-size:12px;
+        display:flex; align-items:center; justify-content:center;}
+  .foot{padding:14px 28px 20px; font-size:12px; color:var(--sub); line-height:1.8; background:var(--wash);}
+  .miss{color:#8a6d1f; font-weight:600;}
+  @media print{ body{background:#fff; padding:0;} .card{box-shadow:none; border-radius:0;} }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 双段卡（讲法锚段缺段如实申报）</div>
+    <h1>4.3 牛顿第三定律<span style="font-size:13px; font-weight:400; opacity:.85;">｜第四章 运动和力的关系</span></h1>
+    <div class="badges">
+      <span class="badge">真题锚：直读卷源0覆盖如实申报 · 宁缺毋编</span>
+      <span class="badge">讲法锚段：缺段豁免注记＋池候选登记</span>
+      <span class="badge">应用侧分工：与3.3卡（概念侧）错位零重复</span>
+    </div>
+  </div>
+
+  <section>
+    <h2>这张卡的闸带（怎么读）</h2>
+    <div class="svgbox">
+    <svg viewBox="0 0 740 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="牛三应用三步闸">
+      <defs>
+        <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="#5b6773"/>
+        </marker>
+      </defs>
+      <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+        <rect x="30" y="26" width="200" height="120" rx="10" fill="#e7eef6" stroke="#2b5a8c"/>
+        <text x="130" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#2b5a8c">闸① 定内外</text>
+        <text x="130" y="78" text-anchor="middle" font-size="12" fill="#1f242b">整体法：只看外力</text>
+        <text x="130" y="98" text-anchor="middle" font-size="12" fill="#1f242b">（内力成对出现互相划掉）</text>
+        <text x="130" y="122" text-anchor="middle" font-size="11" fill="#5b6773">内力画进整体图=多算一遍</text>
+
+        <rect x="270" y="26" width="200" height="120" rx="10" fill="#e7eef6" stroke="#2b5a8c"/>
+        <text x="370" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#2b5a8c">闸② 内外账对齐</text>
+        <text x="370" y="78" text-anchor="middle" font-size="12" fill="#1f242b">隔离法：暴露内力列ΣF=ma</text>
+        <text x="370" y="98" text-anchor="middle" font-size="12" fill="#1f242b">A对B ＝ B对A的反</text>
+        <text x="370" y="122" text-anchor="middle" font-size="11" fill="#5b6773">两套账靠第三定律对表</text>
+
+        <rect x="510" y="26" width="200" height="120" rx="10" fill="#fdf6e3" stroke="#8a6d1f"/>
+        <text x="610" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#8a6d1f">闸③ 读数≠本体</text>
+        <text x="610" y="78" text-anchor="middle" font-size="12" fill="#1f242b">秤示数=支持力的反作用</text>
+        <text x="610" y="98" text-anchor="middle" font-size="12" fill="#1f242b">（人对秤的压力）</text>
+        <text x="610" y="122" text-anchor="middle" font-size="11" fill="#5b6773">不是重力本身·a≠0即偏离</text>
+
+        <line x1="230" y1="86" x2="268" y2="86" stroke="#5b6773" stroke-width="1.6" marker-end="url(#ar)"/>
+        <line x1="470" y1="86" x2="508" y2="86" stroke="#5b6773" stroke-width="1.6" marker-end="url(#ar)"/>
+        <text x="370" y="180" text-anchor="middle" font-size="12" fill="#5b6773">应用链：拿到连接体/仪器读数题——先定记账粒度（①），再对齐内外账（②），最后核对"读数到底是什么力"（③）。</text>
+      </g>
+    </svg>
+    <p class="note">怎么读这张闸带：本卡管第三定律在解题里的三个"出场位"——整体与隔离的记账切换（①②）、仪器读数的身份认定（③）。概念五关键词（等大/反向/共线/异体/同生同灭）与平衡力辨析见第三章3.3卡（双座分工·本卡不重录）。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>真题锚段（四要素全量 · 直读0覆盖如实申报）</h2>
+    <div class="lt"><b>直读线申报</b></div>
+    <table>
+      <tr><th>申报项</th><th>实况</th></tr>
+      <tr><td>2023山东卷T1-T18全卷清点（10-25）</td><td>牛三应用题无直接配题→<b>直读卷源0覆盖如实申报</b>，宁缺毋编；扩卷源候直读扩量工单。</td></tr>
+      <tr><td>册内照录级注记</td><td>2021广东卷曲辕犁辨析（C/D两项）已由3.3卡真题锚段照录（同源簇14前半·跨节共享零重复）；⑪-3瞬时突变口诀（绳杆瞬间变/弹簧缓过渡）登账4.2⑫-2域，本卡零触碰。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>讲法锚段（三层申报 · 双段卡口径）</h2>
+    <table>
+      <tr><th>层</th><th>申报实况</th></tr>
+      <tr><td>册内层</td><td>v18簇14前半无"讲法锚点·切片装配"模块（同3.3卡申报态）。</td></tr>
+      <tr><td>池内层</td><td>放量池无本节字幕级已验切片。</td></tr>
+      <tr><td>新采层</td><td class="miss">缺段豁免注记：B站侧候选本批未完成probe实测——候采线登记（BV号未定不虚标不代拟），probe后入池补段。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 4条）</h2>
+    <ul class="gk">
+      <li><b>连接体整体-隔离组合</b>——P4大题主干结构，内外两套受力靠第三定律对齐（A对B＝B对A的反）。</li>
+      <li><b>仪器读数题</b>——电梯秤/弹簧秤示数=支持力（或拉力）的量度，a≠0时读数偏离mg（视重思维）。</li>
+      <li><b>平衡力与作用反作用辨析</b>——概念侧高频（判据链见3.3卡，本卡应用场景侧呼应）。</li>
+      <li><b>火箭反冲/划水类</b>——作用反作用成对且异体，不需要介质（与"真空"无关）。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（应用侧四卡 · 册内照录级）</h2>
+    <table>
+      <tr><th>卡</th><th>怎么错</th><th>纠偏动作（册内口径）</th></tr>
+      <tr><td>①</td><td>整体法受力图里把内力也画上——内力成对出现，在整体图里自动抵消，画上=多算一遍。</td><td>整体打包只看外力；求内力才拆隔离。</td></tr>
+      <tr><td>②</td><td>对一对作用反作用力"求合力"——异体力作用在不同物体上，"合力"概念没有适用场景。</td><td>先数作用对象：同体才谈合成，异体各自产生效果。</td></tr>
+      <tr><td>③</td><td>"先有作用力，后有反作用力"——时序错觉；成对成交、同生同灭，没有先后。</td><td>把"甲给乙"与"乙给甲"想成同一笔相互作用的两个名字。</td></tr>
+      <tr><td>④</td><td>"绳两端张力不等/张力会突变出别的值"——轻绳两端等力（张力沿绳处处相等）；突变细则：绳可瞬间变、弹簧缓过渡。</td><td>轻绳两端等力；撤力瞬时问题先定弹簧力再算各体加速度（口诀登账4.2）。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>秒答自测（册内照录级 · 3条）</h2>
+    <table>
+      <tr><th>自测</th><th>判答（册内照录级）</th></tr>
+      <tr><td>电梯里体重秤读数变小的瞬间发生了什么？</td><td>电梯向下加速：人需要向下的净力，支持力&lt;重力——读数是支持力的反作用（人对秤的压力），不是重力本身。</td></tr>
+      <tr><td>完全失重的水杯里，水对杯底还有压力吗？气泡呢？</td><td>无压力——杯与水都以a=g下落，N=m(g−a)=0，反作用（水压杯底）同为0；气泡不受"浮力"表现（压强差源自重力，完全失重下梯度消失）。</td></tr>
+      <tr><td>2kg与3kg物块轻绳相连，15N水平拉光滑地面（拉前面2kg）——绳张力？</td><td>整体a=15/5=3m/s²；隔离后面3kg块：T=3×3=9N；校验前面块ΣF=15−9=6=2×3✓——内外账对齐（校验步=第三定律纪律）。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出"作用力与反作用力"与"分别作用在两个物体上"两处——异体是灵魂条款。</li>
+      <li>三步闸自测：随手一道连接体/读数题，30秒走完三闸（定内外→账对齐→读数身份）。</li>
+      <li>概念侧回放：五关键词与平衡力辨析回3.3卡过一遍（双座分工·两卡合起来才是完整牛三）。</li>
+      <li>考前扫易错卡：默写"整体不画内力""异体不求合力""反作用无先后""绳两端等力"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：册内照录＝v18原册_物理.html 簇14前半（牛三半簇·与3.3卡共享照录域·本卡承应用侧：连接体流程整体/隔离两步+QA读数句"电梯秤读数=支持力的反作用"（strip域169425/169561·QA6）+CX完全失重内部世界+⑭-2平衡力vs相互作用力辨析）字段块；双座实况照录＝第三章3.3（人教结构·概念侧b9039be在链）与第四章4.3（本章节段·应用侧本卡）素材同源簇14前半，分工错位零重复（改派令所引认领行+本裁改派19:20:35令照录）；节名＝第四章装配页§4.3节标"4.3 牛顿第三定律"照录；直读线＝2023山东卷T1-T18全卷清点（10-25）＝0覆盖如实申报；讲法锚段缺段申报与候采登记详见随件登记单。本卡与4.4卡衔接：本节的"读数≠本体"在4.4展开为定量版N=m(g+a)；与4.5卡衔接：整体-隔离组合在本节立桥、4.5管全流程展开。
+  </div>
+
+</div>
+</body>
+</html>

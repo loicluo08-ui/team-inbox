@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜4.1 牛顿第一定律｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .badges{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;}
+  .badge{font-size:11.5px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+         padding:2px 10px; border-radius:999px;}
+  section{padding:18px 28px; border-bottom:1px solid var(--line);}
+  section h2{font-size:15.5px; color:var(--accent); margin-bottom:10px; letter-spacing:.5px;}
+  .svgbox{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:10px 6px 4px;}
+  .note{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  .lt{display:flex; gap:8px; align-items:baseline; margin-bottom:6px;}
+  .lt b{white-space:nowrap; font-size:13.5px; color:var(--gold);}
+  .quote{background:var(--accent-soft); border-left:3px solid var(--accent); padding:8px 12px;
+         border-radius:0 8px 8px 0; font-size:13.5px; margin:6px 0;}
+  table{width:100%; border-collapse:collapse; font-size:13px; margin-top:6px;}
+  th,td{border:1px solid var(--line); padding:6px 9px; text-align:left; vertical-align:top;}
+  th{background:var(--wash); font-weight:600; white-space:nowrap;}
+  .steps{counter-reset:s; list-style:none;}
+  .steps li{counter-increment:s; position:relative; padding:5px 0 5px 34px; font-size:14px;}
+  .steps li::before{content:counter(s); position:absolute; left:0; top:6px; width:22px; height:22px;
+        background:var(--accent); color:#fff; border-radius:50%; font-size:12px;
+        display:flex; align-items:center; justify-content:center;}
+  .foot{padding:14px 28px 20px; font-size:12px; color:var(--sub); line-height:1.8; background:var(--wash);}
+  .miss{color:#8a6d1f; font-weight:600;}
+  @media print{ body{background:#fff; padding:0;} .card{box-shadow:none; border-radius:0;} }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 双段卡（讲法锚段缺段如实申报）</div>
+    <h1>4.1 牛顿第一定律<span style="font-size:13px; font-weight:400; opacity:.85;">｜第四章 运动和力的关系</span></h1>
+    <div class="badges">
+      <span class="badge">真题锚：直读卷源0覆盖如实申报 · 宁缺毋编</span>
+      <span class="badge">讲法锚段：缺段豁免注记＋池候选登记</span>
+      <span class="badge">册内照录：簇12全字段</span>
+    </div>
+  </div>
+
+  <section>
+    <h2>这张卡的闸带（怎么读）</h2>
+    <div class="svgbox">
+    <svg viewBox="0 0 740 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="力与运动因果四步闸">
+      <defs>
+        <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="#5b6773"/>
+        </marker>
+      </defs>
+      <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+        <rect x="12" y="26" width="160" height="120" rx="10" fill="#e7eef6" stroke="#2b5a8c"/>
+        <text x="92" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#2b5a8c">闸① 定默认行为</text>
+        <text x="92" y="76" text-anchor="middle" font-size="12" fill="#1f242b">不受力（合力为零）时</text>
+        <text x="92" y="96" text-anchor="middle" font-size="12" fill="#1f242b">状态不变：匀速直线</text>
+        <text x="92" y="116" text-anchor="middle" font-size="12" fill="#1f242b">或静止（v=0是特例）</text>
+        <text x="92" y="136" text-anchor="middle" font-size="11" fill="#5b6773">默认行为无需解释</text>
+
+        <rect x="200" y="26" width="160" height="120" rx="10" fill="#e7eef6" stroke="#2b5a8c"/>
+        <text x="280" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#2b5a8c">闸② 翻转因果</text>
+        <text x="280" y="76" text-anchor="middle" font-size="12" fill="#1f242b">力不是维持运动的原因</text>
+        <text x="280" y="96" text-anchor="middle" font-size="12" fill="#1f242b">力是改变运动状态的</text>
+        <text x="280" y="116" text-anchor="middle" font-size="12" fill="#1f242b">原因（与a挂钩非v）</text>
+        <text x="280" y="136" text-anchor="middle" font-size="11" fill="#5b6773">解释义务从状态→变化率</text>
+
+        <rect x="388" y="26" width="160" height="120" rx="10" fill="#e7eef6" stroke="#2b5a8c"/>
+        <text x="468" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#2b5a8c">闸③ 力源核对</text>
+        <text x="468" y="76" text-anchor="middle" font-size="12" fill="#1f242b">"看起来没受力"=</text>
+        <text x="468" y="96" text-anchor="middle" font-size="12" fill="#1f242b">隐藏摩擦没入账</text>
+        <text x="468" y="116" text-anchor="middle" font-size="12" fill="#1f242b">先补全受力再谈停下</text>
+        <text x="468" y="136" text-anchor="middle" font-size="11" fill="#5b6773">生活经验不与定律矛盾</text>
+
+        <rect x="576" y="26" width="152" height="120" rx="10" fill="#fdf6e3" stroke="#8a6d1f"/>
+        <text x="652" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#8a6d1f">闸④ 惯性系检查</text>
+        <text x="652" y="76" text-anchor="middle" font-size="12" fill="#1f242b">定律只在惯性系成立</text>
+        <text x="652" y="96" text-anchor="middle" font-size="12" fill="#1f242b">地面=近似惯性系</text>
+        <text x="652" y="116" text-anchor="middle" font-size="12" fill="#1f242b">急刹车车厢不是</text>
+        <text x="652" y="136" text-anchor="middle" font-size="11" fill="#5b6773">惯性=属性·质量唯一量度</text>
+
+        <line x1="172" y1="86" x2="198" y2="86" stroke="#5b6773" stroke-width="1.6" marker-end="url(#ar)"/>
+        <line x1="360" y1="86" x2="386" y2="86" stroke="#5b6773" stroke-width="1.6" marker-end="url(#ar)"/>
+        <line x1="548" y1="86" x2="574" y2="86" stroke="#5b6773" stroke-width="1.6" marker-end="url(#ar)"/>
+        <text x="370" y="180" text-anchor="middle" font-size="12" fill="#5b6773">判据链：默认行为（①）→ 谁改变了它（②）→ 隐藏力源（③）→ 参考系合法性（④）——四步走完，力与运动的判断题不再靠感觉。</text>
+      </g>
+    </svg>
+    <p class="note">怎么读这张闸带：四框从左到右是"概念判断题"的标准走法——先问不受力时怎样（①），再问力到底管什么（②），凡"自己停下来/自己动起来"的题先查隐藏摩擦（③），最后核对参考系前提（④）。3-4-5秒内四闸过完，答案基本已出。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>真题锚段（四要素全量 · 直读0覆盖如实申报）</h2>
+    <div class="lt"><b>直读线申报</b></div>
+    <table>
+      <tr><th>申报项</th><th>实况</th></tr>
+      <tr><td>2023山东卷T1-T18全卷清点（10-25）</td><td>牛一/惯性概念题无直接配题→<b>直读卷源0覆盖如实申报</b>，宁缺毋编；扩卷源（2024/2025卷）候直读扩量工单，不代拟不虚标。</td></tr>
+      <tr><td>册内跨节素材注记</td><td>v18⑫-2香蕉球综合（2022甲T19-B项"2μg"判据+撤力瞬时突变）系牛二应用域素材、已登账4.2（认领台账在案）——本卡不引判，双卡分工零重复。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>讲法锚段（三层申报 · 双段卡口径）</h2>
+    <table>
+      <tr><th>层</th><th>申报实况</th></tr>
+      <tr><td>册内层</td><td>v18物理册簇12全量检索：无"讲法锚点·切片装配"模块（册内该模块仅簇08-11域）。</td></tr>
+      <tr><td>池内层</td><td>放量池无本节字幕级已验切片（台账+池单全量检索零命中）。</td></tr>
+      <tr><td>新采层</td><td class="miss">缺段豁免注记：B站侧候选（黄夫人/HE物理课堂牛一课）本批未完成probe实测——候采线登记（<b>BV号未定不虚标不代拟</b>），probe后入池补段。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 4条）</h2>
+    <ul class="gk">
+      <li><b>力与运动关系的概念判断</b>——选择题高频第一档（四步闸直接套）。</li>
+      <li><b>惯性与质量</b>——"只与质量有关"判断题（速度大小/受力与否/静止运动均不影响惯性）。</li>
+      <li><b>理想实验方法论</b>——伽利略斜面：可靠事实+逻辑外推+实验验证三要素（方法论也是考点）。</li>
+      <li><b>生活情境解释题</b>——安全带/头盔/泼水/拍衣灰：一律"由于惯性，物体保持……"句式作答。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（册内常见误解照录 · 4卡）</h2>
+    <table>
+      <tr><th>卡</th><th>怎么错</th><th>纠偏动作（册内照录）</th></tr>
+      <tr><td>①</td><td>"物体运动需要力维持，停止用力物体会停下"——错：停下是摩擦力作用，无摩擦时永远匀速。</td><td>先补全受力清单（隐藏摩擦），再谈"停下"的原因。</td></tr>
+      <tr><td>②</td><td>"惯性是力"/"受到惯性的作用"——错：惯性是属性，没有施力物体；答卷如此表述明确扣分。</td><td>把"受到惯性"改写成"由于惯性，物体保持了……"。</td></tr>
+      <tr><td>③</td><td>"速度越大惯性越大"——错：惯性唯一量度=质量；高速子弹难停是动量/动能大。</td><td>把"惯性"严格换成"质量"检验句子是否仍成立。</td></tr>
+      <tr><td>④</td><td>"静止的物体没有惯性"——错：保持静止正是惯性的表现。</td><td>把惯性理解为"对改变的抵抗"，而非"对运动的保持"。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>秒答自测（册内最小验证/例题照录 · 3条）</h2>
+    <table>
+      <tr><th>自测</th><th>判答（册内照录级）</th></tr>
+      <tr><td>匀速公交车急刹车，乘客为什么前倾？</td><td>下半身随车减速（受摩擦），上半身几乎不受水平力、因惯性保持原速继续前移——前倾是上下半身速度差的相对结果，不是"受到向前的力"。</td></tr>
+      <tr><td>匀速火车桌面上的水杯突然加速，水向哪边洒？</td><td>向后（与加速方向相反）洒。水水平方向几乎不受力，因惯性保持原速；是"车动水不动"、车壁追上挤压水，不是"水向后冲"。</td></tr>
+      <tr><td>密闭匀速车厢内竖直上抛小球，落点在哪？（跨簇）</td><td>落在抛出点正下方——水平方向球与车厢速度相同（惯性保持），车内观察=竖直上抛、地面观察=斜抛，两参考系描述不同、落点结论唯一（相对性原理萌芽）。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出"总保持匀速直线运动状态或静止状态"与"质量是惯性唯一的量度"两处。</li>
+      <li>四步闸自测：随手一道概念判断题，30秒走完四闸（默认行为→因果翻转→力源核对→惯性系检查）。</li>
+      <li>快问快答回放：第一定律能单独实验验证吗？是第二定律的特例吗？——两句答不上来回教材。</li>
+      <li>考前扫易错卡：默写"停下靠摩擦""惯性不是力""惯性只认质量""静止也有惯性"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：册内照录＝v18原册_物理.html 簇12（牛一与惯性全域strip流136065→147119：一句话本质/完整展开两层信息量/适用边界四条/常见误解四条/最小验证三条/高考接口/例1三连判/易错现场/快问快答6条/跨簇连接题车厢上抛）字段块；⑫-2香蕉球素材（2022甲T19）登账4.2跨节注记本卡零触碰；节名＝第四章装配页§4.1节标"4.1 牛顿第一定律"照录；直读线＝2023山东卷T1-T18全卷题位清点（10-25·卷面sha留痕入仓直读证据_2023山东物理卷目录·本件全程未触B站域采集）＝牛一0覆盖如实申报；讲法锚段缺段申报与候采登记详见随件登记单。本卡与4.2卡衔接：本节立"改变才需要力"的因果框架并定义惯性系，4.2管"力怎么定量改变运动"（F=ma·瞬时突变细则归4.2⑫-2域）。
+  </div>
+
+</div>
+</body>
+</html>

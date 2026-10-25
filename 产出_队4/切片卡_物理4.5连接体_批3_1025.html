@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜4.5 连接体｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .badges{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;}
+  .badge{font-size:11.5px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+         padding:2px 10px; border-radius:999px;}
+  section{padding:18px 28px; border-bottom:1px solid var(--line);}
+  section h2{font-size:15.5px; color:var(--accent); margin-bottom:10px; letter-spacing:.5px;}
+  .svgbox{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:10px 6px 4px;}
+  .note{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  .lt{display:flex; gap:8px; align-items:baseline; margin-bottom:6px;}
+  .lt b{white-space:nowrap; font-size:13.5px; color:var(--gold);}
+  table{width:100%; border-collapse:collapse; font-size:13px; margin-top:6px;}
+  th,td{border:1px solid var(--line); padding:6px 9px; text-align:left; vertical-align:top;}
+  th{background:var(--wash); font-weight:600; white-space:nowrap;}
+  .steps{counter-reset:s; list-style:none;}
+  .steps li{counter-increment:s; position:relative; padding:5px 0 5px 34px; font-size:14px;}
+  .steps li::before{content:counter(s); position:absolute; left:0; top:6px; width:22px; height:22px;
+        background:var(--accent); color:#fff; border-radius:50%; font-size:12px;
+        display:flex; align-items:center; justify-content:center;}
+  .foot{padding:14px 28px 20px; font-size:12px; color:var(--sub); line-height:1.8; background:var(--wash);}
+  .miss{color:#8a6d1f; font-weight:600;}
+  @media print{ body{background:#fff; padding:0;} .card{box-shadow:none; border-radius:0;} }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 双段卡（讲法锚段缺段如实申报）</div>
+    <h1>4.5 连接体<span style="font-size:13px; font-weight:400; opacity:.85;">｜第四章 运动和力的关系</span></h1>
+    <div class="badges">
+      <span class="badge">真题锚：直读卷源0覆盖如实申报 · 宁缺毋编</span>
+      <span class="badge">讲法锚段：缺段豁免注记＋池候选登记</span>
+      <span class="badge">册内照录：簇14后半连接体域</span>
+    </div>
+  </div>
+
+  <section>
+    <h2>这张卡的闸带（怎么读）</h2>
+    <div class="svgbox">
+    <svg viewBox="0 0 740 216" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="整体-隔离两步闸">
+      <defs>
+        <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="#5b6773"/>
+        </marker>
+      </defs>
+      <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+        <rect x="24" y="24" width="212" height="128" rx="10" fill="#e7eef6" stroke="#2b5a8c"/>
+        <text x="130" y="50" text-anchor="middle" font-size="14" font-weight="700" fill="#2b5a8c">闸① 问内外（选粒度）</text>
+        <text x="130" y="74" text-anchor="middle" font-size="12" fill="#1f242b">求外效果（a/总位移）</text>
+        <text x="130" y="94" text-anchor="middle" font-size="12" fill="#1f242b">→整体法：打包成大质点</text>
+        <text x="130" y="114" text-anchor="middle" font-size="12" fill="#1f242b">只看外力，内力自动划掉</text>
+        <text x="130" y="138" text-anchor="middle" font-size="11" fill="#8a6d1f">求外效应用整体</text>
+
+        <rect x="280" y="24" width="212" height="128" rx="10" fill="#e7eef6" stroke="#2b5a8c"/>
+        <text x="386" y="50" text-anchor="middle" font-size="14" font-weight="700" fill="#2b5a8c">闸② 查前提（能打包吗）</text>
+        <text x="386" y="74" text-anchor="middle" font-size="12" fill="#1f242b">整体法前提：各部分a相同</text>
+        <text x="386" y="94" text-anchor="middle" font-size="12" fill="#1f242b">a不同（如刹车厢挤压）</text>
+        <text x="386" y="114" text-anchor="middle" font-size="12" fill="#1f242b">→只能逐个隔离</text>
+        <text x="386" y="138" text-anchor="middle" font-size="11" fill="#8a6d1f">前提不过关=换隔离</text>
+
+        <rect x="536" y="24" width="186" height="128" rx="10" fill="#fdf6e3" stroke="#8a6d1f"/>
+        <text x="629" y="50" text-anchor="middle" font-size="14" font-weight="700" fill="#8a6d1f">闸③ 对账（隔离求内力）</text>
+        <text x="629" y="74" text-anchor="middle" font-size="12" fill="#1f242b">拆包暴露内力列ΣF=ma</text>
+        <text x="629" y="94" text-anchor="middle" font-size="12" fill="#1f242b">内外账牛三对齐</text>
+        <text x="629" y="114" text-anchor="middle" font-size="12" fill="#1f242b">校验步必做</text>
+        <text x="629" y="138" text-anchor="middle" font-size="11" fill="#8a6d1f">求内力用隔离</text>
+
+        <line x1="236" y1="88" x2="278" y2="88" stroke="#5b6773" stroke-width="1.6" marker-end="url(#ar)"/>
+        <line x1="492" y1="88" x2="534" y2="88" stroke="#5b6773" stroke-width="1.6" marker-end="url(#ar)"/>
+        <text x="370" y="186" text-anchor="middle" font-size="12" fill="#5b6773">流程链：读题先问"求外还是求内"（①）→ 打包前查a是否相同（②）→ 拆包对账+校验（③）。</text>
+      </g>
+    </svg>
+    <p class="note">怎么读这张闸带：连接体题的全部流程压缩成两步闸三关卡——粒度选择（①）、前提审查（②）、内外对账（③）。口诀照录：求外效应用整体，求内力用隔离。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>真题锚段（四要素全量 · 直读0覆盖如实申报）</h2>
+    <div class="lt"><b>直读线申报</b></div>
+    <table>
+      <tr><th>申报项</th><th>实况</th></tr>
+      <tr><td>2023山东卷T1-T18全卷清点（10-25）</td><td>连接体大题无直接配题（P4大题主干结构域）→<b>直读卷源0覆盖如实申报</b>，宁缺毋编；扩卷源候直读扩量工单。</td></tr>
+      <tr><td>册内跨节注记</td><td>⑬-2连接体块（火箭漏减g链+2025甘T3-D错值判据）系簇13域素材登账4.2（认领台账在案）——本卡零触碰判读；隔离法内外账对齐纪律已由4.3卡闸②立桥（跨节共享）。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>讲法锚段（三层申报 · 双段卡口径）</h2>
+    <table>
+      <tr><th>层</th><th>申报实况</th></tr>
+      <tr><td>册内层</td><td>v18簇14后半连接体域无"讲法锚点·切片装配"模块。</td></tr>
+      <tr><td>池内层</td><td>放量池无本节字幕级已验切片。</td></tr>
+      <tr><td>新采层</td><td class="miss">缺段豁免注记：B站侧候选本批未完成probe实测——候采线登记（BV号未定不虚标不代拟），probe后入池补段。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 4条）</h2>
+    <ul class="gk">
+      <li><b>连接体整体-隔离组合</b>——P4大题主干结构（先整体求a、再隔离求内力是标准动线）。</li>
+      <li><b>绳/弹簧/接触面三类内力</b>——绳张力、弹簧弹力（缓过渡）、接触面弹力摩擦的暴露方式。</li>
+      <li><b>加速度不同的连接体</b>——刹车厢挤压类：只能逐个隔离（边界③现场）。</li>
+      <li><b>斜面上的连接体</b>——正交分解（3.5卡流水线）与整体隔离合流题。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（流程侧四卡 · 册内口径）</h2>
+    <table>
+      <tr><th>卡</th><th>怎么错</th><th>纠偏动作（册内口径）</th></tr>
+      <tr><td>①</td><td>整体法受力图里画内力——内力成对自动划掉，画上=多算一遍。</td><td>打包只看外力；内力是隔离法的任务。</td></tr>
+      <tr><td>②</td><td>各部分a不同还硬用整体法——刹车厢类问题整体法前提不成立。</td><td>先查"a是否相同"再选粒度（闸②）；不同=逐个隔离。</td></tr>
+      <tr><td>③</td><td>隔离体受力漏掉"对方给的那份"——隔离就是为了暴露内力，漏画=白拆。</td><td>每个隔离体把绳张力/接触弹力补全，内外账牛三对齐。</td></tr>
+      <tr><td>④</td><td>算完不校验——内外账错位（如T≠ma）全程无感。</td><td>校验步必做：另一物体ΣF=ma复算一遍（第三定律纪律）。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>秒答自测（册内照录级 · 3条）</h2>
+    <table>
+      <tr><th>自测</th><th>判答（册内照录级）</th></tr>
+      <tr><td>2kg与3kg物块轻绳相连，15N水平拉光滑地面（拉前面2kg）——共同a与绳张力？</td><td>整体：a=15/5=3m/s²；隔离后面3kg块：T=3×3=9N；校验：前面块15−9=6=2×3✓（与4.3卡共享照录·本卡承流程视角·内外账对齐=第三定律纪律）。</td></tr>
+      <tr><td>刹车瞬间车厢内物块间挤压，能用整体法吗？</td><td>不能——刹车时各物块a不同（车厢减速、物块相对滑动趋势），前提不成立，只能逐个隔离（边界③现场）。</td></tr>
+      <tr><td>口诀填空：求______用整体，求______用隔离。</td><td>求外效应用整体，求内力用隔离——粒度选择先于一切计算。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出"整体法""隔离法""内外账对齐"三处。</li>
+      <li>两步闸自测：随手一道连接体题，30秒走完三关卡（问内外→查前提→对账校验）。</li>
+      <li>秒答自测：绳链题默做一遍，重点核对校验步（6=2×3）。</li>
+      <li>考前扫易错卡：默写"整体不画内力""a不同不打包""隔离补全内力""算完必校验"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：册内照录＝v18原册_物理.html 簇14后半（连接体域：连接体流程整体法/隔离法两步+口诀"求外效应用整体，求内力用隔离"+适用边界③加速度不同的连接体只能逐个隔离+最小验证②绳链15N题（a=3/T=9/校验6=2×3））字段块；⑬-2素材登账4.2跨节注记零触碰；隔离桥与4.3卡共享（本卡承流程展开侧）；节名＝第四章装配页§4.5节标"4.5 连接体"照录；直读线＝2023山东卷T1-T18全卷清点（10-25·卷面sha留痕入仓）＝0覆盖如实申报；讲法锚段缺段申报与候采登记详见随件登记单。本卡与4.4卡衔接：电梯内悬挂/叠放类=两卡合流（读数随a×内外账）；与4.1卡衔接：打包的合法性=各部分状态改变一致（惯性系纪律同源）。
+  </div>
+
+</div>
+</body>
+</html>

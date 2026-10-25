@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜4.4 超重和失重｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .badges{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;}
+  .badge{font-size:11.5px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+         padding:2px 10px; border-radius:999px;}
+  section{padding:18px 28px; border-bottom:1px solid var(--line);}
+  section h2{font-size:15.5px; color:var(--accent); margin-bottom:10px; letter-spacing:.5px;}
+  .svgbox{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:10px 6px 4px;}
+  .note{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  .lt{display:flex; gap:8px; align-items:baseline; margin-bottom:6px;}
+  .lt b{white-space:nowrap; font-size:13.5px; color:var(--gold);}
+  table{width:100%; border-collapse:collapse; font-size:13px; margin-top:6px;}
+  th,td{border:1px solid var(--line); padding:6px 9px; text-align:left; vertical-align:top;}
+  th{background:var(--wash); font-weight:600; white-space:nowrap;}
+  .steps{counter-reset:s; list-style:none;}
+  .steps li{counter-increment:s; position:relative; padding:5px 0 5px 34px; font-size:14px;}
+  .steps li::before{content:counter(s); position:absolute; left:0; top:6px; width:22px; height:22px;
+        background:var(--accent); color:#fff; border-radius:50%; font-size:12px;
+        display:flex; align-items:center; justify-content:center;}
+  .foot{padding:14px 28px 20px; font-size:12px; color:var(--sub); line-height:1.8; background:var(--wash);}
+  .miss{color:#8a6d1f; font-weight:600;}
+  @media print{ body{background:#fff; padding:0;} .card{box-shadow:none; border-radius:0;} }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="kicker">切片卡 · 物理必修一 · 双段卡（讲法锚段缺段如实申报）</div>
+    <h1>4.4 超重和失重<span style="font-size:13px; font-weight:400; opacity:.85;">｜第四章 运动和力的关系</span></h1>
+    <div class="badges">
+      <span class="badge">真题锚：直读卷源0覆盖如实申报 · 宁缺毋编</span>
+      <span class="badge">讲法锚段：缺段豁免注记＋池候选登记</span>
+      <span class="badge">册内照录：簇14后半视重域</span>
+    </div>
+  </div>
+
+  <section>
+    <h2>这张卡的闸带（怎么读）</h2>
+    <div class="svgbox">
+    <svg viewBox="0 0 740 224" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="视重判据四态闸">
+      <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+        <rect x="14" y="24" width="168" height="130" rx="10" fill="#e7eef6" stroke="#2b5a8c"/>
+        <text x="98" y="50" text-anchor="middle" font-size="14" font-weight="700" fill="#2b5a8c">态① 超重</text>
+        <text x="98" y="74" text-anchor="middle" font-size="12" fill="#1f242b">a向上</text>
+        <text x="98" y="94" text-anchor="middle" font-size="12" fill="#1f242b">（向上加速/向下减速）</text>
+        <text x="98" y="116" text-anchor="middle" font-size="13" font-weight="600" fill="#2b5a8c">N = m(g+a) &gt; mg</text>
+        <text x="98" y="138" text-anchor="middle" font-size="11" fill="#5b6773">读数变大·重力没变</text>
+
+        <rect x="196" y="24" width="168" height="130" rx="10" fill="#e7eef6" stroke="#2b5a8c"/>
+        <text x="280" y="50" text-anchor="middle" font-size="14" font-weight="700" fill="#2b5a8c">态② 失重</text>
+        <text x="280" y="74" text-anchor="middle" font-size="12" fill="#1f242b">a向下</text>
+        <text x="280" y="94" text-anchor="middle" font-size="12" fill="#1f242b">（向下加速/向上减速）</text>
+        <text x="280" y="116" text-anchor="middle" font-size="13" font-weight="600" fill="#2b5a8c">N = m(g−a) &lt; mg</text>
+        <text x="280" y="138" text-anchor="middle" font-size="11" fill="#5b6773">读数变小·重力没变</text>
+
+        <rect x="378" y="24" width="168" height="130" rx="10" fill="#fdf6e3" stroke="#8a6d1f"/>
+        <text x="462" y="50" text-anchor="middle" font-size="14" font-weight="700" fill="#8a6d1f">态③ 完全失重</text>
+        <text x="462" y="74" text-anchor="middle" font-size="12" fill="#1f242b">a = g</text>
+        <text x="462" y="94" text-anchor="middle" font-size="12" fill="#1f242b">（自由落体/卫星内）</text>
+        <text x="462" y="116" text-anchor="middle" font-size="13" font-weight="600" fill="#8a6d1f">N = 0</text>
+        <text x="462" y="138" text-anchor="middle" font-size="11" fill="#5b6773">水不压杯底·内部无弹力</text>
+
+        <rect x="560" y="24" width="168" height="130" rx="10" fill="#f4f6f8" stroke="#5b6773"/>
+        <text x="644" y="50" text-anchor="middle" font-size="14" font-weight="700" fill="#5b6773">态④ 平衡</text>
+        <text x="644" y="74" text-anchor="middle" font-size="12" fill="#1f242b">a = 0</text>
+        <text x="644" y="94" text-anchor="middle" font-size="12" fill="#1f242b">（静止/匀速竖直）</text>
+        <text x="644" y="116" text-anchor="middle" font-size="13" font-weight="600" fill="#5b6773">N = mg</text>
+        <text x="644" y="138" text-anchor="middle" font-size="11" fill="#5b6773">读数=重力·仅此态</text>
+
+        <text x="370" y="186" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1f242b">总判据：N − mg = ma（a取竖直向上为正）——读数永远由"维持状态需要多少支持"决定</text>
+        <text x="370" y="208" text-anchor="middle" font-size="12" fill="#8a6d1f">纪律：g没变，"失重"失的是"支撑"不是重力——物体始终受mg。</text>
+      </g>
+    </svg>
+    <p class="note">怎么读这张闸带：拿到电梯/秤/卫星题，只问一句话——"加速度朝哪、多大"，对号入座四态之一。注意态①态②各含两个运动场景（加速方向≠超失重方向，a的方向才是判据）。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>真题锚段（四要素全量 · 直读0覆盖如实申报）</h2>
+    <div class="lt"><b>直读线申报</b></div>
+    <table>
+      <tr><th>申报项</th><th>实况</th></tr>
+      <tr><td>2023山东卷T1-T18全卷清点（10-25）</td><td>超失重题无直接配题→<b>直读卷源0覆盖如实申报</b>，宁缺毋编；扩卷源候直读扩量工单。</td></tr>
+      <tr><td>册内跨节注记</td><td>返回舱类情境素材登账4.4（认领台账在案）；完全失重内部世界CX已由4.3卡秒答段照录（跨节共享·本卡易错卡③承概念面）。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>讲法锚段（三层申报 · 双段卡口径）</h2>
+    <table>
+      <tr><th>层</th><th>申报实况</th></tr>
+      <tr><td>册内层</td><td>v18簇14后半超失重域无"讲法锚点·切片装配"模块。</td></tr>
+      <tr><td>池内层</td><td>放量池无本节字幕级已验切片。</td></tr>
+      <tr><td>新采层</td><td class="miss">缺段豁免注记：B站侧候选本批未完成probe实测——候采线登记（BV号未定不虚标不代拟），probe后入池补段。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>高考接口（册内精进模块照录 · 4条）</h2>
+    <ul class="gk">
+      <li><b>电梯/体重秤视重计算</b>——N=m(g±a)直接套（四态闸对号）。</li>
+      <li><b>"完全失重"现象判断</b>——水杯自由下落、卫星内仪器：内部各部分间无弹力。</li>
+      <li><b>竖直方向联结体</b>——电梯内悬挂物张力随a变化（与4.5整体隔离合流）。</li>
+      <li><b>斜面"视重"变体</b>——支持力分量随加速度同构处理（边界②延伸）。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>易错收口（册内常见误解照录 · 4卡）</h2>
+    <table>
+      <tr><th>卡</th><th>怎么错</th><th>纠偏动作（册内照录）</th></tr>
+      <tr><td>①</td><td>"超重就是重力变大／失重就是重力变小"——错：g与mg始终没变，变的是支撑读数N=m(g±a)。</td><td>把"超失重"读成"视重增减"，每次都写清N与mg两个符号。</td></tr>
+      <tr><td>②</td><td>"向下运动就是失重、向上运动就是超重"——错：判据是a的方向，不是v的方向（向下减速=超重、向上减速=失重）。</td><td>只问"加速度朝哪"，不看"速度朝哪"。</td></tr>
+      <tr><td>③</td><td>"自由落体/完全失重时物体不受重力"——错：仍受mg（这正是a=g的原因），不受的是支持力。</td><td>区分"受力"与"需要支撑"两本账。</td></tr>
+      <tr><td>④</td><td>"视重就是重力"——错：视重只在有支撑/悬挂读数的场景有定义（自由飞行的物体没有"视重"账目）。</td><td>先问"谁在读数"，读数=N的反作用（4.3卡闸③）。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>秒答自测（册内最小验证照录 · 3条）</h2>
+    <table>
+      <tr><th>自测</th><th>判答（册内照录级）</th></tr>
+      <tr><td>60kg人站电梯体重秤（g=10）：以2m/s²加速上升/加速下降，读数各多少？</td><td>加速上升：N=m(g+a)=60×12=720N（超重）；加速下降：N=60×8=480N（失重）。读数变化±120N，重力600N本身不变。</td></tr>
+      <tr><td>自由下落的水杯里悬浮的小气泡受"浮力"吗？</td><td>不受"浮力"表现——浮力源自压强差、压强差源自重力，完全失重下压强梯度消失，气泡与水相对静止。</td></tr>
+      <tr><td>电梯从静止向上加速再匀速再减速到停，读数怎么变？</td><td>加速段N&gt;mg（超重）→匀速段N=mg（平衡）→减速段N&lt;mg（失重）——三段对号四态闸，重力全程没变。</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <ol class="steps">
+      <li>教材通读本节，圈出"视重""N−mg=ma""完全失重"三处。</li>
+      <li>四态闸自测：随手一道电梯题，30秒定态（a方向→四态之一→写N）。</li>
+      <li>秒答自测：60kg电梯题默做一遍，核对±120N变化量口径。</li>
+      <li>考前扫易错卡：默写"变的是读数不是重力""看a不看v""完全失重仍受重力""视重需有支撑"四条不落。</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <b>源注汇总</b>：册内照录＝v18原册_物理.html 簇14后半（超失重域：一句话本质视重与真实重力分开/完整展开电梯模型N=m(g+a)与完全失重/适用边界②N=m(g+a)要求质点模型与竖直方向/常见误解③④/最小验证①电梯60kg/高考接口电梯秤与完全失重判断）字段块；节名＝第四章装配页§4.4节标"4.4 超重和失重"照录；直读线＝2023山东卷T1-T18全卷清点（10-25·卷面sha留痕入仓）＝0覆盖如实申报；讲法锚段缺段申报与候采登记详见随件登记单；CX完全失重内部世界与4.3卡共享照录（跨节注记零重复）。本卡与4.5卡衔接：本节管"单对象读数随a"，4.5管"多对象打包后内外账"——电梯内悬挂物两卡合流。
+  </div>
+
+</div>
+</body>
+</html>
