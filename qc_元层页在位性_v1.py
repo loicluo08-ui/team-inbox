@@ -1,23 +1,38 @@
 #!/usr/bin/env python3
-"""元层页在位性断言 v1（10/27覆盖事故后立·防兄弟session夹带回退）
+"""元层页在位性断言 v2（10/27拆分配套·防夹带回退）
 用法: python3 qc_元层页在位性_v1.py
-断言对象: 装配_数学*_第N章_升格版*.html 元层页三要素（⑧自画结构卡/这一章的三个坎/讲法锚视频段）
-退出码: 0=全在位；1=有缺失（打印缺失清单）
-注: 三坎段目前仅数4章有（样板首件），其余册断言两要素（自画结构卡+讲法锚句在16册元层页是否批量放量后再定）——
-    当前精确断言=数4章三要素；其余15册候放量后扩。
+v2断言对象（拆分后）：①独立元层页文件三要素（数4章：自画结构卡/三个坎/讲法锚视频段）
+②16册装配html的META_INCLUDE占位在位（防占位被误删致渲染丢元层页）
+退出码: 0=全在位；1=缺失清单
 """
-import glob, sys, io
+import sys, io, os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-TARGETS = {'产出_队2/装配_数学必修一_第4章_升格版_1026.html': ['自画结构卡', '这一章的三个坎', '讲法锚视频段']}
 fail = 0
-for path, marks in TARGETS.items():
+# ①独立文件三要素（数4章样板）
+p = '产出_元层页/元层页_数4.html'
+try:
+    t = io.open(p, encoding='utf-8').read()
+    missing = [m for m in ['自画结构卡','这一章的三个坎','讲法锚视频段'] if m not in t]
+    if missing: print(f'❌{p}: 缺{missing}'); fail += 1
+    else: print(f'✅{p}: 三要素在位')
+except FileNotFoundError:
+    print(f'❌{p}: 文件不存在'); fail += 1
+# ②16册占位在位
+CANON = ['产出_队2/装配_数学必修一_第1章_升格版_1026.html','产出_队2/装配_数学必修一_第2章_升格版_1026.html',
+ '产出_队2/装配_数学必修一_第3章_1024.html','产出_队2/装配_数学必修一_第4章_升格版_1026.html',
+ '产出_队3/装配_化学必修一_第1章_升格版_1026.html','产出_队3/装配_化学必修一_第2章_升格版_1026.html',
+ '产出_队3/装配_化学必修一_第3章_升格版_1026.html','产出_队4/装配_物理必修一_第1章_1024.html',
+ '产出_队4/装配_物理必修一_第2章_1024.html','产出_队4/装配_物理必修一_第3章_1024.html',
+ '产出_队4/装配_物理必修一_第4章_1024.html','产出_队1/装配_生物B2章组成细胞的分子_首件_1024.html',
+ '产出_队1/装配_生物B3章细胞的基本结构_连跑_1024.html','产出_队1/装配_生物B4章细胞的物质输入和输出_连跑_1024.html',
+ '产出_队1/装配_生物B5章细胞的能量供应和利用_连跑_1024.html','产出_队1/装配_生物B6章细胞的生命历程_连跑_1024.html']
+n_ok = 0
+for f in CANON:
     try:
-        t = io.open(path, encoding='utf-8').read()
+        t = io.open(f, encoding='utf-8').read()
+        if '<!--META_INCLUDE:' in t: n_ok += 1
+        else: print(f'❌{f}: 占位缺失'); fail += 1
     except FileNotFoundError:
-        print(f'❌{path}: 文件不存在'); fail += 1; continue
-    missing = [m for m in marks if m not in t]
-    if missing:
-        print(f'❌{path}: 缺{missing}（疑似被夹带commit回退——对照git log该文件最近两次改动）'); fail += 1
-    else:
-        print(f'✅{path}: 三要素在位')
+        print(f'❌{f}: 文件不存在'); fail += 1
+print(f'占位在位: {n_ok}/16')
 sys.exit(1 if fail else 0)
