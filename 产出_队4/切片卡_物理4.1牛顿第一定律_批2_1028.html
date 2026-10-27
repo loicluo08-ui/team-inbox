@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜4.1 牛顿第一定律｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35);
+         border-radius:999px; padding:1px 10px; margin:2px 4px 2px 0; font-size:12px;}
+  section{padding:18px 28px; border-top:1px solid var(--line);}
+  section h2{font-size:16px; color:var(--accent); margin-bottom:10px; letter-spacing:.5px;}
+  .tag{display:inline-block; background:var(--accent-soft); color:var(--accent); border-radius:6px;
+       padding:0 8px; font-size:12px; margin-right:6px;}
+  .quote{background:var(--wash); border-left:3px solid var(--accent); padding:10px 14px; border-radius:0 8px 8px 0;
+         font-size:14px; margin:8px 0;}
+  .quote .src{display:block; color:var(--sub); font-size:12px; margin-top:4px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; margin:8px 0;}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--wash); color:var(--ink); white-space:nowrap;}
+  .ecard{border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:10px 0; background:var(--paper);}
+  .ecard h3{font-size:14.5px; margin-bottom:6px; color:#a33a3a;}
+  .ecard .row{font-size:13.5px; margin:3px 0;}
+  .ecard .row b{color:var(--gold);}
+  .note{background:#fbf6e8; border:1px dashed var(--gold); border-radius:8px; padding:10px 14px; font-size:13px; margin:8px 0;}
+  .foot{padding:14px 28px; border-top:1px solid var(--line); color:var(--sub); font-size:12px; line-height:1.9; background:var(--wash);}
+  .svgwrap{overflow-x:auto;}
+  .readthis{font-size:13.5px; color:var(--sub); margin-top:8px;}
+  .readthis b{color:var(--accent);}
+  code{background:var(--accent-soft); border-radius:4px; padding:0 5px; font-size:13px;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="head">
+    <div class="kicker">切片卡｜物理线·批2｜S8五段同构×双段卡口径</div>
+    <h1>4.1 牛顿第一定律 · 讲法锚点</h1>
+    <div class="meta">
+      <span class="badge">装配页 §4.1 节标</span><span class="badge">v18 簇12 域（136065→147119）</span><span class="badge">对位表 §七 承诺件</span>
+      <br>承办：并行搜索员C（802a9b0认领·物理线余量4.1先行）｜生成：2026-10-28
+    </div>
+  </div>
+
+  <section>
+    <h2>一图读懂：因果方向革命闸（理想实验三帧）</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="伽利略对接斜面理想实验三帧">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2b5a8c"/>
+          </marker>
+        </defs>
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="13">
+          <!-- 帧①可靠事实 -->
+          <rect x="10" y="24" width="212" height="150" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <line x1="40" y1="140" x2="120" y2="80" stroke="#1f242b" stroke-width="2.5"/>
+          <line x1="130" y1="80" x2="200" y2="128" stroke="#1f242b" stroke-width="2"/>
+          <circle cx="120" cy="76" r="6" fill="#2b5a8c"/>
+          <line x1="200" y1="66" x2="200" y2="128" stroke="#8a6d1f" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <text x="52" y="164" fill="#5b6773" font-size="12">左陡 h 释放 → 冲到几乎等高</text>
+          <text x="66" y="44" fill="#2b5a8c" font-weight="bold">① 可靠事实</text>
+          <!-- 箭头1 -->
+          <line x1="230" y1="99" x2="272" y2="99" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="236" y="88" fill="#5b6773" font-size="11.5">事实</text>
+          <!-- 帧②逻辑外推 -->
+          <rect x="282" y="24" width="212" height="150" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <line x1="306" y1="140" x2="386" y2="80" stroke="#1f242b" stroke-width="2.5"/>
+          <line x1="396" y1="80" x2="478" y2="112" stroke="#1f242b" stroke-width="1.8" stroke-dasharray="5 3"/>
+          <circle cx="386" cy="76" r="6" fill="#2b5a8c"/>
+          <text x="322" y="164" fill="#5b6773" font-size="12">右侧倾角减小 → 滑得更远</text>
+          <text x="338" y="44" fill="#2b5a8c" font-weight="bold">② 逻辑外推</text>
+          <!-- 箭头2 -->
+          <line x1="502" y1="99" x2="544" y2="99" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="504" y="88" fill="#5b6773" font-size="11.5">验证裁决</text>
+          <!-- 帧③极限外推 -->
+          <rect x="554" y="24" width="196" height="150" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <line x1="578" y1="140" x2="658" y2="80" stroke="#1f242b" stroke-width="2.5"/>
+          <line x1="666" y1="80" x2="736" y2="80" stroke="#a33a3a" stroke-width="2.5"/>
+          <line x1="658" y1="80" x2="736" y2="80" stroke="#a33a3a" stroke-width="1.6" stroke-dasharray="5 3"/>
+          <circle cx="658" cy="76" r="6" fill="#2b5a8c"/>
+          <path d="M700 44 l7 8 l13 -15" fill="none" stroke="#3a7d44" stroke-width="2.6"/>
+          <text x="584" y="164" fill="#5b6773" font-size="12">倾角 → 0：永远滑下去</text>
+          <text x="602" y="44" fill="#2b5a8c" font-weight="bold">③ 极限外推</text>
+          <!-- 图脚 -->
+          <text x="10" y="208" fill="#8a6d1f" font-size="13">三要素：可靠事实 ＋ 逻辑外推 ＋ 结论交给后续实验裁决</text>
+          <text x="10" y="228" fill="#5b6773" font-size="12.5">"理想实验"不是瞎想，是受控外推（v18原话·图脚照录）</text>
+        </g>
+      </svg>
+    </div>
+    <div class="readthis">
+      <b>怎么读这张图：</b>左帧是<b>做得出来的实验</b>（摩擦很小，球几乎冲回等高——虚线为等高参考）；中帧把右侧变缓，球为"回到原高度"必须滑得更远（虚线段）；右帧推到极限——右侧放平（红色轨道），没有任何高度可供"返还"，球只能永远滑下去。三帧连读：把"<b>运动需要力维持</b>"这句两千年直觉连根拔掉——停下是摩擦力的账，不是运动的本性。
+    </div>
+  </section>
+
+  <section>
+    <h2>讲法锚点 · 视频切片（双段卡 · 缺段豁免注记）</h2>
+    <div class="quote">
+      北大学长跳跳《【高中物理必修1系统课】58.牛顿第一定律、力学单位制｜彻底理解什么是惯性》
+      BV1tR4y1y7yb<br>
+      <span class="src">
+        全片2721s（45:21）｜播放42.5万（页面实测@2026-10-28）｜系统课家族同源：同UP系统课42集即3.3牛三域池候选（对界互证）<br>
+        probe实测：CC字幕轨0条（player api subCount=0，cid 906030959／aid 348218837，@2026-10-28）
+      </span>
+    </div>
+    <div class="note">
+      <b>缺段豁免注记（双段卡口径）：</b>本件按双段卡口径出品——CC字幕轨实测0条，引文照录不可得（无音频转写工具链，同批2三卡实况）；秒窗与逐句引文均不虚标。补段条件：该BV字幕轨上线或whisper转写线接入后，按引文照录口径回填秒窗段，不代拟。
+    </div>
+    <table>
+      <tr><th style="width:110px">池候选登记</th><th>probe实测（@2026-10-28）</th></tr>
+      <tr><td>李永乐老师官方</td><td>《高中物理必修（一）4.1 牛顿第一定律》BV1gb421J7k8｜播放75,318｜全片1255s（20:55）｜CC字幕轨0条</td></tr>
+      <tr><td>物理教学平台</td><td>《优质课高中/全国赛 牛顿第一定律》BV1K5SsY5Epu｜播放13,144｜全片2467s｜CC字幕轨0条</td></tr>
+    </table>
+    <div class="readthis">实采留痕：1次搜索＋3次probe（跳跳58／优质课全国赛／李永乐官方），限速错峰，零熔断；池候选BV均纯文本登记（超链接化属补量工单口径，本批不自行挂href）。</div>
+  </section>
+
+  <section>
+    <h2>高考接口（册内速览卡"怎么考"行照录）</h2>
+    <table>
+      <tr><th style="width:150px">考位</th><th>口径（v18照录）</th></tr>
+      <tr><td>概念判断第一档</td><td>力与运动关系·惯性与质量——概念判断选择题第一档</td></tr>
+      <tr><td>方法论考位</td><td>理想实验方法论（可靠事实＋逻辑外推＋实验裁决）</td></tr>
+      <tr><td>情境解释题</td><td>生活情境解释：安全带／头盔／泼水／急刹前倾</td></tr>
+      <tr><td>表述陷阱</td><td>"受到惯性力"表述陷阱——判卷明确扣分点（见卡①）</td></tr>
+      <tr><td>前提分定位</td><td>独立直接命题格少，但概念混编无处不在——本节是第四章所有定量题的前提分</td></tr>
+      <tr><td>例题定级</td><td>例1 ★★★ 进阶·概念辨析全链（量度唯一性→表述规范→属性vs量）；例2 ★☆☆ 基础·情境解释（惯性表述规范模板：先圈对象，再点名"谁保持谁改变"）</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="ecard">
+      <h3>卡①（主卡）"受到惯性（力）的作用"——表述禁令</h3>
+      <div class="row"><b>症状：</b>"物体受惯性力作用向前冲"这类句子出现在答卷上（v18易错现场照录）。</div>
+      <div class="row"><b>错因：</b>惯性是属性，不是力——它没有施力物体；力是改变运动状态的原因，两者方向性对立。</div>
+      <div class="row"><b>维持机制：</b>把句子里的"受到惯性"改写成"<code>由于惯性，物体保持了……</code>"；要写"力"先点名施力物体。</div>
+      <div class="row"><b>钉死：</b>v18纠偏原话——永远不写"受到惯性（力）"，高考判卷此处明确扣分。</div>
+    </div>
+    <div class="ecard">
+      <h3>卡② "速度越大惯性越大"</h3>
+      <div class="row"><b>症状：</b>"高速子弹难停下＝惯性大"。</div>
+      <div class="row"><b>错因：</b>惯性唯一量度＝质量；高速难停是动量／动能大，不是惯性大。</div>
+      <div class="row"><b>维持机制：</b>把"惯性"一词严格换成"质量"检验句子——"速度越大质量越大"当场露馅。</div>
+      <div class="row"><b>钉死：</b>惯性只认质量 m，快慢受力都不改（v18口诀前半照录）。</div>
+    </div>
+    <div class="ecard">
+      <h3>卡③ "运动需要力维持"（亚氏直觉·两千年老坑）</h3>
+      <div class="row"><b>症状：</b>"推车车才走，不推就停——力是维持运动的原因"。</div>
+      <div class="row"><b>错因：</b>漏了摩擦力的隐藏账目——不推时车其实受力（摩擦），是摩擦让它停。</div>
+      <div class="row"><b>维持机制：</b>先补全账目（有没有隐藏的摩擦／空气阻力），再谈"停下"的原因；追问一句"若无摩擦呢"——永远匀速。</div>
+      <div class="row"><b>钉死：</b>v18纠偏原话——这个直觉错在把"看不见的摩擦力"漏账了：是摩擦让它停，不是"运动需要维持"。</div>
+    </div>
+    <div class="ecard">
+      <h3>卡④ "静止的物体没有惯性"</h3>
+      <div class="row"><b>症状：</b>"静止的东西谈不上惯性，动起来才有的谈"。</div>
+      <div class="row"><b>错因：</b>把惯性读成"对运动的保持"，漏了"对改变的抵抗"。</div>
+      <div class="row"><b>维持机制：</b>把惯性读成"抵抗被改变"：想让它动起来费不费力＝惯性大不小；"保持静止"与"保持匀速"是同一属性的两面。</div>
+      <div class="row"><b>钉死：</b>v18纠偏原话——惯性是保持"原有状态"的属性，静止的物体保持静止正是惯性表现。</div>
+    </div>
+    <div class="quote">
+      v18口诀照录：惯性只认质量 m，快慢受力都不改；运动不靠力维持，改变运动才要力。
+    </div>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <table>
+      <tr><th style="width:70px">步骤</th><th>用法</th></tr>
+      <tr><td>① 先看图</td><td>三帧连读一遍，把"事实→外推→验证裁决"三要素对号入座；读完能复述"停下是摩擦力的账"。</td></tr>
+      <tr><td>② 再过卡</td><td>四张易错卡各读一遍症状，能对上号的在卡面打勾；卡①是判卷扣分点，表述模板背下来。</td></tr>
+      <tr><td>③ 三题自测</td><td>公交急刹前倾（规范表述：下半身随车减速·上半身因惯性保持原速）；子弹"冲力"伪概念（离膛后只受重力与空气阻力，无向前施力物）；地月铁球两连判（惯性认质量·重量认当地重力加速度）——先做再看答案。</td></tr>
+      <tr><td>④ 接前后</td><td>向前接：3.4／3.5合成分解的"合力为零"账目；向后接：4.2 F=ma 是本节"力与加速度挂钩"的定量版。</td></tr>
+    </table>
+  </section>
+
+  <div class="foot">
+    源注汇总：册内照录＝v18原册_物理.html 簇12（136065→147119字节域·42条原话锚台账实测）＋物理-4.1节件字段块（速览卡"怎么考"行／正文§因果革命·§惯性／常见误解四条／易错卡四卡／口诀／例1例2／三题自测）照录；讲法锚段缺段申报与池候选登记详见随件池候选登记单（B站probe实测2026-10-28·全程≥30s错峰·1次搜索+3次probe·三件CC字幕轨均0条）；本卡与4.2卡衔接：本节管"力与运动关系的定性地基"（力＝改变运动状态的原因），4.2管F=ma定量版。
+  </div>
+</div>
+</body>
+</html>
