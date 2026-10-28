@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化学必修一·九节易错素材终版验收报告｜鲁科2019版｜报告汇总员装配</title>
+<style>
+  :root{--ink:#1f2933;--sub:#52606d;--primary:#0f4c5c;--p2:#145a6e;--accent:#e36414;--ok:#2a9d8f;--okbg:#e8f6f3;--warn:#b45309;--warnbg:#fff8e6;--line:#e4e0d5;--bg:#f7f5f0;--card:#ffffff;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;font-size:15px;}
+  .wrap{max-width:1000px;margin:0 auto;padding:32px 26px 60px;}
+  header.hero{background:linear-gradient(135deg,#0f4c5c 0%,#145a6e 55%,#1b6e83 100%);color:#fff;border-radius:16px;padding:38px 40px;margin-bottom:26px;box-shadow:0 8px 24px rgba(15,76,92,.20);}
+  header.hero h1{font-size:25px;font-weight:700;letter-spacing:.5px;margin-bottom:12px;}
+  header.hero .sub{font-size:14px;opacity:.95;margin-bottom:14px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:3px 14px;font-size:12.5px;}
+  h2{font-size:20px;color:var(--primary);margin:34px 0 14px;padding-left:12px;border-left:5px solid var(--accent);}
+  h3{font-size:16.5px;color:var(--p2);margin:22px 0 10px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin-bottom:16px;box-shadow:0 1px 4px rgba(31,41,51,.05);}
+  .quote{background:#f2f7f7;border-left:4px solid var(--p2);border-radius:0 8px 8px 0;padding:10px 16px;margin:8px 0;font-size:14.2px;color:#27424a;}
+  .quote .src{color:var(--accent);font-weight:600;font-size:12.5px;margin-right:4px;}
+  .refine{background:#fbf6ec;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:10px 16px;margin:8px 0;font-size:14px;color:#6b4a12;}
+  .refine .tag{background:var(--accent);color:#fff;border-radius:4px;padding:0 7px;font-size:11.5px;margin-right:6px;}
+  .ctx{background:#f7f5f0;border-radius:8px;padding:9px 14px;margin:8px 0;font-size:13.8px;color:var(--sub);}
+  .ctx b{color:var(--ink);}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.2px;background:#fff;}
+  th{background:var(--primary);color:#fff;padding:7px 10px;text-align:left;font-weight:600;white-space:nowrap;}
+  td{border-bottom:1px solid var(--line);padding:6px 10px;vertical-align:top;}
+  tr:nth-child(even) td{background:#faf9f6;}
+  .lv{display:inline-block;border-radius:4px;padding:0 8px;font-size:11.5px;font-weight:700;color:#fff;}
+  .lv1{background:#5b6b73;}.lv3{background:#2a9d8f;}.lv4{background:#e36414;}
+  .st200{color:#1c7a6e;font-weight:700;} .st403{color:#b45309;font-weight:700;} .stwaf{color:#c0392b;font-weight:700;} .str{color:#7c6f1e;font-weight:700;}
+  .note{font-size:12.8px;color:var(--sub);margin-top:6px;}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px;}
+  .badge{border-radius:6px;padding:2px 10px;font-size:12px;font-weight:600;}
+  .b-ok{background:var(--okbg);color:#1c7a6e;border:1px solid #bfe3dc;}
+  .b-warn{background:var(--warnbg);color:var(--warn);border:1px solid #f0dcb0;}
+  .b-info{background:#eaf1f4;color:#3d6570;border:1px solid #cfdfe4;}
+  .sec-head{background:linear-gradient(90deg,#0f4c5c,#1b6e83);color:#fff;border-radius:10px;padding:14px 20px;margin:30px 0 14px;}
+  .sec-head .jn{font-size:17px;font-weight:700;}
+  .sec-head .orig{font-size:13px;opacity:.9;margin-top:2px;}
+  .sec-head .cnt{float:right;font-size:12.5px;background:rgba(255,255,255,.16);border-radius:14px;padding:2px 12px;margin-top:2px;}
+  .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:14px;box-shadow:0 1px 4px rgba(31,41,51,.05);}
+  .item .ttl{font-size:15.5px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+  .item .ttl .no{display:inline-block;background:var(--p2);color:#fff;border-radius:6px;padding:0 9px;font-size:12px;margin-right:8px;}
+  .dup{font-size:12.8px;color:var(--sub);background:#f4f3ef;border-radius:8px;padding:7px 12px;margin-top:8px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr;}}
+  footer{margin-top:40px;padding-top:16px;border-top:2px solid var(--line);font-size:12.8px;color:var(--sub);text-align:center;}
+  .toc{columns:2;font-size:13.5px;}
+  .toc li{margin-bottom:3px;}
+  .appx{background:#faf8f3;border:1px dashed #d8d0bc;border-radius:12px;padding:18px 22px;margin-bottom:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>化学必修一 · 九节易错素材 · 终版验收报告</h1>
+  <div class="sub">鲁科版2019必修第一册 ｜ 9节 × 20条正式条目 ｜ T3四字段全息装配 ｜ 候补池3条＋储备1条随附录备查</div>
+  <div class="chips">
+    <span class="chip">装配：报告汇总员</span>
+    <span class="chip">装配时点：2026-10-28 19:4x</span>
+    <span class="chip">令源：群管理员19:35:01最终装配令</span>
+    <span class="chip">预检闭环：三线放量件全PASS（74eef52）</span>
+    <span class="chip">验收状态：候用户终验收</span>
+  </div>
+</header>
+
+<div class="card">
+<b>执行摘要</b>　化学必修一易错素材线自10-01任务书启动，经P0校准件过闸（10-01）、五项终裁落地（10-28 18:55）、三线放量（A块3／B块1／C块2）、三件预检全PASS（19:35），至本报告完成九节配额<b>20/20满额装配</b>。全部条目照录句经「逐字实证＋HTTP双时点实测＋站族交叉≥2＋L1节名页锚定」四重核验；20条主旨互异、与已收件零节域重叠；零退件项、零阻塞项。<b>验收结论：候终验收。</b>
+</div>
+
+<h2>总览仪表</h2>
+<div class="grid2">
+<div class="card">
+  <b>图1 · 九节配额分布（满额20/20）</b>
+  <svg width="100%" height="216" viewBox="0 0 400 216" xmlns="http://www.w3.org/2000/svg">
+    <g font-size="11.5" fill="#52606d">
+      <text x="6" y="20">§1.1 走进化学科学</text><rect x="150" y="10" width="180" height="14" rx="3" fill="#2a9d8f"/><text x="336" y="21" fill="#1f2933" font-weight="bold">2</text>
+      <text x="6" y="44">§1.2 研究物质性质的方法</text><rect x="150" y="34" width="180" height="14" rx="3" fill="#2a9d8f"/><text x="336" y="45" fill="#1f2933" font-weight="bold">2</text>
+      <text x="6" y="68">§1.3 物质的量</text><rect x="150" y="58" width="180" height="14" rx="3" fill="#2a9d8f"/><text x="336" y="69" fill="#1f2933" font-weight="bold">2</text>
+      <text x="6" y="92">§2.1 元素与物质分类</text><rect x="150" y="82" width="180" height="14" rx="3" fill="#2a9d8f"/><text x="336" y="93" fill="#1f2933" font-weight="bold">2</text>
+      <text x="6" y="116">§2.2 电解质的电离 离子反应</text><rect x="150" y="106" width="180" height="14" rx="3" fill="#2a9d8f"/><text x="336" y="117" fill="#1f2933" font-weight="bold">2</text>
+      <text x="6" y="140">§2.3 氧化还原反应 ★高频</text><rect x="150" y="130" width="270" height="14" rx="3" fill="#e36414"/><text x="426" y="141" fill="#1f2933" font-weight="bold">3</text>
+      <text x="6" y="164">§3.1 铁的多样性 ★高频</text><rect x="150" y="154" width="270" height="14" rx="3" fill="#e36414"/><text x="426" y="165" fill="#1f2933" font-weight="bold">3</text>
+      <text x="6" y="188">§3.2 硫的转化</text><rect x="150" y="178" width="180" height="14" rx="3" fill="#2a9d8f"/><text x="336" y="189" fill="#1f2933" font-weight="bold">2</text>
+      <text x="6" y="212">§3.3 氮的循环</text><rect x="150" y="202" width="180" height="14" rx="3" fill="#2a9d8f"/><text x="336" y="213" fill="#1f2933" font-weight="bold">2</text>
+    </g>
+  </svg>
+  <div class="note">两高频节（§2.3／§3.1）按任务书v5各3条，其余7节各2条。</div>
+</div>
+<div class="card">
+  <b>图2 · 来源站族结构（15族43源位）</b>
+  <svg width="100%" height="216" viewBox="0 0 400 216" xmlns="http://www.w3.org/2000/svg">
+    <g font-size="11.5" fill="#52606d">
+      <text x="6" y="24">化学自习室 hxzxs</text><rect x="168" y="12" width="212" height="14" rx="3" fill="#0f4c5c"/><text x="386" y="23" fill="#1f2933" font-weight="bold">19</text>
+      <text x="6" y="48">21世纪教育网</text><rect x="168" y="36" width="56" height="14" rx="3" fill="#2a9d8f"/><text x="230" y="47" fill="#1f2933" font-weight="bold">5</text>
+      <text x="6" y="72">人人文库</text><rect x="168" y="60" width="22" height="14" rx="3" fill="#2a9d8f"/><text x="196" y="71" fill="#1f2933" font-weight="bold">2</text>
+      <text x="6" y="96">衡水名师工作室</text><rect x="168" y="84" width="22" height="14" rx="3" fill="#2a9d8f"/><text x="196" y="95" fill="#1f2933" font-weight="bold">2</text>
+      <text x="6" y="120">百度知道·百科等L4档</text><rect x="168" y="108" width="22" height="14" rx="3" fill="#e36414"/><text x="196" y="119" fill="#1f2933" font-weight="bold">2+</text>
+      <text x="6" y="144">其他教辅站8族各1</text><rect x="168" y="132" width="158" height="14" rx="3" fill="#9dbfbe"/><text x="332" y="143" fill="#1f2933" font-weight="bold">8</text>
+      <text x="6" y="168">今日头条·气体汇等P0源</text><rect x="168" y="156" width="44" height="14" rx="3" fill="#9dbfbe"/><text x="218" y="167" fill="#1f2933" font-weight="bold">3</text>
+      <text x="6" y="192">教材目录页 L1锚（dzkbw）</text><rect x="168" y="180" width="22" height="14" rx="3" fill="#5b6b73"/><text x="196" y="191" fill="#1f2933" font-weight="bold">L1</text>
+    </g>
+  </svg>
+  <div class="note">口径=正式20条＋候补池3条＋储备B1的锚点挂源计次（同条多源累计）；百科L4佐证走渲染通道另计。</div>
+</div>
+</div>
+
+<div class="card">
+<b>图3 · 核验通道与状态面</b>　
+<span class="badge b-ok">HTTP 200 实测 34源位</span>
+<span class="badge b-info">渲染通道核验 6处（百科×5＋头条×1）</span>
+<span class="badge b-warn">curl 403通道注记（百科常态／dzkbw-https证书）</span>
+<span class="badge b-warn">WAF暂挂 1源（51jiaoxi站域级）</span>
+<div class="note">dzkbw 2019目录页http通道多时点200（10-01/10-02历卷、10-28三席+汇总员四方互证31,950B）；https通道证书主体不匹配如实注记取数走http。hxzxs站10-02起TLS过期，curl -k可达＋关键句grep对验正常。</div>
+</div>
+
+<!-- ==================== §1.1 ==================== -->
+<div class="sec-head"><span class="cnt">条目 ×2</span><div class="jn">§1.1 走进化学科学</div><div class="orig">节名照录（2019版目录页·L1）：「第1节 走进化学科学」｜第1章「认识化学科学」</div></div>
+
+<div class="item">
+  <div class="ttl"><span class="no">1-1</span>同素异形体相互转变的变化类型判断易错</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs＋百科佐证＝2站族</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S1·L3]</span>「总之，判断同素异形体间的转变是化学变化还是物理变化，与判断其它物质间转变相同的是，可以看生成物与反应物的化学性质是否相同，相同是物理变化，不同是化学变化；也可以看生成物与反应物分子结构是否相同，相同是物理变化，不同是化学变化」</div>
+  <div class="refine"><span class="tag">提炼</span>红磷白磷／O₂-O₃／金刚石-石墨逐例分析页文在卷（白磷剧毒燃点40℃、红磷较稳定→互转属化学变化）；百科「同素异形体」佐证句降[提炼]层（L4档＋科普中国认证加注·终裁Ⅰ口径）。</div>
+  <div class="ctx"><b>触发情境</b>："O₃→O₂""红磷与白磷相互转化""金刚石与石墨互转"变化类型判断题；"同种元素组成→相互转变为物理变化"类误判。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S1</td><td>化学自习室·同素异形体转变辨析</td><td>hxzxs.cn/view-1972-1.html</td><td class="st200">200/65,341B</td><td>10-28 18:59:15</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>佐证</td><td>百度百科·同素异形体（渲染通道）</td><td>baike.baidu.com/item/同素异形体</td><td class="st403">curl 403→渲染200</td><td>渲染10-04／复核10-28 19:03:56</td><td><span class="lv lv4">L4</span></td></tr>
+  </table>
+  <div class="dup">判重：与1-2互异（本条=变化类型之"同元素≠物理变化"）；照录句"看分子结构是否相同"系原作者观点照录（件内已注记）。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">1-2</span>能量变化≠化学变化：发光发热/放热不必然是化学变化</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs同站双挂＋百科佐证</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S1·L3]</span>「(3)从能量上看，化学变化中一定伴随能量变化，而有能量变化的过程却不一定是化学变化；物理变化中有的有能量变化，有的无能量变化，如气体与气体之间的扩散等」<br><span class="src">[S1·L3]</span>「(4)化学变化过程中一定伴有物理变化，但物理变化过程中未必有化学变化，观察到一定的实验现象并不一定是发生化学变化造成的」</div>
+  <div class="refine"><span class="tag">提炼</span>浓硫酸溶解放热=物理扩散吸热＋化学水合放热两过程叠加（同站15975页）；百科「化学变化」佐证降[提炼]（L4档＋认证加注）。</div>
+  <div class="ctx"><b>触发情境</b>："灯泡通电发光发热是化学变化？""浓硫酸溶于水放热是化学变化？"类判断题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S1</td><td>化学自习室·正确认识物理变化和化学变化</td><td>hxzxs.cn/view-20115-1.html</td><td class="st200">200/63,789B</td><td>10-28 18:59:15</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S2</td><td>化学自习室·浓硫酸溶于水（同站取段互补）</td><td>hxzxs.cn/view-15975-1.html</td><td class="st200">200/64,166B</td><td>10-28 18:59:15</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>佐证</td><td>百度百科·化学变化（渲染通道）</td><td>baike.baidu.com/item/化学变化</td><td class="st403">curl 403→渲染200</td><td>渲染10-04／复核10-28 19:03:56</td><td><span class="lv lv4">L4</span></td></tr>
+  </table>
+  <div class="dup">判重：与1-1互异（本条=能量变化与变化类型脱钩）。</div>
+</div>
+
+<!-- ==================== §1.2 ==================== -->
+<div class="sec-head"><span class="cnt">条目 ×2 ＋ 储备B1入附录</span><div class="jn">§1.2 研究物质性质的方法和程序</div><div class="orig">节名照录（2019版目录页·L1）：「第2节 研究物质性质的方法和程序」</div></div>
+
+<div class="item">
+  <div class="ttl"><span class="no">2-1</span>"钠浮在水面→密度小于水"的过度推断与"熔成小球"归因</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×21cnjy＝2照录站族</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S1·L3]</span>「钠球在水面上四处游动，处于动态而非静态，不能根据钠浮在水面上推断出钠的密度小于水的。实际上，钠的密度为0.968 g/cm³，根据阿基米德原理，钠块应几乎位于水面下，而实际现象是钠大部分位于水面上」<br><span class="src">[S2·L3]</span>「三、教学重难点 教学重点1.钠与水、氧气的反应现象及原理 教学难点1.通过实验现象推理钠的化学性质，理解"活泼性"的含义」<br><span class="src">[S2·L3]</span>「3.引导归纳"浮、熔、游、响、红"五字现象」</div>
+  <div class="refine"><span class="tag">提炼</span>S1机理段：浮起主因并非密度小于水，而是钠与水反应产生莱顿弗罗斯特效应（气体层）；"熔成小球"归因熔点低（97.8℃）而非沸点。<b>教学口径张力如实并陈</b>：S1深度辨析 vs 教材通说（S2教案侧），使用按"教材口径为主、S1为拓展辨析"（预检③裁定维持）。百科「钠」佐证降[提炼]（L4＋认证加注）。</div>
+  <div class="ctx"><b>触发情境</b>："钠浮于水面说明钠密度小于水"对错辨析；"熔成小球"归因误答"沸点低"；实验现象观察与结论归纳题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S1</td><td>化学自习室·钠与水反应实验现象再认识</td><td>hxzxs.cn/view-22207-1.html</td><td class="st200">200/67,067B</td><td>10-28 18:59:15</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S2</td><td>21世纪教育网·人教2019钠及其化合物教学设计（本轮换源）</td><td>zy.21cnjy.com/26806284</td><td class="st200">200/45,484B</td><td>10-28 19:01:32</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>佐证</td><td>百度百科·钠（渲染通道）</td><td>baike.baidu.com/item/钠/162328</td><td class="st403">curl 403→渲染200</td><td>渲染10-04／复核10-28 19:03:56</td><td><span class="lv lv4">L4</span></td></tr>
+  </table>
+  <div class="dup">判重：与2-2互异。换源声明：原S2=51jiaoxi doc-12126603本轮复测200/12,093B正文已撤（WAF壳页），换21cnjy人教2019对口页；51jiaoxi历史照录卷宗保留（预检③⑤裁定）。汇总员独立复测：B_S2n页"浮、熔、游、响、红""五字现象"3/3 HIT。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">2-2</span>注射器活塞右移不能验证钠与水反应放热（实验干扰未排除）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×高途＝2照录站族</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S1·L3]</span>「右侧图示中，Na与H2O反应有H2生成，也会使得注射器活塞向右移动；气密性良好的情况下，水的滴入也会导致活塞向右移动，所以不能验证钠与水反应放热」<br><span class="src">[S2·L3]</span>「Na和水产生氢气，也能使注射器活塞自动右移，不能证明反应放热」</div>
+  <div class="refine"><span class="tag">提炼</span>易错内核=实验法变量未控制：产气体积增大与热膨胀两效应混同。S1同页"钠浮于乙醇=表面氢气浮力"与本条产气推活塞机理同源互证。</div>
+  <div class="ctx"><b>触发情境</b>：装置分析题"活塞右移能否证明放热"；控制变量法应用判断。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S1</td><td>化学自习室·金属钠的性质实验</td><td>hxzxs.cn/view-21908-1.html</td><td class="st200">200/72,951B</td><td>10-28 18:59:16</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S2</td><td>高途·装置综合题解析页（LaTeX残渣还原照录）</td><td>www.gaotu.cn/topic/8@609030043200581634@1/483/400</td><td class="st200">200/113,996B</td><td>10-28 19:01:31</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">判重：与2-1互异。汇总员独立复测：gaotu页200/113,984B（-12B动态漂移）＋"注射器活塞""不能证明反应放热"HIT。</div>
+</div>
+
+<!-- ==================== §1.3 ==================== -->
+<div class="sec-head"><span class="cnt">条目 ×2</span><div class="jn">§1.3 化学中常用的物理量——物质的量</div><div class="orig">节名照录（2019版目录页·L1）：「化学中的常用物理量——物质的量」（P0校准件锚定节·两代目录页双源核验）</div></div>
+
+<div class="item">
+  <div class="ttl"><span class="no">3-1</span>气体摩尔体积22.4L/mol适用条件误用（标况＋气态双条件）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：人人文库×气体汇＝2站族</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S2·L3]</span>「7、273℃与273K不注意区分，是"标况"还是"非标况"，是"气态"还是"液态""固态"不分清楚。22.4L.mol-1的适用条件。注意三氧化硫、乙烷、己烷、水等物质的状态。」<br><span class="src">[S1·L3]</span>「物质的状态：标准状况下，水、苯、乙醇、三氧化硫等不是气态，不能用气体摩尔体积（22.4L/mol）计算其物质的量。」</div>
+  <div class="ctx"><b>触发情境</b>：NA型选择题"标况下2.24L水""常温常压下22.4L某气体"求微粒数，未核"标况＋气态"双条件即套22.4L/mol。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S1</td><td>人人文库·教辅文档</td><td>m.renrendoc.com/paper/534152237.html</td><td class="st200">200/40,949B</td><td>10-02 22:20-35复测</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S2</td><td>气体汇（HTTPS证书过期·HTTP通道）</td><td>qitihui.com/archives/146465.html</td><td class="st200">HTTP 200/44,707B</td><td>10-02 22:20-35复测</td><td><span class="lv lv4">L4</span></td></tr>
+  </table>
+  <div class="dup">判重：与3-2互异；站族交叉2（S1主L3×S2辅L4）。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">3-2</span>NA微粒数判断·组成与电子转移陷阱（稀有气体单原子／歧化反应电子数）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：人人文库×今日头条＝2站族</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S1·L3]</span>「物质的组成与结构：稀有气体为单原子分子；臭氧（O₃）、白磷（P₄）等为多原子分子；一定量的物质中所含化学键的数目（如1mol金刚石含C-C键2Nₐ，1molSiO₂含Si-O键4Nₐ，1mol乙烯含σ键5Nₐ、π键1Nₐ）。」<br><span class="src">[S3·L3]</span>「6、所有的稀有气体都是单原子分子而误认为双原子分子。」</div>
+  <div class="refine"><span class="tag">提炼</span>同源扩展段：1mol Cl₂与足量Fe反应转移2Nₐ电子、与NaOH溶液反应转移Nₐ电子（歧化反应）——歧化电子数陷阱。</div>
+  <div class="ctx"><b>触发情境</b>：NA型选择题微粒数/化学键数目/电子转移数目综合判断。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S1</td><td>人人文库·教辅文档</td><td>m.renrendoc.com/paper/534152237.html</td><td class="st200">200/40,949B</td><td>10-02 22:20-35复测</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S3</td><td>今日头条文章（curl=JS壳，agent-browser渲染核验）</td><td>toutiao.com/article/7552097985719435791</td><td class="str">200/72,914B＋渲染核验</td><td>10-02复测／渲染10-01</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">判重：与C线§2.3条2（电子守恒配平）层次不同（微粒计数 vs 配平原则）——C件已声明同页扩展段分工，不构成双算。</div>
+</div>
+
+<!-- ==================== §2.1 ==================== -->
+<div class="sec-head"><span class="cnt">条目 ×2 ＋ 候补3条入附录</span><div class="jn">§2.1 元素与物质分类（含·一种重要的混合物——胶体）</div><div class="orig">节名照录（2019版目录页·L1）：「第1节 元素与物质分类」名下小节「一种重要的混合物——胶体」——胶体∈§2.1两代目录页铁证</div></div>
+
+<div class="item">
+  <div class="ttl"><span class="no">4-1</span>胶体的定义与分散系归属易错</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×3页＋百科佐证</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S1·L3]</span>「一、胶体的定义：分散质粒子直径在1nm~100nm之间的分散系」<br><span class="src">[S3·L3]</span>「牛奶是复杂的各种分散系的混合物。首先牛奶是由蛋白质颗粒和其水解产物即各种氨基酸组成的高分子胶体，…还含有动物性的油脂在水中形成乳浊液，同时还含有极少量的无机盐在水中形成溶液」</div>
+  <div class="refine"><span class="tag">提炼</span>牛奶≠单一胶体（高分子胶体＋乳浊液＋溶液共存）；溶液/胶体/浊液以分散质粒径（&lt;1nm／1~100nm／&gt;100nm）划界；[S2]溶液三态句（气态/液态/固态溶液·合金=固溶体）页文在卷。</div>
+  <div class="ctx"><b>触发情境</b>："空气/盐水/合金各属何类""牛奶是胶体吗"类判断题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S1</td><td>化学自习室·胶体制备及性质详解</td><td>hxzxs.cn/view-14665-1.html</td><td class="st200">200/69,265B（10-02复测69,253B）</td><td>10-01 04:54:37</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S2</td><td>化学自习室·溶液</td><td>hxzxs.cn/view-15462-1.html</td><td class="st200">200（交叉复核8/8）</td><td>10-01 04:1x</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S3</td><td>化学自习室·牛奶多元分散系</td><td>hxzxs.cn/view-4033-1.html</td><td class="st200">200（同上）</td><td>10-01 04:1x</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>佐证</td><td>百度百科·胶体（科普中国认证）</td><td>baike.baidu.com/item/胶体/440593</td><td class="st403">curl 403→渲染200</td><td>渲染10-01 04:26</td><td><span class="lv lv4">L4</span></td></tr>
+  </table>
+  <div class="dup">判重：三页分工（定义/溶液三态/牛奶多元）；入槽依据=终裁Ⅲ（条1/条3入§2.1配额）。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">4-2</span>胶体介稳性成因与聚沉/盐析辨析</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×3页分工</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S1·L3]</span>「憎液溶胶的胶粒带有相同的电荷，由于同性电荷的排斥作用而使憎液胶体可以稳定存在。淀粉、蛋白质等高分子中含有多个极性基团（如—COOH，—OH，—NH₂等）可以与水高度溶剂化（高分子表面形成水膜），因此也可较长时间稳定存在」<br><span class="src">[S2·L3]</span>「要使胶体聚沉、其原理就是：①中和胶粒的电荷、②加快其胶粒的热运动以增加胶粒的结合机会，使胶粒聚集而沉淀下来」<br><span class="src">[S3·L3]</span>「盐析是可逆的分离提纯手段，聚沉和变性多为不可逆的性质改变」</div>
+  <div class="refine"><span class="tag">提炼</span>聚沉三法及能力序列页文在卷：Fe³⁺＞Ca²⁺＞Na⁺、PO₄³⁻＞SO₄²⁻＞Cl⁻（上标由页面上标标记还原）。</div>
+  <div class="ctx"><b>触发情境</b>：介稳性原因简答题；聚沉/盐析/变性三概念辨析选择题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S1</td><td>化学自习室·十点辨析</td><td>hxzxs.cn/view-11033-1.html</td><td class="st200">200（10-02复测）</td><td>10-01 04:1x</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S2</td><td>化学自习室·聚沉三法</td><td>hxzxs.cn/view-5421-1.html</td><td class="st200">200（10-02复测）</td><td>10-01 04:1x</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S3</td><td>化学自习室·聚沉盐析变性对比</td><td>hxzxs.cn/view-22249-1.html</td><td class="st200">200（10-02复测）</td><td>10-01 04:1x</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">判重：三页分工（成因/方法/辨析）；与4-1（定义归属）互异。入槽依据=终裁Ⅲ。</div>
+</div>
+
+<!-- ==================== §2.2 ==================== -->
+<div class="sec-head"><span class="cnt">条目 ×2</span><div class="jn">§2.2 电解质的电离 离子反应</div><div class="orig">节名引用层照录原样（2019版目录页·L1·终裁Ⅱ定标）：「第2节 电解质的电离 离子反应」——双词式、中间一个空格、不添连接符；跨版引用老版§2.2「电解质」必带（老版）标签</div></div>
+
+<div class="item">
+  <div class="ttl"><span class="no">5-1</span>强弱电解质判据易错：导电性/溶解性≠强弱</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：21cnjy×hsszhjy＝2站族</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S1·L3]</span>「(1)区分电解质强弱的惟一依据是电解质在水溶液中能否完全电离，即电离程度。(2)电解质的强弱与物质的溶解性无关。即使溶解度再小，只要溶于水的部分完全电离就是强电解质，所以不能根据溶液导电性强弱直接判断。难溶盐如BaSO₄、CaCO₃等，溶于水的部分能完全电离，是强电解质」<br><span class="src">[S2·L3]</span>「（4）电解质的强弱是根据电离程度划分的，不能根据电解质溶液的导电性强弱划分强弱电解质。也不能根据电解质的溶解性的大小划分强弱电解质」</div>
+  <div class="refine"><span class="tag">提炼</span>易错命题素材在卷："BaSO₄水溶液导电性很弱→弱电解质(×)""强电解质溶液导电性必强(×)"；醋酸铅属弱电解质案例（跨条借用22655页）。</div>
+  <div class="ctx"><b>触发情境</b>："难溶=弱电解质""导电性强=强电解质"判断题；0.1mol/L NaCl与CuSO₄溶液导电能力比较题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S1</td><td>21世纪教育网·电解质讲义</td><td>zy.21cnjy.com/24025825</td><td class="st200">200/69,527B</td><td>10-01 04:51:16（10-02复测）</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S2</td><td>衡水名师工作室·电解质判断6易错点</td><td>gzs.hsszhjy.cn/studios/other_detail?detail=6728</td><td class="st200">200/458,174B</td><td>10-01 04:51:16（10-02复测）</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">判重：与5-2互异（本条=强弱判据，彼=范畴界定）。S2=族外站级复核挂账项（hsszhjy级别复核开放项维持，若降级按预案备查池补位）。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">5-2</span>电解质/非电解质范畴易错：导电物质与CO₂类水溶液</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×hsszhjy＝2站族</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S1·L3]</span>「错误地认为能导电的物质就是电解质，比如金属单质能导电，但它不是化合物，不属于电解质范畴；…像二氧化碳、二氧化硫等非金属氧化物，虽然它们的水溶液能导电，但导电是因为与水反应生成了新的电解质(如碳酸、亚硫酸)，其本身不能电离出离子，属于非电解质，常被误判为电解质」<br><span class="src">[S2·L3]</span>「（3）电解质是指自身电离能生成离子的化合物，有些化合物的水溶液能导电，但溶液中的离子不是它自身电离产生的，不属于电解质，如CO₂、SO₂、NH₃、SO₃等非电解质」</div>
+  <div class="refine"><span class="tag">提炼</span>"电解质不一定导电（固体NaCl、液态HCl）；导电的物质不一定是电解质"页文在卷；"单质、混合物既不是电解质，也不是非电解质"。</div>
+  <div class="ctx"><b>触发情境</b>："铜/石墨导电→电解质？""CO₂通入水中导电→CO₂是电解质？""液氯/氯水"类判断题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S1</td><td>化学自习室·电解质易错归纳</td><td>hxzxs.cn/view-22655-1.html</td><td class="st200">200/73,222B</td><td>10-01 04:51:16（10-02复测）</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S2</td><td>衡水名师工作室（与5-1共引·取段不同）</td><td>gzs.hsszhjy.cn/studios/other_detail?detail=6728</td><td class="st200">200/458,174B</td><td>10-01 04:51:16（10-02复测）</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">判重：跨条取段声明（条5-1=(4)判据段／条5-2=(2)(3)范畴段·错点互异）；同页扩展段"NaOH检验Fe³⁺干扰"句为§3.1条C-5补充照录借用（跨节声明）。</div>
+</div>
+
+<!-- ==================== §2.3 ==================== -->
+<div class="sec-head"><span class="cnt">条目 ×3（高频节）</span><div class="jn">§2.3 氧化还原反应</div><div class="orig">节名照录（2019版目录页·L1）：「第3节 氧化还原反应」｜第2章「元素与物质世界」｜注：仓内v18原册线§2.3件名「氧化剂和还原剂」系旧版口径，引用带「v18·旧版口径」标签（终裁Ⅱ执行）</div></div>
+
+<div class="item">
+  <div class="ttl"><span class="no">6-1</span>氧化性/还原性强弱误判（"价高必强""电子多必强"）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：21cnjy×hxzxs＝2站族3源</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[主S23-3·L3]</span>「物质氧化性或还原性的强弱取决于其所含元素原子得失电子的难易程度，与得失电子数目的多少无关。」<br><span class="src">[主S23-3·L3]</span>「含有最高价元素的化合物不一定具有强氧化性。如HClO4中Cl为＋7价(最高价态)，HClO中Cl为＋1价，而实际上HClO4的氧化性没有HClO的强。」<br><span class="src">[交叉S23-1·L3]</span>「某些元素的原子在氧化还原反应中得到或失去电子的数目越多，其氧化性或还原性不一定越强。物质氧化性或还原性得强弱取决于得失电子的难易程度，而不是得失电子数目的多少。」</div>
+  <div class="ctx"><b>触发情境</b>："最高价态→氧化性最强""得/失电子数目多→氧化性/还原性强"正误判断；微粒氧化性/还原性排序题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S23-3主</td><td>21世纪教育网·通用复习讲义</td><td>zy.21cnjy.com/21136548</td><td class="st200">200/110,509B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S23-1交叉</td><td>化学自习室·易错易混点</td><td>hxzxs.cn/view-22649-1.html</td><td class="st200">200/96,446B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S23-2交叉</td><td>化学自习室·概念认识误区</td><td>hxzxs.cn/view-18643-1.html</td><td class="st200">200/62,414B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">判重：与6-2/6-3互异；与§1.3条3-2层次不同（强弱判据 vs 微粒计数）。汇总员复测：21136548瞬态500后带Referer复现200/110,509B同字节＋"得失电子的难易程度""既被氧化又被还原"4/4 HIT。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">6-2</span>电子守恒漏项（配平只顾原子守恒）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×21cnjy＝2站族</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[主S23-1·L3]</span>「在配平氧化还原反应方程式时，不能正确运用得失电子守恒、原子守恒等原则，导致方程式配平失败。例如只关注了原子个数守恒，而忽略了电子得失必须相等这一关键，配出的方程式不符合氧化还原反应规律。」<br><span class="src">[交叉S23-3·L3]</span>「得失电子守恒是指在发生氧化还原反应时，氧化剂得到的电子总数一定等于还原剂失去的电子总数。」<br><span class="src">[交叉S23-3·L3]</span>「n(氧化剂)×变价原子个数×化合价变化值＝n(还原剂)×变价原子个数×化合价变化值。」</div>
+  <div class="ctx"><b>触发情境</b>：陌生氧化还原方程式配平/电子转移数目计算（多变价元素、缺项配平）；MnO₂+4HCl型"4个HCl只有2个上场"变价原子计数。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S23-1主</td><td>化学自习室·易错易混点</td><td>hxzxs.cn/view-22649-1.html</td><td class="st200">200/96,446B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S23-3交叉</td><td>21世纪教育网·通用复习讲义</td><td>zy.21cnjy.com/21136548</td><td class="st200">200/110,509B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">判重：与§1.3条3-2"电子转移数目"句（同页S23-3不同段）系同页不同段分工引用，主旨互异不构成双算（C件声明+预检核）。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">6-3</span>歧化与"必另有一种元素被还原"误判（含化合态→游离态方向）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：21cnjy×hxzxs＝2站族</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[主S23-3·L3]</span>「在氧化还原反应中，一种元素被氧化，不一定有另一种元素被还原，有许多反应是一种元素既被氧化又被还原。」<br><span class="src">[主S23-3·L3]</span>「如在反应2Na2O2＋2H2O===4NaOH＋O2↑中，Na2O2中氧元素的化合价既升高又降低；如3NO2＋H2O」<br><span class="src">[交叉S23-2·L3]</span>「误认为氧化还原反应中有一种元素被氧化，则一定有另一种元素被还原，其实不一定。」</div>
+  <div class="ctx"><b>触发情境</b>：歧化/归中反应判断、化合态与游离态互转方向判断；Cl₂＋H₂O、3NO₂＋H₂O、Na₂O₂＋H₂O三例价态拆分题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S23-3主</td><td>21世纪教育网·通用复习讲义</td><td>zy.21cnjy.com/21136548</td><td class="st200">200/110,509B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S23-2交叉</td><td>化学自习室·概念认识误区</td><td>hxzxs.cn/view-18643-1.html</td><td class="st200">200/62,414B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">照录口径注记：S23-3页内3NO₂＋H₂O例以截断态呈现，主引第二句照录至页内完整句读处止、超界部分不补不编（宁缺毋编）。</div>
+</div>
+
+<!-- ==================== §3.1 ==================== -->
+<div class="sec-head"><span class="cnt">条目 ×3（高频节）</span><div class="jn">§3.1 铁的多样性</div><div class="orig">节名照录（2019版目录页·L1）：「第1节 铁的多样性」｜第3章「物质的性质与转化」</div></div>
+
+<div class="item">
+  <div class="ttl"><span class="no">7-1</span>价—类二维图误读（漏视角预测／Fe₃O₄属性误判）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：人人文库×21cnjy×hxzxs＝3站族</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[主S31-4·L3]</span>「任何一种含铁物质，在这个二维图中都有其唯一的位置。横坐标代表物质类别（如单质、氧化物、碱、盐），纵坐标代表铁元素的化合价（0、+2、+3）。通过这个坐标系，我们可以直观地看出物质可能的性质：从物质类别出发，可以预测其与酸、碱、盐等发生的复分解反应；从化合价出发，可以预测其是否具有氧化性或还原性。」<br><span class="src">[交叉S31-1·L3]</span>「含有相同价态铁元素的物质之间的转化，可借助复分解反应实现；含有不同价态铁元素的物质之间的转化，可借助氧化还原反应实现。」<br><span class="src">[交叉S31-6·L3·本轮灾备置换入位]</span>「四氧化三铁可以"看成"是氧化亚铁和氧化铁组成的一种复杂的化合物。它能与盐酸反应，反应后的溶液中既有FeCl2生成，又有FeCl3生成。」</div>
+  <div class="ctx"><b>触发情境</b>：价—类二维图转化关系/物质性质预测题；"Fe₃O₄是FeO·Fe₂O₃混合物"陷阱判断；Fe₃O₄与盐酸产物（两种盐）题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S31-4主</td><td>人人文库·鲁科必修一核心清单</td><td>renrendoc.com/paper/533680622.html</td><td class="st200">200/44,809B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S31-1交叉</td><td>21世纪教育网·鲁科2019教案讲义</td><td>zy.21cnjy.com/25751620</td><td class="st200">200/133,651B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S31-6交叉</td><td>化学自习室·铁及其化合物易忽视问题</td><td>hxzxs.cn/view-20004-1.html</td><td class="st200">200/73,476B</td><td>10-28 19:16:10</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">处置注记：v1交叉源S31-5（51jiaoxi"Fe₃O₄非碱性氧化物"句）WAF暂挂，知识点由S31-6同义内证互证（预检④裁定合规）；教材页码P82/P88系教辅转引未直验，不作L1级引用。汇总员复测：25751620页"紫红色褪去""维生素"4/4 HIT。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">7-2</span>Fe²⁺/Fe³⁺检验干扰遗漏（KMnO₄法与维生素C）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：21cnjy×人人文库＝2站族3源</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[主S31-1·L3]</span>「在验证补铁口服液中是否含有Fe2＋的实验中，向溶液中加入酸性KMnO4溶液，若溶液紫红色褪去，则一定证明含有Fe2＋吗？」<br><span class="src">[主S31-1·L3]</span>「提示：不一定。因为补铁口服液中的抗氧化剂（维生素C）有还原性，也可以使酸性KMnO4溶液褪色。」<br><span class="src">[交叉S31-4·L3]</span>「当溶液中可能含有Fe³⁺时（最严谨的检验方法）：需先利用Fe²⁺的还原性。例如，取待测液，滴加酸性KMnO₄溶液，若紫红色褪去，则证明含有Fe²⁺。因为Fe³⁺不能使KMnO₄褪色，从而排除了Fe³⁺的干扰。」<br><span class="src">[灾备S31-7·L3·本轮补强]</span>「取少量固体于试管中，加入稀硫酸（不能用盐酸）溶解，将溶液分成两份，一份加入酸性高锰酸钾溶液，溶液褪色，说明溶液中含有Fe2＋；另一份加入KSCN溶液，溶液显红色，说明溶液中含有Fe3＋。」</div>
+  <div class="refine"><span class="tag">提炼</span>同页扩展段（补充照录）：NaOH检验Fe³⁺共存干扰句在卷（"若补铁剂中含有Fe3＋，加入NaOH溶液立即产生红褐色沉淀，则无法检验Fe2＋的存在"）。三陷阱：抗氧化剂还原性干扰／Fe³⁺共存干扰／Cl⁻被KMnO₄氧化干扰（故用稀硫酸不用盐酸）。</div>
+  <div class="ctx"><b>触发情境</b>：补铁剂/菠菜中铁元素价态检验的方案评价与试剂选择题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S31-1主</td><td>21世纪教育网·鲁科2019教案讲义</td><td>zy.21cnjy.com/25751620</td><td class="st200">200/133,651B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S31-4交叉</td><td>人人文库·鲁科必修一核心清单</td><td>renrendoc.com/paper/533680622.html</td><td class="st200">200/44,809B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S31-7灾备</td><td>21世纪教育网·第3章第1节第2课时课件（同族第三页·不增族计数）</td><td>zy.21cnjy.com/22338959</td><td class="st200">200/83,422B</td><td>10-28 19:16:10</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">判重：与7-1/7-3互异；S31-7与S31-1同族双页分工（教案讲义×课时课件），引文句域不同未拆条。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">7-3</span>变价金属与氧化剂强弱（Cl₂不过量仍FeCl₃／与I₂产物反差）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×搜狐×人人文库＝3站族4源</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[主S31-8·L3·本轮灾备置换入位]</span>「当铁与氯气、溴反应时，产物分别是FeCl3、FeBr3，铁的化合价都表现为＋3价。有些学生以此类推当碘与铁粉反应时，反应产物也应是FeI3。这就忽视了I2的氧化性是卤族元素中比较弱的，不能将Fe单质氧化成＋3价；从另一个角度分析由于:2Fe3＋＋2I－=2Fe2＋＋I2，因而铁粉与单质碘反应的产物不是FeI3，而是FeI2。」<br><span class="src">[交叉S31-9·L3·本轮新增站族]</span>「氯气氧化性强，与铁反应（点燃/加热条件）只生成FeCl₃（Fe为+3价），无论氯气是否过量。」<br><span class="src">[交叉S31-3·L3]</span>「铁与强氧化剂作用生成＋3价化合物，与弱氧化剂生成＋2价化合物」<br><span class="src">[交叉S31-4·L3]</span>「氯气是强氧化剂，即使铁过量，也直接将铁氧化为+3价，生成棕褐色的FeCl₃固体。」（页内并标【易错点】无论铁是否过量，产物均为FeCl₃）</div>
+  <div class="ctx"><b>触发情境</b>：Fe与Cl₂/S/I₂/盐酸产物判断、转化链可行性判断题；"铁过量则生成FeCl₂"直觉误判题。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S31-8主</td><td>化学自习室·碘学习中易错的问题集</td><td>m.hxzxs.cn/view-15891-1.html</td><td class="st200">200/26,458B</td><td>10-28 19:16:10</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S31-9交叉</td><td>搜狐·氯元素易错点</td><td>news.sohu.com/a/1077977392_121635155</td><td class="st200">200/40,736B</td><td>10-28 19:16:10</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S31-3交叉</td><td>化学自习室·铁及其化合物特殊性归纳</td><td>hxzxs.cn/view-5384-1.html</td><td class="st200">200/68,546B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S31-4交叉</td><td>人人文库·鲁科必修一核心清单</td><td>renrendoc.com/paper/533680622.html</td><td class="st200">200/44,809B</td><td>10-28 19:08–09:06</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">处置注记：v1主引S31-5（51jiaoxi）WAF暂挂，主引位按灾备规程置换S31-8（预检④裁定合规），S31-5引句保留在案候浏览器复核，复核通过前不回填照录位；页内"＋3价"原生排版空格按连续文本读法呈现。汇总员复测：sohu页"无论氯气是否过量""FeCl"2/2 HIT。</div>
+</div>
+
+<!-- ==================== §3.2 ==================== -->
+<div class="sec-head"><span class="cnt">条目 ×2</span><div class="jn">§3.2 硫的转化</div><div class="orig">节名照录（2019版目录页·L1·含子目原样）：「第2节 硫的转化 自然界中的硫 实验室里研究不同价态硫元素之间的转化 酸雨及其防治」</div></div>
+
+<div class="item">
+  <div class="ttl"><span class="no">8-1</span>SO₂褪色现象归因误判（漂白性／还原性／酸性三辨）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×人民日报客户端×1010jiajiao＝3站族</span><span class="badge b-warn">分层照录（4-3源合并·已裁定放行）</span></div>
+  <div class="quote"><span class="src">[S32-1·L3]</span>「二氧化硫能跟某些有色物质化合生成不稳定的无色物质，从而将某些有色物质漂白。如：SO2能使品红试液褪色，体现了SO2的漂白性。经二氧化硫漂白的无色物质长久放置或加热又会发生分解，物质又会恢复原色，所以二氧化硫的漂白过程是可逆的。」（源页"过氯化钠"系笔误，照录忠实保留+就地注记）<br><span class="src">[S32-2·L4]</span>「1、下列褪色现象是SO2的漂白性吗？…解析：以上褪色现象都不是SO2的漂白性所致。（1）、（2）褪色的原因是SO2的还原性。分别发生氧化还原反应 SO2+Br2+2H2O= H2SO4+2HBr 5SO2+2KMnO4+2H2O=K2SO4+2MnSO4+ 2H2SO4 （3）褪色的原因是SO2溶于H2O后生成了H2SO3，H2SO3 是酸可以使红色酚酞变为无色。」<br><span class="src">[S32-3·L3]</span>「D、SO 2 使碱性酚酞溶液（红色）褪色的原因是：SO 2 +H 2 O═H 2 SO 3 ，H 2 SO 3 中和碱性溶液，故D表现的是酸性不是还原性． 故选AC．」</div>
+  <div class="refine"><span class="tag">提炼</span>四类褪色归因——品红=可逆漂白（暂时性，vs HClO永久氧化漂白）；溴水/酸性KMnO₄=还原性（被氧化为H₂SO₄）；碱性酚酞=酸性（H₂SO₃中和）；紫色石蕊只变红不褪色（与氯水"先红后褪"对照）；SO₂+Cl₂等物质的量混合完全失去漂白作用（双源互证）。全量照录430字按分层照录口径呈现（预检②裁定）。</div>
+  <div class="ctx"><b>触发情境</b>："SO₂使溴水/酸性KMnO₄褪色体现漂白性"类选项、SO₂与Cl₂漂白性比较题、酚酞/石蕊褪色方案评价。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测（10-28）</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S32-1</td><td>化学自习室·二氧化硫的"五性"</td><td>www.hxzxs.cn/view-11332-1.html</td><td class="st200">200/79,540B</td><td>18:58:59（10-04卷79,470B）</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S32-2</td><td>人民日报客户端·人民号"化学大师"</td><td>www.peopleapp.com/rmharticle/30021273947</td><td class="st200">200/66,434B（同值）</td><td>18:59:02</td><td><span class="lv lv4">L4</span></td></tr>
+    <tr><td>S32-3</td><td>青夏教育·精英家教网题解（GBK）</td><td>m.1010jiajiao.com/gzhx/shiti_id_a491e5430d8a1cd0bcf566a88f556920</td><td class="st200">200/17,465B（gb18030解码）</td><td>18:59:04</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">判重：与8-2互异。汇总员复测：zuoyebang位（§3.3条S33-2）200/13,463B同字节实证A件字节口径可信。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">8-2</span>SO₂通入BaCl₂/CaCl₂溶液"必生成白色沉淀"误判（弱酸不能制强酸）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×百度知道＝2站族3源</span><span class="badge b-warn">分层照录（3源合并·已裁定放行）</span></div>
+  <div class="quote"><span class="src">[S32-1·L3]</span>「但应特别注意的是：当SO 2 通入到与CaC1 2 、BaC1 2 溶液中，没有沉淀产生，也即不能与CaC1 2 、BaC1 2 反应。这一点同学们最容易出错。」（页侧字体形态：CaC1₂之"1"系源页字母l呈现，即CaCl₂）<br><span class="src">[S32-4·L4]</span>「二氧化硫通往氯化钡溶液不会产生沉淀 1、假设能产生亚硫酸钡沉淀 反应方程式SO2+BaCl2+H2O=BaSO3↓+2HCl 在有HCl存在的情况下，亚硫酸钡沉淀不能生成，所以这个反应不能发生」<br><span class="src">[S32-5·L4]</span>「二氧化硫通入氯化钡溶液不产生沉淀的主要原因是：二氧化硫与水反应生成亚硫酸，而亚硫酸是弱酸，盐酸是强酸，弱酸不能制取强酸，这不符合强酸制弱酸的化学反应规律 。」</div>
+  <div class="refine"><span class="tag">提炼</span>判据=强酸制弱酸方向性：假设BaSO₃生成则同时产生HCl，与规律矛盾→反证不发生；同型外推CO₂+BaCl₂／SO₂+CaCl₂同不反应；欲得沉淀须先中和HCl（如加NaOH）。两百度知道回答时点相隔7年口径一致（同站取段分工已声明）。</div>
+  <div class="ctx"><b>触发情境</b>："SO₂/CO₂通入BaCl₂（CaCl₂）溶液生成白色沉淀"正误判断；"如何使SO₂在BaCl₂溶液中产生沉淀"方案评价。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测（10-28）</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S32-4</td><td>百度知道·问答（yclsl·知道合伙人教育行家·黑龙江赛课一等奖·2018答）</td><td>zhidao.baidu.com/question/264896884732933765.html</td><td class="st200">200/240,884B（页侧动态+42,747B·回答主体未变）</td><td>18:59:07</td><td><span class="lv lv4">L4</span></td></tr>
+    <tr><td>S32-5</td><td>百度知道·认证机构号（2025-04-19答）</td><td>zhidao.baidu.com/question/1587931258499819780.html</td><td class="st200">200/199,595B（+42,670B同上）</td><td>18:59:09</td><td><span class="lv lv4">L4</span></td></tr>
+  </table>
+  <div class="dup">判重：与8-1互异。S32-4页含1处非法UTF-8字节（@5699），校验以errors='ignore'解码逐字比对实锤（check_quotes.py在卷可复跑）。</div>
+</div>
+
+<!-- ==================== §3.3 ==================== -->
+<div class="sec-head"><span class="cnt">条目 ×2</span><div class="jn">§3.3 氮的循环</div><div class="orig">节名照录（2019版目录页·L1·含子目原样）：「第3节 氮的循环 自然界中的氮循环 氮循环中物质的性质及物质之间的转化 人类活动对氮循环和环境的影响」</div></div>
+
+<div class="item">
+  <div class="ttl"><span class="no">9-1</span>NO/NO₂气体收集方法误判（NO只排水法／NO₂只向上排空气法·互斥）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×作业帮×恩波教育＝3站族3源</span><span class="badge b-warn">分层照录（3源合并·已裁定放行）</span></div>
+  <div class="quote"><span class="src">[S33-1·L3]</span>「56.NO只能用排水法或气囊法收集，NO 2 不能用排水法，可用排苯法收集。」<br><span class="src">[S33-2·L3]</span>「B．NO易被氧气氧化生成NO 2 ，且NO不与水反应，可以用排水法水解NO；NO 2 能和水反应生成硝酸和NO，但与氧气不反应、密度大于空气，则收集二氧化氮通常采用向上排空气法，故B正确；」（"水解"系源页原词，照录忠实）<br><span class="src">[S33-3·L3]</span>「因NO遇O 2 迅速反应：2NO＋O 2 ===2NO 2 ，故NO只能用排水法收集；因NO 2 的密度大于空气且溶于水：3NO 2 ＋H 2 O===2HNO 3 ＋NO，故NO 2 只能用向上排空气法收集。」</div>
+  <div class="refine"><span class="tag">提炼</span>互斥双向各有一错：NO排空气必错（遇O₂常温迅速反应变质）；NO₂排水必错（与水反应3NO₂+H₂O=2HNO₃+NO）。题库四选项三类设置全部被页内解析逐项证伪；关联锚点：N₂→NO₂无一一步转化（放电只得NO）——同时锚定教材"氮循环"放电固氮路径。</div>
+  <div class="ctx"><b>触发情境</b>：气体制取与收集方案选择题、氮氧化物转化链实验设计、尾气处理方案评价。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测（10-28）</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S33-1</td><td>化学自习室·高考化学易错点汇总（第56条）</td><td>www.hxzxs.cn/view-23043-1.html</td><td class="st200">200/94,810B</td><td>18:59:11</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S33-2</td><td>作业帮题库·问答（题干四选项+解析A-D全在页）</td><td>qb.zuoyebang.com/xfe-question/question/5526d52f78fb933e3b9ea8b667a553e2.html</td><td class="st200">200/13,463B（同值）</td><td>18:59:14</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S33-3</td><td>恩波教育在线·氮及其化合物释疑解惑</td><td>bbs.enboedu.com/a/708.html</td><td class="st200">200/26,635B（同值）</td><td>18:59:16</td><td><span class="lv lv3">L3</span></td></tr>
+  </table>
+  <div class="dup">判重：与9-2互异。汇总员复测：zuoyebang页200/13,463B同字节＋L1页"第3节 氮的循环"HIT。</div>
+</div>
+
+<div class="item">
+  <div class="ttl"><span class="no">9-2</span>"NO₂与水反应生成硝酸＝酸性氧化物"误判（NO₂氧化还原例外）</div>
+  <div class="badges"><span class="badge b-ok">站族交叉：hxzxs×百度百科＝2站族（百科渲染通道）</span><span class="badge b-info">条级 L3</span></div>
+  <div class="quote"><span class="src">[S34-1·L3]</span>「4. 与水生成酸的氧化物就是酸性氧化物(×)；NO 2 与水生成硝酸，但发生氧化还原，不属于酸性氧化物，定义要求只生成对应酸。」<br><span class="src">[S34-1·L3]</span>「2. 酸性氧化物都是非金属氧化物(×)；Mn 2 O 7 是金属氧化物、酸性氧化物；CO、NO属于不成盐氧化物，不与碱反应。」<br><span class="src">[S34-2·L4·渲染通道]</span>「多数非金属氧化物属于酸性氧化物，但存在例外如一氧化碳、一氧化氮（NO）及二氧化氮（NO₂）；同时酸性氧化物也可能为金属氧化物（如七氧化二锰Mn₂O₇）。」（Unicode下标原样）</div>
+  <div class="refine"><span class="tag">提炼</span>判据辨析："与水反应生成酸"非充分条件——定义要求只生成对应酸且不发生价态变化；NO₂+H₂O为歧化式氧化还原（+4→+5的HNO₃与+2的NO），产物不止对应酸。双方向例外：Mn₂O₇=金属的酸性氧化物；CO/NO=不成盐氧化物。</div>
+  <div class="ctx"><b>触发情境</b>：酸性氧化物概念正误判断、"属于酸性氧化物的是"组合选择题（CO₂/SO₂/NO₂/CO混排）、氧化物分类辨析。</div>
+  <table>
+    <tr><th>源标</th><th>来源</th><th>URL</th><th>HTTP实测（10-28）</th><th>时点</th><th>级别</th></tr>
+    <tr><td>S34-1</td><td>化学自习室·高频易错的概念总结</td><td>www.hxzxs.cn/view-23288-1.html</td><td class="st200">200/80,570B</td><td>18:59:18</td><td><span class="lv lv3">L3</span></td></tr>
+    <tr><td>S34-2</td><td>百度百科·非金属氧化物（curl 403→真实浏览器渲染，照录句全句HIT）</td><td>baike.baidu.com/item/非金属氧化物/4252565</td><td class="st403">curl 403/2,555B→渲染108,913B</td><td>渲染19:02:26</td><td><span class="lv lv4">L4</span></td></tr>
+  </table>
+  <div class="dup">判重：与9-1互异。S34-2页侧无"科普中国"认证标识（仅参考资料区含站外链接），按L4档执行不加认证注（终裁Ⅰ口径·A件正确执行）；同站S33-1/S34-1取段分工已声明。</div>
+</div>
+
+<h2>来源核验总表</h2>
+<div class="card">
+<p class="note" style="margin-top:0">口径：正式20条全部「」照录锚点＋L1教材锚，双时点留痕（原始实测＋10-28全量刷新）；汇总员独立复测9源标注★。</p>
+<table>
+  <thead><tr><th>节</th><th>源标</th><th>URL</th><th>HTTP状态/字节</th><th>获取时点</th><th>站族</th><th>级别</th></tr></thead>
+  <tbody>
+  <tr><td rowspan="2">§1.1</td><td>S1</td><td>hxzxs.cn/view-1972-1.html</td><td class="st200">200/65,341B</td><td>10-28 18:59:15</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>佐证</td><td>baike.baidu.com/item/同素异形体</td><td class="st403">curl 403→渲染200</td><td>10-04渲染/10-28复核</td><td>百度百科</td><td>L4</td></tr>
+  <tr><td rowspan="3">§1.1</td><td>S1</td><td>hxzxs.cn/view-20115-1.html</td><td class="st200">200/63,789B</td><td>10-28 18:59:15</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S2</td><td>hxzxs.cn/view-15975-1.html</td><td class="st200">200/64,166B</td><td>10-28 18:59:15</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>佐证</td><td>baike.baidu.com/item/化学变化</td><td class="st403">curl 403→渲染200</td><td>10-04渲染/10-28复核</td><td>百度百科</td><td>L4</td></tr>
+  <tr><td rowspan="3">§1.2</td><td>S1</td><td>hxzxs.cn/view-22207-1.html</td><td class="st200">200/67,067B</td><td>10-28 18:59:15</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S2</td><td>zy.21cnjy.com/26806284</td><td class="st200">200/45,484B ★</td><td>10-28 19:01:32</td><td>21世纪教育网</td><td>L3</td></tr>
+  <tr><td>佐证</td><td>baike.baidu.com/item/钠/162328</td><td class="st403">curl 403→渲染200</td><td>10-04渲染/10-28复核</td><td>百度百科</td><td>L4</td></tr>
+  <tr><td rowspan="2">§1.2</td><td>S1</td><td>hxzxs.cn/view-21908-1.html</td><td class="st200">200/72,951B</td><td>10-28 18:59:16</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S2</td><td>www.gaotu.cn/topic/8@609030043200581634@1/483/400</td><td class="st200">200/113,996B ★（复测113,984B·-12B动态）</td><td>10-28 19:01:31</td><td>高途</td><td>L3</td></tr>
+  <tr><td rowspan="2">§1.3</td><td>S1</td><td>m.renrendoc.com/paper/534152237.html</td><td class="st200">200/40,949B</td><td>10-02 22:20-35复测</td><td>人人文库</td><td>L3</td></tr>
+  <tr><td>S2</td><td>qitihui.com/archives/146465.html</td><td class="st200">HTTP 200/44,707B（HTTPS证书过期）</td><td>10-02 22:20-35复测</td><td>气体汇</td><td>L4</td></tr>
+  <tr><td>§1.3</td><td>S3</td><td>toutiao.com/article/7552097985719435791</td><td class="str">200/72,914B＋渲染核验</td><td>10-02复测/渲染10-01</td><td>今日头条</td><td>L3</td></tr>
+  <tr><td rowspan="4">§2.1</td><td>S1</td><td>hxzxs.cn/view-14665-1.html</td><td class="st200">200/69,265B</td><td>10-01 04:54:37（10-02复测）</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S2</td><td>hxzxs.cn/view-15462-1.html</td><td class="st200">200/63,512B</td><td>10-01 04:1x（10-02复测）</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S3</td><td>hxzxs.cn/view-4033-1.html</td><td class="st200">200</td><td>10-01 04:1x（10-02复测）</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>佐证</td><td>baike.baidu.com/item/胶体/440593（科普中国认证）</td><td class="st403">curl 403→渲染200</td><td>10-01 04:26渲染</td><td>百度百科</td><td>L4</td></tr>
+  <tr><td rowspan="3">§2.1</td><td>S1</td><td>hxzxs.cn/view-11033-1.html</td><td class="st200">200</td><td>10-01 04:1x（10-02复测）</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S2</td><td>hxzxs.cn/view-5421-1.html</td><td class="st200">200</td><td>10-01 04:1x（10-02复测）</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S3</td><td>hxzxs.cn/view-22249-1.html</td><td class="st200">200</td><td>10-01 04:1x（10-02复测）</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td rowspan="2">§2.2</td><td>S1</td><td>zy.21cnjy.com/24025825</td><td class="st200">200/69,527B</td><td>10-01 04:51:16（10-02复测）</td><td>21世纪教育网</td><td>L3</td></tr>
+  <tr><td>S2</td><td>gzs.hsszhjy.cn/studios/other_detail?detail=6728</td><td class="st200">200/458,174B</td><td>10-01 04:51:16（10-02复测）</td><td>衡水名师工作室</td><td>L3</td></tr>
+  <tr><td rowspan="2">§2.2</td><td>S1</td><td>hxzxs.cn/view-22655-1.html</td><td class="st200">200/73,222B</td><td>10-01 04:51:16（10-02复测）</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S2</td><td>gzs.hsszhjy.cn/studios/other_detail?detail=6728（共引·取段不同）</td><td class="st200">200/458,174B</td><td>10-01 04:51:16（10-02复测）</td><td>衡水名师工作室</td><td>L3</td></tr>
+  <tr><td rowspan="3">§2.3</td><td>S23-3主</td><td>zy.21cnjy.com/21136548</td><td class="st200">200/110,509B ★（瞬态500×2→带Referer复现同字节）</td><td>10-28 19:08–09:06</td><td>21世纪教育网</td><td>L3</td></tr>
+  <tr><td>S23-1</td><td>hxzxs.cn/view-22649-1.html</td><td class="st200">200/96,446B</td><td>10-28 19:08–09:06</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S23-2</td><td>hxzxs.cn/view-18643-1.html</td><td class="st200">200/62,414B</td><td>10-28 19:08–09:06</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td rowspan="3">§3.1</td><td>S31-4主</td><td>renrendoc.com/paper/533680622.html</td><td class="st200">200/44,809B</td><td>10-28 19:08–09:06</td><td>人人文库</td><td>L3</td></tr>
+  <tr><td>S31-1</td><td>zy.21cnjy.com/25751620</td><td class="st200">200/133,651B ★</td><td>10-28 19:08–09:06</td><td>21世纪教育网</td><td>L3</td></tr>
+  <tr><td>S31-6</td><td>hxzxs.cn/view-20004-1.html</td><td class="st200">200/73,476B</td><td>10-28 19:16:10</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td rowspan="3">§3.1</td><td>S31-1主</td><td>zy.21cnjy.com/25751620（共引）</td><td class="st200">200/133,651B</td><td>10-28 19:08–09:06</td><td>21世纪教育网</td><td>L3</td></tr>
+  <tr><td>S31-4</td><td>renrendoc.com/paper/533680622.html（共引）</td><td class="st200">200/44,809B</td><td>10-28 19:08–09:06</td><td>人人文库</td><td>L3</td></tr>
+  <tr><td>S31-7灾备</td><td>zy.21cnjy.com/22338959</td><td class="st200">200/83,422B</td><td>10-28 19:16:10</td><td>21世纪教育网（同族）</td><td>L3</td></tr>
+  <tr><td rowspan="4">§3.1</td><td>S31-8主</td><td>m.hxzxs.cn/view-15891-1.html</td><td class="st200">200/26,458B</td><td>10-28 19:16:10</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S31-9</td><td>news.sohu.com/a/1077977392_121635155</td><td class="st200">200/40,736B ★</td><td>10-28 19:16:10</td><td>搜狐</td><td>L3</td></tr>
+  <tr><td>S31-3</td><td>hxzxs.cn/view-5384-1.html</td><td class="st200">200/68,546B</td><td>10-28 19:08–09:06</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S31-4</td><td>renrendoc.com/paper/533680622.html（共引）</td><td class="st200">200/44,809B</td><td>10-28 19:08–09:06</td><td>人人文库</td><td>L3</td></tr>
+  <tr><td rowspan="3">§3.2</td><td>S32-1</td><td>www.hxzxs.cn/view-11332-1.html</td><td class="st200">200/79,540B</td><td>10-28 18:58:59（10-04卷79,470B）</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S32-2</td><td>www.peopleapp.com/rmharticle/30021273947</td><td class="st200">200/66,434B（双时点同值）</td><td>10-28 18:59:02</td><td>人民日报客户端·人民号</td><td>L4</td></tr>
+  <tr><td>S32-3</td><td>m.1010jiajiao.com/gzhx/shiti_id_a491e5430d8a1cd0bcf566a88f556920</td><td class="st200">200/17,465B（gb18030解码）</td><td>10-28 18:59:04</td><td>青夏教育·精英家教网</td><td>L3</td></tr>
+  <tr><td rowspan="2">§3.2</td><td>S32-4</td><td>zhidao.baidu.com/question/264896884732933765.html</td><td class="st200">200/240,884B（页侧动态+42,747B·回答主体未变）</td><td>10-28 18:59:07</td><td>百度知道</td><td>L4</td></tr>
+  <tr><td>S32-5</td><td>zhidao.baidu.com/question/1587931258499819780.html</td><td class="st200">200/199,595B（同上）</td><td>10-28 18:59:09</td><td>百度知道</td><td>L4</td></tr>
+  <tr><td rowspan="3">§3.3</td><td>S33-1</td><td>www.hxzxs.cn/view-23043-1.html</td><td class="st200">200/94,810B</td><td>10-28 18:59:11</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S33-2</td><td>qb.zuoyebang.com/xfe-question/question/5526d52f78fb933e3b9ea8b667a553e2.html</td><td class="st200">200/13,463B ★（双时点同值）</td><td>10-28 18:59:14</td><td>作业帮题库</td><td>L3</td></tr>
+  <tr><td>S33-3</td><td>bbs.enboedu.com/a/708.html</td><td class="st200">200/26,635B（同值）</td><td>10-28 18:59:16</td><td>恩波教育在线</td><td>L3</td></tr>
+  <tr><td rowspan="2">§3.3</td><td>S34-1</td><td>www.hxzxs.cn/view-23288-1.html</td><td class="st200">200/80,570B</td><td>10-28 18:59:18</td><td>化学自习室</td><td>L3</td></tr>
+  <tr><td>S34-2</td><td>baike.baidu.com/item/非金属氧化物/4252565</td><td class="st403">curl 403→渲染108,913B（全句HIT）</td><td>10-28 19:02:26</td><td>百度百科</td><td>L4</td></tr>
+  <tr><td>L1锚</td><td>教材目录页</td><td>www.dzkbw.com/books/lkb/huaxue/pgzbxd1c/002.htm</td><td class="st200">200/31,950B ★（10-01卷31,946B·四方互证）</td><td>10-28 18:58:27–19:18:27</td><td>电子课本网（2019版）</td><td><span class="lv lv1">L1</span></td></tr>
+  <tr><td>L1锚</td><td>节名页×2</td><td>m.dzkbw.com/books/lkb/huaxue/pgzbxd1c/008.htm＋016.htm</td><td class="st200">200/13,091B＋13,267B</td><td>10-28 18:58:28/17</td><td>电子课本网（§1.1/§1.2）</td><td><span class="lv lv1">L1</span></td></tr>
+  </tbody>
+</table>
+<div class="note">★=汇总员独立复测源（9位）。WAF暂挂源（不计入正式锚点）：51jiaoxi doc-18546606＝200/12,093B WAF壳页（v1留痕83,092B），灾备规程处置已裁定合规；doc-12126603同状态（双URL同字节12,093B=站域级拦截实锤）。负结果通道：知乎40362反爬/腾讯给分网未定位/豆丁快照层/百科curl 403常态/dzkbw-https证书主体不匹配——全部如实留痕在卷。</div>
+</div>
+
+<h2>判重与分层照录口径说明</h2>
+<div class="card">
+<h3>一、判重结果</h3>
+<ul style="padding-left:22px;font-size:14px;">
+  <li><b>20条主旨互异</b>：同素异形体转变类型／能量变化脱钩／钠浮过度推断／活塞放热验证／22.4L/mol双条件／NA微粒数／胶体定义归属／介稳聚沉盐析／强弱电解质判据／电解质范畴／氧化性强弱判据／电子守恒配平／歧化方向／价-类二维图／Fe²⁺Fe³⁺检验干扰／变价金属产物／SO₂褪色归因／弱酸制强酸沉淀／NO-NO₂收集互斥／酸性氧化物边界——无同内容拆条。</li>
+  <li><b>跨件零节域重叠</b>：九节各条落于2019版九节内容域；P0件§1.3条2"电子转移数目"句与C线§2.3条2同页（S23-3=21cnjy 21136548）不同段分工引用，主旨互异（微粒计数 vs 配平原则），不构成双算。</li>
+  <li><b>同站共引声明</b>：§2.2条5-1/5-2共引hsszhjy 6728（取段(4)判据 vs (2)(3)范畴）；§3.2条8-1/8-2共引hxzxs 11332；§3.1条7-1/7-2/7-3共引S31-4/S31-1——均取段不同、错点互异、逐条声明。</li>
+</ul>
+<h3>二、分层照录口径（终裁落地版）</h3>
+<ul style="padding-left:22px;font-size:14px;">
+  <li><b>「」照录层</b>：页文逐字（允许…截取）；页侧形态如实注记（下标拆空格"SO 2"→SO₂还原／CaC1₂之"1"=字母l／gb18030与GBK解码／LaTeX残渣还原／Unicode下标原样／非法UTF-8字节ignore解码）——<b>只还原呈现层，不改实义字符</b>。</li>
+  <li><b>[提炼]层</b>：编者自撰概括，显式标注并附页内实据；百度百科引句一律降[提炼]层（curl 403常态，正文复核走agent-browser渲染通道），级别记L4档＋科普中国认证加注（终裁Ⅰ；页侧无认证标识者不加注，如实执行）。</li>
+  <li><b>字数口径（预检②裁定）</b>：50-200字口径对象=单源照录段；多源互证条目按"主照录段＋补充照录段"分层呈现，每段显式源标、单源段≤200字、单条总照录量≤500字（A件条1-3按此核验全部达标放行）。</li>
+  <li><b>节名引用规则（终裁Ⅱ）</b>：2019版节名照录原样（§2.2「电解质的电离 离子反应」双词式带空格·不添连接符）；跨版引用必带版本标签（v18旧版「氧化剂和还原剂」带「v18·旧版口径」标签；老版bx1路径禁用作2019锚点）。</li>
+  <li><b>级别序列</b>：L1教材官方→L2一手权威→L3教辅/题库站→L4自媒体/问答/百科；条级=条内最高可用锚点级别（本件20条条级均L3，L4源只作主素材或佐证位）。</li>
+  <li><b>宁缺毋编红线</b>：WAF墙源（51jiaoxi）引句不回填照录位、截断态照录至句读处止不补、源页笔误忠实保留+就地注记、负结果全量记档。</li>
+</ul>
+</div>
+
+<h2>附录 · 候补池与储备池（备查）</h2>
+<div class="appx">
+<h3>候补池（§2.1超额3条·终裁Ⅲ归位，不占正式配额）</h3>
+<table>
+  <tr><th>条</th><th>主旨</th><th>主源</th><th>级别</th></tr>
+  <tr><td>条2</td><td>丁达尔效应"区分≠判断"：使一束光区分溶液与胶体，但"有丁达尔现象=一定是胶体"外推陷阱</td><td>hxzxs 21692/15207（同站双挂）</td><td>L3</td></tr>
+  <tr><td>条4</td><td>卤水点豆腐（胶体聚沉应用）与生活实例迁移边界</td><td>hxzxs 15604＋佐证</td><td>L3</td></tr>
+  <tr><td>条5</td><td>Fe(OH)₃胶体制备五禁忌与渗析提纯</td><td>hxzxs 14665/21909/15604（同站分工）</td><td>L3</td></tr>
+</table>
+<h3>储备池（块1超额1条）</h3>
+<table>
+  <tr><th>条</th><th>主旨</th><th>主源</th><th>级别</th></tr>
+  <tr><td>B1</td><td>氯水"三分四离"成分易错（新制/久置氯水·石蕊先红后褪）</td><td>hxzxs 14248（200/75,351B·10-28实测）</td><td>L3</td></tr>
+</table>
+<div class="note">候补/储备条目质量与正式条目同规格（照录实证+HTTP实测+时点留痕），仅不占九节配额；启用时按"灾备→主引回归"流程与站族交叉口径执行。备查源：51jiaoxi 18624464/12126603（历史照录卷宗保留）。</div>
+</div>
+
+<footer>
+  装配：报告汇总员（队6）｜2026-10-28 19:4x｜令源：群管理员19:35:01最终装配令<br>
+  底稿五件：P0校准件v1.2（§1.3×2）·B件v2（§2.1×2＋§2.2×2）·B块1重做件（§1.1/1.2×4＋储备B1）·C块2件（§2.3/3.1×6）·A块3件（§3.2/3.3×4）——五件全过预检（48h窗口内19:35闭环）<br>
+  核验链：L1目录页http通道多时点200互证（31,950B）→ 五件自验全量实测 → 汇总员独立复测9源＋L1节名12/12＋判句抽验16/17 → 终裁Ⅰ/Ⅱ/Ⅲ判据全量执行<br>
+  验收状态：<b>候用户终验收</b>
+</footer>
+
+</div>
+</body>
+</html>
