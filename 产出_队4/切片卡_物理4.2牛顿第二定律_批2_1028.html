@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜4.2 牛顿第二定律｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+         border-radius:20px; padding:1px 10px; margin:2px 4px 2px 0; font-size:12px;}
+  section{padding:18px 28px 6px;}
+  h2{font-size:16.5px; color:var(--accent); border-left:4px solid var(--accent); padding-left:10px; margin:6px 0 12px;}
+  .quote{background:var(--accent-soft); border-radius:10px; padding:10px 14px; margin:8px 0; font-size:14px;}
+  .note{background:var(--wash); border:1px dashed var(--line); border-radius:10px; padding:10px 14px; margin:8px 0; font-size:13.5px; color:var(--sub);}
+  table{width:100%; border-collapse:collapse; margin:8px 0 14px; font-size:14px;}
+  th{background:var(--accent-soft); color:var(--ink); text-align:left; padding:7px 10px; border:1px solid var(--line);}
+  td{padding:7px 10px; border:1px solid var(--line); vertical-align:top;}
+  .src{color:var(--sub); font-size:12.5px;}
+  .gold{color:var(--gold); font-weight:600;}
+  .svgwrap{overflow-x:auto;}
+  .foot{padding:14px 28px 22px; font-size:12.5px; color:var(--sub); border-top:1px solid var(--line); margin-top:10px; line-height:1.8;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="head">
+    <div class="kicker">切片卡｜物理线·批2｜S8五段同构×双段卡口径</div>
+    <h1>4.2 牛顿第二定律 · 讲法锚点</h1>
+    <div class="meta">
+      <span class="badge">装配页 §4.2 节标</span><span class="badge">v18 簇13 全量域（182280→196778）</span><span class="badge">⑫-2 突变细则划件＋牛二切片划件承入</span><span class="badge">对位表 §七 承诺件</span>
+      <span class="badge">分工账：4.1定性地基 · 本节定量兑现 · 4.4视重账 · 4.5两步走全题化</span>
+      <br>出品基准：2026-10-28｜生成依据：v18节件字段块照录（不代拟）
+    </div>
+  </div>
+
+  <section>
+    <h2>一图读懂：两条主干道×瞬时判定总开关</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 740 286" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="牛二两条主干道与剪绳瞬时判定总开关三步闸">
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+          <!-- 同体性先问 -->
+          <rect x="120" y="6" width="500" height="34" rx="8" fill="#fdeeee" stroke="#c0392b" stroke-dasharray="5,3"/>
+          <text x="370" y="27" text-anchor="middle" font-size="12.5" fill="#c0392b" font-weight="600">同体性先问：列式前写"对谁"了吗？——F、m、a必须同属一个对象（连接体题的零分保险）</text>
+          <!-- 怎么读 -->
+          <text x="30" y="62" font-size="13" fill="#2b5a8c" font-weight="600">怎么读这张图：先分清走哪条主干道（a是桥）→ 见"剪断/撤去瞬间"启动判定总开关三步 → 底部剪绳现场对数值</text>
+          <!-- 主干道A -->
+          <rect x="30" y="76" width="270" height="84" rx="10" fill="#eaf3ea" stroke="#1e7a34" stroke-width="1.5"/>
+          <text x="165" y="98" text-anchor="middle" font-size="14" fill="#1e7a34" font-weight="600">主干道A：知力求运动</text>
+          <text x="165" y="119" text-anchor="middle" font-size="12" fill="#1f242b">受力分析→正交分解→ΣF=ma</text>
+          <text x="165" y="137" text-anchor="middle" font-size="12" fill="#1f242b">a到手→运动学求v、x、t</text>
+          <text x="165" y="152" text-anchor="middle" font-size="11.5" fill="#5b6773">例1①现场：a=2m/s²→v=at=6m/s</text>
+          <!-- a桥 -->
+          <rect x="316" y="92" width="108" height="52" rx="26" fill="#fdf6e3" stroke="#8a6d1f" stroke-width="1.5"/>
+          <text x="370" y="113" text-anchor="middle" font-size="14" fill="#8a6d1f" font-weight="600">a 是桥</text>
+          <text x="370" y="132" text-anchor="middle" font-size="11" fill="#5b6773">两类问题在a处握手</text>
+          <!-- 主干道B -->
+          <rect x="440" y="76" width="270" height="84" rx="10" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <text x="575" y="98" text-anchor="middle" font-size="14" fill="#2b5a8c" font-weight="600">主干道B：知运动求力</text>
+          <text x="575" y="119" text-anchor="middle" font-size="12" fill="#1f242b">运动学信息→a→ΣF=ma</text>
+          <text x="575" y="137" text-anchor="middle" font-size="12" fill="#1f242b">反解未知力（f=μN按实际算）</text>
+          <text x="575" y="152" text-anchor="middle" font-size="11.5" fill="#5b6773">例1②现场：f=3.2N·a=7.6m/s²</text>
+          <!-- 桥箭头 -->
+          <line x1="300" y1="118" x2="312" y2="118" stroke="#1e7a34" stroke-width="2" marker-end="url(#arG)"/>
+          <line x1="424" y1="118" x2="436" y2="118" stroke="#2b5a8c" stroke-width="2" marker-end="url(#arB)"/>
+          <!-- 判定总开关 -->
+          <text x="30" y="186" font-size="12.5" fill="#1f242b" font-weight="600">判定总开关（剪绳/撤板瞬间专用·三步）：</text>
+          <rect x="30" y="194" width="200" height="54" rx="10" fill="#fdf6e3" stroke="#8a6d1f" stroke-width="1.5"/>
+          <text x="130" y="214" text-anchor="middle" font-size="12.5" fill="#8a6d1f" font-weight="600">① 先冻结弹簧力</text>
+          <text x="130" y="233" text-anchor="middle" font-size="11.5" fill="#5b6773">形变大·缓过渡·保持原值</text>
+          <rect x="270" y="194" width="200" height="54" rx="10" fill="#fdeeee" stroke="#c0392b" stroke-width="1.5"/>
+          <text x="370" y="214" text-anchor="middle" font-size="12.5" fill="#c0392b" font-weight="600">② 再清零绳力</text>
+          <text x="370" y="233" text-anchor="middle" font-size="11.5" fill="#5b6773">形变极小·可瞬间突变</text>
+          <rect x="510" y="194" width="200" height="54" rx="10" fill="#eaf3ea" stroke="#1e7a34" stroke-width="1.5"/>
+          <text x="610" y="214" text-anchor="middle" font-size="12.5" fill="#1e7a34" font-weight="600">③ 对剩余力列ΣF=ma</text>
+          <text x="610" y="233" text-anchor="middle" font-size="11.5" fill="#5b6773">例2现场：合力8N→a=4m/s²</text>
+          <line x1="230" y1="221" x2="266" y2="221" stroke="#8a6d1f" stroke-width="2" marker-end="url(#arY)"/>
+          <line x1="470" y1="221" x2="506" y2="221" stroke="#c0392b" stroke-width="2" marker-end="url(#arR)"/>
+          <!-- 剪绳现场 -->
+          <text x="30" y="266" font-size="11.5" fill="#1f242b" font-weight="600">例2现场（2kg球·弹簧吊＋绳兜）：剪断前 F弹=12N↑＋T=8N↑＝mg=20N↓（三力平衡）｜剪断瞬间 T→0清零·F弹=12N冻结 → 合力8N↓ → a=4m/s²↓</text>
+          <text x="30" y="281" font-size="11.5" fill="#c0392b">错账预演：若把弹簧力也清零→a=10m/s²＝自由落体的账——弹簧还没来得及缩（v18例2卡壳预判照录）</text>
+          <text x="524" y="266" font-size="11.5" fill="#5b6773">图脚（v18口径）：绳杆瞬间变，弹簧缓过渡；</text>
+          <text x="524" y="281" font-size="11.5" fill="#5b6773">撤力先定弹簧力，再算各体加速度。</text>
+          <defs>
+            <marker id="arG" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#1e7a34"/></marker>
+            <marker id="arB" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#2b5a8c"/></marker>
+            <marker id="arY" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#8a6d1f"/></marker>
+            <marker id="arR" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#c0392b"/></marker>
+          </defs>
+        </g>
+      </svg>
+    </div>
+    <div class="quote">
+      一句话锚（v18簇13照录）：<b>合外力决定加速度</b>——给物体多大的合力，它就以多大的加速度改变速度；F、m、a三者用同一个单位制焊接成F=ma。落笔先写"对谁"，竖直方向先想mg，剪断瞬间先冻结弹簧力再清零绳力，超失重只看a向不看v向。
+    </div>
+  </section>
+
+  <section>
+    <h2>讲法锚点 · 视频切片（双段卡 · 缺段豁免注记）</h2>
+    <div class="quote">
+      北大学长跳跳《【高中物理必修1系统课】59.牛顿第二定律|最通透、最详细！》
+      BV1nR4y1y75t<br>
+      <span class="src">
+        全片2516s（41:56）｜播放684,639（页面＋view api实测@2026-10-28）｜系统课家族同源：同UP系统课58集即4.1主锚、42集即4.3主锚、63集即4.4主锚、67集即4.5主锚——本章五节系统课链就此合龙（对界互证）<br>
+        probe实测：CC字幕轨0条（player api subCount=0，cid 907085381／aid 348162724，@2026-10-28）
+      </span>
+    </div>
+    <div class="note">
+      <b>缺段豁免注记（双段卡口径）：</b>本件按双段卡口径出品——CC字幕轨实测0条，引文照录不可得（无音频转写工具链，同批2四卡实况）；秒窗与逐句引文均不虚标。补段条件：该BV字幕轨上线或whisper转写线接入后，按引文照录口径回填秒窗段，不代拟。
+    </div>
+    <table>
+      <tr><th style="width:110px">池候选登记</th><th>probe实测（@2026-10-28）</th></tr>
+      <tr><td>一物儿（总览语境）</td><td>《高中物理基础不牢？快来学牛顿第二定律！》BV1L3DrY5EiU｜播放775,598（本节实采最高播放位）｜全片3640s（1:00:40）｜CC字幕轨0条（aid 113452903304322／cid 26685737590）——总览语境，贴本节"动力学发动机"全章地位</td></tr>
+      <tr><td>物理教学平台（课堂语境）</td><td>《优质课高中/省赛 牛顿第二定律》BV1dP411773L｜播放54,932｜全片2729s（45:29）｜CC字幕轨0条（aid 304053974／cid 862355634）——同UP与4.1卡池候选《优质课全国赛 牛顿第一定律》家族互证（课堂实录语境）</td></tr>
+      <tr><td>划件注记</td><td>v18对位表划给本节的"牛二切片"BV1Rt411e7Vv（黄夫人·全片1869s）已由既有4.2批1卡（1024版）建有双弧秒窗引文库（方法弧146→983s／桥梁弧1270→1866s·引文照录6句·画面对账32帧）——该引文库随批1卡保留可回查，本卡不重复采集不双算（对界注记见卡尾源注）</td></tr>
+      <tr><td>实采规模留痕</td><td>1次搜索页（"跳跳 牛顿第二定律 系统课"）＋1次关键词定位（"一物儿 牛顿第二定律"）＋6次probe（主锚view＋主锚player＋两池候选view＋player各二）·限速错峰≥30s·零熔断；curl直连首probe遇412拦截改视频页cookie上下文页内fetch同口径（4.5卡先例·留痕）；搜索页另见：跳跳68集《对系统列牛顿第二定律》BV1YG4y137zz（播放25.6万——系统法域归4.5连接体延展面，本卡不占）＋陈老师敲黑板《70牛顿第二定律的矢量性》BV1ag411n7Yj（未probe不入池候选表，如实留痕）</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>高考接口（册内速览卡"怎么考"行照录）</h2>
+    <table>
+      <tr><th style="width:150px">考位</th><th>口径（v18照录）</th></tr>
+      <tr><td>考位①</td><td>瞬时突变（剪绳/剪弹簧/撤板）——判定总开关三步走（先冻结弹簧力→再清零绳力→对剩余力列ΣF=ma），2022全国甲T19级综合（卡②/例2）</td></tr>
+      <tr><td>考位②</td><td>连接体整体法/隔离法——先写"对谁"，T比=节数比秒验（卡④口诀座；两步走全题化归4.5连接体卡·如实注记防跨节重题）</td></tr>
+      <tr><td>考位③</td><td>竖直起飞/竖直方向漏g陷阱——"减个g"自查：牛二用的是合力，推力重力先做差（卡①）</td></tr>
+      <tr><td>考位④</td><td>超失重判据——看a向不看v向："a上超、a下失；减速下降是超重，别拿速度当判据"（CX牛顿称电梯照录·判据级在本节，视重曲线与完全失重展开归4.4）</td></tr>
+      <tr><td>考位⑤</td><td>"分段受力→分段a→v-t拼图"——v-t图是牛二的显影剂：斜率=a、面积=位移；分段牛二配分段图像，真题就考这个拼图（2024福建卷T7真题姿态·v18考位清单照录）</td></tr>
+      <tr><td>考频注记</td><td>牛二真题主挂1格（2024福建卷T7·周期性变力分段＋v-t图）＋副考点载体2次（2025福建卷T8/T15以牛二为工具）——v18节件台账§五照录；超失重模拟1格（2026厦门一检T5哑铃v-t图）判据级在本节、展开归应用域节</td></tr>
+      <tr><td>真题锚定级</td><td>判据级3处（v18素材块照录）：2022全国甲T19-B「Q的加速度大小的最大值为2μg」＝撤力瞬间弹簧弹力消失错项（⑫-2划件域）；2025甘T3-D「a=12m/s²」＝漏减g真题错值，正解F−mg=ma⟹a=2m/s²（⑬-2）；2024琼T1-B「返回舱处于失重状态」＝判据错读，开伞减速下降a向上实为超重（⑬-3）。<b>定级申报：均为v18册内素材判据级照录（卷面页码/官方答案页无直读卷源），按§4.1先例如实申报——宁缺毋编，不虚标卷源。</b></td></tr>
+      <tr><td>例1定级</td><td>★★★ 进阶·两类主干道全链（①F=8N水平μ=0.2：f=μmg=4N→a=2m/s²→v=6m/s；②37°斜面无动力上滑：f=μmg·cos37°=3.2N，mg·sin37°+f=ma⟹a=7.6m/s²沿斜面向下——负号教学彩蛋：XY列式纪律首场实战·v18定级行照录）</td></tr>
+      <tr><td>例2定级</td><td>★★☆ 标准·瞬时突变判定（平衡反解F弹=12N＋冻结操作链——判定总开关原话口径"弹簧力冻结、绳力清零"；剪断瞬间a=4m/s²向下·v18定级行照录）</td></tr>
+      <tr><td>同源注记</td><td>例2载体沿v18最小验证③升级族（弹簧吊球＋绳兜·剪绳瞬时），与4.5例1例2连接体链、4.4电梯三段载体错位（v18定级行照录·如实注记防双算）</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="quote">
+      <b>卡①（主卡）F是合外力不是推力——竖直起飞要减重力</b><br>
+      症状：火箭竖直起飞，推力F=6×10⁶N、质量5×10⁵kg，直接a=F/m=12m/s²（2025甘T3-D项真题错值）。<br>
+      错因：牛二F=ma中的F是合外力——火箭竖直起飞F−mg=ma⟹a=(6×10⁶−5×10⁵×10)/5×10⁵=2m/s²（v18计算链照录）。<br>
+      维持机制：列式前问一句"F里含不含重力"——竖直方向受力，mg必在账上；先做受力分析再代数。<br>
+      <span class="gold">钉死（v18口诀原话）：牛二用的是合力，推力重力先做差；竖直起飞减个g，答案立马矮三截。</span>
+    </div>
+    <div class="quote">
+      <b>卡② "剪断瞬间弹簧弹力也消失"——弹簧力要冻结</b><br>
+      症状：2022全国甲T19-B项错误样式「撤去F的瞬间，弹簧弹力也同时消失，P、Q同时突变减速」——该选项「Q的加速度大小的最大值为2μg」即由此错出。<br>
+      错因：形变量大的弹力需时间恢复——撤力瞬间弹簧弹力保持原值；轻绳形变极小、可瞬间突变（v18错在哪原话）。<br>
+      维持机制：剪绳/撤板瞬间按判定总开关三步走——先冻结弹簧力、再清零绳力、后对剩余力用ΣF=ma（例2操作链）。<br>
+      <span class="gold">钉死（v18口诀原话）：绳杆瞬间变，弹簧缓过渡；撤力先定弹簧力，再算各体加速度。</span>
+    </div>
+    <div class="quote">
+      <b>卡③ "力减小，速度一定减小"——三量分账</b><br>
+      症状："拉力变小了，物体马上就慢下来"。<br>
+      错因：F决定a，a决定Δv，v是Δv的累积——a减小只代表增速变缓，速度还在涨；a=0时速度恰恰最大（v18误解③口径）。<br>
+      维持机制：把"力变→速度变"拆成两步读：力变了a跟着变，v要等Δv累积——三量各管各的（三层塔的镜面）。<br>
+      <span class="gold">钉死（v18纠偏原话）：三量分账——F定a、a定Δv、v是累积结果。</span>
+    </div>
+    <div class="quote">
+      <b>卡④ 连接体同体性违规——整体求a、隔离求内力</b><br>
+      症状：对整体用完F=ma（此时内力互相抵消不出现），又对其中一块代同一个F——同一个力用了两次。<br>
+      错因：F、m、a必须同属一个对象——整体账和隔离账是两本账（v18易错现场照录）。<br>
+      维持机制：列每个方程前写一句"对谁"；整体法求a、隔离法求内力——内力在整体法里互相抵消，不会出现。<br>
+      <span class="gold">钉死（v18口诀原话）：整体求a、隔离求内力；秒验工具：逐节隔离时T比=节数比（3:2:1）——三节链各段张力按节数比分配。</span>
+    </div>
+    <div class="note">分工账注记（v18边界清单照录）：本节立牛二总纲与判定总开关（卡①②③主座）；卡④同体性口诀座在本节、两步走全题化（三步闸流程/T比秒验现场）归4.5连接体卡；超失重判据级在本节、视重公式N=m(g±a)与完全失重展开归4.4；牛三"等大共生死"归4.3——跨节分工如实注记防重复出题。</div>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <table>
+      <tr><th style="width:70px">步骤</th><th>用法</th></tr>
+      <tr><td>① 先看图</td><td>上排两条主干道认方向：已知力走A道、已知运动走B道，a是桥；下排判定总开关三步背顺序：先冻结弹簧力→再清零绳力→对剩余力列ΣF=ma；底部剪绳现场对一遍数值账（12+8=20→T清零F冻结→合力8N→a=4m/s²），读完能复述"对谁、减g、冻结、清零"四词。</td></tr>
+      <tr><td>② 再过卡</td><td>四张易错卡各读一遍症状，能对上号的打勾；卡①"竖直起飞漏g"（真题错值12m/s²对正解2m/s²差6倍）和卡②"弹簧力跟着清零"（2022甲T19错项源头）是判卷高频扣分点。</td></tr>
+      <tr><td>③ 一题自测</td><td>最小验证③（v18原题原答照录）：2kg小球轻弹簧竖直悬挂静止（弹力12N），竖直轻绳从下方兜住（张力8N），剪断绳的瞬间加速度多大？——T→0，F弹仍12N（冻结），合力=20−12=8N向下⟹a=4m/s²——判定总开关：弹簧力冻结、绳力清零（若得a=10m/s²即是把弹簧也清了零，自由落体的账）。</td></tr>
+      <tr><td>④ 费曼检验</td><td>装配层插桩照录（2分钟）：给同桌讲清F=ma的三句读法（因果／方向／单位）与正交分解的主战场地位；三步引导链——先说结论（F=合外力·a与F同向·m是抵抗变化的倔强值）→再说为什么（定义式反着用·矢量式=分量式各管一轴）→举个例子（沿面/压面两轴把斜面问题拆成两个独立一元问题）；照妖镜："合力漏项（漏摩擦/漏分量）"——错（受力分析逐笔清点，摩擦力直接写80牛进去答案是错的，FN是多少就是多少）；卡壳路由：卡在"正交轴怎么选"→回3.5§选轴标准，卡在"瞬时对应关系"→回正文§F与a同生灭；简化边界：微积分形式F=dp/dt一句带过（深读区）。</td></tr>
+      <tr><td>⑤ 接前后</td><td>向前接：4.1牛一（"定量是4.2的活"在此交账——定性因果升级为定量预测）＋3.4/3.5正交分解流水线（XY列式纪律上岗）＋3.3摩擦供给制（f由状态定）；向后接：4.4超失重（视重N=m(g±a)·判据看a不看v）＋4.5连接体（两步走·同体性卡④现场化）＋传送带斜面综合（考位注记归后续章）——第4章五节链：4.1定性地基→本节定量兑现→4.3合法性→4.4视重账→4.5整体隔离。</td></tr>
+    </table>
+  </section>
+
+  <div class="foot">
+    源注汇总：册内照录＝v18原册_物理.html 簇13全量域（182280→196778字节域实测·至簇14头起界）＋⑫-2突变细则划件域（香蕉球块·2022甲T19-B照录·对位表§七划本节承载）＋物理-4.2节件字段块（速览卡"怎么考"行／正文§定律说什么·§三性质·§单位制焊接·§两条主干道·§瞬时性核心考件／误解四条全／易错卡四卡／例1例2／最小验证三题／快问快答六条／CX牛顿称电梯／应试打法考位清单·打法五句）照录＋装配_物理必修一_第4章_1024.html 4.2费曼插桩块照录；讲法锚段缺段申报与池候选登记详见随件登记单（B站probe实测2026-10-28·1次搜索＋1次关键词定位＋6次probe·三件CC字幕轨均0条·curl首probe遇412改视频页cookie上下文页内fetch同口径留痕）。
+    <br><b>对界注记（与既有4.2批1卡·1024版关系·防双算）：</b>批1卡（1024版·黄夫人BV1Rt411e7Vv双弧146→983s／1270→1866s·引文照录6句·画面对账32帧）与本卡为同节异源双件——主卡口径以本卡（批2形态·S8五段同构×批2四卡先例零偏离）为准，批1卡转为视频引文库层随件保留可回查（其黄夫人双弧秒窗引文本卡不含，不因本卡出品而失效）；产出统计口径：4.2域切片卡计数=1（以本卡计入），批1卡不再另计——防双算。批1原件零触碰不改写，归档与否候验方裁定。
+    <br>本卡与4.1/4.3/4.4/4.5卡衔接：4.1管"力与运动关系的定性地基"（力＝改变运动状态的原因），本节管F=ma定量版；4.3管"力的相互作用合法性"，4.4管"单个对象的视重账"（N=m(g±a)），4.5管"多个对象的整体与隔离"（两步走）——第4章五节切片卡全链合龙。
+  </div>
+</div>
+</body>
+</html>
