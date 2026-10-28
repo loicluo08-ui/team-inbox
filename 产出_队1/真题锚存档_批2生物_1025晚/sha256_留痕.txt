@@ -1,2 +1,6 @@
 4d8f05e7b1657b45de720ec2cfecbfe6401dabc970b41202cafb2cba0b2af55a  cq2025_bio.pdf
 09e066bf588621f5695e9dcc2efc2ae2e0cb774ddb4f73aa2c9a0d490839bbc0  bj2024_bio.pdf
+
+# 2026-10-28 第三轮新增二级源存档
+1c7d3b42cc42bca1caeb13e87e04b00e7db37d20327695d72c86f402adf9cb5c  bj2024_bio_教师版二级源_zgkao.pdf
+d0b1409a50659fcd31af4a9e66e73fb0865f10888104b3ef940d3591ef043ae9  cq2025_bio_题面二级源_gkztc.pdf
