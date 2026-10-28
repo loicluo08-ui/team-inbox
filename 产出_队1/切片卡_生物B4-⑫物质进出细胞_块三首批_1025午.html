@@ -46,6 +46,11 @@
       font-size:13px; font-weight:700;}
   .foot{padding:16px 28px 22px; font-size:12px; color:var(--sub); background:var(--wash); line-height:1.8;}
   .foot b{color:var(--ink);}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
 </style>
 </head>
 <body>
@@ -55,7 +60,6 @@
     <div class="chips">生物 · 必修一第4章 细胞的物质输入和输出节4.2 · 块三首批卡</div>
     <h1>物质进出细胞：三套通行方案</h1>
     <div class="kicker">顺流不加油（自由/协助），逆流三要素（载体+能量+逆梯度缺一不可），大件走整柜（胞吞胞吐耗能但不归主动运输）——三式判据一次装齐。</div>
-    <</div>
   </div>
 
   <div class="bodywrap">
