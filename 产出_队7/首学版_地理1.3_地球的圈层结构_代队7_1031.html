@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理1.3 地球的圈层结构 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #16303f; border-left: 4px solid #4a9eff; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 16px 0; }
+  .try .tag { font-weight: bold; color: #4a9eff; }
+  .pit { background: #2a1a1a; border-left: 4px solid #e74c3c; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 16px 0; }
+  .pit .tag { font-weight: bold; color: #e74c3c; }
+  .check { background: #1b2a20; border: 1px solid #2a4030; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .check .tag { display: inline-block; background: #2ecc71; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-bottom: 6px; }
+  .key { background: #232b36; border-radius: 8px; padding: 10px 16px; margin: 12px 0; }
+  .m { font-family: Georgia, serif; font-style: italic; }
+  .big { font-size: 19px; }
+  .small { color: #9aa7b5; font-size: 14px; }
+  .ul-blue { border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  .wrong { color: #e74c3c; text-decoration: line-through; }
+  .fig { margin: 18px 0; text-align: center; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 6px; }
+  .alt { background: #1f2410; border: 1px dashed #8f9a4a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .alt .tag { font-weight: bold; color: #c9d46a; }
+  mark.nb { background: #4a9eff33; color: #cfe4ff; padding: 0 3px; border-radius: 2px; }
+  table.tb { border-collapse: collapse; margin: 14px auto; width: 100%; }
+  table.tb th, table.tb td { border: 1px solid #3a4a5c; padding: 7px 10px; text-align: center; }
+  table.tb th { background: #1f2937; color: #cfe0f5; }
+  table.tb tr td:first-child { color: #9fb0c3; }
+  .foot { margin-top: 50px; padding-top: 16px; border-top: 1px solid #2a3140; color: #6d7a88; font-size: 13px; line-height: 1.7; }
+  .arrow { color: #4a9eff; font-weight: bold; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 10mm 8mm; }
+    h1, h2, h3 { color: #111; }
+    .talk { background: #f5f7fa; border-color: #d0d7e0; }
+    .try { background: #eef6fc; }
+    .pit { background: #fdf0ef; }
+    .pit .tag { color: #c0392b; }
+    .check { background: #f0faf4; border-color: #cfe8d8; }
+    .check .tag, .step-tag { background: #4a9eff; color: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .alt { background: #fbfcf2; border-color: #b7c26a; }
+    .sub, .small, .figcap, .foot { color: #555; }
+    .m, .big, p, td, th, li { color: #222; }
+    table.tb th { background: #eef2f7; color: #111; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .key { background: #f4f6f9; }
+    .ul-blue { border-color: #4a9eff; }
+    mark.nb { background: #d8e9ff; color: #111; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>地球的圈层结构：切开"鸡蛋"看地球</h1>
+<div class="sub">湘教版地理必修第一册 · 1.3 地球的圈层结构 · 零基础首学版 v1.0 · 前置：1.1 的天体系统套娃（忘了？本件还是"套娃"，只是套到地球自己身上） · 预计用时 40 分钟</div>
+
+<h2><span class="step-tag">开场</span>最深只挖了地球的 1/516</h2>
+<p>人类能上天登月，却挖不穿脚下的地球。教材 p23 探究给了三个数：<b>最深的钻井不足 13 千米</b>，而地球<b>平均半径 6371 千米</b>——人类已达部分只占地球平均半径的 <b>1/516</b>（6371 km ÷ 12345 m ≈ 516，sympy 验 ✓）。挖得最深的是苏联在科拉半岛的<b>科拉超深钻井</b>：1970 年开钻、最深 12262 米，曾是世界第一，后来被卡塔尔油井（12289 米）和俄罗斯油井（12345 米）超过，截至 2016 年退居第三。</p>
+<p>既然"上天有路，入地无门"，科学家怎么知道地球里面长什么样？答案是：<b>借地震的"光"——地震波</b>。这一节先搞懂地震波这件"透视神器"，再顺着它切开地球。</p>
+
+<div class="check"><span class="tag">读完这节你能</span>
+<p>① 说出地球内部"三圈层+两界面"的名字和位置；② 背出纵波/横波的四组差异，并用"横波消失"推出外核是液态的；③ 分清"岩石圈"和"地壳"这两个最容易混的词；④ 列出外部三圈层，并说出生物圈"不单独占空间、渗透三圈"的特点。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>地震：五个名词一张图</h2>
+<div class="talk"><p><b>地震（教材 p24 定义原文）：</b>地震是地壳快速释放能量过程中造成的地面震动，是一种危害和影响巨大的自然灾害。我国是世界上地震灾害比较严重的国家之一。</p></div>
+<p>一次地震涉及五个名词（教材图 1-17，全部围绕"地下炸开一点"展开）：</p>
+<table class="tb">
+<tr><th>名词</th><th>教材定义</th><th>人话</th></tr>
+<tr><td>震源</td><td>地球内部岩石发生断裂引起震动的地方</td><td>地下"炸点"本体</td></tr>
+<tr><td>震中</td><td>震源在地面上的垂直投影，即地面正对着震源的那一点</td><td>炸点正上方的地面点</td></tr>
+<tr><td>震源深度</td><td>从震中到震源的垂直距离</td><td>炸点埋多深</td></tr>
+<tr><td>震中距</td><td>从观测点（如地震台）到震中的直线距离</td><td>你离炸点正上方多远</td></tr>
+<tr><td>等震线</td><td>将烈度相同的点连成的封闭曲线</td><td>"破坏程度相同"的等高线</td></tr>
+</table>
+<p><b>震级 vs 烈度</b>（教材 p24 原文+漫画类比）：地震大小用<b>震级</b>表示——释放能量越大震级越高，<span class="ul-blue">一次地震只有一个震级</span>；一般 5 级以上造成破坏，7 级以上常造成极大破坏。对地表和建筑物破坏的强弱用<b>烈度</b>表示——<span class="ul-blue">一次地震可以有多个烈度</span>（离震中越近一般越大，还受地基、建筑质量等影响）。教材漫画说得妙：炸弹里炸药量=震级（一颗炸弹一个量），炸后各处破坏程度=烈度（到处不一样）。</p>
+<div class="fig">
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="地震构造示意（教材图1-17同构）">
+  <rect width="800" height="300" fill="#10161f"/>
+  <rect x="0" y="90" width="800" height="18" fill="#3d5a3a"/>
+  <line x1="0" y1="108" x2="800" y2="108" stroke="#5a7a55" stroke-width="1.5"/>
+  <rect x="0" y="108" width="800" height="192" fill="#2a2318"/>
+  <line x1="0" y1="170" x2="800" y2="170" stroke="#3d3428" stroke-width="1"/>
+  <line x1="0" y1="230" x2="800" y2="230" stroke="#3d3428" stroke-width="1"/>
+  <circle cx="400" cy="108" r="7" fill="#ff7043"/><text x="400" y="95" fill="#ffd0a8" font-size="13" text-anchor="middle">震中</text>
+  <circle cx="400" cy="245" r="9" fill="#e74c3c"/><text x="425" y="250" fill="#ffb0a0" font-size="13">震源</text>
+  <line x1="400" y1="108" x2="400" y2="245" stroke="#ffcf5a" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="410" y="180" fill="#ffcf5a" font-size="12">震源深度</text>
+  <line x1="400" y1="108" x2="660" y2="108" stroke="#ff9f43" stroke-width="2"/>
+  <text x="530" y="100" fill="#ffcf9a" font-size="12">震中距（观测点→震中）</text>
+  <circle cx="660" cy="108" r="6" fill="#4a9eff"/><text x="660" y="130" fill="#9fd0ff" font-size="12" text-anchor="middle">地震台</text>
+  <ellipse cx="400" cy="108" rx="150" ry="22" fill="none" stroke="#ffe28a" stroke-width="1.6" stroke-dasharray="7,5"/>
+  <ellipse cx="400" cy="108" rx="260" ry="38" fill="none" stroke="#ffe28a" stroke-width="1.2" stroke-dasharray="7,5"/>
+  <text x="560" y="82" fill="#ffe28a" font-size="12">等震线（烈度相同点连线）</text>
+  <path d="M400,245 q-30,-25 -12,-52 M400,245 q30,-25 12,-52 M400,245 q-40,20 -58,5" stroke="#ffd54f" stroke-width="1.5" fill="none"/>
+  <text x="400" y="285" fill="#5a6a7a" font-size="12" text-anchor="middle">这张图在说什么：一个地下"炸点"+它头顶的地面投影+三把"尺子"（深度/震中距/等震线）。</text>
+</svg>
+<p class="small" style="text-align:center">图1 地震构造示意（教材图 1-17 同构·本件自绘）</p>
+</div>
+
+<h2><span class="step-tag">第二步</span>地震波：给地球做"B超"的两束波</h2>
+<div class="talk"><p><b>地震波（教材 p25 定义原文）：</b>地震的能量以波动的方式向外传播，形成地震波。地震波有<b>纵波（P 波）</b>和<b>横波（S 波）</b>之分。纵波的传播速度较快，在固体、液体和气体中均能传播；横波的传播速度较慢，只能在固体中传播。地震波在不同介质中的传播速度不同。地震波经过不同介质的界面时，还会发生反射和折射现象。科学家利用地震波的上述性质，通过对地震波的精确测量，<b>"透视"了地球内部的结构</b>。</p></div>
+<p>两束波的"性格档案"必须背牢：</p>
+<table class="tb">
+<tr><th>对比项</th><th>纵波 P（Primary·先到）</th><th>横波 S（Secondary·后到）</th></tr>
+<tr><td>速度</td><td><b>较快</b></td><td><b>较慢</b></td></tr>
+<tr><td>能穿什么</td><td>固体、液体、气体<b>都行</b></td><td><b>只能穿固体</b></td></tr>
+<tr><td>波动方向</td><td>沿传播方向来回推拉</td><td>垂直于传播方向左右摇晃</td></tr>
+<tr><td>地震时感觉</td><td>先到——上下颠簸</td><td>后到——左右摇晃</td></tr>
+</table>
+<p>为什么会"先上下颠、后左右晃"？因为 P 快先到、S 慢后到。地面破坏都是地震波的冲击造成的（p24 原文）。</p>
+<div class="try"><span class="tag">验一验（20 秒）</span>
+<p>地震发生时你在船上（在海洋上），能感觉到上下颠、左右晃吗？<br><span class="a">答案：只能上下颠（纵波能穿液体），左右晃传不过来（横波只走固体）——水的"滤网"把 S 波滤掉了。</span></p>
+</div>
+
+<h2><span class="step-tag">第三步</span>内部三圈层：两次"跳变"切出来的三层</h2>
+<p>教材 p25 原文："科学家通过对地震波传播速度的研究，把地球内部划分为<b>地壳、地幔和地核</b>三个主要圈层。三层之间的两个界面依次称为<b>莫霍面</b>和<b>古登堡面</b>。"（界面名是为纪念发现者——地震学家<b>莫霍洛维契奇</b>和<b>古登堡</b>。）</p>
+<p>两个界面凭什么算"界面"？看速度跳变（教材 p25 气泡数据，sympy 验 ✓）：</p>
+<div class="key">
+<p><b>莫霍面（约 17 km 深处·陆壳平均）</b>：纵波由 7.6 增至 <b>8.0</b> 千米/秒，横波由 4.2 增至 <b>4.4</b> 千米/秒——两波同时<b>加速</b>（物质变硬变密了）。<br>
+<b>古登堡面（约 2900 km 深处）</b>：纵波由 13.32 <b>突然降为</b> 8.1 千米/秒，<b>横波完全消失</b>——S 波走不了=下面不是固体了！</p>
+</div>
+<div class="fig">
+<svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="地震波速度跳变与内部圈层（教材图1-18同构）">
+  <rect width="800" height="330" fill="#10161f"/>
+  <line x1="60" y1="40" x2="60" y2="290" stroke="#5a6a7a" stroke-width="1.5"/>
+  <text x="20" y="30" fill="#8fa3b8" font-size="11">速度km/s</text>
+  <text x="34" y="60" fill="#8fa3b8" font-size="10">16</text><text x="34" y="165" fill="#8fa3b8" font-size="10">8</text><text x="34" y="290" fill="#8fa3b8" font-size="10">0</text>
+  <text x="90" y="310" fill="#8fa3b8" font-size="11">0　　莫霍面≈17km　　　　　　2900km　　　　　6371km（深度）</text>
+  <line x1="60" y1="290" x2="760" y2="290" stroke="#5a6a7a" stroke-width="1.5"/>
+  <rect x="60" y="268" width="120" height="22" fill="#8d6e4a" opacity="0.6"/>
+  <rect x="180" y="180" width="220" height="110" fill="#b5651d" opacity="0.55"/>
+  <rect x="400" y="150" width="240" height="140" fill="#d84315" opacity="0.5"/>
+  <rect x="640" y="210" width="120" height="80" fill="#ffab40" opacity="0.6"/>
+  <polyline points="60,180 130,178 176,176 180,168 240,163 300,158 398,150 402,210 480,208 560,205 640,200 700,196 760,192" fill="none" stroke="#ff6b6b" stroke-width="2.2"/>
+  <polyline points="60,228 130,226 176,225 180,218 300,213 398,210 402,288 500,288 600,288 700,288 760,288" fill="none" stroke="#4fc3f7" stroke-width="2.2"/>
+  <line x1="180" y1="40" x2="180" y2="290" stroke="#ffe28a" stroke-width="1.4" stroke-dasharray="6,4"/>
+  <line x1="400" y1="40" x2="400" y2="290" stroke="#ffe28a" stroke-width="1.4" stroke-dasharray="6,4"/>
+  <text x="180" y="55" fill="#ffe28a" font-size="12" text-anchor="middle">莫霍面：双加速</text>
+  <text x="400" y="55" fill="#ffe28a" font-size="12" text-anchor="middle">古登堡面：P骤降·S消失</text>
+  <text x="120" y="150" fill="#ff9b9b" font-size="12">纵波P</text>
+  <text x="510" y="245" fill="#7fd4ff" font-size="12">横波S（外核段消失）</text>
+  <text x="680" y="130" fill="#e0c88f" font-size="12">内核</text>
+  <text x="500" y="170" fill="#e0c88f" font-size="12">外核</text>
+  <text x="270" y="200" fill="#e0c88f" font-size="12">地幔</text>
+  <text x="100" y="283" fill="#e0c88f" font-size="12">地壳</text>
+  <text x="400" y="325" fill="#5a6a7a" font-size="12" text-anchor="middle">这张图在说什么：波速一跳变，就说明脚下换了"材质"——两次跳变切出三层。</text>
+</svg>
+<p class="small" style="text-align:center">图2 地震波速度随深度的变化（教材图 1-18 同构·两跳变点按教材气泡数据定位·形状示意）</p>
+</div>
+<p><b>三层档案</b>（教材 p25-27 原文整合）：</p>
+<table class="tb">
+<tr><th>圈层</th><th>范围</th><th>关键数据/物质</th><th>一句话</th></tr>
+<tr><td>地壳</td><td>地面以下、莫霍面以上</td><td>平均厚 17 km；大陆 39~41 km（青藏最厚达 70 km）；大洋仅 5~10 km</td><td>海拔越高地壳越厚</td></tr>
+<tr><td>地幔</td><td>莫霍面→古登堡面（到 2900 km）</td><td>固态（能传 S 波）；含铁镁的硅酸盐类；分上/下地幔</td><td><b>上地幔上部有软流层</b>=岩浆主要发源地</td></tr>
+<tr><td>地核</td><td>古登堡面以内</td><td>可能是极高温度高压下的<b>铁和镍</b>；分内核/外核</td><td>外核液态（S 波过不去）·内核一般认为固态</td></tr>
+</table>
+<p><b>岩石圈</b>（教材 p27 原文）："地壳和上地幔顶部（软流层以上）是由岩石组成的，合称<b>岩石圈</b>。"——注意：软流层属于<b>上地幔</b>（不是地壳！），岩石圈=地壳+软流层以上的那截上地幔，比地壳厚、比整个上地幔薄。</p>
+<div class="try"><span class="tag">验一验（30 秒）</span>
+<p>把这几个词从外到内排序：软流层、地壳、岩石圈、上地幔、地幔。<br><span class="a">答案：地壳 →（岩石圈含地壳+上地幔顶部）→ 软流层（上地幔上部）→ 上地幔其余 → 下地幔。容易错点：软流层<b>在</b>岩石圈"下面"，但<b>属于</b>地幔不属于岩石圈。</span></p>
+</div>
+
+<h2><span class="step-tag">方法</span>科学推理示范：怎么"推出"外核是液态的</h2>
+<p>教材没有直接说"外核是液体"，而是给了一条<b>证据链</b>（p27 原文梳理）：</p>
+<div class="key"><p>古登堡面以下<b>横波消失</b> <span class="arrow">→</span> S 波只能走固体（第二步档案）<span class="arrow">→</span> 外核物质不是固体，呈<b>液态或熔融状态</b> <span class="arrow">→</span> 液态铁镍相对于地壳"流动" <span class="arrow">→</span> <b>这可能是地球磁场产生的主要原因</b>。</p></div>
+<p>这条链是"依据已知性质+观测事实→推出看不见的结论"的完整示范——考试问"为什么认为外核是液态的"，就照这条链写。<b>注意</b>：教材用词很严谨——"科学家<b>推测</b>组成地核的物质<b>可能是</b>……"，没有人钻进去看过，这就是科学的诚实。</p>
+
+<h2><span class="step-tag">第四步</span>外部三圈层：地球的"外套"</h2>
+<p>教材 p28 原文："通常把地壳表层以外的由大气、水体和生物组成的自然界，划分为<b>大气圈、水圈和生物圈</b>三个圈层，统称为地球的外部圈层。"</p>
+<table class="tb">
+<tr><th>圈层</th><th>组成/范围（教材原文锚）</th><th>关键数字</th></tr>
+<tr><td>大气圈</td><td>包裹地球的气体层；近地面密度大，随高度增加迅速减小</td><td>2000~3000 km 高空每立方厘米平均只剩一个气体分子≈星际空间——一般把这里当<b>大气圈上界</b></td></tr>
+<tr><td>水圈</td><td>由液态水、固态水和气态水组成；按位置状态分为海洋水、陆地水、大气水和生物水</td><td>陆地水与人类关系最密切，分地表水和地下水</td></tr>
+<tr><td>生物圈</td><td>地球上<b>所有生物及其生存环境</b>的总称；<b>不单独占有空间</b>，渗透于大气圈底部、水圈的全部和岩石圈的上部</td><td>厚约 20 km；绝大部分生物集中在<b>地面以上 100 m 至水面以下 200 m</b>（占圈厚 1.5%，sympy 验 ✓）——大气圈、水圈、岩石圈的接触带，"生物圈的核心部分"，教材气泡称之为薄薄的"生物膜"</td></tr>
+</table>
+<p>收尾一句（p28 原文）："大气圈、水圈、生物圈与岩石圈相互联系、相互渗透，共同构成人类赖以生存和发展的<b>自然环境</b>。"——内部圈层是"骨架"，外部圈层是"血肉"，合起来才是活的地球。</p>
+
+<h2><span class="step-tag">方法</span>鸡蛋类比（教材活动2·同与异都说清）</h2>
+<p>教材 p27 活动2 让你拿<b>煮熟的鸡蛋</b>比地球：蛋壳/蛋白/蛋黄三个圈层。相同点：都是"同心圈层、由外到内、密度渐大"；<b>不同点也要会说</b>（这才是得分点）：①蛋壳相对厚得多（占半径约 5~10%），地壳只占 0.27%（17/6371，sympy 验 ✓）——地球的"壳"薄得惊人；②鸡蛋分界明显，地球内部还有软流层、岩石圈这类"跨层"结构；③蛋黄分内外（内核/外核），蛋白不分——反而和地核像。</p>
+
+<h2><span class="step-tag">大坑</span>本节四大坑</h2>
+<div class="pit"><span class="tag">坑1·岩石圈 ≠ 地壳</span>
+<p>岩石圈=地壳+<b>上地幔顶部</b>（软流层以上）。说"岩石圈就是地壳"直接丢分。记：软流层"躺"在岩石圈下面，但它在<b>地幔</b>里。</p>
+</div>
+<div class="pit"><span class="tag">坑2·横波消失≠横波变慢</span>
+<p>古登堡面处 S 波是"<b>完全消失</b>"（p25 气泡原文），不是变慢——变慢说明材质变了，消失说明材质<b>不是固体</b>。这是判断外核液态的唯一钥匙，别写"横波速度减小"。</p>
+</div>
+<div class="pit"><span class="tag">坑3·震级烈度互混</span>
+<p>一次地震：<b>一个</b>震级、<b>多个</b>烈度。震级只跟释放能量挂钩，烈度还看震源深浅、震中距、地基建筑——"震级大=破坏一定大"是错的。</p>
+</div>
+<div class="pit"><span class="tag">坑4·生物圈"住址"写错</span>
+<p>生物圈渗透于<b>大气圈的底部、水圈的全部、岩石圈的上部</b>（p28 原文三件套）——写成"大气圈的全部"或"岩石圈的全部"都错；它不单独占空间，是三圈的"跨界居民"。</p>
+</div>
+
+<h2><span class="step-tag">收口</span>合上这件，三问自查</h2>
+<p>①内部三圈层+两界面各叫什么、以什么为界？（地壳/地幔/地核·莫霍面/古登堡面）②为什么认为外核是液态的？（S 波消失链条，会背）③生物圈的"住址"三件套是什么？（大气圈底部+水圈全部+岩石圈上部）——三问全对=过关。</p>
+
+<h3>自测四连（先自己做，再看答案——答案就在下面）</h3>
+<div class="check">
+<p>① 地震波中，只能在固体中传播的是＿＿；在古登堡面完全消失的是＿＿。这共同说明外核呈＿＿态。<br><span class="a">答案：横波（S 波）；横波；液态（或熔融态）。</span></p>
+<p>② 判断并改错："地壳和地幔合称岩石圈。"<br><span class="a">答案：<span class="wrong">错</span>。岩石圈=地壳+<b>上地幔顶部（软流层以上）</b>，不含整个地幔。</span></p>
+<p>③ 一次地震中，震级和烈度各有几个？破坏程度的强弱主要用什么表示？<br><span class="a">答案：震级一个（能量定死）；烈度多个（随震中距、地质、建筑而变）；强弱用烈度表示。</span></p>
+<p>④ 把"地壳、大气圈、生物圈、地幔、水圈、地核"按"内部圈层/外部圈层"分两组，并在内部组按由外到内排序。<br><span class="a">答案：内部=地壳→地幔→地核（由外到内）；外部=大气圈、水圈、生物圈。</span></p>
+</div>
+
+<h3><span class="step-tag">考位锚</span>高考怎么考（三行内·轻量）</h3>
+<p><b>考什么</b>：地震波性质与圈层划分（结合波速图）/岩石圈范围辨析/外部圈层特征。<b>怎么考</b>：选择题配对+波速曲线图判读；"横波消失→外核液态"推理链常设选项陷阱。 <b>频率</b>：必修一高频开胃菜。真题锚：候采（本件未采到带卷源的 1.3 真题，不代拟——后续件按映射表 #47 续锚）。</p>
+
+<p><b>下一站</b>：1.4 地球的演化——46 亿年的地球编年史：地层和化石就是地球的"日记本"（p30 起，科学家推算地球年龄约 46 亿年）。</p>
+
+<div class="fig">
+<svg viewBox="0 0 560 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第一章宇宙中的地球四节走向">
+  <rect width="560" height="150" fill="#10161f"/>
+  <defs><marker id="ar2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#4a9eff"/></marker></defs>
+  <rect x="18" y="45" width="92" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/><text x="64" y="64" fill="#c8d4e2" font-size="12" text-anchor="middle">1.1-1.2</text><text x="64" y="82" fill="#8fa3b8" font-size="11" text-anchor="middle">定位与太阳</text>
+  <rect x="126" y="40" width="130" height="54" rx="6" fill="#1b2f45" stroke="#4a9eff" stroke-width="2"/><text x="191" y="62" fill="#e8f2ff" font-size="14" text-anchor="middle" font-weight="bold">1.3 圈层结构</text><text x="191" y="82" fill="#9fd0ff" font-size="11" text-anchor="middle">本件·切开地球</text>
+  <rect x="272" y="45" width="92" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/><text x="318" y="64" fill="#c8d4e2" font-size="12" text-anchor="middle">1.4 演化</text><text x="318" y="82" fill="#8fa3b8" font-size="11" text-anchor="middle">46亿年日记</text>
+  <rect x="380" y="45" width="160" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/><text x="460" y="64" fill="#c8d4e2" font-size="12" text-anchor="middle">第二章 地球上的大气</text><text x="460" y="82" fill="#8fa3b8" font-size="11" text-anchor="middle">下一站·分层细看</text>
+  <line x1="110" y1="67" x2="124" y2="67" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="256" y1="67" x2="270" y2="67" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="364" y1="67" x2="378" y2="67" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="280" y="130" fill="#5a6a7a" font-size="12" text-anchor="middle">这张图在说什么：看清了地球的"骨架"，下一节翻它的"成长日记"，然后钻进大气层细看。</text>
+</svg>
+<p class="small" style="text-align:center">本节位置图（第一章·宇宙中的地球）</p>
+</div>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选——跳过不影响后面任何一节）</span>
+<p>① <b>地震预警是怎么抢出那几十秒的</b>（教材 p29 活动1）：2017 年 8 月 8 日九寨沟 7.0 级地震，预警系统在地震波抵达甘肃陇南<b>前 19 秒</b>、抵达成都<b>前 71 秒</b>发出警报——原理=电波跑得比地震波快，监测仪先"听"到纵波就把警告用电波发出去。注意教材设问：地震<b>预警</b>≠地震<b>预报</b>（预警=震后抢时间；预报=震前预测，目前仍是世界难题）。② <b>地壳是元素的"展览馆"</b>（教材 p26 阅读）：90 多种化学元素里，氧、硅、铝、铁、钙、钠、钾、镁 8 种占 98.04%，氧几乎占一半、硅超四分之一；上层硅铝多=硅铝层（大洋底罕见），下层镁铁多=硅镁层（连续分布）。③ <b>为什么先知道"上下颠"再"左右晃"</b>：纵波先到横波后到的<b>时间差</b>，正是地震预警系统计算震中距的"尺子"——时间差越大，你离震中越远。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（教材形态量产件·首学版标准v2.3全条款落地：T12节首清单＋T11考位锚块＋节末本节位置图＋alt可选块纪律＋数值机器代验13项PASS留痕） · 事实层素材源：湘教版《地理》必修第一册 p23–p30 影印逐页对照（国家中小学智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a · 详情API实时 ts=1754905526079 · 图29/30/31/32/33/34/35/36→印刷页23/24/25/26/27/28/29/30 · 图N→印刷页N-6 · 1.3节域=p23-29·p30为第四节节界旁证 · 探究科拉钻井/地震六概念/震级烈度/地震波定义/莫霍面古登堡面速度跳变/地壳地幔地核原文/软流层岩石圈/外部三圈层/鸡蛋活动/九寨沟预警活动/阅读元素均逐字锚定 · 影印原件存席位私有目录 geo11_jc/，对照报告随件入仓）<br>
+设计标准（1.1定版延续）：零预设 · 一次一步 · 随读随验 ×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源 · 图像讲解必配图示
+</div>
+
+</div>
+</body>
+</html>
