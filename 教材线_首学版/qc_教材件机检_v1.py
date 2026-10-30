@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-教材件专用机检 v1（首学版_*.html 出库闸机器层·1030深度交叉验证第二轮定案）
+教材件专用机检 v1.1（首学版_*.html 出库闸机器层·v1.1=1030晚扩结构检查项：T12节首清单/T11考位锚/节末导图在场+alt块外课外内容检查——标准v2.3配套）
 口径（标准模板v2.2验收节）：
   - 生产语域词 出现在【正文】（foot区豁免）= 红（真泄漏·退回）
   - 投资/金融内容词 出现在【正文】= 黄（候管理员席人工裁·不自动退回，输出上下文）
@@ -45,16 +45,35 @@ def main():
     reds = hits(body, PROD_WORDS)
     yellows = hits(body, FIN_WORDS)
     name = path.split('/')[-1]
+    # v1.1 结构检查项（标准v2.3 T11/T12/节末导图/alt纪律）
+    struct_missing = []
+    if '读完这节你能' not in body: struct_missing.append('T12节首清单缺失')
+    if '高考怎么考' not in body: struct_missing.append('T11考位锚块缺失')
+    if 'aria-label="本节位置图' not in body: struct_missing.append('节末位置图缺失')
+    # alt纪律：课外拓展类标题不得出现在alt可选块之外
+    alt_zone = re.search(r'<div class="alt">.*?</div>', text, re.S)
+    alt_text = alt_zone.group(0) if alt_zone else ''
+    body_no_alt = body.replace(alt_text, '') if alt_text else body
+    for kw in ['课外拓展', '知识拓展', '延伸阅读']:
+        if kw in body_no_alt: reds.append((kw, '课外内容出现在alt可选块之外（#17/#30红线）'))
     if reds:
-        print(f"❌{name}: {len(reds)}处生产语域泄漏（红·退回）")
-        for w, c in reds: print(f"    [生产] {w}: …{c}…")
+        print(f"❌{name}: {len(reds)}处生产语域/结构红线（红·退回）")
+        for w, c in reds: print(f"    [生产/结构] {w}: …{c}…")
         sys.exit(2)
-    if yellows:
-        print(f"🟡{name}: {len(yellows)}处投资词命中（黄·候管理员席裁·类比锚段为正当教学手法）")
+    if struct_missing:
+        print(f"🟡{name}: 结构缺项{len(struct_missing)}处（黄·候管理员席裁——历史版本/特殊节型可豁免）")
+        for s in struct_missing: print(f"    [结构] {s}")
+        sys.exit(0)
+    if yellows or struct_missing:
+        parts = []
+        if yellows: parts.append(f"{len(yellows)}处投资词候裁")
+        if struct_missing: parts.append(f"{len(struct_missing)}处结构缺项")
+        print(f"🟡{name}: " + "·".join(parts) + "（黄·候管理员席裁）")
         for w, c in yellows: print(f"    [投资] {w}: …{c}…")
+        for s in struct_missing: print(f"    [结构] {s}")
         print(f"（foot区已豁免{len(foot)}字节·素材源溯源行不检）")
         sys.exit(0)
-    print(f"✅{name}: 正文零命中")
+    print(f"✅{name}: 正文零命中·结构全过")
     sys.exit(0)
 
 if __name__ == "__main__":
