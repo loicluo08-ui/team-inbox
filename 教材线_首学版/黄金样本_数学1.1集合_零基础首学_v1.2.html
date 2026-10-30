@@ -33,6 +33,19 @@
   th { background: #1b2029; color: #fff; }
   .foot { margin-top: 50px; padding-top: 20px; border-top: 1px solid #2a323e; color: #7d8a99; font-size: 14px; }
   em { color: #4a9eff; font-style: normal; font-weight: bold; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    .sub, .small, .foot { color: #444; }
+    .talk .q, .key b { color: #7a5c00; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong { color: #c0392b; }
+    em { color: #1a5c99; }
+    .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
 </style>
 </head>
 <body>
