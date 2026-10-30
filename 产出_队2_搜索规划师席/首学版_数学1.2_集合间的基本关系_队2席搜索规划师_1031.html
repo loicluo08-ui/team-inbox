@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学1.2 集合间的基本关系（人教A版）· 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  .check { background: #1c2733; border: 1px solid #2f4156; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .check b { color: #7fd08a; }
+  .talk { background: #1a2330; border-left: 3px solid #4a9eff; padding: 10px 16px; border-radius: 0 8px 8px 0; margin: 14px 0; color: #b8c6d8; }
+  .try { background: #16211d; border: 1px solid #2c5a3f; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .try .tag { color: #7fd08a; font-weight: bold; }
+  .ans { color: #9fb6a4; margin-top: 8px; }
+  .pit { background: #2a1b1e; border: 1px solid #6b2f38; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit .tag { color: #ef7a8a; font-weight: bold; }
+  .key { background: #232c3d; border-radius: 8px; padding: 12px 18px; margin: 16px 0; }
+  .key b { color: #ffd479; }
+  .m { font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+  .big { font-size: 19px; color: #f0f3f7; }
+  .detail { color: #93a3b5; font-size: 15px; }
+  .small { font-size: 13px; color: #7d8a99; text-align: center; }
+  .wrong { color: #ef7a8a; text-decoration: line-through; }
+  .nb { border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  mark { background: linear-gradient(transparent 55%, rgba(255, 212, 0, 0.35) 55%); color: inherit; padding: 0 2px; }
+  mark.nb { background: linear-gradient(transparent 60%, rgba(74, 158, 255, 0.35) 60%); }
+  .note-red { color: #e8919e; font-family: "Kaiti SC", "STKaiti", "KaiTi", cursive; font-size: 15px; }
+  .fig { margin: 20px auto; text-align: center; }
+  .figcap { font-size: 13px; color: #7d8a99; margin-top: 6px; }
+  ul.blue { margin: 10px 0 10px 24px; }
+  ul.blue li { margin: 6px 0; }
+  .box { background: #212a3a; border: 1px solid #3a4f6e; border-radius: 10px; padding: 16px 20px; margin: 24px 0; }
+  .box h3 { margin-top: 0; color: #9cc4ff; }
+  .foot { margin-top: 60px; padding-top: 18px; border-top: 1px solid #2c3644; font-size: 12.5px; color: #6d7a89; line-height: 1.75; }
+  .q { font-weight: bold; color: #f0f3f7; }
+  .a { color: #9fb6a4; }
+  @media print {
+    body { background: #fff !important; color: #111 !important; }
+    .page { padding: 0; }
+    h1, h2, h3, .q, .big, b, strong { color: #111 !important; }
+    .step-tag { background: #dbe9ff !important; color: #0b3a78 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    mark { background: linear-gradient(transparent 55%, rgba(255, 212, 0, 0.45) 55%) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    mark.nb { background: linear-gradient(transparent 60%, rgba(74, 158, 255, 0.4) 60%) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .check, .talk, .try, .pit, .key, .box, .ans, .a { background: #f5f7fa !important; color: #222 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .note-red { color: #b3374a !important; }
+    .sub, .small, .figcap, .detail, .foot { color: #555 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>数学1.2 集合间的基本关系</h1>
+<div class="sub">人教A版 必修第一册 · 第一章 · 零基础首学版 v1.0 ｜本件属于「集合与常用逻辑用语」模块——上一站：<span class="nb">1.1 集合的概念</span>（没读过1.1？看这句就够：集合=一些确定对象放在一起的整体，∈表示"在这个整体里"）。下一站预告：1.3 集合的基本运算（教材p10原话："两个集合之间是否也有类似的关系呢？"是本节起点，而"两个集合能合成一个新集合吗"是1.3的起点）。</div>
+
+<div class="check">
+<b>读完这节你能做到：</b>
+① 给两个集合（哪怕写得花里胡哨），<b>判断</b>它们谁包含谁、还是相等，并说出理由；
+② {a,b}这样的小集合，当场<b>数清</b>全部子集、真子集有几个，一个不漏；
+③ <b>分清</b>两个符号：∈和⊆——写错就全错的那个坑；
+④ <b>说出</b>空集∅的三条脾气，会做含参数的包含关系题（先把空集想起来）。
+</div>
+
+<h2><span class="step-tag">开场</span>实数有"等于、小于"，集合呢？</h2>
+<p>教材p7开场原话："我们知道，两个实数之间有相等关系、大小关系，如5=5，5&lt;7，5&gt;3，等等。两个集合之间是否也有类似的关系呢？"</p>
+<p>有，而且 family 成员就三个：<mark class="nb">子集（⊆）管"装得下"、真子集（⫋）管"装得下但没装满"、相等（=）管"一样"</mark>。加上一个特殊的集合——空集∅，这一节就齐了。路线图：先看三个例子长出直觉（教材"观察"），再逐个发符号，最后两道教材例题＋两道高考真题收工。</p>
+
+<h2><span class="step-tag">第①站</span>子集⊆——"装得下"</h2>
+<p>教材p7"观察"给了三组例子：</p>
+<ul class="blue">
+<li>(1) A={1,2,3}，B={1,2,3,4,5}</li>
+<li>(2) C=立德中学高一(2)班全体女生组成的集合，D=这个班全体学生组成的集合</li>
+<li>(3) E={x|x是有两条边相等的三角形}，F={x|x是等腰三角形}</li>
+</ul>
+<p>三个例子的共同点一句话：<b>前一个集合的每一个元素，后一个集合里都有</b>。(1)里A的1、2、3全在B里；(2)班里每个女生都是学生；(3)每条"有两条边相等的三角形"就是等腰三角形（教材p7就是用这句话引导你发现E和F"元素一样"——它俩其实是相等的，第②站回收）。</p>
+<p><b>子集定义（教材原文）</b>：一般地，对于两个集合A、B，如果集合A中<mark>任意一个</mark>元素都是集合B中的元素，就称集合A为集合B的<mark class="nb">子集（subset）</mark>，记作 <span class="big"><span class="m">A⊆B</span></span>（或 <span class="m">B⊇A</span>），读作"A包含于B"（或"B包含A"）。</p>
+<p>抓两个词：<mark>"任意一个"</mark>——不是"有几个在里面"就行，是**一个都不能漏**；"⊆"开口朝哪，哪边是大集合（A⊆B：B是大的，A装在B里）。教材随即给出画法：用平面上一条封闭曲线的内部代表集合，这种图叫<span class="nb">Venn图</span>——A⊆B就画成小圈整个落在大圈里（图1.2-1）：</p>
+
+<div class="fig">
+<svg width="420" height="150" viewBox="0 0 420 150" xmlns="http://www.w3.org/2000/svg" aria-label="图1：Venn图示意 A包含于B">
+  <ellipse cx="195" cy="75" rx="150" ry="62" fill="#1d2b3d" stroke="#4a9eff" stroke-width="2"/>
+  <ellipse cx="245" cy="75" rx="62" ry="36" fill="#2c5a3f" stroke="#7fd08a" stroke-width="2"/>
+  <text x="245" y="80" fill="#d8f0e2" font-size="15" text-anchor="middle" font-style="italic">A</text>
+  <text x="75" y="42" fill="#9cc4ff" font-size="15" font-style="italic">B</text>
+</svg>
+<div class="figcap">图1 · Venn图示意（据教材图1.2-1重绘·坐标程序生成）：小圈A整体落在大圈B内</div>
+</div>
+
+<div class="try"><span class="tag">验一验①</span> A={1,2}，B={x|x²−3x+2=0}，A⊆B成立吗？（30秒：先解出B）<div class="ans">答案：x²−3x+2=(x−1)(x−2)=0，B={1,2}。A的两个元素1、2都在B里，<b>A⊆B成立</b>；而且反过来B⊆A也成立——所以其实是相等（下一站正式讲）。程序代验：solve(x²−3x+2)={1,2}✓</div></div>
+
+<h2><span class="step-tag">第②站</span>相等＝——"互相装得下"</h2>
+<p>回到例子(3)：E的每个元素都是F的元素，F的每个元素也是E的元素——两边"装得下"是<b>双向</b>的。教材p7定义：<mark>如果集合A的任何一个元素都是集合B的元素，同时集合B的任何一个元素都是集合A的元素，那么集合A与集合B相等，记作A=B</mark>。</p>
+<p>为什么判等要走"双向包含"这么绕，而不是"看看元素是不是一样"？因为<b>元素一样"对无限集根本没法直接看"</b>——两条无限长的名单摆不到一起逐个对。双向包含把"一样"拆成两个可执行的动作：正向"任取x∈A，推出x∈B"，反向"任取x∈B，推出x∈A"，两步都通，相等成立。这是数学证明"两个东西相同"的标准武器，今后证明"两个解集等价"天天用（背后思想：集合由成员决定，跟"怎么写"无关——描述法写法不同不代表集合不同）。</p>
+<div class="talk">例子（1.1教材描述法原例）：A={x|x−7&lt;3}与B={x|x&lt;10}。条件长相完全不同，但x−7&lt;3⟹x&lt;10（移项）走得通，x&lt;10⟹x−7&lt;3也走得通——两步一合，A=B。写法不同、集合相同，这就是"双向包含"的现场。</div>
+<div class="try"><span class="tag">验一验②</span>（易错变形）A={x|x²=4}，B={−2, 2}，A=B对吗？<div class="ans">答案：解方程得x=2或x=−2，A={2,−2}。集合元素<b>无序</b>（1.1互异性与无序性），{2,−2}={−2,2}，所以A=B成立。别因为"写法顺序不一样"判不相等。</div></div>
+
+<h2><span class="step-tag">第③站</span>真子集⫋——"装得下，还没装满"</h2>
+<p>子集⊆有个宽松处：A⊆B时，A和B<b>完全相等也算数</b>。但很多时候我们想说"不光装得下，B里还有A装不进的东西"。教材p8定义：<mark>如果集合A⊆B，但存在元素x∈B，且x∉A，就称集合A是集合B的真子集</mark>，记作 <span class="big"><span class="m">A⫋B</span></span>（或B⫋A）。</p>
+<p>教材例子(1)（p8）：A={1,2,3}⊆B={1,2,3,4,5}，且4∈B、4∉A——这个"4"就是B比A多出来的部分，它让"真"字立住了。口诀：<mark>A⫋B = A⊆B 且 A≠B</mark>——"真"字永远多一道"确实不相等"的检查，漏掉这道检查是含参题最大失分点（易错卡①就是它的现场）。</p>
+<div class="try"><span class="tag">验一验③</span>（易错变形·两小问）∅⫋{0}成立吗？{0}⫋{0}呢？<div class="ans">答案：第一问<b>成立</b>——∅⊆{0}（空集是任何集合的子集，下一站讲），且0∈{0}、0∉∅，"外面"有元素，"真"字立住。第二问<b>不成立</b>——{0}⊆{0}没问题，但找不出"外面的元素"（它俩相等），没有"真"。</div></div>
+
+<h2><span class="step-tag">第④站</span>空集∅——"什么都没有的容器"</h2>
+<p>教材p8引子：方程x²+1=0在实数范围内<b>无解</b>——解集一个元素都没有。教材定义：<mark>不含任何元素的集合叫空集，记作∅</mark>，并<b>规定</b>：空集是任何集合的子集。</p>
+<p>"规定"听着霸道，其实是逻辑必然。看子集定义："A中<b>任意一个</b>元素都是B的元素"——这话对A=∅怎么验？<b>你从∅里任取一个元素来检查，一个都取不出来</b>。取不出反例，"承诺"自动兑现（逻辑里叫"空真"）。就像"所有在座的花猫都会抓老鼠"这句话——在座一只猫都没有时，它不算说错。所以∅⊆B对<b>任何</b>B都成立，包括∅⊆∅（教材结论(1)"任何集合是它本身的子集"的空集版）。</p>
+<p class="note-red">红笔旁批：含参题最容易漏的就是这一层——"B能不能是∅"永远先问一遍。∅没有图、没有元素，直觉检索不到它，只能靠纪律。</p>
+<div class="try"><span class="tag">验一验④</span>（两级身份·易错变形）∅∈{∅}对吗？∅⊆{∅}对吗？<div class="ans">答案：<b>都对</b>，而且正好展示两级身份：{∅}是一个集合，它里面装着一个元素——那个元素是空集∅，所以∅∈{∅}（元素身份）；同时∅是任何集合的子集，所以∅⊆{∅}（子集身份）。<b>∅是"元素"和"子集"两种身份都可能出现的集合</b>，写符号前先问左边身份。</div></div>
+
+<h2><span class="step-tag">第⑤站</span>两条白送的结论＋数子集的稳妥数法</h2>
+<p>教材p8给了两条结论（照录）：</p>
+<ul class="blue">
+<li>(1) 任何一个集合是它本身的子集，即A⊆A；</li>
+<li>(2) 如果A⊆B，且B⊆C，那么A⊆C。</li>
+</ul>
+<p>第一条的用法在"数子集"时显灵：数子集永远把集合自己数进去。第二条叫<b>传递性</b>——⊆链能一棒子传下去（{1}⊆{1,2}⊆{1,2,3}⟹{1}⊆{1,2,3}）。<span class="note-red">但只有⊆链能传，∈链不能传：A∈B且B⊆C，推不出A⊆C</span>——A∈B只说明A是B的元素（B可能是"装集合的盒子"），身份错位，链路即断。</p>
+<p>数子集的稳妥数法（教材例1示范的枚举思想＋公式核账）：<b>对每个元素逐个表态"进/不进"</b>。n元集合每个元素两种选择、互相独立，子集总数=2ⁿ；真子集挖掉自己=2ⁿ−1；非空真子集再挖空集=2ⁿ−2（n≥1时）。教材例1（p8）现场：<b>{a,b}的所有子集为∅，{a}，{b}，{a,b}；真子集为∅，{a}，{b}</b>——4=2²，枚举与公式对上，收笔。</p>
+<div class="try"><span class="tag">验一验⑤</span> {a,b,c}的非空真子集有几个？<div class="ans">答案：2³−2=<b>6个</b>（先挖自己{a,b,c}，再挖∅）。程序代验：powerset枚举8个，扣除2个=6✓</div></div>
+
+<h2><span class="step-tag">教材例2</span>判定的双向动作——反例否决与全称过检</h2>
+<p>教材例2（p8原题照录）：判断下列各题中集合A是否为集合B的子集：<b>(1)</b> A={1,2,3}，B={x|x是8的约数}；<b>(2)</b> A={x|x是长方形}，B={x|x是两条对角线相等的平行四边形}。</p>
+<p><b>(1) 教材原解</b>：因为3不是8的约数，所以A不是B的子集。——8的约数是1,2,4,8，3∉B。<mark>一个反例即可否决全称</mark>："任意一个元素都在"这种话，抓到一个不3在的就全盘推翻，又快又稳。</p>
+<p><b>(2) 教材原解</b>：因为如果x是长方形，那么x是两条对角线相等的平行四边形（直角⟹对角线相等，初中几何），所以A⊆B。——这次没有反例，"任取一个长方形过检"全部通过。两问合起来记住两个动作：<mark class="nb">否决=抓一个反例；确认=任取＋推出</mark>。</p>
+
+<h2><span class="step-tag">经典例题</span>两道高考真题（教材之外·四段式）</h2>
+
+<h3>真题①（2021年全国乙卷·理科T2·据原卷改编）符号语言的包含判定</h3>
+<p class="q">【题干】已知集合S={x|x=2n+1}，T={x|x=4n+1，n∈Z}，判断S与T的包含关系。</p>
+<p class="a">【解答】正向过检：任取t=4n+1∈T，则t=2·(2n)+1，而2n是整数，所以t=2k+1（k=2n∈Z）∈S，即T⊆S。"真"字检查：3∈S（3=2×1+1），但4n+1=3无整数解（n=1/2），3∉T——T≠S。结论：<b>T⫋S</b>。</p>
+<p class="a">【怎么想到的】触发点：两边都是"无限集合＋符号语言"——数不过来，就走"任取＋推出"结构代验；"真"字专项检查=在S里找一个T外的元素（奇数3就是）。程序代验：结构恒等式4n+1−(2(2n)+1)=0✓；整数域4n+1=3无解✓；n∈[−61,60]抽样T⊆S✓。</p>
+<p class="a">【定级】高考真题位｜2021年全国乙卷理科第2题·<mark>据原卷改编</mark>（原卷设问S∩T的结果，本件改编为判断包含关系，判定依据相同）。</p>
+<p class="q">【同类一题自测】A={x|x=3k，k∈Z}，B={x|x=6z，z∈Z}，判断A与B的关系。</p>
+<p class="a">答案：B⫋A（6z=3·(2z)全过检；3∈A但6z=3无整数解）。程序代验✓——与教材习题3(2)同构。</p>
+
+<h3>真题②（2023年新高考Ⅱ卷·T2·原题照录）含参包含：空集层与互异回代</h3>
+<p class="q">【题干】已知集合A={0, −a}，B={1, a−2, 2a−2}，若A⊆B，求a的值。</p>
+<p class="a">【解答】A⊆B翻译成逐元素过检：0∈B且−a∈B。第一步：1≠0恒成立，只能a−2=0或2a−2=0，候选a=2或a=1。第二步候选回代双检：a=2时A={0,−2}，B={1,0,2}，0∈B✓但−a=−2∉B，<span class="wrong">舍</span>；a=1时A={0,−1}，B={1,−1,0}，0∈B✓，−a=−1∈B✓，且B中1,−1,0互异✓——成立。故<b>a=1</b>。</p>
+<p class="a">【怎么想到的】含参子集先问"那方能不能是∅"：本题B恒含元素1，永不为∅，一句话交代即可，不用硬拆空集类（能空才单列——判断在先，讨论在后）。解出候选必须<b>回代双检</b>：另一半∈检验＋互异性（1.1口令"参数回代查互异"续用）。程序代验：a=2回代−2∉B✓舍；a=1回代双检全过✓。</p>
+<p class="a">【定级】高考真题位｜2023年新高考Ⅱ卷第2题·原题照录。</p>
+<p class="q">【同类一题自测】已知A={1,2}，B={x|ax=1}，若B⫋A，求a的取值集合。</p>
+<p class="a">答案：先想空集——a=0时B=∅，∅⫋A成立（A非空，"真"字由A里任何元素撑起）；a≠0时B={1/a}，1/a=1（a=1）或1/a=2（a=1/2）均成立。取值集合{0, 1, 1/2}。<span class="note-red">空集层0别丢——这是本节考场上最贵的坑。</span></p>
+
+<div class="pit"><span class="tag">易错卡①</span> "真"字漏检——A⊆B就直接写A⫋B<br>症状：题目问真子集，答案把相等的情形也算进去。<br>错因：⫋的定义是两步（⊆＋≠），做题只走了一步。<br>维持机制：⊆不保证不相等，而"看着像不相等"的集合（描述法写法不同）可能相等。<br>钉死：写⫋前强制自问"外面那个元素是谁？"——说不出具体元素就不是真包含。</div>
+
+<div class="pit"><span class="tag">易错卡②</span> ∈和⊆混写——把元素当集合、把集合当元素<br>症状：1⊆{1,{1}}这种式子随手写。<br>错因：没问左边身份。⊆只用于集合与集合，∈只用于元素与集合。<br>维持机制：两层世界各管各的——1是数（元素身份），没有子集可言。<br>钉死：写符号前先问"左边是什么身份？"数用∈、集合用⊆（1.1同款口令本节续用）。</div>
+
+<div class="pit"><span class="tag">易错卡③</span> 含参题漏空集层<br>症状：讨论A⊆B（B含参）时只讨论B非空的情形。<br>错因：分类讨论习惯从"非空"起步，∅没有图没有元素，直觉检索不到。<br>维持机制：负反馈缺失——漏掉空集层经常"恰好"不影响最终答案的前半段，不易被发现。<br>钉死：口诀"含参子集先想空集"——先判断能不能为空，能空必须单列一类（真题②自测的a=0就是这一层）。</div>
+
+<h2><span class="step-tag">收口</span>合上件，这三句话还在吗</h2>
+<p><b>这节定义了什么</b>：子集A⊆B（A的任意元素都是B的元素）、真子集A⫋B（⊆且B里有A外面的元素）、相等A=B（双向包含）、空集∅（不含任何元素，规定是任何集合的子集）。<br>
+<b>怎么用</b>：否决抓一个反例，确认用"任取＋推出"；数子集=2ⁿ族按"真/非空"扣（去重→数n→2ⁿ→扣）；含参包含题先问"能不能是∅"。<br>
+<b>最容易错</b>：⫋漏检A≠B；∈与⊆不问身份；含参漏空集层；⊆链能传、∈链不能传。</p>
+
+<h3>自测五连（先做再看答案·答案直接可见）</h3>
+<p class="q">① 填符号：{0,1}＿＿N。</p>
+<p class="a">答案：⊆（且是真子集——0∈N、1∈N，N里还有别的元素）。程序代验N口径：自然数集含0（教材1.1记号约定）。</p>
+<p class="q">② A={x|x²=x}，B={0,1}，A与B什么关系？</p>
+<p class="a">答案：A={0,1}=B（解方程去重），A=B。程序代验solve(x²−x)={0,1}✓。</p>
+<p class="q">③ M={x|x²−1=0}，写出M的所有子集，并数真子集个数。</p>
+<p class="a">答案：M={−1,1}；子集4个：∅，{−1}，{1}，{−1,1}；真子集3个（挖掉M自己）。程序代验✓。</p>
+<p class="q">④（自编·易错变形）判断："若A⊆B且B⊆C，则A∈C。"</p>
+<p class="a">答案：<span class="wrong">错</span>。⊆链传递的产物仍是⊆（A⊆C），不会变成∈——传递性不换符号，身份不能错位。</p>
+<p class="q">⑤ 判断：∅⫋∅。</p>
+<p class="a">答案：<span class="wrong">错</span>。∅⊆∅成立，但"真"字要求存在∅外面的元素——∅里一个元素都没有，"真"字立不住。2ⁿ−2公式要求n≥1，同理。</p>
+
+<div class="box">
+<h3>高考怎么考（考位锚）</h3>
+<p>考什么：①n元集合子集/真子集计数（2ⁿ族按"真/非空"扣除）②含参数的集合包含关系（空集讨论）③∈与⊆辨析。<br>
+怎么考：选填双高频；大题中作为证明语言出现（"任取x∈A，推出x∈B"的书写格式本身给分）。<br>
+真题锚：2021年全国乙卷（理）T2（本件真题①·据原卷改编）；2023年新高考Ⅱ卷T2（本件真题②·原题照录）。</p>
+</div>
+
+<div class="talk"><b>下一站：</b>1.3 集合的基本运算——两个集合"合成一个新集合"（并）、"公共部分"（交）、"B之外"（补）。剧透一句：本节的⊆在1.3有个等价写法"A∩B=A⟺A⊆B"，含参空集讨论也会在那里再碰面——∅的老朋友。</div>
+
+<div class="fig">
+<svg width="640" height="120" viewBox="0 0 640 120" xmlns="http://www.w3.org/2000/svg" aria-label="本节位置图">
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4a9eff"/></marker></defs>
+  <rect x="30" y="40" width="150" height="44" rx="8" fill="#1c2733" stroke="#3a4a5c"/>
+  <text x="105" y="66" fill="#8fa3b8" font-size="14" text-anchor="middle">1.1 集合的概念</text>
+  <rect x="245" y="34" width="150" height="56" rx="8" fill="#24344a" stroke="#4a9eff" stroke-width="2"/>
+  <text x="320" y="58" fill="#d8e6f7" font-size="14" text-anchor="middle" font-weight="bold">1.2 集合间的</text>
+  <text x="320" y="76" fill="#d8e6f7" font-size="14" text-anchor="middle" font-weight="bold">基本关系（本节）</text>
+  <rect x="460" y="40" width="150" height="44" rx="8" fill="#1c2733" stroke="#3a4a5c"/>
+  <text x="535" y="66" fill="#8fa3b8" font-size="14" text-anchor="middle">1.3 集合的基本运算</text>
+  <line x1="182" y1="62" x2="243" y2="62" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="397" y1="62" x2="458" y2="62" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+</svg>
+<p class="small">本节在「集合与常用逻辑用语」模块的位置：1.1管"一个集合长什么样"，本节管"两个集合什么关系"，1.3管"两个集合怎么运算"。</p>
+</div>
+
+<div class="box" style="background:#1a222e; border-color:#2c3a4d;">
+<h3>想多走一步？（可选·跳过不损失任何主干）</h3>
+<p>① 空集的"空真"其实是逻辑学的正式规则："所有A都是B"在A为空时自动成立——大学数理逻辑里它叫全称命题的空域真理。② 2ⁿ为什么恰好？把每个子集对应到一串"进/不进"的二进制答案（a进b不进=10，a不进b进=01……），n位二进制数恰好2ⁿ个——子集与二进制一一对应，这是计算机存储集合的原理。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（队7任务附属归位件·HTML重制版·承QC修复清单1031 01:2x：html化/文件名规范化/版本行/例3定级加"据原卷改编"/自检段foot归位/v18声明行置foot/同步修T6图示与T7打印层制式缺口） · 事实层素材源：人教A版必修第一册 p7-10 全节＋p10边界锚，<b>官方transcode直链影印逐页对照</b>（国家中小学智慧教育平台 contentId=6e764703-6e5e-4ea3-9462-34652c2678ef · ts=1787023173400 实时取 · 图14-17→印刷页7-10 · 影印jpg存席位私有目录 p01_jc_math/m14-m17.jpg 不入仓·sha256前16 m14=f2fa4c8aaeb81d21/m15=a818d85aaf25f27f 供QC补锚抽查）＋ 早期镜像扫描件三页交叉核对（席位私有目录v5_队2校准件/影印原件_私有/，与官方直读逐块一致）；数学推导与数值断言经sympy 1.14.0机器代验24验点全PASS（批次1·2026-10-31·脚本与输出存席位私有目录v5_队2校准件/）·本件素材源溯源：md首版1031 00:24（同席出品·QC四层全检通过后按修复清单HTML归位）＋ v18原册_数学.html 簇②（照录已验真·仅作对照源）· 真题锚卷源：2021全国乙卷（理）T2（据原卷改编）/2023新高考Ⅱ卷T2（原题照录）· 出品席：队2席（搜索规划师·HTML重制版与main d94554c同节件并存候裁）<br>
+设计标准：零预设 · 一次一步 · 随读随验 ×5 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源 · 图示必配（坐标程序生成） · 数值程序代验留痕 · 打印层内置（@media print·print_background直转）
+</div>
+
+</div>
+</body>
+</html>
