@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学1.2 集合间的基本关系 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b2029; border: 1px solid #2a323e; border-radius: 8px; padding: 18px 20px; margin: 16px 0; }
+  .check { background: #16211a; border: 1px solid #2d5a3d; border-radius: 8px; padding: 16px 20px; margin: 18px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; font-size: 14px; }
+  .check p { margin: 8px 0; }
+  .alt { background: #1f1b24; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .key { background: #241f14; border-left: 4px solid #ffc94d; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+  .key b { color: #ffc94d; }
+  .m { font-family: "Times New Roman", serif; font-style: italic; }
+  .box { background: #101820; border: 1px solid #35507a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 15.5px; }
+  .try { background: #1a2416; border-left: 3px solid #6cbf4a; padding: 10px 16px; margin: 16px 0; }
+  .pit { background: #2a1a17; border-left: 3px solid #e07050; padding: 10px 16px; margin: 16px 0; }
+  .wrong { color: #e07050; font-weight: bold; }
+  .ans { color: #58d68d; }
+  .small { font-size: 14px; color: #9aa7b5; }
+  mark { background: linear-gradient(transparent 55%, rgba(255,201,77,.28) 55%); color: #f0f3f7; padding: 0 2px; }
+  mark.nb { background: none; border-bottom: 2px solid #4a9eff; color: #f0f3f7; }
+  .note-red { font-family: "Kaiti SC", "KaiTi", "STKaiti", serif; color: #e07050; font-size: 15px; }
+  .fig { text-align: center; margin: 18px 0; }
+  .figcap { font-size: 13.5px; color: #8fa3b8; margin-top: 6px; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 14px; }
+  b { color: #f0f3f7; }
+  @media print {
+    body { background: #fff; color: #111; }
+    h1, h2, h3, b { color: #000; }
+    .talk, .key, .box, .check, .alt, .try, .pit, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .step-tag, mark, mark.nb { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sub, .small, .figcap, .foot { color: #444; }
+    .ans, .check .tag { color: #1e7a4f; }
+    .wrong, .note-red { color: #c0392b; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>数学1.2 集合间的基本关系</h1>
+<p class="sub">零基础首学版 · 本件属于「集合」模块——前面已学：1.1 集合的概念（没读过1.1？看这句就够：集合=一些确定对象组成的全体，写在一对花括号里，对象叫<b>元素</b>，"a 是 A 的元素"记作 <span class="m">a</span>∈A） · 预计 40 分钟 · 前置：1.1</p>
+
+<div class="talk">
+<p>上一节你拿到了一个新工具：<b>集合</b>——把对象打包的容器。数和数能比大小：5=5，5&lt;7，5&gt;3。那么，<b>两个集合之间，能不能也比一比？</b></p>
+<p>教材开场就是这么问的（课本第7页）："两个集合之间是否也有类似的关系呢？"你在1.1结尾还见过这道预告题：<span class="m">一张歌单和它的"粤语歌分单"，是什么关系？</span></p>
+<p>学完这节你不但能回答它，还能用三个符号把答案<b>写</b>出来。走。</p>
+</div>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 判断两个集合谁"装"谁，并把 ⊆、⊊、= 三个符号用对；</p>
+<p>② 不重不漏地数出一个集合的<b>全部子集</b>（空集一个不漏）；</p>
+<p>③ 分清两个最像的符号：∈（元素对集合）和 ⊆（集合对集合）；</p>
+<p>④ 说出空集 ∅（一个什么都没有的容器）的特殊地位，并躲开它埋的两个坑。</p>
+</div>
+
+<h2><span class="step-tag">第①站</span>子集——"装得下"</h2>
+
+<p>先看教材给出的三个观察实例（课本第7页·观察），试试能不能看出同一种关系：</p>
+<p>（1）<span class="m">A</span>={1, 2, 3}，<span class="m">B</span>={1, 2, 3, 4, 5}；</p>
+<p>（2）<span class="m">C</span> 为立德中学高一（2）班全体女生组成的集合，<span class="m">D</span> 为这个班全体学生组成的集合；</p>
+<p>（3）<span class="m">E</span>={<span class="m">x</span> | <span class="m">x</span> 是有两条边相等的三角形}，<span class="m">F</span>={<span class="m">x</span> | <span class="m">x</span> 是等腰三角形}。<span class="small">（"|"读作"其中"，{<span class="m">x</span> | 条件}表示"满足这个条件的所有 <span class="m">x</span>"——1.1讲过的描述法）</span></p>
+<p>三例的共同点：<mark>左边集合的<b>每一个</b>元素，都是右边集合的元素</mark>——（1）里 1、2、3 全在 B 中；（2）里每个女生都在"全体学生"里；（3）里"两条边相等的三角形"就是等腰三角形，全都装在 F 里。</p>
+
+<div class="key">
+<p><b>定义（子集）</b>：一般地，对于两个集合 <span class="m">A</span>，<span class="m">B</span>，如果集合 <span class="m">A</span> 中<mark class="nb">任意一个</mark>元素都是集合 <span class="m">B</span> 中的元素，就称集合 <span class="m">A</span> 为集合 <span class="m">B</span> 的<b>子集</b>（subset），记作</p>
+<p style="text-align:center"><span class="m">A</span> ⊆ <span class="m">B</span>（或 <span class="m">B</span> ⊇ <span class="m">A</span>）</p>
+<p>读作"<span class="m">A</span> 包含于 <span class="m">B</span>"（或"<span class="m">B</span> 包含 <span class="m">A</span>"）。（课本第7页原文）</p>
+</div>
+
+<p><b>两个词先拆开：</b></p>
+<p>① <mark>"任意一个"= 全查</mark>——像查户口：A 里<b>每一个</b>元素都要过一遍"你在 B 里吗"的检查，一个都不许漏。查完全过，才敢写 A⊆B。</p>
+<p>② <mark>符号 ⊆ 的开口朝着大集合</mark>——被装的那个坐在"尖"上：A⊆B，尖指向 A，A 是装进去的小的。</p>
+<p class="note-red">红笔旁批：查的方向别搞反——查的是 A 的元素有没有"跑到 B 外面去"。宣布 A⊆B 要全查 A；但想推翻 A⊆B，只要抓到一个"A 有、B 没有"的元素就够了。口诀：宣布包含，全查；怀疑包含，抓反例。</p>
+
+<p>教材还给这种关系画了标准像——<b>Venn 图</b>：在数学中，我们经常用平面上封闭曲线的内部代表集合，这种图称为 Venn 图（课本第7页）。</p>
+
+<div class="fig">
+<svg width="320" height="180" viewBox="0 0 320 180" role="img" aria-label="子集的Venn图：大圆B内套小圆A">
+  <circle cx="140" cy="88" r="76" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <circle cx="168" cy="88" r="42" fill="#274257" stroke="#6cc3ff" stroke-width="2"/>
+  <text x="62" y="42" fill="#8fa3b8" font-size="15" font-style="italic">B</text>
+  <text x="168" y="93" fill="#d8dee6" font-size="15" text-anchor="middle" font-style="italic">A</text>
+  <text x="160" y="172" fill="#5a6a7a" font-size="11" text-anchor="middle">A⊆B：A 的整个圈都在 B 里（课本图1.2-1同构）</text>
+</svg>
+<p class="figcap">这张图在说什么：A 的圆整个落进 B 的圆里——"B 把 A 圈起来了"，这就是包含。</p>
+</div>
+
+<div class="try">
+<p><b>30秒自验①</b>（口答，答案见下）：</p>
+<p>1. {1, 2}⊆{1, 2, 3} 对吗？</p>
+<p>2. {1, 2, 5}⊆{1, 2, 3} 对吗？</p>
+<p>3. <span class="m">（易错）</span>0⊆{0} 对吗？</p>
+<p class="small">答完再看：1. <span class="ans">对</span>（全查：1 在、2 在，全过）· 2. <span class="ans">不对</span>（抓反例：5 在左边却不在右边，一个就够）· 3. <span class="wrong">写法就错了</span>——0 是一个元素，不是集合，⊆ 两边都得是集合；0∈{0} 才对。<b>∈ 连接元素和集合，⊆ 连接集合和集合</b>——这对双胞胎本节末尾还要重点分辨。</p>
+</div>
+
+<h2><span class="step-tag">第②站</span>相等——"互相装得下"</h2>
+
+<p>回头看观察（3）：<span class="m">E</span> 里的"有两条边相等的三角形"，按定义就是等腰三角形——所以 E 和 F 说的是<b>同一批三角形</b>：E 的元素全在 F 里，F 的元素也全在 E 里。教材把这种"双向都装得下"的关系命名为相等（课本第7页）：</p>
+
+<div class="key">
+<p><b>定义（相等）</b>：一般地，如果集合 <span class="m">A</span> 的任何一个元素都是集合 <span class="m">B</span> 的元素，<mark class="nb">同时</mark>集合 <span class="m">B</span> 的任何一个元素都是集合 <span class="m">A</span> 的元素，那么集合 <span class="m">A</span> 与集合 <span class="m">B</span> <b>相等</b>，记作 <span class="m">A</span>=<span class="m">B</span>。（课本第7页原文）</p>
+</div>
+
+<p>用第一站的话翻成一句：<mark>A⊆B 且 B⊆A，则 A=B</mark>——教材原文正是这么收拢的（课本第8页）："也就是说，若 A⊆B，且 B⊆A，则 A=B."</p>
+<p>教材边注让你类比实数里的结论"若 a≥b，且 b≥a，则 a=b"——一模一样的骨架：<b>双向都不小，那就一样大</b>。</p>
+<p><b>判等怎么操作？</b>两个集合长得不像，怎么判断相不相等？——别看长相，<b>把元素都请出来再比</b>：描述法的集合先解方程/化条件，列出元素，再逐个比对。比如 {<span class="m">x</span> | <span class="m">x</span>²=1}：解方程得 <span class="m">x</span>=1 或 −1，所以它={1, −1}，和 {−1, 1} 一模一样（1.1 讲过：集合不讲顺序）。</p>
+
+<h2><span class="step-tag">第③站</span>真子集——"装得下，还没装满"</h2>
+
+<p>观察（1）里 A⊆B 没错，但 B 比明显大一圈：4 在 B 里，却不在 A 里。这种"装得下、但确实小一圈"的关系值得单独起名（课本第8页）：</p>
+
+<div class="key">
+<p><b>定义（真子集）</b>：如果集合 <span class="m">A</span>⊆<span class="m">B</span>，但<mark class="nb">存在</mark>元素 <span class="m">x</span>∈<span class="m">B</span>，且 <span class="m">x</span>∉<span class="m">A</span>，就称集合 <span class="m">A</span> 是集合 <span class="m">B</span> 的<b>真子集</b>（proper subset），记作</p>
+<p style="text-align:center"><span class="m">A</span> ⊊ <span class="m">B</span>（或 <span class="m">B</span> ⊋ <span class="m">A</span>）</p>
+<p>读作"<span class="m">A</span> 真包含于 <span class="m">B</span>"（或"<span class="m">B</span> 真包含 <span class="m">A</span>"）。（课本第8页原文）</p>
+</div>
+
+<p>和第一站对个账：<mark>"任意"= 每个都得过；"存在"= 找到一个就行</mark>——这俩是天生一对。真子集 = 子集里<b>去掉相等那一档</b>：A⊊B 要两步，①A⊆B 全查过关；②抓一个 B 独有的元素撑起"真"字（观察（1）里撑"真"的就是 4：4∈B 且 4∉A）。</p>
+
+<div class="fig">
+<svg width="420" height="190" viewBox="0 0 420 190" role="img" aria-label="⊆与⊊对比图：左图A与B重合，右图B真的大一圈">
+  <rect x="8" y="10" width="196" height="150" rx="8" fill="#161c26" stroke="#2a3140"/>
+  <circle cx="106" cy="78" r="52" fill="#274257" stroke="#6cc3ff" stroke-width="2"/>
+  <text x="106" y="83" fill="#d8dee6" font-size="14" text-anchor="middle" font-style="italic">A=B</text>
+  <text x="106" y="140" fill="#8fa3b8" font-size="12.5" text-anchor="middle">⊆ 允许重合</text>
+  <rect x="216" y="10" width="196" height="150" rx="8" fill="#161c26" stroke="#2a3140"/>
+  <circle cx="314" cy="80" r="56" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <circle cx="338" cy="80" r="30" fill="#274257" stroke="#6cc3ff" stroke-width="2"/>
+  <text x="262" y="46" fill="#8fa3b8" font-size="15" font-style="italic">B</text>
+  <text x="338" y="85" fill="#d8dee6" font-size="14" text-anchor="middle" font-style="italic">A</text>
+  <text x="314" y="140" fill="#8fa3b8" font-size="12.5" text-anchor="middle">⊊ 多一条：B 有 A 没有的</text>
+  <text x="210" y="182" fill="#5a6a7a" font-size="11" text-anchor="middle">A=B 时只能写 ⊆，不能写 ⊊；右图两种符号都对</text>
+</svg>
+<p class="figcap">这张图在说什么：⊆ 是"装得下"（相等也算），⊊ 是"装得下<b>且</b>没装满"——差的就是"B 独有的那一块月牙"。</p>
+</div>
+
+<div class="try">
+<p><b>30秒自验②</b>（口答，答案见下）：</p>
+<p>1. {a}⊆{a, b} 和 {a}⊊{a, b}，都写对了吗？</p>
+<p>2. {1, 2}⊊{1, 2} 对吗？</p>
+<p>3. <span class="m">（易错）</span>若 A=B（两边相等），能写 A⊆B 吗？能写 A⊊B 吗？</p>
+<p class="small">答完再看：1. <span class="ans">都对</span>（b∈{a,b} 且 b∉{a}，"真"字由 b 撑起）· 2. <span class="wrong">错</span>——自己和自己重合，没有"B 独有元素"，只能写 ⊆ · 3. <span class="ans">⊆ 能写，⊊ 不能写</span>——⊆ 只要求"装得下"，相等也算装得下；⊊ 额外要一个 B 独有的元素撑"真"，相等时拿不出来。<mark>⊆ 与 ⊊ 的差别，就差在"相等"这一档上</mark>。</p>
+</div>
+
+<h2><span class="step-tag">第④站</span>空集——"什么都没有的容器"</h2>
+
+<p>解方程 <span class="m">x</span>²+1=0：任何实数的平方都不小于 0（初中知识），加 1 更不会是 0——<b>没有实数根</b>。于是"这个方程的实数根组成的集合"里，一个元素都没有。这种集合需要名字和符号（课本第8页）：</p>
+
+<div class="key">
+<p><b>定义（空集）</b>：一般地，我们把<mark class="nb">不含任何元素</mark>的集合叫做<b>空集</b>（empty set），记为 ∅，并<b>规定：空集是任何集合的子集</b>。（课本第8页原文）</p>
+</div>
+
+<p>这条规定的人话版：<b>∅ 没有元素，所以"∅ 的元素跑到集合外去了"这种事故根本没机会发生</b>——"∅ 的任意元素都在 A 里"这句话，连一个要检查的对象都抽不出来，检查自动全过。教材还留了个边注问题：你能举出几个空集的例子吗？——实数范围内：不等式 <span class="m">x</span>²&lt;0 的解集；两条平行直线的公共点集合；方程 <span class="m">x</span>=<span class="m">x</span>+1 的解集（没有哪个数等于自己加 1）。都是"条件自相矛盾或不可能成立"造出来的空容器。</p>
+
+<div class="pit">
+<p><b>空集三坑</b>（都是考试真坑）：</p>
+<p>坑① <span class="wrong">0∈∅？</span>——错。∅ 什么都不含，0 它装不下。</p>
+<p>坑② <span class="wrong">{0}=∅？</span>——错。{0} 里有一个元素 0，是"单口容器"，不是空的。</p>
+<p>坑③ ∅⊆{0}？——<span class="ans">对</span>（规定），而且 ∅≠{0}，还能升级写 ∅⊊{0}。</p>
+</div>
+
+<div class="fig">
+<svg width="420" height="170" viewBox="0 0 420 170" role="img" aria-label="空集三坑对比图：空圈∅、装0的圈、∅在任意集合内">
+  <rect x="8" y="8" width="126" height="130" rx="8" fill="#161c26" stroke="#2a3140"/>
+  <circle cx="71" cy="62" r="34" fill="none" stroke="#e07050" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="71" y="68" fill="#e07050" font-size="16" text-anchor="middle">∅</text>
+  <text x="71" y="126" fill="#8fa3b8" font-size="12" text-anchor="middle">空的，啥也没有</text>
+  <rect x="148" y="8" width="126" height="130" rx="8" fill="#161c26" stroke="#2a3140"/>
+  <circle cx="211" cy="62" r="34" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <circle cx="211" cy="62" r="3.5" fill="#6cc3ff"/>
+  <text x="211" y="88" fill="#d8dee6" font-size="12" text-anchor="middle">0</text>
+  <text x="211" y="126" fill="#8fa3b8" font-size="12" text-anchor="middle">{0}：有一件货</text>
+  <rect x="288" y="8" width="126" height="130" rx="8" fill="#161c26" stroke="#2a3140"/>
+  <circle cx="351" cy="62" r="42" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <circle cx="326" cy="66" r="10" fill="none" stroke="#e07050" stroke-width="1.6" stroke-dasharray="4,3"/>
+  <text x="326" y="70" fill="#e07050" font-size="10" text-anchor="middle">∅</text>
+  <text x="351" y="126" fill="#8fa3b8" font-size="12" text-anchor="middle">∅ 装进任何集合</text>
+  <text x="210" y="160" fill="#5a6a7a" font-size="11" text-anchor="middle">记住：∅ 和 {0} 一个是空屋、一个是住了 0 的屋——互不相等</text>
+</svg>
+<p class="figcap">这张图在说什么：坑①②③的三张脸——空屋、单间屋、"空屋搬进任何屋"。</p>
+</div>
+
+<h2>两条白送的结论 + 数子集的稳妥数法</h2>
+
+<p>由上面的定义，教材直接给出两条结论（课本第8页）：</p>
+<p>（1）<b>任何一个集合是它本身的子集</b>，即 <span class="m">A</span>⊆<span class="m">A</span>——不奇怪：A 的元素当然个个都在 A 里，全查必过。</p>
+<p>（2）<b>传递</b>：对于集合 <span class="m">A</span>，<span class="m">B</span>，<span class="m">C</span>，如果 <span class="m">A</span>⊆<span class="m">B</span>，且 <span class="m">B</span>⊆<span class="m">C</span>，那么 <span class="m">A</span>⊆<span class="m">C</span>——箱子装进柜子，柜子搬进房间，箱子自然也在房间里。</p>
+
+<p><b>例1</b>（课本第8页原题）：写出集合 {<span class="m">a</span>, <span class="m">b</span>} 的所有子集，并指出哪些是它的真子集。</p>
+<p><b>解</b>：别抓瞎乱写，<mark>按"含几个元素"分类数</mark>：</p>
+<p class="small">不含任何元素：∅（1个）｜含1个：{a}，{b}（2个）｜含2个：{a, b}（1个）——共 4 个。</p>
+<p>所以所有子集为 ∅，{a}，{b}，{a, b}；真子集要把"自己"{a, b} 划掉，剩 ∅，{a}，{b}（3个）。与教材解答一致。</p>
+<p class="note-red">红笔旁批：数子集最先忘的就是 ∅——"空屋也是屋"，把 ∅ 永远排在第一个，就不会漏。</p>
+
+<p><b>例2</b>（课本第8页原题）：判断下列各题中集合 <span class="m">A</span> 是否为集合 <span class="m">B</span> 的子集，并说明理由：</p>
+<p>（1）<span class="m">A</span>={1, 2, 3}，<span class="m">B</span>={<span class="m">x</span> | <span class="m">x</span> 是 8 的约数}；</p>
+<p>（2）<span class="m">A</span>={<span class="m">x</span> | <span class="m">x</span> 是长方形}，<span class="m">B</span>={<span class="m">x</span> | <span class="m">x</span> 是两条对角线相等的平行四边形}。</p>
+<p><b>解</b>：（1）8 的约数（能整除 8 的正整数）是 1, 2, 4, 8——3 不是 8 的约数，即 3∈A 但 3∉B，<b>抓到一个反例</b>，所以 A 不是 B 的子集。（2）任取一个长方形：它两条对角线一定相等（初中长方形的性质），且长方形是平行四边形——条件全过，<b>全查通过</b>，所以 A 是 B 的子集。与教材解答一致。</p>
+<p><b>例2变式</b>（自编，只改数字+反向问）：① <span class="m">A</span>={1, 2, 4}，<span class="m">B</span>={<span class="m">x</span> | <span class="m">x</span> 是 6 的约数}，A⊆B 吗？——6 的约数是 1, 2, 3, 6，4∉B，反例到手，<span class="ans">不是</span>。② 把教材（2）追问一步：A 与 B 相等吗？——再走 B⊆A 方向：两条对角线相等的平行四边形就是矩形（即长方形，初中判定定理），两边其实是同一批图形，<span class="ans">A=B</span>——教材只要求判 A⊆B，我们多走一步发现更强结论：<mark>判"⊆"过关后，还可能藏着"="</mark>。</p>
+
+<div class="try">
+<p><b>30秒自验③</b>（口答，答案见下）：</p>
+<p>1. {0, 1} 的子集有几个？都是谁？</p>
+<p>2. {a, b, c} 的子集有几个？</p>
+<p>3. <span class="m">（易错）</span>∅⊊∅ 对吗？∅ 自己的子集又有几个？</p>
+<p class="small">答完再看：1. <span class="ans">4 个</span>：∅，{0}，{1}，{0, 1}（0个/1个/2个元素分三层数）· 2. <span class="ans">8 个</span>（∅；{a},{b},{c}；{a,b},{a,c},{b,c}；{a,b,c}——这是课本第8页练习1原题，动手写一遍）· 3. <span class="ans">⊊ 错，⊆ 对</span>（∅ 连一个元素都拿不出来，撑不起"真"；∅⊆∅ 成立——任何集合是自己的子集，∅ 也不例外）；<span class="ans">子集 1 个</span>：就是 ∅ 自己。</p>
+</div>
+
+<h2>收口：合上件，这三句话还在吗</h2>
+<p>① <b>子集</b>：A 的每个元素都在 B 里（全查过关）→ A⊆B；推翻它只需一个"A 有 B 没有"的反例。</p>
+<p>② <b>真子集</b>：装得下还没装满（B 里至少有一个 A 没有的）→ A⊊B；相等那一档不算"真"。</p>
+<p>③ <b>空集</b>：∅ 没有元素，却是任何集合的子集；数子集永远先数 ∅，最后数自己。</p>
+<p class="small">怎么用：判关系 → 先化简（解方程/列元素）→ 按定义逐元素查（宣布靠全查，否决靠反例）；数子集 → 按"含元素个数"分类，一层层数。</p>
+
+<p><b>自测五连</b>（每题30秒，做完再看答案）：</p>
+<p>1. ∅⊆∅ 成立吗？∅⊊∅ 呢？</p>
+<p>2. 用 ∈、∉、⊆、⊊、= 填空：0___{1}；{0}___{0}；∅___{0}；1___{<span class="m">x</span> | <span class="m">x</span>²=1}。</p>
+<p>3. 写出 {0, 1} 的所有子集。</p>
+<p>4. {<span class="m">x</span> | <span class="m">x</span>²=9} 与 {−3, 3} 是什么关系？</p>
+<p>5. <span class="m">（自编·含参）</span>已知 <span class="m">A</span>={1, <span class="m">a</span>}，<span class="m">B</span>={1, 2}，若 <span class="m">A</span>⊆<span class="m">B</span>，求 <span class="m">a</span>；追问：若改要求 <span class="m">A</span>⊊<span class="m">B</span> 呢？</p>
+<p class="small">答案：1. <span class="ans">∅⊆∅ 成立</span>（任何集合是自己的子集，∅ 也不例外）；<span class="ans">∅⊊∅ 不成立</span>。 2. <span class="ans">0∉{1}</span>（0 是元素）· <span class="ans">{0}={0}</span>（自己和自己）· <span class="ans">∅⊆{0}</span>（规定，写 ⊊ 也对）· <span class="ans">1∈{x|x²=1}</span>（1 是该集合的元素）。 3. <span class="ans">∅，{0}，{1}，{0,1}</span>（4 个，真子集 3 个）。 4. <span class="ans">相等</span>：解方程 <span class="m">x</span>²=9 得 <span class="m">x</span>=±3，两边都是 {−3, 3}。 5. <span class="ans">a=2</span>（A⊆B 要 a∈{2}，此时 A=B，⊆ 允许相等）；追问：<span class="ans">无解</span>——a 只能取 2，但那样 A=B，"真"字撑不起来。这题专考：⊆ 与 ⊊ 的差别就差在"相等层"。</p>
+
+<p><b>练什么题</b>：课本第8页练习1-3（写子集/填符号/判关系）＋习题1.2复习巩固1-2（第9页）；进阶：综合运用3-4（数形结合）、拓广探索5（含参讨论）。</p>
+
+<div class="box"><b>高考怎么考（考位锚）：</b>1.2 单独出大题少，更多当<b>工具</b>用：①判断集合关系（小题常客，∅ 必数、自己别忘）；②<b>含参</b>的 A⊆B——最大陷阱是"A 为空集"那一档，漏了它就丢一半分。真题锚（卷源在案·原卷为选择题，题面照原意改写）：2021年全国乙卷（理）第2题，S={s|s=2n+1, n∈Z}，T={t|t=4n+1, n∈Z}，判 S 与 T 的关系（答案：T⊊S——"改写+反例"两步）；2023年新高考Ⅱ卷第2题，A={0,−a}，B={1, a−2, 2a−2}，A⊆B 求 a（答案 a=1——逐元素检验+互异性回代，a=2 是陷阱）。</div>
+
+<p><b>下一站：</b>集合不光能比"谁装谁"，还能做<b>运算</b>——教材第10页开场问："实数有加、减、乘、除等运算。集合是否也有类似的运算呢？"它给的观察例：A={1, 3, 5}，B={2, 4, 6}，C={1, 2, 3, 4, 5, 6}——C 和 A、B 是什么关系？（剧透：A⊆C 且 B⊆C；但 C 的身份不止"装下两个"，它还有个名字叫"并集"）。下一件：1.3 集合的基本运算。</p>
+
+<div class="fig">
+<svg width="620" height="150" viewBox="0 0 620 150" role="img" aria-label="本节位置图：第一章集合模块中1.2所处位置">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#4a9eff"/>
+    </marker>
+  </defs>
+  <rect x="18" y="42" width="130" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="83" y="66" fill="#8fa3b8" font-size="13" text-anchor="middle">1.1 集合的概念</text>
+  <rect x="190" y="34" width="150" height="52" rx="6" fill="#274257" stroke="#4a9eff" stroke-width="2"/>
+  <text x="265" y="56" fill="#fff" font-size="14" text-anchor="middle" font-weight="bold">1.2 基本关系</text>
+  <text x="265" y="74" fill="#c9e4ff" font-size="11" text-anchor="middle">本节（⊆ ⊊ = ∅）</text>
+  <rect x="382" y="42" width="106" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="435" y="66" fill="#8fa3b8" font-size="13" text-anchor="middle">1.3 基本运算</text>
+  <rect x="530" y="42" width="82" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="571" y="60" fill="#8fa3b8" font-size="12" text-anchor="middle">1.4/1.5</text>
+  <text x="571" y="76" fill="#8fa3b8" font-size="12" text-anchor="middle">逻辑用语</text>
+  <line x1="148" y1="62" x2="186" y2="62" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="340" y1="62" x2="378" y2="62" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="488" y1="62" x2="526" y2="62" stroke="#8fa3b8" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="310" y="122" fill="#5a6a7a" font-size="11" text-anchor="middle">这张图在说什么：关系是运算的语言地基——下一节说"并集"时，第一句话就是 A⊆C。</text>
+</svg>
+</div>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选）</span>
+<p>· <b>子集个数规律</b>：n 个元素的集合，子集恰有 2ⁿ 个，真子集 2ⁿ−1 个，非空真子集 2ⁿ−2 个。直觉：每个元素"进/不进"二选一，n 个元素就是 2×2×…×2。实测对账：n=1 有 2 个，n=2 有 4 个，n=3 有 8 个（与例1、自验③一致，已机器代验）。</p>
+<p>· <b>为什么规定"∅ 是任何集合的子集"？</b>如果不开这个特例，以后每条提到"子集"的定理都得补一句"（非空）"——全世界的数学书都要多印两个词。规定一出，定理干净了。到大学你还会遇到它的名字："平凡子集"。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（量产首版·标准模板v2.3全条款内置：节首清单/三站自验/打印层/考位锚/节末位置图/alt可选块） · 事实层素材源：人教A版必修第一册 p7-9 全节＋p10 边界锚，官方影印逐页对照（影印图存本件出品方私有目录 p01_jc/m07-m10.jpg · 平台=国家中小学智慧教育平台 · contentId=6e764703-6e5e-4ea3-9462-34652c2678ef · 图14-17→印刷页7-10 · ts=1787023173400 为10-31 00:1x详情API实时取值）＋ v18原册_数学.html 簇①（照录已验真·仅作对照源）；自编例与答案经 sympy 机器代验37验点全过（批次1·2026-10-31）；真题锚卷源：2021全国乙卷（理）T2／2023新高考Ⅱ卷T2（原卷核对级·在库1.2节重制件正本例3/例4）· 出品席：队2席<br>
+设计标准：零预设 · 一次一步 · 随读随验 ×3 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源 · 图形坐标机器生成 · 打印层内置
+</div>
+
+</div>
+</body>
+</html>
