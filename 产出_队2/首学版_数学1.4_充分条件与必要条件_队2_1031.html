@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学1.4 充分条件与必要条件 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #16303f; border-left: 4px solid #4a9eff; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 16px 0; }
+  .try .tag { font-weight: bold; color: #4a9eff; }
+  .pit { background: #2a1a1a; border-left: 4px solid #e74c3c; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 16px 0; }
+  .pit .tag { font-weight: bold; color: #e74c3c; }
+  .check { background: #1b2a20; border: 1px solid #2a4030; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .check .tag { display: inline-block; background: #2ecc71; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-bottom: 6px; }
+  .key { background: #232b36; border-radius: 8px; padding: 10px 16px; margin: 12px 0; }
+  .m { font-family: Georgia, serif; font-style: italic; }
+  .big { font-size: 19px; }
+  .small { color: #9aa7b5; font-size: 14px; }
+  .ul-blue { border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  .wrong { color: #e74c3c; text-decoration: line-through; }
+  .fig { margin: 18px 0; text-align: center; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 6px; }
+  .alt { background: #1f2410; border: 1px dashed #8f9a4a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .alt .tag { font-weight: bold; color: #c9d46a; }
+  mark.nb { background: #4a9eff33; color: #cfe4ff; padding: 0 3px; border-radius: 2px; }
+  table.tb { border-collapse: collapse; margin: 14px auto; width: 100%; }
+  table.tb th, table.tb td { border: 1px solid #3a4a5c; padding: 7px 10px; text-align: center; }
+  table.tb th { background: #1f2937; color: #cfe0f5; }
+  table.tb tr td:first-child { color: #9fb0c3; }
+  .foot { margin-top: 50px; padding-top: 16px; border-top: 1px solid #2a3140; color: #6d7a88; font-size: 13px; line-height: 1.7; }
+  .arrow { color: #4a9eff; font-weight: bold; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 10mm 8mm; }
+    h1, h2, h3 { color: #111; }
+    .talk { background: #f5f7fa; border-color: #d0d7e0; }
+    .try { background: #eef6fc; }
+    .pit { background: #fdf0ef; }
+    .pit .tag { color: #c0392b; }
+    .check { background: #f0faf4; border-color: #cfe8d8; }
+    .check .tag, .step-tag { background: #4a9eff; color: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .alt { background: #fbfcf2; border-color: #b7c26a; }
+    .sub, .small, .figcap, .foot { color: #555; }
+    .m, .big, p, td, th, li { color: #222; }
+    table.tb th { background: #eef2f7; color: #111; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .key { background: #f4f6f9; }
+    .ul-blue { border-color: #4a9eff; }
+    mark.nb { background: #d8e9ff; color: #111; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>充分条件与必要条件：推理的"单行道"与"双行道"</h1>
+<div class="sub">数学必修一 · 1.4 充分条件与必要条件 · 零基础首学版 v1.0 · 前置：会解一元二次方程、记得1.2的⊆（忘了？方法块有集合观点补丁） · 预计用时 40 分钟</div>
+
+<h2><span class="step-tag">开场</span>什么是命题，什么要"推理"</h2>
+<p>数学里到处都是"判决句"——<b>命题</b>（教材 p17 定义原文）：把用语言、符号或式子表达的，<span class="ul-blue">可以判断真假的陈述句</span>叫做命题。判为真=真命题，判为假=假命题。"3&gt;2"是真命题；"明天下雨"没法判真假，不是（数学意义上的）命题。</p>
+<p>中学数学的很多命题长一个样：<b>"若 p，则 q"</b>（如果 p，那么 q）。p 叫<b>条件</b>，q 叫<b>结论</b>。比如"若平行四边形的对角线互相垂直，则这个平行四边形是菱形"——p=对角线互相垂直，q=是菱形。这一节就研究一件事：<b>p 和 q 之间，推得动、推不动</b>。工具是三个新词：充分条件、必要条件、充要条件。</p>
+<div class="check"><span class="tag">读完这节你能</span>
+<p>① 看一个"若 p 则 q"，判断 p 推不推得动 q，并说出谁是谁的充分/必要条件；② 用<b>一个反例</b>否掉假命题；③ 把任何一对 p、q 归入四类之一（充分不必要/必要不充分/充要/都不）；④ 会用<b>集合观点</b>一眼看穿条件关系。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>充分条件：p 是 q 的"保证书"</h2>
+<p>先看教材 p17 思考的四个命题，判真假：<br>(1) 若平行四边形的对角线互相垂直，则它是菱形——<b>真</b>（初中学过）；<br>(2) 若两个三角形周长相等，则它们全等——<b>假</b>（边长 3、4、5 和 2.5、4.5、5 周长都是 12，形状不同）；<br>(3) 若 x²−4x+3=0，则 x=1——<b>假</b>（解方程得 x=1 或 x=3，x=3 就是反例；sympy 解集 {1,3} 在案）；<br>(4) 若平面内直线 a、b 都垂直于直线 l，则 a∥b——<b>真</b>。</p>
+<p>(1)(4) 由 p 推得出 q，(2)(3) 推不动。教材把"推得动"正式定名：</p>
+<div class="talk"><p><b>教材定义（p17 原文）：</b>一般地，"若 p，则 q"为真命题，是指由 p 通过推理可以得出 q。这时，我们就说，由 p 可以推出 q，记作 <span class="big m">p ⟹ q</span>。并且说，<b>p 是 q 的充分条件</b>（sufficient condition），<b>q 是 p 的必要条件</b>（necessary condition）。</p></div>
+<p>为什么 q 反而叫 p 的"必要"条件？教材脚注①给了钥匙：<b>如果 q 不成立，则 p 一定不成立</b>——q 是 p 成立绕不开的地基。比如"若x>3则x>2"里，"x>2"就是"x>3"的必要条件：一个数连 2 都不超过，绝不可能超过 3。</p>
+<p>若"若 p，则 q"是假命题，记作 <span class="m">p ⇏ q</span>：p 不是 q 的充分条件，q 也不是 p 的必要条件。</p>
+<div class="try"><span class="tag">验一验（20 秒）</span>
+<p>"若 x=1，则 x²=1"是真命题。谁是谁的充分条件？谁是谁的必要条件？<br><span class="a">答案：x=1 ⟹ x²=1 ✓。p（x=1）是 q（x²=1）的充分条件；q（x²=1）是 p（x=1）的必要条件。</span></p>
+</div>
+<p><b>反例的力量</b>（教材 p18 框注原文）："举反例是判断一个命题是假命题的重要方法。"要否定 p⟹q，只需要<b>一个</b>满足 p 但不满足 q 的例子。教材例1(4)：由于 (−1)²=1 但 −1≠1，所以"x²=1⟹x=1"是假的；例1(6)：√2 是无理数，但 √2×√2=2 是有理数，所以"两个无理数的积还是无理数"是假的。</p>
+<p><b>充分条件不唯一</b>（教材 p18-19 思考原文结论）："对给定结论 q，使得 q 成立的条件 p 是不唯一的。"四边形是平行四边形的充分条件就有一堆：两组对角分别相等✓、两组对边分别相等✓、一组对边平行且相等✓、对角线互相平分✓——教材总结成一句：<b>数学中的每一条判定定理都给出了相应结论成立的一个充分条件</b>（p19 原文）。</p>
+
+<h2><span class="step-tag">第二步</span>必要条件：从"另一头"看同一条推力</h2>
+<p>教材例2 问的是反方向：哪些命题里 <b>q 是 p 的必要条件</b>？秘诀只有一句（p19 原文）："要判断 q 是否为 p 的必要条件，<span class="ul-blue">只需判断是否有 p⟹q</span>，即'若 p，则 q'是否为真命题。"——不用新方法，还是判原命题真假，只是"叫法"换了位置：</p>
+<table class="tb">
+<tr><th>命题真假</th><th>p 是 q 的…</th><th>q 是 p 的…</th></tr>
+<tr><td>若 p 则 q 为<b>真</b>（p⟹q）</td><td>充分条件</td><td>必要条件</td></tr>
+<tr><td>若 p 则 q 为<b>假</b>（p⇏q）</td><td>不是充分条件</td><td>不是必要条件</td></tr>
+</table>
+<p>例2 里三个假命题的反例都值得记：对角线互相垂直<b>⇏</b>菱形——教材图 1.4-1 画了个"筝形"（两组邻边相等），对角线垂直却不是菱形；(−1)×0=1×0 但 −1≠1，所以"ac=bc⟹a=b"假（c=0 时两边全变 0）；1×√2=√2 是无理数但 1 是有理数，所以"xy 无理⟹x、y 都无理"假。</p>
+<p>对称地，教材 p20 总结：<b>数学中的每一条性质定理都给出了相应结论成立的一个必要条件</b>。比如"两直线平行⟹同位角相等"是性质定理——"同位角相等"就是"两直线平行"的必要条件：同位角不相等，两直线就绝不可能平行。</p>
+<div class="try"><span class="tag">验一验（20 秒）</span>
+<p>"若 x 是无理数，则 x² 也是无理数"——q（x² 无理）是 p（x 无理）的必要条件吗？<br><span class="a">答案：看原命题真假：x=√2 时 x²=2 是有理数——原命题为假 → q 不是 p 的必要条件（p 也不是 q 的充分条件）。</span></p>
+</div>
+
+<h2><span class="step-tag">第三步</span>充要条件：双向都通 = "双行道"</h2>
+<p>教材 p20 思考：哪些命题<b>和它的逆命题</b>都真？先把"逆命题"钉住（框注原文）：把"若 p，则 q"的 p、q 互换，得到"若 q，则 p"，叫原命题的<b>逆命题</b>。四句话的组合只有四种：</p>
+<table class="tb">
+<tr><th>原命题</th><th>逆命题</th><th>结论</th></tr>
+<tr><td>真</td><td>真</td><td>p⟺q，<b>充要</b>（教材思考(1)(4)）</td></tr>
+<tr><td>真</td><td>假</td><td>充分不必要（思考(2)：全等⟹周长相等，反过来不行）</td></tr>
+<tr><td>假</td><td>真</td><td>必要不充分（思考(3)：两不等实根⇏ac&lt;0，但 ac&lt;0⟹判别式&gt;0 有两不等实根 ✓）</td></tr>
+<tr><td>假</td><td>假</td><td>既不充分也不必要</td></tr>
+</table>
+<div class="talk"><p><b>教材定义（p21 原文）：</b>如果"若 p，则 q"和它的逆命题"若 q，则 p"均是真命题，即既有 p⟹q，又有 q⟹p，就记作 <span class="big m">p ⟺ q</span>。此时，p 既是 q 的充分条件，也是 q 的必要条件，我们说 p 是 q 的<b>充分必要条件</b>，简称为<b>充要条件</b>（necessary and sufficient condition）。<span class="ul-blue">如果 p 是 q 的充要条件，那么 q 也是 p 的充要条件</span>——概括地说，p 与 q <b>互为充要条件</b>。</p></div>
+<p>教材例3 两个充要、两个不充要：(2) 相似 ⟺ 三边成比例（性质定理+判定定理两头都真）；(4) x=1 是 ax²+bx+c=0 的根 ⟺ a+b+c=0（把 x=1 代入就是 a+b+c=0，两方向是同一步代入，sympy 恒等验 ✓）。(1) 正方形 ⇏"对角线垂直且平分"（菱形就是反例）；(3) xy&gt;0 ⇏ x&gt;0 且 y&gt;0——x=y=−1 时 xy=1&gt;0 但两个都负（sympy 验 ✓）。</p>
+<p>教材 p21 探究还补了一刀：平行四边形的<b>定义</b>（两组对边分别平行）本身就是它自己的充要条件——所以数学概念的定义永远和概念互为充要，这就是为什么教材 p24-25 阅读材料说"<b>定义=充要条件、判定定理=充分条件、性质定理=必要条件</b>"（这个三分法记住，几何命题全梳顺）。</p>
+<div class="fig">
+<svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="单行道与双行道示意">
+  <rect width="800" height="220" fill="#10161f"/>
+  <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 z" fill="#4a9eff"/></marker><marker id="arb" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 z" fill="#2ecc71"/></marker></defs>
+  <circle cx="140" cy="70" r="38" fill="#1b2f45" stroke="#4a9eff" stroke-width="2"/><text x="140" y="76" fill="#e8f2ff" font-size="16" text-anchor="middle" font-weight="bold">p</text>
+  <circle cx="400" cy="70" r="38" fill="#1b2f45" stroke="#4a9eff" stroke-width="2"/><text x="400" y="76" fill="#e8f2ff" font-size="16" text-anchor="middle" font-weight="bold">q</text>
+  <line x1="182" y1="70" x2="356" y2="70" stroke="#4a9eff" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="270" y="52" fill="#9fd0ff" font-size="14" text-anchor="middle">p ⟹ q（单行道）</text>
+  <text x="270" y="130" fill="#8fa3b8" font-size="13" text-anchor="middle">p 是 q 的充分条件 · q 是 p 的必要条件</text>
+  <circle cx="560" cy="70" r="38" fill="#1b2f45" stroke="#4a9eff" stroke-width="2"/><text x="560" y="76" fill="#e8f2ff" font-size="16" text-anchor="middle" font-weight="bold">p</text>
+  <circle cx="740" cy="70" r="38" fill="#1b2f45" stroke="#4a9eff" stroke-width="2"/><text x="740" y="76" fill="#e8f2ff" font-size="16" text-anchor="middle" font-weight="bold">q</text>
+  <line x1="602" y1="60" x2="734" y2="60" stroke="#4a9eff" stroke-width="3" marker-end="url(#ar)"/>
+  <line x1="700" y1="84" x2="568" y2="84" stroke="#2ecc71" stroke-width="3" marker-end="url(#arb)"/>
+  <text x="650" y="42" fill="#9fd0ff" font-size="14" text-anchor="middle">p ⟺ q（双行道）</text>
+  <text x="650" y="130" fill="#8fa3b8" font-size="13" text-anchor="middle">互为充要条件</text>
+  <text x="400" y="185" fill="#5a6a7a" font-size="12" text-anchor="middle">这张图在说什么：单行道=单向推得动（充分/必要各站一头）；双行道=两头都通=充要。</text>
+</svg>
+<p class="small" style="text-align:center">图1 单行道与双行道（本件自绘示意）</p>
+</div>
+
+<h2><span class="step-tag">方法一</span>四分类判断流程（考试最常见题型）</h2>
+<p>给定 p、q，三步走：<b>①判 p⟹q 真假；②判 q⟹p 真假；③查表归档</b>。</p>
+<div class="key">
+<p><b>演示（教材 p23 习题2(1)）</b>：p：三角形是等腰三角形，q：三角形是等边三角形。<br>①等腰⟹等边？假（等腰不等的反例，如三边 3、4、4——等等 3、4、4 是等腰（4=4）但三边不全等，反例成立）；②等边⟹等腰？真（等边三角形三边都相等，当然等腰）；③查表：<b>p 是 q 的必要不充分条件</b>。</p>
+<p><b>演示（p23 习题2(5)）</b>：p：x&gt;y，q：x²&gt;y²。①x&gt;y⟹x²&gt;y²？假（x=0,y=−1：0&gt;−1 但 0²&lt;(−1)²）；②x²&gt;y²⟹x&gt;y？假（x=−2,y=1：4&gt;1 但 −2&lt;1，sympy 验 ✓）；③<b>既不充分也不必要条件</b>。</p>
+<p><b>演示（p23 习题3(3)判断真假）</b>："A∪B=A 是 B⊆A 的必要不充分条件"——真还是假？A∪B=A 的意思本来就是"B 的元素全在 A 里"=B⊆A，两句话<b>互为充要</b>（sympy 集合验 ✓）。所以这句话说"必要不充分"是<b>假</b>的——正确答案：充要条件。这是教材借习题提醒你：1.3 的集合语言和本节是一回事（见方法二）。</p>
+</div>
+
+<h2><span class="step-tag">方法二</span>集合观点：条件关系=集合关系（大杀器）</h2>
+<p>设 A={x | x 满足 p}，B={x | x 满足 q}（教材 p23 习题4 的设定），那么"p⟹q"逐字翻译就是"A 里的每个元素都在 B 里"=1.2 的 A⊆B！全套对应：</p>
+<table class="tb">
+<tr><th>集合关系</th><th>条件关系</th><th>记忆</th></tr>
+<tr><td>A ⊆ B（A 小圈在 B 里）</td><td>p 是 q 的<b>充分</b>条件</td><td>小范围⟹大范围</td></tr>
+<tr><td>B ⊆ A</td><td>p 是 q 的<b>必要</b>条件</td><td>大范围被推不出小范围</td></tr>
+<tr><td>A = B</td><td>p 是 q 的<b>充要</b>条件</td><td>同一个圈</td></tr>
+<tr><td>A ⊊ B（真子集）</td><td>充分<b>不必要</b></td><td>B 比 A 大=推过去回不来</td></tr>
+</table>
+<div class="fig">
+<svg viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="集合观点：A⊆B即p是q的充分条件">
+  <rect width="800" height="240" fill="#10161f"/>
+  <ellipse cx="300" cy="115" rx="230" ry="95" fill="#1b2f45" stroke="#4a9eff" stroke-width="2"/>
+  <text x="160" y="60" fill="#9fd0ff" font-size="15" font-weight="bold">B：x 满足 q</text>
+  <ellipse cx="345" cy="130" rx="105" ry="48" fill="#2b5277" stroke="#7fb8ff" stroke-width="2"/>
+  <text x="345" y="136" fill="#e8f2ff" font-size="14" text-anchor="middle">A：x 满足 p</text>
+  <text x="345" y="225" fill="#8fa3b8" font-size="13" text-anchor="middle">A ⊆ B　⟺　p ⟹ q　⟺　p 是 q 的充分条件、q 是 p 的必要条件</text>
+  <text x="620" y="90" fill="#e0c88f" font-size="13">满足 p 的点全都在</text>
+  <text x="620" y="112" fill="#e0c88f" font-size="13">满足 q 的地盘里 →</text>
+  <text x="620" y="140" fill="#e0c88f" font-size="13">"是 p"足以保证"是 q"</text>
+  <text x="620" y="170" fill="#5a6a7a" font-size="12">（但满足 q 的未必是 p：q 之外还有地盘）</text>
+</svg>
+<p class="small" style="text-align:center">图2 集合观点一眼看穿（本件自绘·圆=元素全体地盘）——这张图在说什么：条件的"强弱"=圈子的大小。A 越小条件越强（越充分），A=B 才是互为充要。</p>
+</div>
+<div class="try"><span class="tag">验一验（30 秒）</span>
+<p>p：x&gt;2，q：x&gt;1。用集合观点说 p 是 q 的什么条件？<br><span class="a">答案：{x|x&gt;2} ⊊ {x|x&gt;1}（真子集）→ p 是 q 的充分不必要条件。</span></p>
+</div>
+
+<h2><span class="step-tag">方法三</span>证明"充要"的标准格式+一道配方证明</h2>
+<p>要证 p 是 q 的充要条件，必须<b>分两段证</b>：充分性（p⟹q）+必要性（q⟹p），一段都不能省。教材例4 做了示范（p22）：证 d=r 是直线 l 与 ⊙O 相切的充要条件——充分性：作 OP⊥l，d=r 时 P 在圆上，l 上任取另一点 Q 都有 OQ&gt;OP=r 在圆外，故只有一个公共点=相切；必要性：相切时切点 P 满足 OP⊥l，d=OP=r。两段合起来=充要。</p>
+<p>代数版看教材 p23 习题5：证 a=b=c 是 a²+b²+c²=ab+ac+bc 的充要条件。核心是一步配方（sympy 恒等验 ✓）：</p>
+<div class="key"><p>a²+b²+c²−ab−ac−bc = ½[(a−b)²+(b−c)²+(a−c)²] ≥ 0，等号成立 ⟺ 三个平方全为 0 ⟺ a=b=c。<br>充分性：a=b=c 时右边=0 即等式成立；必要性：等式成立即和为 0，三个平方都为 0，得 a=b=c。两段合证=充要 ✓。</p></div>
+
+<h2><span class="step-tag">大坑</span>本节三大坑</h2>
+<div class="pit"><span class="tag">坑1·方向搞反</span>
+<p>"p 是 q 的充分条件"<span class="wrong">≠</span>"q 是 p 的充分条件"。读题先圈出主语：谁是<b>条件</b>、谁是<b>结论</b>，箭头永远从条件指向结论（p⟹q）。填"充分/必要"前先写一遍箭头，20 秒防全错。</p>
+</div>
+<div class="pit"><span class="tag">坑2·一个反例就够，但别拿"没找到"当"不存在"</span>
+<p>否命题只需<b>一个</b>反例（框注原文）；但确认"推得动"必须说理（定义/定理/计算），"我试了几个都行"不算证明。</p>
+</div>
+<div class="pit"><span class="tag">坑3·"x=1 是根"类条件自带方向</span>
+<p>"x=1 是 ax²+bx+c=0 的一个根"⟺"a+b+c=0"（例3(4)）——看到"x=1 是根"直接翻译成"代入得 a+b+c=0"，两个方向是同一步，考试常设"必要不充分"陷阱选项，别跳。</p>
+</div>
+
+<h2><span class="step-tag">收口</span>合上这件，三问自查</h2>
+<p>①p⟹q 为真时，谁是谁的充分、谁是谁的必要？（p 充分、q 必要）②四分类靠哪两个真假判定？（原命题+逆命题，或 p⟹q 与 q⟹p）③"A⊆B"翻译成条件语言是什么？（p 是 q 的充分条件）——三问全对=过关。</p>
+
+<h3>自测四连（先自己做，再看答案——答案就在下面）</h3>
+<div class="check">
+<p>① 判断真假："x²=y² 是 x=y 的必要不充分条件。"<br><span class="a">答案：真。x=y⟹x²=y² ✓（必要）；x²=y²⇏x=y（x=1,y=−1 反例）→ 恰是必要不充分。</span></p>
+<p>② 写出"x=2"是"x²=4"的什么条件，并说明为什么"充要"不成立。<br><span class="a">答案：充分不必要（x=2⟹x²=4 ✓；x²=4 解得 x=±2，x=−2 反例 → 不必要）。</span></p>
+<p>③ 设 A={x|1&lt;x&lt;3}，B={x|0&lt;x&lt;4}，则"x∈A"是"x∈B"的什么条件？<br><span class="a">答案：A ⊊ B → 充分不必要条件。</span></p>
+<p>④ 判断："一次函数 y=kx+b 的图像过原点"是"b=0"的什么条件？<br><span class="a">答案：充要条件——过原点 ⟺ x=0 时 y=b=0，两个方向是同一次代入（例3(4) 同型）。</span></p>
+</div>
+
+<h3><span class="step-tag">考位锚</span>高考怎么考（三行内·轻量）</h3>
+<p><b>考什么</b>：四分类判断（几乎每年小题）/含参范围与条件互推/集合观点秒杀。<b>怎么考</b>：选择题"p 是 q 的___条件"四选一，常与不等式、函数、数列性质联动；个别年份含参解答题要求证明充要。<b>频率</b>：高频常客。真题锚：候采（本件未采到带卷源的 1.4 真题，不代拟——后续件按映射表 #47 续锚）。</p>
+
+<p><b>下一站</b>：1.5 全称量词与存在量词——"所有"和"存在"这两个词的精确用法（p26 起）。</p>
+
+<div class="fig">
+<svg viewBox="0 0 560 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第一章五节走向">
+  <rect width="560" height="150" fill="#10161f"/>
+  <defs><marker id="ar2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#4a9eff"/></marker></defs>
+  <rect x="18" y="45" width="92" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/><text x="64" y="64" fill="#c8d4e2" font-size="12" text-anchor="middle">1.1-1.3</text><text x="64" y="82" fill="#8fa3b8" font-size="11" text-anchor="middle">集合三件套</text>
+  <rect x="126" y="40" width="130" height="54" rx="6" fill="#1b2f45" stroke="#4a9eff" stroke-width="2"/><text x="191" y="62" fill="#e8f2ff" font-size="14" text-anchor="middle" font-weight="bold">1.4 充要条件</text><text x="191" y="82" fill="#9fd0ff" font-size="11" text-anchor="middle">本件·推理语言</text>
+  <rect x="272" y="45" width="110" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/><text x="327" y="64" fill="#c8d4e2" font-size="12" text-anchor="middle">1.5 量词</text><text x="327" y="82" fill="#8fa3b8" font-size="11" text-anchor="middle">∀ 与 ∃</text>
+  <rect x="398" y="45" width="140" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/><text x="468" y="64" fill="#c8d4e2" font-size="12" text-anchor="middle">第二章等式不等式</text><text x="468" y="82" fill="#8fa3b8" font-size="11" text-anchor="middle">下一站军火库</text>
+  <line x1="110" y1="67" x2="124" y2="67" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="256" y1="67" x2="270" y2="67" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="382" y1="67" x2="396" y2="67" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="280" y="130" fill="#5a6a7a" font-size="12" text-anchor="middle">这张图在说什么：集合学完学推理，推理学完加量词——第一章的语言课就齐了，第二章拿去干活。</text>
+</svg>
+<p class="small" style="text-align:center">本节位置图（第一章·集合与常用逻辑用语）</p>
+</div>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选——跳过不影响后面任何一节）</span>
+<p>① <b>勾股定理的逆定理是"充要"教科书</b>（教材 p23 习题6）：a²+b²=c² ⟺ △ABC 直角（勾股+逆定理两方向都证过=互为充要）。同款：锐角 ⟺ a²+b²&lt;c²，钝角 ⟺ a²+b²&gt;c²（a≤b≤c 时；3-4-5/4-5-6/2-3-4 三组边长 sympy 全验 ✓）。② <b>用充要条件"重写定义"</b>（教材 p24-25 阅读材料的玩法）：判定定理全是充分条件，性质定理全是必要条件——凡是充要的判定定理都能反过来当定义用（"两组对边分别相等的四边形叫平行四边形"就是合法定义）。试着给等腰三角形写出三个等价定义。③ <b>为什么叫"充分/必要"</b>：充分=足以保证（有它就行）；必要=缺它不行（没它免谈）——英文 sufficient（足够的）/necessary（必需的）更直白，教材括号里就标了。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（教材形态量产件·首学版标准v2.3全条款落地：T12节首清单＋T11考位锚块＋节末本节位置图＋alt可选块纪律＋sympy 机器代验 19 处 PASS 留痕） · 事实层素材源：人教A版必修第一册 p17–p25 影印逐页对照（国家中小学智慧教育平台 contentId=6e764703-6e5e-4ea3-9462-34652c2678ef · 详情API实时 ts=1787023173400 · 图24/25/26/27/28/29/30/31/32→印刷页17/18/19/20/21/22/23/24/25 · 图N→印刷页N-7 · 1.4节域=p17-25（1.4.1 p17-19+1.4.2 p20-22+习题1.4 p22-23+阅读与思考 p24-25）·命题/充分必要/充要三定义原文、思考与例1-4、练习两组、习题1.4、阅读三分法均逐字锚定 · 影印原件存席位私有目录 p01_jc/，对照报告随件入仓）<br>
+设计标准（1.1定版延续）：零预设 · 一次一步 · 随读随验 ×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源 · 图像讲解必配图示
+</div>
+
+</div>
+</body>
+</html>
