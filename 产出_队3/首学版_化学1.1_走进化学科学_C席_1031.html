@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>化学1.1 走进化学科学 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  b { color: #f0f3f7; }
+  .talk { background: #1c2230; border: 1px solid #2c3a4e; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .q { color: #4a9eff; font-weight: bold; }
+  .check { background: #182430; border-left: 4px solid #4a9eff; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .check .tag, .try .tag, .pit .tag, .alt .tag { display: inline-block; background: #324358; color: #cfe4ff; font-size: 13px; font-weight: bold; padding: 2px 10px; border-radius: 4px; margin-bottom: 6px; }
+  .box { background: #1a222e; border: 1px solid #33445a; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
+  .key { background: #223047; border-left: 4px solid #ffc94d; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .try { background: #1b242f; border: 1px dashed #3d5573; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit { background: #2a1f22; border-left: 4px solid #ff7a6e; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit .tag { background: #5a3038; color: #ffd6d0; }
+  .wrong { color: #ff8f84; font-weight: bold; }
+  .ans { color: #7ee2a8; font-weight: bold; }
+  .alt { background: #20283a; border: 1px solid #354764; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .m { font-family: "SF Mono", Consolas, monospace; background: #0f1420; color: #9ecbff; padding: 1px 6px; border-radius: 4px; font-size: 0.95em; }
+  .big { font-size: 19px; color: #fff; }
+  .detail { color: #9aa7b8; font-size: 15px; }
+  .small { color: #8a97a8; font-size: 14px; }
+  .fig { text-align: center; margin: 18px 0; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 6px; }
+  mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.35) 55%); color: #eaf2ff; padding: 0 2px; }
+  .note-red { color: #ff9a90; font-size: 14px; }
+  ul.blue { padding-left: 22px; } ul.blue li { margin: 6px 0; }
+  .foot { border-top: 1px solid #2c3644; margin-top: 48px; padding-top: 16px; color: #67737f; font-size: 13px; line-height: 1.7; }
+  .box.kao { border-left: 4px solid #ffc94d; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 10mm 8mm; }
+    .page b, .page h1, .page h3, .page .m, .page .big, .page .detail, .page .try .q, .page .ans, .page .wrong, .page .q { color: #111; }
+    .page .talk, .page .box, .page .try, .page .check, .page .key, .page .pit, .page .alt { background: #f5f5f5 !important; border-color: #999 !important; }
+    .page .key { background: #fff8e0 !important; }
+    .page .pit { background: #fdeeee !important; }
+    .page .step-tag { background: #d8e8ff !important; color: #111 !important; }
+    .page .tag { background: #e8ecf2 !important; color: #111 !important; }
+    .page mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.30) 55%) !important; color: #111 !important; }
+    .page .foot { color: #444; }
+    .page .small, .page .figcap, .page .note-red { color: #333 !important; }
+    .page h2 { color: #111; border-left-color: #2b6cb0; }
+    .page .note-red { color: #b03020 !important; }
+    .page .fig rect { fill: #f2f4f8 !important; stroke: #666 !important; }
+    .page .fig text { fill: #111 !important; }
+    .page .fig line { stroke: #666 !important; }
+    .page .fig circle { fill: #7aa5d8 !important; }
+    .page .fig marker path { fill: #666 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>走进化学科学：一门"研究物质、创造物质"的学问怎么认门</h1>
+<p class="sub">化学 1.1 · 第1章 认识化学科学（鲁科版·必修第一册） · 零基础首学版 v1.0 · 前置要求：小学科学常识即可，本节从零讲起</p>
+
+<div class="talk">
+<p>先别翻开化学课本。看一眼你身边：喝的<span class="q">水</span>、刷牙的<span class="q">牙膏</span>、身上的<span class="q">化纤校服</span>、手里的<span class="q">手机屏幕</span>、夜里亮着的<span class="q">LED灯</span>——它们全是"物质"。</p>
+<p>面对这个五彩缤纷的物质世界，人类从远古时代就在琢磨四个问题：<b>物质究竟是什么？它由什么组成？为什么会变化、怎么变化？能不能有目的地让物质转化、创造出新物质？</b>（这正是教材开篇的原话。）</p>
+<p>几千年的琢磨与探究，攒出了一门正经学问——<span class="q">化学科学</span>。这一节不教你任何一个方程式，只做一件事：<b>带你认门</b>——这门学问从哪来、它到底研究什么、它凭什么改变世界。</p>
+</div>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 一句话<b>说出</b>化学研究的对象，并把它的<b>三个特征</b>背出来；<br>
+② 把化学史上<b>五座里程碑</b>（谁、哪一年、干了什么）对上号；<br>
+③ 讲出<b>青蒿素</b>从发现到救人走过了哪几步——用它看懂"化学这门学问是怎么干活的"。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>先拆掉两个可能的误会</h2>
+<p>进门前，先把你脑子里可能带的两个印象拆掉，不然会影响后面每一步的理解。</p>
+<p><b>误会一："化学=危险、有毒、爆炸"。</b>——错。你喝的水要净化、吃的药要合成、穿的布要染色，背后全是化学。化学本身是一门<span class="q">基础学科</span>（和数学、物理平起平坐的那种），它是<b>中性的工具</b>：能造救命药，也能鉴别毒物。后面你会看到它救了几亿人的实例。</p>
+<p><b>误会二："化学=死记硬背元素周期表"。</b>——本节读完你会发现，这一节要记的东西一共就三样（定义一句话、五座里程碑、三个特征），而且都有逻辑勾连，不用硬背。后面的章节里，化学更多是<b>观察—提出问题—实验验证—得出结论</b>的推理活。</p>
+<p>两个词先补上，后面要用（30秒）：</p>
+<div class="box"><b>物质</b>：构成世界的东西——水、铁、空气、药片，都是。<br>
+<b>转化</b>：一种物质变成另一种物质——铁放久了生锈（铁→铁锈）、米放久了发酸（米→酸），都叫转化。</div>
+
+<h2><span class="step-tag">第1步</span>这门学问是几千年"攒"出来的</h2>
+<p>化学不是某一天突然出现的，它分三个阶段长成今天的模样。</p>
+
+<h3>远古：先有"化学活动"，后有"化学"这个名字</h3>
+<p>早在远古时代，我们的祖先就学会了<b>取火和保存火种</b>——从那时起人类就开始了"化学活动"。再往后，人们学会了<b>烧制陶瓷、冶炼金属、酿造酒类</b>（教材图1-1-3里那只青花瓷罐就是证据）。甚至有一批人——<b>炼丹家、炼金士</b>——试图炼出长生不老的丹药、把廉价金属炼成金子。他们目标错了，但那股"拿物质做实验"的劲头，客观上攒下了大量经验。</p>
+
+<h3>近代（1661—1869）：五座里程碑，化学变成"科学"</h3>
+<p>光有经验不够，要成为科学，得有<b>理论</b>。近代两百多年里，化学家们立起了五座里程碑——这是全节最值得记的一张图：</p>
+<div class="fig">
+<svg width="560" height="290" viewBox="0 0 560 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="近代化学五里程碑时间线">
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4a9eff"/></marker></defs>
+  <line x1="40" y1="150" x2="520" y2="150" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="52" y="14" width="150" height="56" rx="8" fill="#223047" stroke="#3a5578"/>
+  <text x="127" y="36" fill="#cfe4ff" font-size="13" text-anchor="middle" font-weight="bold">1661 波义耳（英国）</text>
+  <text x="127" y="56" fill="#9ecbff" font-size="12" text-anchor="middle">提出化学元素概念</text>
+  <text x="127" y="60" fill="#9ecbff" font-size="11" text-anchor="middle"></text>
+  <line x1="127" y1="70" x2="127" y2="145" stroke="#3a5578" stroke-dasharray="3,3"/>
+  <rect x="212" y="196" width="150" height="56" rx="8" fill="#223047" stroke="#3a5578"/>
+  <text x="287" y="218" fill="#cfe4ff" font-size="13" text-anchor="middle" font-weight="bold">1777 拉瓦锡（法国）</text>
+  <text x="287" y="238" fill="#9ecbff" font-size="12" text-anchor="middle">氧化学说·革命性进展</text>
+  <line x1="287" y1="196" x2="287" y2="155" stroke="#3a5578" stroke-dasharray="3,3"/>
+  <rect x="366" y="14" width="160" height="56" rx="8" fill="#223047" stroke="#3a5578"/>
+  <text x="446" y="36" fill="#cfe4ff" font-size="13" text-anchor="middle" font-weight="bold">1803 道尔顿（英国）</text>
+  <text x="446" y="56" fill="#9ecbff" font-size="12" text-anchor="middle">原子论·奠定坚实基础</text>
+  <line x1="446" y1="70" x2="446" y2="145" stroke="#3a5578" stroke-dasharray="3,3"/>
+  <rect x="52" y="196" width="150" height="56" rx="8" fill="#223047" stroke="#3a5578"/>
+  <text x="127" y="218" fill="#cfe4ff" font-size="13" text-anchor="middle" font-weight="bold">1869 门捷列夫（俄国）</text>
+  <text x="127" y="238" fill="#9ecbff" font-size="12" text-anchor="middle">元素周期律·统一理论</text>
+  <line x1="127" y1="196" x2="127" y2="155" stroke="#3a5578" stroke-dasharray="3,3"/>
+  <rect x="380" y="196" width="160" height="56" rx="8" fill="#223047" stroke="#3a5578"/>
+  <text x="460" y="218" fill="#cfe4ff" font-size="13" text-anchor="middle" font-weight="bold">1811 阿伏加德罗（意）</text>
+  <text x="460" y="238" fill="#9ecbff" font-size="12" text-anchor="middle">分子学说·测定混乱终结</text>
+  <line x1="460" y1="196" x2="460" y2="155" stroke="#3a5578" stroke-dasharray="3,3"/>
+  <circle cx="127" cy="150" r="6" fill="#ffc94d"/><circle cx="287" cy="150" r="6" fill="#ffc94d"/>
+  <circle cx="446" cy="150" r="6" fill="#ffc94d"/><circle cx="127" cy="150" r="6" fill="#ffc94d"/><circle cx="460" cy="150" r="6" fill="#ffc94d"/>
+  <text x="280" y="282" fill="#5a6a7a" font-size="11" text-anchor="middle">时间从左到右：1661→1869（上排/下排卡片只是排版错行，无高低含义）</text>
+</svg>
+<p class="figcap">近代化学五座里程碑（教材图1-1-4转绘·鲁科版必修一 p3）——卡片按年份左右排布，坐标由脚本按年份线性映射生成</p>
+</div>
+<div class="key">记这张图的口诀：<mark class="nb">波义耳开门（1661·近代化学诞生）→ 拉瓦锡革新（1777）→ 道尔顿打地基（1803·原子论）→ 阿伏加德罗补分子（1811）→ 门捷列夫收官（1869·周期律把一切纳入统一体系）</mark>。顺序就是时间顺序，一个"越干越明白"的过程。</div>
+
+<div class="try">
+<span class="tag">⚡ 30秒自验 1</span>
+<p>不看上图，把"氧化学说 / 原子论 / 元素周期律 / 化学元素概念 / 分子学说"五张牌，分别配给"波义耳 / 拉瓦锡 / 道尔顿 / 阿伏加德罗 / 门捷列夫"。</p>
+<p class="small">答完再看：<span class="ans">波义耳—化学元素概念</span>（1661）· <span class="ans">拉瓦锡—氧化学说</span>（1777）· <span class="ans">道尔顿—原子论</span>（1803）· <span class="ans">阿伏加德罗—分子学说</span>（1811）· <span class="ans">门捷列夫—元素周期律</span>（1869）。配错的那张，回图上找到对应卡片再看一遍年份即可。</p>
+</div>
+
+<h3>现代（20世纪至今）：化学开始"造物质"，并带动其他科学</h3>
+<p>进入20世纪，随着认识从宏观深入微观、从定性走向定量，现代化学飞速发展：<b>现代量子化学理论、化学热力学与动力学、创造新分子的合成化学、高分子化学、化学工业</b>，都是这个时代的重大成就。三个你该知道的实例：</p>
+<ul class="blue">
+<li><b>1965年，我国科学家成功合成了结晶牛胰岛素</b>——在<b>世界上首次</b>实现蛋白质的人工合成（教材图1-1-5）。这是人类第一次"照着生命的样子造出生命物质"。</li>
+<li><b>合成氨的化工技术</b>让人类造出大量氮肥、粮食增产，成千上万的人免于饥饿（教材图1-1-6）；新药物研制战胜疾病；合成高分子材料、以硅为原料的芯片和光导纤维（图1-1-7）让你我生活彻底改样。</li>
+<li>化学还带动了别的科学：研究生物之间化学联系的<b>化学生态学</b>于20世纪50年代末诞生；对蛋白质结构的研究促进了生命科学发展。</li>
+</ul>
+<p class="detail">一句话：远古攒经验，近代立理论，现代开始"按需造物质"并反哺所有领域。</p>
+
+<h2><span class="step-tag">第2步</span>化学到底是什么：一句话定义+三个特征</h2>
+<p>看了几千年历史，现在回答最核心的问题。先别往下看——<b>你自己先试一句</b>：如果只能用一句话说清"化学在研究什么"，你会怎么说？</p>
+<p>……好了吗？教材（p5）给的是这个精确答案：</p>
+<div class="key"><span class="big">化学是在<b>原子、分子水平</b>上研究物质的<b>组成、结构、性质、转化</b>及其<b>应用</b>的一门基础学科。</span><br>
+<span class="small">（鲁科版必修一 p5 原文·逐字。）拆开看："<b>原子、分子水平</b>"=在微观粒子的尺度上看问题；"<b>组成、结构、性质、转化、应用</b>"=五个研究对象；"<b>基础学科</b>"=和数学物理并列的正经学问，不是手艺。</span></div>
+<p class="detail">"原子、分子"没概念？30秒补齐：把物质想象成乐高作品——<b>分子</b>像拼好的小组件，<b>原子</b>像一颗颗积木颗粒。化学就趴在这个尺度上研究东西。</p>
+<p>紧接着同一句，教材给出了化学的<b>三个特征</b>：</p>
+<div class="fig">
+<svg width="560" height="160" viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="化学科学三大特征">
+  <rect x="20" y="20" width="160" height="96" rx="10" fill="#223047" stroke="#4a9eff" stroke-width="2"/>
+  <text x="100" y="58" fill="#eaf2ff" font-size="14" text-anchor="middle" font-weight="bold">① 宏观 + 微观</text>
+  <text x="100" y="82" fill="#9ecbff" font-size="12" text-anchor="middle">两个角度认识物质</text>
+  <rect x="200" y="20" width="160" height="96" rx="10" fill="#223047" stroke="#4a9eff" stroke-width="2"/>
+  <text x="280" y="58" fill="#eaf2ff" font-size="14" text-anchor="middle" font-weight="bold">② 符号形式</text>
+  <text x="280" y="82" fill="#9ecbff" font-size="12" text-anchor="middle">表征物质</text>
+  <rect x="380" y="20" width="160" height="96" rx="10" fill="#223047" stroke="#4a9eff" stroke-width="2"/>
+  <text x="460" y="58" fill="#eaf2ff" font-size="14" text-anchor="middle" font-weight="bold">③ 不同层面</text>
+  <text x="460" y="82" fill="#9ecbff" font-size="12" text-anchor="middle">创造物质</text>
+  <text x="280" y="146" fill="#5a6a7a" font-size="11" text-anchor="middle">化学科学的三个特征（教材 p5 原文转绘）</text>
+</svg>
+<p class="figcap">三特征记忆卡：宏观微观两头看 / 符号写出来 / 动手造出来</p>
+</div>
+<p>三特征不是空话，各配一个实例：</p>
+<ul class="blue">
+<li><b>宏观+微观两个角度</b>：水"无色透明"是宏观性质；"1个水分子由2个氢原子和1个氧原子构成"是微观组成——化学两边都看。</li>
+<li><b>以符号形式表征</b>：水的组成写成 <span class="m">H₂O</span>，全世界化学家一眼看懂——符号是化学的"世界语"。</li>
+<li><b>不同层面创造物质</b>：化学家已发现和创造了<b>上亿种</b>物质，其中大量是自然界原本不存在、被人类按需要造出来的新物质（p5原文）——所以化学是一门具有<b>创造性</b>的科学。</li>
+</ul>
+<p class="detail">怎么研究？<b>实验与理论并重</b>：一边是分析和测试技术——波谱、色谱、X射线衍射、飞秒化学、原子示踪（p5-6·教材图1-1-8/9/10就是三台"神器"：质谱仪、核磁共振仪、X射线衍射仪）；另一边是理论计算配计算机模拟，预测反应活性、研究微观过程。</p>
+
+<div class="try">
+<span class="tag">⚡ 30秒自验 2</span>
+<p>下面哪几句说的是"化学研究范畴内"的事？<br>
+A. 水是无色透明的液体　B. 水分子由氢、氧两种原子构成　C. 今年台风路径会不会偏南　D. 用氢气和氮气造出氨肥</p>
+<p class="small">答完再看：<span class="ans">A是</span>（宏观性质）· <span class="ans">B是</span>（微观组成）· <span class="wrong">C不是</span>（天气是大气运动，归气象学；化学研究的是物质本身）· <span class="ans">D是</span>（创造新物质=转化，这正是"合成氨化工"）。</p>
+<p class="note-red">红笔旁批：最容易混的是C这类——判断标准就一条：<b>落点在"物质的组成、结构、性质、转化"上才是化学。</b></p>
+</div>
+
+<div class="alt">
+<span class="tag">卡住了？换个说法</span><br>
+定义太长背不动？先抓主干："化学 = 在<b>极小尺度</b>上研究<b>物质</b>的学问"。五个研究对象（组成/结构/性质/转化/应用）可以想成认识一个人的五个侧面：他由什么组成（身体成分）、长什么样（结构）、有什么脾气（性质）、会变成什么（转化）、能干什么用（应用）。一个意思，换成人话。
+</div>
+
+<h2><span class="step-tag">第3步</span>一次完整的化学研究长什么样：青蒿素之旅</h2>
+<p>历史和定义都过完了，现在看一场"实况"——教材用<b>图1-1-12</b>（p7）讲了青蒿素从发现到全球应用的完整故事。它就是本节的"例题"：把第2步的三个特征全用了一遍。先看路线：</p>
+<div class="fig">
+<svg width="560" height="380" viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="青蒿素发现研究应用之旅七节点时间线">
+  <defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ffc94d"/></marker></defs>
+  <line x1="60" y1="18" x2="60" y2="368" stroke="#ffc94d" stroke-width="2" marker-end="url(#arr2)"/>
+  <circle cx="60" cy="36" r="5" fill="#4a9eff"/><text x="76" y="30" fill="#eaf2ff" font-size="13" font-weight="bold">1967 研究的缘起</text>
+  <text x="76" y="48" fill="#9aa7b8" font-size="12">疟疾严重威胁全球健康 · 60多个单位500多名科研人员联合研发抗疟新药</text>
+  <circle cx="60" cy="82" r="5" fill="#4a9eff"/><text x="76" y="76" fill="#eaf2ff" font-size="13" font-weight="bold">1969 提取有效成分</text>
+  <text x="76" y="88" fill="#9aa7b8" font-size="12">屠呦呦小组发现青蒿抗疟，水煎无效、乙醇不高；受《肘后备急方》"青蒿一握，</text>
+  <text x="76" y="102" fill="#9aa7b8" font-size="12">以水二升渍，绞取汁"启发改用乙醚（沸点34.6℃）低温提取 · 1971.10.4抑制率达100%</text>
+  <circle cx="60" cy="128" r="5" fill="#4a9eff"/><text x="76" y="122" fill="#eaf2ff" font-size="13" font-weight="bold">1972 获得晶体</text>
+  <text x="76" y="134" fill="#9aa7b8" font-size="12">成功分离并结晶出"青蒿素Ⅱ"（后称青蒿素），抗疟功效临床试验证实</text>
+  <circle cx="60" cy="160" r="5" fill="#4a9eff"/><text x="76" y="154" fill="#eaf2ff" font-size="13" font-weight="bold">1973 确定组成</text>
+  <text x="76" y="166" fill="#9aa7b8" font-size="12">高分辨率质谱仪测相对分子质量 + 碳氢分析 → 分子式 C₁₅H₂₂O₅（42个原子怎么排成难题）</text>
+  <circle cx="60" cy="192" r="5" fill="#4a9eff"/><text x="76" y="186" fill="#eaf2ff" font-size="13" font-weight="bold">1975 测定结构</text>
+  <text x="76" y="198" fill="#9aa7b8" font-size="12">波谱数据+化学反应拼出分子片段；X射线衍射技术确定各原子空间位置</text>
+  <circle cx="60" cy="224" r="5" fill="#4a9eff"/><text x="76" y="218" fill="#eaf2ff" font-size="13" font-weight="bold">1978–1984 合成与修饰</text>
+  <text x="76" y="230" fill="#9aa7b8" font-size="12">历时5年多实现青蒿素全合成；衍生药双氢青蒿素、蒿甲醚；1986年获一类新药证书</text>
+  <circle cx="60" cy="256" r="5" fill="#4a9eff"/><text x="76" y="250" fill="#eaf2ff" font-size="13" font-weight="bold">2001/2004 广泛应用</text>
+  <text x="76" y="262" fill="#9aa7b8" font-size="12">WHO推荐青蒿素联合疗法（2001）、列为治疗疟疾首选药物（2004）</text>
+  <text x="76" y="300" fill="#eaf2ff" font-size="13" font-weight="bold">尾声：2015年10月，屠呦呦获诺贝尔生理学或医学奖</text>
+  <text x="76" y="316" fill="#9aa7b8" font-size="12">颁奖词："屠呦呦发现了青蒿素，这种药品有效降低了疟疾患者的死亡率"</text>
+  <text x="76" y="330" fill="#9aa7b8" font-size="12">"对全球的影响及对人类福祉的改善是无可估量的"（教材 p6）</text>
+  <text x="280" y="356" fill="#5a6a7a" font-size="11" text-anchor="middle">青蒿素的发现、研究与应用之旅（教材图1-1-12转绘·鲁科版必修一 p7）</text>
+</svg>
+<p class="figcap">七个节点一条线：从"病"到"药"到"全球救命"——这就是化学研究干活的全流程</p>
+</div>
+<p>这场旅程里藏着第2步那三个特征的"实战版"：</p>
+<ul class="blue">
+<li><b>提取有效成分、获得晶体</b>——在<b>宏观</b>层面拿到那个"管用的物质"；</li>
+<li><b>确定组成（C₁₅H₂₂O₅）、测定结构（X射线衍射定原子位置）</b>——钻到<b>微观</b>层面看它由什么原子构成、怎么排布，并用<b>符号（分子式）</b>表征出来；</li>
+<li><b>全合成、衍生药物</b>——在<b>不同层面创造物质</b>：不光会提天然的了，还能自己造，还造出改良版。</li>
+</ul>
+<div class="key">看完这段，化学的"工作套路"你也能复述了：<mark class="nb">发现现象 → 提取有效成分 → 测组成定结构 → 合成与改造 → 应用</mark>。后面所有章节的实验探究，套路都是它的变体。</div>
+<p class="small">自编验算（标注：自编·非教材内容）：教材说"利用高分辨率质谱仪测得了青蒿素的相对分子质量"。这个数可以用分子式自己算——C₁₅H₂₂O₅ 的相对分子质量 = 15×12.011 + 22×1.008 + 5×15.999 = <b>282.34</b>（sympy符号验算留痕随附件2）。质谱仪当年测出的就是这个量级。</p>
+
+<div class="try">
+<span class="tag">⚡ 30秒自验 3</span>
+<p>"确定组成"这一步把青蒿素写成了 C₁₅H₂₂O₅——这体现了三特征中的哪一个？"全合成"呢？</p>
+<p class="small">答完再看：<span class="ans">C₁₅H₂₂O₅ → 以符号形式表征物质</span>；<span class="ans">全合成 → 在不同层面上创造物质</span>。错位的回第2步三特征卡片对照。</p>
+</div>
+
+<h2><span class="step-tag">第4步</span>这门学问的边界在哪，未来去哪</h2>
+<h3>探索空间：一张越来越大的网</h3>
+<p>现代化学的学科体系非常庞大：在原有的<b>有机化学、无机化学、物理化学、分析化学、高分子化学</b>之上，又长出许多新兴分支，并与<b>材料、资源、能源、生态、环境、医药、生命、国防、信息技术</b>等领域深度交叉融合（p8原文列举）。三个正在发生的前沿：</p>
+<ul class="blue">
+<li><b>微观操控</b>：化学家已能在微观层面上操纵分子和原子，组装分子材料、分子器件和分子机器（教材图1-1-13的"分子齿轮"不是科幻图）；</li>
+<li><b>看清反应</b>：我国化学家设计的<b>"大连相干光源"</b>——90%的仪器设备自主研发，是当今世界上<b>唯一</b>运行在极紫外波段的自由电子激光装置、<b>世界上最亮</b>的极紫外光源，能给分子、原子在化学反应中的过程"拍电影"（p8资料在线）；</li>
+<li><b>解决难题</b>：我国化学家合成了水中<b>超疏油</b>的膜材料，油水混合物过膜时水自由通过、油被阻隔富集——油水分离这种全球性难题有了新武器（p9资料在线·超亲水+超疏油双功能复合体）。</li>
+</ul>
+<p>往后看，化学将在资源能源开发、新型材料制造、环境监测治理、生命科学（分子层次上理解疾病、研制新药）、信息科学（光电子材料、传感与通信技术）上继续发力。教材给现代化学一个定位——<mark class="nb"><b>"中心科学"</b></mark>（p9原话）：它与人类经济社会的各个领域都保持密切联系。你的未来也在这张网里：升学（化学、应用化学、化学工程与工艺、生物工程、药学、材料科学……）、职业（化学家、化学工程师、环境学家、药剂师、教师……）、生活（环保、家居装修、食品加工……处处是化学，p9交流研讨）。</p>
+
+<div class="pit">
+<span class="tag">⚠ 两个坑，进门前填平</span>
+<p><b>坑1：把"化学产品有害"放大成"化学有害"。</b>反过来用第2步的判断标准：化肥救人（图1-1-6）、青蒿素救命、膜材料治污——化学是中性工具，<span class="note-red">评判对象应是"某种物质的使用方式与剂量"，不是这门科学本身。</span></p>
+<p><b>坑2：以为化学主要靠背。</b>本节真正要记的只有三样（定义一句、五里程碑、三特征），而青蒿素之旅告诉你化学的日常是<b>提取→测定→合成</b>的探究活。从下一节起，你会大量碰到"设计实验、验证猜想"的推理题——背，只占很小一部分。</p>
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<div class="key"><span class="big">① 化学是在原子、分子水平上研究物质的组成、结构、性质、转化及其应用的一门基础学科。</span><br>
+<span class="big">② 三特征：宏观微观两个角度认识 · 符号形式表征 · 不同层面创造。</span><br>
+<span class="big">③ 化学研究套路（青蒿素版）：发现 → 提取 → 测组成定结构 → 合成改造 → 应用。</span></div>
+<div class="try">
+<span class="tag">✍ 自测四连</span>
+<p>① 合上眼，把化学的定义一句话默出来（漏了"原子、分子水平"或五个研究对象哪个都不算过）。</p>
+<p>② 反向配对：给年份 1661 / 1803 / 1869，报人名和成就。</p>
+<p>③ 青蒿素"测定结构"用到了 X 射线衍射——它属于"实验与理论并重"里的哪一边？</p>
+<p>④ 判断：<b>"化学只研究自然界里本来就有的物质。"</b>对吗？</p>
+<p class="small">答完再看：① 见上方三句话第①句 ② 1661波义耳·元素概念／1803道尔顿·原子论／1869门捷列夫·周期律 ③ 实验这边（分析测试技术，教材p6） ④ <span class="wrong">错</span>——化学家已创造上亿种物质，大量是自然界原本不存在的新造物质（p5）。</p>
+</div>
+<p class="small">练什么题：教材p9"交流·研讨"口头完成即可；1.1是绪论节，教材本节无笔头习题——巩固方式=把三句话讲给一个没学过化学的人听，讲得通=真懂。</p>
+
+<div class="box kao">
+<b>高考怎么考</b>（考纲级三行内）：1.1为绪论节，高考<b>不直接考</b>本节名词定义；但<b>化学史与化学·社会情境是高频题干素材</b>——青蒿素、人工合成结晶牛胰岛素、国产大科学装置反复以"情境包装"出现在选择题与工业流程题题干。读熟本节=给你攒下一批"读题不慌"的背景板。（本节暂无直接真题锚，宁缺毋编，候采。）
+</div>
+
+<p><b>下一站</b>：1.2 研究物质性质的方法和程序——本节认识了"化学这门学问"，下一节开始学它<b>动手研究</b>的规矩：观察、实验、分类、比较怎么按程序来。</p>
+
+<div class="fig">
+<svg width="560" height="130" viewBox="0 0 560 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图">
+  <defs><marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4a9eff"/></marker></defs>
+  <text x="40" y="24" fill="#7d8a99" font-size="13">第1章 认识化学科学（三节）</text>
+  <rect x="40" y="40" width="128" height="52" rx="8" fill="#223047" stroke="#4a9eff" stroke-width="2"/>
+  <text x="104" y="62" fill="#eaf2ff" font-size="13" text-anchor="middle" font-weight="bold">1.1 走进化学科学</text>
+  <text x="104" y="80" fill="#9ecbff" font-size="11" text-anchor="middle">你在这里 ✓</text>
+  <line x1="170" y1="66" x2="212" y2="66" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr3)"/>
+  <rect x="214" y="40" width="150" height="52" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="289" y="62" fill="#cfe4ff" font-size="12.5" text-anchor="middle" font-weight="bold">1.2 研究物质性质的</text>
+  <text x="289" y="80" fill="#9ecbff" font-size="11" text-anchor="middle">方法和程序（下一件）</text>
+  <line x1="366" y1="66" x2="384" y2="66" stroke="#8fa3b8" stroke-width="2" marker-end="url(#arr3)"/>
+  <rect x="386" y="40" width="134" height="52" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="453" y="62" fill="#cfe4ff" font-size="12.5" text-anchor="middle" font-weight="bold">1.3 物质的量</text>
+  <text x="453" y="80" fill="#9ecbff" font-size="11" text-anchor="middle">化学的"计数单位"</text>
+  <text x="280" y="116" fill="#5a6a7a" font-size="11" text-anchor="middle">先认门（本节）→ 再学方法 → 后上工具</text>
+</svg>
+<p class="figcap">这张图在说什么：1.1是全化学的"总开关"——先知道这门学问是什么，后面两节才有的放矢。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0 · 事实层素材源：鲁科版《普通高中教科书·化学 必修 第一册》（山东科学技术出版社）p2-9 影印逐页对照（智慧平台 contentId=88874a47-cd9b-4dbc-bd48-bb2ea5d63115 · ts=1754905612635 · 图N→正文页N-6 · 影印图存席位私有目录 p01_jc_chem11/；定义原文、五里程碑、1965胰岛素、最高奖七人、青蒿素七节点、C₁₅H₂₂O₅、大连相干光源、油水分离膜、中心科学均逐字/逐项锚定）<br>
+设计标准（黄金样本1.1/3.2定版延续）：零预设 · 一次一步 · 随读随验 ×3 · 卡住有出路 · 收口能复述 · 自编内容全部显式标注 · 教材原文标注页码 · <b>图示必配且坐标脚本生成</b>
+</div>
+
+</div>
+</body>
+</html>
