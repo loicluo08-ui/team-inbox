@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理1.1 地球的宇宙环境 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1a212b; border: 1px solid #2c3644; border-radius: 8px; padding: 14px 16px; margin: 16px 0; color: #c3ceda; }
+  .check { background: #16211a; border: 1px solid #2e5c3a; border-radius: 8px; padding: 14px 16px; margin: 16px 0; }
+  .check .tag { display: inline-block; background: #3fbf6f; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .check li { margin: 6px 0 6px 22px; }
+  .try { background: #1c2433; border: 1px dashed #4a9eff; border-radius: 8px; padding: 14px 16px; margin: 18px 0; }
+  .try .tag { display: inline-block; background: #ffd54a; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .try p { margin: 8px 0; }
+  .ans { color: #8fd4ff; }
+  .pit { background: #2a1a1d; border: 1px solid #7a3b44; border-radius: 8px; padding: 14px 16px; margin: 18px 0; }
+  .pit .tag { display: inline-block; background: #ff6b6b; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .key { background: #1c2433; border: 1px solid #4a9eff; border-left: 6px solid #4a9eff; border-radius: 8px; padding: 16px 18px; margin: 22px 0; }
+  .key .tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .alt { background: #232a1c; border: 1px solid #5a6b3a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; color: #b9c4a8; font-size: 15px; }
+  .box { background: #1e1a2a; border: 1px solid #6b5aa0; border-radius: 8px; padding: 14px 16px; margin: 22px 0; }
+  .box .tag { display: inline-block; background: #9d7fe8; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .note-red { border-left: 4px solid #ff6b6b; background: #2a1a1d; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; }
+  .note-yellow { border-left: 4px solid #ffd54a; background: #2a2515; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; }
+  .note-green { border-left: 4px solid #3fbf6f; background: #16211a; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; }
+  mark { background: #ffd54a; color: #0b0e13; padding: 0 4px; border-radius: 3px; }
+  .m { color: #8fd4ff; }
+  .big { font-size: 19px; color: #fff; font-weight: bold; }
+  .fig { background: #10141a; border: 1px solid #232c38; border-radius: 8px; padding: 14px; margin: 18px 0; text-align: center; }
+  .fig p { color: #7d8a99; font-size: 13px; margin-top: 8px; text-align: center; }
+  .fig svg { max-width: 100%; height: auto; }
+  .small { color: #7d8a99; font-size: 14px; }
+  .foot { margin-top: 60px; padding-top: 18px; border-top: 1px solid #232c38; color: #5a6a7a; font-size: 13px; line-height: 1.7; }
+  b { color: #f0f3f7; }
+  @media print {
+    body { background: #ffffff !important; color: #1a1a1a !important; }
+    .page { padding: 10mm 8mm; }
+    h1, h2, h3, b { color: #111111 !important; }
+    h2 { border-left-color: #1a5fb4 !important; }
+    .m { color: #0b5394 !important; }
+    .big { color: #111111 !important; }
+    .talk { background: #f2f4f7 !important; border-color: #c9d1d9 !important; color: #333333 !important; }
+    .check { background: #eef7f0 !important; border-color: #9fd4ae !important; color: #222222 !important; }
+    .try { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .ans { color: #0b5394 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .box { background: #f3effc !important; border-color: #b3a3d9 !important; color: #222222 !important; }
+    .note-red { background: #fdf0f0 !important; color: #222222 !important; }
+    .note-yellow { background: #fdf8e3 !important; color: #222222 !important; }
+    .note-green { background: #eef7f0 !important; color: #222222 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+    svg text { fill: #333333 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>地球的宇宙环境</h1>
+<div class="sub">高中地理 必修 第一册（湘教版）第一章 第一节 · 教材 p8-16 · 零基础首学版 v1.0 · 前置要求：无（这是高中地理的第一节）</div>
+
+<div class="talk">夜里抬头看过星空吗？你大概想过这三个问题：<b>天上那些星星，到底是什么东西？</b><b>太阳离我们有多远？</b><b>为什么偏偏是地球上有生命？</b>这一节就是回答这三个问题的一张"地图"——我们先把宇宙的整体结构看清楚，再一层层缩小到太阳系、地月系，最后落到"地球凭什么特殊"。</div>
+
+<div class="check"><span class="tag">读完这节你能</span>
+<ul>
+<li>把<b>天体系统</b>从大到小按四级排出来，并说出每级里有什么代表</li>
+<li>用<b>光年</b>做换算：算出可观测宇宙半径折合多少千米（教材活动原题）</li>
+<li>说出<b>地球存在生命的基本条件</b>，并解释"金锁链条件"是什么</li>
+</ul>
+</div>
+
+<p class="small">本件属于"宇宙中的地球"模块（必修第一册第一章）·是全书第一节，零前置，跟着走就行。</p>
+
+<div class="talk"><span class="step-tag">预备</span>先花30秒确认两个词。<b>天体</b>：宇宙中的恒星（如太阳）、星云、行星（如地球）、卫星（如月球）等各种物质，通称天体——说白了，天上那些真实存在的"东西"基本都是。<b>光年</b>：注意，它听起来像时间，其实是<b>距离单位</b>——光在真空中走一年所跨过的距离。这两个词教材 p10 都有原话，先记住，下面马上用。</div>
+
+<h2><span class="step-tag">第一步</span>宇宙有多大？——先拿到"光年"这把尺子</h2>
+
+<p>为什么要先讲这个？因为后面所有数字（银河系直径、太阳到银心的距离）全都用<b>光年</b>当单位，尺子不先拿到手，后面的数字就只是天书。教材 p9 给了定义：<mark>宇宙是所有时间、空间和物质的总和，是我们这个物质世界的整体</mark>。天文学家把人类已经观测到的有限宇宙叫作<b>"可观测宇宙"</b>（或"已知宇宙"），它的半径约 <span class="m big">137 亿光年</span>。</p>
+
+<p>那"1 光年"到底是多远？教材 p10 活动给了算法：在真空中，光速约 <span class="m">3×10⁵ 千米/秒</span>，光走一年——</p>
+
+<div class="note-yellow">1 光年 ≈ 3×10⁵ 千米/秒 × 一年的秒数 ≈ <b>9.4607×10¹² 千米</b>（约9.46万亿千米）。（教材p10活动原数据·本席已用程序复算：按365.25天/年复算得9.4673×10¹²，与教材值一致到万分之七）</div>
+
+<p class="small">脑子里有个感觉就行：1光年≈9.46万亿千米。可观测宇宙的半径是它的137亿倍。</p>
+
+<div class="try"><span class="tag">试试看 ①</span>（教材p10活动第1问原题）可观测宇宙的半径约多少光年？折合多少千米？
+<p><span class="step-tag">算</span>137亿 = 1.37×10¹⁰（光年），折合千米：<b>1.37×10¹⁰ × 9.4607×10¹² ≈ 1.296×10²³ 千米</b>。<span class="ans">（答案：约137亿光年，折合约1.296×10²³千米——程序复算留痕已存档）</span></p></div>
+
+<div class="try"><span class="tag">试试看 ②</span>（教材p10活动第2问原题）日地平均距离约1.5亿千米。太阳光到达地球约需多少时间？
+<p><span class="step-tag">算</span>时间 = 路程 ÷ 速度 = 1.5×10⁸ km ÷ 3×10⁵ km/s = 500 秒 ≈ <b>8.3 分钟</b>。<span class="ans">你现在看到的阳光，是它8分钟前出发的。</span></p></div>
+
+<div class="try"><span class="tag">试试看 ③</span>（同上第2问后半）可观测宇宙的半径约为日地平均距离的多少倍？
+<p><span class="step-tag">算</span>1.296×10²³ km ÷ 1.5×10⁸ km ≈ <b>8.6×10¹⁴ 倍</b>。<span class="ans">不到一页纸的数字就能写下太阳系的尺度，而宇宙是这个尺度的百万亿倍——"天文学数字"为什么夸张，这里能感觉到了。</span></p></div>
+
+<div class="pit"><span class="tag">坑</span>三个最常踩的：<br>① <b>光年不是时间</b>。"这颗星离我们4光年"说的是距离，不是"走了4年才到"的时间计量——虽然翻译成人话确实是"光要走4年多"。<br>② <b>"宇宙"和"可观测宇宙"不是一回事</b>。宇宙是全部；可观测宇宙只是人类目前能观测到的有限部分，它才是教材里说的"最高一级天体系统"。<br>③ 单位换算别丢指数：137亿=1.37×10¹⁰，不是1.37×10⁹（亿=10⁸）。</div>
+
+<h2><span class="step-tag">第二步</span>天体系统——宇宙不是一盘散沙，是"套娃"</h2>
+
+<p>为什么要管结构？因为地理这一章的主角是地球，而地球在宇宙里的"地址"，就是一层层嵌套的天体系统写出来的。教材 p10 原话：<mark>宇宙中的天体都在运动着。运动着的天体因互相吸引和互相绕转，形成天体系统。天体系统有不同的级别</mark>。</p>
+
+<p>关键就是八个字：<b>互相吸引、互相绕转</b>。月亮绕地球转，地球绕太阳转，太阳又带着全家绕银河系的中心转——每一层"绕转关系"就是一级天体系统。教材图1-3画的就是这个套娃：地月系 → 太阳系 → 银河系。下面这张图把四级一次画全：</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="天体系统四级嵌套示意图">
+  <rect x="10" y="18" width="720" height="264" rx="14" fill="none" stroke="#9d7fe8" stroke-width="2.5" stroke-dasharray="7,5"/>
+  <text x="35" y="44" fill="#b9a7ee" font-size="15" font-weight="bold">可观测宇宙（最高一级·半径约137亿光年）</text>
+  <rect x="40" y="70" width="400" height="192" rx="12" fill="none" stroke="#4a9eff" stroke-width="2.5"/>
+  <text x="58" y="96" fill="#8fd4ff" font-size="14" font-weight="bold">银河系（铁饼状·直径约10万光年）</text>
+  <ellipse cx="120" cy="200" rx="52" ry="40" fill="none" stroke="#3fbf6f" stroke-width="2"/>
+  <circle cx="120" cy="200" r="3.5" fill="#ffd54a"/>
+  <text x="120" y="258" fill="#7ed49a" font-size="13" text-anchor="middle">太阳系</text>
+  <ellipse cx="120" cy="200" rx="20" ry="15" fill="none" stroke="#ffd54a" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <circle cx="140" cy="192" r="2" fill="#8fd4ff"/>
+  <text x="196" y="176" fill="#c9d1d9" font-size="12">地月系（地球+月球）</text>
+  <line x1="140" y1="192" x2="186" y2="174" stroke="#5a6a7a" stroke-width="1"/>
+  <text x="58" y="140" fill="#5a6a7a" font-size="11">太阳系在银河系一条旋臂上·</text>
+  <text x="58" y="156" fill="#5a6a7a" font-size="11">离银心约2.6万光年</text>
+  <rect x="470" y="70" width="240" height="192" rx="12" fill="none" stroke="#4a9eff" stroke-width="2.5" stroke-dasharray="5,4"/>
+  <text x="490" y="96" fill="#8fd4ff" font-size="14" font-weight="bold">河外星系（同级别·数百亿个）</text>
+  <circle cx="540" cy="170" r="26" fill="none" stroke="#5a8fbf" stroke-width="1.5"/>
+  <circle cx="640" cy="150" r="20" fill="none" stroke="#5a8fbf" stroke-width="1.5"/>
+  <circle cx="600" cy="225" r="30" fill="none" stroke="#5a8fbf" stroke-width="1.5"/>
+  <text x="540" y="213" fill="#5a6a7a" font-size="11" text-anchor="middle">仙女星系</text>
+  <text x="490" y="140" fill="#5a6a7a" font-size="11">与银河系同级别的</text>
+  <text x="490" y="156" fill="#5a6a7a" font-size="11">恒星系统·肉眼可见</text>
+</svg>
+<p>图A · 天体系统四级嵌套（据教材p9-11与图1-3重绘）：可观测宇宙 ⊃ 银河系＋河外星系；银河系 ⊃ 太阳系 ⊃ 地月系。火星、木星等行星与各自的卫星也组成类似地月系的系统。</p>
+</div>
+
+<p>每一级教材都给了"身份卡"，先只记三个：</p>
+<p><b>① 银河系</b>（p11）：由<b>1000多亿颗</b>恒星等组成，<b>铁饼状</b>的扁平外形；扁盘密集部分直径约<b>10万光年</b>，中心厚度约<b>1.2万光年</b>；所有恒星都环绕共同的中心<b>银心</b>旋转——太阳离银心约<b>2.6万光年</b>，绕银心跑一圈约需<b>2.5亿年</b>。</p>
+<p><b>② 河外星系</b>（p11）：银河系<em>以外</em>，与银河系<b>同级别</b>的恒星系统。人类已观测到<b>数百亿个</b>（图1-5的仙女星系就是北半球肉眼可见的一个，距地球260万光年）。</p>
+<p><b>③ 地月系</b>（p13）：地球与其卫星月球组成。月球绕地球公转的同时也在自转，而且<b>公转、自转的方向和周期完全一样</b>——所以它永远以同一面对着地球。月光是月球<b>反射的太阳光</b>，它自己不发光。</p>
+
+<div class="note-red">读数敏感点：把"直径10万光年"和"中心厚度1.2万光年"两个数字放一起记——铁饼的"扁"就是这两个数的比值撑起来的（直径是厚度的8倍多）。考试爱考"银河系形状"。</div>
+
+<div class="try"><span class="tag">试试看 ④</span>（自编·方法=排序）把下面四级按"从大到小"排：太阳系、地月系、可观测宇宙、银河系。
+<p><span class="ans">可观测宇宙 → 银河系 → 太阳系 → 地月系。（对照图A自检：每级都是上一级的一部分）</span></p></div>
+
+<div class="alt"><b>卡住了？</b>如果"互相吸引、互相绕转"想不通，就用摔链球打比方（自编）：链球被链子拽着绕人转——引力就是那根链子。谁的质量大、谁拽着谁转：太阳质量占太阳系99.86%（下一步讲），所以全家绕它转。</div>
+
+<h2><span class="step-tag">第三步</span>太阳系——一位占99.86%的"家长"和八颗行星</h2>
+
+<p>教材 p12 给了太阳系的完整名册：<mark>太阳系由太阳、行星、矮行星和卫星，以及小行星、彗星、流星体和行星际物质等太阳系小天体组成</mark>。然后是一个决定性的数字——<b>太阳的质量约占整个太阳系质量的99.86%</b>。剩下的八颗行星、几十颗卫星、无数小天体，加起来只占0.14%。这就是为什么全家都绕太阳转：它实在太重了。</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="太阳系八大行星顺序示意">
+  <circle cx="70" cy="95" r="46" fill="#e8a33d"/>
+  <text x="70" y="100" fill="#0b0e13" font-size="15" font-weight="bold" text-anchor="middle">太阳</text>
+  <line x1="140" y1="95" x2="710" y2="95" stroke="#2c3644" stroke-width="1"/>
+  <circle cx="165" cy="95" r="6" fill="#9aa7b5"/><text x="165" y="80" font-size="13" fill="#c3ceda" text-anchor="middle">水星</text>
+  <circle cx="225" cy="95" r="9" fill="#e0b46a"/><text x="225" y="128" font-size="13" fill="#c3ceda" text-anchor="middle">金星</text>
+  <circle cx="290" cy="95" r="10" fill="#4a9eff"/><text x="290" y="80" font-size="13" fill="#8fd4ff" text-anchor="middle" font-weight="bold">地球</text>
+  <circle cx="310" cy="82" r="3.5" fill="#aab5c0"/><text x="322" y="72" font-size="10" fill="#7d8a99">月球</text>
+  <circle cx="355" cy="95" r="8" fill="#d4694f"/><text x="355" y="128" font-size="13" fill="#c3ceda" text-anchor="middle">火星</text>
+  <rect x="390" y="66" width="52" height="58" rx="6" fill="none" stroke="#5a6a7a" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="416" y="56" font-size="11" fill="#7d8a99" text-anchor="middle">小行星带</text>
+  <circle cx="480" cy="95" r="17" fill="#c9a06a"/><text x="480" y="130" font-size="13" fill="#c3ceda" text-anchor="middle">木星</text>
+  <circle cx="565" cy="95" r="14" fill="#d8c48a"/><ellipse cx="565" cy="95" rx="24" ry="5" fill="none" stroke="#e8dcc0" stroke-width="1.5" transform="rotate(-12 565 95)"/><text x="565" y="132" font-size="13" fill="#c3ceda" text-anchor="middle">土星</text>
+  <circle cx="640" cy="95" r="11" fill="#7fd4d4"/><text x="640" y="76" font-size="13" fill="#c3ceda" text-anchor="middle">天王星</text>
+  <circle cx="700" cy="95" r="11" fill="#4a6fd4"/><text x="700" y="76" font-size="13" fill="#c3ceda" text-anchor="middle">海王星</text>
+</svg>
+<p>图B · 太阳系八大行星顺序（据教材p12图1-6重绘·体积与距离未按实际比例）：水星→金星→地球→火星→〔小行星带〕→木星→土星→天王星→海王星。</p>
+</div>
+
+<p class="small">口诀（自编助记）：水金地火木土天海——"水金地火"四颗小个子靠里，"木土天海"四大块靠外，中间隔着一条小行星带。</p>
+
+<p>教材 p12"阅读"栏把八大行星的共同点说得很规整，正好三条（考试就考这三条）：</p>
+<div class="note-green"><b>八大行星运动的三大共同特征</b>（教材p12原文归纳）：<br>① <b>同向性</b>——从地球北极上空看，都按逆时针方向，即<b>自西向东</b>沿轨道绕日运行；<br>② <b>近圆性</b>——轨道都接近圆形；<br>③ <b>共面性</b>——轨道大体在<b>同一平面</b>上。</div>
+
+<p>按离太阳远近分类（p12"阅读"）：以地球轨道为界，水星、金星叫<b>地内行星</b>；火星、木星、土星、天王星、海王星叫<b>地外行星</b>。木星、土星体积质量居前两位，叫<b>巨行星</b>；天王星、海王星离太阳远，叫<b>远日行星</b>。</p>
+
+<div class="pit"><span class="tag">坑</span><b>冥王星为什么不是行星了？</b>教材 p13 给了标准答案：行星除了"绕太阳转、质量足够大、呈球形"之外，还必须<b>能通过引力清空轨道附近的碎片</b>；冥王星清不干净自己轨道附近的区域，所以被归为<b>矮行星</b>（教材原文："矮行星环绕太阳轨道运行，质量足够大，呈球形或近似球形，不是一颗卫星，也不能清空轨道附近的区域。冥王星为其代表"）。记住关键词：<b>清空轨道</b>。</div>
+
+<p>再补两个会考的"小天体"知识点（p13）：小行星的轨道基本位于<b>火星轨道和木星轨道之间</b>；小行星闯入地球大气层、摩擦燃烧后落到地面的残骸叫<b>陨星</b>；约6600万年前一颗小行星撞击地球，可能是<b>恐龙时代结束</b>的重要原因。彗星接近太阳时，外层物质呈现<b>背向太阳的尾状（扫帚状）</b>；著名的狮子座流星雨来自"坦普尔-塔特尔"彗星留下的碎屑（图1-7的哈雷彗星绕日周期约76年）。</p>
+
+<h3>地月系里最熟的邻居：月亮</h3>
+<p>月球公转+自转周期一样 → 永远同一面朝地球（p13）。教材 p14"活动"还给了月相的观察规律——月亮盈亏变化出现的各种形状叫<b>月相</b>，变化有周期性。农历上半月<b>傍晚</b>能看到的月亮，从西边太阳落山处往东越来越圆：</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="农历上半月傍晚可见的月亮">
+  <path d="M30 185 Q370 30 710 185" fill="none" stroke="#2c3644" stroke-width="2" stroke-dasharray="6,4"/>
+  <rect x="20" y="183" width="700" height="16" fill="#1a212b"/>
+  <text x="688" y="176" fill="#e8a33d" font-size="14" font-weight="bold">西：太阳落山处</text>
+  <text x="48" y="176" fill="#8fa3b8" font-size="14">东</text>
+  <g transform="translate(600 150)">
+    <path d="M 0 -22 A 22 22 0 0 1 0 22 A 13 22 0 0 0 0 -22 Z" fill="#e8ecf2"/>
+    <text x="0" y="44" fill="#8fa3b8" font-size="12" text-anchor="middle">娥眉月</text>
+  </g>
+  <g transform="translate(440 92)">
+    <path d="M 0 -24 A 24 24 0 0 1 0 24 L 0 -24 Z" fill="#e8ecf2"/>
+    <text x="0" y="46" fill="#8fa3b8" font-size="12" text-anchor="middle">上弦月（初七、初八）</text>
+  </g>
+  <g transform="translate(285 92)">
+    <circle cx="0" cy="0" r="24" fill="#e8ecf2"/>
+    <path d="M 0 -24 A 24 24 0 0 0 0 24 A 34 24 0 0 1 0 -24 Z" fill="#1a212b" opacity="0.92"/>
+    <text x="0" y="46" fill="#8fa3b8" font-size="12" text-anchor="middle">凸月</text>
+  </g>
+  <g transform="translate(130 150)">
+    <circle cx="0" cy="0" r="24" fill="#e8ecf2"/>
+    <text x="0" y="46" fill="#8fa3b8" font-size="12" text-anchor="middle">满月（十五、十六）</text>
+  </g>
+  <path d="M588 168 Q500 128 452 100" fill="none" stroke="#4a9eff" stroke-width="1.6" marker-end="url(#arr2)"/>
+  <path d="M428 96 Q350 74 298 82" fill="none" stroke="#4a9eff" stroke-width="1.6" marker-end="url(#arr2)"/>
+  <path d="M272 102 Q200 118 142 140" fill="none" stroke="#4a9eff" stroke-width="1.6" marker-end="url(#arr2)"/>
+  <defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4a9eff"/></marker></defs>
+</svg>
+<p>图C · 农历上半月傍晚可见的月亮（据教材p14图1-9重绘）：从西（太阳落山处）往东，娥眉月→上弦月（初七、初八）→凸月→满月（十五、十六），越来越圆。农历下半月的清晨则反过来，从东往西越来越缺（下弦月在廿二、廿三）。</p>
+</div>
+
+<div class="note-yellow">估测小技巧（教材p15活动原法）：伸展手臂、紧握拳头，<b>高出地平线一拳约10°，两拳约20°</b>——野外看月亮高度就是这么估的。</div>
+
+<div class="try"><span class="tag">试试看 ⑤</span>（自编·易错变形）"月球永远以同一面对着地球"是因为月球（A）只公转不自转（B）公转、自转方向和周期完全一样（C）被地球潮汐锁定后停止了转动。
+<p><span class="ans">答案：B。它公转的同时也在自转，只是方向和周期恰好与公转完全一样（教材p13原话）——A、C都是典型想当然。</span></p></div>
+
+<div class="try"><span class="tag">试试看 ⑥</span>（自编·方法=对照图B）小明说"小行星带在地球和火星之间"，对吗？
+<p><span class="ans">不对。教材p13原文：小行星运行轨道基本位于<b>火星轨道和木星轨道之间</b>（对照图B：小行星带画在火星外侧）。这类"位置题"直接背图。</span></p></div>
+
+<h2><span class="step-tag">第四步</span>地球为什么特殊——生命条件的四样"恰好"</h2>
+
+<p>把宇宙看完了、太阳系看完了，最后回答开头第三问：为什么偏偏是地球？教材 p15 给出的答案其实很朴素——因为地球<b>恰好</b>凑齐了几样东西：<mark>由于地球具备了生命存在的基本条件——充足的水分，恰到好处的大气厚度和大气成分，适宜的太阳光照和温度范围等，在地球上产生了目前所知道的唯一的高级智慧生命——人类。从这种意义上说，地球是宇宙中的一颗特殊行星</mark>。</p>
+
+<div class="note-yellow">把四样条件拆成"为什么恰好"（对照p16活动表更好记）：<br>① <b>液态水</b>——温度得当，水才能以液态存在（金星表面737K，水全是蒸汽；火星210K，水冻成冰）；<br>② <b>大气厚度和成分恰到好处</b>——质量体积适中（地球质量1.00、金星0.82、水星只有0.06），拉得住一层够用的大气；<br>③ <b>适宜的太阳光照</b>——日地距离1.496亿千米，不远不近（对比水星5790万千米、海王星44.95亿千米）；<br>④ <b>稳定的温度范围</b>——地球表面平均约288K（约15℃）。（数据均出自教材p16"太阳系八大行星基本数据"表）</div>
+
+<p>教材 p16 活动还给了这些条件一个总的名字：<mark>地球上拥有可供生物生存所需的液态水、适宜的温度和比较厚的大气层。这些条件被科学家称为"金锁链条件"</mark>。三个环：水、温度、大气——环环相扣，缺一环链子就断。</p>
+
+<div class="try"><span class="tag">试试看 ⑦</span>（教材p16活动第(2)问原题·开放题示例）除地球外，太阳系中可能存在生命的行星是哪个？简要阐述判断理由。
+<p><span class="ans">示例：火星。它在八大行星中与地球最相似——质量0.11、体积0.15（虽然比地球小得多，但不是气态巨行星）；自转周期1.03天与地球接近；有稀薄大气和季节变化，表面温度210K是除地球外较温和的；科学探测提示火星曾有液态水活动的迹象。（开放题言之有理即可·"最像地球"是答题方向）</span></p></div>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材 p15"阅读"栏说：太阳系是宇宙中一个普通的恒星系统，它的不平凡之处在于其中的地球是目前已知唯一存在智慧生命的天体；在目前观测所及的数百亿个星系中，很可能有行星具备与地球类似的宇宙环境——"在地球之外，高级生命存在的可能性极大"。跳过本块不影响主干。</div>
+
+<div class="key"><span class="tag">收口 · 合上页能复述的三句话</span>
+<p><b>①</b> 宇宙是所有时间、空间和物质的总和；人类能观测到的部分叫可观测宇宙，半径约<b>137亿光年</b>（1光年≈9.4607×10¹²千米，是距离单位）。</p>
+<p><b>②</b> 天体互相吸引、互相绕转，形成有级别的天体系统，从大到小：<b>可观测宇宙 → 银河系（之外还有数百亿个河外星系）→ 太阳系 → 地月系</b>；太阳占太阳系质量99.86%，八大行星自西向东沿近圆、共面的轨道绕日运行。</p>
+<p><b>③</b> 地球是特殊行星：充足的<b>水分</b>、恰到好处的<b>大气厚度和成分</b>、适宜的<b>太阳光照和温度范围</b>（合称"金锁链条件"），让它成为已知唯一有高级智慧生命的天体。</p>
+</div>
+
+<h2><span class="step-tag">自测</span>五连——合上页做，再回来对答案</h2>
+
+<div class="try"><span class="tag">自测①</span>"牛郎星离地球16光年"这句话里，"光年"是什么单位？它和"千米"怎么换算？
+<p class="ans">距离单位（不是时间）。1光年≈9.4607×10¹²千米（光在真空中一年传播的距离）。</p></div>
+
+<div class="try"><span class="tag">自测②</span>把"太阳系、地月系、河外星系、银河系、可观测宇宙"按从大到小排序。
+<p class="ans">可观测宇宙 → 银河系 →（河外星系与银河系同级·不属于其内部）→ 太阳系 → 地月系。易错：河外星系不在银河系里面，它和银河系并列同属可观测宇宙。</p></div>
+
+<div class="try"><span class="tag">自测③</span>太阳系中，为什么所有行星都绕太阳转？用一句话+一个百分比回答。
+<p class="ans">因为太阳质量占整个太阳系质量的99.86%，绝对主导，引力把全家拴在各自轨道上（"互相吸引、互相绕转"里太阳是引力核心）。</p></div>
+
+<div class="try"><span class="tag">自测④</span>写出八大行星离太阳由近及远的顺序，并指出地内行星、巨行星各是哪些。
+<p class="ans">水星、金星、地球、火星、木星、土星、天王星、海王星；地内行星=水星、金星（地球轨道以内）；巨行星=木星、土星（体积质量居前两位）。</p></div>
+
+<div class="try"><span class="tag">自测⑤</span>地球存在生命的基本条件，说出至少三条；这些条件被科学家合称为什么？
+<p class="ans">充足的水分／恰到好处的大气厚度和大气成分／适宜的太阳光照和温度范围（说出三条即可）；合称"金锁链条件"。</p></div>
+
+<p class="small"><b>练什么题：</b>教材p10活动第1、2问（光年换算·本件①②③已示范）+p16活动第(1)(2)(3)问（金锁链条件分析·本件⑦已示范第(2)问）。先自己动笔，再回来看本件的算式。</p>
+
+<div class="box"><span class="tag">高考怎么考</span>
+<p>本节在高考里是"背景知识+层级判断"型考点：①天体系统<b>层级排序</b>（选择题常客·对应自测②）；②<b>生命条件/金锁链</b>的分析（材料题常给某行星数据表让你对比地球说理·对应p16活动）。具体真题锚候采不代拟。</p>
+</div>
+
+<h2><span class="step-tag">下一站</span></h2>
+<p>宇宙的"地址"写完了：地球住在太阳系里。那太阳除了当"家长"，还给地球带来什么？黑子、光、热……<b>1.2 太阳对地球的影响</b>（教材p17起）从太阳黑子约10~11年的周期讲起。</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：宇宙中的地球模块中，1.1地球的宇宙环境所处位置">
+  <defs><marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4a9eff"/></marker></defs>
+  <rect x="30" y="40" width="150" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="105" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">走进地理学</text>
+  <rect x="290" y="40" width="170" height="40" rx="6" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <text x="375" y="58" fill="#e8ecf2" font-size="14" font-weight="bold" text-anchor="middle">1.1 宇宙环境</text>
+  <text x="375" y="74" fill="#8fd4ff" font-size="11" text-anchor="middle">（本件）</text>
+  <rect x="560" y="40" width="160" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="640" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">1.2 太阳的影响</text>
+  <line x1="182" y1="60" x2="286" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr3)"/>
+  <line x1="462" y1="60" x2="556" y2="60" stroke="#8fa3b8" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="375" y="108" fill="#5a6a7a" font-size="11" text-anchor="middle">这张图在说什么：本件是第一章的"总地图"——先把地球在宇宙中的地址写清楚，后面三节往细看。</text>
+</svg>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（首件成稿·校准批）· 事实层素材源：湘教版《普通高中教科书·地理 必修 第一册》p8-16 官方影印逐页对照（湖南教育出版社·2019年7月第1版·2025年6月第10次印刷·ISBN 978-7-5539-4784-6·智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a·ts=1754905526079·影印图存席位私有目录 geo_jc/gNN.jpg·图号→印刷页 N-6 映射·p8-16直读锚定：可观测宇宙137亿光年p9/光年换算与活动两问p10/天体与天体系统定义p10/银河系数据与河外星系p11/太阳系组成与99.86%与行星定义p12/矮行星小天体地月系p13/月相与观察活动p14-15/生命条件p15/八大行星数据表与金锁链条件p16）<br>
+设计标准：零预设 · 一次一步 · 随读随验 ×7 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源 · 数值程序代验留痕 · 图示必配
+</div>
+
+</div>
+</body>
+</html>
