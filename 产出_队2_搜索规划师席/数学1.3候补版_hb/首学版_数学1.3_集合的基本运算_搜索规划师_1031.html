@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学1.3 集合的基本运算（人教A版）· 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  .check { background: #1c2733; border: 1px solid #2a3b4d; border-radius: 8px; padding: 16px 20px; margin: 18px 0; font-size: 15px; }
+  .talk { background: #232b36; border-left: 3px solid #7a8ba0; padding: 10px 16px; margin: 14px 0; color: #b8c4d2; }
+  .try { background: #14241b; border: 1px solid #2e5c3f; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .try .q { color: #7fd9a4; font-weight: bold; }
+  .try .a { color: #a8b8c8; font-size: 15px; margin-top: 6px; }
+  .pit { background: #2d1a1a; border: 1px solid #6b2f2f; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .pit .tag { color: #ff8a8a; font-weight: bold; }
+  .key { background: #26303d; border-radius: 6px; padding: 12px 16px; margin: 14px 0; border: 1px solid #3a4a5c; }
+  .key::before { content: "📌 记住这块 "; color: #ffd479; font-weight: bold; font-size: 14px; }
+  .box { background: #1f2937; border: 1px solid #44576e; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .box::before { content: "高考怎么考 "; color: #ffd479; font-weight: bold; }
+  .alt { background: #1d2330; border: 1px dashed #4a5a75; border-radius: 8px; padding: 14px 18px; margin: 18px 0; font-size: 15px; color: #a9b6c6; }
+  .alt::before { content: "想多走一步？（可选·跳过不损失主线） "; color: #8fa3b8; font-weight: bold; display: block; margin-bottom: 6px; }
+  mark { background: linear-gradient(transparent 55%, rgba(255,212,121,.35) 55%); color: #e8ecf2; padding: 0 2px; }
+  .nb { border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #ff9d9d; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-style: italic; }
+  .detail { font-size: 15px; color: #9fb0c0; }
+  .fig { margin: 18px auto; text-align: center; }
+  .figcap { font-size: 13px; color: #7d8a99; margin-top: 6px; }
+  .small { font-size: 14px; color: #8fa3b8; }
+  .m { font-family: "Times New Roman", "STIX Two Math", serif; font-style: italic; }
+  .wrong { color: #ff8a8a; text-decoration: line-through; }
+  .ans { color: #7fd9a4; }
+  ul-blue { list-style: none; }
+  @media print {
+    body { background: #fff !important; color: #111 !important; }
+    .page { padding: 0 !important; max-width: 100% !important; }
+    h1, h2, h3 { color: #111 !important; }
+    .step-tag { background: #dbe9ff !important; color: #111 !important; border: 1px solid #4a9eff; }
+    mark { background: rgba(255,212,0,.35) !important; color: #111 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .check, .try, .pit, .key, .box, .alt, .talk { background: #f5f7fa !important; color: #222 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; border-color: #ddd !important; }
+    .note-red { color: #b02020 !important; }
+    .sub, .figcap, .small, .detail { color: #444 !important; }
+  }
+</style>
+</head>
+<body><div class="page">
+
+<h1>数学1.3 集合的基本运算</h1>
+<div class="sub">人教A版 必修第一册 · 第一章 · 零基础首学版 v1.0 ｜本件属于「集合与常用逻辑用语」模块——上一站：<span class="nb">1.2 集合间的基本关系</span>（⊆会判断了？本节把"比较"升级为"运算"）。下一站预告：1.4 充分条件与必要条件（教材p17）。</div>
+
+<div class="check">
+<b>读完这节你能做到：</b>
+① 用 <span class="m">∪</span> 和 <span class="m">∩</span> 两个符号把两个集合"合成一个新集合"，并能<b>解释</b>"或"与"且"的一字之差；
+② 会算<b>补集</b>，并说清"离开全集谈补集没有意义"；
+③ 看到 <span class="m">A∩B=A</span> 立刻反应出 <b>A⊆B</b>（1.2与本节打通）；
+④ 会用容斥公式数人数：card(A∪B)=card(A)+card(B)−card(A∩B)。
+</div>
+
+<p>教材开场只有一句话（p10照录）：<mark>我们知道，实数有加、减、乘、除等运算。集合是否也有类似的运算呢？</mark>——1.1我们学会了"把对象装进集合"，1.2学会了"比较两个集合谁大谁小"，这一节学最后一块拼图：<b>两个集合怎么"算"出一个新集合</b>。就像数能加减，集合也能"合并""取公共""取反面"。三样武器：并集、交集、补集。走起。</p>
+
+<h2><span class="step-tag">第①站</span> 并集——"全都进来"</h2>
+<p>教材观察框（p10照录）：<mark>(1) A={1,3,5}，B={2,4,6}，C={1,2,3,4,5,6}；(2) A={x|x是有理数}，B={x|x是无理数}，C={x|x是实数}。</mark> 类比实数的加法，你能说出C与A、B的关系吗？——两个例子里，C都等于"A的元素<b>加</b>B的元素"打包在一起。</p>
+<p>教材定义（p10）：<mark>由所有属于集合A<b>或</b>属于集合B的元素组成的集合，称为A与B的并集（union set），记作A∪B（读作"A并B"），即 A∪B={x|x∈A，或x∈B}。</mark></p>
+<p class="detail">"或"字的讲究：数学里的"或"是<b>三选二都行</b>——只属于A的算，只属于B的算，两边都属于的也算（而且<b>只写一次</b>）。这比日常语言的"或"（要么A要么B）更宽。</p>
+
+<div class="fig">
+<svg width="420" height="150" viewBox="0 0 420 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="并集Venn图">
+  <ellipse cx="160" cy="70" rx="115" ry="55" fill="#4a9eff" fill-opacity="0.45" stroke="#7fb8ff" stroke-width="2"/>
+  <ellipse cx="260" cy="70" rx="115" ry="55" fill="#4a9eff" fill-opacity="0.30" stroke="#7fb8ff" stroke-width="2"/>
+  <text x="120" y="75" fill="#d8dee6" font-size="16" font-style="italic">A</text>
+  <text x="300" y="75" fill="#d8dee6" font-size="16" font-style="italic">B</text>
+  <text x="210" y="140" fill="#8fa3b8" font-size="14" font-style="italic">A∪B（两瓣全着色）</text>
+</svg>
+<div class="figcap">据教材图1.3-1重绘（坐标程序生成）</div>
+</div>
+
+<p><b>教材例1（p10照录）</b>：设A={4,5,6,8}，B={3,5,7,8}，求A∪B。<br>解：<span class="m">A∪B</span>=<span class="ans">{3,4,5,6,7,8}</span>（程序代验✓）。</p>
+<p><b>教材例2（p10照录）</b>：设A={x|−1&lt;x&lt;2}，B={x|1&lt;x&lt;3}，求A∪B。<br>解：两个区间手拉手拼成<span class="ans">{x|−1&lt;x&lt;3}</span>（数轴上直观：图1.3-2，程序代验✓）。</p>
+<div class="key">教材框注（p10）：<mark>在求两个集合的并集时，它们的公共元素在并集中只能出现一次。如元素5，8。</mark>——1.1的互异性在运算里继续管账：合并不是抄两遍名单，是合并成一个无重复的名单。</div>
+
+<div class="try">
+<span class="q">验一验①（30秒）：{1,2}∪{2,3}有几个元素？</span>
+<div class="a">答案：<span class="ans">3个——{1,2,3}。</span>注意不是4个：公共元素2只写一次（框注纪律）。<span class="note-red">把2写两遍是本站第一坑。</span></div>
+</div>
+
+<h2><span class="step-tag">第②站</span> 交集——"只留公共的"</h2>
+<p>教材思考框（p11照录）：<mark>(1) A={2,4,6,8,10}，B={3,5,8,12}，C={8}；(2) A={x|x是立德中学今年在校的女同学}，B={x|x是立德中学今年在校的高一年级同学}，C={x|x是立德中学今年在校的高一年级女同学}。</mark>——这次C不是"全都要"，是<b>两头都占</b>的那部分。</p>
+<p>教材定义（p11）：<mark>由所有属于集合A<b>且</b>属于集合B的元素组成的集合，称为A与B的交集（intersection set），记作A∩B（读作"A交B"），即 A∩B={x|x∈A，且x∈B}。</mark></p>
+<div class="fig">
+<svg width="420" height="150" viewBox="0 0 420 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="交集Venn图">
+  <ellipse cx="160" cy="70" rx="115" ry="55" fill="none" stroke="#7fb8ff" stroke-width="2"/>
+  <ellipse cx="260" cy="70" rx="115" ry="55" fill="none" stroke="#7fb8ff" stroke-width="2"/>
+  <path d="M210,24 A115,55 0 0 1 210,116 A115,55 0 0 1 210,24 Z" fill="#4a9eff" fill-opacity="0.45"/>
+  <text x="120" y="75" fill="#d8dee6" font-size="16" font-style="italic">A</text>
+  <text x="300" y="75" fill="#d8dee6" font-size="16" font-style="italic">B</text>
+  <text x="210" y="75" fill="#eaf3ff" font-size="13" font-style="italic" text-anchor="middle">A∩B</text>
+  <text x="210" y="140" fill="#8fa3b8" font-size="14">中间月牙形两瓣公共区着色</text>
+</svg>
+<div class="figcap">据教材图1.3-3重绘（坐标程序生成）</div>
+</div>
+<p><b>教材例3（p11照录）</b>：立德中学开运动会，A={x|x是高一年级参加百米赛跑的同学}，B={x|x是高一年级参加跳高比赛的同学}，求A∩B。<br>解：<span class="ans">A∩B={x|x是高一年级既参加百米赛跑又参加跳高比赛的同学}。</span></p>
+<p><b>教材例4（p12照录）</b>：设平面内直线l₁上点的集合为L₁，直线l₂上点的集合为L₂，试用集合运算表示位置关系。<br>解：<b>相交</b>：L₁∩L₂={点P}；<b>平行</b>：L₁∩L₂=∅；<b>重合</b>：L₁∩L₂=L₁=L₂。运算符号成了"翻译位置关系"的语言——这就是集合的语言价值。</p>
+<div class="key">教材思考（p12照录）：<mark>A∩A=A；A∩∅=∅。</mark>和上一站对比着背：<b>∪是"并拢"（越并越大），∩是"筛选"（越筛越小）</b>——A∪∅=A（并入空集白并），A∩∅=∅（跟空集找公共当然啥也没有）。</div>
+
+<div class="try">
+<span class="q">验一验②（30秒·易错变形）：已知 A∩B=A，A与B什么关系？</span>
+<div class="a">答案：<span class="ans">A⊆B。</span>"筛完还是自己"说明A的元素全部都在B里——1.2的包含关系直接回来了。<span class="note-red">反过来A∪B=A说明什么？B⊆A。四条关系式一起记：A∩B=A⟺A⊆B；A∪B=B⟺A⊆B。</span></div>
+</div>
+
+<h2><span class="step-tag">第③站</span> 全集与补集——"站在哪个范围里说'其余'"</h2>
+<p>教材引入（p12）：从小到大，数的研究范围一路扩充：自然数→正分数→有理数→实数。<b>同一个方程，范围不同答案不同</b>：方程(x−2)(x²−3)=0，在有理数范围内解集{2}；在实数范围内解集{2, √3, −√3}。所以谈"其余的数"之前，必须先说清<b>站在哪个范围里谈</b>。</p>
+<p>教材定义（p12）：<mark>如果一个集合含有我们所研究问题中涉及的所有元素，那么就称这个集合为全集（universal set），通常记作U。</mark>（框注：通常也把给定的集合作为全集。）</p>
+<p>教材定义（p13）：<mark>对于一个集合A，由全集U中<b>不属于</b>集合A的所有元素组成的集合，称为A相对于全集U的补集（complementary set），记作∁<sub>U</sub>A，即 ∁<sub>U</sub>A={x|x∈U，且x∉A}。</mark></p>
+<div class="fig">
+<svg width="420" height="170" viewBox="0 0 420 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="补集Venn图">
+  <rect x="30" y="15" width="360" height="130" rx="10" fill="#4a9eff" fill-opacity="0.40" stroke="#7fb8ff" stroke-width="2"/>
+  <ellipse cx="210" cy="80" rx="80" ry="45" fill="#14171c" stroke="#7fb8ff" stroke-width="2"/>
+  <text x="210" y="85" fill="#d8dee6" font-size="16" font-style="italic" text-anchor="middle">A</text>
+  <text x="60" y="40" fill="#eaf3ff" font-size="14" font-style="italic">∁U A</text>
+  <text x="210" y="162" fill="#8fa3b8" font-size="14" text-anchor="middle">矩形=全集U，圆=A，圆外着色区=∁U A</text>
+</svg>
+<div class="figcap">据教材图1.3-4重绘（坐标程序生成）</div>
+</div>
+<p><b>教材例5（p13照录）</b>：U={x|x是小于9的正整数}，A={1,2,3}，B={3,4,5,6}，求∁<sub>U</sub>A，∁<sub>U</sub>B。<br>解：U={1,2,3,4,5,6,7,8}，所以∁<sub>U</sub>A=<span class="ans">{4,5,6,7,8}</span>，∁<sub>U</sub>B=<span class="ans">{1,2,7,8}</span>（程序代验✓）。</p>
+<p><b>教材例6（p13照录）</b>：U={x|x是三角形}，A={x|x是锐角三角形}，B={x|x是钝角三角形}，求A∩B，∁<sub>U</sub>(A∪B)。<br>解：一个三角形不可能既锐角又钝角→A∩B=<span class="ans">∅</span>；锐角或钝角三角形的补集=剩下的那类=<span class="ans">∁<sub>U</sub>(A∪B)={x|x是直角三角形}</span>。</p>
+
+<div class="try">
+<span class="q">验一验③（30秒·易错变形）：∁<sub>R</sub>Q=？其中Q=有理数集，R=实数集。另外，∁<sub>U</sub>∅=？∁<sub>U</sub>U=？</span>
+<div class="a">答案：<span class="ans">∁<sub>R</sub>Q={x|x是无理数}</span>（教材p10观察(2)的呼应：有理数∪无理数=实数）；<span class="ans">∁<sub>U</sub>∅=U；∁<sub>U</sub>U=∅</span>——空集的补是全部，全部的补是空集，互为反面。<span class="note-red">谈补集忘了说全集U，等于问"其余的人"却不说"哪屋里的人"——每道补集题先找U。</span></div>
+</div>
+
+<h2><span class="step-tag">第④站</span> 教材练习过一遍（p12-13）</h2>
+<p><b>p12练习1</b>：A={3,5,6,8}，B={4,5,7,8}→A∩B=<span class="ans">{5,8}</span>，A∪B=<span class="ans">{3,4,5,6,7,8}</span>（程序代验✓）。<br>
+<b>p12练习2</b>：A={x|x²−4x−5=0}={−1,5}，B={x|x²=1}={−1,1}→A∪B=<span class="ans">{−1,1,5}</span>，A∩B=<span class="ans">{−1}</span>（解方程→运算，两步流水线，程序代验✓）。<br>
+<b>p12练习3</b>：A={x|x是等腰三角形}，B={x|x是直角三角形}→A∩B=<span class="ans">{x|x是等腰直角三角形}</span>，A∪B=<span class="ans">{x|x是等腰三角形或直角三角形}</span>。<br>
+<b>p12练习4</b>：A={x|x是幸福农场的汽车}，B={x|x是幸福农场的货车}→A∪B=<span class="ans">{x|x是幸福农场的汽车}</span>（货车本来就是汽车的一种，B⊆A，并完还是A——第②站验一验②的现实施工）。</p>
+<p><b>p13练习1</b>：U={1,…,7}，A={2,4,5}，B={1,3,5,7}→A∩(∁<sub>U</sub>B)=<span class="ans">{2,4}</span>；(∁<sub>U</sub>A)∩(∁<sub>U</sub>B)=<span class="ans">{6}</span>（程序代验✓）。<br>
+<b>p13练习2</b>：S={x|x是平行四边形或梯形}，A={x|x是平行四边形}，B={x|x是菱形}，C={x|x是矩形}→B∩C=<span class="ans">{x|x是正方形}</span>；∁<sub>A</sub>B、∁<sub>S</sub>A按各自全集去挖。<br>
+<b>p13练习3（重要·阴影题）</b>：用阴影表示(1)(∁<sub>U</sub>A)∩(∁<sub>U</sub>B)；(2)(∁<sub>U</sub>A)∪(∁<sub>U</sub>B)。</p>
+<div class="try">
+<span class="q">验一验④（1分钟·德摩根律现场）：p13练习3的两块阴影，跟"先并后补""先补后并"什么关系？</span>
+<div class="a">答案：<span class="ans">(1)(∁<sub>U</sub>A)∩(∁<sub>U</sub>B)=U中既不在A又不在B的部分=U−(A∪B)=∁<sub>U</sub>(A∪B)；(2)(∁<sub>U</sub>A)∪(∁<sub>U</sub>B)=U−(A∩B)=∁<sub>U</sub>A∩B取反……准确说=∁<sub>U</sub>(A∩B)。</span>两条合称<b>德摩根律</b>：补的交=交的补；补的并=并的补（程序代验✓）。<span class="note-red">口诀：补后交 = 交后补；补后并 = 并后补——"横竖都反，只差中间"。</span></div>
+</div>
+
+<h2><span class="step-tag">第⑤站</span> 习题1.3分层精选（p14）＋答题现场</h2>
+<h3>复习巩固1（不等式集的运算·含本节最活教材）</h3>
+<p>A={x|2≤x&lt;4}，B={x|3x−7≥8−2x}。先解B：3x−7≥8−2x⟹5x≥15⟹<b>B={x|x≥3}</b>。<br>
+A∩B=<span class="ans">[3,4)={x|3≤x&lt;4}</span>（不是∅！<span class="note-red">把5x≥15解成x≥5的自觉举手——移项没变号，代验工单把这道也抓出来了</span>）；A∪B=<span class="ans">{x|x≥2}</span>（因为[3,4)×[3,+∞)……准确说A⊆B不成立，但B把A"吞"了大半：并完=从2起往右全部）。<span class="m">A∩B=A⟺A⊆B</span>这种"运算回读关系"是选填命题点（程序代验✓）。</p>
+<h3>复习巩固2（四连运算·注意分配律味道）</h3>
+<p>A={x|x是小于9的正整数}={1,…,8}，B={1,2,3}，C={3,4,5,6}：A∩B=<span class="ans">{1,2,3}</span>；A∩C=<span class="ans">{3,4,5,6}</span>；A∩(B∪C)=<span class="ans">{1,2,3,4,5,6}</span>；A∪(B∩C)=<span class="ans">{1,…,8}=A</span>（因为B∩C={3}⊆A——先算括号里，再算外面，跟数运算一个脾气，程序代验✓）。</p>
+<h3>综合运用4（区间四连·德摩根实操）</h3>
+<p>A={x|3≤x&lt;7}，B={x|2&lt;x&lt;10}。注意<b>A⊆B</b>（[3,7)整个躺在(2,10)里）！所以A∩B=A=[3,7)，A∪B=B=(2,10)。四个量：∁<sub>R</sub>(A∪B)=<span class="ans">(−∞,2]∪[10,+∞)</span>；∁<sub>R</sub>(A∩B)=<span class="ans">(−∞,3)∪[7,+∞)</span>；(∁<sub>R</sub>A)∩B=<span class="ans">(2,3)∪[7,10)</span>；A∪(∁<sub>R</sub>B)=<span class="ans">(−∞,2]∪[3,7)∪[10,+∞)</span>（程序代验✓✓✓✓）。<span class="note-red">端点是本类题全部的坑：3在A里（≤），7不在A里（&lt;）——照抄原区间的口。</span></p>
+<h3>综合运用5（含参运算·1.2互异性续演）</h3>
+<p>A={x|(x−3)(x−a)=0}={3,a}，B={x|(x−4)(x−1)=0}={1,4}，求A∪B，A∩B。<b>先问a：</b>a=1时A={1,3}，A∩B={1}；a=4时A={3,4}，A∩B={4}；a=3时A={3}（<span class="note-red">互异性：3和a重了只写一次！</span>），A∩B=∅；其余a∉{1,4}且a≠3时，A={3,a}与B无公共元素，A∩B=∅、A∪B={1,3,4,a}（程序代验✓）。</p>
+<h3>拓广探索6（补集反推·结构题）</h3>
+<p>U=A∪B={x∈N|0≤x≤10}，A∩(∁<sub>U</sub>B)={1,3,5,7}，求B。<b>读式子</b>：{1,3,5,7}在A里、在U里、但不在B里；而U=A∪B说明U里没有"A外的游离元素"。于是把{1,3,5,7}从U里抠掉，剩下的只能全归B：<span class="ans">B={0,2,4,6,8,9,10}</span>（程序代验✓·取A={1,3,5,7}∪{0,2}即可验证唯一性）。</p>
+
+<h2><span class="step-tag">第⑥站</span> 数个数神器：容斥公式（阅读与思考·p15-16）</h2>
+<p>教材给出记号：<mark>card(A)表示有限集合A中元素的个数</mark>（card=英文cardinal"基数"的缩写）。超市问题：第一次进货A=圆珠笔,钢笔,橡皮,笔记本,方便面,汽水（6种）；第二次B=圆珠笔,铅笔,火腿肠,方便面（4种）。两次一共几种？6+4=10？<span class="wrong">错</span>——圆珠笔和方便面被数了两次！card(A∪B)=8，card(A∩B)=2。</p>
+<div class="key">一般地：<mark>card(A∪B)=card(A)+card(B)−card(A∩B)</mark>。运动会问题：田径8人＋球类12人−两项都参加3人=<span class="ans">17人</span>（程序代验✓）。减掉的那个"重数"，正是被数了两次的公共部分——互异性在计数的投影。</p></div>
+<p>教材Venn图解法（p16）：先在A∩B区域填3，再在A独有区填5（=8−3）、B独有区填9（=12−3），三块相加17。教材框注特别提醒：图里的3、5、9是<b>个数</b>不是元素。</p>
+
+<h2>收口：合上件，这三句话还在吗</h2>
+<div class="key">
+① 这节定义了三样运算：<b>并∪（或·全都要·公共只写一次）、交∩（且·只留公共）、补∁<sub>U</sub>（U中不在A的·先说全集）</b>；<br>
+② 怎么用：解不等式→区间四连（先判断A、B谁包含谁再动手）；A∩B=A⟺A⊆B（运算回读关系）；数人数用card(A∪B)=card(A)+card(B)−card(A∩B)；<br>
+③ 最容易错：并集写重公共元素（互异性）、解不等式移项出错还忘验端点、补集不先报全集、(∁<sub>U</sub>A)∩(∁<sub>U</sub>B)与∁<sub>U</sub>(A∩B)记反——口诀"补后交=交后补"。
+</div>
+
+<h2>自测五连——合上件做，再回来对答案</h2>
+<div class="pit"><span class="tag">①</span> {a,b,c}∪{a}=？ <span class="small">（并集·公共只写一次）</span></div>
+<div class="pit"><span class="tag">②</span> {x|x²=4}∩{x|0&lt;x&lt;3}=？ <span class="small">（先解方程再筛·负数去哪了）</span></div>
+<div class="pit"><span class="tag">③</span> U={1,2,3,4,5}，A={2,4}，A∩(∁<sub>U</sub>A)=？ <span class="small">（补集性质）</span></div>
+<div class="pit"><span class="tag">④</span> 沿用p13练习1数据：U={1,…,7}，A={2,4,5}，B={1,3,5,7}，求(∁<sub>U</sub>A)∪(∁<sub>U</sub>B)。 <span class="small">（德摩根律）</span></div>
+<div class="pit"><span class="tag">⑤</span> M={x|(x−1)(x−2)=0}，N={1,2}，求M∩N与M∪N。 <span class="small">（先化简再运算）</span></div>
+<p class="detail">答案：<b>①</b> {a,b,c}（a只写一次）；<b>②</b> {x|x²=4}={−2,2}，与(0,3)取交→<span class="ans">{2}</span>（−2被"0&lt;x"筛掉了）；<b>③</b> <span class="ans">∅</span>（A与自己的补没有公共元素）；<b>④</b> 德摩根律：(∁<sub>U</sub>A)∪(∁<sub>U</sub>B)=∁<sub>U</sub>(A∩B)=U−{5}=<span class="ans">{1,2,3,4,6,7}</span>（程序代验✓）；<b>⑤</b> M={1,2}=N，M∩N=<span class="ans">{1,2}</span>，M∪N=<span class="ans">{1,2}</span>。</p>
+
+<div class="box">
+<b>考什么：</b>集合运算小题（∪/∩/∁混合·与不等式、方程解集结合）——全国卷<b>年年必1道</b>，单独考"子集个数/包含关系"近年罕见（卷源池v2.6考情口径）。<br>
+<b>怎么考：</b>选填第1-2题位：给两个集合求A∩B或A∪B（如2024新课标Ⅰ卷T1·交集运算·答案B·卷源池v2.6已验两源）；大题中作工具语言（解集运算表述）。<br>
+<b>真题锚：</b>2024新课标Ⅰ卷·T1（池v2.6·可验证直链在案·eol卷面+文字解析双源）——原题照录与四段式讲解候卷源池批2扩容版（池外不代拟）。
+</div>
+
+<p class="small"><b>下一站：</b>1.4 充分条件与必要条件（教材p17节名页——本节影印边界已实锚）。集合的语言到逻辑的语言，就隔一个"若p则q"。</p>
+
+<div class="fig">
+<svg width="640" height="110" viewBox="0 0 640 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图">
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#4a9eff"/></marker></defs>
+  <rect x="18" y="30" width="120" height="46" rx="8" fill="#1c2733" stroke="#3a4a5c"/>
+  <text x="78" y="50" fill="#d8dee6" font-size="13" text-anchor="middle">1.1 集合的概念</text>
+  <text x="78" y="67" fill="#8fa3b8" font-size="11" text-anchor="middle">元素与∈</text>
+  <rect x="170" y="30" width="130" height="46" rx="8" fill="#1c2733" stroke="#3a4a5c"/>
+  <text x="235" y="50" fill="#d8dee6" font-size="13" text-anchor="middle">1.2 基本关系</text>
+  <text x="235" y="67" fill="#8fa3b8" font-size="11" text-anchor="middle">包含⊆ 相等=</text>
+  <rect x="332" y="22" width="140" height="60" rx="8" fill="#26405c" stroke="#4a9eff" stroke-width="2"/>
+  <text x="402" y="46" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">1.3 基本运算</text>
+  <text x="402" y="66" fill="#9fc5ff" font-size="11" text-anchor="middle">∪ ∩ ∁（你在这）</text>
+  <rect x="504" y="30" width="120" height="46" rx="8" fill="#1c2733" stroke="#3a4a5c"/>
+  <text x="564" y="50" fill="#d8dee6" font-size="13" text-anchor="middle">1.4 充要条件</text>
+  <text x="564" y="67" fill="#8fa3b8" font-size="11" text-anchor="middle">若p则q</text>
+  <line x1="140" y1="53" x2="166" y2="53" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="302" y1="53" x2="328" y2="53" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="474" y1="53" x2="500" y2="53" stroke="#8fa3b8" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+</svg>
+<div class="figcap">本节位置图：比较（1.2）之后、逻辑（1.4）之前的"运算站"</div>
+</div>
+
+<div class="alt">
+<p>① 三集合容斥（教材p16探究题的答案）：card(A∪B∪C)=card(A)+card(B)+card(C)−card(A∩B)−card(B∩C)−card(A∩C)+card(A∩B∩C)——每块"被数重的"依次减回去、被减狠了的最后加回来（程序代验✓实例：A=B=C={1}时1=3−3+1）。② 无限集比个数（教材p16思考题）：A={1,2,3,…}与B={2,4,6,…}没法数，但可以<b>配对</b>——A的n配B的2n，一一对应谁也不多谁不少，数学上说它们"一样多"。这个"配对定多少"的思想是康托尔集合论的起点，大学数学分析的必修前菜。③ 每小时到达地球的太阳辐射按太阳常数折算约1.75×10¹⁴度电（湘教地理1.2同款计算·跨科联动）。
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2首件·队2席单会话单件·群令v7令二一节一会话认领在案：会话=搜索规划师·节=数学1.3） · 事实层素材源：人教A版必修第一册 <b>官方transcode直链影印逐页对照</b>（国家中小学智慧教育平台 contentId=6e764703-6e5e-4ea3-9462-34652c2678ef · ts=1787023173400 实时取 · 图17-23→印刷页10-16 · 边界锚图24=p17=1.4节名页·页脚实锚 · 影印jpg存席位私有目录 p02_math/m17-m24.jpg 不入仓）；教材全部例题（例1-例6）、练习（p12四题+p13三题）、习题1.3（复习巩固1-3/综合运用4-5/拓广探索6）、阅读与思考（card记号/容斥公式/运动会17人/Venn图解法5-3-9）逐块照录锚定；数学断言经sympy 1.14.0机器代验43项全PASS（批次1·2026-10-31·数学34项+地理11项双件同单·脚本与输出存席位私有目录v5_batch2代验/）·代验即纠错实录4处（不等式移项/区间端点/有效数字口径）·真题锚：2024新课标Ⅰ卷T1（卷源池v2.6已验·答案B·两源在案）· 出品席：队2席（搜索规划师）<br>
+设计标准：零预设 · 一次一步 · 随读随验 ×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源 · 数值程序代验留痕 · 图示必配（坐标程序生成） · 打印层内置（@media print·print_background直转）
+</div>
+
+</div>
+</body>
+</html>
