@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学1.1 集合的含义与表示 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b2029; border: 1px solid #2a323e; border-radius: 8px; padding: 18px 20px; margin: 16px 0; }
+  .talk .q { color: #ffc94d; font-weight: bold; }
+  .check { background: #16211a; border: 1px solid #2d5a3d; border-radius: 8px; padding: 16px 20px; margin: 18px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; font-size: 14px; }
+  .check p { margin: 8px 0; }
+  .alt { background: #1f1b24; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .key { background: #241f14; border-left: 4px solid #ffc94d; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+  .key b { color: #ffc94d; }
+  .m { font-family: "Times New Roman", serif; font-style: italic; color: #fff; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; font-family: "Times New Roman", serif; color: #eef2f7; font-size: 16.5px; }
+  .small { font-size: 14px; color: #8a96a5; }
+  .ans { color: #58d68d; }
+  .wrong { color: #ff7b72; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a323e; padding: 9px 12px; text-align: left; }
+  th { background: #1b2029; color: #fff; }
+  .foot { margin-top: 50px; padding-top: 20px; border-top: 1px solid #2a323e; color: #7d8a99; font-size: 14px; }
+  em { color: #4a9eff; font-style: normal; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>集合：数学给你的第一个"容器"</h1>
+<div class="sub">数学必修一 · 1.1 集合的含义与表示 · 零基础首学版 · 预计用时 40 分钟 · 全程不需要看视频、不需要翻课本</div>
+
+<div class="talk">
+<p>先别管数学。回答我三个问题——关于你手机里的<span class="q">歌单</span>：</p>
+<p>① 周杰伦的歌在不在你的歌单里？——你翻一下就能回答，<em>能</em>或<em>不能</em>，不会说"大概在"。</p>
+<p>② 同一首歌会不会在歌单里出现两次？——不会，重复添加它还是一首。</p>
+<p>③ 先加哪首、后加哪首，影响这是"你的歌单"吗？——不影响，顺序无所谓。</p>
+<p>如果你三个问题都答得上来，恭喜：<span class="q">你已经用了十几年的"集合"了</span>。这一节，数学只做一件事——把你天天在用的"一堆东西"，变成一个可以精确讨论、可以参与运算的正式对象。</p>
+</div>
+
+<h2><span class="step-tag">第1步</span>为什么数学非要"打包"？</h2>
+<p>解方程 <span class="m">x²−3x+2=0</span>，解出来是 <span class="m">x=1</span> 和 <span class="m">x=2</span>。</p>
+<p>现在问题来了：我想说"<b>所有的解</b>"。如果不用任何新工具，我只能含含糊糊地说"1和2这两个解"——注意，这是<b>两句话</b>（1是解，2是解），不是<b>一个东西</b>。</p>
+<p>数学不满意这个。因为接下来你会遇到这样的问题：</p>
+<div class="box">不等式 <span class="m">x²−3x+2&lt;0</span> 的所有解，和方程 <span class="m">x²−3x+2=0</span> 的所有解，是什么关系？</div>
+<p>你发现没有——要回答它，"所有的解"必须先成为一个<b>可以被拿出来比较的东西</b>。两句话没法比较，一个东西才能。</p>
+<p>所以数学发明了<span class="step-tag" style="background:#ffc94d">打包</span>：把一堆对象装进一个花括号，从此"它们"变成"它"。</p>
+<div class="box">方程的解打包成：<span class="m">{1, 2}</span>　——念作"集合1, 2"，它是一个对象了</div>
+<div class="key">这一步你在做的事，叫<b>把"多"封装成"一"</b>。歌单是歌的集合，购物车是商品的集合，微信群是人的集合。数学只是第一个给"打包"发正式身份证的学科。</div>
+
+<div class="check">
+<span class="tag">⚡ 30秒自验 1</span>
+<p>"今年你考试的所有科目"——这句话说的是<b>一个东西</b>还是<b>好几句话</b>？把它打包，试着写出来。</p>
+<p class="small">（往下看之前先自己写。写什么都行，比如把科目名一个个列在花括号里——写了就对了，下一节教你标准写法。）</p>
+</div>
+
+<h2><span class="step-tag">第2步</span>什么才配叫集合？三条准入规则</h2>
+<p>不是任何"一堆东西"都有资格被数学打包。规则就三条，每条你用歌单验证一遍就懂。</p>
+
+<h3>规则一：确定性——"在不在"必须能回答</h3>
+<p>问："咱们班的高个子同学"是一个集合吗？</p>
+<p>麻烦来了：1米75算高吗？1米74呢？<span class="wrong">没法判定</span>。每个人都可能被划进来又被划出去，"在不在"答不死。</p>
+<p>换一个说法："咱们班身高超过175的同学"——每个人要么超过要么不超过，<span class="ans">人人可判定</span>。这个就<b>是</b>集合。</p>
+<div class="key">一条铁律：<b>"在不在"必须人人能判定，且答案唯一。</b>判不了的一个都不收。</div>
+<p class="small">为什么数学这么轴？因为后面你要对集合做运算（交、并、比大小），每一个运算都建立在"在不在"这个问题上。如果"在不在"本身答不死，所有运算当场死机。数学宁可拒绝"高个子"这种有价值的模糊说法，也要保住引擎能转。</p>
+
+<h3>规则二：互异性——重复的只算一个</h3>
+<p>歌单里同一首歌加了两次，它还是一首歌。集合同理：</p>
+<div class="box"><span class="m">{1, 2, 2, 3}</span> 是不合法的写法——真写出来，它自动等于 <span class="m">{1, 2, 3}</span>，元素是<b>3个</b>，不是4个。</div>
+
+<h3>规则三：无序性——顺序不影响身份</h3>
+<div class="box"><span class="m">{1, 2}</span> 和 <span class="m">{2, 1}</span> 是<b>同一个</b>集合。</div>
+<p>先装1还是先装2，打包完都是那一箱。（以后你会学到"数列"——那个才讲顺序。别混。）</p>
+
+<div class="check">
+<span class="tag">⚡ 30秒自验 2</span>
+<p>下面哪些是集合？<br>
+A. "所有好看的电影"　B. "2024年上映的所有电影"　C. "比5大的数"　D. {1, 1, 2}</p>
+<p class="small">答完再看：<span class="ans">A不是</span>（"好看"没法判定）· <span class="ans">B是</span>（每部片子上没上映可查）· <span class="ans">C是</span>（任何数和5比大小都有唯一答案）· <span class="wrong">D写法不合法</span>，等于{1,2}。</p>
+</div>
+
+<div class="alt">
+<span class="tag">卡住了？换个说法</span><br>
+规则一还是别扭？这样想：集合是一份<b>名册</b>。名册的最低要求是——拿到任何一个名字，你能明确答出"在册/不在册"。"高个子"没法进名册，因为名单根本画不出来；"身高&gt;175"能画，所以能进。
+</div>
+
+<h2><span class="step-tag">第3步</span>两种写法：全列出来，还是给个准入条件</h2>
+<p>打包有了规则，怎么写？两种写法，按情况选。</p>
+
+<h3>列举法：一个个列出来</h3>
+<div class="box"><span class="m">{1, 2, 3}</span>　或　<span class="m">{周杰伦, 林俊杰, 邓紫棋}</span></div>
+<p>适合：元素少，或者规律明显（比如{2, 4, 6, …, 100}，点点点大家都懂）。</p>
+
+<h3>描述法：给一个准入条件</h3>
+<p>元素太多列不完怎么办？写规则。</p>
+<div class="box"><span class="m">{ x | x 是 2024 年上映的电影 }</span></div>
+<p>竖线 <span class="m">|</span> 念作"其中"。整体读作：<b>所有这样的x的集合——其中x满足"是2024年上映的电影"</b>。左边<span class="m">x</span>是<b>代表</b>（装的东西长什么样），右边是<b>准入条件</b>（怎么判定在不在）。</p>
+
+<div class="key">一个高频坑，现在就拆：<b>花括号里装的东西，由代表元决定。</b><br>
+<span class="m">{ x | y = x² }</span> 装的是<b>数</b>（所有x）· <span class="m">{ y | y = x² }</span> 装的也是<b>数</b>（所有函数值）· <span class="m">{ (x, y) | y = x² }</span> 装的是<b>点</b>。<br>
+三个集合元素类型都不一样，<span class="wrong">互相之间不能画等号</span>。读描述法先问一句：竖线左边装的到底是数、是点、还是别的？</p>
+</div>
+
+<div class="check">
+<span class="tag">⚡ 30秒自验 3</span>
+<p>用描述法写"所有大于3的实数"。</p>
+<p class="small">答：<span class="m">{ x | x &gt; 3, x ∈ R }</span>——竖线左边声明"装的是数x"，右边是准入条件。你若写成{x | x&gt;3}也先算对，x∈R的讲究下一屏说。</p>
+</div>
+
+<h2><span class="step-tag">第4步</span>数学备好的四个大容器 + 一个专属符号</h2>
+<p>有些集合天天用，数学直接给了记号，见到就认：</p>
+<table>
+<tr><th>记号</th><th>装的什么</th><th>例子</th></tr>
+<tr><td class="m">N</td><td>自然数集（0,1,2,3,…）</td><td>0 ∈ <span class="m">N</span>，−1 ∉ <span class="m">N</span></td></tr>
+<tr><td class="m">Z</td><td>整数集</td><td>−3 ∈ <span class="m">Z</span>，0.5 ∉ <span class="m">Z</span></td></tr>
+<tr><td class="m">Q</td><td>有理数集（能写成分数的数）</td><td>0.5 ∈ <span class="m">Q</span>，π ∉ <span class="m">Q</span></td></tr>
+<tr><td class="m">R</td><td>实数集（数轴上所有的数）</td><td>π ∈ <span class="m">R</span></td></tr>
+</table>
+<p>表示"在里头"用符号 <span class="m">∈</span>（属于），"不在"用 <span class="m">∉</span>。注意：<span class="m">∈</span> 只是描述<b>关系</b>，不是运算，别和加减乘除混用。</p>
+
+<h3>一个必须现在拆掉的混淆：{0} 和 ∅</h3>
+<p><span class="m">{0}</span> 是"装着一个0的集合"——<b>有一个元素的集合</b>。<span class="m">∅</span>（空集）是"<b>零个元素</b>的集合"。</p>
+<p>类比你熟的东西：{0}是"购物车里放着一件0元试用品的购物车"，∅是"空购物车"。空车也是车，但<span class="wrong">{0} ≠ ∅</span>——一个有货，一个真空。</p>
+
+<div class="check">
+<span class="tag">⚡ 30秒自验 4</span>
+<p>判断对错：① 0.5 ∈ N　② −3 ∈ Z　③ π ∈ Q　④ 0 ∈ N</p>
+<p class="small">答：<span class="wrong">①错</span>（0.5不是自然数）· <span class="ans">②对</span> · <span class="wrong">③错</span>（π是无限不循环，写不成两整数之比）· <span class="ans">④对</span>（自然数集含0，这是规定，记住）</p>
+</div>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选）</span><br>
+v18原册把集合类比成"投资组合"：持仓打包成组合后，你谈的是组合整体的净值和风险，不再逐个谈股票——打包让"一群"获得"一个"的身份。确定性=某持仓在不在组合里可核查；互异性=持仓表同一股票只出现一行；无序性=建仓顺序不影响组合身份。懂投资的你如果读到这里觉得"原来如此"，那这个类比就是你的加速器；如果读着反而糊涂，<b>忘掉它，歌单类比完全够用</b>——入门期一个类比学到底，比三个类比打架强。
+</div>
+
+<h2><span class="step-tag">收口</span>学完这节，你应该能做到</h2>
+<p><b>自测五连</b>（做完再看下面答案，每题30秒）：</p>
+<p>① "所有很好吃的菜"是集合吗？为什么？</p>
+<p>② {3, 5, 5, 7} 的元素有几个？</p>
+<p>③ 用描述法写"所有小于2的正整数"。</p>
+<p>④ 2 ∈ N 吗？√2 ∈ Z 吗？</p>
+<p>⑤ {∅} 是空集吗？</p>
+<p class="small">答案：①不是——"好吃"无法判定（换成"米其林三星的菜"就是集合了）②3个（互异性去重）③{x | x&lt;2, x∈Z}或{x | x&lt;2, x∈N}——注意限定了整数/自然数，没限定就是无数个④对；错（√2无限不循环，不是整数）⑤<span class="wrong">不是</span>——{∅}是"装着一个空集的集合"，它有1个元素；空集是∅自己</p>
+
+<div class="key">
+<b>三句话带走这一节：</b><br>
+1. 集合=把"一堆"打包成"一个"的容器，从此可比较、可运算。<br>
+2. 入门三条规则：在不在可判定（确定性）· 不重复（互异性）· 不排序（无序性）。<br>
+3. 写法两板斧：列举法全列出，描述法给准入条件——先看竖线左边装的是什么。
+</div>
+
+<p><b>下一站：</b>1.2 集合间的基本关系——两个集合，谁装着谁？（子集、真子集、相等）你能猜到吗：歌单和它的"粤语歌分单"，是什么关系？</p>
+
+<div class="foot">
+零基础首学版 v1 · 事实层素材源：v18原册_数学.html 簇①（照录已验真）· 教学设计层：本件独立设计<br>
+本件是"教材形态"首件——设计标准：零预设 · 一次一步 · 随读随验 · 卡住有出路 · 结尾能复述
+</div>
+
+</div>
+</body>
+</html>
