@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学1.2 集合间的基本关系 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #1a2416; border-left: 3px solid #6cbf4a; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .try .q { color: #9fd481; font-weight: bold; }
+  .try .a { color: #8a949f; font-size: 15px; margin-top: 6px; }
+  .pit { background: #2a1a1a; border-left: 3px solid #e05252; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .pit .tag { color: #ff7b72; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #2b5277; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .m { font-family: "Times New Roman", Georgia, serif; font-style: italic; color: #ffd48a; }
+  .big { font-size: 21px; text-align: center; margin: 18px 0; color: #fff; }
+  .detail { color: #7d8a99; font-size: 15px; border-top: 1px dashed #2a3140; margin-top: 10px; padding-top: 10px; }
+  .small { color: #8a949f; font-size: 14px; }
+  .wrong { color: #ff7b72; }
+  .fig { margin: 18px 0; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+
+  /* ===== 笔记视觉层（打印态友好） ===== */
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  .nb-margin { position: relative; }
+  .nb-margin::after { content: attr(data-note); position: absolute; right: -6px; top: -18px; color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 14px; white-space: nowrap; }
+  .check { background: #16211a; border: 1px solid #2d5a3d; border-radius: 8px; padding: 16px 20px; margin: 18px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; font-size: 14px; }
+  .check p { margin: 8px 0; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; font-family: "Times New Roman", serif; color: #eef2f7; font-size: 16.5px; }
+  .alt { background: #1a1f2b; border: 1px dashed #3a4a5c; border-radius: 6px; padding: 12px 16px; margin: 14px 0; }
+  .alt .tag { color: #7da7d9; font-weight: bold; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .check, .box, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h2 { color: #111; }
+    p, .talk, .key, .pit, .small, .figcap { color: #222; }
+    mark.nb { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    b, h1, h3, .m, .big, .detail, .try .q, .try .a { color: #111; }
+    .sub { color: #444; }
+    em { color: #1a5c99; }
+    .wrong, .note-red { color: #c0392b; }
+    .check .tag { color: #1e7a4f; }
+    .alt .tag { color: #2a5a8a; }
+    .box { color: #111; }
+  }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 14px; }
+  b { color: #f0f3f7; }
+  @media print {
+    .foot { color: #666; border-top-color: #ccc; }
+    b { color: #111; }
+    .check { page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>集合间的关系：谁包含谁，谁和谁相等</h1>
+<div class="sub">数学1.2 · 第一章 集合与常用逻辑用语 · 零基础首学版 v1.0 · 前置：1.1集合与元素（知道什么叫集合、会列举法和描述法就够——忘了没关系，往下第一段带你捡回来）</div>
+
+<p>先说清你现在的位置：<b>这一件属于"集合"这个模块（1.1到1.5五节），是模块的第二站。</b>第一站1.1你已经学完——什么是集合、元素和集合的"属于"关系（记号 <span class="m">∈</span>）、列举法和描述法。今天学的新东西很单纯：<b>集合和集合之间</b>，有什么关系。</p>
+
+<h2><span class="step-tag">开场</span>数能比大小，集合呢？</h2>
+<p>两个实数之间有关系：5 = 5 相等，5 &lt; 7 有大小。这是你小学就会的。教材p7开篇就问了一句：<b>"两个集合之间是否也有类似的关系呢？"</b>——这一节整节都在回答这个问题。</p>
+<p>先拿生活经验垫一下。你的手机里有一个歌单A，装着3首歌；还有一个更大的歌单B，装着5首歌，<b>里面正好包含你那3首</b>。你会很自然地说："A是B的一部分。"再比如：你们班的女生构成一个集合C，全班同学构成一个集合D——C天然是D的一部分。</p>
+<p>"一部分"这个词太日常，数学要给它一个<b>精确的、能检验的定义</b>。这个定义就是今天的第一个主角。</p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 看到两个集合，能判断谁包含谁，写出 <span class="m">A⊆B</span> 并读对它；<br>
+② 分清两条长得像但完全不同的关系：<b>⊆（集合对集合）</b>和 <b>∈（元素对集合）</b>——这是本节最容易混的地方；<br>
+③ 不再被 ∅（空集）和 {0} 这对"双胞胎"骗到；<br>
+④ 不漏不重地写出一个集合的全部子集，还能直接算出个数。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>教材请你先看三个例子</h2>
+<p>抽象定义之前，教材p7"观察"框先摆了三对集合，让你自己找共同点。我们照抄看一遍：</p>
+<div class="talk">
+<p><b>观察（教材p7原文）：</b>观察下面几个例子，类比实数之间的相等关系、大小关系，你能发现下面两个集合之间的关系吗？</p>
+<p>（1）<span class="m">A={1, 2, 3}</span>，<span class="m">B={1, 2, 3, 4, 5}</span>；</p>
+<p>（2）<span class="m">C</span> 为立德中学高一（2）班全体女生组成的集合，<span class="m">D</span> 为这个班全体学生组成的集合；</p>
+<p>（3）<span class="m">E={x | x 是有两条边相等的三角形}</span>，<span class="m">F={x | x 是等腰三角形}</span>。</p>
+</div>
+<p>三对例子共同点是同一个：</p>
+<p class="big">前一个集合的<b>每一个</b>元素，都是后一个集合的元素。</p>
+<p>逐个验一下：（1）里A的元素1、2、3，在B里全都有；（2）里每个女学生都是这个班的学生；（3）稍微绕一点——"有两条边相等的三角形"，其实就是等腰三角形（教材随后就点破这一点），所以E里的每个三角形也都在F里。<span class="note-red">（注意（3）：E和F其实说的是同一批三角形，只是名字不同——这个观察后面会变成一个重要定义。）</span></p>
+<div class="try"><span class="q">验一验（20秒）：</span>M={a, c}，N={a, b, c, d}。M的每一个元素都是N的元素吗？<div class="a">→ a在N里✓，c在N里✓。是。M"N装得下"M。会了，往下走。</div></div>
+
+<h2><span class="step-tag">第二步</span>子集：给"N装得下M"一个正式记号</h2>
+<p>数学给"每一个元素都在"这件事起了名字、发了记号。教材p7的定义<b>一字不改</b>如下：</p>
+<div class="talk">
+<p><b>子集（教材p7定义原文）：</b>一般地，对于两个集合A，B，如果集合A中<b>任意</b>一个元素都是集合B中的元素，就称集合A为集合B的<b>子集</b>（subset），记作</p>
+<p class="big"><span class="m">A⊆B</span>（或 <span class="m">B⊇A</span>），</p>
+<p>读作<span class="ul-blue">"A包含于B"（或"B包含A"）</span>。</p>
+</div>
+<p class="small">记号怎么认不忘：<span class="m">⊆</span>像一张<b>开口的嘴</b>，嘴朝着谁，谁就是"装别人的一方"——<span class="m">A⊆B</span> 嘴朝B，B是大的那口锅。</p>
+<div class="fig">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="子集三态面板：真子集、真包含多出一块、相等两圆重合">
+  <rect x="0" y="0" width="560" height="300" fill="#10141b" rx="8"/>
+  <text x="93" y="34" fill="#9fb0c3" font-size="14" font-weight="bold" text-anchor="middle">① A⊆B</text>
+  <text x="93" y="54" fill="#7d8a99" font-size="12" text-anchor="middle">B装下A</text>
+  <circle cx="93" cy="175" r="95" fill="none" stroke="#4a9eff" stroke-width="2.2"/>
+  <circle cx="93" cy="160" r="45" fill="#123a5c" fill-opacity="0.85" stroke="#4a9eff" stroke-width="2"/>
+  <text x="93" y="166" fill="#fff" font-size="16" font-weight="bold" text-anchor="middle">A</text>
+  <text x="93" y="252" fill="#4a9eff" font-size="16" font-weight="bold" text-anchor="middle">B</text>
+  <text x="280" y="34" fill="#9fb0c3" font-size="14" font-weight="bold" text-anchor="middle">② A⊊B（真子集）</text>
+  <text x="280" y="54" fill="#7d8a99" font-size="12" text-anchor="middle">B比A还多一块</text>
+  <circle cx="280" cy="175" r="95" fill="none" stroke="#5fd39a" stroke-width="2.2"/>
+  <circle cx="280" cy="160" r="45" fill="#123a5c" fill-opacity="0.85" stroke="#5fd39a" stroke-width="2"/>
+  <circle cx="280" cy="175" r="95" fill="#5fd39a" fill-opacity="0.12"/>
+  <text x="280" y="166" fill="#fff" font-size="16" font-weight="bold" text-anchor="middle">A</text>
+  <text x="280" y="252" fill="#5fd39a" font-size="16" font-weight="bold" text-anchor="middle">B</text>
+  <line x1="336" y1="226" x2="382" y2="248" stroke="#f5c56b" stroke-width="1.6"/>
+  <text x="392" y="254" fill="#f5c56b" font-size="12.5" font-weight="bold">B里多出来的</text>
+  <text x="205" y="292" fill="#8fa3b8" font-size="12" text-anchor="middle">浅绿月牙 = B有A无（有它才算"真"）</text>
+  <text x="465" y="34" fill="#9fb0c3" font-size="14" font-weight="bold" text-anchor="middle">③ A=B</text>
+  <text x="465" y="54" fill="#7d8a99" font-size="12" text-anchor="middle">两个名字，同一批元素</text>
+  <circle cx="465" cy="175" r="95" fill="none" stroke="#f5c56b" stroke-width="2.2" stroke-dasharray="8,5"/>
+  <circle cx="465" cy="175" r="95" fill="none" stroke="#e88a6b" stroke-width="2.2"/>
+  <text x="465" y="181" fill="#fff" font-size="16" font-weight="bold" text-anchor="middle">A=B</text>
+  <text x="468" y="292" fill="#8fa3b8" font-size="12" text-anchor="middle">两圆完全重合 = 同一个集合</text>
+</svg>
+<div class="figcap">集合之间的三种关系一张图看全：①子集（B装下A）②真子集（B装下A还多一块）③相等（A、B是同一批元素的两个名字）。</div>
+</div>
+<div class="try"><span class="q">验一验（30秒）：</span>把①面板对号入座：歌单A（3首）和歌单B（5首）谁是谁的子集？<div class="a">→ A⊆B（A包含于B）。读一遍："A包含于B"。会了。</div></div>
+<div class="pit">
+<p><span class="tag">卡住了？</span>三句话出路：</p>
+<p class="small">① 分不清谁包含谁——看嘴：<span class="m">⊆</span> 开口朝大集合；② "包含于"三个字读着拗口——就默念"装得下"；③ 想验证是不是子集——别背定义，逐个查元素：A里每个元素都去B里点名，全到=是。</p>
+</div>
+
+<h2><span class="step-tag">第三步</span>相等：互相包含，就是同一个集合</h2>
+<p>再看第一步的例子（3）：E="有两条边相等的三角形"，F="等腰三角形"。想一想：任何"有两条边相等的三角形"都是等腰三角形（这正是等腰三角形的定义）；反过来，任何等腰三角形都有两条边相等。所以E里和F里装的是<b>同一批三角形</b>——E=F。</p>
+<p>教材p7末到p8把这件事写成了定义：</p>
+<div class="talk">
+<p><b>相等（教材p7-8原文）：</b>一般地，如果集合A的任何一个元素都是集合B的元素，同时集合B的任何一个元素都是集合A的元素，那么集合A与集合B相等，记作 <span class="m">A=B</span>。也就是说，<span class="ul-blue">若 <span class="m">A⊆B</span>，且 <span class="m">B⊆A</span>，则 <span class="m">A=B</span></span>。</p>
+</div>
+<p class="note-red">（这个"也就是说"值得盯三秒：相等不是新关系，它是"互相包含"。以后想证明两个集合相等，标准打法就是分两步：先证A⊆B，再证B⊆A——差一步都不算完。）</p>
+<p class="small">一个集合有没有可能"装出"两个样子？会。{1, 2, 3}和{x | x²−4=0}（即x=2或x=−2的解）就是同一个集合的两个名字——列举法直接报名字，描述法报准入条件，装的东西一样，集合就相等。</p>
+
+<h2><span class="step-tag">第四步</span>真子集：装得下，但还有富余</h2>
+<p><b>子集</b>这个词有个包容性：A⊆B时，A和B可以相等（A自己装下自己，也算子集）。但有时候我们想强调"B比A<b>大</b>"——A只是B的一部分，B里还有A装不到的元素。教材p8给了它名字：</p>
+<div class="talk">
+<p><b>真子集（教材p8定义原文）：</b>如果集合 <span class="m">A⊆B</span>，但存在元素 <span class="m">x∈B</span>，且 <span class="m">x∉A</span>，就称集合A是集合B的<b>真子集</b>（proper subset），记作</p>
+<p class="big"><span class="m">A⊊B</span>（或 <span class="m">B⊋A</span>），</p>
+<p>读作<span class="ul-blue">"A真包含于B"（或"B真包含A"）</span>。</p>
+<p class="small">翻译成人话：A⊆B，<b>并且</b> B里至少有一个元素是A没有的。第二步的例子里，A={1,2,3}⊆B={1,2,3,4,5}，而4∈B但4∉A——所以A是B的<b>真</b>子集。</p>
+</div>
+<p>教材p8紧接着用<b>例1</b>把"子集"和"真子集"一起练了：</p>
+<div class="talk">
+<p><b>例1（教材p8原题）：</b>写出集合 {a, b} 的所有子集，并指出哪些是它的真子集。</p>
+<p><b>解（教材p8）：</b>集合 {a, b} 的所有子集为 <span class="m">∅, {a}, {b}, {a, b}</span>。真子集为 <span class="m">∅, {a}, {b}</span>。</p>
+</div>
+<p>注意名单里混进了两位新朋友：一个是 <span class="m">∅</span>（它下一节正式登场）；另一个是 <span class="m">{a, b}</span> 自己——<b>任何集合都是它自己的子集</b>，但不是自己的真子集（自己身上找不出"B有A没有"的元素）。这就是子集和真子集的分界线。</p>
+<div class="pit">
+<p><span class="tag">坑（新手必踩）：</span>数子集时把 <b>∅</b> 和 <b>它自己</b> 漏掉。{a, b}的子集是<b>4个</b>，不是2个——∅永远占一个名额，集合自己也永远占一个名额。<span class="note-red">（口诀：数子集，先报∅，末报自己。）</span></p>
+</div>
+
+<h2><span class="step-tag">第五步</span>空集：什么都没有，也是个集合</h2>
+<p>教材p8用一个你没见过的方程开路：</p>
+<div class="talk">
+<p>我们知道，方程 <span class="m">x²+1=0</span> 没有实数根，所以方程 x²+1=0 的实数根组成的集合中没有元素。</p>
+<p><b>空集（教材p8定义原文）：</b>一般地，我们把不含任何元素的集合叫做<b>空集</b>（empty set），记为 <span class="m">∅</span>，并规定：<span class="ul-blue">空集是任何集合的子集</span>。</p>
+</div>
+<p>前半句好懂：装空气的集合，起名叫∅。后半句是一条<b>规定</b>——教材直接规定的，但这条规定并不是拍脑袋，给你一条思路自己走一遍（教材没写，这段是帮你消化规定的展开）：</p>
+<div class="key">
+<b>为什么"空集是任何集合的子集"说得通（展开）：</b><br>
+要检验"A⊆B"，操作是"把A里的每个元素拿到B里点名"。现在A=∅，A里<b>一个元素都没有</b>——你一个都拿不出来，也就<b>一个都点名不失败</b>。一个反例都找不到，"每个元素都在B里"这句话自动成立。所以∅⊆B对任何B都成立。同理可推进一步：∅⊆B且B只要不是∅（B里至少有一个元素，这个元素就是"B有而∅没有"的），就说明∅⊊B——<b>空集是任何非空集合的真子集</b>。
+</div>
+<div class="pit">
+<p><span class="tag">坑（本节头号大坑）：</span>∅、{0}、0 是三个不同的东西。</p>
+<p class="small">∅ = 空盒子（什么都没有）；{0} = 装着一个数0的盒子；0 = 数0本身。<br>
+关系是：0 ∈ {0}（0是{0}的元素）、∅ ⊊ {0}（空盒真包含于装着0的盒）、0 ∉ ∅（0不在空盒里）。<br>
+易错点：看到 {x | x²=0} 别以为它是"空的"——x²=0 的解是 x=0，所以它={0}，<b>不是</b>∅。真正空的是 {x∈R | x²+1=0}（无实数解）。</p>
+</div>
+<div class="try"><span class="q">验一验（30秒）：</span>解方程 x²−4=0，写出"x²−4=0的实数根"组成的集合。它是空集吗？<div class="a">→ x=2或x=−2，集合是{2, −2}——不空。别见到负号就以为无解；"空不空"由解出来有没有根说了算。</div></div>
+
+<h2><span class="step-tag">第六步（最容易混的一步）</span>⊆ 和 ∈：一张桌子上的两种关系</h2>
+<p>教材p8专设了一个"思考"框来打这个混淆，原文照录：</p>
+<div class="talk">
+<p><b>思考（教材p8原文）：</b>包含关系 <span class="m">{a}⊆A</span> 与属于关系 <span class="m">a∈A</span> 有什么区别？试结合实例作出解释。</p>
+</div>
+<p>先把两边的"身份"看清楚：</p>
+<div class="key">
+<b>⊆ 和 ∈ 的区别（一张表）：</b><br>
+<span class="m">⊆</span>（包含）：左边右边<b>都是集合</b>——集合与集合比"装没装下"。<br>
+<span class="m">∈</span>（属于）：左边是<b>元素</b>、右边是<b>集合</b>——问"这个东西在不在集合里"。<br>
+<b>判断口诀：先看符号左边是"盒子"还是"盒子里的东西"——盒子对盒子用⊆，东西对盒子用∈。</b>
+</div>
+<p>拿实例走一遍（教材要求"结合实例"，这里用最简单的a、A举例）：</p>
+<p>设 A={1, 2, 3}，a=1。那么 <span class="m">{a}⊆A</span> 对——{a}就是{1}，是个"装着1的小盒子"，它的每个元素（就一个：1）都在A里，小盒子装得进A；<span class="m">a∈A</span> 也对——数1确实是A里的元素。<b>两句都对，但说的是两回事</b>：前一句主语是盒子{1}，后一句主语是数1。</p>
+<p class="note-red">（再盯一眼：{a} 是"装着a的盒子"，a 是"a自己"。多一层大括号，身份就从"元素"升成了"集合"。2和{2}不是一回事——这跟∅和{0}不是一回事是同一个道理：括号一加，身份就变。）</p>
+<div class="try"><span class="q">验一验（40秒）：</span>A={1, 2, 3}。判断：① 2__A　② {2}__A　③ {1, 2}__A　各该填 ∈ 还是 ⊆？<div class="a">→ ① 2∈A（数对集合，用属于）② {2}⊆A（盒子对盒子，2的盒子装得进A）③ {1,2}⊆A（同上）。三连全对，第六步就过了。</div></div>
+
+<h2><span class="step-tag">第七步</span>两条免检性质：自己装自己，装票可以连着传</h2>
+<p>教材p8把子集关系的两条基本结论列在"思考"框之后：</p>
+<div class="talk">
+<p><b>教材p8原文：</b>由上述集合之间的基本关系，可以得到下列结论：</p>
+<p>（1）任何一个集合是它本身的子集，即 <span class="m">A⊆A</span>；</p>
+<p>（2）对于集合A，B，C，如果 <span class="m">A⊆B</span>，且 <span class="m">B⊆C</span>，那么 <span class="m">A⊆C</span>。</p>
+</div>
+<p>第一条你已经在例1里见过（{a,b}的子集名单里有它自己）。第二条叫<b>传递性</b>，生活版很好记：</p>
+<div class="fig">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="传递性嵌套图：A装进B，B装进C，A自然装在C里">
+  <rect x="0" y="0" width="560" height="300" fill="#10141b" rx="8"/>
+  <circle cx="230" cy="160" r="115" fill="none" stroke="#f5c56b" stroke-width="2.2"/>
+  <text x="138" y="72" fill="#f5c56b" font-size="16" font-weight="bold">C</text>
+  <circle cx="245" cy="170" r="78" fill="none" stroke="#4a9eff" stroke-width="2.2"/>
+  <text x="190" y="116" fill="#4a9eff" font-size="16" font-weight="bold">B</text>
+  <circle cx="258" cy="180" r="42" fill="#123a5c" fill-opacity="0.9" stroke="#5fd39a" stroke-width="2.2"/>
+  <text x="258" y="186" fill="#fff" font-size="15" font-weight="bold" text-anchor="middle">A</text>
+  <text x="258" y="288" fill="#8fa3b8" font-size="12.5" text-anchor="middle">A⊆B，B⊆C —— 拉链一扣：A⊆C（中间的B可以不看了）</text>
+  <text x="470" y="120" fill="#d8dee6" font-size="14" font-weight="bold" text-anchor="middle">生活版：</text>
+  <text x="470" y="148" fill="#9fb0c3" font-size="13" text-anchor="middle">你在三班（A⊆C），</text>
+  <text x="470" y="170" fill="#9fb0c3" font-size="13" text-anchor="middle">三班在高一（B⊆C）？</text>
+  <text x="470" y="192" fill="#9fb0c3" font-size="13" text-anchor="middle">不对，摆正关系：</text>
+  <text x="470" y="220" fill="#9fb0c3" font-size="13" text-anchor="middle">你 ∈ 三班，</text>
+  <text x="470" y="242" fill="#9fb0c3" font-size="13" text-anchor="middle">三班 ⊆ 高一年级，</text>
+  <text x="470" y="264" fill="#5fd39a" font-size="13" font-weight="bold" text-anchor="middle">你当然也在高一年级。</text>
+</svg>
+<div class="figcap">传递性：大圈套小圈。A在B里、B在C里，A自然就在C里——三层圆一嵌套，一眼看穿。</div>
+</div>
+<p class="small">顺带一句：这里"你∈三班"用的是<b>属于</b>（你是元素），"三班⊆年级"用的是<b>包含</b>（集合对集合）——第六步的口诀在真实场景里就这么用。</p>
+
+<h2><span class="step-tag">第八步</span>例2：判断子集，标准动作就两下</h2>
+<div class="talk">
+<p><b>例2（教材p8原题）：</b>判断下列各题中集合A是否为集合B的子集，并说明理由：</p>
+<p>（1）<span class="m">A={1, 2, 3}</span>，<span class="m">B={x | x 是 8 的约数}</span>；</p>
+<p>（2）<span class="m">A={x | x 是长方形}</span>，<span class="m">B={x | x 是两条对角线相等的平行四边形}</span>。</p>
+<p><b>解（教材p8）：</b>（1）因为 3 不是 8 的约数，所以集合A不是集合B的子集。</p>
+<p>（2）因为若 x 是长方形，则 x 一定是两条对角线相等的平行四边形，所以集合A是集合B的子集。</p>
+</div>
+<p class="small">（帮你补一层底：8的约数是1、2、4、8，所以B={1, 2, 4, 8}——A里的3不在名单上，一票否决。教材解法只点了3这一个反例，其实正是在示范<b>否决只需一个反例</b>。）</p>
+<p>看清楚了吗？判断子集的标准动作：</p>
+<div class="key">
+<b>两步判断清单：</b><br>
+第一步：把两边化成"装了什么"（描述法就先解方程/按定义化简成明明白白的成员名单）。<br>
+第二步：查"前一个的每个元素是否都在后一个里"——<b>全在→是子集；找到一个不在→一票否决</b>。
+</div>
+<div class="try"><span class="q">验一验（60秒·自编变式）：</span>A={x | x 是正方形}，B={x | x 是菱形}。A是B的子集吗？是B的真子集吗？（<b>本题为自编</b>，思路同教材例2(2)）<div class="a">→ 正方形的定义是"四边相等的矩形"，而四边相等正是菱形的定义，所以每个正方形都是菱形：A⊆B。菱形不要求角是直角，比如边长1、内角60°的菱形是B的成员但不是正方形：一票晋升为真——A⊊B。</div></div>
+
+<h2><span class="step-tag">第九步</span>数子集：从例1的4个，到练习的8个</h2>
+<p>例1已经数过：{a, b} 有 <b>4个</b>子集。教材p8练习1请你再数 {a, b, c}。用"数钱法"想，不用死列：</p>
+<div class="key">
+<b>数钱法（每个元素只有两种命运）：</b><br>
+造一个子集时，对原集合的<b>每个元素</b>问一遍："带它，还是不带它？"——两种选择。<br>
+{a, b}：a选2种 × b选2种 = <b>2×2 = 4个</b>子集（∅是全不带，{a,b}是全带）。<br>
+{a, b, c}：2×2×2 = <b>8个</b>子集。逐个报一遍练手感：∅、{a}、{b}、{c}、{a,b}、{a,c}、{b,c}、{a,b,c}。
+</div>
+<div class="fig">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="子集个数随元素个数指数增长曲线：n个元素的集合有2的n次方个子集">
+  <rect x="0" y="0" width="560" height="300" fill="#10141b" rx="8"/>
+  <line x1="70" y1="252" x2="520" y2="252" stroke="#5a6a7a" stroke-width="1.4"/>
+  <line x1="70" y1="40" x2="70" y2="252" stroke="#5a6a7a" stroke-width="1.4"/>
+  <text x="536" y="256" fill="#9fb0c3" font-size="13">n</text>
+  <text x="52" y="46" fill="#9fb0c3" font-size="13">子集数</text>
+  <line x1="66" y1="62" x2="74" y2="62" stroke="#5a6a7a"/><text x="36" y="67" fill="#7d8a99" font-size="12">64</text>
+  <line x1="66" y1="157" x2="74" y2="157" stroke="#5a6a7a"/><text x="36" y="162" fill="#7d8a99" font-size="12">32</text>
+  <line x1="66" y1="228.2" x2="74" y2="228.2" stroke="#5a6a7a"/><text x="40" y="232" fill="#7d8a99" font-size="12">8</text>
+  <line x1="66" y1="249" x2="74" y2="249" stroke="#5a6a7a"/><text x="40" y="253" fill="#7d8a99" font-size="12">1</text>
+  <polyline points="70.0,249.0 79.6,248.7 89.1,248.4 98.7,248.1 108.2,247.7 117.8,247.3 127.3,246.8 136.9,246.3 146.4,245.8 156.0,245.2 165.6,244.5 175.1,243.8 184.7,243.0 194.2,242.1 203.8,241.2 213.3,240.1 222.9,239.0 232.4,237.7 242.0,236.3 251.6,234.8 261.1,233.1 270.7,231.3 280.2,229.3 289.8,227.1 299.3,224.7 308.9,222.1 318.4,219.2 328.0,216.0 337.6,212.5 347.1,208.7 356.7,204.5 366.2,199.9 375.8,194.9 385.3,189.3 394.9,183.3 404.4,176.6 414.0,169.3 423.6,161.3 433.1,152.5 442.7,142.9 452.2,132.3 461.8,120.7 471.3,108.0 480.9,94.1 490.4,78.8 500.0,62.0" fill="none" stroke="#4a9eff" stroke-width="2.6"/>
+  <circle cx="141.7" cy="246.1" r="4.5" fill="#f5c56b"/><text x="150" y="240" fill="#f5c56b" font-size="12.5" font-weight="bold">{a,b}→4</text>
+  <circle cx="213.3" cy="240.1" r="4.5" fill="#f5c56b"/><text x="222" y="234" fill="#f5c56b" font-size="12.5" font-weight="bold">{a,b,c}→8（练习1）</text>
+  <circle cx="354.6" cy="204.5" r="4.5" fill="#5fd39a"/><text x="330" y="196" fill="#5fd39a" font-size="12.5" font-weight="bold">4个元素→16</text>
+  <circle cx="500" cy="62" r="4.5" fill="#e88a6b"/><text x="430" y="52" fill="#e88a6b" font-size="12.5" font-weight="bold">6个元素→64</text>
+  <text x="60" y="52" fill="#8fa3b8" font-size="12">64</text>
+  <text x="330" y="284" fill="#7d8a99" font-size="12.5" text-anchor="middle">横轴：集合的元素个数 n 　纵轴：子集个数——每多一个元素，子集个数翻一倍</text>
+</svg>
+<div class="figcap">子集个数随元素个数指数增长：n个元素的集合，子集数=每元素2种选择连乘=2ⁿ（公式见下方可选块）。</div>
+</div>
+<div class="alt">
+<span class="tag">想多走一步？（可选·跳过不影响主线）</span>
+<p class="small">数钱法连乘的一般结论：n个元素的集合有 <span class="m">2ⁿ</span> 个子集（每元素"带/不带"两种选择，n个元素连乘2×2×…×2=n个2，即2ⁿ）；其中真子集比子集少1个——只少"它自己"这一个，共 <span class="m">2ⁿ−1</span> 个。验证小样本：{a,b}子集2²=4个、真子集4−1=3个，与例1名单一致。这个公式教材正文没印，但数钱法推两步就是它——考场上用来<b>核对</b>你列的名单够不够数，非常好用。</p>
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测五连</h2>
+<div class="key">
+<b>三句话：</b><br>
+1. <mark class="nb">A⊆B = A的每个元素都在B里</mark>（子集，读"A包含于B"）；互相包含=A=B；B比A还多一块=A⊊B（真子集）。<br>
+2. <mark class="nb">⊆连着集合写，∈前面是元素</mark>——先看符号左边是盒子还是东西；∅是空盒子，{0}装着0，0是0，三个身份互不相同。<br>
+3. <mark class="nb">数子集：先报∅，末报自己</mark>；n个元素的集合用数钱法（2ⁿ个）核对名单。
+</div>
+<p><b>自测五连</b>（先做再看答案；②③④是教材p8-9练习2原题，①⑤为自编）：</p>
+<p>①（自编）在横线上填 ∈、⊆、⊊ 或 =：0__∅；0__{0}；∅__{0}</p>
+<p>② ∅__{x∈R | x²+1=0}</p>
+<p>③ {0}__{x | x²=x}</p>
+<p>④ {2, 1}__{x | x²−3x+2=0}</p>
+<p>⑤（自编）M={x | x 是大于1且小于4的整数}，写出M的所有子集（共几个？）</p>
+<p class="small">答案：①0∉∅（空盒里什么都没有）；0∈{0}（0是{0}的元素）；∅⊊{0}（{0}非空，空集是任何非空集合的真子集）。②⊆（x²+1=0无实数解，右边是∅，空集是任何集合的子集）。③⊊（x²=x的解是x=0或1，右边={0,1}，{0}是它的真子集）。④=（x²−3x+2=(x−1)(x−2)=0，解是1和2，右边={1,2}，与{2,1}是同一批元素的两种写法——集合不讲顺序）。⑤先化简：M={2, 3}，2个元素→数钱法2×2=4个子集：∅、{2}、{3}、{2,3}。</p>
+<p><b>练什么题：</b>教材p8练习1（{a,b,c}所有子集——第九步已带你数过，自己再独立写一遍）+ p8-9练习2全部6个填空 + p9练习3（判断三对集合的关系）。做完这三组，符号就长在手上了。</p>
+
+<div class="box"><b>高考怎么考（考位锚）：</b>1.2的符号系统单独出大题的少，常当<b>零件</b>出现在"已知A⊆B（或A⊊B），求参数范围"的集合参数题里——空集是不是A、方程解集化简对不对，就是这类题的分水岭（教材p9习题1.2拓广探索第5(2)题就是这道题的教材原型）。真题锚候采（卷源候采·宁缺毋编不代拟）。</div>
+
+<p><b>下一站：</b>集合能"比关系"了，下一步自然问"能不能做运算"——两个集合<b>合并</b>起来、取<b>公共部分</b>、拿<b>剩下的</b>，就是1.3并集、交集、补集三件套（教材p10起，1.3开篇正拿"实数有加减乘除，集合有没有类似运算"开场，和今天开场问法一模一样）。</p>
+
+<div class="fig">
+<svg viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：集合模块五节中1.2所处位置">
+  <rect x="0" y="0" width="560" height="120" fill="#10141b" rx="8"/>
+  <text x="280" y="24" fill="#7d8a99" font-size="13" text-anchor="middle">第一章 集合与常用逻辑用语——你在这里的位置</text>
+  <rect x="30" y="42" width="110" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="85" y="66" fill="#8fa3b8" font-size="13.5" text-anchor="middle">1.1 集合概念</text>
+  <rect x="170" y="38" width="120" height="48" rx="6" fill="#123a5c" stroke="#4a9eff" stroke-width="2"/>
+  <text x="230" y="58" fill="#4a9eff" font-size="14" font-weight="bold" text-anchor="middle">1.2 关系</text>
+  <text x="230" y="78" fill="#7d8a99" font-size="11" text-anchor="middle">你刚学完 ✓</text>
+  <rect x="320" y="42" width="110" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="375" y="66" fill="#8fa3b8" font-size="13.5" text-anchor="middle">1.3 运算</text>
+  <rect x="460" y="42" width="80" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="500" y="66" fill="#8fa3b8" font-size="13.5" text-anchor="middle">1.4–1.5</text>
+  <line x1="140" y1="62" x2="170" y2="62" stroke="#4a9eff" stroke-width="2"/>
+  <line x1="290" y1="62" x2="320" y2="62" stroke="#8fa3b8" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="430" y1="62" x2="460" y2="62" stroke="#8fa3b8" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="280" y="108" fill="#5a6a7a" font-size="11" text-anchor="middle">先学"谁装谁"（1.2），再学"怎么合并拆分"（1.3）——关系是运算的地基</text>
+</svg>
+<p class="small" style="text-align:center">这张图在说什么：1.2的⊆是1.3一切运算（并、交、补）的地基——先分清关系，才谈得上操作。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（1031·教材形态量产校准件·标准v2.3全条款落地） · 事实层素材源：人教A版必修一p7-9官方影印逐页对照（子集/真子集/空集定义原文、例1例2、思考框、两条结论、练习1-3、习题1.2均逐字锚定·影印图存席位私有目录yinshen_12_1031/）· 教学设计层：本件独立设计（数钱法/三态面板/生活版传递性为原创讲解件·自编例均已就地标注）
+</div>
+
+</div>
+</body>
+</html>
