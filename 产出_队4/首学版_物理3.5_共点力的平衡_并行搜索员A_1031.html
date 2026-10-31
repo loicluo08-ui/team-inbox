@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理3.5 共点力的平衡 · 零基础首学版</title>
+<style>
+  :root{--ink:#eaf2fb;--dim:#aebccf;--line:#31465e;--card:#1d2733;--card2:#223041;--acc:#4a9eff;--warn:#f0b429;--ok:#5ad1a5;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#1b2029;color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.85;font-size:16.5px;padding:28px 16px 80px;}
+  .wrap{max-width:860px;margin:0 auto;}
+  h1{font-size:26px;letter-spacing:1px;border-left:6px solid var(--acc);padding-left:14px;margin-bottom:6px;}
+  .sub{color:var(--dim);font-size:13.5px;margin-bottom:22px;}
+  .sub b{color:var(--acc);}
+  h2{font-size:20px;margin:34px 0 14px;color:#fff;background:linear-gradient(90deg,#223041,#1b2029);border-left:5px solid var(--acc);padding:8px 12px;border-radius:0 8px 8px 0;}
+  h3{font-size:17px;margin:20px 0 8px;color:var(--acc);}
+  p{margin:10px 0;}
+  .m{font-family:"Times New Roman",Georgia,serif;font-style:italic;padding:0 3px;}
+  .num{font-family:"Cambria Math","Times New Roman",serif;}
+  .pg{color:var(--dim);font-size:12.5px;border:1px solid var(--line);border-radius:4px;padding:0 6px;white-space:nowrap;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:14px 0;}
+  .card2{background:var(--card2);}
+  .big{font-size:18px;color:#fff;background:#203a55;border-left:5px solid var(--ok);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;}
+  .warn{background:#2d2416;border-left:5px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0;}
+  .warn b{color:var(--warn);}
+  .q{background:#17222e;border:1px dashed var(--acc);border-radius:10px;padding:12px 16px;margin:14px 0;}
+  .q .tag{color:var(--acc);font-weight:bold;}
+  details{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:10px 0;padding:10px 14px;}
+  summary{cursor:pointer;font-weight:bold;color:#dbe7f5;}
+  .sol{margin-top:8px;color:#cdd9e8;}
+  .sol b{color:var(--ok);}
+  .exam{background:#1a2430;border:1px solid #2c4a6e;border-radius:10px;padding:14px 18px;margin:16px 0;}
+  .exam .et{color:var(--acc);font-weight:bold;font-size:15.5px;}
+  .step{color:#9fc4ee;font-weight:bold;}
+  .foot{margin-top:36px;padding:14px 16px;background:#141a22;border:1px solid var(--line);border-radius:10px;color:var(--dim);font-size:12.8px;line-height:1.75;}
+  .foot b{color:var(--acc);}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14.5px;}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;}
+  th{background:#223041;color:#fff;}
+  .svgbox{background:#16202b;border-radius:10px;padding:10px;margin:14px 0;overflow-x:auto;}
+  .gr{color:var(--ok);font-weight:bold;}
+  ul{margin:8px 0 8px 22px;}
+  li{margin:5px 0;}
+  details.try{background:#16202b;border-color:#2c4a6e;}
+  details.try summary{color:#9fc4ee;}
+  details.try .ans{margin-top:8px;color:#cdd9e8;}
+  details.try .ans b{color:var(--ok);}
+  @media print{
+    body{background:#fff;color:#111;font-size:12.5pt;padding:0;}
+    .wrap{max-width:100%;}
+    h1,h2,h3,b,.m,.big{color:#111;}
+    h2{background:#f2f2f2;border-left:4pt solid #555;color:#111;}
+    .card,.card2,.q,.warn,.exam,details.self,details.try,.svgbox{background:#fff;}
+    .card,.card2,.q,.warn,.exam,details.self,details.try{border-color:#888;}
+    .m{border:1px solid #999;background:#fff!important;color:#111!important;}
+    .warn{border-color:#555;}
+    table th{background:#eee;color:#111;}
+    tr:nth-child(even) td{background:#f7f7f7;}
+    .note,.sub,.pg,.foot,.foot *{color:#333!important;}
+    .foot{background:#fff!important;border-color:#888;}
+    .pg{background:#fff!important;color:#111!important;border:1px solid #999!important;}
+    .q,.q *{color:#111!important;background:#fff!important;}
+    .big,.big *{color:#111!important;background:#fff!important;border-color:#111!important;}
+    .exam,.exam *,.card *,.card2 *,.warn *,details.self *,details.try *,.sol *,li,td,th,em{color:#111!important;}
+    .sub b{color:#333!important;}
+    .step,.et{color:#444!important;}
+    details.try summary{color:#111;}
+    svg [fill="#25384d"]{fill:#fff;}
+    svg [fill="#1d2733"]{fill:#fff;}
+    svg [fill="#16202b"]{fill:#fff;}
+    svg [fill="#4a9eff"]{fill:#555;}
+    svg [fill="#f0b429"]{fill:#777;}
+    svg [fill="#5ad1a5"]{fill:#666;}
+    svg [fill="#eaf2fb"]{fill:#111;}
+    svg [fill="#aebccf"]{fill:#444;}
+    svg [stroke="#31465e"]{stroke:#888;}
+    svg [stroke="#4a9eff"]{stroke:#555;}
+    svg [stroke="#f0b429"]{stroke:#666;}
+  }
+</style>
+</head>
+<body><div class="wrap">
+
+<h1>物理3.5 共点力的平衡</h1>
+<div class="sub">人教版《高中物理必修第一册》第三章收官节 · 2024印次实锚 <b>印刷页 p76–79</b>（影印8点：图81=p76节名页 / 图82=p77例题1 / 图83=p78例题2 / 图84=p79练习与应用 / 图85=p80·图86=p81复习与提高 / 图87=p82第四章章题页 / 图88=p83·4.1节名页，偏移N−5·asset=708256b6↔ts=1787023183495实测200）｜第三章收官：3.1重力与弹力→3.2摩擦力→3.3牛顿第三定律→3.4力的合成和分解（合并节）→<b>3.5共点力的平衡</b>｜旧版"3.5力的分解"已并入3.4（2024印次·B线dui4_34_1031认领行396325d节名亲验注记与本席图81亲读互证）·出品：并行搜索员A·队4席</div>
+
+<div class="card">
+<b>读完这一节你就能：</b><br>
+① 判断哪些力是<b>共点力</b>、什么状态叫<b>平衡状态</b>；<br>
+② 掌握全章压轴结论：<b>共点力平衡的条件是合力为0</b>，并会用 <span class="m">ΣF<span style="font-size:12px">x</span>=0、ΣF<span style="font-size:12px">y</span>=0</span> 两条方程解任何三力平衡题；<br>
+③ 用<b>正交分解法</b>走完"选对象→画受力→建轴→列方程→牛三转换"整条流水线（教材例题1首次正式引入"正交分解"术语 <span class="pg">p77</span>）；<br>
+④ 做对教材练习T1–T5五道平衡题 + 排掉四个高频坑（把"速度为0"当平衡 / 忘了牛三收口 / 轴选错方向 / "缓慢"二字漏读）。
+</div>
+
+<div class="q"><span class="tag">问题（教材p76·照录）</span> 图甲、乙、丙、丁分别画出了重力为 <span class="m">G</span> 的木棒在力 <span class="m">F₁</span> 和 <span class="m">F₂</span> 的共同作用下处于平衡状态的情况，这些力都位于同一平面内。根据每幅图中各个力作用线的几何关系，可以把上述四种情况的受力分成两类，你认为哪些情况属于同一类？你是根据什么来划分的？</div>
+
+<p>教材的答案藏在图里：<b>甲、丁</b>两图中，<span class="m">F₁</span>、<span class="m">F₂</span>、<span class="m">G</span> 的作用线<b>延长后交于同一点</b>；乙、丙中则不交。作用线交于一点的几个力，就叫<b>共点力</b>。本章前面学的合成、分解，都默认力作用在同一点上——现在我们把"共点"这个前提正式说破。<span class="pg">p76·问题栏目</span></p>
+
+<h2>第一站｜先分清：共点力与平衡状态</h2>
+<div class="card">
+<b>共点力</b>：几个力如果都作用在物体的同一点，或者它们的作用线<b>相交于同一点</b>，这几个力就叫共点力。<span class="pg">p76</span><br>
+<b>平衡状态</b>：物体受到几个力作用时，如果保持<b>静止</b>或<b>匀速直线运动</b>状态，我们就说这个物体处于平衡状态。<span class="pg">p76</span>
+</div>
+<p>教材给了四个"平衡状态"的活例子：桌上的书、屋顶的灯、随传送带匀速运送的物体、沿直线公路匀速前进的汽车。<span class="pg">p76</span> 前两个是静止，后两个是匀速直线运动——<b>速度大小方向都不变</b>，加速度为0，由牛顿第二定律反推，合力必然为0。这就是"平衡"的动力学含义：<b>合力为0 ⟺ 加速度为0 ⟺ 速度不变</b>（静止或匀速直线）。</p>
+<details class="try"><summary>验一验·30秒｜桌上静止的书、竖直上抛的小球在最高点的一瞬、匀速下降的电梯里的乘客——哪个处于平衡状态？</summary><div class="ans"><b>书与电梯乘客</b>是平衡状态（静止/匀速直线·合力为0）；<b>最高点的小球不是</b>——速度虽瞬时为0，但只受重力、合力=G、加速度=g，不满足"合力为0"。判定平衡永远先受力分析，再看速度。<span class="pg">p76</span></div></details>
+
+<h2>第二站｜平衡的条件：合力为0</h2>
+<p>二力平衡你早就会：作用在同一物体上的两个力，如果<b>大小相等、方向相反，并且在同一条直线上</b>，这两个力平衡——二力平衡时物体所受的<b>合力为0</b>。<span class="pg">p76</span></p>
+<p>那三个力、五个力呢？教材的思路极其干净：<b>逐步用力的合成</b>（3.4的平行四边形定则），把多个共点力最终等效为两个力；如果这两个力的合力为0，则意味着<b>所有力的合力等于0</b>，物体将处于平衡状态。反之亦然。</p>
+<div class="big">在共点力作用下，物体平衡的条件是<b>合力为0</b>，我们把它称为共点力平衡的条件。<span class="pg">p76·教材结论句照录</span></div>
+<p>落到坐标系里就是两条方程：<b>所有力沿 x 轴的分量的代数和为零（ΣF<span style="font-size:12px">x</span>=0），沿 y 轴的代数和为零（ΣF<span style="font-size:12px">y</span>=0）</b>。两条方程，最多解两个未知数——这就是三力平衡题"必可解"的原因。</p>
+
+<div class="card card2">
+<b>预备工具箱（前三节装备清点·本节开工即用）</b>
+<ul>
+<li>重力 <span class="m">G=mg</span>，方向竖直向下（3.1）；滑动摩擦 <span class="m">F<sub>f</sub>=μF<sub>N</sub></span>（3.2）——本节T4要用；</li>
+<li>力的合成=平行四边形定则、合力与分力等效替换；力的分解按实际效果分（3.4）；</li>
+<li>牛顿第三定律（3.3）——本节的"收口"动作：算出来的是<b>别人给物体的力</b>，题目常问<b>物体给别人（绳/挡板/斜面）的力</b>，中间要靠牛三转换（例题2教材亲自示范 <span class="pg">p78</span>）。</li>
+</ul>
+</div>
+<details class="try"><summary>验一验·30秒｜T2里足球受三力平衡，沿水平方向和竖直方向各能列一条方程——这两条方程长什么样？</summary><div class="ans">水平轴：<span class="m">F<sub>N</sub> − F<sub>T</sub>sinα = 0</span>；竖直轴：<span class="m">F<sub>T</sub>cosα − mg = 0</span>。这就是 <b>ΣF<span style="font-size:12px">x</span>=0、ΣF<span style="font-size:12px">y</span>=0</b> 的实战形态——下一站和练习T2会亲自解一遍。<span class="pg">p76</span></div></details>
+
+<h2>第三站｜例题1：正交分解法·一条流水线走完</h2>
+<div class="exam">
+<div class="et">【例题1·教材p77照录】</div>
+<p>某幼儿园要在空地上做一个滑梯（图3.5-1甲），根据空地的大小，滑梯的<b>水平跨度确定为 6 m</b>。设计时，滑板和儿童裤料之间的<b>动摩擦因数取 0.4</b>，为使儿童在滑梯游戏时能在滑板上<b>滑下</b>，滑梯<b>至少要多高</b>？</p>
+<p><span class="step">分析</span>　将滑梯抽象为一个斜面的模型（图3.5-1乙），以正在<b>匀速滑下</b>的小孩为研究对象。小孩受到三个力的作用：重力 <span class="m">G</span>、斜面的支持力 <span class="m">F<sub>N</sub></span> 和滑动摩擦力 <span class="m">F<sub>f</sub></span>。当这三个力的合力为0时，小孩能在滑板上获得一定速度后匀速滑下，则斜面的高度即为所要求的滑梯的高度。</p>
+<p><span class="step">解</span>　在图3.5-1中，沿<b>平行</b>和<b>垂直于斜面</b>的两个方向建立直角坐标系。把重力 <span class="m">G</span> 沿两个坐标轴的方向分解为 <span class="m">G<sub>x</sub></span> 和 <span class="m">G<sub>y</sub></span>，这样的分解称为<b>正交分解</b>。（教材p77原句——"正交分解"四个字在教材里首次登场就是在这道例题里。）</p>
+<p>设斜面倾角为 <span class="m">θ</span>，由于 <span class="m">G<sub>y</sub></span> 垂直于 <span class="m">AB</span>、<span class="m">G</span> 垂直于 <span class="m">AC</span>，故 <span class="m">G<sub>y</sub></span> 和 <span class="m">G</span> 的夹角也等于 <span class="m">θ</span>。用 <span class="m">l</span>、<span class="m">b</span> 和 <span class="m">h</span> 分别表示 <span class="m">AB</span>、<span class="m">AC</span> 和 <span class="m">BC</span> 的长度。根据共点力平衡的条件和直角三角形中三角函数关系可知：</p>
+<p>在 <span class="m">x</span> 轴方向上　<span class="m num">G<sub>x</sub> − F<sub>f</sub> = 0</span>，即 <span class="m num">F<sub>f</sub> = G<sub>x</sub> = G sinθ = G·h/l</span>　（1）</p>
+<p>在 <span class="m">y</span> 轴方向上　<span class="m num">G<sub>y</sub> − F<sub>N</sub> = 0</span>，即 <span class="m num">F<sub>N</sub> = G<sub>y</sub> = G cosθ = G·b/l</span>　（2）</p>
+<p>由于　<span class="m num">F<sub>f</sub> = μF<sub>N</sub></span>　（3）　把（1）（2）式代入（3）式有　<span class="m num">G·h/l = μG·b/l</span></p>
+<p>可求得　<span class="m num">h = μb = 0.4 × 6 m = 2.4 m</span>。<b>滑梯至少要 2.4 m 高，儿童才能从滑梯上滑下。</b>（sympy验点组6：<span class="m">h=μb</span> 与 <span class="m">tanθ=μ→θ≈21.8°、h=b·tanθ</span> 双路互证=2.4 m）</p>
+</div>
+<div class="card">
+<b>为什么"至少"？</b> 高度越大→倾角越大→下滑分力 <span class="m">G sinθ</span> 越大。当 <span class="m">tanθ=μ</span> 时恰好匀速；比这更陡就能加速滑下。"至少多高"的临界答案就是<b>匀速滑下的高度</b>——临界思维在平衡问题里的标准用法。<br>
+<b>轴为什么沿斜面建？</b> 三个力里摩擦力、支持力天然落在两根轴上，需要分解的只有重力一个——<b>让未知力/天然力落轴，能不分解的力不分解</b>，这是选轴的唯一原则。例题2马上给你一个"水平竖直建轴"的反例场景，对照着记。
+</div>
+<details class="try"><summary>验一验·30秒｜若动摩擦因数改为 0.5、水平跨度仍 6 m，滑梯至少多高？</summary><div class="ans">h=μb=0.5×6=<b>3 m</b>（θ=arctan0.5≈26.6°）。流水线不变，只换一个数——正交分解法的"模板感"就体现在这里。（sympy验点组6同式复算）<span class="pg">p77</span></div></details>
+
+<h2>第四站｜例题2：两法对照·牛三收口</h2>
+<div class="exam">
+<div class="et">【例题2·教材p78照录】</div>
+<p>生活中常用一根水平绳拉着悬吊重物的绳索来改变或固定悬吊物的位置。如图3.5-2，悬吊重物的细绳，其 <b>O 点被一水平绳 BO 牵引</b>，使悬绳 AO 段和竖直方向成 <b>θ 角</b>。若悬吊物所受的重力为 <span class="m">G</span>，则悬绳 AO 和水平绳 BO 所受的拉力各等于多少？</p>
+<p><span class="step">分析</span>　选取两根绳索连接的 <b>O 点</b>为研究对象，它受到三个力的作用：绳 AO 对它的拉力 <span class="m">F₁</span>、绳 BO 对它的拉力 <span class="m">F₂</span> 和 O 点下方悬绳对它的拉力 <span class="m">F₃</span>（图3.5-3）。在平衡状态下，O 点所受三个力的合力为0。由于 <span class="m">F₃</span> 的大小与悬挂物所受的重力相等，且三个力的方向均已<br>知，由此可以求出 <span class="m">F₁</span>、<span class="m">F₂</span> 的大小。</p>
+<p><span class="step">解·方法1（合成法）</span>　用两个力的合力和第三个力平衡的方法求解：如图3.5-3，<span class="m">F₄</span> 为 <span class="m">F₁</span> 和 <span class="m">F₂</span> 的合力，则 <span class="m">F₄</span> 与 <span class="m">F₃</span> 平衡，即 <span class="m num">F₄ = F₃ = G</span>。由图可知 <span class="m num">F₁ = F₄/cosθ = G/cosθ</span>，<span class="m num">F₂ = F₄ tanθ = G tanθ</span>。</p>
+<p><span class="step">解·方法2（正交分解法）</span>　如图3.5-4，以 O 为原点建立直角坐标系（<span class="m">F₂</span> 方向为 x 轴正方向，向上为 y 轴正方向）。因 x、y 两个方向的合力都等于0，可列方程：<span class="m num">F₂ − F₁ sinθ = 0</span>（1）、<span class="m num">F₁ cosθ − G = 0</span>（2），解得 <span class="m num">F₁ = G/cosθ</span>，<span class="m num">F₂ = G tanθ</span>。（sympy验点组8–9：锚θ=30°、G=100 N，两法各得 <span class="m">F₁=115.47 N、F₂=57.74 N</span>，全等）</p>
+<p><b>根据牛顿第三定律，绳 AO 和绳 BO 所受的拉力大小分别为 <span class="m num">G/cosθ</span> 和 <span class="m num">G tanθ</span>。</b>（教材p78收口句照录——题目问的是"绳所受"的拉力，我们算的是"绳给O点"的力，一步牛三完成转换。）</p>
+</div>
+<div class="card">
+<b>两法怎么选？</b> 三力中若<b>已知两力夹角、合力方向恰好沿某轴</b>，合成法一步到位；若力多、方向杂，正交分解法永远可用（通用解）。考试写正交分解最稳。<br>
+<b>研究对象是"结点O"不是重物！</b> 三根绳在O点共点——这正是"共点力"的典型场景：力的<b>作用线交于一点</b>就共点，哪怕力不在同一点上施加。O点受的 <span class="m">F₃</span> 大小等于 <span class="m">G</span>，但别把重物和O点混成一个对象。
+</div>
+<details class="try"><summary>验一验·30秒｜算出 F₁=G/cosθ 后，题目问"绳 AO 所受的拉力"，答案写什么？</summary><div class="ans">数值仍是 <b>G/cosθ</b>——绳AO对O点的拉力与O点对绳AO的拉力是一对作用力与反作用力，大小相等方向相反，"绳受的拉力"直接取 F₁ 的数值。这正是教材收口句亲自示范的动作，也是坑④的出处。<span class="pg">p78</span></div></details>
+
+<h2>练习与应用（教材p79·T1–T5全列全解）</h2>
+<details class="self"><summary>T1　如图3.5-5，物体在五个共点力的作用下保持平衡。如果撤去力 F₁，而保持其余四个力不变，请在图上画出这四个力的合力的大小和方向。</summary><div class="sol">五力平衡→<span class="m">F₁+F₂+F₃+F₄+F₅=0</span>→<span class="m">F₂+F₃+F₄+F₅=−F₁</span>。所以其余四个力的合力<b>与 F₁ 大小相等、方向相反</b>（过作用点沿 F₁ 反向画出）。核心：平衡是"全家之和为零"，撤掉谁，剩下全家的合力就补谁的缺。（sympy验点组1）<span class="pg">p79 T1·图3.5-5</span></div></details>
+<details class="self"><summary>T2　在光滑墙壁上用网兜把足球挂在A点，足球与墙壁的接触点为B（图3.5-6）。足球的质量为 m，悬绳与墙壁的夹角为 α，网兜的质量不计。求悬绳对足球的拉力和墙壁对足球的支持力。</summary><div class="sol">球受三力：重力 <span class="m">mg</span>（竖直向下）、绳拉力 <span class="m">F<sub>T</sub></span>（沿绳·与竖直成α）、墙支持力 <span class="m">F<sub>N</sub></span>（垂直墙面·水平）。水平竖直建轴（光滑墙无摩擦力、支持力天然落轴）：<span class="m">F<sub>T</sub>cosα = mg</span> → <b><span class="m">F<sub>T</sub> = mg/cosα</span></b>；<span class="m">F<sub>N</sub> = F<sub>T</sub>sinα</span> → <b><span class="m">F<sub>N</sub> = mg·tanα</span></b>。验点锚α=30°、m=1kg、g=10：<span class="m">F<sub>T</sub>=11.55 N、F<sub>N</sub>=5.77 N</span>。顺带记一个极限直觉：α越大（绳越趋水平）<span class="m">F<sub>T</sub></span>越大，α→90°时拉力要上天——所以挂东西的绳绝不能拉到接近水平。（sympy验点组2–3）<span class="pg">p79 T2·图3.5-6</span></div></details>
+<details class="self"><summary>T3　如图3.5-7，物体所受重力为 40 N，用细绳OC悬于O点，绳OC所能承受的最大拉力为 50 N。现用细绳AB绑住绳OC的A点，再用缓慢增大的水平力牵拉A点，当OA段刚被拉断时，绳AB的拉力为多少？</summary><div class="sol">关键读题：<b>"缓慢"</b>＝每一步都是平衡态；<b>"OA段刚被拉断"</b>＝临界点，此时 <span class="m">T<sub>OA</sub>=50 N</span>。第一步先看物体＋AC段：物体只受重力和AC段拉力两力平衡→AC段拉力 <span class="m">=40 N</span> 且必须竖直（AC段保持竖直，C在A正下方）。第二步看结点A：受 <span class="m">T<sub>OA</sub></span>（沿AO·与竖直成θ）、<span class="m">T<sub>AB</sub></span>（水平）、AC段向下拉力40 N。竖直轴：<span class="m">T<sub>OA</sub>cosθ=40</span>→<span class="m">cosθ=40/50=0.8</span>（sinθ=0.6）；水平轴：<span class="m">T<sub>AB</sub>=T<sub>OA</sub>sinθ=50×0.6</span>→<b><span class="m">T<sub>AB</sub>=30 N</span></b>。（sympy验点组4）<span class="pg">p79 T3·图3.5-7</span></div></details>
+<details class="self"><summary>T4　一个质量为 500 kg 的箱子，在平行于斜面的拉力F作用下，沿倾角为 30° 的斜面匀速上滑（图3.5-8）。已知箱子与斜面间的动摩擦因数为 0.3，拉力F是多少？</summary><div class="sol">研究对象＝箱子；匀速上滑→平衡。沿斜面建轴（F、摩擦力天然落轴）。斜面轴：<span class="m">F = G sin30° + F<sub>f</sub></span>；垂直斜面轴：<span class="m">F<sub>N</sub> = G cos30°</span>；摩擦力沿斜面向下（相对斜面向上滑）：<span class="m">F<sub>f</sub> = μF<sub>N</sub> = μG cos30°</span>。合并：<b><span class="m">F = mg(sin30° + μcos30°)</span></b>。代数：g取9.8→<span class="m">F=500×9.8×(0.5+0.3×0.866)=3723 N≈3.7×10³ N</span>（g取10口径→3799 N≈3.8×10³ N）。三力平衡＋摩擦＋牛三……不对，这题不用牛三，问的就是拉力本身。（sympy验点组5）<span class="pg">p79 T4·图3.5-8</span></div></details>
+<details class="self"><summary>T5　将一个质量为 4 kg 的铅球放在倾角为 45° 的斜面上，并用竖直挡板挡住，铅球处于静止状态（图3.5-9）。不考虑铅球受到的摩擦力，铅球对挡板的压力和对斜面的压力分别是多少？</summary><div class="sol">先研究球：受重力 <span class="m">G=4×9.8=39.2 N</span>（竖直向下）、斜面支持力 <span class="m">F<sub>N1</sub></span>（垂直斜面·与竖直方向成45°）、挡板弹力 <span class="m">F<sub>N2</sub></span>（水平——挡板<b>竖直</b>，弹力垂直挡板即水平）。竖直轴：<span class="m">F<sub>N1</sub>cos45° = G</span> → <span class="m">F<sub>N1</sub> = √2G ≈ 55.4 N</span>；水平轴：<span class="m">F<sub>N2</sub> = F<sub>N1</sub>sin45° = G·tan45° = 39.2 N</span>。题目问"对挡板""对斜面"的压力——<b>牛三转换</b>：对挡板压力 = <b>39.2 N</b>（水平），对斜面压力 = <b>≈55.4 N</b>（垂直斜面）。（sympy验点组10–11）<span class="pg">p79 T5·图3.5-9</span></div></details>
+
+<h2>大坑警报（本节四发）</h2>
+<div class="warn"><b>坑①　"速度为0" ≠ 平衡状态。</b> 竖直上抛的球在最高点速度瞬时为0，但只受重力、合力=G、加速度=g——不是平衡！平衡要求<b>合力为0且保持</b>（静止或匀速直线运动），判定永远走"受力分析→合力"，不走"看一眼速度"。</div>
+<div class="warn"><b>坑②　共点看"作用线"，不看"作用点"。</b> 例题2三根绳不在同一个点施力于同一个对象上吗？——都在结点O。但反过来，像"一根杠杆两端各受一个力"这种，作用线不交于一点就不是共点力，<b>共点力平衡条件不能直接搬</b>。判定口诀：延长作用线，看交点。</div>
+<div class="warn"><b>坑③　轴选错，白算一半。</b> 原则只有一条：<b>让天然力/未知力尽量落轴</b>。斜面问题沿斜面建（例题1、T4），竖直墙/水平挡板问题水平竖直建（T2、T5），绳索结点问题水平竖直建（例题2）。轴建得好，只有一个力需要分解；轴建得差，三个力全要动刀。</div>
+<div class="warn"><b>坑④　问"对XX的压力/绳受的拉力"，忘做牛三收口。</b> 平衡方程解出的是"别人给研究对象的力"；题目若问"物体给别人的力"（T5两问、例题2收口句），必须用牛顿第三定律换一次手：<b>等大、反向、换对象</b>。教材特意在例题2最后一句亲自示范了这个动作，说明这是命题高频点。</div>
+
+<h2>自测四连</h2>
+<details class="self"><summary>Q1　"物体在共点力作用下保持静止"和"物体瞬时速度为0"有什么本质区别？</summary><div class="sol">前者是<b>平衡状态</b>：合力为0、加速度为0、且这种状态保持下去。后者只是运动学瞬间：合力可以不为0（如上抛最高点，a=g）。判定平衡的唯一标准是<b>合力是否为0</b>，不是速度是否为0。</div></details>
+<details class="self"><summary>Q2　共点力平衡的条件为什么可以写成 ΣFx=0、ΣFy=0 两条？</summary><div class="sol">"合力为0"是矢量 statement：既要求 x 方向分量之和为0，也要求 y 方向分量之和为0——合力的两个分量都为0，合力才是0。平面问题两条方程封顶，恰好解两个未知数（通常是一个未知力的大小＋一个角度，或两个未知力的大小）。</div></details>
+<details class="self"><summary>Q3　例题1里，若滑梯高度做成 3 m（水平跨度仍 6 m），儿童滑下时是什么运动？</summary><div class="sol">tanθ=3/6=0.5＞μ=0.4→<span class="m">G sinθ ＞ μG cosθ</span>，沿斜面方向合力向下不为0→儿童做<b>加速滑下</b>（非平衡态，本节方法只负责判断"能不能匀速"，加速段的快慢是第四章动力学的内容）。</div></details>
+<details class="self"><summary>Q4　T3 中为什么 AC 段绳一定保持竖直？</summary><div class="sol">物体只受两个力：重力（竖直向下）和AC段绳的拉力。二力平衡要求两力<b>等大、反向、共线</b>——所以AC段拉力必须竖直向上，绳自然保持竖直。这是"二力平衡必共线"的直接应用：看到"只受两个力的物体"，先想到共线条件。</div></details>
+
+<h2>高考怎么考（两考向）</h2>
+<div class="card">
+<b>考向一｜正交分解法解三力平衡（高频·中档）</b>：斜面＋挡板/绳索悬挂/光滑球面三大模型轮换出题，考察完整流水线——<span class="step">选对象→画受力→建轴（未知力落轴）→列ΣFx=0·ΣFy=0→解方程→（问"对XX的压力/绳受的力"时）牛三转换</span>。本节例题1、例题2、T2、T4、T5五道题恰好把五个环节各示范了一遍。失分点集中在坑③（轴选差导致三角函数关系绕晕）和坑④（忘牛三）。<br>
+<b>考向二｜平衡＋摩擦＋临界综合（中高档）</b>：把3.2的 <span class="m">F<sub>f</sub>=μF<sub>N</sub></span> 嵌进平衡方程（T4型），或埋一个"刚好/恰好/刚被拉断"的临界词（T3型：临界即某力达到最大值/摩擦达到最大静摩擦），再配"缓慢"过程（每一步都是平衡态）。识别信号词：<b>匀速、缓慢、恰好、刚要、至少</b>。<br>
+<b>本节真题锚：0覆盖候采不代拟</b>（对证源真题卷源池内无本节直读件在案·T11口径·宁缺毋编）。
+</div>
+
+<div class="svgbox">
+<svg viewBox="0 0 840 250" xmlns="http://www.w3.org/2000/svg" font-family="PingFang SC,Microsoft YaHei,sans-serif" aria-label="共点力平衡解题流水线：明确对象与平衡状态→画全部受力→选坐标轴让未知力落轴→列ΣFx=0与ΣFy=0→解方程→牛顿第三定律转换到所问的力">
+  <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a9eff"/></marker></defs>
+  <text x="420" y="22" fill="#aebccf" font-size="13" text-anchor="middle">三力平衡·正交分解流水线（例题1/例题2/T2–T5通用）</text>
+  <rect x="15" y="45" width="150" height="62" rx="9" fill="#25384d" stroke="#4a9eff"/>
+  <text x="90" y="70" fill="#eaf2fb" font-size="13" text-anchor="middle">① 选研究对象</text>
+  <text x="90" y="90" fill="#aebccf" font-size="11" text-anchor="middle">结点O／箱子／球</text>
+  <line x1="165" y1="76" x2="200" y2="76" stroke="#4a9eff" marker-end="url(#ar)"/>
+  <rect x="202" y="45" width="150" height="62" rx="9" fill="#25384d" stroke="#4a9eff"/>
+  <text x="277" y="70" fill="#eaf2fb" font-size="13" text-anchor="middle">② 画受力图</text>
+  <text x="277" y="90" fill="#aebccf" font-size="11" text-anchor="middle">重力·弹力·摩擦一个不漏</text>
+  <line x1="352" y1="76" x2="387" y2="76" stroke="#4a9eff" marker-end="url(#ar)"/>
+  <rect x="389" y="45" width="150" height="62" rx="9" fill="#25384d" stroke="#f0b429"/>
+  <text x="464" y="70" fill="#eaf2fb" font-size="13" text-anchor="middle">③ 建轴（落轴原则）</text>
+  <text x="464" y="90" fill="#aebccf" font-size="11" text-anchor="middle">斜面系／水平竖直系</text>
+  <line x1="539" y1="76" x2="574" y2="76" stroke="#4a9eff" marker-end="url(#ar)"/>
+  <rect x="576" y="45" width="130" height="62" rx="9" fill="#25384d" stroke="#4a9eff"/>
+  <text x="641" y="70" fill="#eaf2fb" font-size="13" text-anchor="middle">④ 列方程</text>
+  <text x="641" y="90" fill="#aebccf" font-size="11" text-anchor="middle">ΣFx=0 · ΣFy=0</text>
+  <line x1="706" y1="76" x2="741" y2="76" stroke="#4a9eff" marker-end="url(#ar)"/>
+  <rect x="743" y="45" width="90" height="62" rx="9" fill="#25384d" stroke="#4a9eff"/>
+  <text x="788" y="70" fill="#eaf2fb" font-size="13" text-anchor="middle">⑤ 解＋牛三</text>
+  <text x="788" y="90" fill="#aebccf" font-size="11" text-anchor="middle">换手收口</text>
+  <rect x="15" y="140" width="818" height="74" rx="9" fill="#1d2733" stroke="#31465e"/>
+  <text x="424" y="166" fill="#f0b429" font-size="13" text-anchor="middle">轴选得好＝只分解一个力（例题1沿斜面建：摩擦力·支持力天然落轴）</text>
+  <text x="424" y="192" fill="#5ad1a5" font-size="13" text-anchor="middle">临界信号词＝匀速·缓慢·恰好·刚要·至少（T3绳断临界50 N／例题1"至少2.4 m"）</text>
+</svg>
+</div>
+
+<div class="svgbox">
+<svg viewBox="0 0 840 170" xmlns="http://www.w3.org/2000/svg" font-family="PingFang SC,Microsoft YaHei,sans-serif" aria-label="本节位置图：第一章运动的描述→第二章匀变速直线运动的研究→第三章相互作用——力（3.1重力与弹力、3.2摩擦力、3.3牛顿第三定律、3.4力的合成和分解、3.5共点力的平衡收官）→第四章运动和力的关系·4.1牛顿第一定律p83">
+  <defs><marker id="ar2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#f0b429"/></marker></defs>
+  <text x="420" y="22" fill="#aebccf" font-size="13" text-anchor="middle">节末位置 · 教材印刷页对位（偏移N−5实测）</text>
+  <rect x="18" y="42" width="150" height="52" rx="8" fill="#25384d" stroke="#4a9eff"/>
+  <text x="93" y="63" fill="#eaf2fb" font-size="12.5" text-anchor="middle">第二章收官（p36–45）</text>
+  <text x="93" y="82" fill="#aebccf" font-size="11" text-anchor="middle">2.1–2.4 全部在案</text>
+  <line x1="168" y1="68" x2="203" y2="68" stroke="#f0b429" marker-end="url(#ar2)"/>
+  <rect x="205" y="42" width="285" height="52" rx="8" fill="#25384d" stroke="#f0b429"/>
+  <text x="347" y="63" fill="#eaf2fb" font-size="12.5" text-anchor="middle">第三章 相互作用——力（p56–81）</text>
+  <text x="347" y="82" fill="#aebccf" font-size="11" text-anchor="middle">3.1重力与弹力·3.2摩擦力·3.3牛三·3.4力的合成和分解·3.5共点力的平衡（p76–79·本节）</text>
+  <line x1="490" y1="68" x2="525" y2="68" stroke="#f0b429" marker-end="url(#ar2)"/>
+  <rect x="527" y="42" width="140" height="52" rx="8" fill="#25384d" stroke="#f0b429"/>
+  <text x="597" y="63" fill="#eaf2fb" font-size="12.5" text-anchor="middle">章末复习与提高</text>
+  <text x="597" y="82" fill="#aebccf" font-size="11" text-anchor="middle">p80–81（A组/B组）</text>
+  <line x1="667" y1="68" x2="702" y2="68" stroke="#f0b429" marker-end="url(#ar2)"/>
+  <rect x="704" y="42" width="120" height="52" rx="8" fill="#25384d" stroke="#5ad1a5"/>
+  <text x="764" y="63" fill="#eaf2fb" font-size="12.5" text-anchor="middle">第四章（p82起）</text>
+  <text x="764" y="82" fill="#aebccf" font-size="11" text-anchor="middle">运动和力的关系·4.1牛顿第一定律p83</text>
+  <rect x="18" y="118" width="806" height="36" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="421" y="141" fill="#aebccf" font-size="12" text-anchor="middle">本节＝第三章收官（五节全实锚：2024印次"力的分解"并入3.4合并节p72–75·3.5共点力的平衡p76–79）·域界双闭合：前接3.4域尾p75·后接章末p80</text>
+</svg>
+</div>
+
+<div class="foot">
+【foot·验点账】本件事实点24条全锚教材p76–79（影印8点实锚：图81=p76节名页含问题栏目甲乙丙丁/图82=p77例题1/图83=p78例题2/图84=p79练习与应用T1–T5/图85=p80·图86=p81第三章复习与提高A/B组/图87=p82第四章章题页/图88=p83·4.1牛顿第一定律节名页·偏移N−5全验证·asset=708256b6↔ts=1787023183495实测200）·sympy验点12组全过（p35_calc.py留痕：T1撤力合力=−F1/T2足球FT=mg/cosα·FN=mg·tanα锚α=30°/T3绳断临界TAB=30 N(cosθ=0.8·sinθ=0.6)/T4匀速上滑F=mg(sin30°+μcos30°)=3723.06 N≈3.7×10³ N(g=9.8)·3799.04 N(g=10)双口径/例1 h=μb=2.4 m·tanθ=μ互证/例2两法全等F1=G/cosθ·F2=Gtanθ锚θ=30°·G=100 N/T5 √2G=55.4 N·G=39.2 N双轴互证/蓝字方程组自洽）·练习与应用T1–T5全列全解·教材结论句/例题题干/收口句照录级忠实·"正交分解"术语首锚p77如实注记·真题锚0覆盖候采不代拟（T11口径）·三条差距与四附件随件·出品：并行搜索员A·队4席·dui4_35_1031分支候验·禁直推main。
+</div>
+
+</div></body>
+</html>

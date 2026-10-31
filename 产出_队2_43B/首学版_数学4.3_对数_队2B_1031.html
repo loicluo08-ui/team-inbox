@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>数学4.3 对数 · 零基础首学版 v1.0（队2席·B）</title>
+<style>
+body{font-family:"Songti SC","SimSun",serif;max-width:860px;margin:24px auto;line-height:1.85;color:#1a1a1a;padding:0 18px;}
+h1{font-size:1.7em;border-bottom:3px solid #1a4d8f;padding-bottom:8px;color:#1a4d8f;}
+h2{font-size:1.32em;color:#1a4d8f;margin-top:1.9em;border-left:5px solid #1a4d8f;padding-left:10px;}
+h3{font-size:1.12em;margin-top:1.4em;}
+.station{background:#eef3fa;border:1px solid #c5d5ea;border-radius:8px;padding:14px 18px;margin:18px 0;}
+.station-title{font-weight:bold;color:#1a4d8f;font-size:1.08em;}
+.exa{background:#f6f8fb;border:1px solid #d9e2ee;border-radius:6px;padding:10px 16px;margin:12px 0;}
+.exa-t{font-weight:bold;}
+.note{background:#fdf6e7;border:1px solid #e7d5a8;border-radius:6px;padding:8px 14px;margin:10px 0;font-size:.96em;}
+.kbox{border:1.5px solid #1a4d8f;border-radius:6px;padding:10px 16px;margin:12px 0;background:#fafcff;}
+table{border-collapse:collapse;}
+td,th{border:1px solid #999;padding:4px 10px;}
+@media print{
+  body{margin:0;max-width:none;font-size:10.5pt;line-height:1.7;}
+  .station{break-inside:avoid;page-break-inside:avoid;border-color:#888;background:#fff;padding:8px 12px;}
+  .exa,.note,.kbox{break-inside:avoid;page-break-inside:avoid;}
+  h1{font-size:16pt;} h2{font-size:13pt;page-break-after:avoid;}
+  a{color:#000;text-decoration:none;}
+}
+table{border-collapse:collapse;margin:12px auto;}
+td,th{border:1px solid #8aa8c8;padding:5px 12px;text-align:center;}
+.math{font-family:"Times New Roman",serif;font-style:italic;}
+.frm{font-family:"Times New Roman","STIXGeneral",serif;font-size:1.08em;text-align:center;margin:8px 0;}
+.meta{color:#666;font-size:.9em;border-top:1px dashed #bbb;margin-top:2em;padding-top:8px;}
+.tag{display:inline-block;background:#1a4d8f;color:#fff;border-radius:4px;padding:1px 8px;font-size:.82em;margin-right:6px;}
+sup{font-size:.75em;} sub{font-size:.75em;}
+</style>
+</head>
+<body>
+<h1>4.3 对数</h1>
+<p><span class="tag">教材域</span>人教A版必修第一册 第四章 4.3（p122–p129）｜<span class="tag">节界实锚</span>左界 p122「4.3 对数」节名页，右界 p130「4.4 对数函数」节名页（影印图129／图137 直读夹逼）｜<span class="tag">产出</span>零基础首学版 v1.0 · 队2席 · 1031</p>
+
+<div class="station">
+<div class="station-title">站一 · 目标卡（学完这一节你将能…）</div>
+<ol>
+<li>说出对数的定义，把任意指数式 a<sup>x</sup>=N 与对数式 x=log<sub>a</sub>N 互相改写，并指认底数、真数各自是谁；</li>
+<li>认得 lg N（常用对数，底10）与 ln N（自然对数，底 e）两套简记，并知道"负数和0没有对数"的道理；</li>
+<li>默写对数运算性质三条与换底公式，会把 log<sub>a</sub>6 拆成 lg6/lg2 这类"换底"计算并求近似值；</li>
+<li>用对数模型解决两件真实世界的事：地震能量比较（里氏震级差1级=能量约32倍）与增长"翻倍要几年"。</li>
+</ol>
+</div>
+
+<div class="station">
+<div class="station-title">站二 · 预备步（开新课前的三张名片）</div>
+<ol>
+<li><b>指数幂的运算性质</b>（4.1已学）：a<sup>r</sup>·a<sup>s</sup>=a<sup>r+s</sup>；a<sup>r</sup>÷a<sup>s</sup>=a<sup>r−s</sup>；(a<sup>r</sup>)<sup>s</sup>=a<sup>rs</sup>——本节全部对数性质都从它们"翻译"过来；</li>
+<li><b>指数函数回看</b>（4.2.1问题1）：B地景区游客人次按每年1.11倍增长，2001年后第x年人次为 y=1.11<sup>x</sup>——本节开头就要"反过来用"它；</li>
+<li><b>逆运算直觉</b>：加法↔减法、乘方↔开方，都互为逆运算——"已知底数和幂的值，反求指数"这步新逆运算，就是对数。</li>
+</ol>
+</div>
+
+<h2>4.3.1 对数的概念</h2>
+<p><b>问题起点（教材p122）</b>：在4.2.1的问题1中，通过指数幂运算，我们能从 y=1.11<sup>x</sup> 求出任意正整数 x（如22年后）景区的游客人次是2001年的多少倍。反之，如果要求经过多少年游客人次是2001年的2倍、3倍、4倍……那么该如何解决？</p>
+<p>上述问题实际上就是从 1.11<sup>x</sup>=2，1.11<sup>x</sup>=3，1.11<sup>x</sup>=4，…中分别求出 x，即<b>已知底数和幂的值，求指数</b>。这是本节要学习的——对数。</p>
+
+<div class="kbox"><b>定义（教材p122原文语义）</b>：一般地，如果 a<sup>x</sup>=N（a&gt;0，且 a≠1），那么数 x 叫做<b>以 a 为底 N 的对数</b>（logarithm），记作 <span class="frm">x=log<sub>a</sub>N</span>，其中 a 叫做对数的<b>底数</b>，N 叫做<b>真数</b>。</div>
+
+<p><b>两个例子直读</b>：由于 5<sup>4</sup>=625，所以4就是以5为底625的对数，记作 log<sub>5</sub>625（其值为4）；再如由于 (1/2)<sup>−4</sup>=16，所以以1/2为底16的对数是−4，记作 log<sub>1/2</sub>16=−4。</p>
+
+<div class="note"><b>两套常用简记（教材p122）</b>：①以10为底的对数叫<b>常用对数</b>（common logarithm），log<sub>10</sub>N 记为 <b>lg N</b>；②以无理数 e=2.718 28…为底的对数叫<b>自然对数</b>（natural logarithm），log<sub>e</sub>N 记为 <b>ln N</b>。</div>
+
+<p>根据对数的定义，可以得到对数与指数间的关系：</p>
+<p class="frm">当 a&gt;0，a≠1 时，a<sup>x</sup>=N ⇔ x=log<sub>a</sub>N。</p>
+<p>由此可得关于对数的两个结论（请读者用对数与指数间的关系自行证明）：</p>
+<ul><li><b>负数和0没有对数</b>（因为正数 a 的任何次幂都是正数，N&gt;0 恒成立）；</li>
+<li><b>log<sub>a</sub>1=0；log<sub>a</sub>a=1</b>（分别由 a<sup>0</sup>=1、a<sup>1</sup>=a 翻译而来）。</li></ul>
+
+<div class="exa"><div class="exa-t">例1（教材p122）把下列指数式化为对数式，对数式化为指数式：</div>
+(1) 5<sup>4</sup>=625；　(2) 2<sup>−6</sup>=1/64；　(3) (1/2)<sup>m</sup>=5.73；<br>
+(4) log<sub>1/2</sub>16=−4；　(5) lg 0.01=−2；　(6) ln 10=n。<br>
+<div class="exa-t">解（教材p123）：</div>
+(1) log<sub>5</sub>625＝4；(2) log<sub>2</sub>(1/64)＝−6；(3) log<sub>1/2</sub>5.73＝m；(4) (1/2)<sup>−4</sup>=16；(5) 10<sup>−2</sup>=0.01；(6) e<sup>n</sup>=10。</div>
+
+<div class="exa"><div class="exa-t">例2（教材p123）求下列各式中 x 的值：</div>
+(1) log<sub>64</sub>x＝−2/3；　(2) log<sub>x</sub>8=6；　(3) lg 100=x；　(4) −ln e<sup>2</sup>=x。<br>
+<div class="exa-t">解（教材p123）：</div>
+(1) 因为 log<sub>64</sub>x＝−2/3，所以 x＝64<sup>−2/3</sup>=(4<sup>3</sup>)<sup>−2/3</sup>=4<sup>−2</sup>=1/16。<br>
+(2) 因为 log<sub>x</sub>8=6，所以 x<sup>6</sup>=8。又 x&gt;0，所以 x=8<sup>1/6</sup>=(2<sup>3</sup>)<sup>1/6</sup>=2<sup>1/2</sup>=√2。<br>
+(3) 因为 lg 100=x，所以 10<sup>x</sup>=100=10<sup>2</sup>，于是 x=2。<br>
+(4) 因为 −ln e<sup>2</sup>=x，所以 ln e<sup>2</sup>=−x，e<sup>2</sup>=e<sup>−x</sup>，于是 x=−2。</div>
+
+<div class="note"><b>练习（教材p123）</b>：1.把下列指数式写成对数式、对数式写成指数式（六小题：如 log<sub>5</sub>9=2、lg n=2.3、log<sub>e</sub>…=−4 形态）——互化基本功；2.求下列各式的值（log<sub>5</sub>25、log<sub>0.1</sub>…、ln…、lg 0.001）；3.求 x（log<sub>2</sub>x＝−3、log<sub>2</sub>49=4、lg 0.000 01=x、ln √e 形态）。</div>
+
+<h2>4.3.2 对数的运算</h2>
+<p><b>怎么研究？（教材p124原文思路）</b>在引入对数之后，自然应研究对数的运算性质。我们知道了对数与指数间的关系，能否利用指数幂运算性质得出相应的对数运算性质呢？</p>
+<p><b>示范推导（以乘法为例，教材p124）</b>：设 M=a<sup>m</sup>，N=a<sup>n</sup>。因为 a<sup>m</sup>·a<sup>n</sup>=a<sup>m+n</sup>，所以 MN=a<sup>m+n</sup>。根据对数与指数间的关系可得 log<sub>a</sub>M=m，log<sub>a</sub>N=n，log<sub>a</sub>(MN)＝m＋n。这样就得到 log<sub>a</sub>(MN)=log<sub>a</sub>M+log<sub>a</sub>N。同样地，同学们可以仿照上述过程，由 a<sup>m</sup>÷a<sup>n</sup>=a<sup>m−n</sup>、(a<sup>m</sup>)<sup>n</sup>=a<sup>mn</sup> 自己推出对数运算的其他性质。</p>
+
+<div class="kbox"><b>对数的运算性质（教材p124）</b>：如果 a&gt;0，且 a≠1，M&gt;0，N&gt;0，那么
+<p class="frm">(1) log<sub>a</sub>(MN)=log<sub>a</sub>M+log<sub>a</sub>N；<br>(2) log<sub>a</sub>(M/N)=log<sub>a</sub>M−log<sub>a</sub>N；<br>(3) log<sub>a</sub>M<sup>n</sup>=n·log<sub>a</sub>M（n∈R）。</p>
+直观记法："乘法"变"加法"，"除法"变"减法"，"乘方"变"乘法"——运算级别整体降一级。</div>
+
+<div class="exa"><div class="exa-t">例3（教材p124）求下列各式的值：</div>
+(1) lg √100；　(2) log<sub>2</sub>(4<sup>7</sup>×2<sup>5</sup>)。<br>
+<div class="exa-t">解：</div>
+(1) lg √100=lg 100<sup>1/2</sup>=(1/2)·lg 100=(1/2)×2=1；<br>
+(2) log<sub>2</sub>(4<sup>7</sup>×2<sup>5</sup>)=log<sub>2</sub>4<sup>7</sup>+log<sub>2</sub>2<sup>5</sup>=7·log<sub>2</sub>4+5·log<sub>2</sub>2=7×2+5×1=19。</div>
+
+<div class="exa"><div class="exa-t">例4（教材p125）用 ln x，ln y，ln z 表示 ln(x<sup>2</sup>√y/√z)。</div>
+<div class="exa-t">解：</div>
+ln(x<sup>2</sup>√y/√z)=ln x<sup>2</sup>+ln √y−ln √z=2·ln x+(1/2)·ln y−(1/2)·ln z。</div>
+
+<p><b>从"查表"到"换底"（教材p125原文思路）</b>：数学史上，人们经过大量的努力，制作了常用对数表和自然对数表，只要通过查表就能求出任意正数的常用对数或自然对数。现在，利用计算工具，也可以直接求出任意正数的常用对数或自然对数。这样，如果能将其他底的对数转换为以10或e为底的对数，就能方便地求出这些对数。</p>
+<p>设 log<sub>a</sub>b=x，则 a<sup>x</sup>=b。两边取以 c 为底的对数：log<sub>c</sub>a<sup>x</sup>=log<sub>c</sub>b。根据性质(3)得 x·log<sub>c</sub>a=log<sub>c</sub>b，于是——</p>
+<div class="kbox"><b>对数换底公式（教材p125）</b>：<span class="frm">log<sub>a</sub>b = log<sub>c</sub>b / log<sub>c</sub>a</span>　（a&gt;0且a≠1；b&gt;0；c&gt;0且c≠1）。</div>
+<p><b>回到开头的问题</b>：求经过多少年B地景区游客人次是2001年的2倍，就是计算 x=log<sub>1.11</sub>2 的值。由换底公式，x=lg2/lg1.11≈0.301 03/0.045 32≈<b>6.64</b>（sympy独立复核 6.6422）。由此可得，大约经过7年，B地景区的游客人次就达到2001年的2倍。类似地，可以求出游客人次是2001年的3倍、4倍……所需要的年数。</p>
+
+<div class="exa"><div class="exa-t">例5（教材p126）地震能量的对数刻度：</div>
+尽管目前人类还无法准确预报地震，但科学家通过研究，已经对地震有所了解。例如，地震时释放出的能量 E（单位：焦耳）与地震里氏震级 M 之间的关系为 <b>lg E=4.8+1.5M</b>。2011年3月11日，日本东北部海域发生里氏9.0级地震，它所释放出来的能量是2008年5月12日我国汶川发生里氏8.0级地震的多少倍（精确到1）？<br>
+<div class="exa-t">解：</div>
+设里氏9.0级和8.0级地震的能量分别为 E₁ 和 E₂。由 lg E=4.8+1.5M，可得 lg E₁=4.8+1.5×9.0，lg E₂=4.8+1.5×8.0。于是 lg(E₁/E₂)=lg E₁−lg E₂=(4.8+1.5×9.0)−(4.8+1.5×8.0)=1.5。利用计算工具可得 E₁/E₂=10<sup>1.5</sup>≈32。虽然里氏9.0级地震与里氏8.0级地震仅相差1级，但前者释放出来的能量却是后者的约32倍。</div>
+<div class="note"><b>想一想（教材p126边栏）</b>：为什么两次地震的里氏震级仅差1级，而释放的能量却相差那么多呢？——因为能量比=10<sup>1.5×级差</sup>，对数刻度把"乘32倍"压缩成了"+1.5"。</div>
+
+<div class="note"><b>练习（教材p126）</b>：1.求下列各式的值：(1) log<sub>3</sub>(27×9<sup>2</sup>)；(2) lg 5+lg 2；(3) ln 3+ln(1/3)；(4) log<sub>3</sub>5−log<sub>3</sub>15。（四小题均已sympy复核=7 / 1 / 0 / −1）2.用 lg x，lg y，lg z 表示下列各式（第(1)小题=lg(xyz)；其余三小题影印低清，真数均为 x、y、z 的积商幂组合形态，全文引用待影印复核）。</div>
+
+<h2>阅读与思考 · 对数的发明（教材p128–129）</h2>
+<ul>
+<li>16、17世纪之交，天文、航海、工程、贸易以及军事快速发展，对大数的运算提出了更高的要求，改进数字计算方法、提高计算速度和准确度成了当务之急。</li>
+<li>苏格兰数学家<b>纳皮尔</b>（J. Napier，1550–1617）在研究天文学的过程中，经过对运算体系的多年研究，最终找到了简化大数运算的有效工具，于<b>1614年</b>出版了《奇妙的对数定律说明书》，标志着对数的诞生。在这本书中，纳皮尔借助运动学，用几何术语描述了对数方法（两点同初速运动的几何模型，得 y=10<sup>·(1/10<sup>7</sup>)·x</sup> 形态关系），并制作了0°~90°间隔为1分的正弦对数表，但这种方法不够方便和简捷。</li>
+<li>把对数加以改造并使之广泛流传的是纳皮尔的朋友<b>布里格斯</b>（H. Briggs，1561–1631）。他与纳皮尔商定，使1的对数为0、10的对数为1，就得到了现在所用的以10为底的常用对数。<b>1624年</b>，布里格斯出版了《对数算术》，公布了以10为底、包含1~20 000及90 000~100 000的14位常用对数表。根据对数运算原理，人们还发明了对数计算尺，300多年来对数计算尺一直是常用的计算工具（原文如此段）。</li>
+<li>纳皮尔在讨论对数概念时并没有使用指数的互逆关系——当时还没有明确的指数概念，就连指数符号也是在<b>1637年</b>由法国数学家<b>笛卡儿</b>开始使用。直到<b>18世纪</b>，瑞士数学家<b>欧拉</b>才发现指数与对数的互逆关系，并在1770年出版的一部著作中首先用 x=log<sub>a</sub>y 表示，他指出"对数源出于指数"。</li>
+<li>结论句（教材p129）：社会生产、科学技术的需要是数学发展的动力；使用较好的符号体系和运算规则不仅对数学的发展至关重要，而且可以大大减轻人们的思维负担。</li>
+</ul>
+
+<div class="station">
+<div class="station-title">站三 · 正文站核心卡（一张表带走）</div>
+<table>
+<tr><th>对象</th><th>内容</th><th>一句话直觉</th></tr>
+<tr><td>对数定义</td><td>a<sup>x</sup>=N ⇔ x=log<sub>a</sub>N（a&gt;0且a≠1，N&gt;0）</td><td>对数=求"几乘几"里的指数</td></tr>
+<tr><td>两个特值</td><td>log<sub>a</sub>1=0；log<sub>a</sub>a=1</td><td>1的对数恒0；底的对数恒1</td></tr>
+<tr><td>禁区</td><td>负数和0没有对数</td><td>N=a<sup>正数幂</sup>必为正</td></tr>
+<tr><td>简记</td><td>lg N=log<sub>10</sub>N；ln N=log<sub>e</sub>N（e≈2.718 28）</td><td>常用对数/自然对数</td></tr>
+<tr><td>运算性质</td><td>乘→加；除→减；幂→乘（n∈R）</td><td>运算级别整体降一级</td></tr>
+<tr><td>换底公式</td><td>log<sub>a</sub>b=lg b/lg a</td><td>任何底都能换成lg算</td></tr>
+<tr><td>真实世界</td><td>lg E=4.8+1.5M（地震）；1.11<sup>x</sup>=2→x≈7年（增长翻倍）</td><td>对数刻度把倍数压成加法</td></tr>
+</table>
+</div>
+
+<div class="station">
+<div class="station-title">站四 · 收口站（习题4.3 核心选做+自查）</div>
+<p><b>习题4.3（教材p127）核心题直读与解析</b>：</p>
+<ol>
+<li><b>T1 复习巩固</b>：把下列指数式写成对数式、对数式写成指数式（互化基本功八小题，同例1）。</li>
+<li><b>T2 选择题</b>：(1) 使式子 log<sub>x</sub>(2−x) 有意义的 x 的取值范围是——(A) x&gt;2 (B) x&lt;2 (C) 1&lt;x&lt;2 (D) 0&lt;x&lt;2且x≠1。解：x&gt;0且x≠1且2−x&gt;0 ⇒ 0&lt;x&lt;2且x≠1，<b>选D</b>。(2) 若 lg a（a&gt;0）与 lg b（b&gt;0）互为相反数，则——lg a+lg b=0 ⇒ lg(ab)=0 ⇒ <b>ab=1，选C</b>。</li>
+<li><b>T3 求值</b>：(2) log<sub>3</sub>18−log<sub>3</sub>2=log<sub>3</sub>9，其值为 2；(4) 2·log<sub>5</sub>25−3·log<sub>2</sub>64=2×2−3×6=−14；(5) log<sub>2</sub>(log<sub>2</sub>16)=log<sub>2</sub>4，其值为 2；(6) log<sub>5</sub>25×log<sub>2</sub>4×log<sub>3</sub>9=2×2×2=8。（第(1)(3)小题影印低清，第(1)小题形态候选 log₂2+log₂(1/2)=0、第(3)小题形态候选 lg(1/4)−lg25=−2，均sympy复核通过但真数形态待影印复核）</li>
+<li><b>T4 求 x</b>：(1) ln x=ln a+ln b ⇒ x=ab；(2) lg x=3·lg n−lg m ⇒ x=n<sup>3</sup>/m；(3) log<sub>a</sub>x=log<sub>a</sub>b−log<sub>a</sub>c ⇒ x=b/c；(4) log<sub>8</sub>[log<sub>4</sub>(log<sub>3</sub>x)]=0 ⇒ log<sub>4</sub>(log<sub>3</sub>x)=1 ⇒ log<sub>3</sub>x=4 ⇒ <b>x=81</b>。</li>
+<li><b>T5</b>：已知 lg 2≈0.301 0，lg 3≈0.477 1，求下列各式的值（换底+性质，如 lg 6=lg 2+lg 3≈0.778 1；其余小题影印低清待复核）。</li>
+<li><b>T6</b>：(1) 若 x·log<sub>3</sub>4=1，求 4<sup>x</sup>+4<sup>−x</sup> 的值。解：x=log<sub>4</sub>3 ⇒ 4<sup>x</sup>=3 ⇒ 原式=3+1/3=10/3。(2) 若 f(x)=3<sup>x</sup>，求 f(log<sub>3</sub>2)。解：f(log<sub>3</sub>2)=3<sup>log<sub>3</sub>2</sup>=2。</li>
+<li><b>T7 证明</b>：(1) log<sub>a</sub>b·log<sub>b</sub>c·log<sub>c</sub>a=1（连用换底：三个分母分子连环约分=1）；(2) log<sub>a<sup>n</sup></sub>b<sup>m</sup>=(m/n)·log<sub>a</sub>b。</li>
+<li><b>T8 GDP翻两番</b>：某地GDP年平均增长率6.5%，多少年后翻两番？设翻两番需x年：1.065<sup>x</sup>=4 ⇒ x=lg4/lg1.065≈0.602 06/0.027 35≈22.0，<b>约22年后</b>。</li>
+<li><b>T9 拓广探索</b>：把 (1+1%)<sup>365</sup> 看作每天"进步"1%一年后的量，(1−1%)<sup>365</sup> 看作每天"落后"1%一年后的量。(1) 一年后"进步"的是"落后"的多少倍？=(1.01/0.99)<sup>365</sup>≈1480倍（1.01<sup>365</sup>≈37.8，0.99<sup>365</sup>≈0.0255）。(2) 大约经过多少天后"进步"的分别是"落后"的10倍、100倍、1000倍？解 (1.01/0.99)<sup>t</sup>=10 ⇒ t=lg10/lg(1.01/0.99)≈115.1，<b>约116天</b>（100倍约231天、1000倍约346天）。</li>
+<li><b>T10 酒驾</b>：100 mL血液中酒精含量达到20~79 mg的驾驶员即为酒后驾车，80 mg及以上认定为醉酒驾车。某驾驶员喝了一定量的酒后，血液酒精含量上升到1 mg/mL（=100 mg/100 mL）。停止喝酒后以每小时30%的速度减少，至少经过几个小时才能驾驶？解：t小时后含量为100×0.7<sup>t</sup>（mg/100 mL）。令 100×0.7<sup>t</sup>&lt;20 ⇒ 0.7<sup>t</sup>&lt;0.2 ⇒ t&gt;lg 0.2/lg 0.7≈4.51 ⇒ <b>至少经过5小时</b>。</li>
+</ol>
+<div class="note"><b>自查三问</b>：①log<sub>a</sub>(M/N)为什么等于log<sub>a</sub>M−log<sub>a</sub>N？（能独立仿写p124推导吗）②log<sub>2</sub>3与lg3/lg2是什么关系？③里氏震级+1级，能量翻几倍？</div>
+</div>
+
+<div class="station">
+<div class="station-title">站五 · 常见坑位（零基础防摔指南）</div>
+<ol>
+<li><b>底数条件漏检</b>：log<sub>a</sub>N 中 a&gt;0且a≠1——解 log<sub>x</sub>16=2 时 x=±4 须舍−4；</li>
+<li><b>真数非正</b>：log<sub>3</sub>(−9) 无意义——负数和0没有对数；</li>
+<li><b>性质乱用</b>：log<sub>a</sub>(M+N)≠log<sub>a</sub>M+log<sub>a</sub>N——性质只对"乘除幂"三种结构；</li>
+<li><b>换底忘换底数</b>：log<sub>a</sub>b=lg b/lg a，分子是真数的对数、分母是底数的对数，位置勿倒；</li>
+<li><b>lg记号误读</b>：lg≠ln——lg底10、ln底e，计算器按键别混。</li>
+</ol>
+</div>
+
+<div class="station">
+<div class="station-title">站六 · 通读卡（3分钟复盘）</div>
+<ol>
+<li>对数是"已知底数和幂反求指数"的逆运算：a<sup>x</sup>=N ⇔ x=log<sub>a</sub>N；</li>
+<li>lg=底10、ln=底e；负数和0没有对数；log<sub>a</sub>1=0、log<sub>a</sub>a=1；</li>
+<li>三条运算性质=乘变加、除变减、幂变乘；换底公式 log<sub>a</sub>b=lg b/lg a；</li>
+<li>两个应用锚：地震 lg E=4.8+1.5M（差1级≈32倍）；1.11<sup>x</sup>=2→约7年翻倍；</li>
+<li>史料链：纳皮尔1614→布里格斯常用对数1624→笛卡儿指数符号1637→欧拉"对数源出于指数"（18世纪）。</li>
+</ol>
+</div>
+
+<p class="meta">产出信息｜数学4.3《对数》零基础首学版 v1.0｜队2席·并行搜索员B·agent 6a9cf52e26f40cafe9f060a9·1031晚19:5x会话｜分支 dui2_43_1031·claim f200579（20:06:44）·交付候终读禁直推main｜影印实取12页（图126–137·r1通道200·ts=1787023173400）·节界p122左界/右界p130实锚闭合｜教材原题转录经sympy 35点独立复核+多源交叉（影印OCR四批crop+21cnjy/renrendoc/51jiaoxi教案课件旁证）｜宁缺毋编注记：习题4.3 T3(1)(3)小题与T5小题、练习T2(2)(3)(4)小题真数形态影印低清未全文引用，均标注待QC影印复核（P30/P31数值锚等）。未取得/待采槽位零编造。</p>
+</body>
+</html>
