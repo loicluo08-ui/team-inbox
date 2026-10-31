@@ -87,6 +87,8 @@
     svg [stroke="#4a9eff"]{stroke:#555;}
     svg [stroke="#f0b429"]{stroke:#666;}
   }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  @media print { .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 </style>
 </head>
 <body><div class="wrap">
@@ -102,7 +104,7 @@
 <div class="card"><h4>🧰 预备工具箱（前几节装备清点）</h4>
 <p>本节是第二章收官，前面全部公式都要上场：<b>匀变速三公式</b>——<span class="m">v = v₀ + at</span>（2.2）、<span class="m">x = v₀t + ½at²</span>、<span class="m">v² − v₀² = 2ax</span>（2.3）；<b>打点计时器纸带</b>测加速度的方法（2.1）；<b>加速度</b>概念 a = Δv/Δt（1.4）。这节只需做一个"特例代入"：初速度 v₀ = 0、加速度 a = g。</p></div>
 
-<h2>第一站　两千年的常识，被一次逻辑奇袭击碎<span class="en">Aristotle vs Galileo</span></h2>
+<h2><span class="step-tag">第一站</span>第一站　两千年的常识，被一次逻辑奇袭击碎<span class="en">Aristotle vs Galileo</span></h2>
 
 <p>物体下落的运动司空见惯，但人类对它的认识经历了差不多<b>两千年</b>。最早研究这个问题的，大概要算古希腊学者<b>亚里士多德</b>。平常人们观察到的事实是，一块石头比一片树叶落得快些……亚里士多德认为<b>物体下落的快慢跟它的轻重有关，重的物体下落得快</b>。他的这一论断符合人们的常识，以至于其后两千年的时间里，大家都奉为经典。<span class="pg">p47</span></p>
 
@@ -113,7 +115,7 @@
 
 <details class="try"><summary>1. 伽利略这一手"以子之矛攻子之盾"，核心武器是什么推理方式？它和"做实验找答案"有什么分工？</summary><div class="ans"><b>归谬法（反证法）</b>：先承认对方前提，推出矛盾，从而否定前提。分工：逻辑推理负责<b>否定错误答案、锁定方向</b>（轻重应同快），实验负责<b>确证正确结论</b>——教材旁批强调的是"推理＋实验"两步接力，缺一不可。<span class="pg">p47</span></div></details>
 
-<h2>第二站　牛顿管实验：给"自由落体"下严格定义<span class="en">Free-fall Motion</span></h2>
+<h2><span class="step-tag">第二站</span>第二站　牛顿管实验：给"自由落体"下严格定义<span class="en">Free-fall Motion</span></h2>
 
 <p>那么，轻重不同的物体下落的情况到底怎样？下面我们一起来做个比较精细的实验，仔细研究一下。<span class="pg">p48</span></p>
 
@@ -134,7 +136,7 @@
 
 <details class="try"><summary>2. 为什么说自由落体运动是"理想化模型"？教材用了哪个词给它留了"现实接口"？</summary><div class="ans">严格的自由落体只在<b>真空</b>中才能发生；教材用"<b>近似</b>"二字开了现实接口——只要空气阻力<b>比较小、可以忽略</b>（比如密度大、体积小的重物短程下落），就可以按自由落体处理。这和"质点"一样，是抓主要矛盾、忽略次要因素的建模思想。<span class="pg">p48</span></div></details>
 
-<h2>第三站　自由落体加速度 g：所有物体的"公秤"<span class="en">g / 9.8 m/s²</span></h2>
+<h2><span class="step-tag">第三站</span>第三站　自由落体加速度 g：所有物体的"公秤"<span class="en">g / 9.8 m/s²</span></h2>
 
 <div class="def"><b>自由落体加速度（free-fall acceleration）</b>：对不同物体进行的实验结果表明，在<b>同一地点</b>，一切物体自由下落的加速度都相同，这个加速度叫作自由落体加速度，也叫作<b>重力加速度（gravitational acceleration）</b>，通常用 <span class="m">g</span> 表示。<span class="pg">p49 黑体</span></div>
 
@@ -166,7 +168,7 @@
 
 <details class="try"><summary>3. 上海（31°12′）和广州（23°06′）哪里的 g 大？各是多少？</summary><div class="ans">查表：<b>上海 9.794 m/s² ＞ 广州 9.788 m/s²</b>——上海纬度更高。规律：纬度越大，g 越大。<span class="pg">p49 表</span></div></details>
 
-<h2>第四站　两个金公式：把匀变速公式"代空"就到手<span class="en">v = gt，x = ½gt²</span></h2>
+<h2><span class="step-tag">第四站</span>第四站　两个金公式：把匀变速公式"代空"就到手<span class="en">v = gt，x = ½gt²</span></h2>
 
 <div class="card"><h4>一步到位的推导（教材原文逻辑链）</h4>
 <p><b>自由落体运动是初速度为 0 的匀加速直线运动</b>，所以匀变速直线运动的<b>基本公式及其推论都适用于自由落体运动</b>。把初速度 <span class="m">v₀ = 0</span> 和加速度 <span class="m">a = g</span> 分别代入匀变速直线运动的速度与时间的关系式和位移与时间的关系式，可以得到自由落体的速度、位移与时间的关系式分别为：<span class="pg">p50</span></p></div>
@@ -197,7 +199,7 @@
 
 <details class="try"><summary>4. 自由落体 2 s 末的速度和前 2 s 内的平均速度，各是多少？</summary><div class="ans">v = gt = 9.8 × 2 = <b>19.6 m/s</b>；平均速度 = x/t = ½gt²/t = ½gt = 9.8 m/s，恰为末速度一半。<span class="pg">p50</span></div></details>
 
-<h2>科学漫步　伽利略对自由落体运动的研究：一套影响至今的方法<span class="en">p50–51</span></h2>
+<h2><span class="step-tag">科学漫步</span>科学漫步　伽利略对自由落体运动的研究：一套影响至今的方法<span class="en">p50–51</span></h2>
 
 <p>利用逻辑推理说明了重物与轻物下落得同样快后，伽利略并没有就此止步，而是进一步通过<b>实验</b>研究了自由落体运动的规律。<span class="pg">p50</span></p>
 
@@ -215,7 +217,7 @@
 <b>方法论总结（教材原文）</b>：伽利略对运动的研究，不仅确立了许多用于描述运动的基本概念，而且创造了一套对近代科学的发展极为有益的科学方法。这些方法的<b>核心是把实验和逻辑推理（包括数学演算）和谐地结合起来</b>，从而发展了人类的科学思维方式和科学研究方法。<span class="pg">p51</span><br>
 <span class="note">他还特别指出：在科学研究中，<b>懂得忽略什么，有时与懂得重视什么同等重要</b>。<span class="pg">p51</span></span></p></div>
 
-<h2>STSE　从伽利略的一生看科学与社会<span class="en">p52</span></h2>
+<h2><span class="step-tag">STSE</span>STSE　从伽利略的一生看科学与社会<span class="en">p52</span></h2>
 
 <table>
 <tr><th style="width:22%">时间</th><th>事件</th></tr>
@@ -228,7 +230,7 @@
 
 <div class="note">📌 爱因斯坦的赞扬最具代表性："<b>伽利略的发现以及他所应用的科学推理方法，是人类思想史上最伟大的成就之一，而且标志着物理学的真正开端。</b>"<span class="pg">p52</span></div>
 
-<h2>练习与应用（六题全列全解）<span class="en">p53</span></h2>
+<h2><span class="step-tag">练习与应用</span>练习与应用（六题全列全解）<span class="en">p53</span></h2>
 
 <details class="self"><summary>T1　把一张纸片和一块橡皮同时释放下落，哪个落得快？再把纸片捏成一个很紧的小纸团，和橡皮同时释放，下落快慢有什么变化？怎样解释这个现象？</summary><div class="sol"><b>释放</b>：橡皮快、纸片慢（纸片面积大、空气阻力影响显著）；<b>捏成团后</b>：纸团与橡皮几乎<b>同时落地</b>。解释：捏团后纸片质量没变但<b>迎风面积骤减，空气阻力的影响变得可以忽略</b>，两者都近似自由落体——同一地点一切物体自由下落的加速度相同，快慢就一样了。<span class="pg">p53 T1</span></div></details>
 
@@ -242,7 +244,7 @@
 
 <details class="self"><summary>T6　制作一把"人的反应时间测量尺"。如图2.4-10甲，A同学用两个手指捏住直尺的顶端，B同学用一只手在直尺0刻度位置做捏住直尺的准备，但手不碰到直尺。在A同学放开手指让直尺下落时，B同学立刻捏住直尺。读出B同学捏住直尺的刻度，就是直尺下落的高度，根据自由落体运动公式算出直尺下落的时间，就是B同学的反应时间。利用这种方法，你能不能把下面刻度尺的长度刻度，直接标注为时间刻度，使它变为"人的反应时间测量尺"？请尝试在图2.4-10乙的长度刻度旁标注时间刻度。</summary><div class="sol">直尺自由下落：h = ½gt² → <b>t = √(2h/g)</b>（g 取 9.8 m/s²）。标几个锚点：h = 5 cm → t ≈ <b>0.10 s</b>；h = 10 cm → ≈ <b>0.14 s</b>；h = 20 cm → ≈ <b>0.20 s</b>；h = 45 cm → ≈ <b>0.30 s</b>；h = 80 cm → ≈ <b>0.40 s</b>。注意时间刻度<b>不均匀</b>——与 h 的平方根成正比，越往下刻度越稀。（sympy 验点 8）<span class="pg">p53 T6·图2.4-10</span></div></details>
 
-<h2>⚠️ 大坑警报（四发）</h2>
+<h2><span class="step-tag">坑点警报</span>⚠️ 大坑警报（四发）</h2>
 <div class="warn">
 <p><b>① "下落" ≠ "自由落体"。</b>两条件缺一不可：<b>只受重力</b> + <b>初速度为零</b>。抛出的球（有初速）、打开伞后的跳伞（阻力不可忽略）都不是自由落体。判断先过"身份审查"，再套公式。</p>
 <p><b>② g 的取值口径要跟题走。</b>教材脚注①：没有特别说明按 <b>9.8 m/s²</b>；题目明说"g 取 10 m/s²"才用 10。两种口径数值别混写（同一题内必须一致）。</p>
@@ -250,13 +252,13 @@
 <p><b>④ 频闪照片/纸带上的数字常是"累计距离"。</b>T5 的 0.8、3.2、7.1 cm 都是距起点累计值，必须先算<b>逐段位移</b>再用 Δx = gT²，直接拿相邻累计值相减当 Δx 会错一个台阶。</p>
 </div>
 
-<h2>自测四连（先做再看解析）</h2>
+<h2><span class="step-tag">自测</span>自测四连（先做再看解析）</h2>
 <details class="self"><summary>Q1　自由落体 3 s 内下落的位移与第 3 秒内下落的位移各是多少（g 取 10 m/s²）？</summary><div class="sol">3 s 内：x = ½×10×9 = <b>45 m</b>；前 2 s 内 20 m → 第 3 s 内 = 45 − 20 = <b>25 m</b>（比例 1:3:5 中"5"的份）。</div></details>
 <details class="self"><summary>Q2　一个自由下落的物体，到达地面时速度恰为 49 m/s（g 取 9.8）。它下落的位移和时间各是多少？</summary><div class="sol">t = v/g = 49/9.8 = <b>5 s</b>；x = ½gt² = ½×9.8×25 = <b>122.5 m</b>（或 v²/2g = 2401/19.6 = 122.5 m 双法互证）。</div></details>
 <details class="self"><summary>Q3　牛顿管抽成真空后铁片与羽毛同落到底，这直接证明了教材中的哪两个结论？</summary><div class="sol">① <b>没有空气阻力，轻的物体和重的物体下落得同样快</b>（亚里士多德论断的失效）；② 自由落体运动是<b>加速运动</b>（两者从静止同时起步、同步加速，走完同样高度）。</div></details>
 <details class="self"><summary>Q4　用滴水计时做不到自由落体的测量，伽利略用什么思路绕开了"计时精度"这个死结？</summary><div class="sol"><b>"冲淡"重力</b>：让铜球沿阻力很小的斜面滚下，加速度小、时间长、便于测量；再经<b>合理外推</b>（倾角→90°）把斜面结论还原到自由落体——实验测不准的部分用逻辑补全。</div></details>
 
-<h2>高考怎么考（两考向）</h2>
+<h2><span class="step-tag">考位锚</span>高考怎么考（两考向）</h2>
 <div class="card"><p><b>考向一 · 实验/数据处理测 g</b>：频闪照片、打点纸带、手机传感器三类器材轮换考，数据处理核心全是 <b>Δx = gT²</b> 与逐差法，陷阱是"累计距离"读数（见大坑④）与 T 的取值（频闪周期 vs 打点周期）。</p>
 <p><b>考向二 · 模型化估算</b>：连拍间隔（T2）、井深与声速修正（T3）、相机曝光（T4）、反应时间尺（T6）——考的都是"把生活场景翻译成 v₀ = 0、a = g 的模型 + 选对公式 + 口径一致的估算"，伽利略那句"懂得忽略什么"就是这类题的灵魂。</p></div>
 
