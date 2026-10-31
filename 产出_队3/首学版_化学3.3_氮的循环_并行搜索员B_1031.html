@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化学3.3 氮的循环 · 零基础首学版 v1.0（队3席B线）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  b { color: #f0f3f7; }
+  .talk { background: #1c2230; border: 1px solid #2c3a4e; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .q { color: #4a9eff; font-weight: bold; }
+  .check { background: #182430; border-left: 4px solid #4a9eff; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .check .tag, .try .tag, .pit .tag, .alt .tag { display: inline-block; background: #324358; color: #cfe4ff; font-size: 13px; font-weight: bold; padding: 2px 10px; border-radius: 4px; margin-bottom: 6px; }
+  .box { background: #1a222e; border: 1px solid #33445a; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
+  .key { background: #223047; border-left: 4px solid #ffc94d; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .try { background: #1b242f; border: 1px dashed #3d5573; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit { background: #2a1f22; border-left: 4px solid #ff7a6e; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit .tag { background: #5a3038; color: #ffd6d0; }
+  .wrong { color: #ff8f84; font-weight: bold; }
+  .ans { color: #7ee2a8; font-weight: bold; }
+  .alt { background: #20283a; border: 1px solid #354764; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .m { font-family: "SF Mono", Consolas, monospace; background: #0f1420; color: #9ecbff; padding: 1px 6px; border-radius: 4px; font-size: 0.95em; }
+  .big { font-size: 19px; color: #fff; }
+  .detail { color: #9aa7b8; font-size: 15px; }
+  .small { color: #8a97a8; font-size: 14px; }
+  .fig { text-align: center; margin: 18px 0; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 6px; }
+  mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.35) 55%); color: #eaf2ff; padding: 0 2px; }
+  .note-red { color: #ff9a90; font-size: 14px; }
+  ul.blue { padding-left: 22px; } ul.blue li { margin: 6px 0; }
+  .foot { border-top: 1px solid #2c3644; margin-top: 48px; padding-top: 16px; color: #67737f; font-size: 13px; line-height: 1.7; }
+  .box.kao { border-left: 4px solid #ffc94d; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 10mm 8mm; }
+    .page b, .page h1, .page h3, .page .m, .page .big, .page .detail, .page .try .q, .page .ans, .page .wrong, .page .q { color: #111; }
+    .page .talk, .page .box, .page .try, .page .check, .page .key, .page .pit, .page .alt { background: #f5f5f5 !important; border-color: #999 !important; }
+    .page .key { background: #fff8e0 !important; }
+    .page .pit { background: #fdeeee !important; }
+    .page .step-tag { background: #d8e8ff !important; color: #111 !important; }
+    .page .tag { background: #e8ecf2 !important; color: #111 !important; }
+    .page mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.30) 55%) !important; color: #111 !important; }
+    .page .foot { color: #444; }
+    .page .small, .page .figcap { color: #333 !important; }
+    .page h2 { color: #111; border-left-color: #2b6cb0; }
+    .page .fig rect { fill: #f2f4f8 !important; stroke: #666 !important; }
+    .page .fig text { fill: #111 !important; }
+    .page .fig line { stroke: #666 !important; }
+    .page .fig circle { fill: #7aa5d8 !important; }
+    .page .fig path { fill: none !important; }
+    .page .fig polygon { fill: #7aa5d8 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>氮的循环：一条"−3→0→+2→+4→+5"价态阶梯上的大气循环链</h1>
+<div class="sub">化学 3.3 · 第3章 物质的性质与转化（鲁科版《普通高中教科书·化学 必修 第一册》·山东科学技术出版社·正文 p110–125 · 影印图116–131）</div>
+
+<p class="small" style="color:#7d8a99">📍 本件属于<b>第3章"物质的性质与转化"第三节</b>，前面已学：3.1铁的多样性（价-类二维图·双角度预测）、3.2硫的转化（"−2→0→+4→+6"变身链·同价态复分解/异价态氧化还原）。本节把练熟的两把尺子搬到<b>大气的主角——氮元素</b>身上：五档价态（−3、0、+2、+4、+5）比硫多一档，但"方向盘"一模一样。</p>
+
+<div class="talk">
+  <p>看教材p110：氮是<b>地球上含量丰富的元素</b>——除了以<b>游离态</b>的形式存在于大气中，还以<b>化合态</b>的形式存在于动植物体、土壤和水体中；自然界中的氮元素在不停地循环着，正是氮循环、其他生命必需元素循环与水的循环，地球生命才能生机勃勃、生生不息。</p>
+  <p>开篇"联想·质疑"把镜头对准<b>雷电</b>（图3-3-1）：电闪雷鸣时，空气里的氮气、部分含氮化合物分别发生了哪些反应？产生了哪些物质？对人类生产生活有什么意义？——这一朵闪电，就是本节"价态阶梯"从0价出发的第一级台阶。</p>
+</div>
+
+<div class="check">
+  <span class="tag">读完这节你能</span>
+  <p>① 用<b>价-类二维图</b>盘清氮家族：−3价氨与铵（态氮肥）、0价氮气、+2价NO、+4价NO₂、+5价硝酸（盐），并说清<b>氮的固定</b>三条路（生物固氮约90%·闪电约10%·人工合成氨）；</p>
+  <p>② 走通<b>闪电固氮链</b>：N₂＋O₂<u>放电</u>2NO→2NO＋O₂=2NO₂→3NO₂＋H₂O=2HNO₃＋NO，并说出NO、NO₂各自的颜色、溶解性与"身份证"性质；</p>
+  <p>③ 掌握<b>氨</b>的三张牌（极易溶于水1∶700／喷泉实验＋遇挥发性酸冒白烟／还原性催化氧化制NO）与<b>铵盐</b>两条性质（受热易分解／与碱共热放氨→NH₄⁺检验），会写实验室制氨全套；</p>
+  <p>④ 讲出<b>硝酸</b>的强氧化性（浓→NO₂、稀→NO、常温Fe/Al钝化、加热氧化碳等非金属）与<b>氮氧化物过量的环境账</b>（光化学烟雾·雾霾·酸雨·水体富营养化）及绿色化学"5R"思路。</p>
+</div>
+
+<h2>先拆掉三个旧印象</h2>
+<p><b>误会一：<span class="wrong">"氮气不活泼＝什么都反应不了"</span>。</b>通常状况下氮气化学性质不活泼（p113原句），但<b>条件到位照样反应</b>：放电下与氧气化合（闪电固氮）、高温高压催化剂下与氢气化合（工业合成氨）——"不活泼"说的是<b>反应条件苛刻</b>，不是"永不反应"。</p>
+<p><b>误会二：<span class="wrong">"氨水显碱性强，所以一水合氨是强碱"</span>。</b>p116蓝框原句：一水合氨<b>部分电离</b>出NH₄⁺和OH⁻（NH₃·H₂O⇌NH₄⁺＋OH⁻）使氨水显<b>弱</b>碱性——碱性强弱看电离程度，氨水是典型弱碱，NaOH才是强碱。</p>
+<p><b>误会三：<span class="wrong">"氮肥随便混施，反正都是补充氮"</span>。</b>p118原句：铵盐能与碱发生反应，因此铵态氮肥<b>不能与碱性物质（如草木灰等）混合施用</b>——混施放出氨气，氮元素跑光了，肥效归零。</p>
+
+<div class="box"><span class="tag">名词补齐</span> <b>氮的固定（fixation of nitrogen）</b>：将空气中<b>游离态的氮</b>转化为<b>含氮化合物</b>的过程叫作氮的固定，简称固氮（p111定义）。<b>活化氮</b>：NH₄⁺与NO₃⁻是自然界中活化氮的主要形态，氮气是惰性的，通过自然固氮和人工固氮可使其活化（p120蓝框）。<b>发烟硝酸</b>：HNO₃质量分数95%以上的浓硝酸，在空气中挥发出硝酸蒸气会产生"发烟"现象（p120蓝框）。<b>钝化</b>：常温下浓硝酸使铁、铝等金属表面形成致密的氧化膜而钝化，保护内部金属不再与酸反应（p120）。<b>光化学烟雾</b>：汽车尾气中的氮氧化物与碳氢化合物经紫外线照射发生反应形成的有毒烟雾（p121）。<b>硝化／反硝化</b>：微生物作用下NH₄⁺→NO₂⁻→NO₃⁻称硝化过程；一定条件下加甲醇实现HNO₃→NO₂⁻→N₂转化称反硝化过程（p125习题5）。</div>
+
+<h2><span class="step-tag">第1步</span> 先给氮画"价-类二维地图"（p111图3-3-3·p123概括整合）</h2>
+<p>双角度尺子直接抄，这次是<b>五档价态</b>。教材p111"交流·研讨"图3-3-3把氮及其化合物按"物质类别×化合价"落位：</p>
+<ul class="blue">
+  <li><b>−3价</b>：NH₃（氢化物）、NH₃·H₂O（碱）、NH₄⁺（盐）——最低价，N只能升价，<b>氨具还原性</b>；</li>
+  <li><b>0价</b>：N₂（单质）——中间价，可升可降，<b>两性都有</b>（但条件苛刻：放电/高温高压，p114原句"其还原性和氧化性皆很弱"）；</li>
+  <li><b>+2价</b>：NO（氧化物）——中间价，可升（被O₂氧化）可降；</li>
+  <li><b>+4价</b>：NO₂（氧化物）——中间价，可升可降（与水反应同时走向+5和+2）；</li>
+  <li><b>+5价</b>：HNO₃（酸）、NO₃⁻（盐）——最高价，只能降，<b>硝酸只具氧化性</b>（且是强氧化性）。</li>
+</ul>
+<p>p114给这条规律的标准落点：将氮气转化为氮氧化物或者氨气，实现了氮元素化合价的升高或降低，<mark class="nb">体现了氮气的还原性或氧化性；而通电、高温和高压等苛刻的反应条件则表明氮气的化学性质很稳定，其还原性和氧化性皆很弱</mark>。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 300" width="740" height="300" role="img" aria-label="氮及其化合物价类二维图：横轴物质类别氢化物、单质、氧化物、酸、碱、盐，纵轴氮元素化合价负三到正五，标注NH3、N2、NO、NO2、HNO3、NH3点H2O、NH4+、NO3-及其转化箭头">
+<rect width="740" height="300" fill="#0f1420"/>
+<line x1="120" y1="30" x2="120" y2="250" stroke="#7d8a99" stroke-width="1.5"/>
+<line x1="120" y1="250" x2="700" y2="250" stroke="#7d8a99" stroke-width="1.5"/>
+<text x="40" y="24" fill="#9fb2c8" font-size="13">氮元素化合价</text>
+<text x="620" y="272" fill="#9fb2c8" font-size="13" font-weight="bold">物质类别</text>
+<g font-size="12" fill="#9fb2c8" text-anchor="end">
+<text x="112" y="58">+5</text><text x="112" y="103">+4</text><text x="112" y="148">+2</text><text x="112" y="193">0</text><text x="112" y="238">−3</text>
+</g>
+<g font-size="12.5" fill="#9fb2c8" text-anchor="middle">
+<text x="180" y="270">氢化物</text><text x="265" y="270">单质</text><text x="350" y="270">氧化物</text><text x="435" y="270">酸</text><text x="505" y="270">碱</text><text x="590" y="270">盐</text>
+</g>
+<g font-size="14" font-weight="bold" text-anchor="middle">
+<text x="180" y="242" fill="#ffd94a">NH₃</text>
+<text x="265" y="197" fill="#e8eef5">N₂</text>
+<text x="350" y="152" fill="#e8eef5">NO</text>
+<text x="350" y="107" fill="#e8eef5">NO₂</text>
+<text x="435" y="62" fill="#7ec8ff">HNO₃</text>
+<text x="505" y="242" fill="#ffd94a">NH₃·H₂O</text>
+<text x="590" y="242" fill="#ffd94a">NH₄⁺</text>
+<text x="590" y="62" fill="#7ec8ff">NO₃⁻</text>
+</g>
+<g stroke="#ffb24d" stroke-width="1.6" fill="none">
+<line x1="186" y1="232" x2="256" y2="200"/><line x1="272" y1="188" x2="342" y2="156"/>
+<line x1="350" y1="140" x2="350" y2="118"/>
+<line x1="358" y1="98" x2="424" y2="66"/>
+<line x1="448" y1="58" x2="578" y2="58"/>
+<line x1="196" y1="238" x2="470" y2="238"/><line x1="545" y1="238" x2="566" y2="238"/>
+<line x1="590" y1="228" x2="590" y2="74"/>
+</g>
+<g fill="#ffb24d">
+<polygon points="256,200 246,196 252,206"/><polygon points="342,156 332,152 338,162"/><polygon points="350,118 345,128 355,128"/>
+<polygon points="424,66 414,62 420,72"/><polygon points="578,58 568,53 568,63"/><polygon points="566,238 556,233 556,243"/>
+<polygon points="590,74 585,84 595,84"/>
+</g>
+<text x="640" y="150" fill="#8a97a8" font-size="11.5" text-anchor="middle">同价态横走=复分解</text>
+<text x="640" y="168" fill="#8a97a8" font-size="11.5" text-anchor="middle">异价态竖走=氧化还原</text>
+</svg><div class="figcap">氮及其化合物"价-类"二维图（据教材p111图3-3-3与p123概括整合图要义重绘·深色线稿·打印安全）</div></div>
+
+<h2><span class="step-tag">第2步</span> 氮的固定：自然界90%＋10%，人工靠合成氨（p111–p114）</h2>
+<p>氮的固定主要有<b>自然固氮</b>和<b>人工固氮</b>两种方式（p112）。自然固氮两条路：<b>①生物固氮</b>——大豆、蚕豆等豆科植物根部<b>根瘤菌</b>把空气中氮气转变为含氮化合物（图3-3-4根瘤实物），这种途径固氮量<b>约占自然固氮总量的90%</b>；<b>②闪电固氮</b>——通过放电将空气中氮气转化为含氮化合物，约占<b>10%</b>。</p>
+<p><b>人工固氮现在普遍采用的是氨的工业合成</b>（p113）：大多数植物只能吸收化合态的氮元素。工业上以氮气和氢气为原料，在<b>高温、高压和催化剂</b>存在的条件下合成氨：</p>
+<div class="box kao"><span class="m big">N₂ ＋ 3H₂ <u>高温、高压</u><br>催化剂</span> <span class="big">⇌ 2NH₃</span>　<span class="small">（p113蓝底·可逆记号⇌与3.2同款）</span></div>
+<p><b>为什么合成氨值得进"化学与技术"专栏</b>（p114）：①以合成氨为基础的<b>化肥工业对粮食增产的贡献率占50%左右</b>，使人类免受饥荒之苦；②合成氨成为很多无机化工和有机化工产品的生产原料；③它是<b>工业史上加压催化技术的里程碑</b>，开启了工业催化新时代。史线一条：1774年<b>普利斯特里</b>加热氯化铵和氢氧化钙混合物首先收集到氨→1784年<b>贝托莱</b>确定氨由氮、氢组成→1904年<b>哈伯</b>测得混合气中0.012%体积的氨→1909年设计出高温高压催化合成氨实验装置→工程师<b>博施</b>找到理想<b>铁催化剂</b>并建成耐高温高压装置→1910年德国建成世界第一座合成氨试验工厂、1913年建成规模生产工厂→哈伯、博施先后获<b>1918、1931年度诺贝尔化学奖</b>。另外，科学家还发现某些金属有机化合物可起根瘤菌作用，实现<b>常温常压固氮（仿生固氮）</b>——这是当前科学界最为关注的研究课题之一（p114）。</p>
+
+<h2><span class="step-tag">第3步</span> 闪电固氮链：N₂→NO→NO₂→HNO₃（p112–p113）</h2>
+<p>教材"观察·思考"设计<b>模拟闪电固氮</b>三连实验（图3-3-5/6/7：放电管反应→注入氧气→注入水），观察记录表要求自填现象与结论——标准答案就在p113的三条蓝底方程式里：</p>
+<ul class="blue">
+  <li><b>第一步（放电）</b>：<span class="m big">N₂ ＋ O₂ <u>放电</u> 2NO</span>——在电闪雷鸣的雨天，空气中的氮气与氧气直接化合生成一氧化氮气体；</li>
+  <li><b>第二步（常温迅速）</b>：<span class="m big">2NO ＋ O₂ ＝ 2NO₂</span>——一氧化氮在常温下与空气中的氧气<b>迅速</b>化合，生成二氧化氮气体；</li>
+  <li><b>第三步（溶于水）</b>：<span class="m big">3NO₂ ＋ H₂O ＝ 2HNO₃ ＋ NO</span>——二氧化氮溶于水时与水反应生成硝酸和一氧化氮，<b>工业上利用这一原理制取硝酸</b>。</li>
+</ul>
+<p><b>三种物质的"身份证"</b>（p113直读）：氮气是无色、无味的气体，<b>难溶于水</b>，通常状况下化学性质不活泼；NO是无色、<b>难溶于水</b>的气体，结合血红蛋白的能力<b>比一氧化碳还强</b>，更容易造成人体缺氧（但它作为传递神经信息的"信使分子"，在扩张血管、提高免疫力、增强记忆力等方面有独特作用）；NO₂是<b>红棕色、有刺激性气味的有毒气体</b>，易溶于水，能使多种织物褪色，对金属和非金属材料也有腐蚀作用。生成的硝酸随雨水淋洒到地面上，与土壤中的矿物作用形成能被植物吸收的硝酸盐——这样土壤就从空气中得到氮元素，促进了植物的生长。</p>
+
+<h2><span class="step-tag">第4步</span> 氨与铵盐：最低价的两张面孔（p115–p118）</h2>
+<p><b>物理牌</b>（p115）：氨是无色、有刺激性气味的气体；标准状况下密度比空气小（0.771 g·L⁻¹）；<mark class="nb">极易溶于水且能快速溶解，常温、常压下1体积水能溶解约700体积氨气</mark>；氨易液化，液氨汽化时吸收大量的热，因此<b>氨可用作制冷剂</b>。</p>
+<p><b>与水反应·弱碱牌</b>（p116）：氨溶于水生成一水合氨，氨水显弱碱性：</p>
+<div class="box"><span class="m">NH₃ ＋ H₂O ⇌ NH₃·H₂O</span>　　<span class="m">NH₃·H₂O ⇌ NH₄⁺ ＋ OH⁻</span>　<span class="small">（部分电离→弱碱·使酚酞变红·p116蓝底与蓝框）</span></div>
+<p><b>与酸反应牌</b>（p116–p117）：氨能与酸反应生成铵盐——<span class="m">NH₃ ＋ HCl ＝ NH₄Cl</span>；图3-3-14两个集气瓶口径相对抽去玻璃片，<b>产生大量白烟</b>（氯化铵固体小颗粒）。在这类转化中氮元素化合价不变，实现的是<b>物质类别的转化</b>。</p>
+<p><b>还原性牌</b>（p117）：氨中氮元素化合价为最低价，因此氨具有还原性。工业上利用氨在<b>催化剂（如铂、铑等）</b>存在下与氧气的反应来制备生产硝酸所需的NO：</p>
+<div class="box kao"><span class="m big">4NH₃ ＋ 5O₂ <u>催化剂</u><br>Δ</span> <span class="big">＝ 4NO ＋ 6H₂O</span>　<span class="small">（氨的催化氧化·硝酸工业第一站）</span></div>
+<p><b>铵盐两条性质与NH₄⁺检验</b>（p117）：①通过加热碳酸氢铵、氯化铵等铵盐能够产生氨气：<span class="m">NH₄HCO₃ <u>Δ</u> NH₃↑＋CO₂↑＋H₂O</span>、<span class="m">NH₄Cl <u>Δ</u> NH₃↑＋HCl↑</span>；②铵盐与碱溶液共热也可以产生氨气：<span class="m">NH₄⁺ ＋ OH⁻ <u>Δ</u> NH₃↑ ＋ H₂O</span>——<b>实验室里常用这种方法检验溶液中的铵离子</b>。</p>
+<p><b>实验室制氨全套</b>（p117–p118）：常用<b>氯化铵与氢氧化钙</b>反应制取少量氨气：<span class="m">2NH₄Cl ＋ Ca(OH)₂ <u>Δ</u> 2NH₃↑ ＋ CaCl₂ ＋ 2H₂O</span>；用<b>向下排空气法</b>收集（密度比空气小），并用<b>湿润的红色石蕊试纸</b>检验是否收集满（变蓝即满，图3-3-17）。应用迁移（p118）：铵盐受热易分解→储存铵态氮肥应<b>密封包装并放在阴凉通风处</b>、施肥时埋入土中保持肥效；铵盐能与碱反应→<b>铵态氮肥不能与碱性物质（如草木灰）混合施用</b>。身边的化学（p118）：尿素是白色晶体，含氮量高达<b>46.65%</b>，是目前含氮量最高的氮肥（中性肥料·肥效持久）；复合化肥如磷酸二氢铵NH₄H₂PO₄、磷酸氢二铵(NH₄)₂HPO₄。</p>
+
+<h2><span class="step-tag">第5步</span> 硝酸：最高价只降不升的强氧化剂（p119–p120）</h2>
+<p>硝酸（HNO₃）是重要的化工原料，可用于制造<b>炸药、染料、塑料和硝酸盐</b>等（p119）。物理性质（p120）：纯的硝酸是<b>无色、易挥发、有刺激性气味</b>的液体；熔点−42℃、沸点83℃；密度1.5 g·cm⁻³。<b>硝酸受热或见光分解</b>会产生二氧化氮气体——所以实验室长期保存浓硝酸要用<b>棕色试剂瓶并放置在阴凉处</b>：</p>
+<div class="box"><span class="m big">4HNO₃ <u>受热或光照</u> 4NO₂↑ ＋ O₂↑ ＋ 2H₂O</span>　<span class="small">（分解产生的NO₂溶入酸中使其显黄色）</span></div>
+<p><b>强氧化性</b>（p120）：硝酸具有强氧化性，能与<b>除金、铂、钛以外的大多数金属</b>反应，<mark class="nb">其还原产物与硝酸的浓度有关——浓硝酸与金属反应生成的还原产物主要是二氧化氮，稀硝酸与金属反应生成的还原产物主要是一氧化氮</mark>：</p>
+<div class="box kao"><span class="m">4HNO₃（浓）＋ Cu ＝ Cu(NO₃)₂ ＋ 2NO₂↑ ＋ 2H₂O</span><br><span class="m">8HNO₃（稀）＋ 3Cu ＝ 3Cu(NO₃)₂ ＋ 2NO↑ ＋ 4H₂O</span>　<span class="small">（图3-3-18稀硝酸→蓝色溶液·图3-3-19浓硝酸→红棕色气体）</span></div>
+<p>常温下，浓硝酸可使<b>铁、铝</b>等金属表面形成致密的氧化膜而<b>钝化</b>，所以可以用铁质或铝质容器盛放冷的浓硝酸（p120）。在加热条件下，浓硝酸还能与<b>碳单质</b>等非金属单质发生氧化还原反应：<span class="m">4HNO₃（浓）＋ C <u>Δ</u> CO₂↑ ＋ 4NO₂↑ ＋ 2H₂O</span>。硝酸还具有<b>酸的一般性质</b>：能与碱发生中和反应，能与碱性氧化物、某些盐发生复分解反应（p120）。</p>
+
+<div class="box kao"><span class="tag">考位锚</span> <b>高考考向一①氮氧化物与氨的性质综合题</b>——NO/NO₂的"颜色+溶解性+收集方法"三连问（NO难溶→排水法、NO₂易溶且与水反应→向上排空气法）；<b>喷泉实验</b>考"极易溶于水+与水反应生成碱性物质"两性质与压差原理（p123练习1(3)：B、C两项成立）；NH₄⁺检验固定答法：取样加碱共热，<b>湿润的红色石蕊试纸变蓝</b>即含NH₄⁺。<b>高考考向二②工艺流程与环保计算题</b>——合成氨三条件（高温高压催化剂）、氨的催化氧化制硝酸主线（4NH₃+5O₂→4NO→2NO+O₂=2NO₂→3NO₂+H₂O=2HNO₃+NO）、氨氮废水"加碱赶氨—硝化—反硝化"三段流程（p125习题5）含电子转移计算：1 mol HNO₃（+5→0）完全转化成N₂转移<b>5 mol电子</b>。真题锚：真题池内暂未录"化学3.3氮的循环"专行，本件按宁缺毋编原则不代拟，候哨兵线扩池补录。</div>
+
+<h2><span class="step-tag">收口</span> 概括·整合（p123）：一张价-类图收拢全节</h2>
+<p>教材p123概括·整合给出<b>氮及其化合物转化示意图</b>：NH₃ ⇌ N₂ ⇌ NO ⇌ NO₂ → HNO₃ → NO₃⁻（价态升梯），NH₃ → NH₃·H₂O → NH₄⁺（类别横走），底部一条回流箭头把NH₄⁺送回NH₃（铵盐与碱共热）——<b>同价态横着走（复分解），异价态竖着走（氧化还原）</b>，与3.1铁、3.2硫完全同款。p122"交流·研讨"给出"认识物质的主要角度"四联图（性质／元素化合价／物质类别／转化），p122"化学与技术"专栏补<b>绿色化学</b>：核心是原子经济性与"5R"原则——Reduction减量使用原料、Reuse循环使用、Recycling资源回收利用、Regeneration变废为宝、Rejection拒用有毒有害品。</p>
+<p><b>人类活动对氮循环和环境的影响</b>（p120–p121）：人类的固氮活动使活化氮的量大大增加，虽有助于农产品产量提高，但也给全球生态环境带来压力——①以NO、NO₂为主的氮氧化物是形成<b>光化学烟雾、雾霾及酸雨</b>的一个重要原因（氮氧化物与降水反应生成的硝酸和亚硝酸是酸雨的组成成分）；②水体中氮元素含量增大→<b>富营养化</b>→藻类"疯长"覆盖水面（来源：工业废水、生活污水、农田灌溉、水产养殖投入的肥料和饵料）；③对策两条：<b>控制进入大气、土壤和水体中含氮物质的量＋增强生态系统对含氮物质的吸收能力</b>；④价值落点：树立和践行"绿水青山就是金山银山"的理念，坚持节约资源和保护环境的基本国策。</p>
+<div class="try"><span class="tag">试一试</span> 不翻教材，写出并配平：①氮气与氧气放电反应；②NO₂溶于水；③氨的催化氧化；④铜与稀硝酸。四个式子分别让氮元素：0→+2（N₂还原性）、+4→+5与+2（NO₂既氧化又还原）、−3→+2（NH₃还原性）、+5→+2（稀硝酸氧化性）——写完对照p113/p117/p120蓝底原式。</div>
+<div class="box"><span class="tag">练习要点（p123–125）</span> 题1(1)= <span class="ans">C</span>（N₂中0价为中间价，既有氧化性又有还原性）；题1(2)= 两空均 <span class="ans">D</span>（可溶于水的无色气体=NH₃——NO难溶、NO₂红棕色；易液化遇挥发性酸冒白烟且宜作制冷剂=NH₃）；题1(3)= <span class="ans">B、C</span>（喷泉=极易溶于水＋与水反应生成碱性物质，A还原性/D比空气轻与喷泉无关）；题1(4)= <span class="ans">A</span>（浓硝酸见光分解→棕色瓶）；题1(5)= <span class="ans">C</span>（白色污染=塑料，与NO₂排放无关）；题2论证=硝酸中氮元素处<b>最高价+5</b>只能降价，实验证据：与Cu反应不产生H₂而生成NO₂/NO（氮被还原·p119实验2）、常温使Fe/Al钝化、加热条件下氧化碳单质——三路证据共同说明其强氧化性；题3(1)= <span class="ans">C</span>（化石燃料燃烧通常释放氮氧化物，"不释放"错）；题3(2)= <span class="ans">B</span>（NO排水法·NO₂向上排空气法）；题3(3)= <span class="ans">C</span>（NO既不与浓硫酸又不与碱石灰反应——Cl₂被碱石灰吸收、CO₂被碱石灰吸收、NH₃被浓硫酸吸收）；题3(4)= <span class="ans">B、C均成立</span>（过量盐酸后溶液含Fe²⁺与H⁺：加氯水氧化Fe²⁺→Fe³⁺；加硝酸锌则H⁺+NO₃⁻组合氧化Fe²⁺→Fe³⁺；A稀硫酸无氧化性·D氯化铜不氧化。教材单选题面下B/C两项均真，口径存疑如实注记候QC）；题3(5)= <span class="ans">A</span>（B组H⁺+NO₃⁻氧化Fe²⁺·C组NH₄⁺与OH⁻反应·D组HCO₃⁻与OH⁻反应）；题4(1)= 湿集气瓶溶解部分氨→收集不满、浓度偏低；题4(2)= 两法均可行（NH₃·H₂O<u>Δ</u>NH₃↑+H₂O；生石灰吸水放热促使氨逸出）；题4(3)= 湿润红色石蕊试纸靠近瓶口变蓝即满；题5①= <span class="ans">NH₄⁺＋OH⁻ <u>Δ</u> NH₃↑＋H₂O</span>；题5②碱性硝化总式= <span class="ans">NH₄⁺＋2O₂＋2OH⁻ ＝ NO₃⁻＋3H₂O</span>；题5③= 1 mol HNO₃（+5→0）完全转化为N₂转移<b>5 mol电子（5N_A）</b>。</div>
+<div class="key"><span class="tag">本节金句</span> <b>氮五价：−3只升（氨还原）、0难动（条件苛刻）、+2/+4两头走、+5只降（硝酸只氧化）；固氮三条路：根瘤菌九成、闪电一成、合成氨改天换地；喷泉靠易溶，验满红石蕊，钝化认浓冷。</b></div>
+<p class="small" style="margin-top:26px">➡ 下一站 第3章章末"概括·整合与自我评价"（p126起·右界影印m132候补闭合）：把铁、硫、氮三张价-类地图合成"物质的性质与转化"总图。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 170" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：3.1铁的多样性（双角度尺子）→3.2硫的转化（变身链）→3.3氮的循环（你在·五档价态大气主角）→章末物质的性质与转化总图">
+<rect x="0" y="0" width="800" height="170" fill="#ffffff" stroke="#d7e3ee" rx="8"/>
+<rect x="24" y="42" width="168" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="108" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">3.1 铁的多样性</text>
+<text x="108" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">价-类尺子＋双角度预测</text>
+<line x1="196" y1="75" x2="222" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="222,69 234,75 222,81" fill="#8a9aa9"/>
+<rect x="238" y="42" width="160" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="318" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">3.2 硫的转化</text>
+<text x="318" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">−2→0→+4→+6变身链</text>
+<line x1="402" y1="75" x2="428" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="428,69 440,75 428,81" fill="#8a9aa9"/>
+<rect x="444" y="34" width="176" height="82" rx="8" fill="#fffbe8" stroke="#ffd94a" stroke-width="2.5"/>
+<text x="532" y="66" font-size="15" font-weight="bold" text-anchor="middle" fill="#8a6d1a">3.3 氮的循环（你在）</text>
+<text x="532" y="90" font-size="11.5" text-anchor="middle" fill="#8a6d1a">−3→0→+2→+4→+5大气主角</text>
+<line x1="624" y1="75" x2="650" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="650,69 662,75 650,81" fill="#8a9aa9"/>
+<rect x="666" y="42" width="112" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="722" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">章末整合</text>
+<text x="722" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">物质性质与转化总图</text>
+</svg><div class="figcap">本节位置图：3.1→3.2→<b>3.3（你在）</b>→章末（浅线稿·打印安全·节界影印实锚p110节名页/p125练习终）</div></div>
+
+<div class="foot">
+  <p>本件为教材（鲁科版《化学 必修 第一册》第3章第3节·p110–125）零基础首学版学习笔记。节界实锚：3.3节名页=印刷页110（影印图116亲读实锚）·右界=印刷页125"练习与活动"末（影印图131亲读·第6题雾霾与三大保卫战收束·页底无下节内容=节域闭合·图132候补确认章末起页）；影印偏移=图N=印刷页N+6（asset 88874a47·ts=1754905612635·21:41心跳实取15图＋22:1x补取m126–m131六图全200实测）。事实点均影印直读并附来源页码；四附件（影印对照16页/事实点自验/条款自检T1-T12/通读卡点）+三条差距+QC单+print七查PDF+sympy验点py/log随commit同链。队3席B线·任务包v3承办·认领行97603e8·硬闸23:00·候验禁直推main。</p>
+</div>
+</div>
+</body>
+</html>
