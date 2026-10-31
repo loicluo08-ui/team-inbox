@@ -14,7 +14,6 @@
   .sub b{color:var(--acc);}
   h2{font-size:20px;margin:34px 0 14px;color:#fff;background:linear-gradient(90deg,#223041,#1b2029);border-left:5px solid var(--acc);padding:8px 12px;}
   h2 .en{font-size:12px;color:var(--dim);font-weight:normal;margin-left:8px;}
-  .step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle;}
   h3{font-size:16.5px;margin:20px 0 8px;color:var(--acc);}
   p{margin:10px 0;}
   b{color:#fff;}
@@ -48,7 +47,6 @@
     .wrap{max-width:100%;}
     h1,h2,h3,b,.m,.big{color:#111;}
     h2{background:#f2f2f2;border-left:4pt solid #555;color:#111;}
-    .step-tag{background:#4a9eff!important;color:#0b0e13!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
     .card,.def,.demo,.q,.try summary,.try .ans,.warn,.note,details.self,.try .ans .m{background:#fff!important;}
     .card,.def,.demo,.q,.warn,.note,details.self{border-color:#888;}
     .m{border:1px solid #999;background:#fff!important;color:#111!important;}
@@ -85,6 +83,8 @@
     mark.nb{background:#ffe66b!important;color:#111!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
     h2 .en{color:#555!important;}
   }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  @media print { .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 </style>
 </head>
 <body><div class="wrap">
@@ -102,7 +102,7 @@
 <p><b>力</b>：物体对物体的作用。初中你已经见过它的三个效果词——<span class="m">推、拉、提、举</span>；高中第一件事，是把"认识一个力"变成固定动作：问<b>施力物体、受力物体</b>（谁推谁），问<b>大小</b>（多少牛），问<b>方向与作用点</b>（朝哪、画在哪）。本节就按这三问，把最常见的两种力——<span class="k">重力</span>与<span class="k">弹力</span>——各办一次"入户登记"。</p>
 <p>工具提醒：第二章的 <span class="m">g=9.8 m/s²</span>（题目没特别说明时的默认值 <span class="pg">p49脚注①</span>）马上要回来了——它将以 <span class="m">10 N/kg</span> 的另一副面孔出现在 <span class="m">G=mg</span> 里。</p>
 
-<h2><span class="step-tag">第一站</span>重力：地球的"入户登记" <span class="en">p57</span></h2>
+<h2><span class="step-tag">第一站</span>第一站 重力：地球的"入户登记" <span class="en">p57</span></h2>
 <div class="def"><span class="lab">定义（黑体照录）</span>由于<b>地球的吸引</b>而使物体受到的力，叫作<b>重力</b>（gravity）。单位是<b>牛顿</b>，简称牛，符号用 <span class="m">N</span> 表示。</div>
 <p>三个登记项一次填全：①<b>施力物体＝地球</b>，受力物体＝你写的那个物体（问题框第1问）；②<b>方向竖直向下</b>（问题框第3问）；③<b>大小</b>用初中就有的关系式算（问题框第2问）：</p>
 <span class="big">G = mg</span>
@@ -112,7 +112,7 @@
 
 <div class="alt-box"><span class="lab">想多走一步？（可选）g 用 9.8 还是 10？</span><br>精确计算用 g=9.8 N/kg（p49脚注①默认值），估算用 10 N/kg——本节练习题题面都直接给了 g=10 N/kg，照题用即可；考试没给就用 9.8。跳过本块不损失主干。<span class="pg">自编导航·p49脚注承托</span></div>
 
-<h2><span class="step-tag">第二站</span>重心：把重力"画在一点" <span class="pg">p58</span></h2>
+<h2><span class="step-tag">第二站</span>第二站 重心：把重力"画在一点" <span class="pg">p58</span></h2>
 <p>一个物体的<b>每一部分</b>都受到重力。但从<b>效果</b>上看，可以认为各部分受到的重力作用<b>集中于一点</b>——这一点叫作物体的<b>重心</b>（center of gravity）。因此，重心可以看作物体所受重力的<b>作用点</b>。<span class="pg">p58黑体照录</span></p>
 <h3>重心在哪：两条线索</h3>
 <p>① <b>质量均匀分布</b>的物体，重心位置只跟<b>形状</b>有关；形状规则的均匀物体容易确定——<b>均匀细直棒的重心在棒的中点，均匀球体的重心在球心，均匀圆柱体的重心在轴线的中点</b>（图3.1-1）。<span class="pg">p58</span></p>
@@ -145,7 +145,7 @@
 <p>力可以用<b>有向线段</b>表示：线段按选定的标度画，<b>长短表示力的大小</b>，<b>箭头指向表示力的方向</b>，<b>箭尾（或箭头）表示力的作用点</b>——这种表示方法叫作<b>力的图示</b>（图3.1-4：球所受重力大小6 N、方向竖直向下，取标度2 N，线段长为3格）。<span class="pg">p58黑体照录</span> 在不需要准确标度力的大小时，通常只需画出力的作用点和方向，即只需画出力的<b>示意图</b>。<span class="pg">p58</span></p>
 <details class="try"><summary>✍ 验一验 ②（30秒）同一物体先后在A、D两点悬挂，得到两条竖直线AB、DE，为什么交点C就是重心？</summary><div class="ans">每次悬挂时悬线拉力与重力二力平衡，重力作用线必与悬线共线——重心既在AB上又在DE上，两条线只有一个交点C。（验点7）</div></details>
 
-<h2><span class="step-tag">第三站</span>弹力：被"压弯挤拉"后的还手之力 <span class="pg">p59</span></h2>
+<h2><span class="step-tag">第三站</span>第三站 弹力：被"压弯挤拉"后的还手之力 <span class="pg">p59</span></h2>
 <p>日常生活中的很多相互作用，无论是对物体<b>推、拉、提、举</b>，还是<b>牵引列车、锻打工件、击球、弯弓射箭</b>，都是在物体与物体<b>接触</b>时发生的——这种相互作用可以称为<b>接触力</b>。通常所说的拉力、压力、支持力都是接触力；接触力按性质可以分为<b>弹力和摩擦力</b>（摩擦力在 3.2 节，教材 <span class="pg">p63</span> 起已实锚）。<span class="pg">p59</span></p>
 <div class="def"><span class="lab">定义（黑体照录）</span>物体在力的作用下<b>形状或体积</b>会发生改变，这种变化叫作<b>形变</b>（deformation）。</div>
 <div class="demo"><span class="lab">眼见为实：形变可以小到看不见（照录）</span>图3.1-5：一块剖面为三角形的<b>有机玻璃</b>压在另一块有机玻璃上，形变肉眼不能看出；但形变后，特殊的光通过有机玻璃不同部位时产生的<b>花纹会发生变化</b>——工程设计时常用来研究按比例缩小的模型的形变，进而推测实际工程各部位的受力。<span class="pg">p59</span><br><span class="lab">演示</span><b>通过平面镜观察桌面的微小形变</b>（图3.1-6）：大桌上放两个平面镜 M、N，一束光依次被两镜反射射到墙上形成光点；<b>按压两镜之间的桌面</b>，墙上的光点位置移动——桌面确实发生了形变。<span class="pg">p59</span></div>
@@ -154,7 +154,7 @@
 <p><b>方向怎么定</b>（照录）：放在地板上的物体，它对地板的<b>压力</b>以及地板对它的<b>支持力</b>都是弹力，其方向<b>跟接触面垂直</b>；<b>绳子的拉力</b>也是弹力，其方向<b>沿着绳子而指向绳子收缩的方向</b>。<span class="pg">p59</span></p>
 <details class="try"><summary>✍ 验一验 ③（30秒）跳水运动员把跳板压弯，跳板对运动员的支持力方向如何？谁施力？</summary><div class="ans">垂直于跳板接触面向上（垂直接触面方向）；施力物体是发生形变要恢复原状的跳板。</div></details>
 
-<h2><span class="step-tag">第四站</span>胡克定律：给弹簧"办证" <span class="pg">p60-61</span></h2>
+<h2><span class="step-tag">第四站</span>第四站 胡克定律：给弹簧"办证" <span class="pg">p60-61</span></h2>
 <div class="def"><span class="lab">两个黑体词（照录）</span>物体在发生形变后，如果<b>撤去作用力能够恢复原状</b>，这种形变叫作<b>弹性形变</b>（elastic deformation）；如果形变过大，超过一定的限度，撤去作用力后物体<b>不能完全恢复</b>原来的形状，这个限度叫作<b>弹性限度</b>（elastic limit）。</div>
 <div class="demo"><span class="lab">实验（三步照录·图3.1-8）</span><b>探究弹簧弹力与形变量的关系</b>：<br>① 实验思路——要测量多组弹簧弹力和形变量的数据，如何测量？<br>② 进行实验——弹簧上端固定在铁架台横杆上，观察自由下垂时下端在刻度尺的位置；下端悬挂<b>不同质量的钩码</b>，记录弹力不同时伸长的长度（<b>弹簧弹力等于钩码的重力</b>）。<br>③ 数据处理——以弹力 F 为纵轴、弹簧伸长的长度 x 为横轴建系，描点作出 <b>F–x 图像</b>。由图像你得出了什么结论？<span class="pg">p60-61</span></div>
 <div class="def"><span class="lab">定律（黑体照录）</span>英国科学家<b>胡克</b>经过研究发现，在<b>弹性限度内</b>，弹簧发生弹性形变时，弹力 F 的大小跟弹簧<b>伸长（或缩短）的长度 x</b> 成正比，即</div>
@@ -193,13 +193,13 @@
 
 <div class="alt-box"><span class="lab">想多走一步？（可选）"最小二乘"是什么？</span><br>把一条直线放在所有数据点"中间"，让每个点到直线的竖直距离的平方加起来最小——直线由全部数据"投票"选出，比只取首尾两点更抗误差。本节算 k 用首尾法（26.1 N/m）已够用，最小二乘（25.9 N/m）是它的"全民投票版"。跳过本块不损失主干。<span class="pg">自编拓展·T6数据承托</span></div>
 
-<h2><span class="step-tag">警报</span>⚠ 大坑警报（四发·自编警示）</h2>
+<h2><span class="step-tag">坑点警报</span>⚠ 大坑警报（四发·自编警示）</h2>
 <div class="note">① <b>"竖直向下"≠"垂直向下"</b>：重力方向永远<b>竖直向下</b>（指向地面附近的重力线方向）；"垂直"必须说清垂直于哪个面——斜面上"垂直于斜面"的力不是重力方向。教材全节只说"竖直向下"<span class="pg">p57</span>。</div>
 <div class="note">② <b>F=kx 的 x 是形变量</b>（伸长或缩短的长度），<b>不是弹簧总长</b>：教材p60明写"伸长（或缩短）的长度 x"。给总长 l 先减原长 l₀ 再代公式——本节T6就是活例（总长11.8 cm→x=5.8 cm）。</div>
 <div class="note">③ <b>弹力方向三型分开判</b>：面与面接触→垂直于接触面（压力指向被压物、支持力指向被支持物）；点与面接触→垂直于面过点；绳→沿绳指向绳收缩方向。<span class="pg">p59照录+自编三分法</span></div>
 <div class="note">④ <b>k 是弹簧的"身份证"</b>：由弹簧自身决定（"硬"=k大），与 F、x 大小无关——同一根弹簧挂轻挂重，k 不变；换一根弹簧才换 k。<span class="pg">p61"硬软"照录+自编警示</span></div>
 
-<h2><span class="step-tag">课本习题</span>练习与应用（七题全列全解 <span class="pg">p61-62</span>·题面照录·解为自编）</h2>
+<h2><span class="step-tag">练习与应用</span>练习与应用（七题全列全解 <span class="pg">p61-62</span>·题面照录·解为自编）</h2>
 <div class="q"><b>T1</b>　举出具体的实例来说明：（1）力能够改变物体的运动状态或使物体产生形变。（2）每一个力，都有一个施力物体和一个受力物体。</div>
 <p><b>解</b>：（1）改变运动状态：脚踢静止的足球，球飞出；产生形变：捏橡皮泥、压弯跳板（2.4节压弯跳板的支持力同源）。（2）任何力都成对登记：重力——地球施、物体受；桌面支持力——桌面施、书受。找不到施力物体的"力"不存在（防"冲力""惯性力"类杜撰）。</p>
 <div class="q"><b>T2</b>　画出下面几个力的图示，并指出受力物体和施力物体。（1）竖直向上飞行的火箭受到的重力，火箭质量为 2×10³ kg。g 取 10 N/kg。（2）人对车施加的水平向右 250 N 的推力。（3）用一根细绳竖直悬挂一件工艺品，工艺品对细绳的拉力为 0.5 N。</div>
@@ -215,7 +215,7 @@
 <div class="q"><b>T7</b>　小发明——设计一个自动冲水装置。有一个排污沟，需要每隔十多分钟用水冲洗一次。请你应用重心的知识设计一个自动冲水装置。设计的思路是：用一个可以转动的容器接住从水龙头细细流出的水，容器中的水装到一定体积时，由于重心位置的变化，容器失去平衡而翻倒，容器中的水被全部倒出冲洗排污沟，倒完水的容器又能自动恢复到原来的位置重新接水，如此往复。调节水龙头的流量，还可以控制两次冲水的时间间隔。请你在图3.1-11的圆圈中画出你构想的这个装置的图示。</div>
 <p><b>解</b>（设计思路·自编）：转动轴取在容器空载重心上方，使空容器"头轻脚稳"；注水后整体重心随水位升高越过转轴正上方→失稳翻转倒空；倒空后重心回落→自动复位。图示要点：转轴O、空载重心C₁（轴下方）、满水重心C₂（轴上方）、翻转箭头。（重心随质量分布移动——第二站载重汽车例子的逆向应用）</p>
 
-<h2><span class="step-tag">收口</span>🧳 三句话带走（与节首清单呼应）</h2>
+<h2><span class="step-tag">收口</span>🧳 三句话带走（收口·与节首清单呼应）</h2>
 <p><mark class="nb">重力＝地球的吸引，方向竖直向下，G=mg——g 两副面孔：称重读 N/kg、下落读 m/s²，1 N/kg=1 m/s²。</mark></p>
 <p><mark class="nb">重心是重力的作用点：均匀规则物体看形状，不规则薄板用两次悬挂法——两条"必经之路"的交点 C。</mark></p>
 <p><mark class="nb">弹力＝要恢复原状时对接触物体的力；弹性限度内 F=kx，x 是形变量（总长减原长），k 是弹簧的"身份证"。</mark></p>
@@ -227,11 +227,11 @@
 <details class="self"><summary>Q3　发生形变的物体一定产生弹力吗？两个关键词是什么？</summary>教材口径：要<b>恢复原状</b>且与接触物体作用才叫弹力——两关键词"恢复原状、对接触物体"。<span class="pg">p59黑体</span></details>
 <details class="self"><summary>Q4　弹簧原长10 cm，挂0.4 N物体后总长12 cm（未超弹性限度），k=?</summary>x=12−10=2 cm=0.02 m（先减原长）；k=0.4/0.02=20 N/m。<span class="pg">p61 F=kx</span></details>
 
-<h2><span class="step-tag">考位锚</span>📌 高考怎么考（两考向·归纳自编）</h2>
+<h2><span class="step-tag">考位锚</span>📌 高考怎么考（考位锚·两考向·归纳自编）</h2>
 <div class="note"><b>考向一 弹力的有无与方向作图</b>：给静止物体受力分析（T4钢管型），考"三力齐全＋方向三型"——重力竖直向下、支持力垂直接触面、绳拉力沿绳；常配力的示意图作图。</div>
 <div class="note"><b>考向二 胡克定律实验与图像</b>：给数据表/图线求k（T6型），考"x=总长−原长""图线斜率即k""单位N/m"；进阶考两根不同弹簧同图比较"硬软"。真题锚候采不代拟（卷源在库候采·宁缺毋编）。</div>
 
-<h2><span class="step-tag">位置图</span>节末位置图（本节位置·第三章五节地图）</h2>
+<h2>节末位置图（本节位置·第三章五节地图）</h2>
 <svg viewBox="0 0 780 110" role="img" aria-label="本节位置图：第一章运动的描述→第二章匀变速直线运动的研究（已收官）→第三章相互作用——力（3.1重力与弹力当前位置→3.2摩擦力→3.3牛顿第三定律→3.4力的合成→3.5力的分解）">
   <rect x="10" y="30" width="120" height="50" rx="8" fill="#1d2733" stroke="#31465e"/>
   <text x="70" y="52" fill="#aebccf" font-size="12.5" text-anchor="middle">第一章</text>
