@@ -1,0 +1,9 @@
+PASS 1 代换链:(√a−√b)²展开=a+b−2√ab≥0⇒(a+b)/2≥√ab
+PASS 1b (a−b)²展开=a²−2ab+b²
+PASS 3a x²+1/x²−2在x=1=0
+PASS 3b x²+1/x²−2=(x−1/x)²恒等
+PASS 4 sqrt(100)=10⇒x+y≥20 @xy=100
+PASS 7b 习题1(1) x=2时代入=3(等号值)
+PASS 15 例3(2) 面积max=81 @x=y=9
+PASS 16 例4 2×2√1600=160
+ALL True

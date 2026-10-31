@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学1.5 全称量词与存在量词 · 零基础首学版</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+.page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+.sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+p { margin: 12px 0; }
+.step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+.detail { color: #a8b4c4; font-size: 15px; }
+.big { font-size: 20px; color: #eaf1fa; }
+.small { color: #93a1b3; font-size: 13.5px; }
+.talk, .try, .box, .check, .alt, .key { background: #1b2230; border: 1px solid #2a3547; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+.key { background: #22281f; border-color: #4a5a2f; }
+.check { background: #1a2b33; border-color: #2e5560; }
+.try { border-color: #3a5570; }
+.box { background: #20242c; border: 1px dashed #4a5a70; }
+.alt { border-color: #6a5a20; }
+.tag { color: #8fc6ff; font-weight: bold; font-size: 14px; }
+.t { color: #8fc6ff; font-weight: bold; }
+mark.nb { background: #f5d76e; color: #14171c; padding: 0 4px; border-radius: 3px; }
+.m { font-family: Georgia, "Times New Roman", serif; color: #eaf1fa; }
+.ul-blue { border-bottom: 2px solid #4a9eff; }
+.note-red { color: #ff9a8a; border-left: 3px solid #e07050; padding-left: 8px; }
+.fig { margin: 18px 0; }
+.figcap { color: #8fa3b8; font-size: 13.5px; text-align: center; margin-top: 6px; }
+table { border-collapse: collapse; width: 100%; margin: 14px 0; }
+th, td { border: 1px solid #3a4a5c; padding: 6px 10px; font-size: 15px; text-align: left; }
+th { background: #1e2938; color: #cfe3f7; }
+@media print {
+  body { background: #fff; color: #111; }
+  .page { padding: 16px 10px; max-width: 100%; }
+  .talk, .try, .box, .check, .alt, .key, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .key { background: #fff3b8; border-left: 4px solid #d4a017; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2, h3, b, .m, .big { color: #111; }
+  .sub, .small, .foot, .detail { color: #444; }
+  .try .t, .key b { color: #7a5c00; }
+  .step-tag { background: #111; color: #fff; }
+  mark.nb { background: #fff3b8; color: #111; }
+  .note-red { color: #a03325; border-left-color: #a03325; }
+  svg text { fill: #333 !important; }
+  svg rect { fill: #fff !important; }
+}
+</style></head>
+<body><div class="page">
+<h1>数学1.5 全称量词与存在量词</h1>
+<div class="sub">数学必修第一册（人教A 2019）第1章 集合与常用逻辑用语 · 第5节 · 零基础首学版 · 40分钟自学件</div>
+
+<div class="talk"><p>"x＞3"这句话是命题吗？——不是。x是几都不知道，真假没法判断。但加三个字——"<b>所有的</b>x∈R，x＞3"——立刻就能判断了：假的（x=1就不满足）。这节讲的就是这种"给变量加限定"的短语：<b>量词</b>。学完它，第一章的数学语言装备就全部齐了。</p></div>
+
+<div class="check"><span class="tag">读完这节你能</span>
+<p>① 认出全称量词命题（∀）和存在量词命题（∃），并判断真假；</p>
+<p>② 说出两种命题的判定方法（一个管"全部"，一个管"找到一个"）；</p>
+<p>③ 写出含量词命题的否定——量词互换、结论取反；</p>
+<p>④ 用五节装备读通"所有的素数都是奇数"这类话的真假。</p></div>
+
+<div class="talk"><span class="tag">30秒立好地基</span><br>
+<p>预备知识两条：①1.4的"命题"=可以判断真假的陈述句；②集合符号"∈"（属于）。新符号就两个：∀（倒写的A，All=all所有）和∃（反写的E，Exist=存在）——形状就是意思。</p></div>
+
+<h2><span class="step-tag">第①站</span> 量词——给变量"上锁"</h2>
+<p>教材p26思考框给了四个句子：(1) x＞3；(2) 2x+1是整数；(3) <b>所有的</b>x∈R，x＞3；(4) <b>任意一个</b>x∈Z，2x+1是整数。(1)(2)含变量x、不知道x代表什么数，<b>不是命题</b>；(3)(4)用短语给x的取值上了限，变成能判断真假的句子——<b>是命题</b>。</p>
+<p>教材p26定义：<b>短语"所有的""任意一个"在逻辑中通常叫做全称量词（universal quantifier），用符号"∀"表示</b>。含有全称量词的命题，叫做<b>全称量词命题</b>（常见的还有"一切""每一个""任给"）。记法：</p>
+<p class="big" style="text-align:center">∀x∈M，p(x) <span class="detail">（对M中任意一个x，p(x)成立）</span></p>
+<p>相应地（p27）：<b>"存在一个""至少有一个"叫做存在量词（existential quantifier），用符号"∃"表示</b>，含有它的命题叫<b>存在量词命题</b>（常见的还有"有些""有一个""对某些"）。记法：</p>
+<p class="big" style="text-align:center">∃x∈M，p(x) <span class="detail">（存在M中的元素x，使p(x)成立）</span></p>
+<div class="try"><span class="t">验一验①（先答，再看答案）</span><br>
+<p>判断是全称量词命题还是存在量词命题（还是不含量词的普通命题）：①"有些四边形是正方形"；②"每一个有理数都能写成分数"；③"π是无理数"。<br>
+<span class="detail"><b>答案：</b>①存在量词命题（"有些"）②全称量词命题（"每一个"）③普通命题（无变量无量词，直接判断真假）。<b>抓关键词</b>：所有的/任一/一切→∀；有些/存在/至少一个→∃。</span></p>
+</div>
+
+<h2><span class="step-tag">第②站</span> 判真假——"全部"与"一个"的取证方式相反</h2>
+<p>教材p27例1+分析给出全称量词命题的判定法：<b>判"∀x∈M，p(x)"为真，要对M中每个元素x证明p(x)成立；只要在M中找到一个x₀使p(x₀)不成立，它就是假命题</b>——这个方法叫<mark class="nb">举反例</mark>。</p>
+<table>
+<tr><th>例1（p27）</th><th>判定</th><th>依据</th></tr>
+<tr><td>所有的素数都是奇数</td><td><b>假</b></td><td>2是素数但不是奇数——一个反例够</td></tr>
+<tr><td>∀x∈R，|x|+1≥1</td><td><b>真</b></td><td>|x|≥0恒成立，加1后恒≥1——要"全部"成立才算真</td></tr>
+<tr><td>对任意一个无理数x，x²也是无理数</td><td><b>假</b></td><td>(√2)²=2是有理数——反例（sympy已验：√2²=2）</td></tr>
+</table>
+<p>教材p28例2给出存在量词命题的判定法（方向正好相反）：<b>判"∃x∈M，p(x)"为真，只需找到一个使p(x)成立的元素即可；如果使p(x)成立的元素不存在，它就是假命题</b>。</p>
+<table>
+<tr><th>例2（p28）</th><th>判定</th><th>依据</th></tr>
+<tr><td>有一个实数x，使x²+2x+3=0</td><td><b>假</b></td><td>Δ=2²−4×3=−8＜0，方程无实根——一个都找不到</td></tr>
+<tr><td>平面内存在两条相交直线垂直于同一条直线</td><td><b>假</b></td><td>垂直于同一直线的两直线互相平行——不存在这种"相交"</td></tr>
+<tr><td>有些平行四边形是菱形</td><td><b>真</b></td><td>正方形既是平行四边形又是菱形——找到一个就够</td></tr>
+</table>
+<p><span class="note-red"><b>方向锁死：</b>全称量词命题"找一个反例就倒"；存在量词命题"找一个例子就立"——两者取证方向完全相反。</span></p>
+<div class="try"><span class="t">验一验②（先答，再看答案）</span><br>
+<p>（改编自p28练习）判真假：①每一个四边形的内角和都是360°；②至少有一个整数n，使得n²+n为奇数；③∀x∈{y|y是无理数}，x³是无理数。<br>
+<span class="detail"><b>答案：</b>①<b>真</b>（四边形内角和恒360°——全称命题全验证通过）；②<b>假</b>（n²+n=n(n+1)是相邻两数之积，必为偶数——一个成立的n都找不到，sympy代验：n=0到10全部n²+n%2=0）；③<b>假</b>（反例：x=∛2是无理数但x³=2是有理数——举反例就倒）。</span></p>
+</div>
+
+<h2><span class="step-tag">第③站</span> 否定——量词互换，结论取反</h2>
+<p>教材p28定义：<b>对一个命题进行否定，就得到一个新命题，称为原命题的否定</b>。侧栏关键句：<mark class="nb">一个命题和它的否定不能同时为真，也不能同时为假，只能一真一假</mark>。</p>
+<p><b>全称量词命题的否定（p29）：</b>"并非所有的x都……"意思就是"存在一个x不……"。<b>规则：∀变∃，p(x)取反</b>：</p>
+<p class="big" style="text-align:center">∀x∈M，p(x) 的否定是 ∃x∈M，¬p(x)</p>
+<p><span class="detail">（¬p(x)表示"p(x)不成立"。例3：①"所有能被3整除的整数都是奇数"的否定="存在一个能被3整除的整数不是奇数"；②"每一个四边形的四个顶点在同一个圆上"的否定="存在一个四边形，它的四个顶点不在同一个圆上"；③"对任意x∈Z，x²的个位数字不等于3"的否定="∃x∈Z，x²的个位数字等于3"。）</span></p>
+<p><b>存在量词命题的否定（p30）：</b>"不存在一个x……"意思就是"所有x都不……"。<b>规则：∃变∀，p(x)取反</b>：</p>
+<p class="big" style="text-align:center">∃x∈M，p(x) 的否定是 ∀x∈M，¬p(x)</p>
+<p><span class="detail">（例4：①"∃x∈R，x+2≤0"的否定="∀x∈R，x+2＞0"；②"有的三角形是等边三角形"的否定="所有的三角形都不是等边三角形"；③"有一个偶数是素数"的否定="任意一个偶数都不是素数"。）</span></p>
+<div class="box"><b>口诀（自编）：换词、取反、两步走</b>——量词∀↔∃互换，结论p(x)变¬p(x)。<span class="note-red">易错：只取反结论不换量词×；只换量词不取反结论×——两步缺一不可。</span>另记：只改"不"字位置不算否定（"所有x是奇数"≠否定"所有x不是奇数"——那是全盘反向，中间还漏着"部分"地带，规范的否定必须用∃）。</div>
+<div class="try"><span class="t">验一验③（先答，再看答案）</span><br>
+<p>写出否定：①所有的素数都是奇数；②∃x∈R，x²+2x+3=0。<br>
+<span class="detail"><b>答案：</b>①∃素数，它不是奇数（量词∀→∃+结论取反——正好就是例1反例法判假的语言：举反例=找到"否定"为真）；②∀x∈R，x²+2x+3≠0。两题都是"换词+取反"两步走。</span></p>
+<p>（易错变形）"所有的天鹅是白的"的否定，写成"所有的天鹅都不是白的"，对吗？<br>
+<span class="detail"><b>答案：</b>不对。规范否定="∃天鹅，它不是白的"（存在一只黑天鹅就能推翻原命题）。"所有都不是"太强——只要后来发现一只灰天鹅（既不全白也不全非白），你的"否定"和原命题就同时为假，违反"一真一假"。</span></p>
+</div>
+
+<h2><span class="step-tag">第④站</span> 第一章装备总检——五件套连成一条线</h2>
+<p>第一章五节，其实是一套完整的"数学语言装备"：</p>
+<table>
+<tr><th>节</th><th>装备</th><th>干什么用</th></tr>
+<tr><td>1.1 集合的概念</td><td>把对象装进"集合"</td><td>统一的研究对象</td></tr>
+<tr><td>1.2 集合间的基本关系</td><td>⊆ ⊊ ＝</td><td>比较两堆对象</td></tr>
+<tr><td>1.3 集合的基本运算</td><td>∪ ∩ ∁</td><td>对象堆之间的加减</td></tr>
+<tr><td>1.4 充分必要条件</td><td>p⇒q、p⇔q</td><td>条件与结论的保证关系</td></tr>
+<tr><td><b>1.5 量词（你在）</b></td><td>∀ ∃ ¬</td><td>把"对不对"说得严格</td></tr>
+</table>
+<p>例1的"所有素数"用1.1的集合语言说就是"∀x∈{素数}"——<b>集合给范围，量词给限定，条件给保证</b>。第二章开始，这些语言将用来陈述不等式的每一条性质。</p>
+<div class="try"><span class="t">验一验④（先答，再看答案）</span><br>
+<p>用"集合+量词"的语言翻译："有些偶数能被3整除"，并判断真假。<br>
+<span class="detail"><b>答案：</b>∃x∈{偶数}，x能被3整除（即∃x∈{x|x=2n, n∈Z}，3|x）——<b>真</b>：找到一个就够（如6）。用1.3的语言：{3的倍数}∩{偶数}≠∅。</span></p>
+</div>
+
+<div class="alt"><span class="tag">卡住了？（三处就地给出路）</span>
+<p>· <b>∀和∃长相反搞混？</b>——∀=倒写的A（All所有）；∃=反写的E（Exist存在）。写一遍就记住：A倒过来，E反过来。</p>
+<p>· <b>"否定的否定"绕晕？</b>——连续否定两次=回到原命题（负负得正）。教材侧栏"一真一假"是检验尺：你的"否定"和原命题如果同时真/同时假，一定写错了。</p>
+<p>· <b>隐含量词的命题漏判？</b>——"正方形都是矩形"没写"所有"，但意思是"（所有的）正方形都是矩形"=全称量词命题。中文常省略"所有"，读命题先补全量词。</p>
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<div class="key">
+<p><span class="big">1.</span> 量词给变量上锁：<mark class="nb">∀（所有）锁全称，∃（存在）锁存在</mark>——锁上才算命题。</p>
+<p><span class="big">2.</span> 判真假方向相反：<mark class="nb">全称"一反例就倒"，存在"一正例就立"</mark>。</p>
+<p><span class="big">3.</span> 否定两步走：<mark class="nb">量词互换（∀↔∃）+结论取反（¬p）</mark>，原命题与否定一真一假。</p></div>
+<p><b>自测四连（先自己答，再对答案）：</b></p>
+<p>①（自编）"存在最小的正整数"是真命题吗？它是什么类型的命题？<br><span class="detail"><b>答案：</b>真命题；存在量词命题——找到一个x=1使"x是最小正整数"成立即可（正整数从1开始数，1就是最小的）。</span></p>
+<p>②（自编·易错）"∀x∈R，x²≥0"的否定写成"∀x∈R，x²≤0"，错在哪？<br><span class="detail"><b>答案：</b>只取反结论没换量词。正确否定="∃x∈R，x²＜0"（注意＜0，不是≤0——"≥0的否定"是"＜0"）。两步走缺一不可，"≥的否定是＜"也是易错点（不是"≤"）。</span></p>
+<p>③（教材p28练习1(2)原题）"任何实数都有算术平方根"判真假。<br><span class="detail"><b>答案：</b>假。全称量词命题——反例：负数没有算术平方根（如−1）。举反例就倒。</span></p>
+<p>④（自编）用本节语言说出1.4"充分条件"判定的完整表述。<br><span class="detail"><b>答案：</b>"p是q的充分条件"="∀x（若x满足p，则x满足q）为真"——全称量词命题；它的否定（存在满足p却不满足q的x）恰是"p不是q的充分条件"的严格表述。第一章五节在此合流。</span></p>
+
+<p><b>练什么题：</b>教材p28练习1-2（全称3+存在3，本件验②已带②③路标）+p30后续练习域（p31起候锚·沿节界先例登记）；时间紧先做p28练习1(2)(3)——两题覆盖"全验证真+反例判假"两种取证。</p>
+
+<div class="box"><b>高考怎么考</b>（三行以内·真题锚候采不代拟）<br>
+· 量词命题真假判断——选择题常客（全称举反例/存在找正例）；<br>
+· 含量词命题的否定——选择题高频（换词+取反两步）；<br>
+· 与1.4条件判定合流（"¬p是q的什么条件"类）——中档综合题。</div>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：1.1概念→1.2关系→1.3运算→1.4条件→1.5量词（你在）→第二章不等式">
+  <rect x="0" y="0" width="800" height="150" fill="#10141b" rx="8"/>
+  <text x="30" y="55" fill="#7d8a99" font-size="13">1.1概念→1.2关系→1.3运算→1.4条件</text>
+  <line x1="330" y1="50" x2="370" y2="50" stroke="#5a6a80" stroke-width="2" marker-end="url(#aEB)"/>
+  <text x="378" y="55" fill="#4a9eff" font-size="17" font-weight="bold">1.5 量词（你在）</text>
+  <line x1="545" y1="50" x2="585" y2="50" stroke="#5a6a80" stroke-width="2" marker-end="url(#aEB)"/>
+  <text x="593" y="55" fill="#7d8a99" font-size="14">第二章不等式</text>
+  <text x="400" y="110" fill="#5a6a7a" font-size="11.5" text-anchor="middle">这张图在说什么：第一章五件装备在此集齐（集合/关系/运算/条件/量词），第二章开始用这套语言说不等式。</text>
+  <defs><marker id="aEB" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#5a6a80"/></marker></defs>
+</svg>
+<p class="figcap">这张图在说什么：本件位置——第一章最后一节，语言装备全部集齐；下一站第二章等式与不等式。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2·标准v2.3条款落地：节首清单＋预备块＋四站推进＋装备总检表/位置图＋考位锚块＋@media print打印层；正文"验一验"×4含易错变形×4，节末自测四连，答案直接可见；sympy代验3验点全过·留痕=席位私有sympy留痕脚本1031午后：(√2)²=2/6²+6=42为偶/n²+n偶性全查） · 事实层素材源：人教A版必修第一册p26-30官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=6e764703-6e5e-4ea3-9462-34652c2678ef·印刷页26-30=图33-37·ts=1787023173400·图N→印刷页N−7映射沿本册定标·影印图存席位私有目录p26_jc/·原件不入仓）· **节界实锚=1.5全节p26-30已核**（p24-25系1.4阅读与思考"几何命题与充分条件必要条件"非1.5域·p26节题+1.5.1全称量词与存在量词/p27例1+存在量词/p28例2+练习+1.5.2否定起/p29探究+全称否定规则+例3/p30探究+存在否定规则+例4；**p31练习域候锚**沿节界先例登记）· 思考框四语句/例1例2判定法原文/两否定规则/例3例4/一真一假侧栏均影印逐字锚定 · 自编题全部显式标注"自编/改编"，教材原题标注页码来源（p26思考/p27-28例1例2/p29-30例3例4/p28练习）· 设计标准：零预设 · 一次一步 · 随读随验×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源
+</div>
+</div></body></html>

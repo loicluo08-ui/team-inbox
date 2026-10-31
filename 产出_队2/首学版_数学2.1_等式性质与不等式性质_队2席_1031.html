@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学2.1 等式性质与不等式性质 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  .detail { color: #a8b4c4; font-size: 15px; }
+  .big { font-size: 21px; }
+  .small { font-size: 14px; color: #8a949f; }
+  b, strong { color: #f0f3f7; }
+  mark.nb { background: #ffd94a; color: #14171c; padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .ul-blue { color: #6cc3ff; border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { background: #2a1a1a; border-left: 3px solid #e07050; color: #ffb0a0; padding: 6px 12px; font-size: 14px; margin: 8px 0; }
+  .talk, .key, .box, .check, .try, .alt { border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .talk { background: #1a2230; border: 1px solid #2a3a55; }
+  .key { background: #26221a; border: 1px dashed #d4a017; }
+  .box { background: #20242c; border: 1px dashed #4a5a70; }
+  .check { background: #1a2a20; border: 1px solid #2a5a3a; }
+  .try { background: #22201a; border: 1px solid #6a5a20; }
+  .try .t, .box .t { color: #ffd94a; font-weight: bold; }
+  .alt { background: #1a2226; border: 1px solid #2a4a55; }
+  .alt .tag, .box .tag, .try .tag { color: #6cc3ff; font-weight: bold; font-size: 14px; }
+  .check .tag { color: #9fd48a; font-weight: bold; font-size: 14px; }
+  .fig { margin: 20px 0; }
+  .figcap { text-align: center; font-size: 13px; color: #7d8a99; margin-top: 6px; }
+  .foot { border-top: 1px solid #2a3140; margin-top: 40px; padding-top: 14px; font-size: 12.5px; color: #5a6a7a; line-height: 1.7; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .box, .check, .alt, .try, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .try { background: #fffbe8; border-color: #d4a017; }
+    .key { background: #fff3b8; border-left: 4px solid #d4a017; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .big, .step-tag { color: #111; }
+    .sub, .small, .foot, .figcap { color: #444; }
+    .talk .q, .key b, .try .t, .box .t, .alt .tag, .check .tag, .try .tag, .box .tag { color: #7a5c00; }
+    .note-red { background: #fdf0ec; border-left: 3px solid #c05030; color: #7a3018; }
+    mark.nb { background: #fff8d0; color: #111; }
+    .detail, .ul-blue { color: #333; }
+    .step-tag { background: #e8eef5; }
+    /* print七查合规：SVG深底块全量转浅线稿（防深色占比红闸·荧光黄清除） */
+    .fig svg rect[fill="#10141b"], .fig svg rect[fill="#14171c"] { fill: #fafafa !important; }
+    .fig svg polygon[fill="#7a3b2e"] { fill: #f0e0d8 !important; stroke: #a05a40 !important; }
+    .fig svg polygon[fill="#c8a838"] { fill: #faf0c8 !important; }
+    .fig svg circle[fill="#4a9eff"], .fig svg circle[fill="#6cbf4a"] { fill: #555 !important; }
+    .fig svg line[stroke="#5a6a80"] { stroke: #888 !important; }
+    .fig svg line[stroke="#e07050"] { stroke: #a05a40 !important; }
+    .fig svg text[fill="#d8dee6"], .fig svg text[fill="#6cc3ff"], .fig svg text[fill="#9fd48a"],
+    .fig svg text[fill="#ffd94a"], .fig svg text[fill="#8fa3b8"], .fig svg text[fill="#5a6a7a"],
+    .fig svg text[fill="#d4a017"], .fig svg text[fill="#e07050"] { fill: #333 !important; }
+    .fig svg text[fill="#fff"] { fill: #333 !important; }
+    .fig svg rect[fill="#1a2230"], .fig svg rect[fill="#26221a"] { fill: #f2f2f2 !important; stroke: #999 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>数学2.1 等式性质与不等式性质</h1>
+<div class="sub">零基础首学版 v1.0 · 人教A版必修第一册 p37-43 · 第二章开门节：第一章的"话术"在这里正式上岗 · 出品：搜索规划师·队2席 · 1031</div>
+
+<div class="talk">
+<p class="q"><b>先看一块限速牌。</b>路边立着"限速 40"。它没说你必须正好开 40——它说的是：你的车速 v 和 40 之间有一条线，<b>不许越过去</b>。</p>
+<p>"不超过""至少""高于""低于""不少于"——生活里这类话到处都是。数学把它们统一叫<b>不等关系</b>，写成式子就是<b>不等式</b>。第一章你练的是"话术"（命题、若p则q、充要条件）；从这节起，数学的研究对象换成<b>数与式的大小关系</b>，而话术直接上岗：每条性质都要问一句"它是不是真命题、条件够不够"。</p>
+<p>本节只做三件事：把现实<b>翻译</b>成不等式；学会<b>作差比大小</b>；把等式、不等式的<b>家底性质</b>一条条盘清——因为下一节的基本不等式、再下一节解一元二次不等式，全靠这些性质当工具。</p>
+</div>
+
+<div class="check">
+<span class="tag">读完这节你能做到</span>
+<p>① 把"限速、不少于、不超过、不低于"等现实约束<b>翻译</b>成不等式或不等式组；</p>
+<p>② 用<b>作差法</b>比较两个数或式的大小（作差→变形→与0比，三步走）；</p>
+<p>③ 说出等式性质1-5、不等式性质1-7各管什么，尤其<b>性质4乘负数要反向</b>不踩坑；</p>
+<p>④ 现场用 (a−b)²≥0 推出 a²+b²≥2ab，并解释"当且仅当"——为2.2埋好种子。</p>
+</div>
+
+<div class="key">
+<span class="tag">30秒立好地基（初中都见过，今天正式点名）</span>
+<p><b>等式</b>：你解了九年方程，"移项""两边同乘"背后靠的就是等式的性质（教材p40性质1-5）——它们一直默默工作，只是没上台领奖。</p>
+<p><b>不等号</b>：&lt; &gt; ≤ ≥ 你都认识。"限速40"记作 v≤40（v还得≥0）。</p>
+<p><b>数轴</b>：右边的数总比左边的大——这句大白话（教材p38）是本节一切性质的老家。</p>
+<p>本节真正的新动作只有一个：<mark class="nb">作差</mark>。别慌，往下看就三步。</p>
+</div>
+
+<h2><span class="step-tag">第①站</span>翻译——把现实问题写进不等式</h2>
+
+<p>教材p37问题1给了四个真实场景，先自己试着翻一遍，再看下面的对照：</p>
+<p>（1）某路段限速 40 km/h；（2）某品牌酸奶质检规定：脂肪含量 f 不少于 2.5%，蛋白质含量 p 不少于 2.3%；（3）三角形两边之和大于第三边、两边之差小于第三边；（4）连接直线外一点与直线上各点的所有线段中，垂线段最短。</p>
+<p><b>翻译对照：</b></p>
+<p>（1）设车速为 v km/h。"限速40"=不超过40，而速度又是非负的——所以 <b>0＜v≤40</b>。一个"且"字场景，两个不等号齐上。</p>
+<p>（2）"不少于"就是≥：脂肪 <b>f≥2.5%</b>，蛋白质 <b>p≥2.3%</b>。两条要求同时生效，用大括号捆在一起——这就是<b>不等式组</b>。</p>
+<p>（3）设△ABC三边为 a，b，c：<b>a＋b＞c，a－b＜c</b>。注意"两边之差小于第三边"里没说哪两边减哪边——任意两边之差都小于第三边，教材这里取一组代表写式子。</p>
+<p>（4）设C是直线AB外一点，CD⊥AB，垂足为D，E是直线AB上异于D的任一点，则 <b>CD＜CE</b>（图2.1-1）。这是初中"垂线段最短"的符号化——几何事实也能翻译成不等式。</p>
+
+<div class="note-red">翻译三步固定动作：<b>①设字母</b>（把"车速""含量"变成v、f）→<b>②抓关系词</b>（不超过=≤、不少于=≥、高于=＞、低于=＜、"不低于"含等于）→<b>③写式子</b>。多条约束同时成立就捆成不等式组。翻译丢条件=丢解（"不低于20万"写成"＞20万"就把恰好20万的合法解踢出去了）。</div>
+
+<p>教材p37-38问题2来一个"翻译完还暂时解不动"的例子——它在给后面两节埋钩子：</p>
+<p><b>问题2：</b>某杂志原价每本2.5元，可售出8万本。市场调查：单价每提高0.1元，销量就减少2000本。如何定价，才能使提价后的销售总收入不低于20万元？</p>
+<p>设提价后每本定价 x 元。提价 (x−2.5) 元，里面有 (x−2.5)/0.1 个"0.1元"，每个"0.1元"少卖2000本=0.2万本——销量（万本）＝8−(x−2.5)/0.1×0.2。于是"总收入不低于20万元"写成不等式（教材式①）：</p>
+<p class="big" style="text-align:center">(8−(x−2.5)/0.1×0.2)·x ≥ 20</p>
+<p>教材p38接着说：<b>"求出不等式①的解集，就能知道满足条件的杂志的定价范围。如何解不等式①呢？与解方程要用等式的性质一样，解不等式要用不等式的性质。为此，我们需要先研究不等式的性质。"</b>——这就是本节的路线图：先备好性质工具箱，2.3节回来收拾式①。展开后它是 13x−2x²≥20（sympy expand 留痕），一个二次的家伙，硬碰硬要等2.3；但"检查一个x合不合法"现在就会：代进去验就完了。</p>
+
+<div class="try"><span class="t">验一验①（先答，再看答案）</span><br>
+<p>x=2.5（不提价）合法吗？x=6.5呢？</p>
+<p><b>答案：</b>x=2.5：收入=8×2.5=20万，"不低于20"含等于——<b>合法</b>（式①左端=13×2.5−2×2.5²=32.5−12.5=20≥20 ✓）。x=6.5：13×6.5−2×6.5²=84.5−84.5=0＜20，<b>不合法</b>——提太高没人买了。</p>
+<p><b>易错变形（自编）：</b>"不少于2.3%"写成"p＞2.3%"错在哪？——"不少于"含等于（≥）；写成＞会把恰好2.3%的合格品判成不合格。关系词翻译差一个等号，答案就差一批解。</p>
+</div>
+
+<h2><span class="step-tag">第②站</span>作差——比大小的通用尺</h2>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="数轴上实数大小基本事实三态图：a小于b时点A在B左侧；a等于b两点重合；a大于b时点A在B右侧">
+  <rect x="0" y="0" width="760" height="190" fill="#10141b" rx="8"/>
+  <line x1="50" y1="60" x2="330" y2="60" stroke="#5a6a80" stroke-width="2"/>
+  <polygon points="330,60 320,55 320,65" fill="#5a6a80"/>
+  <circle cx="130" cy="60" r="6" fill="#4a9eff"/><circle cx="260" cy="60" r="6" fill="#6cbf4a"/>
+  <text x="122" y="48" fill="#6cc3ff" font-size="14">A(a)</text><text x="252" y="48" fill="#9fd48a" font-size="14">B(b)</text>
+  <text x="185" y="92" fill="#d8dee6" font-size="14" text-anchor="middle">a＜b ⇔ a−b＜0</text>
+  <line x1="430" y1="60" x2="710" y2="60" stroke="#5a6a80" stroke-width="2"/>
+  <polygon points="710,60 700,55 700,65" fill="#5a6a80"/>
+  <circle cx="500" cy="60" r="6" fill="#6cbf4a"/><circle cx="640" cy="60" r="6" fill="#4a9eff"/>
+  <text x="492" y="48" fill="#9fd48a" font-size="14">B(b)</text><text x="632" y="48" fill="#6cc3ff" font-size="14">A(a)</text>
+  <text x="570" y="92" fill="#d8dee6" font-size="14" text-anchor="middle">a＞b ⇔ a−b＞0</text>
+  <text x="380" y="160" fill="#ffd94a" font-size="14" text-anchor="middle">a=b ⇔ a−b=0（两点重合）· 教材p38图2.1-2：数轴是大小关系的家</text>
+</svg>
+<p class="figcap">这张图在说什么：数轴上谁在右边谁就大——教材p38把这句大白话正规化成"基本事实"。</p>
+</div>
+
+<p>教材p38原文：<b>"由于数轴上的点与实数一一对应，所以可以利用数轴上点的位置关系来规定实数的大小关系。"</b>关于实数a，b大小的比较，有以下<b>基本事实</b>：</p>
+<p class="big" style="text-align:center">如果 a−b 是正数，那么 a＞b；如果 a−b 等于0，那么 a=b；如果 a−b 是负数，那么 a＜b。<b>反过来也对</b>。</p>
+<p>教材p38把它写成三行等价式（双向通行）：</p>
+<p style="text-align:center"><b>a＞b ⇔ a−b＞0；　a=b ⇔ a−b=0；　a＜b ⇔ a−b＜0</b></p>
+<p>教材侧栏点睛：<mark class="nb">0是正数与负数的分界点，它为实数比较大小提供了"标杆"</mark>。也就是说：要比较a，b的大小，可以转化为比较它们的差与0的大小——"比大小"变成了"定正负"，而减法、去括号、合并同类项你闭着眼都会。这个动作叫<b>作差法</b>。</p>
+
+<p><b>例1（教材p38）：</b>比较 (x+2)(x+3) 和 (x+1)(x+4) 的大小。</p>
+<p><b>分析：</b>考察两个多项式的差与0的大小关系。<b>解：</b>因为</p>
+<p style="text-align:center">(x+2)(x+3)−(x+1)(x+4)=(x²+5x+6)−(x²+5x+4)=2＞0，</p>
+<p>所以 (x+2)(x+3)＞(x+1)(x+4)。教材p39点评：<b>"我们借助多项式减法运算，得出了一个明显大于0的数（式）。这是解决不等式问题的常用方法。"</b></p>
+<div class="note-red">作差三步固定动作：<b>作差</b>（谁减谁要想清楚：求"A大还是B大"就算A−B）→<b>变形</b>（展开合并/因式分解/配方/通分——目标是化成"一眼定号"的形状）→<b>定号</b>（与0比，正则A大，负则A小，零则相等）。变形变形，"明显"二字是终点站：常数、平方、平方和，都是一眼定号的形状。</div>
+
+<div class="try"><span class="t">验一验②（先答，再看答案·教材p40练习2、3）</span><br>
+<p>（1）比较 (x+3)(x+7) 和 (x+4)(x+6)。</p>
+<p><b>答案：</b>作差=(x²+10x+21)−(x²+10x+24)=−3＜0，前者小于后者（对一切x恒成立·sympy expand 留痕）。跟例1同款套路，只差最后定号方向。</p>
+<p>（2）已知 a＞b，证明 a＞(a+b)/2＞b。</p>
+<p><b>答案：</b>两段作差：a−(a+b)/2=(a−b)/2＞0（因为a＞b），所以 a＞(a+b)/2；(a+b)/2−b=(a−b)/2＞0，所以 (a+b)/2＞b。两个不等号都到手，证毕。(a+b)/2 是a，b的<b>算术平均数</b>——它被夹在两数正中间，这条"中点夹逼"下节马上当主角。</p>
+<p><b>易错变形（自编）：</b>比较 x² 与 −x²。作差=2x²≥0——所以 x²≥−x² 恒成立，且等号<b>只在x=0</b>。看见没：作差法连"要不要分情况讨论"都替你答了——不用分，差自己会说话。</p>
+</div>
+
+<h2><span class="step-tag">第③站</span>弦图实验——a²+b²≥2ab 诞生记</h2>
+
+<p>教材p39探究请出一位老演员：<b>2002年北京第24届国际数学家大会的会标</b>——按中国古代数学家<b>赵爽的弦图</b>设计，颜色明暗像风车（图2.1-3）。教材问：你能在这个图中找出一些相等关系和不等关系吗？</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="赵爽弦图抽象图：边长为根号a平方加b平方的大正方形内含四个全等直角三角形与中间小正方形，展示a平方加b平方大于等于2ab">
+  <rect x="0" y="0" width="720" height="400" fill="#10141b" rx="8"/>
+  <g transform="translate(180,20)">
+    <rect x="0" y="0" width="360" height="360" fill="#1a2230" stroke="#4a9eff" stroke-width="2.5"/>
+    <polygon points="0,360 360,360 230.4,187.2" fill="#7a3b2e" stroke="#e07050" stroke-width="1.5" opacity="0.9"/>
+    <polygon points="360,360 360,0 187.2,129.6" fill="#7a3b2e" stroke="#e07050" stroke-width="1.5" opacity="0.9"/>
+    <polygon points="360,0 0,0 129.6,172.8" fill="#7a3b2e" stroke="#e07050" stroke-width="1.5" opacity="0.9"/>
+    <polygon points="0,0 0,360 172.8,230.4" fill="#7a3b2e" stroke="#e07050" stroke-width="1.5" opacity="0.9"/>
+    <polygon points="230.4,187.2 187.2,129.6 129.6,172.8 172.8,230.4" fill="#c8a838" opacity="0.5"/>
+    <text x="26" y="348" fill="#ffd94a" font-size="12">a</text>
+    <text x="348" y="352" fill="#ffd94a" font-size="12">b</text>
+    <text x="185" y="182" fill="#fff" font-size="11" text-anchor="middle">a−b</text>
+    <text x="180" y="385" fill="#8fc6ff" font-size="14" text-anchor="middle">大正方形边长 c=√(a²+b²)（a=4,b=3示范·c=5）</text>
+  </g>
+  <text x="560" y="120" fill="#d8dee6" font-size="15">4个全等直角三角形</text>
+  <text x="560" y="145" fill="#d8dee6" font-size="15">面积和 = 4×(ab/2) = 2ab</text>
+  <text x="560" y="185" fill="#d8dee6" font-size="15">大正方形面积 = a²+b²</text>
+  <text x="560" y="225" fill="#ffd94a" font-size="16" font-weight="bold">大＞小4块：</text>
+  <text x="560" y="252" fill="#ffd94a" font-size="16" font-weight="bold">a²+b²＞2ab (a≠b)</text>
+  <text x="560" y="285" fill="#9fd48a" font-size="15">a=b时中间缩成点：</text>
+  <text x="560" y="310" fill="#9fd48a" font-size="16" font-weight="bold">a²+b²=2ab</text>
+  <text x="560" y="345" fill="#6cc3ff" font-size="15">合并：a²+b²≥2ab</text>
+  <text x="560" y="370" fill="#6cc3ff" font-size="14">当且仅当a=b等号成立</text>
+</svg>
+<p class="figcap">这张图在说什么：教材图2.1-4的抽象重绘——大正方形比4个三角形多出的部分，就是中间那个小正方形（边长a−b）。</p>
+</div>
+
+<p><b>教材p39推理（照原样走一遍）：</b>将图2.1-3中的"风车"抽象成图2.1-4：正方形ABCD中有4个全等的直角三角形，设直角三角形两条直角边长为 a，b（a≠b），那么正方形ABCD的边长为 √(a²+b²)。4个直角三角形的面积和为 <b>2ab</b>，正方形ABCD的面积为 <b>a²+b²</b>。由于正方形ABCD的面积大于4个直角三角形的面积和，就得到不等式 <b>a²+b²＞2ab</b>。当直角三角形变为等腰直角三角形（即a=b）时，正方形EFGH缩为一个点，这时 <b>a²+b²=2ab</b>。于是就有 a²+b²≥2ab。</p>
+<p><b>代数复核（教材p39底·一句话验明正身）：</b>利用完全平方公式，a²+b²−2ab=(a−b)²。因为对一切实数，(a−b)²≥0，当且仅当a=b时等号成立，所以由基本事实立刻得到 a²+b²≥2ab。<mark class="nb">"当且仅当"=充要条件（1.4的话术上岗）：a=b 是 a²+b²=2ab 的充要条件</mark>——等号何时成立，说得明明白白，这就是充要条件的日常用法。</p>
+<p>记住这个不等式：它是<b>2.2基本不等式的种子</b>。第④站讲完性质就回来收割。</p>
+
+<div class="try"><span class="t">验一验③（先答，再看答案）</span><br>
+<p>（1）代两组数进 a²+b²≥2ab 验一验。</p>
+<p><b>答案：</b>a=1,b=2：1+4=5＞2×1×2=4 ✓（严格大于，1≠2）；a=b=3：9+9=18=2×9 ✓（等号，a=b）。</p>
+<p><b>易错变形（自编·提前踩2.2的坑）：</b>"由 a²+b²≥2ab 可以推出 a+b≥2√ab 吗？"——不行，负数立刻翻车：a=b=−1 时左边 a+b=−2，右边 2√1=2，−2≥2 是假的。问题出在"开平方要求非负"。<b>所以下节的基本不等式必须限定 a，b 都是正数</b>——种子已经埋下，2.2见。</p>
+</div>
+
+<h2><span class="step-tag">第④站</span>性质库——等式5条打底，不等式7条盖楼</h2>
+
+<p>教材p40思考框给的方法论：<b>"请你先梳理等式的基本性质，再观察它们的共性。你能归纳一下发现等式基本性质的方法吗？"</b>——先把旧知识点名，再类比着猜新性质、最后证明。这条"类比+证明"的流水线，就是本站的发动机。</p>
+
+<h3>等式的基本性质（教材p40·旧知识点名）</h3>
+<p><b>性质1</b> 如果 a=b，那么 b=a；　<b>性质2</b> 如果 a=b，b=c，那么 a=c；　<b>性质3</b> 如果 a=b，那么 a±c=b±c；　<b>性质4</b> 如果 a=b，那么 ac=bc；　<b>性质5</b> 如果 a=b，c≠0，那么 a/c=b/c。</p>
+<p>教材点评：<b>"性质1，2反映了相等关系自身的特性，性质3，4，5是从运算的角度提出的，反映了等式在运算中保持的不变性。"</b>侧栏一句话收魂：<mark class="nb">运算中的不变性就是性质</mark>。</p>
+
+<h3>不等式的基本性质（教材p41-42·本节主菜）</h3>
+
+<p><b>性质1（对称）</b> 如果 a＞b，那么 b＜a；如果 b＜a，那么 a＞b。即 a＞b ⇔ b＜a。</p>
+<p><b>性质2（传递）</b> 如果 a＞b，b＞c，那么 a＞c。即 a＞b，b＞c ⇒ a＞c。<b>教材原样证明：</b>由基本事实，a＞b ⇒ a−b＞0；b＞c ⇒ b−c＞0。两式相加 (a−b)+(b−c)=a−c＞0 ⇒ a＞c。（"正数加正数还是正数"——全证明只用这一条常识。）</p>
+<p><b>性质3（可加）</b> 如果 a＞b，那么 a+c＞b+c。这就是说，不等式两边都加上同一个实数，所得不等式与原不等式<b>同向</b>。</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="性质3数轴平移图：两点A与B同时向右或向左移动相同距离，左右位置关系不变">
+  <rect x="0" y="0" width="760" height="210" fill="#10141b" rx="8"/>
+  <line x1="60" y1="80" x2="700" y2="80" stroke="#5a6a80" stroke-width="2"/>
+  <polygon points="700,80 690,75 690,85" fill="#5a6a80"/>
+  <line x1="220" y1="60" x2="290" y2="60" stroke="#e07050" stroke-width="2.5"/>
+  <polygon points="295,60 283,54 283,66" fill="#e07050"/>
+  <circle cx="150" cy="80" r="6" fill="#6cbf4a"/><circle cx="400" cy="80" r="6" fill="#4a9eff"/>
+  <circle cx="290" cy="80" r="6" fill="#6cbf4a"/><circle cx="540" cy="80" r="6" fill="#4a9eff"/>
+  <text x="150" y="105" fill="#9fd48a" font-size="13" text-anchor="middle">b</text>
+  <text x="290" y="105" fill="#9fd48a" font-size="13" text-anchor="middle">b+c</text>
+  <text x="400" y="105" fill="#6cc3ff" font-size="13" text-anchor="middle">a</text>
+  <text x="540" y="105" fill="#6cc3ff" font-size="13" text-anchor="middle">a+c</text>
+  <text x="222" y="45" fill="#e07050" font-size="13">同移c</text>
+  <text x="380" y="150" fill="#d8dee6" font-size="14.5" text-anchor="middle">A、B两点同时向右（或向左）移动相同距离，左右关系不变 —— a+c 与 b+c 依然 a＞b（教材图2.1-5）</text>
+</svg>
+<p class="figcap">这张图在说什么：平移不翻面——"加减不改变不等号方向"的画面版。</p>
+</div>
+
+<p>教材p41由性质3顺手推出<b>移项</b>：a+b＞c ⇒ a+b+(−b)＞c+(−b) ⇒ <b>a＞c−b</b>。"这表明，不等式中任何一项可以<b>改变符号后</b>移到不等号的另一边。"——跟解方程的移项手感一致，而且<b>不等号方向永远不变</b>（这是不等式比等式省心的地方：加减不翻向）。</p>
+
+<div class="note-red">性质4（乘法分岔·本节第一坑）：如果 a＞b，c＞0，那么 ac＞bc；<b>如果 a＞b，c＜0，那么 ac＜bc</b>。乘正数同向，乘负数反向。为什么？−1 是镜像翻转：数轴所有点翻到另一侧，左右对调。c=0 呢？ac=bc——既不大于也不小于，所以性质4必须分 c＞0 / c＜0 两支说，c=0 是"等号区"。</div>
+
+<p><b>性质5（同向相加）</b> 如果 a＞b，c＞d，那么 a+c＞b+d。<b>教材证明：</b>由 a＞b 和性质3，得 a+c＞b+c；由 c＞d 和性质3，得 b+c＞b+d；根据性质2（传递），即得 a+c＞b+d。注意：只能<b>加</b>，不能直接减——想减就先把减数变号（c＜d ⇒ −c＞−d，再用性质5）。</p>
+<p><b>性质6（同向正乘）</b> 如果 a＞b＞0，c＞d＞0，那么 ac＞bd。<b>前提两头都是正数</b>——丢前提立刻翻车（下面验一验④现场演）。</p>
+<p><b>性质7（正数乘方）</b> 如果 a＞b＞0，那么 aⁿ＞bⁿ（n∈N，n≥2）。就是反复用性质6：a＞b＞0 与自身串乘得 a²＞b²，再乘一轮得 a³＞b³……</p>
+<p>教材p42收束一句：<b>"实数大小关系的基本事实和不等式的性质是解决不等式问题的基本依据。"</b></p>
+
+<p><b>例2（教材p42）：</b>已知 a＞b＞0，c＜0，求证 c/a＞c/b。</p>
+<p><b>教材证明（照原样走）：</b>因为 a＞b＞0，所以 ab＞0，1/(ab)＞0。于是 a·1/(ab)＞b·1/(ab)（性质4乘正数），即 <b>1/b＞1/a</b>。由 c＜0，得 c/a＞c/b（性质4乘负数：两边同乘负数c，不等号反向）。</p>
+<p>看清楚这个证明的节奏：<mark class="nb">"倒数谁大"不在性质库里，是现场用性质4推出来的</mark>。教材没有一条"倒数反向"性质——需要时像例2这样现推，前提（谁正谁负）一个都不能少。</p>
+
+<div class="try"><span class="t">验一验④（先答，再看答案·教材p42练习2填空四连）</span><br>
+<p>用"＞"或"＜"填空：</p>
+<p>（1）如果 a＞b，c＜d，那么 a−c ___ b−d；</p>
+<p><b>答案：＞。</b>c＜d ⇒ −c＞−d（乘−1反向），与 a＞b 同向相加（性质5）：a+(−c)＞b+(−d)。</p>
+<p>（2）如果 a＞b＞0，c＜d＜0，那么 ac ___ bd；</p>
+<p><b>答案：＜。</b>c＜d＜0 ⇒ −c＞−d＞0（乘−1反向，还都是正数）；由 a＞b＞0 与 −c＞−d＞0 用性质6：a(−c)＞b(−d)，即 −ac＞−bd，两边再乘−1反向：<b>ac＜bd</b>。负数也守"大乘大"——只是先要把它们集体翻正。</p>
+<p>（3）如果 a＞b＞0，那么 1/a² ___ 1/b²；</p>
+<p><b>答案：＜。</b>性质7得 a²＞b²＞0；作差或用例2同款现推：1/a²−1/b²=(b²−a²)/(a²b²)，分子＜0分母＞0，差＜0。（"大正数的平方的倒数反而小"——倒数问题一律现推，别背。）</p>
+<p>（4）如果 a＞b＞c＞0，那么 c/a ___ c/b；</p>
+<p><b>答案：＜。</b>由 a＞b＞0 现推 1/a＜1/b（例2前半段同款），分子 c＞0 同乘同向（性质4）：c/a＜c/b。</p>
+<p><b>易错变形（自编·性质6丢前提现场翻车）：</b>"a＞b，c＞d，就能 ac＞bd 吗？"——a=2，b=−3，c=−1，d=−2：ac=−2，bd=6，−2＜6，反向！救回来要加前提"都是正数"，或者像(2)那样先翻正。性质5-7的<b>前提就是护栏</b>，抄性质不抄前提=白学。</p>
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<div class="key">
+<p><span class="big">1.</span> 比大小=作差与0比（基本事实三等价，0是标杆）——作差、变形、定号三步走，变形到"明显正负"收工。</p>
+<p><span class="big">2.</span> 不等式性质1-3：对称、传递、加减同向（平移不翻面）；性质4分岔：<mark class="nb">乘正同向、乘负反向</mark>；性质5-7组合技：同向相加、同向正乘、正数乘方——<b>每条性质的前提都是护栏</b>。</p>
+<p><span class="big">3.</span> a²+b²≥2ab（当且仅当a=b等号成立）——弦图+代数双证在手，2.2基本不等式从这里发芽。</p>
+</div>
+
+<p><b>自测四连（先自己答，再对答案；答案直接给你）：</b></p>
+<p>①（教材p42练习2(1)）a＞b，c＜d，比较 a−c 与 b−d。<br><span class="detail"><b>答案：</b>−c＞−d，与 a＞b 同向相加：a−c＞b−d。</span></p>
+<p>②（教材p43习题3(3)改述）x＞1 时，比较 x² 与 x²−x+1。<br><span class="detail"><b>答案：</b>作差 x²−(x²−x+1)=x−1＞0（x＞1），所以 x²＞x²−x+1。注意：没有 x＞1 时差=x−1 可正可负——<b>作差定号要看前提范围</b>。</span></p>
+<p>③（教材p43习题3(2)同族）比较 (x−3)² 与 (x−2)(x−4)。<br><span class="detail"><b>答案：</b>作差=(x²−6x+9)−(x²−6x+8)=1＞0 恒成立，(x−3)² 恒大1。展开后一次项互相抵消、只剩常数——"明显定号"的漂亮样本（sympy expand 留痕）。</span></p>
+<p>④（教材p43习题5）已知 2＜a＜3，−2＜b＜−1，求 2a+b 的取值范围。<br><span class="detail"><b>答案：</b>2a∈(4,6)（同乘正数2同向），与 b∈(−2,−1) 用性质5同向相加：<b>2a+b∈(2,5)</b>。范围题的官方解法就是"性质5"。（易错警示：别把 a、b 各自平方或相乘——范围运算只许加减同向、乘除看符号。）</span></p>
+
+<p><b>练什么题：</b>教材p40练习1（翻译三连：h≤4 / a+b≥0 / L＞4W 且场地约束）、练习2-3（作差+中点夹逼）；p42练习1（证明性质1，3，4，6——拿性质练性质）、练习2（四填空）；p42-43习题2.1（复习巩固2的绿化两方案翻译〔教材原题含一次性投入与逐年投入对照·保留教材数值〕、3的四组比较、5的范围、6的传递证明；综合运用7的负数除法链、8的真命题四选、9的圆比方、10的糖水不等式；拓广探索11的√a＞√b、12的货运方案）。时间紧就先做：<b>练习2全部＋习题3(1)(2)＋习题5＋习题10</b>——翻译、作差、范围、性质应用四个考位一网打尽。</p>
+
+<div class="alt">
+<span class="tag">卡住了？（四个最容易卡的地方，就地给出路）</span>
+<p>· <b>乘负数为什么反向？</b>——数轴镜像：×(−1)把所有点翻到另一侧，左右对调。口诀"正同负反"，c=0相等。做题先盯乘数符号，再决定动不动方向。</p>
+<p>· <b>性质5-7前提总忘？</b>——背口诀"加要同向，乘要同正，方要正数"。每写一步性质，把前提抄在旁边（像例2那样"因为a＞b＞0，所以…"），前提护住，结论才站得住。</p>
+<p>· <b>作差后定不了号？</b>——变形工具箱按顺序试：展开合并→因式分解→配方→通分。目标是化成平方、平方和、常数这类"一眼正负"的形状（例1剩2、验②剩−3、验③剩(a−b)²）。什么都化不出来，说明要按参数范围分情况讨论——那是练习题的高阶位，本节先见熟脸。</p>
+<p>· <b>"当且仅当"别扭？</b>——就是1.4的"充要条件"换了口语马甲：等号成立⟺a=b。两个方向都验过才敢说这句。</p>
+</div>
+
+<div class="box"><span class="tag">高考怎么考（三行以内·真题锚候采）</span><br>
+· 性质判断题是选择题常客：给几条"由 a＞b 推出…"让数真命题个数——专考<b>前提完整性</b>（乘负反向、同向正乘、倒数现推）与"赋值排除法"（举一组特殊值推翻假命题）；<br>
+· 作差法是比较大小、后面恒成立与2.3解不等式的通法底盘；范围题（同向相加）在选填高频复现；<br>
+· 真题锚：候采——v2.9池内暂无2.1对口卷源，不代拟（池外题宁缺毋编，沿标准v2.3纪律）。
+</div>
+
+<p class="small">下一站：2.2 基本不等式——把本节的 a²+b²≥2ab 里换上 √a 和 √b（限定 a，b＞0），教材p44开篇就是这个动作：√ab≤(a+b)/2，"算术平均数不小于几何平均数"。同时它还是问题2式①的收割人：13x−2x²≥20 那个"暂时解不动"的二次式，2.3节正式清算。</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：1.1认集合到1.4说条件，2.1盘性质（你在），之后2.2基本不等式与2.3二次不等式">
+  <rect x="0" y="0" width="800" height="150" fill="#10141b" rx="8"/>
+  <rect x="30" y="35" width="130" height="52" rx="8" fill="#1a2230" stroke="#2a3a55"/>
+  <text x="95" y="58" fill="#8fa3b8" font-size="14" text-anchor="middle">1.1-1.3 集合</text>
+  <text x="95" y="78" fill="#5a6a7a" font-size="11" text-anchor="middle">认/比/算</text>
+  <line x1="163" y1="61" x2="197" y2="61" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE4)"/>
+  <rect x="200" y="35" width="130" height="52" rx="8" fill="#1a2230" stroke="#2a3a55"/>
+  <text x="265" y="58" fill="#8fa3b8" font-size="14" text-anchor="middle">1.4 逻辑用语</text>
+  <text x="265" y="78" fill="#5a6a7a" font-size="11" text-anchor="middle">⇒ ⇔ 话术</text>
+  <line x1="333" y1="61" x2="367" y2="61" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE4)"/>
+  <rect x="370" y="30" width="150" height="62" rx="8" fill="#26221a" stroke="#ffd94a" stroke-width="2"/>
+  <text x="445" y="54" fill="#ffd94a" font-size="14" text-anchor="middle" font-weight="bold">2.1 盘性质（你在）</text>
+  <text x="445" y="76" fill="#d4a017" font-size="11" text-anchor="middle">翻译/作差/性质1-7</text>
+  <line x1="523" y1="61" x2="557" y2="61" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE4)"/>
+  <rect x="560" y="35" width="100" height="52" rx="8" fill="#1a2230" stroke="#2a3a55"/>
+  <text x="610" y="58" fill="#8fa3b8" font-size="14" text-anchor="middle">2.2 基本不等式</text>
+  <text x="610" y="78" fill="#5a6a7a" font-size="11" text-anchor="middle">√ab≤(a+b)/2</text>
+  <line x1="663" y1="61" x2="697" y2="61" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE4)"/>
+  <rect x="700" y="35" width="80" height="52" rx="8" fill="#1a2230" stroke="#2a3a55"/>
+  <text x="740" y="58" fill="#8fa3b8" font-size="13.5" text-anchor="middle">2.3 解不等式</text>
+  <text x="740" y="78" fill="#5a6a7a" font-size="11" text-anchor="middle">二次清算</text>
+  <text x="400" y="128" fill="#5a6a7a" font-size="11.5" text-anchor="middle">这张图在说什么：第二章"一元二次函数、方程和不等式"三节一条线——本节备性质（工具），2.2出定理（主角），2.3解不等式（应用）。</text>
+  <defs><marker id="aE4" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#5a6a80"/></marker></defs>
+</svg>
+<p class="figcap">这张图在说什么：本节是第二章的工具间——性质备齐，后面两节才能开火。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2·标准v2.3条款落地：节首清单＋预备块＋四站推进＋数轴三态图/性质3平移图/赵爽弦图精确重绘/位置图＋考位锚块＋@media print打印层；正文"验一验"×4含易错变形×4，节末自测四连，答案直接可见；sympy代验12验点全过·留痕=席位私有sympy代验脚本1031：expand核例1差=2与练习2差=−3/习题3(2)差=1/习题3(1)差=x²+3恒正核验/习题3(4)=(x−1)²+(y−1)²+1·弦图面积账25=24+1·性质3/4/5/6/7随机数值各验·例2 c/a＞c/b数值验证a=4,b=2,c=−1·习题5区间端点2×2+(−1)=3∈(2,5)边界核·习题2方案B solve(100+10(n−1)−500)→n≥41） · 事实层素材源：人教A版必修第一册p37-43官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=6e764703-6e5e-4ea3-9462-34652c2678ef·印刷页37-43=图44-50·ts=1787023173400实时复取同值·图N→印刷页N−7映射沿本册定标·影印图存席位私有目录p02_math/·原件不入仓） · 节界实锚=2.1全节p37-43（图43=第二章章首页p36域·p37节题页+问题1问题2/p38式①+基本事实+例1/p39弦图探究+代数复核/p40练习+等式性质1-5/p41性质1-4+移项/p42性质5-7+例2+练习/p43习题2.1至拓广探索12·图51=p44=2.2基本不等式节名页尾锚实锚闭合） · 问题1四场景/问题2杂志定价式①/基本事实三等价/例1例2/弦图推理/等式性质1-5/不等式性质1-7/练习与习题题面均影印逐字锚定 · 自编题全部显式标注"自编"，教材原题标注页码来源（p37问题1/p37-38问题2/p38例1/p39探究/p40练习/p42例2练习/p42-43习题2.1） · 设计标准：零预设 · 一次一步 · 随读随验×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源
+</div>
+
+</div>
+</body>
+</html>

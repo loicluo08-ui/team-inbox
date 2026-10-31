@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理1.3 位置变化快慢的描述——速度 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #1a2416; border-left: 3px solid #6cbf4a; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .try .q { color: #9fd481; font-weight: bold; }
+  .try .a { color: #8a949f; font-size: 15px; margin-top: 6px; }
+  .pit { background: #2a1a1a; border-left: 3px solid #e05252; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .pit .tag { color: #ff7b72; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #2b5277; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .key b { color: #4a9eff; }
+  .m { font-family: "Times New Roman", Georgia, serif; font-style: italic; color: #ffd48a; }
+  .big { font-size: 21px; text-align: center; margin: 18px 0; color: #fff; }
+  .detail { color: #7d8a99; font-size: 15px; border-top: 1px dashed #2a3140; margin-top: 10px; padding-top: 10px; }
+  .small { color: #8a949f; font-size: 14px; }
+  .wrong { color: #ff7b72; }
+  .fig { margin: 18px 0; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  .check { background: #16211a; border: 1px solid #2d5a3d; border-radius: 8px; padding: 16px 20px; margin: 18px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; font-size: 14px; }
+  .check p { margin: 8px 0; }
+  .alt { background: #1f1b24; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .ans { color: #58d68d; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; color: #eef2f7; font-size: 16px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a323e; padding: 9px 12px; text-align: left; }
+  th { background: #1b2029; color: #fff; }
+
+  /* ===== 笔记视觉层（打印态友好） ===== */
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  b { color: #f0f3f7; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 14px; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    p, .talk, .key, .pit, .detail, .figcap { color: #222; }
+    .sub, .small, .foot { color: #444; }
+    .try .q { color: #1e5c1e; } .try .a { color: #333; }
+    .pit .tag { color: #c0392b; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong, .note-red { color: #c0392b; }
+    em { color: #1a5c99; }
+    mark.nb, .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { background: #f0f0f0; color: #111; }
+    th, td { border-color: #bbb; }
+    .box { color: #222; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>速度：用"位移除以时间"给快慢记上带方向的账</h1>
+<div class="sub">物理1.3 · "描述运动"模块第三件（第一章 运动的描述）· 前面已学：1.1 质点与参考系、1.2 时间 位移（坐标系、Δx、矢量/标量）· 零基础首学版 v1.0 · 前置：1.1＋1.2＋会分数除法与单位换算 · 预计45分钟</div>
+
+<h2><span class="step-tag">开场</span>位移会记了，可"快"字还没着落</h2>
+<p>1.2里你学会了给运动记第一笔账：建坐标系、读位置、用 <b>位移 Δx</b> 记录"位置挪了多少"。可是新问题马上来——教材p21的问题框问得很实在：<b>生活和科学研究中经常需要知道物体运动的快慢和方向，你还记得初中是怎样描述物体运动快慢的吗？运动员在比赛中的不同时段，运动的快慢一样吗？</b></p>
+<p>初中的答案是"路程除以时间"。但高中要面对更真实的局面：<b>位移是有方向的</b>，运动一会儿向东、一会儿向南，"快慢"和"方向"得同时说清楚。这一节就把初中的"速度"升级成高中版——<b>不但说多快，还说朝哪</b>。教材在p21边上也提醒了一句：<mark class="nb">这里的速度和初中所学的速度含义不完全相同。</mark></p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 用 <b>v = Δx/Δt</b> 算速度，并从正负号读出方向；<br>
+② 分清<b>平均速度</b>（一段时间的总体情况）和<b>瞬时速度</b>（某一刻的即时情况），说出<b>速率</b>和速度的区别；<br>
+③ 照步骤用<b>打点计时器纸带</b>算平均速度、估瞬时速度（计数点、0.1 s、0.06 s 两套间隔）；<br>
+④ 认识 <b>v-t 图像</b>：从"一串点"到"一条平滑曲线"看出速度变化趋势；<br>
+⑤ 避开三个坑：<span class="wrong">把负号当"慢"</span>、<span class="wrong">km/h 换 m/s 忘除以 3.6</span>、<span class="wrong">绕圈跑完却说"没动"时不知所以</span>。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒立好地基（已会的跳过）</h2>
+<div class="talk">
+<p>本节用到的旧工具只有两件：① 1.2的 <b>Δ 记号</b>——Δ（读作de）lta"表示"<b>变化量</b>：Δx＝末位置减初位置（位移），本节新增 Δt＝末时刻减初时刻（所用时间）；② 1.2的一句话——<b>位移是矢量</b>（有大小有方向）。就这两件，够了。</p>
+<p class="small">一个阅读提示：本节会反复出现"在时间 Δt 内"这种说法，它就是"用了一段时间"的意思，别被符号吓住。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>速度——位移与时间之比</h2>
+<p>先想一个没法下手的局面：飞机飞了 800 km 用了 1 h，你跑步跑了 4 km 用了 30 min——位移差两百倍、时间也差两倍，<b>怎么比才公平？</b>分别拿位移除以各自的时间：飞机 800 km/h，你 8 km/h——一除，快慢立刻分出高下。这个"位移除以时间"的办法就是高中对"快慢"的正式答案。</p>
+<p>教材p21原文给出定义：<b>物理学中用位移与发生这段位移所用时间之比表示物体运动的快慢，这就是速度（velocity）。</b>速度通常用字母 <span class="m">v</span> 表示，如果在时间 Δt 内物体的位移是 Δx，它的速度就可以表示为：</p>
+<div class="key">
+<b>速度的定义式（教材p21）：</b>
+<div class="big"><mark class="nb">v = Δx / Δt</mark></div>
+<span class="ul-blue">速度是<b>矢量</b>，它既有大小，又有方向。速度 v 的方向与时间 Δt 内的位移 Δx 的方向相同。</span>（教材p21）
+</div>
+<p><b>单位</b>在国际单位制中是<b>米每秒</b>，符号 m/s 或 m·s⁻¹；常用的还有<b>千米每小时</b>（km/h 或 km·h⁻¹）、<b>厘米每秒</b>（cm/s 或 cm·s⁻¹）等（教材p21）。换算关系记一个就够：</p>
+<div class="box">1 km/h = 1000 m ÷ 3600 s = <b>1/3.6 m/s</b>　⇒　<b>km/h 换 m/s：除以 3.6</b>（反向乘 3.6）。例：72 km/h = 72÷3.6 = 20 m/s。</div>
+<div class="try">
+<p class="q">验一验①：直线运动取向东为正方向，某车 3 s 内位移 Δx = +6 m，速度多大？</p>
+<p class="a"><span class="ans">v = Δx/Δt = (+6 m)/(3 s) = <b>+2 m/s</b>。</span> "+2"的<b>大小</b>说快慢（每秒 2 米），<b>正号</b>说方向（与正方向同向东）。正负号在速度里不是加减号，是<span class="ul-blue">方向标签</span>。</p>
+<p class="q">易错变形：另一车 4 s 内位移 Δx = −8 m，它的速度是"比较慢"吗？</p>
+<p class="a"><span class="ans">v = (−8 m)/(4 s) = <b>−2 m/s</b>。</span>大小仍是 2 m/s，和上一车一样快！负号的全部含义是<b>方向向西</b>。<span class="wrong">把负号读成"慢"是本节第一大坑</span>——正负号只管方向，快慢只看数值大小。</p>
+</div>
+<div class="pit">
+<p><span class="tag">坑点·单位换算</span>72 km/h 换 m/s，直接写"72 m/s"就错了。km/h → m/s <b>除以 3.6</b>：72÷3.6 = 20 m/s。自己推一遍就不会忘：km→m 乘 1000，h→s 乘 3600，合起来 1000/3600 = 1/3.6。</p>
+</div>
+
+<h2><span class="step-tag">第二步</span>平均速度和瞬时速度——"总体"与"此刻"</h2>
+<p>用 v = Δx/Δt 算出来的数，其实默认了一件大事：<b>这段运动快慢始终不变</b>。可真实的运动很少这么听话——教材p21提醒：一般来说，物体在某一时间段内，运动的快慢通常是变化的，<b>由 Δx/Δt 求得的速度 v，表示的只是物体在时间 Δt 内运动的平均快慢程度，叫作平均速度（average velocity）</b>（教材p21-22）。</p>
+<div class="key">
+<b>平均速度（教材p22）：</b><mark class="nb">时间 Δt 内运动的平均快慢程度，叫作平均速度。</mark>它是<b>矢量</b>：大小＝|Δx/Δt|，方向＝Δx 的方向。它只回答"这一段总体上平均多快"，<b>不保证每一刻都这么快</b>。
+</div>
+<p>那"此刻到底多快"怎么说？教材p22用一整段"思考与讨论"引出：<b>平均速度描述物体在一段时间内运动的平均快慢程度及方向。那么，怎样描述物体在某一时刻运动的快慢和方向呢？</b>教材的思路值得一步步读（p22原文，步骤不省略）：</p>
+<div class="box">
+① 先设想：用由时刻 t 到 t+Δt 一小段时间内的<b>平均速度</b>来代替时刻 t 物体的速度；<br>
+② 如果 Δt 取得小一些，物体在 Δt 这样一个较小的时间内，运动快慢的差异就<b>不会太大</b>；<br>
+③ Δt 越小，运动快慢的差异就越小；<br>
+④ 当 Δt <b>非常非常小</b>时，运动快慢的差异可以忽略不计——此时，我们就把 Δx/Δt 叫作物体在时刻 t 的<b>瞬时速度（instantaneous velocity）</b>。
+</div>
+<div class="key">
+<b>瞬时速度（教材p22）：</b>Δt 非常非常小时，<span class="ul-blue">Δx/Δt 就是物体在时刻 t 的瞬时速度</span>——它描述"此刻"的快慢和方向。教材还补了一条特例：<b>匀速直线运动是瞬时速度保持不变的运动。在匀速直线运动中，平均速度与瞬时速度相等。</b>
+</div>
+<p class="detail">这段"Δt 越取越小"的推理是高中物理第一次用<b>极限思想</b>（不断逼近、看最终趋势），2.2节学加速度、以后学微积分还会反复遇到。记现在这个直觉版就够：瞬时速度＝"把窗口缩到极小的平均速度"。</p>
+<p>还有一对容易混的词。教材p22：<b>瞬时速度的大小通常叫作速率（speed）</b>。<b>汽车速度计不能显示车辆运动的方向，它的示数实际是汽车的速率</b>（教材p22·图1.3-1）。日常生活中说到的"速度"，有时是指速率，<b>要根据上下文判断</b>。</p>
+<div class="fig">
+<svg viewBox="0 0 380 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图B 汽车速度计示意">
+  <circle class="pd-bg" cx="190" cy="205" r="138" fill="#f7f5f0" stroke="#999999" stroke-width="3"/>
+  <line x1="77.4" y1="270.0" x2="91.3" y2="262.0" stroke="#444444" stroke-width="2.5"/>
+  <text x="106.0" y="257.5" text-anchor="middle" fill="#333333" font-size="11.5">0</text>
+  <line x1="60.2" y1="212.6" x2="76.2" y2="211.6" stroke="#444444" stroke-width="2.5"/>
+  <text x="93.2" y="214.6" text-anchor="middle" fill="#333333" font-size="11.5">20</text>
+  <line x1="70.6" y1="153.5" x2="85.3" y2="159.8" stroke="#444444" stroke-width="2.5"/>
+  <text x="100.9" y="170.6" text-anchor="middle" fill="#333333" font-size="11.5">40</text>
+  <line x1="106.4" y1="105.4" x2="116.7" y2="117.7" stroke="#444444" stroke-width="2.5"/>
+  <text x="127.6" y="134.7" text-anchor="middle" fill="#333333" font-size="11.5">60</text>
+  <line x1="160.0" y1="78.5" x2="163.7" y2="94.1" stroke="#444444" stroke-width="2.5"/>
+  <text x="167.6" y="114.6" text-anchor="middle" fill="#333333" font-size="11.5">80</text>
+  <line x1="220.0" y1="78.5" x2="216.3" y2="94.1" stroke="#444444" stroke-width="2.5"/>
+  <text x="212.4" y="114.6" text-anchor="middle" fill="#333333" font-size="11.5">100</text>
+  <line x1="273.6" y1="105.4" x2="263.3" y2="117.7" stroke="#444444" stroke-width="2.5"/>
+  <text x="252.4" y="134.7" text-anchor="middle" fill="#333333" font-size="11.5">120</text>
+  <line x1="309.4" y1="153.5" x2="294.7" y2="159.8" stroke="#444444" stroke-width="2.5"/>
+  <text x="279.1" y="170.6" text-anchor="middle" fill="#333333" font-size="11.5">140</text>
+  <line x1="319.8" y1="212.6" x2="303.8" y2="211.6" stroke="#444444" stroke-width="2.5"/>
+  <text x="286.8" y="214.6" text-anchor="middle" fill="#333333" font-size="11.5">160</text>
+  <line x1="302.6" y1="270.0" x2="288.7" y2="262.0" stroke="#444444" stroke-width="2.5"/>
+  <text x="274.0" y="257.5" text-anchor="middle" fill="#333333" font-size="11.5">180</text>
+  <line x1="65.5" y1="242.3" x2="73.1" y2="240.0" stroke="#888888" stroke-width="1.4"/>
+  <line x1="62.0" y1="182.4" x2="69.9" y2="183.8" stroke="#888888" stroke-width="1.4"/>
+  <line x1="85.7" y1="127.4" x2="92.1" y2="132.1" stroke="#888888" stroke-width="1.4"/>
+  <line x1="131.7" y1="88.8" x2="135.2" y2="96.0" stroke="#888888" stroke-width="1.4"/>
+  <line x1="190.0" y1="75.0" x2="190.0" y2="83.0" stroke="#888888" stroke-width="1.4"/>
+  <line x1="248.3" y1="88.8" x2="244.8" y2="96.0" stroke="#888888" stroke-width="1.4"/>
+  <line x1="294.3" y1="127.4" x2="287.9" y2="132.1" stroke="#888888" stroke-width="1.4"/>
+  <line x1="318.0" y1="182.4" x2="310.1" y2="183.8" stroke="#888888" stroke-width="1.4"/>
+  <line x1="314.5" y1="242.3" x2="306.9" y2="240.0" stroke="#888888" stroke-width="1.4"/>
+  <line x1="184.0" y1="230.3" x2="215.8" y2="96.0" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="190" cy="205" r="10" fill="#c0392b"/>
+  <text x="190" y="262" text-anchor="middle" fill="#666666" font-size="13">km/h</text>
+  <rect class="pd-bg" x="152" y="168" width="76" height="22" rx="4" fill="#ffffff" stroke="#999999"/>
+  <text x="190" y="184" text-anchor="middle" fill="#2d7a1e" font-size="14" font-family="monospace">23123</text>
+</svg>
+<div class="figcap">图B（重绘自教材图1.3-1·示意）｜这张图在说什么：速度计指针只摆出一个数，<b>摆不出方向</b>——所以它显示的是<b>速率</b>（瞬时速度的大小），不是完整的"速度"。</div>
+</div>
+<div class="try">
+<p class="q">验一验②（自编）：你沿 400 m 跑道慢跑一整圈，用时 80 s，回到出发点。这 80 s 的平均速度是多少？</p>
+<p class="a"><span class="ans">位移 Δx = 0（回到起点，位置没变），平均速度 = 0/80 = <b>0</b>。</span>可你明明在跑！这不矛盾——<b>平均速度只看"首尾位置差"</b>，一圈之后位移为零，它就为零；而你的<b>瞬时速度</b>每一刻都不为零。教材把"快慢"和"方向"都装进速度这个矢量，绕圈时方向一直在转，矢量"抵消"正是如此。<span class="wrong">用"路程÷时间"算出 5 m/s 当作平均速度，就混淆了位移和路程（1.2 的坑）</span>。</p>
+</div>
+
+<h2><span class="step-tag">第三步</span>实验——测量纸带的平均速度和瞬时速度</h2>
+<p>1.2里你已经认识打点计时器：<b>50 Hz 交流电，每 0.02 s 在纸带上打一个点</b>——纸带是被拉过计时器的，点越密＝那里的运动越慢。这一节教材就教你把这条纸带变成"速度记录仪"（教材p22实验：测量纸带的平均速度和瞬时速度）。</p>
+<p><b>先算平均速度。</b>教材p22：用手拉通过打点计时器的纸带时，确定时间内纸带运动的位移信息就被记录下来，据此可以计算纸带的运动速度。<b>若想计算纸带在 D、G 两点间的平均速度 v，只需测出 D、G 间的位移 Δx 和所用的时间 Δt，就可以算出平均速度 v = Δx/Δt</b>。麻烦在于纸带上点太密，一个个量太累——教材的办法是<b>选计数点</b>：</p>
+<div class="key">
+<b>教材p23的四步（原文步骤·0.1 s 间隔版）：</b><br>
+① 选取纸带上一点为起始点 0，<mark class="nb">后面每 5 个点取一个计数点</mark>，分别用数字 1，2，3，… 标出；<br>
+② 测量各计数点到起始点 0 的距离 x，记录在表 1 中；<br>
+③ 计算两相邻计数点间的位移 Δx，同时记录对应的时间 Δt；<br>
+④ 根据 Δx 和 Δt 计算纸带在相邻计数点间的平均速度 v。
+</div>
+<p>"每 5 个点取一个计数点"换算成时间：相邻计数点之间隔着 5 个打点间隔，<b>Δt = 5 × 0.02 s = 0.1 s</b>——这就是教材图1.3-2里 D、G 之间标着 0.1 s 的来历：</p>
+<div class="fig">
+<svg viewBox="0 0 720 235" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图C 计算每隔0.1s的平均速度纸带示意">
+  <defs>
+    <marker id="arB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker>
+    <marker id="arB1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2d7a1e"/></marker>
+  </defs>
+  <rect class="pd-tape" x="60" y="115" width="630" height="30" rx="6" fill="#f0e8d8" stroke="#aaaaaa" stroke-width="1.5"/>
+  <g fill="#555555">
+    <circle class="tape-dot" cx="138" cy="130" r="2.2"/><circle class="tape-dot" cx="174" cy="130" r="2.2"/><circle class="tape-dot" cx="186" cy="130" r="2.2"/><circle class="tape-dot" cx="198" cy="130" r="2.2"/><circle class="tape-dot" cx="222" cy="130" r="2.2"/><circle class="tape-dot" cx="234" cy="130" r="2.2"/><circle class="tape-dot" cx="246" cy="130" r="2.2"/><circle class="tape-dot" cx="258" cy="130" r="2.2"/><circle class="tape-dot" cx="282" cy="130" r="2.2"/><circle class="tape-dot" cx="294" cy="130" r="2.2"/><circle class="tape-dot" cx="306" cy="130" r="2.2"/><circle class="tape-dot" cx="318" cy="130" r="2.2"/><circle class="tape-dot" cx="342" cy="130" r="2.2"/><circle class="tape-dot" cx="354" cy="130" r="2.2"/><circle class="tape-dot" cx="366" cy="130" r="2.2"/><circle class="tape-dot" cx="378" cy="130" r="2.2"/><circle class="tape-dot" cx="390" cy="130" r="2.2"/><circle class="tape-dot" cx="402" cy="130" r="2.2"/><circle class="tape-dot" cx="414" cy="130" r="2.2"/><circle class="tape-dot" cx="426" cy="130" r="2.2"/><circle class="tape-dot" cx="438" cy="130" r="2.2"/><circle class="tape-dot" cx="450" cy="130" r="2.2"/><circle class="tape-dot" cx="462" cy="130" r="2.2"/><circle class="tape-dot" cx="474" cy="130" r="2.2"/><circle class="tape-dot" cx="486" cy="130" r="2.2"/><circle class="tape-dot" cx="498" cy="130" r="2.2"/><circle class="tape-dot" cx="510" cy="130" r="2.2"/><circle class="tape-dot" cx="522" cy="130" r="2.2"/><circle class="tape-dot" cx="534" cy="130" r="2.2"/><circle class="tape-dot" cx="546" cy="130" r="2.2"/><circle class="tape-dot" cx="558" cy="130" r="2.2"/><circle class="tape-dot" cx="570" cy="130" r="2.2"/><circle class="tape-dot" cx="582" cy="130" r="2.2"/><circle class="tape-dot" cx="594" cy="130" r="2.2"/><circle class="tape-dot" cx="606" cy="130" r="2.2"/><circle class="tape-dot" cx="618" cy="130" r="2.2"/><circle class="tape-dot" cx="630" cy="130" r="2.2"/><circle class="tape-dot" cx="642" cy="130" r="2.2"/><circle class="tape-dot" cx="654" cy="130" r="2.2"/><circle class="tape-dot" cx="666" cy="130" r="2.2"/>
+  </g>
+  <g fill="#b8860b">
+    <circle class="cnt-dot" cx="150" cy="130" r="4"/><circle class="cnt-dot" cx="210" cy="130" r="4"/><circle class="cnt-dot" cx="270" cy="130" r="4.5"/><circle class="cnt-dot" cx="330" cy="130" r="4.5"/>
+  </g>
+  <g stroke="#7d8a99" stroke-width="1.2" stroke-dasharray="3,3">
+    <line x1="150" y1="122" x2="150" y2="98"/><line x1="210" y1="122" x2="210" y2="98"/>
+  </g>
+  <g stroke="#2266aa" stroke-width="1.2" stroke-dasharray="3,3">
+    <line x1="270" y1="122" x2="270" y2="90"/><line x1="330" y1="122" x2="330" y2="90"/>
+  </g>
+  <g fill="#333333" font-size="14" text-anchor="middle">
+    <text x="150" y="92">0</text><text x="210" y="92">1</text><text x="270" y="84" fill="#2266aa">2</text><text x="330" y="84" fill="#2266aa">3</text>
+  </g>
+  <line x1="270" y1="62" x2="330" y2="62" stroke="#2266aa" stroke-width="2.2" marker-start="url(#arB)" marker-end="url(#arB)"/>
+  <text x="300" y="52" fill="#2266aa" font-size="13.5" text-anchor="middle">Δx</text>
+  <g fill="#2d7a1e" font-size="13.5" text-anchor="middle">
+    <text x="270" y="163" font-style="italic">D</text><text x="294" y="163" font-style="italic">E</text><text x="330" y="163" font-style="italic">G</text>
+  </g>
+  <line x1="270" y1="180" x2="330" y2="180" stroke="#2d7a1e" stroke-width="2.2" marker-start="url(#arB1)" marker-end="url(#arB1)"/>
+  <text x="300" y="200" fill="#2d7a1e" font-size="13.5" text-anchor="middle">0.1 s</text>
+  <text x="580" y="200" fill="#666666" font-size="12">相邻计数点间隔 = 5×0.02 s</text>
+</svg>
+<div class="figcap">图C（重绘自教材图1.3-2）｜这张图在说什么：一长串密集点是打点计时器每 0.02 s 打的；<b>每 5 个间隔选一个计数点</b>（0,1,2,3），相邻计数点间隔就是 0.1 s。D、G 是其中两个计数点，量出 DG 间位移 Δx，除以 0.1 s，得 DG 段平均速度。</div>
+</div>
+<div class="try">
+<p class="q">验一验③（自编数据）：某纸带相邻计数点（每 5 间隔）间 Δx = 6.0 cm，打点计时器 50 Hz。这段的平均速度是多少？</p>
+<p class="a"><span class="ans">Δt = 5×0.02 s = 0.1 s，v = 6.0 cm / 0.1 s = <b>60 cm/s = 0.60 m/s</b>。</span>单位先统一再除：cm 除 s 得 cm/s，除以 100 化 m/s。</p>
+</div>
+<p><b>再估瞬时速度。</b>新问题来了（教材p23）：如何测量运动物体在某一时刻或某一位置（例如图 1.3-2 中 E 点）的瞬时速度？E 点夹在 D、G 之间，DG 的平均速度可以求出——教材p23原文的推理：</p>
+<div class="box">
+① 如果不要求很精确，用 DG 这段平均速度<b>粗略地代表 E 点的瞬时速度</b>，也未尝不可；<br>
+② 不过，如果把包含 E 点在内的间隔取得<b>小一些</b>，例如取图1.3-3中的 DF 线段，那么经过 D、F 两点所用的时间 Δt 就会变短；<br>
+③ 用两点间的位移 Δx 和时间 Δt 算出的平均速度代表纸带在 E 点的瞬时速度，就会<b>精确一些</b>；<br>
+④ <b>D、F 两点离 E 点越近，算出的平均速度越接近 E 点的瞬时速度。</b>
+</div>
+<p>教材p23给的第二套制度：<b>每 3 个点取一个计数点</b>，相邻计数点间隔 Δt = 3×0.02 s = <b>0.06 s</b>——DF 只有 0.06 s，比 DG 的 0.1 s 更"贴着"E 点：</p>
+<div class="fig">
+<svg viewBox="0 0 720 235" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图D 计算每隔0.06s的平均速度纸带示意">
+  <rect class="pd-tape" x="60" y="115" width="630" height="30" rx="6" fill="#f0e8d8" stroke="#aaaaaa" stroke-width="1.5"/>
+  <g fill="#555555">
+    <circle class="tape-dot" cx="138" cy="130" r="2.2"/><circle class="tape-dot" cx="174" cy="130" r="2.2"/><circle class="tape-dot" cx="186" cy="130" r="2.2"/><circle class="tape-dot" cx="198" cy="130" r="2.2"/><circle class="tape-dot" cx="210" cy="130" r="2.2"/><circle class="tape-dot" cx="234" cy="130" r="2.2"/><circle class="tape-dot" cx="246" cy="130" r="2.2"/><circle class="tape-dot" cx="270" cy="130" r="2.2"/><circle class="tape-dot" cx="282" cy="130" r="2.2"/><circle class="tape-dot" cx="306" cy="130" r="2.2"/><circle class="tape-dot" cx="318" cy="130" r="2.2"/><circle class="tape-dot" cx="342" cy="130" r="2.2"/><circle class="tape-dot" cx="354" cy="130" r="2.2"/><circle class="tape-dot" cx="366" cy="130" r="2.2"/><circle class="tape-dot" cx="378" cy="130" r="2.2"/><circle class="tape-dot" cx="390" cy="130" r="2.2"/><circle class="tape-dot" cx="402" cy="130" r="2.2"/><circle class="tape-dot" cx="414" cy="130" r="2.2"/><circle class="tape-dot" cx="426" cy="130" r="2.2"/><circle class="tape-dot" cx="438" cy="130" r="2.2"/><circle class="tape-dot" cx="450" cy="130" r="2.2"/><circle class="tape-dot" cx="462" cy="130" r="2.2"/><circle class="tape-dot" cx="474" cy="130" r="2.2"/><circle class="tape-dot" cx="486" cy="130" r="2.2"/><circle class="tape-dot" cx="498" cy="130" r="2.2"/><circle class="tape-dot" cx="510" cy="130" r="2.2"/><circle class="tape-dot" cx="522" cy="130" r="2.2"/><circle class="tape-dot" cx="534" cy="130" r="2.2"/><circle class="tape-dot" cx="546" cy="130" r="2.2"/><circle class="tape-dot" cx="558" cy="130" r="2.2"/><circle class="tape-dot" cx="570" cy="130" r="2.2"/><circle class="tape-dot" cx="582" cy="130" r="2.2"/><circle class="tape-dot" cx="594" cy="130" r="2.2"/><circle class="tape-dot" cx="606" cy="130" r="2.2"/><circle class="tape-dot" cx="618" cy="130" r="2.2"/><circle class="tape-dot" cx="630" cy="130" r="2.2"/><circle class="tape-dot" cx="642" cy="130" r="2.2"/><circle class="tape-dot" cx="654" cy="130" r="2.2"/><circle class="tape-dot" cx="666" cy="130" r="2.2"/>
+  </g>
+  <g fill="#b8860b">
+    <circle class="cnt-dot" cx="150" cy="130" r="4"/><circle class="cnt-dot" cx="186" cy="130" r="4"/><circle class="cnt-dot" cx="222" cy="130" r="4"/><circle class="cnt-dot" cx="258" cy="130" r="4.5"/><circle class="cnt-dot" cx="294" cy="130" r="4.5"/><circle class="cnt-dot" cx="330" cy="130" r="4.5"/>
+  </g>
+  <g stroke="#7d8a99" stroke-width="1.2" stroke-dasharray="3,3">
+    <line x1="150" y1="122" x2="150" y2="98"/><line x1="186" y1="122" x2="186" y2="98"/><line x1="222" y1="122" x2="222" y2="98"/><line x1="330" y1="122" x2="330" y2="98"/>
+  </g>
+  <g stroke="#2266aa" stroke-width="1.2" stroke-dasharray="3,3">
+    <line x1="258" y1="122" x2="258" y2="90"/><line x1="294" y1="122" x2="294" y2="90"/>
+  </g>
+  <g fill="#333333" font-size="13" text-anchor="middle">
+    <text x="150" y="92">0</text><text x="186" y="92">1</text><text x="222" y="92">2</text><text x="258" y="84" fill="#2266aa">3</text><text x="294" y="84" fill="#2266aa">4</text><text x="330" y="92">5</text>
+  </g>
+  <line x1="258" y1="62" x2="294" y2="62" stroke="#2266aa" stroke-width="2.2" marker-start="url(#arB)" marker-end="url(#arB)"/>
+  <text x="276" y="52" fill="#2266aa" font-size="13.5" text-anchor="middle">Δx</text>
+  <g fill="#2d7a1e" font-size="13.5" text-anchor="middle">
+    <text x="258" y="163" font-style="italic">D</text><text x="282" y="163" font-style="italic">E</text><text x="294" y="176" font-style="italic">F</text><text x="330" y="163" font-style="italic">G</text>
+  </g>
+  <line x1="258" y1="180" x2="294" y2="180" stroke="#2d7a1e" stroke-width="2.2" marker-start="url(#arB1)" marker-end="url(#arB1)"/>
+  <text x="276" y="200" fill="#2d7a1e" font-size="13.5" text-anchor="middle">0.06 s</text>
+  <text x="520" y="200" fill="#666666" font-size="12">每 3 个间隔取计数点：3×0.02 s</text>
+</svg>
+<div class="figcap">图D（重绘自教材图1.3-3）｜这张图在说什么：换成<b>每 3 个间隔取一个计数点</b>，包含 E 点的间隔 DF 缩短为 0.06 s——间隔越窄，算出的平均速度越接近 E 点的瞬时速度。</div>
+</div>
+<div class="pit">
+<p><span class="tag">坑点·间隔不是越小越好</span>教材p23边注专门提醒：<b>D、F 两点间距离过小，测量误差会增大。</b>刻度尺量 2 mm 与量 2 cm，相对误差差一个量级。所以实际测量中要<b>根据需要及所用仪器的情况，在要测量的点附近选取合适的位移和时间</b>——"精确"与"测得准"要平衡，不是一味求小。（想想：若两点近到几乎重合，Δx 测量的那点小误差除以极小的 Δt，会把速度算歪到天上去。）</p>
+</div>
+<p class="detail">教材表 1（手拉纸带的位移和平均速度）与表 2（手拉纸带的瞬时速度）都是<b>留给你填的空表</b>：行为 x/m、Δx/m、Δt/s、v/(m·s⁻¹)，列对应计数点 0,1,2,…。表 2 的用法（教材p24原文四步）：从起始点 0 算起每 3 个点取一个计数点→量各计数点到 0 的距离 x 记入表 2→算相邻计数点的 Δx 与对应 Δt→<b>算出的速度值就可以代表在 Δx 这一区间内任意一点的瞬时速度</b>。</p>
+
+<h2><span class="step-tag">第四步</span>速度—时间图像——让数字显出形状</h2>
+<p>表 2 填满后是一列数字，可数字的<b>趋势</b>光靠瞪看不出来。教材p24给出工具：<b>物体运动的速度随时间变化的情况可以用图像来直观表示。以时间 t 为横轴，速度 v 为纵轴，坐标系中的图像即为速度—时间图像或 v-t 图像。</b></p>
+<p>做法很朴素：在方格纸上建立直角坐标系，根据自己算出的手拉纸带的 v、t 数据，在坐标系中<b>描点</b>。教材p24用某同学的实测数据示范（图1.3-4）：</p>
+<div class="fig">
+<svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图E v-t图像甲：实测数据描点">
+  <defs><marker id="arE" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#8fa3b8"/></marker></defs>
+  <g stroke="#dddddd" stroke-width="1">
+    <line x1="70" y1="285" x2="690" y2="285"/><line x1="70" y1="210" x2="690" y2="210"/><line x1="70" y1="135" x2="690" y2="135"/><line x1="70" y1="60" x2="690" y2="60"/>
+    <line x1="225" y1="360" x2="225" y2="45"/><line x1="380" y1="360" x2="380" y2="45"/><line x1="535" y1="360" x2="535" y2="45"/><line x1="690" y1="360" x2="690" y2="45"/>
+  </g>
+  <line class="axis" x1="70" y1="360" x2="705" y2="360" stroke="#555555" stroke-width="2.2" marker-end="url(#arE)"/>
+  <line class="axis" x1="70" y1="360" x2="70" y2="35" stroke="#555555" stroke-width="2.2" marker-end="url(#arE)"/>
+  <text x="706" y="378" fill="#8fa3b8" font-size="14" font-style="italic">t</text><text x="706" y="392" fill="#8fa3b8" font-size="11">/s</text>
+  <text x="30" y="30" fill="#8fa3b8" font-size="13" font-style="italic">v</text><text x="40" y="34" fill="#8fa3b8" font-size="11">/(m·s⁻¹)</text>
+  <g fill="#666666" font-size="12" text-anchor="end">
+    <text x="64" y="365">0</text><text x="64" y="290">0.05</text><text x="64" y="215">0.10</text><text x="64" y="140">0.15</text><text x="64" y="65">0.20</text>
+  </g>
+  <g fill="#666666" font-size="12" text-anchor="middle">
+    <text x="225" y="382">1</text><text x="380" y="382">2</text><text x="535" y="382">3</text><text x="690" y="382">4</text>
+  </g>
+  <g fill="#333333">
+    <circle class="dot" cx="93.2" cy="255.0" r="4.5"/><circle class="dot" cx="155.2" cy="247.5" r="4.5"/><circle class="dot" cx="225.0" cy="198.0" r="4.5"/><circle class="dot" cx="302.5" cy="192.0" r="4.5"/><circle class="dot" cx="380.0" cy="177.0" r="4.5"/><circle class="dot" cx="457.5" cy="160.5" r="4.5"/><circle class="dot" cx="535.0" cy="153.0" r="4.5"/><circle class="dot" cx="612.5" cy="151.5" r="4.5"/><circle class="dot" cx="659.0" cy="157.5" r="4.5"/>
+  </g>
+  <text x="400" y="420" fill="#666666" font-size="13" text-anchor="middle">甲　实测数据描点（约 0.07 → 0.14 m/s，先升后趋稳）</text>
+</svg>
+<div class="figcap">图E（重绘自教材图1.3-4甲）｜这张图在说什么：每个点＝(某一计数点的 t, 该点瞬时速度)。点的<b>走向</b>已经能大致看出：速度先增大、后趋于平稳——这就是"从点的走向能够大致看出纸带运动速度的变化规律"（教材p24）。散点位置为示意描摹，趋势忠实原版。</div>
+</div>
+<div class="fig">
+<svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图F v-t图像乙：平滑曲线">
+  <g stroke="#dddddd" stroke-width="1">
+    <line x1="70" y1="285" x2="690" y2="285"/><line x1="70" y1="210" x2="690" y2="210"/><line x1="70" y1="135" x2="690" y2="135"/><line x1="70" y1="60" x2="690" y2="60"/>
+    <line x1="225" y1="360" x2="225" y2="45"/><line x1="380" y1="360" x2="380" y2="45"/><line x1="535" y1="360" x2="535" y2="45"/><line x1="690" y1="360" x2="690" y2="45"/>
+  </g>
+  <line class="axis" x1="70" y1="360" x2="705" y2="360" stroke="#555555" stroke-width="2.2" marker-end="url(#arE)"/>
+  <line class="axis" x1="70" y1="360" x2="70" y2="35" stroke="#555555" stroke-width="2.2" marker-end="url(#arE)"/>
+  <text x="706" y="378" fill="#8fa3b8" font-size="14" font-style="italic">t</text><text x="706" y="392" fill="#8fa3b8" font-size="11">/s</text>
+  <text x="30" y="30" fill="#8fa3b8" font-size="13" font-style="italic">v</text><text x="40" y="34" fill="#8fa3b8" font-size="11">/(m·s⁻¹)</text>
+  <g fill="#666666" font-size="12" text-anchor="end">
+    <text x="64" y="365">0</text><text x="64" y="290">0.05</text><text x="64" y="215">0.10</text><text x="64" y="140">0.15</text><text x="64" y="65">0.20</text>
+  </g>
+  <g fill="#666666" font-size="12" text-anchor="middle">
+    <text x="225" y="382">1</text><text x="380" y="382">2</text><text x="535" y="382">3</text><text x="690" y="382">4</text>
+  </g>
+  <polyline points="70.0,262.5 80.3,256.0 90.7,249.9 101.0,244.1 111.3,238.6 121.7,233.4 132.0,228.6 142.3,224.0 152.7,219.6 163.0,215.5 173.3,211.7 183.7,208.0 194.0,204.6 204.3,201.4 214.7,198.3 225.0,195.4 235.3,192.7 245.7,190.1 256.0,187.7 266.3,185.4 276.7,183.2 287.0,181.2 297.3,179.3 307.7,177.4 318.0,175.7 328.3,174.1 338.7,172.6 349.0,171.1 359.3,169.8 369.7,168.5 380.0,167.3 390.3,166.1 400.7,165.1 411.0,164.1 421.3,163.1 431.7,162.2 442.0,161.3 452.3,160.5 462.7,159.8 473.0,159.0 483.3,158.4 493.7,157.7 504.0,157.1 514.3,156.5 524.7,156.0 535.0,155.5 545.3,155.0 555.7,154.6 566.0,154.1 576.3,153.7 586.7,153.8 597.0,154.2 607.3,154.7 617.7,155.1 628.0,155.6 638.3,156.2 648.7,156.7 659.0,157.2 669.3,157.8 679.7,158.4 690.0,159.0" class="curve" fill="none" stroke="#a04a78" stroke-width="2.5"/>
+  <text x="400" y="420" fill="#666666" font-size="13" text-anchor="middle">乙　用平滑曲线连接这些点</text>
+</svg>
+<div class="figcap">图F（重绘自教材图1.3-4乙）｜这张图在说什么：实测点带有误差、不会正好落在一条线上。教材p24：<b>如果用一条平滑的曲线来描出这些点，曲线所反映的情况就会与实际比较接近</b>——别用折线把点硬连起来，要画"贴合所有点走向"的平滑曲线。曲线前段上升较快、后段趋平：纸带先越拉越快，后来快慢基本稳定。</div>
+</div>
+<div class="try">
+<p class="q">验一验④（读图自测·自编）：看图F，纸带在 0-1 s 和 3-4 s 两段，哪段速度变化更大？3.5 s 之后的曲线微微下弯又说明什么？</p>
+<p class="a"><span class="ans">0-1 s 曲线陡（v 从约 0.065 升到 0.11，变化约 0.045 m/s），3-4 s 平缓（约 0.14 → 0.135，几乎不变）——<b>前段加速明显、后段趋稳</b>；3.5 s 后微下弯说明速度略有回落（手拉纸带松了一点劲）。曲线越陡＝速度变化越快——这正是下一节 1.4《加速度》要正式度量的东西。</span></p>
+</div>
+
+
+<div class="alt">
+<span class="tag">想多走一步？（可选·跳过不损失主干）</span>　教材p25"拓展学习"：借助传感器与计算机测速度。用"位移传感器"把物体运动的位移、时间转换成电信号，计算机处理后屏幕上立刻显示速度、自动画出 v-t 图像（教材图1.3-5）。常见的一款由<b>发射器 A 与接收器 B</b> 组成（教材图1.3-6）：A 固定在运动物体上，同时发射一个<b>红外线脉冲和一个超声波脉冲</b>；B 接收到红外线脉冲开始计时、接收到超声波脉冲停止计时——用时差乘声速算出 A、B 距离（红外线传播时间可忽略）。经过短暂的时间 Δt 后系统自动第二次测量，算出位移 Δx，按 v = Δx/Δt 显示速度，全程不到 1 s。因为 Δt 很短（通常设置为 0.02 s），所以 Δx/Δt 可以代表<b>此刻的瞬时速度</b>——是不是和纸带实验"间隔取小"是同一个思想？另一种传感器只有不动的小盒 C（教材图1.3-7）：向被测物体 D 发超声波脉冲、被 D 反射后回收，靠发射与接收的时差算距离，同样能算出速度——这就是"雷达测速"的原理。
+</div>
+
+<h2><span class="step-tag">节末自测</span>先自己做，再对答案（教材p26练习与应用原题）</h2>
+<div class="box"><b>第1题（教材p26原题）</b>　把纸带的下端固定在重物上，纸带穿过打点计时器，上端用手提着。接通电源后将纸带释放，重物便拉着纸带下落，纸带被打出一系列点，其中有一段如图1.3-8所示（图C同款纸带：点距从左到右越来越大，A 在中间偏左）。<br>（1）图中所示的纸带，哪端与重物相连？<br>（2）怎样计算在纸带上打 A 点时重物的瞬时速度？说出你的理由。</div>
+<p><span class="ans"><b>参考答案：</b>（1）<b>左端（点距小的一端）与重物相连。</b>重物拉着纸带加速下落，越晚通过计时器的点速度越大、点距越大；先打出的点速度小、点距小，它们在靠重物的一端。（2）用<b>包含 A 点的一段较小间隔</b>（如 A 与相邻计数点间）的平均速度来代表 A 点的瞬时速度：Δx/Δt。理由＝本节实验的推理：间隔取得小一些，这段时间里快慢差异就小，平均速度就越接近瞬时速度；间隔过小又会让长度测量误差增大（教材p23边注），所以要选合适的间隔。</span></p>
+<div class="box"><b>第2题（教材p26原题）</b>　图1.3-9是甲、乙两物体沿某一直线运动的 v-t 图像（甲：一条水平直线；乙：先上升、中间持平、后下降的"梯形"）。至少从以下三个方面分别说明它们的速度是怎样变化的。<br>（1）物体是从静止开始运动还是具有一定的初速度？（2）速度的大小变化吗？是加速还是减速？（3）运动的方向是否变化？</div>
+<p><span class="ans"><b>参考答案：</b>（1）甲：t=0 时 v&gt;0，具有一定初速度；乙：t=0 时 v=0，从静止开始。（2）甲：速度大小不变（不加速也不减速，匀速）；乙：速度先增大（加速）、后不变、再减小（减速）。（3）两条图像都在 t 轴上方（v&gt;0），速度方向始终为正、<b>都不变化</b>，两物体都一直沿同一直线向正方向运动。（v-t 图像的读法第一课：<b>高度＝快慢，趋势＝加速减速，在不在 t 轴上方＝方向</b>。）</span></p>
+<div class="box"><b>第3题（教材p26原题·计算）</b>　汽车从制动到停止共用了 5 s。这段时间内，汽车每 1 s 前进的距离分别是 9 m、7 m、5 m、3 m、1 m（图1.3-10）。<br>（1）求汽车前 1 s、前 2 s、前 3 s、前 4 s 和全程的平均速度。在这五个平均速度中，哪一个最接近汽车刚制动时的瞬时速度？它比这个瞬时速度略大些，还是略小些？<br>（2）汽车运动的最后 2 s 的平均速度是多少？</div>
+<p><span class="ans"><b>参考答案：</b>（1）平均速度＝总位移÷总时间（方向始终向前，位移大小＝各段距离之和）：前 1 s：9/1 = <b>9 m/s</b>；前 2 s：(9+7)/2 = <b>8 m/s</b>；前 3 s：(9+7+5)/3 = <b>7 m/s</b>；前 4 s：(9+7+5+3)/4 = <b>6 m/s</b>；全程：(9+7+5+3+1)/5 = <b>5 m/s</b>。<b>前 1 s 的平均速度最接近刚制动时的瞬时速度</b>——越靠近制动时刻的时间段，其平均速度越接近那一刻的速度；汽车在减速，第 1 s 内的平均速度等于"初速与1s末速的平均"，所以它<b>比刚制动时的瞬时速度略小</b>。（2）最后 2 s：位移 3+1 = 4 m、时间 2 s，平均速度 = <b>2 m/s</b>。</span></p>
+<div class="pit">
+<p><span class="tag">坑点·平均速度≠速度的平均</span>第3题若把"每秒速度"当 (9+1)/2 = 5 m/s 硬平均，纯属巧合碰对——<b>平均速度的定义永远是 Δx/Δt（总位移除以总时间）</b>，不是把几个速度加起来除以个数。分段时间不相等或速度变化不均匀时，"速度的平均"就是错的。遇到任何平均速度，第一步先写 v̄ = Δx/Δt。</p>
+</div>
+
+<h2><span class="step-tag">收口</span>合上书，三问自答</h2>
+<div class="check">
+<span class="tag">复述体三问（教材事实层）</span>
+<p>① v = Δx/Δt 中，正负号管什么、数值管什么？（答不上回<span style="color:#58d68d">第一步验一验①</span>）<br>
+② Δt 越来越小的时候，Δx/Δt 越来越像什么？教材给这极限过程起了什么名字？（答不上回<span style="color:#58d68d">第二步</span>）<br>
+③ "每 5 个点取一个计数点"对应的 Δt 是多少秒？改成每 3 个点呢？（答不上回<span style="color:#58d68d">第三步图C/图D</span>）</p>
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 720 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图G：第一章四节串联">
+  <defs><marker id="arG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <g font-size="14" text-anchor="middle">
+    <rect class="pd-box" x="18" y="30" width="148" height="86" rx="9" fill="#f2f7f2" stroke="#4a8a5c" stroke-width="1.5"/>
+    <text x="92" y="62" fill="#1e7a4f" font-weight="bold">1.1 质点 参考系</text>
+    <text x="92" y="88" fill="#557a5f" font-size="12.5">研究对象与立场</text>
+    <rect class="pd-box" x="196" y="30" width="148" height="86" rx="9" fill="#eef4fa" stroke="#4a7fae" stroke-width="1.5"/>
+    <text x="270" y="62" fill="#2266aa" font-weight="bold">1.2 时间 位移</text>
+    <text x="270" y="88" fill="#4a6a85" font-size="12.5">位置账：坐标系·Δx</text>
+    <rect class="pd-box" x="374" y="22" width="148" height="102" rx="9" fill="#eef4fa" stroke="#2266aa" stroke-width="2.5"/>
+    <text x="448" y="54" fill="#b8860b" font-weight="bold">1.3 速度（本节）</text>
+    <text x="448" y="78" fill="#333333" font-size="12.5">快慢账：v=Δx/Δt</text>
+    <text x="448" y="98" fill="#4a6a85" font-size="12.5">平均·瞬时·v-t 图</text>
+    <rect class="pd-box" x="552" y="30" width="148" height="86" rx="9" fill="#f5f1f8" stroke="#8a6ba8" stroke-width="1.5"/>
+    <text x="626" y="62" fill="#6b4a8a" font-weight="bold">1.4 加速度</text>
+    <text x="626" y="88" fill="#6e5a85" font-size="12.5">快慢变化账：Δv/Δt</text>
+  </g>
+  <line x1="166" y1="73" x2="192" y2="73" stroke="#2266aa" stroke-width="2.2" marker-end="url(#arG)"/>
+  <line x1="344" y1="73" x2="370" y2="73" stroke="#2266aa" stroke-width="2.2" marker-end="url(#arG)"/>
+  <line x1="522" y1="73" x2="548" y2="73" stroke="#2266aa" stroke-width="2.2" marker-end="url(#arG)"/>
+  <text x="360" y="158" fill="#666666" font-size="12.5" text-anchor="middle">第一章"描述运动"四件套：对象 → 位置账 → 快慢账 → 快慢变化账（本节居中承上启下）</text>
+</svg>
+<div class="figcap">图G｜这张图在说什么：本节在第一章的位置——用 1.2 的"位移账"除以"时间账"得到速度；下一节 1.4 将用同款除法定义"速度变化快慢"（加速度），路数完全一样。</div>
+</div>
+
+<h3>考位锚（T11）·高考怎么考</h3>
+<p class="small">· 考什么：v = Δx/Δt 的计算与正负号辨析（矢量方向）、平均速度与瞬时速度的区分、速率与速度的语用辨析；纸带数据处理（计数点制度、Δt = 0.02 s×n）是运动学实验题的常备基本功（2.1 节小车实验的直接前置）。<br>· 怎么考：运动学小题里给情境算速度/判方向；实验题里给纸带让算相邻计数点平均速度并估瞬时速度。<br>· 真题锚：候采——对证源卷源池（v2.6）暂未录入 1.3 速度卷源，不代拟；候池内补录后回填。</p>
+
+<div class="foot">
+<em>素材源溯源（foot区·豁免条款）：影印源＝国家中小学智慧教育平台教材电子版·普通高中教科书·物理必修 第一册（人教版）·contentId 708256b6-6f06-4d14-89c7-4df16dfe3b81·ts=1787023183495（1031午后详情API实时取）·图26-32→印刷页p21-27·偏移N-5·本节影印范围p21-26（1.4节名页p27=图32为节界边界锚）·影印对照逐页直读（p21节名页页脚21/p22页脚22/p23页脚23/p24页脚24/p25页脚25/p26页脚26/p27节名"4 速度变化快慢的描述——加速度"）·本件为自学辅导讲义·教材原文引用仅作教学讲解用途·原文以纸质教材为准。</em>
+</div>
+</div>
+</body>
+</html>

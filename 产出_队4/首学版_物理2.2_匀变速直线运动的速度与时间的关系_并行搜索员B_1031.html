@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理2.2 匀变速直线运动的速度与时间的关系 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #1a2416; border-left: 3px solid #6cbf4a; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .try .q { color: #9fd481; font-weight: bold; }
+  .try .a { color: #8a949f; font-size: 15px; margin-top: 6px; }
+  .pit { background: #2a1a1a; border-left: 3px solid #e05252; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .pit .tag { color: #ff7b72; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #2b5277; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .key b { color: #4a9eff; }
+  .m { font-family: "Times New Roman", Georgia, serif; font-style: italic; color: #ffd48a; }
+  .big { font-size: 21px; text-align: center; margin: 18px 0; color: #fff; }
+  .detail { color: #7d8a99; font-size: 15px; border-top: 1px dashed #2a3140; margin-top: 10px; padding-top: 10px; }
+  .small { color: #8a949f; font-size: 14px; }
+  .wrong { color: #ff7b72; }
+  .fig { margin: 18px 0; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  .check { background: #16211a; border: 1px solid #2d5a3d; border-radius: 8px; padding: 16px 20px; margin: 18px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; font-size: 14px; }
+  .check p { margin: 8px 0; }
+  .alt { background: #1f1b24; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .ans { color: #58d68d; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; color: #eef2f7; font-size: 16px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a323e; padding: 9px 12px; text-align: left; }
+  th { background: #1b2029; color: #fff; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  b { color: #f0f3f7; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 14px; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    p, .talk, .key, .pit, .detail, .figcap { color: #222; }
+    .sub, .small, .foot { color: #444; }
+    .try .q { color: #1e5c1e; } .try .a { color: #333; }
+    .pit .tag { color: #c0392b; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong, .note-red { color: #c0392b; }
+    em { color: #1a5c99; }
+    mark.nb, .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { background: #f0f0f0; color: #111; }
+    th, td { border-color: #bbb; }
+    .box { color: #222; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>匀变速直线运动：速度会"匀速地变"——v = v₀ + at</h1>
+<div class="sub">物理2.2 · "匀变速直线运动的研究"模块第二件（第二章 第2节）· 前面已学：2.1 探究小车v-t图像实验、1.4 加速度（a = Δv/Δt）、1.3 速度、1.2 位移与坐标系 · 零基础首学版 v1.0 · 前置：1.3＋1.4＋2.1＋会一元一次方程 · 预计40分钟</div>
+
+<h2><span class="step-tag">开场</span>上节的"斜直线"，这一节给它起名字、写公式</h2>
+<p>2.1的实验里你亲手画出过一条<b>倾斜的直线</b>：小车在重物牵引下，速度越来越快，v-t 图像是一条斜线。而匀速运动的 v-t 图像是<b>平行于时间轴的水平线</b>。教材p39的问题框把这一节的任务说得很清楚：<b>如果C919飞机沿直线做匀速运动，它的v-t图像是一条平行于时间轴的直线。在上节课的实验中，小车在重物牵引下运动的v-t图像是一条倾斜的直线，它表示小车在做什么样的运动？</b>——这一节就回答它：给这种运动起名字（匀变速直线运动），再给它写公式（v = v₀ + at）。</p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 说出<b>匀变速直线运动</b>的定义（沿直线＋加速度不变），并从 v-t 图像上一眼认出它（倾斜直线）；<br>
+② 区分<b>匀加速</b>与<b>匀减速</b>；<br>
+③ 用 <b>v = v₀ + at</b> 算任意时刻的速度，并知道每个字母代表什么；<br>
+④ 独立解出教材p40例题那样的<b>刹车问题</b>（关键：先建坐标系定正负号）；<br>
+⑤ 避开三个坑：<span class="wrong">把"加速度为负"读成"在减速"</span>、<span class="wrong">km/h 不换算就代入公式</span>、<span class="wrong">曲线 v-t 图像误判成匀变速</span>。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒立好地基（已会的跳过）</h2>
+<div class="talk">
+<p>本节只借三个旧工具：① 1.4的<b>加速度</b>——a = Δv/Δt，单位 m/s²，描述"速度变化的快慢"，是<b>矢量</b>；② 1.3的<b>v-t 图像</b>——横轴t、纵轴v，读图口诀"高度＝快慢，趋势＝加速减速"；③ 1.2的<b>正方向约定</b>——直线运动先选正方向，与之一致取正、相反取负。够了。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>匀变速直线运动——加速度不变的运动</h2>
+<p>先看2.1那条斜直线有个特别的性质。教材p39原文：<b>小车运动的v-t图像是一条倾斜的直线。无论 Δt 选在什么区间，对应的速度的变化量 Δv 与时间的变化量 Δt 之比都是一样的，即物体运动的加速度保持不变。</b></p>
+<p>"无论选在哪个区间比值都一样"——这句话值得盯着看图：在直线上随便取两段等宽的时间窗，两段窗里速度涨的高度<b>完全相等</b>。涨速均匀，就是"加速度不变"。教材给出定义：</p>
+<div class="key">
+<b>匀变速直线运动（教材p39）：</b><span class="ul-blue">沿着一条直线，且加速度不变的运动</span>，叫作匀变速直线运动（uniform variable rectilinear motion）。<mark class="nb">匀变速直线运动的v-t图像是一条倾斜的直线。</mark>
+</div>
+<div class="fig">
+<svg viewBox="0 0 700 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2.2-1 匀变速直线运动的v-t图像重绘">
+  <defs><marker id="ar1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker></defs>
+  <g stroke="#dddddd" stroke-width="1">
+    <line x1="80" y1="310" x2="680" y2="310"/><line x1="80" y1="262" x2="680" y2="262"/><line x1="80" y1="214" x2="680" y2="214"/><line x1="80" y1="166" x2="680" y2="166"/><line x1="80" y1="118" x2="680" y2="118"/><line x1="80" y1="70" x2="680" y2="70"/>
+    <line x1="213" y1="370" x2="213" y2="50"/><line x1="347" y1="370" x2="347" y2="50"/><line x1="480" y1="370" x2="480" y2="50"/><line x1="613" y1="370" x2="613" y2="50"/>
+  </g>
+  <line x1="80" y1="370" x2="695" y2="370" stroke="#555555" stroke-width="2.2" marker-end="url(#ar1)"/>
+  <line x1="80" y1="370" x2="80" y2="40" stroke="#555555" stroke-width="2.2" marker-end="url(#ar1)"/>
+  <text x="700" y="385" fill="#666" font-size="14" font-style="italic">t</text>
+  <text x="45" y="40" fill="#666" font-size="14" font-style="italic">v</text>
+  <g fill="#666" font-size="12.5" text-anchor="end">
+    <text x="74" y="375">O</text><text x="74" y="315" font-style="italic">v₀</text><text x="74" y="267" font-style="italic">v₁</text><text x="74" y="219" font-style="italic">v₂</text><text x="74" y="171" font-style="italic">v₃</text><text x="74" y="123" font-style="italic">v₄</text>
+  </g>
+  <g fill="#666" font-size="12.5" text-anchor="middle">
+    <text x="213" y="388" font-style="italic">t₁</text><text x="347" y="388" font-style="italic">t₂</text><text x="480" y="388" font-style="italic">t₃</text><text x="613" y="388" font-style="italic">t₄</text>
+  </g>
+  <line x1="80" y1="310" x2="667" y2="99" stroke="#a04a78" stroke-width="2.5"/>
+  <g stroke="#888888" stroke-width="1.2" stroke-dasharray="4,4">
+    <line x1="213" y1="370" x2="213" y2="262"/><line x1="213" y1="262" x2="80" y2="262"/>
+    <line x1="480" y1="370" x2="480" y2="166"/><line x1="480" y1="166" x2="80" y2="166"/>
+    <line x1="347" y1="370" x2="347" y2="214"/><line x1="613" y1="370" x2="613" y2="118"/>
+  </g>
+  <path d="M 84 306 Q 100 290 104 266" fill="none" stroke="#2d7a1e" stroke-width="2"/>
+  <text x="112" y="290" fill="#2d7a1e" font-size="13">Δv</text>
+  <path d="M 88 366 L 209 366" stroke="#2d7a1e" stroke-width="2"/>
+  <text x="148" y="360" fill="#2d7a1e" font-size="13">Δt</text>
+  <path d="M 484 162 Q 500 146 504 122" fill="none" stroke="#2266aa" stroke-width="2"/>
+  <text x="512" y="146" fill="#2266aa" font-size="13">Δv′</text>
+  <path d="M 355 366 L 476 366" stroke="#2266aa" stroke-width="2"/>
+  <text x="415" y="360" fill="#2266aa" font-size="13">Δt′</text>
+</svg>
+<div class="figcap">图A（重绘自教材图2.2-1）｜这张图在说什么：倾斜直线上任取两段等长时间窗（Δt 与 Δt′），窗内速度涨幅 Δv 与 Δv′ <b>一样高</b>——"任意区间比值相同"就是加速度不变，就是匀变速直线运动。</div>
+</div>
+<p>教材p39接着分类：<b>在匀变速直线运动中，如果物体的速度随时间均匀增加，这种运动叫作匀加速直线运动；如果物体的速度随时间均匀减小，这种运动叫作匀减速直线运动。</b></p>
+<div class="try">
+<p class="q">验一验①（读图自测·自编）：三条 v-t 图像——甲水平线、乙向右上的斜线、丙向右下的斜线。各是什么运动？</p>
+<p class="a"><span class="ans">甲：匀速直线运动（速度不变·加速度为零）；乙：匀加速直线运动（速度均匀增大·斜率为正）；丙：匀减速直线运动（速度均匀减小·斜率为负）。倾斜程度不变＝加速度不变——<b>直线是"匀变速"的身份证</b>，曲线不是。</span></p>
+</div>
+
+<h2><span class="step-tag">第二步</span>速度与时间的关系——把斜线写成公式</h2>
+<p>图像直观，但算不出精确数。教材p39：<b>除v-t图像外，我们还可以用公式描述物体运动的速度与时间的关系。</b>先做两个约定（教材p39原文）：对于匀变速直线运动，把<b>运动开始时刻取作0时刻</b>，则由0时刻到 t 时刻的时间间隔 Δt 就是 t；而 t 时刻的速度 v 与开始时刻的速度 v₀（叫作<b>初速度</b>）之差就是速度的变化量，即 Δv = v − v₀。</p>
+<p>把这个 Δv 代进加速度的定义式 a = Δv/Δt（1.4学的），教材p40两步推出：</p>
+<div class="key">
+Δv = v − v₀　代入　a = Δv/Δt，得到
+<div class="big"><mark class="nb">v = v₀ + at</mark></div>
+<b>这就是匀变速直线运动的速度与时间的关系式（教材p40）。</b>
+</div>
+<p class="detail">教材p40边注把公式的"意思"讲透了（原文）：由于加速度 a 在数值上等于单位时间内速度的变化量，所以 <b>at 就是 t 时间内速度的变化量</b>，再加上运动开始时物体的速度，就得到 t 时刻物体的速度。——白话版：<b>末速度 = 起点速度 + 涨上来的那截</b>。</p>
+<div class="try">
+<p class="q">验一验②（自编）：某物体初速度 v₀ = 5 m/s，以 a = 2 m/s² 匀加速，3 s 末速度多大？</p>
+<p class="a"><span class="ans">v = v₀ + at = 5 + 2×3 = <b>11 m/s</b>。检查单位：m/s²×s = m/s，单位自洽。</span></p>
+<p class="q">易错变形：刹车小题——v₀ = 15 m/s，刹车加速度大小 3 m/s²，几秒停下？</p>
+<p class="a"><span class="ans">停下即 v = 0。0 = 15 + a·t，减速取 a = −3 m/s²（方向与速度相反），t = 15/3 = <b>5 s</b>。<span class="wrong">若把 a 带成 +3，解出 t = −5 s——时间是负数没有意义，这就是忘了减速要配负号</span>。</span></p>
+</div>
+<div class="pit">
+<p><span class="tag">坑点·a的正负不等于"加速/减速"</span>判断加减速看的是 <b>a 与 v 的方向关系</b>，不是 a 的正负号本身：a、v 同向（同号）＝加速；反向（异号）＝减速。取了"初速度方向为正"的约定后，减速才表现为"a 是负的"——教材例题第（2）问正是这么办的。若换一个正方向约定，同一个运动里 a 的正负会翻转，但"a 与 v 反向＝减速"的物理事实不变。</p>
+</div>
+
+<h2><span class="step-tag">第三步</span>例题精读——教材p40刹车题（原题）</h2>
+<div class="box"><b>【例题】（教材p40原题）</b>　一辆汽车以 36 km/h 的速度在平直公路上匀速行驶。从某时刻起，它以 0.6 m/s² 的加速度加速，10 s 末因故突然紧急刹车，随后汽车停了下来。刹车时做匀减速运动的加速度大小是 6 m/s²。<br>（1）汽车在 10 s 末的速度是多少？（2）汽车从刹车到停下来用了多长时间？</div>
+<p><b>分析</b>（教材原文展开）：加速和减速两段都是匀变速直线运动，都用 v = v₀ + at。第（1）问是已知加速时间求末速度；第（2）问是已知末速度求减速时间——<b>第（2）问汽车加速度的方向跟速度、位移的方向相反，需要建立坐标系处理物理量之间的正负号问题。</b></p>
+<p><b>解（1）</b>汽车做匀加速直线运动。初速度 v₀ = 36 km/h = <b>10 m/s</b>（÷3.6 换算），加速度 a = 0.6 m/s²，时间 t = 10 s。代入 v = v₀ + at：</p>
+<div class="big">v = 10 m/s + 0.6 m/s² × 10 s = <mark class="nb">16 m/s</mark></div>
+<p><b>解（2）</b>以汽车运动方向为正方向建立一维坐标系（图2.2-2），与正方向一致的量取正号，相反的取负号。刹车段：初速度 v₀ = 16 m/s，末速度 v = 0，加速度 a = <b>−6 m/s²</b>（方向与运动方向相反·故带负号）。由 v = v₀ + at 移项：</p>
+<div class="big">t = (v − v₀)/a = (0 − 16 m/s)/(−6 m/s²) = <mark class="nb">2.67 s</mark></div>
+<p>答（教材p40）：汽车 10 s 末的速度为 16 m/s，从刹车到停下来要用 2.67 s。</p>
+<div class="fig">
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2.2-2 刹车题坐标系重绘">
+  <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker><marker id="ar2r" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c0392b"/></marker></defs>
+  <line x1="80" y1="170" x2="640" y2="170" stroke="#555555" stroke-width="2.2" marker-end="url(#ar2)"/>
+  <text x="650" y="178" fill="#666" font-size="14" font-style="italic">x</text>
+  <text x="86" y="188" fill="#666" font-size="13" font-style="italic">o</text>
+  <g transform="translate(240,105)">
+    <rect x="0" y="18" width="150" height="40" rx="12" fill="#e8a33d" stroke="#8a5a1a" stroke-width="2"/>
+    <rect x="28" y="-2" width="62" height="26" rx="8" fill="#f0c070" stroke="#8a5a1a" stroke-width="2"/>
+    <circle cx="34" cy="60" r="14" fill="#2a2a2a" stroke="#555" stroke-width="3"/>
+    <circle cx="118" cy="60" r="14" fill="#2a2a2a" stroke="#555" stroke-width="3"/>
+    <rect x="8" y="24" width="26" height="16" rx="3" fill="#bfe3f5" stroke="#8a5a1a"/>
+  </g>
+  <line x1="245" y1="120" x2="215" y2="120" stroke="#c0392b" stroke-width="3" marker-end="url(#ar2r)" transform="translate(-20,0)"/>
+  <text x="195" y="108" fill="#c0392b" font-size="15" font-style="italic">a = −6 m/s²</text>
+  <line x1="420" y1="120" x2="500" y2="120" stroke="#2d7a1e" stroke-width="3"/>
+  <text x="430" y="108" fill="#2d7a1e" font-size="15" font-style="italic">v = +16 m/s</text>
+  <path d="M 340 190 L 480 190" stroke="#666" stroke-width="1.5" stroke-dasharray="5,4"/>
+</svg>
+<div class="figcap">图B（重绘自教材图2.2-2）｜这张图在说什么：刹车段各矢量的正负号一览——以向右（运动方向）为正：<b>v 向右取正</b>，<b>a 向左取负</b>。"加速度是负的"在这里只是"方向向左"，配合 v 向右，物理事实是"减速"。</div>
+</div>
+<div class="try">
+<p class="q">验一验③（自编·同型换数）：摩托车 v₀ = 12 m/s 刹车，加速度大小 4 m/s²，几秒停下？</p>
+<p class="a"><span class="ans">v = 0，a = −4 m/s²：0 = 12 − 4t → t = <b>3 s</b>。同教材例题同款路子：定正方向 → 减速量配负号 → 解一元一次方程。</span></p>
+</div>
+
+<h2><span class="step-tag">第四步</span>反例辨析——曲线不是匀变速（教材p41思考与讨论）</h2>
+<p>教材p41给了一道"火眼金睛"题（原文）：<b>图2.2-3是一个物体运动的v-t图像。它的速度怎样变化？在相等的时间间隔内，即Δt′=Δt时，速度的变化量Δv′和Δv总是相等的吗？物体在做匀变速运动吗？</b></p>
+<div class="fig">
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2.2-3 曲线v-t图像重绘">
+  <line x1="80" y1="340" x2="680" y2="340" stroke="#555555" stroke-width="2.2" marker-end="url(#ar2)"/>
+  <line x1="80" y1="340" x2="80" y2="40" stroke="#555555" stroke-width="2.2" marker-end="url(#ar2)"/>
+  <text x="686" y="355" fill="#666" font-size="14" font-style="italic">t</text>
+  <text x="52" y="40" fill="#666" font-size="14" font-style="italic">v</text>
+  <text x="68" y="355" fill="#666" font-size="13" font-style="italic">O</text>
+  <g fill="#666" font-size="12.5" text-anchor="middle">
+    <text x="205" y="358" font-style="italic">t₁</text><text x="290" y="358" font-style="italic">t₂</text><text x="395" y="358" font-style="italic">t₃</text><text x="510" y="358" font-style="italic">t₄</text>
+  </g>
+  <path d="M 80 340 C 180 130 320 80 660 55" fill="none" stroke="#a04a78" stroke-width="2.5"/>
+  <g stroke="#888888" stroke-width="1.2" stroke-dasharray="4,4">
+    <line x1="150" y1="340" x2="150" y2="196"/><line x1="150" y1="196" x2="80" y2="196"/>
+    <line x1="420" y1="340" x2="420" y2="86"/><line x1="420" y1="86" x2="80" y2="86"/>
+    <line x1="205" y1="340" x2="205" y2="152"/><line x1="205" y1="152" x2="80" y2="152"/>
+    <line x1="510" y1="340" x2="510" y2="76"/><line x1="510" y1="76" x2="80" y2="76"/>
+  </g>
+  <path d="M 84 336 Q 100 320 104 200" fill="none" stroke="#2d7a1e" stroke-width="2"/>
+  <text x="112" y="270" fill="#2d7a1e" font-size="13">Δv</text>
+  <path d="M 90 332 L 146 332" stroke="#2d7a1e" stroke-width="2"/>
+  <text x="100" y="326" fill="#2d7a1e" font-size="13">Δt</text>
+  <path d="M 424 82 Q 440 74 444 78" fill="none" stroke="#2266aa" stroke-width="2"/>
+  <text x="452" y="80" fill="#2266aa" font-size="13">Δv′</text>
+  <path d="M 290 332 L 416 332" stroke="#2266aa" stroke-width="2"/>
+  <text x="345" y="326" fill="#2266aa" font-size="13">Δt′</text>
+</svg>
+<div class="figcap">图C（重绘自教材图2.2-3）｜这张图在说什么：<b>曲线</b>开头陡（Δv 大）、后来平（Δv′ 小）——两段等长时间窗里涨幅<b>不相等</b>，加速度在变。所以它速度仍在增大，但<b>不是匀变速</b>。"v-t 图像是倾斜直线"是匀变速的必要身份证。</div>
+</div>
+<div class="pit">
+<p><span class="tag">坑点·速度增大≠匀变速</span>只要曲线一直往上走，速度就在增大；但"匀变速"还要求<b>涨幅均匀</b>（斜率不变）。图C速度在涨、加速度在变小——"变加速"运动。判断口诀：<b>先看直线还是曲线，再看涨还是跌</b>。</p>
+</div>
+
+<h2><span class="step-tag">节末自测</span>先自己做，再对答案（教材p41练习与应用原题）</h2>
+<div class="box"><b>第1题（教材p41原题）</b>　列车原来的速度是 36 km/h，在一段下坡路上加速度为 0.2 m/s²。列车行驶到下坡路末端时，速度增加到 54 km/h。求列车通过这段下坡路所用的时间。</div>
+<p><span class="ans"><b>参考答案：</b>统一单位：v₀ = 36 km/h = 10 m/s，v = 54 km/h = 15 m/s。由 v = v₀ + at 得 t = (v − v₀)/a = (15 − 10)/0.2 = <b>25 s</b>。</span></p>
+<div class="box"><b>第2题（教材p41原题）</b>　以 72 km/h 的速度行驶的列车在驶近一座石拱桥时做匀减速直线运动（图2.2-4），加速度的大小是 0.1 m/s²，列车减速行驶 2 min 后的速度是多少？</div>
+<p><span class="ans"><b>参考答案：</b>v₀ = 72 km/h = 20 m/s，t = 2 min = 120 s，减速取 a = −0.1 m/s²。v = 20 + (−0.1)×120 = 20 − 12 = <b>8 m/s</b>。<span class="wrong">两个易错：min 不换算成 s；减速忘配负号得 32 m/s（越刹越快）。</span></span></p>
+<div class="box"><b>第3题（教材p41原题）</b>　2013年12月14日，嫦娥三号登月探测器平稳落月（图2.2-5），中国首次地外天体软着陆成功。当它靠近月球后，先悬停在月面上方一定高度，之后关闭发动机，以 1.6 m/s² 的加速度下落，经过 2.25 s 到达月面，此时探测器的速度是多少？</div>
+<p><span class="ans"><b>参考答案：</b>"悬停后关闭发动机"意味着开始下落瞬间速度 v₀ = 0。以向下为正方向，a = +1.6 m/s²，t = 2.25 s。v = v₀ + at = 0 + 1.6×2.25 = <b>3.6 m/s</b>（方向向下）。</span></p>
+<div class="box"><b>第4题（教材p41原题·读图）</b>　一个物体沿着直线运动，其 v-t 图像如图2.2-6所示（0-2 s 由 1 m/s 匀加速升到 2 m/s，2-6 s 保持 2 m/s，6-8 s 由 2 m/s 匀减速降到 0）。<br>（1）它在 1 s 末、4 s 末、7 s 末三个时刻的速度，哪个最大？哪个最小？（2）它在 1 s 末、4 s 末、7 s 末三个时刻的速度方向是否相同？（3）它在 1 s 末、4 s 末、7 s 末三个时刻的加速度，哪个最大？哪个最小？（4）它在 1 s 末和 7 s 末的加速度方向是否相同？</div>
+<div class="fig">
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2.2-6 练习4 v-t图像重绘">
+  <line x1="80" y1="340" x2="680" y2="340" stroke="#555555" stroke-width="2.2" marker-end="url(#ar2)"/>
+  <line x1="80" y1="340" x2="80" y2="40" stroke="#555555" stroke-width="2.2" marker-end="url(#ar2)"/>
+  <text x="690" y="358" fill="#666" font-size="13" font-style="italic">t</text><text x="698" y="372" fill="#666" font-size="11">/s</text>
+  <text x="46" y="40" fill="#666" font-size="13" font-style="italic">v</text><text x="58" y="44" fill="#666" font-size="11">/(m·s⁻¹)</text>
+  <g stroke="#cfe3ea" stroke-width="1.2">
+    <line x1="213" y1="340" x2="213" y2="50"/><line x1="347" y1="340" x2="347" y2="50"/><line x1="480" y1="340" x2="480" y2="50"/><line x1="613" y1="340" x2="613" y2="50"/>
+    <line x1="80" y1="283" x2="680" y2="283"/><line x1="80" y1="197" x2="680" y2="197"/><line x1="80" y1="110" x2="680" y2="110"/>
+  </g>
+  <g fill="#666" font-size="12.5" text-anchor="middle">
+    <text x="74" y="355">0</text><text x="213" y="358">2</text><text x="347" y="358">4</text><text x="480" y="358">6</text><text x="613" y="358">8</text>
+  </g>
+  <g fill="#666" font-size="12.5" text-anchor="end">
+    <text x="74" y="288">1</text><text x="74" y="202">2</text>
+  </g>
+  <polyline points="80,283 213,197 480,197 613,340" fill="none" stroke="#a04a78" stroke-width="2.8"/>
+  <g fill="#333333">
+    <circle cx="146" cy="240" r="4"/><circle cx="347" cy="197" r="4"/><circle cx="547" cy="269" r="4"/>
+  </g>
+  <g fill="#2d7a1e" font-size="12.5" text-anchor="middle">
+    <text x="146" y="225">1 s末</text><text x="347" y="182">4 s末</text><text x="547" y="252">7 s末</text>
+  </g>
+</svg>
+<div class="figcap">图D（重绘自教材图2.2-6）｜这张图在说什么：三段式 v-t 图像——升（0-2 s 匀加速）、平（2-6 s 匀速）、降（6-8 s 匀减速）。三个红点标记 1 s 末、4 s 末、7 s 末的位置。</div>
+</div>
+<p><span class="ans"><b>参考答案：</b>（1）读高度：1 s 末 v = 1.5 m/s，4 s 末 v = 2 m/s（最大），7 s 末 v = 1 m/s（最小）。（2）三点都在 t 轴上方（v &gt; 0），速度方向<b>都相同</b>（沿正方向）。（3）加速度看斜率陡缓：1 s 末所在段 a = (2−1)/2 = 0.5 m/s²；4 s 末在水平段 a = 0（最小）；7 s 末所在段 |a| = (2−0)/2 = 1 m/s²（最大）。（4）1 s 末斜率为正（a 方向沿正方向），7 s 末斜率为负（a 方向沿负方向）——<b>方向相反</b>。同是"7 s 末速度比 1 s 末小"，加速度却比 1 s 末大：加速度管"变化快慢"，速度管"快慢"，两码事。</span></p>
+
+<h2><span class="step-tag">收口</span>合上书，三问自答</h2>
+<div class="check">
+<span class="tag">复述体三问</span>
+<p>① 匀变速直线运动的两个条件是什么？它的 v-t 图像长什么样？（答不上回<span style="color:#58d68d">第一步key块/图A</span>）<br>
+② v = v₀ + at 里，at 是什么意思？v₀ 是什么？（答不上回<span style="color:#58d68d">第二步detail段</span>）<br>
+③ 刹车问题里 a 为什么带负号？什么时候"加速度为负"？（答不上回<span style="color:#58d68d">第三步解（2）/坑点</span>）</p>
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 720 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图G：第二章五节串联">
+  <defs><marker id="arG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <g font-size="13" text-anchor="middle">
+    <rect x="12" y="30" width="128" height="86" rx="9" fill="#f2f7f2" stroke="#4a8a5c" stroke-width="1.5"/>
+    <text x="76" y="62" fill="#1e7a4f" font-weight="bold">2.1 小车实验</text>
+    <text x="76" y="88" fill="#557a5f" font-size="12">v-t图像实测</text>
+    <rect x="152" y="22" width="132" height="102" rx="9" fill="#eef4fa" stroke="#4a7fae" stroke-width="2.5"/>
+    <text x="218" y="54" fill="#b8860b" font-weight="bold">2.2 速度公式（本节）</text>
+    <text x="218" y="78" fill="#4a6a85" font-size="12">匀变速定义+图像</text>
+    <text x="218" y="98" fill="#4a6a85" font-size="12">v = v₀ + at</text>
+    <rect x="296" y="30" width="128" height="86" rx="9" fill="#f5f1f8" stroke="#8a6ba8" stroke-width="1.5"/>
+    <text x="360" y="62" fill="#6b4a8a" font-weight="bold">2.3 位移公式</text>
+    <text x="360" y="88" fill="#6e5a85" font-size="12">x = v₀t + ½at²</text>
+    <rect x="436" y="30" width="128" height="86" rx="9" fill="#f5f1f8" stroke="#8a6ba8" stroke-width="1.5"/>
+    <text x="500" y="62" fill="#6b4a8a" font-weight="bold">2.4 自由落体</text>
+    <text x="500" y="88" fill="#6e5a85" font-size="12">匀变速实例</text>
+    <rect x="576" y="30" width="132" height="86" rx="9" fill="#faf5f0" stroke="#b8860b" stroke-width="1.5"/>
+    <text x="642" y="62" fill="#8a5a1a" font-weight="bold">第一章四件套</text>
+    <text x="642" y="88" fill="#7a6a55" font-size="12">质点·位移·速度·a</text>
+  </g>
+  <line x1="140" y1="73" x2="148" y2="73" stroke="#2266aa" stroke-width="2.2" marker-end="url(#arG)"/>
+  <line x1="284" y1="73" x2="292" y2="73" stroke="#2266aa" stroke-width="2.2" marker-end="url(#arG)"/>
+  <line x1="424" y1="73" x2="432" y2="73" stroke="#2266aa" stroke-width="2.2" marker-end="url(#arG)"/>
+  <text x="360" y="158" fill="#666" font-size="12.5" text-anchor="middle">第二章主线：实验出图像（2.1）→ 图像生公式（2.2）→ 公式算位移（2.3）→ 特例应用（2.4）</text>
+</svg>
+<div class="figcap">图G｜这张图在说什么：本节在第二章的位置——2.1 实验画出斜直线，本节把斜直线升格为定义与公式 v = v₀ + at；下一节 2.3 用同款思路（图像面积）推出位移公式。</div>
+</div>
+
+<h3>考位锚（T11）·高考怎么考</h3>
+<p class="small">· 考什么：v = v₀ + at 的直接计算、刹车问题（求停止时间＋"刹车陷阱"：停止后不再倒回）、v-t 图像斜率与加速度的对应。<br>· 怎么考：运动学小题（汽车/列车/探测器情境给三个量求第四个量）＋实验题纸带数据的延伸分析；与 2.3 位移公式组合成大题是本章核心考法。<br>· 真题锚：候采——对证源卷源池（v2.6/v2.7）暂未录入 2.2 对口卷源，不代拟；候池内补录后回填。</p>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① 移项小技巧：v = v₀ + at 三个已知量可以解任何一个未知量——求 a 就移项 a = (v − v₀)/t，求 t 同理（教材例题第2问就是这么解的）。② "刹车陷阱"预演：如果题目问"刹车后 4 s 末的速度"而车 2.67 s 就停了，答案不是 v = v₀ + a×4（会算出倒车的负速度），要先算停止时间、发现 4 s &gt; 2.67 s，答案就是 0——这是考题最爱埋的坑，2.4 节自由落体之后会遇到完整版。③ 教材例题里"36 km/h = 10 m/s"的换算建议养成"拿到题先统一国际单位制"的习惯，能防掉一半的数值坑。
+</div>
+
+<div class="foot">
+<em>素材源溯源（foot区·豁免条款）：影印源＝国家中小学智慧教育平台教材电子版·普通高中教科书·物理必修 第一册（人教版）·contentId 708256b6-6f06-4d14-89c7-4df16dfe3b81·ts=1787023183495（1031午后详情API实时取）·图44-47→印刷页p39-42·偏移N-5·本节影印范围p39-41（2.3节名页p42=图47为节界边界锚）·影印对照逐页直读（p39页脚"第二章 匀变速直线运动的研究 39"/p40页脚"40"/p41页脚"41"/p42节名"3 匀变速直线运动的位移与时间的关系"）·节界与A线2.1认领行（d4a9a96"p39=2.2节名页"）互证一致·本件为自学辅导讲义·教材原文引用仅作教学讲解用途·原文以纸质教材为准。</em>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物2.5 核酸是遗传信息的携带者 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: 2px; }
+  .talk { background: #1c2129; border: 1px solid #2a3444; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .talk .t { color: #4a9eff; font-weight: bold; }
+  .box { background: #232a36; border: 1px solid #3a4658; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .key { background: #1a2230; border-left: 4px solid #ffd166; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .try { background: #14202e; border: 1px dashed #4a9eff; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .try .t { color: #4a9eff; font-weight: bold; }
+  .ans { display: block; margin-top: 8px; color: #9fd0ff; }
+  .alt { background: #241f14; border: 1px solid #6b5b2a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .alt .t { color: #ffd166; font-weight: bold; }
+  .check { background: #14231a; border: 1px solid #2e5c40; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .check .t { color: #7ee2a8; font-weight: bold; }
+  .note-red { color: #ff9b9b; font-size: 15px; }
+  .fig { margin: 22px 0; }
+  .figcap { color: #7d8a99; font-size: 14px; margin-top: 6px; }
+  .detail { color: #9aa7b8; font-size: 15px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; }
+  th, td { border: 1px solid #33405a; padding: 8px 10px; text-align: left; }
+  th { background: #1d2735; color: #cfe0f5; }
+  .ul-blue { border-left: 3px solid #2e5c8a; padding-left: 16px; margin: 10px 0; }
+  li { margin: 8px 0; }
+  mark { background: #2d4a7a; color: #cfe6ff; padding: 1px 4px; border-radius: 3px; }
+  .markbox { background: #2d4a7a; color: #cfe6ff; display: inline-block; padding: 2px 6px; border-radius: 4px; }
+  .foot { margin-top: 50px; padding-top: 18px; border-top: 1px solid #2a3444; color: #5c6b80; font-size: 13px; line-height: 1.7; }
+  @media print {
+    body { background: #fff !important; color: #111 !important; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3, p, li, td, th, .talk, .box, .key, .try, .alt, .check, .figcap, .detail, .ans { color: #111 !important; background: #fff !important; }
+    .talk, .box, .key, .try, .alt, .check { border: 1px solid #999 !important; }
+    .try { border-style: dashed !important; }
+    mark { background: #ffe28a !important; color: #111 !important; }
+    .step-tag, .talk .t, .try .t, .alt .t, .check .t { background: #d9ecff !important; color: #111 !important; border: 1px solid #7ab3d8; }
+    .foot { color: #555 !important; border-top: 1px solid #999 !important; }
+    .note-red { color: #a03030 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>细胞里的"说明书"存放在哪、由什么写成？</h1>
+<p class="sub">生物必修一（人教2019）· 第2章 组成细胞的分子 · 第5节 核酸是遗传信息的携带者 · 零基础首学版 v1.0 · 前置只有一课——2.4的"氨基酸通式"和"基本单位→大分子"思路，没读过也不怕，这里会重新讲一遍。配套教材：p34-36（对照教材影印逐页写成，原文引用都标了页码；p33=上一节史话栏目页、p37=本章小结已实锚——本节是第2章的收口节）。</p>
+
+<ul class="ul-blue"><b>读完这节你能：</b>
+<li>说出核酸的两大类（DNA和RNA）以及它们在真核细胞中的分布（p34）。</li>
+<li>说清核苷酸的"三件套"（碱基+五碳糖+磷酸），并区分DNA和RNA各自用的核苷酸与碱基（p34-35）。</li>
+<li>用一张维恩图说清DNA与RNA的异同，并解释"4种核苷酸凭什么能写下海量遗传信息"（p35）。</li>
+<li>用一句话说清"生物大分子以碳链为骨架"，并顺出第2章的收口账（p35-36）。</li>
+</ul>
+
+<div class="box"><b>30秒立好地基（预备块）</b><br>
+初中你已经见过：<b>遗传物质</b>这个词、"细胞核是遗传信息库"这句话；数格子算排列（3件衣服×2条裤子=6种搭配）你也早就会。本节全部新词就五个，都在用到时就地解释：<b>碱基</b>（写在"说明书"里的字母）、<b>五碳糖</b>（含5个碳原子的糖）、<b>单体与多聚体</b>（珠子与珠串）、<b>脱氧核糖</b>（比核糖少一个氧原子的五碳糖）、<b>维恩图</b>（两个圈套着看异同）。不引入化学结构式，DNA双螺旋、基因这些词本节也不展开——那是必修2的"下一站"。</div>
+
+<div class="talk"><span class="t">开场 · 先看一个真实场景（教材p34问题探讨照录）</span><br>
+"DNA指纹技术在案件侦破工作中有重要的用途。刑侦人员将从案发现场收集到的血液、头发等样品中提取的DNA，与犯罪嫌疑人的DNA进行比较，就有可能为案件的侦破提供证据。"讨论两问：1.为什么DNA能够提供犯罪嫌疑人的信息？2.你还能说出DNA鉴定技术在其他方面的应用吗？<br>
+<span class="detail">（本件试答并显式标注：①因为每个人的DNA"字母序列"各不相同，比对序列就像比对指纹——答案就藏在教材p35正文里，往下读就明白；②亲子鉴定、遇难者身份确认、濒危物种走私鉴定、historically亲子关系溯源等都用到——此条为自编举例，教材只给了情境。）</span><br><br>
+<span class="t">本节聚焦（p34照录）</span>：①DNA与RNA在化学组成上有什么异同点？②核苷酸的排列顺序与遗传信息有什么关系？③怎样理解生物大分子以碳链作为基本骨架？——三问正好是下面三步的路标。</div>
+
+<h2><span class="step-tag">第一步</span>核酸是什么岗位：两类、分布在哪（p34）</h2>
+<p>"核酸"，顾名思义，就是从细胞核中提取的具有酸性的物质（p34原句）。教材给出的定义链：<mark class="nb">核酸（nucleic acid）包括两大类：一类是脱氧核糖核酸（deoxyribonucleic acid），简称DNA；另一类是核糖核酸（ribonucleic acid），简称RNA。</mark></p>
+<p>在真核细胞中的分布（p34照录）：<mark class="nb">真核细胞的DNA主要分布在细胞核中，线粒体、叶绿体内也含有少量的DNA。RNA主要分布在细胞质中。</mark>——注意"主要"两个字：DNA不是只住在细胞核里（验一验会考这个坑）。</p>
+<p>岗位一句话（p35加粗句照录）：<mark class="nb">核酸是细胞内携带遗传信息的物质，在生物体的遗传、变异和蛋白质的生物合成中具有极其重要的作用。</mark></p>
+
+<h2><span class="step-tag">第二步</span>把"说明书"拆到最小字：核苷酸三件套（p34-35）</h2>
+<p>核酸也是生物大分子（p34）。它的基本单位是<b>核苷酸</b>：<mark class="nb">每个核酸分子是由几十个乃至上亿个核苷酸连接而成的长链</mark>（p34·图2-14）。<mark class="nb">一个核苷酸是由一分子含氮的碱基、一分子五碳糖和一分子磷酸组成的。</mark>根据五碳糖的不同，可以将核苷酸分为<b>脱氧核糖核苷酸</b>（简称脱氧核苷酸）和<b>核糖核苷酸</b>（p34·图2-15）。</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 970 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="核苷酸三件套拆解示意（自绘）">
+  <rect x="0" y="0" width="970" height="330" fill="#101826"/>
+  <text x="485" y="36" fill="#cfe0f5" font-size="17" text-anchor="middle" font-weight="bold">核苷酸 = 三件套（自绘示意·对照教材p34-35图2-14/2-15口径）</text>
+  <rect x="60" y="80" width="200" height="150" rx="10" fill="#7a4a2a"/>
+  <text x="160" y="140" text-anchor="middle" fill="#ffd9b3" font-size="26" font-weight="bold">磷酸</text>
+  <text x="160" y="170" text-anchor="middle" fill="#ffd9b3" font-size="14">（"接头零件"）</text>
+  <rect x="380" y="80" width="200" height="150" rx="10" fill="#2a5a7a"/>
+  <text x="480" y="140" text-anchor="middle" fill="#bfe6ff" font-size="26" font-weight="bold">五碳糖</text>
+  <text x="480" y="168" text-anchor="middle" fill="#bfe6ff" font-size="14">DNA用脱氧核糖</text>
+  <text x="480" y="190" text-anchor="middle" fill="#bfe6ff" font-size="14">RNA用核糖（多一个氧）</text>
+  <rect x="700" y="80" width="200" height="150" rx="10" fill="#2a7a4a"/>
+  <text x="800" y="140" text-anchor="middle" fill="#c9ffd9" font-size="26" font-weight="bold">含氮碱基</text>
+  <text x="800" y="168" text-anchor="middle" fill="#c9ffd9" font-size="14">（"说明书里的字母"）</text>
+  <text x="800" y="190" text-anchor="middle" fill="#c9ffd9" font-size="14">A G C T U 五种</text>
+  <line x1="260" y1="155" x2="380" y2="155" stroke="#5c8ab0" stroke-width="3"/>
+  <line x1="580" y1="155" x2="700" y2="155" stroke="#5c8ab0" stroke-width="3"/>
+  <text x="485" y="280" fill="#5c6b80" font-size="14" text-anchor="middle">三件凑一件：1个碱基+1个五碳糖+1个磷酸=1个核苷酸；糖的不同（差一个氧）决定它是DNA的砖还是RNA的砖。</text>
+</svg>
+<p class="figcap">这张图在说什么：把核苷酸拆成三个零件看——磷酸是接头，碱基是字母，五碳糖是身份牌。教材p35图2-15画了两种核苷酸的完整结构式，本图为自绘示意（已标"示意"），化学结构细节在化学课。</p>
+</div>
+
+<div class="try"><span class="t">验一验①（先答，再看答案）</span><br>
+判断：①组成核苷酸的三件套=碱基+五碳糖+磷酸；②DNA只分布在细胞核中。<span class="ans">答案：①√（p34原句）；②×——p34原句是"真核细胞的DNA<mark>主要</mark>分布在细胞核中"，线粒体、叶绿体内还有少量DNA；RNA主要分布在细胞质。两处"主要"是考点暗桩。</span><br>
+<span class="detail">易错变形：核糖和脱氧核糖差在哪？——差一个氧原子（脱氧=去掉氧），据此可从五碳糖种类判断核苷酸归DNA还是RNA（p34-35）。</span></div>
+
+<h2><span class="step-tag">第三步</span>DNA与RNA异同：一张维恩图说清（p35）</h2>
+<p>教材原句：<mark class="nb">DNA和RNA各含4种碱基，但是组成二者的碱基种类有所不同（图2-16）。</mark><mark class="nb">DNA是由脱氧核苷酸连接而成的长链，RNA则是由核糖核苷酸连接而成的长链。一般情况下，在生物体的细胞中，DNA由两条脱氧核苷酸链构成，RNA由一条核糖核苷酸链构成。</mark></p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 970 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DNA与RNA化学组成异同维恩图重绘（对照教材图2-16）">
+  <rect x="0" y="0" width="970" height="300" fill="#101826"/>
+  <ellipse cx="300" cy="165" rx="250" ry="110" fill="#2a5a7a" opacity="0.75"/>
+  <ellipse cx="670" cy="165" rx="250" ry="110" fill="#7a6a2a" opacity="0.75"/>
+  <text x="120" y="55" fill="#8fc6ff" font-size="18" font-weight="bold">DNA</text>
+  <text x="840" y="55" fill="#ffe28a" font-size="18" font-weight="bold">RNA</text>
+  <text x="180" y="150" fill="#cfe6ff" font-size="15" text-anchor="middle">脱氧核糖</text>
+  <text x="180" y="180" fill="#cfe6ff" font-size="15" text-anchor="middle">胸腺嘧啶（T）</text>
+  <text x="480" y="115" fill="#ffffff" font-size="15" text-anchor="middle">磷酸</text>
+  <text x="480" y="145" fill="#ffffff" font-size="15" text-anchor="middle">腺嘌呤（A）·鸟嘌呤（G）</text>
+  <text x="480" y="175" fill="#ffffff" font-size="15" text-anchor="middle">胞嘧啶（C）</text>
+  <text x="800" y="150" fill="#fff3c9" font-size="15" text-anchor="middle">核糖</text>
+  <text x="800" y="180" fill="#fff3c9" font-size="15" text-anchor="middle">尿嘧啶（U）</text>
+  <text x="485" y="275" fill="#5c6b80" font-size="13" text-anchor="middle">重绘自教材p35图2-16（维恩图·重绘已标注）——中间重叠区=两者共有，左右两瓣=各自独有。</text>
+</svg>
+<p class="figcap">这张图在说什么：DNA和RNA像两套乐高——磷酸、A、G、C三样通用；DNA专属"脱氧核糖+T"，RNA专属"核糖+U"。</p>
+</div>
+
+<h3>对账表：5种碱基、8种核苷酸（自编归纳·数字照录口径）</h3>
+<table>
+<tr><th>口径</th><th>DNA</th><th>RNA</th><th>合计</th></tr>
+<tr><td>五碳糖</td><td>脱氧核糖</td><td>核糖</td><td>2种糖</td></tr>
+<tr><td>碱基</td><td>A、G、C、T</td><td>A、G、C、U</td><td><b>5种</b>（A G C共用·T U各自独有）</td></tr>
+<tr><td>核苷酸（基本单位）</td><td>4种脱氧核苷酸</td><td>4种核糖核苷酸</td><td><b>8种</b>（4+4）</td></tr>
+<tr><td>链数（一般情况）</td><td>2条脱氧核苷酸链</td><td>1条核糖核苷酸链</td><td>——</td></tr>
+</table>
+<p class="detail">（对账表为自编整理，口径全部照录教材p34-35原文与图2-16；"8种核苷酸、5种碱基"两数在练习4里直接考，见第六步。）</p>
+
+<div class="try"><span class="t">验一验②（先答，再看答案）</span><br>
+①DNA与RNA共有的碱基有哪些？②T、U分别是谁的专属？③"组成DNA和RNA的核苷酸共几种、碱基共几种？"<span class="ans">答案：①A、G、C（磷酸也共有）；②T专属DNA、U专属RNA（图2-16口径）；③核苷酸8种（4+4）、碱基5种——用对账表自检。</span><br>
+<span class="detail">易错变形：某DNA片段的一段用了6个脱氧核苷酸，其中碱基U能出现吗？——不能。DNA的砖里没有U（U属RNA专属），出现U说明你拿错了砖盒。</span></div>
+
+<h2><span class="step-tag">第四步</span>4种字母怎么写出海量说明书：排列顺序与遗传信息（p35）</h2>
+<p>教材p35把问题探讨的谜底直接揭晓：<mark class="nb">组成DNA的脱氧核苷酸虽然只有4种，但是如果数量不限，在连成长链时，排列顺序就是极其多样的，它的信息容量自然就非常大了。</mark><mark class="nb">脱氧核苷酸的排列顺序储存着生物的遗传信息，DNA分子是储存、传递遗传信息的生物大分子</mark>；部分病毒的遗传信息储存在RNA中，如HIV（人类免疫缺陷病毒）、SARS（严重急性呼吸综合征）病毒等（p35照录）。</p>
+<p>数感自编算例（自编·sympy验算）：4种砖、长度100的链，理论排列数=4¹⁰⁰，约1.6×10⁶⁰种（61位数·sympy验证）——教材p34说"几十个乃至上亿个核苷酸"，真实DNA链的容量更是天文数字。这就是"说明书"能写下每个个体不同序列的原因，也回应了开场"DNA指纹"两问。</p>
+
+<div class="try"><span class="t">验一验③（先答，再看答案）</span><br>
+判断：①"组成DNA的脱氧核苷酸只有4种，所以DNA能装的信息很少"；②部分病毒的遗传信息储存在RNA中。<span class="ans">答案：①×——p35原句"如果数量不限，在连成长链时，排列顺序就是极其多样的"，4¹⁰⁰已是61位数；②√（p35照录·HIV、SARS病毒等）。</span><br>
+<span class="detail">易错变形：储存遗传信息的是"碱基的种类"还是"脱氧核苷酸的排列顺序"？——是排列顺序（p35加粗句原口径）；碱基只有4种、顺序才有海量组合。</span></div>
+<div class="key">知识链接（p35栏目照录）：DNA和RNA在生物遗传中的作用及联系，参见必修2《遗传与进化》第3章和第4章。——本节只负责"核酸是什么、由什么组成"，基因与遗传机制是下一册的戏份。</div>
+
+<h2><span class="step-tag">第五步</span>收口第2章：生物大分子以碳链为骨架（p35-36）</h2>
+<p>教材在本节末尾给第2章收口（p35-36照录）：在构成细胞的化合物中，<b>多糖、蛋白质、核酸都是生物大分子</b>。<mark class="nb">组成多糖的基本单位是单糖，组成蛋白质的基本单位是氨基酸，组成核酸的基本单位是核苷酸，这些基本单位称为单体。每一个单体都以若干个相连的碳原子构成的碳链为基本骨架。生物大分子是由许多单体连接成的多聚体</mark>（图2-17），因此，生物大分子也是以碳链为基本骨架的。<mark class="nb">正是由于碳原子在组成生物大分子中的重要作用，科学家才说"碳是生命的核心元素""没有碳，就没有生命"。</mark></p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 970 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="生物大分子三兄弟单体多聚体对照图（重绘教材图2-17）">
+  <rect x="0" y="0" width="970" height="250" fill="#101826"/>
+  <text x="485" y="34" fill="#cfe0f5" font-size="16" text-anchor="middle" font-weight="bold">三兄弟＝同一种玩法：单体串成多聚体（重绘教材p36图2-17）</text>
+  <g font-size="14" fill="#d8dee6">
+    <text x="70" y="85" text-anchor="middle" fill="#8fc6ff">多糖</text>
+    <circle cx="150" cy="80" r="13" fill="#2a5a7a"/><circle cx="200" cy="80" r="13" fill="#2a5a7a"/><circle cx="250" cy="80" r="13" fill="#2a5a7a"/><circle cx="300" cy="80" r="13" fill="#2a5a7a"/><circle cx="350" cy="80" r="13" fill="#2a5a7a"/>
+    <line x1="390" y1="80" x2="440" y2="80" stroke="#5c8ab0" stroke-width="2" stroke-dasharray="6 4"/>
+    <polygon points="480,66 500,80 480,94 460,80" fill="#3f7fd6"/><text x="560" y="85" fill="#8fc6ff">单体=单糖</text>
+    <text x="70" y="150" text-anchor="middle" fill="#8fd6ff">蛋白质</text>
+    <circle cx="150" cy="145" r="13" fill="#2a7a4a"/><circle cx="200" cy="145" r="13" fill="#2a7a4a"/><circle cx="250" cy="145" r="13" fill="#2a7a4a"/><circle cx="300" cy="145" r="13" fill="#2a7a4a"/><circle cx="350" cy="145" r="13" fill="#2a7a4a"/>
+    <line x1="390" y1="145" x2="440" y2="145" stroke="#5cab7d" stroke-width="2" stroke-dasharray="6 4"/>
+    <circle cx="480" cy="145" r="13" fill="#2a7a4a"/><text x="560" y="150" fill="#8fd6ff">单体=氨基酸（2.4）</text>
+    <text x="70" y="215" text-anchor="middle" fill="#ffd9b3">核酸</text>
+    <circle cx="150" cy="210" r="13" fill="#7a4a2a"/><circle cx="200" cy="210" r="13" fill="#7a4a2a"/><circle cx="250" cy="210" r="13" fill="#7a4a2a"/><circle cx="300" cy="210" r="13" fill="#7a4a2a"/><circle cx="350" cy="210" r="13" fill="#7a4a2a"/>
+    <line x1="390" y1="210" x2="440" y2="210" stroke="#b08a5c" stroke-width="2" stroke-dasharray="6 4"/>
+    <polygon points="480,196 500,210 480,224 460,210" fill="#7a4a2a"/><text x="560" y="215" fill="#ffd9b3">单体=核苷酸（本节）</text>
+  </g>
+  <text x="485" y="243" fill="#5c6b80" font-size="13" text-anchor="middle">每一颗"珠子"（单体）内部都是碳链当骨架——所以生物大分子也是以碳链为基本骨架（p36）。</text>
+</svg>
+<p class="figcap">这张图在说什么：第2章讲的所有大分子是同一套积木逻辑——单体串多聚体；串糖类、氨基酸、核苷酸的"线"都是碳链。</p>
+</div>
+
+<p>第2章收口段（p36照录）：<mark class="nb">以碳链为骨架的多糖、蛋白质、核酸等生物大分子，构成细胞生命大厦的基本框架；糖类和脂质提供了生命活动的重要能源；水和其他物质一起，共同承担着构建细胞、参与细胞生命活动等重要功能。细胞中的这些化合物，含量和比例处在不断变化之中，但又保持相对稳定，以保证细胞生命活动的正常进行。</mark></p>
+<p class="note-red">红笔批注：这段是第2章的"总回执"——四类有机物+水无机盐各就各位。考试里"含量和比例处在不断变化之中，但又保持相对稳定"这句要会还原（动态稳定≠一成不变）。</p>
+<p>学科交叉（p36栏目照录·指路）：碳原子最外层4个电子、不易失得电子形成离子，原子间通过共用电子对形成<b>共价键</b>，多个碳原子可相互结合形成稳定的碳链——化学细节详见化学教科书（教材原口径）。</p>
+
+<div class="try"><span class="t">验一验④（先答，再看答案）</span><br>
+配对：多糖—（　）、蛋白质—（　）、核酸—（　）；再答：'生物大分子以碳链为骨架'中，'骨架'指谁的骨架？<span class="ans">答案：多糖—单糖、蛋白质—氨基酸、核酸—核苷酸（p35-36·图2-17口径）；每个单体都以若干个相连的碳原子构成的碳链为基本骨架→由单体连成的多聚体（生物大分子）也以碳链为基本骨架。</span><br>
+<span class="detail">易错变形：水和无机盐属于生物大分子吗？——不属于。p35原句限定"多糖、蛋白质、核酸都是生物大分子"，三兄弟口径；水与无机盐是2.2讲的"配角担当"，别混入大分子行列。</span></div>
+
+<div class="alt"><span class="t">卡住了？（出路块一·脱氧核糖vs核糖）</span>记不住两种糖？给个最小够用版：它俩都是五碳糖，唯一区别是核糖"多一个氧"。认身份只看糖：<b>带"脱氧"俩字=核糖减氧=DNA的砖</b>；普通"核糖"=RNA的砖。糖名第一个字连读——"<b>脱</b>氧核糖核苷酸→<b>D</b>NA"，首字母D帮你锁死。化学结构细节移交化学课。</div>
+<div class="alt"><span class="t">卡住了？（出路块二·维恩图怎么看）</span>两套乐高比异同，先看"共有区"再看"专属区"：共有=磷酸+A、G、C；专属=糖（一种各一个）和T/U（一种各一个）。考试问"异同"，就按"共有三样、专属各两样（1糖+1碱基）"的口播作答。</div>
+
+<h2><span class="step-tag">第六步</span>教材练习与应用（p36）要点速览</h2>
+<div class="box"><b>一、概念检测（题干照录·答案为本件试答并显式标注）</b><br>
+1.判断：(1)DNA和RNA的基本组成单位是核苷酸。（<b>√</b>·p34"核苷酸是核酸的基本组成单位"）(2)核酸是生物的遗传物质，仅存在于细胞核中。（<b>×</b>·RNA主要分布在细胞质，DNA在线粒体、叶绿体也有，"仅"字错·p34）(3)构成DNA的单体是脱氧核苷酸。（<b>√</b>·p34）<br>
+2.组成DNA的五碳糖是（<b>C</b>）A.核糖 B.葡萄糖 C.脱氧核糖 D.麦芽糖——推理链：DNA的糖=脱氧核糖（p34-35），核糖属RNA，葡萄糖是六碳糖，麦芽糖是二糖。<br>
+3.不是核苷酸组成成分的是（<b>C</b>）A.碱基 B.核糖 C.甘油 D.磷酸——推理链：甘油是脂质（脂肪）的零件，与核苷酸三件套无关（2.3+p34口径）。<br>
+4.豌豆叶肉细胞中的核酸，含有的碱基种类是（<b>C·5种</b>）A.1种 B.4种 C.5种 D.8种——推理链：叶肉细胞是真核细胞，同时含DNA和RNA（p34分布口径），碱基=A、G、C共用+T（DNA专属）+U（RNA专属）=5种；若问核苷酸种类则是8种——本题问"碱基种类"，答5种。<br>
+<b>二、拓展应用（题干照录·要点试答）</b>：三段宣传语"一切疾病都与基因受损有关；基因是核酸片段；补充某些特定的核酸，可增强基因的修复能力"——(1)逻辑漏洞要点：第一句"一切"绝对化；第三句以"基因是核酸片段"偷换出"补核酸=修基因"的链条，口服核酸会被消化分解，不会按需组装进基因（要点试答·不展开教参口径）；(2)回应要点：礼貌指出广告的绝对化表述+请对方出示科学依据，合理膳食即可（要点试答）。</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<div class="key"><b>带走三句：</b><br>
+①<mark class="nb">核酸分DNA与RNA两类：真核细胞DNA主要在细胞核（线粒体叶绿体少量），RNA主要在细胞质；核酸是细胞内携带遗传信息的物质。</mark>（p34-35）<br>
+②核苷酸三件套=碱基+五碳糖+磷酸；DNA用脱氧核糖+A G C T（4种脱氧核苷酸），RNA用核糖+A G C U（4种核糖核苷酸）——核苷酸8种、碱基5种（p34-35·图2-16）。<br>
+③4种砖靠排列顺序写下遗传信息（自编算例4¹⁰⁰≈1.6×10⁶⁰种）；多糖蛋白质核酸=单体串多聚体、以碳链为骨架——这是第2章的总收口（p35-36）。</div>
+
+<div class="box"><b>高考怎么考（考位锚·三行内）</b><br>
+①"8种核苷酸/5种碱基"与分布"主要"字眼——判断题与选择高频（对应练习1/4）<br>
+②DNA与RNA异同维恩图——双链单链、T/U专属辨析（对应图2-16）<br>
+③排列顺序→信息容量——结合具体长度的计算或概念判断（本节自编4ⁿ算例同型）<br>
+<span class="detail">真题锚：对证源清单卷源池无生物2.5行，如实候采不代拟（标准v2.3纪律）。</span></div>
+
+<div class="try"><span class="t">自测四连（先答，再看答案）</span><br>
+1.（教材p36原题变序）某同学说"DNA存在于细胞核，RNA存在于细胞质，两者井水不犯河水"。用教材p34原句纠正他。<span class="ans">答案：DNA<mark>主要</mark>分布在细胞核中，线粒体、叶绿体内也含有少量DNA；RNA<mark>主要</mark>分布在细胞质中——"主要"≠"只在"。</span><br>
+2.（自编·已标注）一条含201个脱氧核苷酸的DNA单链片段，理论上有多少种排列？写算式即可。<span class="ans">答案：4²⁰¹种（4种砖、每位4选1）——数量级约10¹²¹（sympy验证位数），比4¹⁰⁰更大，"信息容量非常大"由此可感。</span><br>
+3.（教材p36拓展应用同向）如果有人向你推销"核酸保健品"，你用本节哪两句话回应？<span class="ans">答案（要点）：①口服的核酸经消化会分解，不会原样进入细胞（消化口径沿2.4蛋白质同理·延伸自编）；②广告"一切……都""可增强基因修复"属绝对化与偷换概念（p36拓展应用要点试答）。</span><br>
+4.（自编·已标注）把第2章五节串成一句话：2.1总清单→2.2水与无机盐→2.3糖类脂质→2.4蛋白质→2.5核酸，各自的关键词是什么？<span class="ans">答案（自编归纳）：总清单（元素与化合物）→溶剂与离子→能源与储能→承担者→携带者；收口句"碳链为骨架、动态稳定"。</span></div>
+
+<div class="check"><span class="t">课外 · 想多走一步？（可选·显式标注自编/延伸，不冒充教材内容）</span><br>
+①HIV、SARS病毒的遗传信息储存在RNA里（p35原句）——它们没有细胞结构，联动1.1"细胞是生命活动的基本单位"再想一层：没有细胞的生命也能"作案"，但离不开活细胞环境（延伸讨论·必修后续展开）。<br>
+②DNA指纹"每人不同"的根本原因（p35）延伸：同卵双胞胎的DNA指纹是否相同？——留给你查资料后自答（开放讨论·自编留白）。<br>
+③碳链骨架→"没有碳，就没有生命"（p36）延伸：为什么是碳而不是硅？——化学视角开放问题，留给化学课衔接（自编留白）。</div>
+
+<h2><span class="step-tag">下一站</span>2.5在全册的位置（第2章收口）</h2>
+<div class="fig">
+<svg width="100%" viewBox="0 0 970 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第1-3章叙事线（你在2.5·第2章末节）">
+  <rect x="0" y="0" width="970" height="210" fill="#101826"/>
+  <g font-size="14" fill="#d8dee6">
+    <rect x="30" y="70" width="130" height="64" rx="8" fill="#1c2a3e"/><text x="95" y="96" text-anchor="middle" fill="#8fc6ff">1.1-1.2</text><text x="95" y="118" text-anchor="middle" fill="#7d8a99" font-size="12">走近细胞</text>
+    <rect x="190" y="70" width="450" height="64" rx="8" fill="#24354d"/><text x="415" y="96" text-anchor="middle" fill="#8fc6ff">2.1-2.5 组成细胞的分子（你在2.5·收口节）</text><text x="415" y="118" text-anchor="middle" fill="#7d8a99" font-size="12">总清单→水盐→糖脂→蛋白质→核酸</text>
+    <rect x="670" y="70" width="270" height="64" rx="8" fill="#1c2a3e"/><text x="805" y="96" text-anchor="middle" fill="#8fc6ff">第3章 细胞的基本结构</text><text x="805" y="118" text-anchor="middle" fill="#7d8a99" font-size="12">分子如何搭成"楼"（p39章题页）</text>
+    <line x1="160" y1="102" x2="190" y2="102" stroke="#4a9eff" stroke-width="3"/>
+    <line x1="640" y1="102" x2="670" y2="102" stroke="#4a9eff" stroke-width="3"/>
+  </g>
+  <text x="485" y="180" fill="#5c6b80" font-size="13" text-anchor="middle">第2章把"零件清单"开完（以碳链为骨架收口），第3章开始回答"零件怎么搭成细胞这座楼"。</text>
+</svg>
+<p class="figcap">这张图在说什么：本节是第2章的最后一站——教材把"生物大分子以碳链为骨架"和第2章收口段都放在这里；下一册书页翻到第3章"细胞的基本结构"，从"分子清单"进入"结构装配"。</p>
+</div>
+
+<div class="foot">零基础首学版 v1.0（标准v2.3条款落地：节首清单＋预备块＋六步推进＋SVG示意图×4全带"这张图在说什么"＋验一验×4含易错变形×4＋alt卡住出路×2＋收口三句＋自测四连＋考位锚块＋位置图＋@media print打印层；正文答案就地展开，自编内容全部显式标注） · 事实层素材源：人教2019必修一p34-36官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=9d522562-b529-446c-9b5b-084812beee6e·印刷页34-36=图43-45·ts=1787291655029·图N→印刷页N-9映射沿本册定标·影印图存席位私有目录p12_jc/·原件不入仓） · 节界实锚=2.5全节p34-36（p34节题页含问题探讨与本节聚焦·p35图2-15/2-16与遗传信息与碳链骨架开头·p36图2-17与第2章收口段与学科交叉与练习与应用全栏·p37=本章小结（章末构件）止锚直读核定·远锚p39=第3章章题页直读核定·p38夹逼推定未经直读如实注明；p33边界沿2.4件在案锚） · 核酸两大类全称与简称、真核细胞分布"主要"句、核苷酸三件套、几十个乃至上亿个、DNA两条链RNA一条链、碱基5种核苷酸8种口径、HIV/SARS、4种脱氧核苷酸排列极其多样、碳是生命的核心元素、单体多聚体、第2章收口段、练习与应用全栏题干均p34-36影印逐字锚定 · 教材原题（p34问题探讨/p36概念检测与拓展应用）题干照录、答案为本件试答并显式标注；自编内容（三件套图、对账表、4ⁿ算例、口诀、出路类比、课外三则）全部显式标注"自编/自绘/试答" · 本节自编算例3组经sympy机器代验通过（留痕见随件附件2） · 设计标准：零预设 · 一次一步 · 随读随验 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源</div>
+</div>
+</body>
+</html>
