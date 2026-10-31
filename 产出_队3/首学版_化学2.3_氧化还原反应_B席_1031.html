@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>化学2.3 氧化还原反应 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  b { color: #ffd479; }
+  .key { background: #233043; border-left: 4px solid #4a9eff; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .nb { background: #3a2f1a; border-left: 4px solid #ffd479; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .try { background: #1c2b22; border-left: 4px solid #6fcf97; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .ans { color: #6fcf97; }
+  .pit { background: #2e1f22; border-left: 4px solid #eb5757; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .alt { background: #1f2733; border: 1px dashed #4a9eff; padding: 12px 16px; border-radius: 6px; margin: 18px 0; color: #a9c4e4; }
+  .box { background: #1d2b3a; border: 1px solid #3a5578; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .kao { background: #2b1f33; border-left: 4px solid #b98cff; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .eq { text-align: center; font-size: 19px; letter-spacing: 1px; margin: 16px 0; color: #eaf2ff; background: #1a222e; border-radius: 8px; padding: 10px 8px; }
+  .fig { text-align: center; margin: 24px 0; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 8px; }
+  .small { font-size: 14px; color: #9aa7b8; }
+  .talk { color: #cfe0f5; background: #1a2433; padding: 14px 18px; border-radius: 8px; margin: 20px 0; }
+  .check { background: #1a2433; padding: 14px 18px; border-radius: 8px; margin: 20px 0; }
+  .check li { margin: 6px 0 6px 20px; }
+  .next { background: #14202e; border: 1px solid #2e4a6b; padding: 12px 16px; border-radius: 8px; margin: 30px 0 10px; color: #a9c4e4; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; }
+  th, td { border: 1px solid #3a4a5e; padding: 7px 10px; font-size: 15px; }
+  th { background: #1d2b3a; color: #cfe0f5; }
+  .foot { border-top: 1px solid #2e3a4a; margin-top: 50px; padding-top: 16px; color: #7d8a99; font-size: 12.5px; line-height: 1.7; }
+  .mark { background: #4a3a00; color: #ffe28a; padding: 0 4px; border-radius: 3px; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 0; }
+    h1,h2,h3 { color: #000; }
+    .key { background: #e8f0fe; color: #111; }
+    .nb { background: #fff7dd; color: #111; }
+    .try { background: #eafaf1; color: #111; }
+    .pit { background: #fdecec; color: #111; }
+    .alt { background: #eef4fb; color: #333; }
+    .box,.kao { background: #f2f4f8; color: #111; }
+    .talk,.check { background: #f2f6fb; color: #111; }
+    .eq { background: #eef2f8; color: #000; }
+    .figcap,.sub,.small,.foot { color: #555; }
+    b { color: #8a6d00; }
+    .ans { color: #1d7a46; }
+    .mark { background: #ffe9a8; color: #6b5200; }
+    /* SVG打印兼容：浅底深字（屏显暗主题不变） */
+    .fig svg { background: #f6f8fb; border-radius: 10px; }
+    .fig svg text { fill: #2a3a4e !important; }
+    .fig svg circle { fill: #e8eef6 !important; }
+    .fig svg rect { fill: #eef2f8 !important; stroke-width: 1.6; }
+    .fig svg line, .fig svg path { }
+    .fig svg [stroke="#4a9eff"] { stroke: #2467b8; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>氧化还原反应：谁丢了电子，谁捡了电子——从"化合价变了"追到"电子搬家"</h1>
+<div class="sub">化学 2.3 · 鲁科版《必修 第一册》第2章第3节 · 教材印刷页 p66–75 · 零基础首学版 v1.0（出品：并行搜索员B·队3席B线·1031）</div>
+
+<div class="talk">
+初中你学过一把老尺子：<b>得氧、失氧</b>。碳在氧气里燃烧，碳"得氧"被氧化；氢气把氧化铜还原成铜，氢气"得氧"被氧化、氧化铜"失氧"被还原。这把尺子好用，但教材 p66 的四个实验里藏着一个它解释不了的：把铁丝插进 CuSO₄ 溶液，铁丝上长出红色的"铜树"（图2-3-1）——这个反应和"碳燃烧"很像，可<b>里面根本没有氧气</b>，"得氧失氧"从哪谈起？老地图失效了。这一节我们换一把新尺子：<b>盯住化合价</b>，谁升价、谁降价，一眼分清；再往深处追一层，会发现化合价升降的背后，是<b>电子在微粒之间搬家</b>。
+</div>
+
+<div class="check">
+<b>读完这节你能：</b>
+<li>用<b>化合价</b>判断一个反应是不是氧化还原反应，指出哪个元素升价（被氧化）、哪个降价（被还原）；</li>
+<li>说清它的<b>实质=电子转移</b>，会用<b>双线桥 / 单线桥</b>标出电子转移的方向和数目；</li>
+<li>认出反应里的<b>氧化剂和还原剂</b>，并用"高价态→氧化性、低价态→还原性"预测物质性质；</li>
+<li>说出氧化还原反应的三大用途：<b>预测性质</b>、<b>冶炼金属</b>（热还原/置换/电解）、<b>获得能量</b>（燃料电池）。</li>
+</div>
+
+<div class="nb">
+<b>开讲前的三件预备（都没有就先补这三件）：</b>
+<p>① <b>化合价尺子（本节全程的判断工具）：</b>常见元素在化合物里的价态——K、Na 为 +1，Ca、Mg 为 +2，Al 为 +3，H 为 +1，O 为 −2，Cl 为 −1；<b>单质一律 0 价</b>；化合物里各元素价态的<b>代数和=0</b>（比如 KMnO₄：+1 + Mn + 4×(−2)=0，解出 Mn=+7）。本节所有判断都从"标价态"开始。</p>
+<p>② <b>初中旧定义（即将被升级）：</b>"得氧→被氧化、失氧→被还原"。记住它的适用范围：只对<b>有氧气参与</b>的反应有效。</p>
+<p>③ <b>e⁻ 怎么读：</b>e⁻ 表示 1 个电子，2e⁻ 表示 2 个电子。"失去 1e⁻ × 2"= 每个原子失 1 个电子、共有 2 个原子在失，合计 2 个电子（×2 标的是<b>原子个数</b>，不是电子数）。</p>
+</div>
+
+<h2><span class="step-tag">第①站</span>化合价变了没有：氧化还原反应的"长相"（p66–67）</h2>
+
+<p>教材把四个"铜的化学"摆在一起（p66 联想·质疑，图2-3-1），让我们给它们标价态。化合价一标，高下立判（p67）：</p>
+
+<table>
+<tr><th>反应（p67）</th><th>化合价变化</th><th>判断</th></tr>
+<tr><td>2Cu + O₂ <span class="small">Δ</span> 2CuO</td><td>Cu：0→+2（升）；O：0→−2（降）</td><td class="ans">有升降 → 算</td></tr>
+<tr><td>H₂ + CuO <span class="small">Δ</span> Cu + H₂O</td><td>H：0→+1（升）；Cu：+2→0（降）</td><td class="ans">有升降 → 算</td></tr>
+<tr><td>Fe + CuSO₄ ═══ Cu + FeSO₄</td><td>Fe：0→+2（升）；Cu：+2→0（降）</td><td class="ans">有升降 → 算</td></tr>
+<tr><td>CuSO₄ + 2NaOH ═══ Cu(OH)₂↓ + Na₂SO₄</td><td>Cu、S、O、Na、H 全都没变</td><td class="ans">全没变 → 不算</td></tr>
+</table>
+
+<p>于是定义水到渠成：</p>
+
+<div class="key">在反应过程中<span class="mark">有元素化合价变化</span>的化学反应称为<b>氧化还原反应</b>（redox reaction）（p67）。反应物所含某种（或某些）元素化合价<b>升高</b>的反应称为<b>氧化反应</b>（oxidation）；化合价<b>降低</b>的反应称为<b>还原反应</b>（reduction）（p67）。</div>
+
+<p>注意教材的收尾一句：氧化反应和还原反应是<b>两个对立的过程，相互依存，统一于同一个氧化还原反应之中</b>（p67）——有升必有降，像天平两端，不可能只出现一个。</p>
+
+<div class="try">
+<b>验一验①（30秒）：</b>CH₄ + 2O₂ <span class="small">点燃</span> 2H₂O + CO₂（甲烷燃烧）算不算氧化还原反应？<br>
+<span class="ans">算。C：−4→+4（升·被氧化），O₂ 里的 O：0→−2（降·被还原）；H 不变（+1）。只要有升降就算——和有没有"氧参加"无关，O₂ 在这里只是"恰好是降价的一方"。</span>
+</div>
+
+<div class="pit"><b>坑点1：判断只认"化合价变没变"，不看别的。</b>两个反例夹住它：CaCO₃ <span class="small">高温</span> CaO + CO₂↑——虽然拆成了新物质，但 Ca、C、O 价态全没变，<b>不是</b>氧化还原反应（p74 练习1(1)）；2KMnO₄ <span class="small">Δ</span> K₂MnO₄ + MnO₂ + O₂↑——Mn：+7→+6 和 +4（降），O：−2→0（升），<b>是</b>。别用"有没有单质参加/生成"来当判据，那只是线索。</div>
+
+<h2><span class="step-tag">第②站</span>镜头拉近：升价的背后，是电子在搬家（p67–68）</h2>
+
+<p>化合价为什么会变？教材先让你做一个思想实验（p67 交流·研讨）：金属钠在氯气里剧烈燃烧生成 NaCl——反应前是<b>钠原子</b>（Na，0 价）和<b>氯原子</b>（Cl，0 价），反应后却是 Na⁺ 和 Cl⁻（p67）。从原子变离子，发生了什么？再看一个真实验（p67 图2-3-2）：把铁片和碳棒插进 CuSO₄ 溶液、接上电流表——<b>指针偏转了</b>。电流=电子在流动。这两个线索拼在一起，答案就出来了：</p>
+
+<div class="fig">
+<svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" aria-label="钠与氯气反应的电子转移示意">
+  <circle cx="110" cy="75" r="34" fill="#233043" stroke="#4a9eff" stroke-width="2"/>
+  <text x="110" y="82" fill="#cfe4ff" font-size="20" text-anchor="middle" font-weight="bold">Na</text>
+  <text x="110" y="44" fill="#ffd479" font-size="13" text-anchor="middle">0价</text>
+  <circle cx="310" cy="75" r="34" fill="#233043" stroke="#4a9eff" stroke-width="2"/>
+  <text x="310" y="82" fill="#cfe4ff" font-size="20" text-anchor="middle" font-weight="bold">Cl</text>
+  <text x="310" y="44" fill="#ffd479" font-size="13" text-anchor="middle">0价</text>
+  <defs><marker id="ar1" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="none" stroke="#6fcf97" stroke-width="1.6"/></marker></defs>
+  <line x1="152" y1="75" x2="268" y2="75" stroke="#6fcf97" stroke-width="2.2" marker-end="url(#ar1)"/>
+  <text x="210" y="60" fill="#6fcf97" font-size="14" text-anchor="middle" font-weight="bold">1个电子 e⁻</text>
+  <text x="210" y="100" fill="#7d8a99" font-size="11" text-anchor="middle">钠原子最外层这1个电子"待不住"</text>
+  <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="none" stroke="#9aa7b8" stroke-width="1.4"/></marker></defs>
+  <line x1="110" y1="113" x2="110" y2="157" stroke="#9aa7b8" stroke-width="1.6" marker-end="url(#ar2)"/>
+  <line x1="310" y1="113" x2="310" y2="157" stroke="#9aa7b8" stroke-width="1.6" marker-end="url(#ar2)"/>
+  <circle cx="110" cy="195" r="34" fill="#3a2f1a" stroke="#ffd479" stroke-width="2"/>
+  <text x="110" y="202" fill="#ffe28a" font-size="19" text-anchor="middle" font-weight="bold">Na⁺</text>
+  <text x="110" y="168" fill="#ffd479" font-size="13" text-anchor="middle">+1价（升）</text>
+  <circle cx="310" cy="195" r="34" fill="#1c2b22" stroke="#6fcf97" stroke-width="2"/>
+  <text x="310" y="202" fill="#a9ecc4" font-size="19" text-anchor="middle" font-weight="bold">Cl⁻</text>
+  <text x="310" y="168" fill="#6fcf97" font-size="13" text-anchor="middle">−1价（降）</text>
+  <line x1="152" y1="195" x2="268" y2="195" stroke="#b98cff" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#ar3)"/>
+  <defs><marker id="ar3" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="none" stroke="#b98cff" stroke-width="1.6"/></marker></defs>
+  <text x="210" y="178" fill="#b98cff" font-size="12" text-anchor="middle">静电作用吸引</text>
+  <text x="210" y="232" fill="#cfe0f5" font-size="13" text-anchor="middle">→ 结合成 NaCl：价态升降与电子得失一一对应</text>
+  <text x="540" y="120" fill="#9aa7b8" font-size="12" text-anchor="middle">失电子 → 化合价升高</text>
+  <text x="540" y="140" fill="#9aa7b8" font-size="12" text-anchor="middle">得电子 → 化合价降低</text>
+  <text x="540" y="160" fill="#9aa7b8" font-size="12" text-anchor="middle">电子数 = 价变数值（p68 方法导引）</text>
+</svg>
+<p class="figcap">这张图在说什么：钠原子把最外层的 1 个电子"让"给氯原子——Na 从 0 价升到 +1 价，Cl 从 0 价降到 −1 价（p68 原文过程）。化合价的升降，就是电子得财务馆的"账本"。</p>
+</div>
+
+<p>教材的原文结论（p68）值得逐句读：</p>
+
+<div class="key"><b>所有的氧化还原反应中都存在着电子转移，电子转移是氧化还原反应的<b>实质</b>。</b>元素化合价的变化是电子转移的<b>外在表现</b>，可以通过分析反应中是否有元素的化合价发生变化，来判断某个反应是否属于氧化还原反应（p68）。</div>
+
+<p>这句话给了一件很实用的事：肉眼看不见电子，但<b>化合价可以查</b>——所以"标价态"成了判断氧化还原的标准动作。Fe 与 CuSO₄ 的反应同理：铁原子把电子转移给 Cu²⁺ 生成 Fe²⁺，Cu²⁺ 得电子变回铜原子（p68）——电流表偏转正是电子在外电路流动的证据。</p>
+
+<h3>把电子转移"画"出来：双线桥与单线桥（p68 方法导引）</h3>
+
+<p>教材用 2Na + Cl₂ 的两个方程教了两种画法。先看<b>双线桥</b>（箭头从反应物指向生成物里"变价后的同种元素"，桥上写"升降/得失电子数/被氧化或被还原"）：</p>
+
+<div class="fig">
+<svg viewBox="0 0 640 205" xmlns="http://www.w3.org/2000/svg" aria-label="双线桥标注示例">
+  <defs><marker id="ar4" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="none" stroke="#e0a95c" stroke-width="1.8"/></marker></defs>
+  <defs><marker id="ar5" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="none" stroke="#6fcf97" stroke-width="1.8"/></marker></defs>
+  <path d="M100,80 L100,36 L440,36 L440,80" fill="none" stroke="#e0a95c" stroke-width="1.8" marker-end="url(#ar4)"/>
+  <text x="270" y="26" fill="#e0a95c" font-size="12.5" text-anchor="middle">化合价升高，失去1e⁻ × 2，氧化反应</text>
+  <path d="M245,112 L245,164 L490,164 L490,112" fill="none" stroke="#6fcf97" stroke-width="1.8" marker-end="url(#ar5)"/>
+  <text x="367" y="182" fill="#6fcf97" font-size="12.5" text-anchor="middle">化合价降低，得到1e⁻ × 2，还原反应</text>
+  <text x="90" y="106" fill="#ffd479" font-size="13" text-anchor="middle">0</text>
+  <text x="232" y="106" fill="#ffd479" font-size="13" text-anchor="middle">0</text>
+  <text x="428" y="106" fill="#ffd479" font-size="13" text-anchor="middle">+1</text>
+  <text x="500" y="106" fill="#ffd479" font-size="13" text-anchor="middle">−1</text>
+  <text x="105" y="130" fill="#eaf2ff" font-size="18" text-anchor="middle" font-weight="bold">2Na</text>
+  <text x="245" y="130" fill="#eaf2ff" font-size="18" text-anchor="middle" font-weight="bold">Cl₂</text>
+  <text x="350" y="130" fill="#eaf2ff" font-size="18" text-anchor="middle">═══</text>
+  <text x="455" y="130" fill="#eaf2ff" font-size="18" text-anchor="middle" font-weight="bold">2NaCl</text>
+  <text x="350" y="156" fill="#7d8a99" font-size="11" text-anchor="middle">点燃</text>
+  <text x="100" y="95" fill="#9aa7b8" font-size="10" text-anchor="middle">(Na价态)</text>
+  <text x="245" y="95" fill="#9aa7b8" font-size="10" text-anchor="middle">(Cl价态)</text>
+  <text x="440" y="95" fill="#9aa7b8" font-size="10" text-anchor="middle">(Na价态)</text>
+  <text x="500" y="95" fill="#9aa7b8" font-size="10" text-anchor="middle">(Cl价态)</text>
+</svg>
+<p class="figcap">这张图在说什么：双线桥=同种元素"变身前后"各画一个箭头。Na：0→+1，每个 Na 失 1e⁻、共 2 个 Na，所以"失去 1e⁻ × 2"；Cl：0→−1，"得到 1e⁻ × 2"。两条桥上的电子数必然相等（p68）。</p>
+</div>
+
+<p>再看<b>单线桥</b>（一根箭头，从<b>失电子方</b>直接指到<b>得电子方</b>，桥上只写转移的电子总数）：2Na + Cl₂ 上方一根桥线，标"2e⁻"（p68）——2 个 Na 各失 1 个电子，共 2 个，全部转给 Cl。双线桥重在"谁升谁降"，单线桥重在"电子从谁给谁"，考试里按题目要求选画法。</p>
+
+<div class="try">
+<b>验一验②（30秒）：</b>Fe + CuSO₄ ═══ FeSO₄ + Cu 里，电子从谁搬到谁？搬了几个？<br>
+<span class="ans">从 Fe 搬到 Cu²⁺：Fe 0→+2 失去 2e⁻，Cu +2→0 得到 2e⁻，转移电子数 2e⁻（得失相等，各 2 个）。</span>
+</div>
+
+<div class="alt">
+<b>卡住了？三步急救包：</b><br>
+① 分不清升降价 → 自编口诀（显式标注）：<b>"升失氧、降得还"</b>——化合价<b>升</b>、<b>失</b>电子、被<b>氧</b>化（三件事绑在同一个元素身上）；价<b>降</b>、<b>得</b>电子、被<b>还</b>原。再用代数和=0 复核一遍标价。<br>
+② 双线桥的 ×2 老写错 → 记住"每原子 × 原子个数"：1e⁻ × 2 表示"每个原子 1 个、共 2 个原子"；若每个原子失 2e⁻、共 3 个原子，就写 2e⁻ × 3。<br>
+③ 桥线画到谁头上拿不准 → 双线桥永远"同种元素变身前后"连线（Na→Na 的位置）；单线桥永远"失方→得方"。画完自查：两条桥（或一根桥）的电子总数必须相等。
+</div>
+
+<h2><span class="step-tag">第③站</span>给反应物发角色牌：氧化剂和还原剂（p69–70）</h2>
+
+<p>站内反应看清了，现在回头看<b>反应物</b>：谁在"抢电子"、谁在"送电子"？教材用三个方程让你先练一遍（p69 交流·研讨：2Cu+O₂ / H₂+CuO / 3CO+Fe₂O₃ <span class="small">高温</span> 2Fe+3CO₂），然后给出定义：</p>
+
+<div class="key">在氧化还原反应中，所含某种（或某些）元素化合价<b>降低</b>的反应物称为<b>氧化剂</b>（oxidizing agent）；化合价<b>升高</b>的反应物称为<b>还原剂</b>（reducing agent）（p69）。<b>氧化剂具有氧化性，在反应中被还原，发生还原反应；还原剂具有还原性，在反应中被氧化，发生氧化反应</b>（p69）。</div>
+
+<div class="pit"><b>坑点2："被氧化"和"做氧化剂"方向正好相反。</b>还原剂是被"氧化"的那位（它升价、失电子、被氧化），氧化剂反而是被"还原"的那位。四个词围着同一个元素转：<b>失电子 → 化合价升高 → 被氧化 → 做还原剂 → 表现还原性</b>（p69 原文链）。H₂ + CuO 里：CuO（Cu 降价）做氧化剂，H₂（H 升价）做还原剂——教材 p69 的双线桥标注图就是这个布局。</div>
+
+<p>化学家进一步发现一条"看价态猜性质"的规律（p69 原文）：</p>
+
+<div class="fig">
+<svg viewBox="0 0 720 175" xmlns="http://www.w3.org/2000/svg" aria-label="价态与氧化性还原性趋势">
+  <rect x="48" y="28" width="200" height="74" rx="8" fill="#1c2b22" stroke="#6fcf97" stroke-width="1.8"/>
+  <text x="148" y="52" fill="#a9ecc4" font-size="13" text-anchor="middle" font-weight="bold">低价态（难再低）</text>
+  <text x="148" y="72" fill="#6fcf97" font-size="12" text-anchor="middle">有升高价态的趋势</text>
+  <text x="148" y="90" fill="#a9ecc4" font-size="12" text-anchor="middle">→ 可能具有还原性（做还原剂）</text>
+  <rect x="268" y="44" width="184" height="58" rx="8" fill="#1a2433" stroke="#4a9eff" stroke-width="1.5"/>
+  <text x="360" y="66" fill="#cfe0f5" font-size="12.5" text-anchor="middle" font-weight="bold">中间价态</text>
+  <text x="360" y="86" fill="#9ecbff" font-size="11.5" text-anchor="middle">升、降都行 → 两性兼有</text>
+  <rect x="472" y="28" width="200" height="74" rx="8" fill="#2e1f22" stroke="#eb5757" stroke-width="1.8"/>
+  <text x="572" y="52" fill="#f0b6b6" font-size="13" text-anchor="middle" font-weight="bold">高价态（难再高）</text>
+  <text x="572" y="72" fill="#eb5757" font-size="12" text-anchor="middle">有降低价态的趋势</text>
+  <text x="572" y="90" fill="#f0b6b6" font-size="12" text-anchor="middle">→ 可能具有氧化性（做氧化剂）</text>
+  <defs><marker id="ar6" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="none" stroke="#5a6a7a" stroke-width="1.6"/></marker></defs>
+  <line x1="40" y1="128" x2="690" y2="128" stroke="#5a6a7a" stroke-width="1.6" marker-end="url(#ar6)"/>
+  <line x1="148" y1="120" x2="148" y2="136" stroke="#6fcf97" stroke-width="1.6"/>
+  <line x1="360" y1="120" x2="360" y2="136" stroke="#4a9eff" stroke-width="1.6"/>
+  <line x1="572" y1="120" x2="572" y2="136" stroke="#eb5757" stroke-width="1.6"/>
+  <text x="148" y="152" fill="#6fcf97" font-size="11.5" text-anchor="middle">I⁻（−1·I的最低价）</text>
+  <text x="360" y="152" fill="#9ecbff" font-size="11.5" text-anchor="middle">H₂O₂ 中 O（−1·中间价）</text>
+  <text x="572" y="152" fill="#eb5757" font-size="11.5" text-anchor="middle">MnO₄⁻ 中 Mn（+7·最高价）</text>
+  <text x="688" y="112" fill="#7d8a99" font-size="11" text-anchor="end">价态升高 →</text>
+</svg>
+<p class="figcap">这张图在说什么：教材 p69 的三例排进数轴——KI 里 I 为 −1（最低价）→ 还原性；KMnO₄ 里 Mn 为 +7（最高价）→ 氧化性；实验（p70 图2-3-3）：酸性 KMnO₄ 溶液（紫）滴入 KI 溶液后变棕黄——Mn 降价（做氧化剂）、I 升价生成碘单质（做还原剂）。中间价态两头都能走（H₂O₂ 是 p71 思考题的主角）。</p>
+</div>
+
+<p>教材把中学常见的"角色牌"整理成了清单（p70）：</p>
+
+<table>
+<tr><th>阵营</th><th>常见成员（p70 原文口径）</th></tr>
+<tr><td><b>氧化剂</b>（降价方）</td><td>氧气、氯气等<b>活泼的非金属单质</b>；硝酸、浓硫酸等<b>含较高价态元素的含氧酸</b>；高锰酸钾、氯酸钾、氯化铁等<b>含较高价态元素的盐</b></td></tr>
+<tr><td><b>还原剂</b>（升价方）</td><td>活泼的<b>金属单质</b>；碳单质、氢气等<b>非金属单质</b>；CO、SO₂ 等<b>含较低价态元素的氧化物</b>；KI、Na₂SO₃、FeSO₄ 等<b>含较低价态元素的盐</b></td></tr>
+</table>
+
+<div class="try">
+<b>验一验③（30秒）：</b>3CO + Fe₂O₃ <span class="small">高温</span> 2Fe + 3CO₂ 里，谁做氧化剂？谁做还原剂？<br>
+<span class="ans">Fe₂O₃ 做氧化剂（Fe：+3→0，降价）；CO 做还原剂（C：+2→+4，升价）。这也是 p69 交流·研讨的三个方程之一——高炉炼铁的主反应。</span>
+</div>
+
+<h2><span class="step-tag">第④站</span>拿去用：预测性质、冶炼金属、发电（p70–73）</h2>
+
+<h3>用法一：看价态，预测性质（p70–71）</h3>
+
+<p>教材把"预测→验证"写成两步（p71 方法导引）：①根据元素化合价<b>升降的可能性</b>预测——价态可能升 → 可能具还原性；可能降 → 可能具氧化性；②找一张"对手牌"做实验验证——预测有氧化性，就找还原剂搭档试反应；预测有还原性，就找氧化剂搭档。教材的活动·探究（p70）就是这个套路的现场版：过氧化氢 H₂O₂ 里 O 是 −1 价（中间价态，升、降都可能），让你用 5% H₂O₂ 溶液、酸性 KMnO₄ 溶液、KI 溶液、淀粉溶液设计实验验证预测。</p>
+
+<p>再进一步：<b>氧化性、还原性的强弱由物质得失电子的能力决定</b>，可以用氧化还原反应来比较强弱；环境条件也会插一脚——含氧酸的酸根离子做氧化剂时，<b>溶液酸性越强，氧化性越强</b>，所以我们常用<b>酸性</b>条件下的 KMnO₄ 溶液做氧化剂（实际参与反应的是其中的 MnO₄⁻）（p71）。</p>
+
+<h3>用法二：冶炼金属——把化合价"按"回 0 价（p71）</h3>
+
+<table>
+<tr><th>方法（p71）</th><th>怎么干</th><th>例子</th></tr>
+<tr><td><b>热还原法</b></td><td>以碳、CO 等作还原剂，加热条件下还原金属氧化物</td><td>CO 还原铁的氧化物得铁</td></tr>
+<tr><td><b>金属置换法</b></td><td>用活泼金属做还原剂，把目标金属从盐溶液中置换出来</td><td>Fe 从 CuSO₄ 溶液置换出 Cu</td></tr>
+<tr><td><b>电解法</b></td><td>外加电源提供电子，使金属元素化合价降低</td><td>电解氧化铝制备金属铝</td></tr>
+</table>
+
+<p>教材点破本质（p71）：三种方法的共同内核都是<b>利用氧化还原反应中的电子转移，使金属元素的化合价从正价降到 0 价</b>，生成金属单质。氧化还原反应同时还是<b>能量的来源</b>：让可燃物做还原剂、选合适的氧化剂与它反应，获得<b>热能</b>；或者让电子搬家走外电路，获得<b>电能</b>（p71）。</p>
+
+<h3>用法三：从实验室制氯气到燃料电池（p72–73）</h3>
+
+<p><b>实验室制氯气（p72 迁移·应用）：</b>瑞典化学家舍勒最早发现氯气——把浓盐酸和软锰矿（主要成分 MnO₂）混合加热：</p>
+<div class="eq">MnO₂ + 4HCl(浓) <span style="font-size:12px">Δ</span> MnCl₂ + Cl₂↑ + 2H₂O</div>
+<p>用新尺子分析：Mn +4→+2（降价，MnO₂ 做氧化剂）；4 个 Cl 中只有 2 个 −1→0 升价（这 2 个 Cl 进了 Cl₂，做还原剂），另外 2 个 Cl 价态不变、随 Mn²⁺ 组成 MnCl₂。教材的三问（判断剂/剂、NaOH 尾气吸收、改用 KMnO₄ 与浓盐酸常温反应并预测产物）正是让你把"价态分析"当工具使。</p>
+
+<div class="box"><b>化学与技术（p72–73）：工业现场的氧化还原。</b>①<b>钛</b>：金红石（TiO₂）、碳与氯气高温反应得 TiCl₄，再在氩气氛围中用金属镁与 TiCl₄ 反应制得金属钛（Mg 做还原剂把 Ti "按"回 0 价）；②<b>硅</b>：碳还原 SiO₂ 得粗硅，粗硅与氯气反应生成 SiCl₄，净化后再用氢气还原，得较纯净的硅单质；③<b>燃料电池</b>：氢气、天然气等燃料做电池<b>负极</b>反应物，发生<b>氧化</b>反应；空气中的氧气做<b>正极</b>反应物，发生<b>还原</b>反应；接通外电路，电子从负极移向正极形成电流——化学能直接变电能。</div>
+
+<h2>收口：把这一节带走</h2>
+
+<p><b>三句话（能默写才算读完）：</b></p>
+<p>① <b>有元素化合价升降（=有电子转移）的反应是氧化还原反应</b>：升价=被氧化，降价=被还原；实质是电子转移，化合价变化是外在表现（p67–68）。</p>
+<p>② <b>氧化剂=含降价元素的反应物</b>（被还原、表现氧化性）；<b>还原剂=含升价元素的反应物</b>（被氧化、表现还原性）；高价态常有氧化性、低价态常有还原性（p69）。</p>
+<p>③ <b>应用三板斧</b>：看价态预测性质（再实验验证）；用还原剂把金属"按"回 0 价（热还原/置换/电解）；让电子搬家发电（燃料电池负极氧化、正极还原）（p70–73）。</p>
+
+<div class="box">
+<b>自测四连（自编，素材改编自教材 p74–75 练习与活动，答案侧自编并标注）：</b><br>
+1．（改编自 p74 练习1(4)）2KMnO₄ <span class="small">Δ</span> K₂MnO₄ + MnO₂ + O₂↑ 是氧化还原反应吗？哪个元素被氧化、哪个被还原？——<span class="ans">是。Mn：+7→+6 和 +4（降价·被还原）；O：−2→0（升价·被氧化）；K +1 不变。</span><br>
+2．（改编自 p74 练习2）Mg、Cu²⁺、Cl⁻ 三种微粒中，只具有氧化性的是？只具有还原性的是？——<span class="ans">只氧化性：Cu²⁺（+2 已是 Cu 的最高价，只能降）；只还原性：Mg（金属单质 0 价，金属无负价、只能升）和 Cl⁻（−1 已是 Cl 的最低价，只能升）。</span><br>
+3．（改编自 p74 练习3）要实现 SO₂ → SO₃ 的转化，需要加入氧化剂还是还原剂？——<span class="ans">氧化剂。S：+4→+6，升价=被氧化，要靠氧化剂来"抬"它（教材选项同型的 Cl₂→Cl⁻、H⁺→H₂ 是降价被还原，加还原剂实现）。</span><br>
+4．（改编自 p75 练习5）高炉炼铁主反应 Fe₂O₃ + 3CO <span class="small">高温</span> 2Fe + 3CO₂：氧化剂、还原剂分别是谁？转移电子总数？——<span class="ans">氧化剂 Fe₂O₃（Fe +3→0，2 个原子共得 6e⁻）；还原剂 CO（C +2→+4，3 个分子共失 6e⁻）；转移 6e⁻，得失相等。</span>
+</div>
+
+<div class="kao">
+<b>高考怎么考（考位锚）：</b>本节是全册"电子视角"的总开关。<b>①氧化还原判断与剂/剂识别</b>（给方程标价态、指认氧化剂/还原剂/氧化产物/还原产物）；<b>②电子转移标注</b>（双线桥/单线桥规范书写：数目=变价原子个数×每原子价变数，常见陷阱=忽略"部分参与"如 MnO₂+4HCl(浓) 只有 2 个 Cl 被氧化）；<b>③价态—性质预测</b>（最高价只氧化性/最低价只还原性/中间价两性，微粒组比对）；<b>④化工与生活情境</b>（氯气制备与尾气吸收、金属冶炼路线选择、燃料电池电极判断——84 消毒液微项目也是同款考法）。考法示意；真题锚候采如实申报、不代拟。
+</div>
+
+<div class="next"><b>下一站（先微项目，再 3.1）：</b>p76 起是第 2 章微项目「科学使用含氯消毒剂」——84 消毒液的有效成分次氯酸钠（NaClO，Cl 为 +1 价）凭什么消毒？为什么绝不能和洁厕灵（含盐酸）混用？全靠刚学的价态分析。之后 p85 翻开第 3 章，3.1《铁的多样性》（p86 起）把电子视角用在一种元素的三副面孔上：Fe、Fe²⁺、Fe³⁺ 的变身游戏。</div>
+
+<div class="fig">
+<svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" aria-label="本节位置图">
+  <defs><marker id="ar7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#4a9eff"/></marker></defs>
+  <rect x="24" y="48" width="150" height="56" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="99" y="70" fill="#9aa7b8" font-size="12.5" text-anchor="middle">2.2 电离·离子反应</text>
+  <text x="99" y="90" fill="#6b7686" font-size="11" text-anchor="middle">水中视角（换离子）</text>
+  <rect x="202" y="44" width="150" height="64" rx="8" fill="#1d2b3a" stroke="#4a9eff" stroke-width="2"/>
+  <text x="277" y="68" fill="#cfe4ff" font-size="13" text-anchor="middle" font-weight="bold">2.3 氧化还原</text>
+  <text x="277" y="88" fill="#9ecbff" font-size="11" text-anchor="middle">本节：电子视角</text>
+  <rect x="396" y="48" width="150" height="56" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="471" y="70" fill="#9aa7b8" font-size="12.5" text-anchor="middle">微项目·84消毒液</text>
+  <text x="471" y="90" fill="#6b7686" font-size="11" text-anchor="middle">价态分析实战</text>
+  <rect x="574" y="48" width="128" height="56" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="638" y="70" fill="#9aa7b8" font-size="12.5" text-anchor="middle">3.1 铁的多样性</text>
+  <text x="638" y="90" fill="#6b7686" font-size="11" text-anchor="middle">变价元素现场</text>
+  <line x1="174" y1="76" x2="202" y2="76" stroke="#4a9eff" marker-end="url(#ar7)"/>
+  <line x1="352" y1="76" x2="396" y2="76" stroke="#4a9eff" marker-end="url(#ar7)"/>
+  <line x1="546" y1="76" x2="574" y2="76" stroke="#4a9eff" marker-end="url(#ar7)"/>
+  <text x="360" y="132" fill="#5a6a7a" font-size="11" text-anchor="middle">2.2 管"水里谁和谁反应"，本节管"谁给谁电子"——两把视角在第3章铁身上会师</text>
+</svg>
+<p class="figcap">这张图在说什么：本节在整章的位置——"离子视角"（2.2）与"电子视角"（2.3）合起来才是完整的溶液反应观，微项目先练手，第 3 章用铁把两个视角一起用起来。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0 · 事实层素材源：鲁科版《普通高中教科书·化学 必修 第一册》（山东科学技术出版社）p66–75 影印逐页对照（智慧平台 contentId=88874a47-cd9b-4dbc-bd48-bb2ea5d63115 · ts=1754905612635 · 图N→正文页N−6 · 影印图存席位私有目录 dui3_23_31_备产/影印/（m72–m81 实读+m82–m110 边界核对）；四个铜实验与图2-3-1、四方程价态标注、氧化还原/氧化反应/还原反应三定义、Na+Cl₂ 与 Fe+CuSO₄ 交流研讨、图2-3-2 电流表实验、电子转移实质与外在表现结论、方法导引失得电子与价变对应、双线桥/单线桥两表示法、氧化剂/还原剂定义与性质链、价态高低与氧化性还原性趋势、KMnO₄+KI 实验图2-3-3、常见氧化剂还原剂清单、活动·探究 H₂O₂ 与方法导引两步、得失电子能力与酸性增强氧化性、冶炼三法与本质、迁移·应用舍勒制氯气 MnO₂+4HCl(浓) 与图2-3-4 装置及三问、化学与技术钛/硅/燃料电池、p73 概括·整合概念图、p74–75 练习与活动题面均逐字/逐项锚定；p76–77 微项目与 p78 起章自我评价经边界直读核为章域不属本节）<br>
+设计标准（黄金样本1.1/3.2定版延续）：零预设 · 一次一步 · 随读随验 ×4 · 卡住有出路 · 收口能复述 · 自编内容全部显式标注 · 教材原文标注页码 · <b>图示必配且坐标脚本生成</b>
+</div>
+
+</div>
+</body>
+</html>
