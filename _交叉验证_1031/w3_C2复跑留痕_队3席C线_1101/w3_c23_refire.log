@@ -1,0 +1,20 @@
+验点清单(18):
+  PASS V1_KMnO4_Mn=+7
+  PASS V2_Fe2O3_Fe=+3
+  PASS V3_H2O2_O=-1
+  PASS V4_SO2_S=+4
+  PASS E1_2NaCl_失2得2
+  PASS E2_FeCu_失2得2
+  PASS E3_H2CuO_失2得2
+  PASS E4_2CuO_失4得4
+  PASS E5_MnO2_HCl_失2得2
+  PASS E6_高炉1_失2得2
+  PASS E7_高炉2_失2得2
+  PASS E8_高炉3_失2得2
+  PASS E9_高炉45_歧化与燃烧守恒
+  PASS P1_CH4燃烧配平(2,2,1)
+  PASS P2_KMnO4分解配平(1,1,1)
+  PASS P3_H2S_SO2配平_g=1
+  PASS X1_2Na+Cl2桥注1ex2=2
+  PASS X2_Fe+Cu2+桥注2ex1=2
+ALL PASS
