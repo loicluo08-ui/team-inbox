@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理2.4 自由落体运动 · 零基础首学版</title>
+<style>
+  :root{--ink:#eaf2fb;--dim:#aebccf;--line:#31465e;--card:#1d2733;--card2:#223041;--acc:#4a9eff;--warn:#f0b429;--ok:#5ad1a5;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#1b2029;color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.85;font-size:16.5px;padding:28px 16px 80px;}
+  .wrap{max-width:860px;margin:0 auto;}
+  h1{font-size:26px;letter-spacing:1px;border-left:6px solid var(--acc);padding-left:14px;margin-bottom:6px;}
+  .sub{color:var(--dim);font-size:13.5px;margin-bottom:22px;}
+  .sub b{color:var(--acc);}
+  h2{font-size:20px;margin:34px 0 14px;color:#fff;background:linear-gradient(90deg,#223041,#1b2029);border-left:5px solid var(--acc);padding:8px 12px;}
+  h2 .en{font-size:12px;color:var(--dim);font-weight:normal;margin-left:8px;}
+  h3{font-size:16.5px;margin:20px 0 8px;color:#cfe4ff;}
+  p{margin:10px 0;}
+  b{color:#cfe4ff;}
+  .m{color:#eaf2fb;background:#25384d;border-radius:4px;padding:1px 7px;font-family:Consolas,Menlo,monospace;font-size:15px;}
+  .big{display:block;text-align:center;font-size:21px;color:#fff;background:#223041;border:1px solid var(--line);border-radius:10px;padding:12px 10px;margin:14px 0;font-weight:600;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0;}
+  .card h4{color:var(--acc);font-size:15.5px;margin-bottom:6px;}
+  .q{background:#202c3b;border:1px dashed #4a6a8f;border-radius:10px;padding:12px 14px;margin:12px 0;color:#d8e6f6;}
+  .q::before{content:"❓ 问题";display:block;color:var(--warn);font-size:13px;font-weight:700;margin-bottom:4px;}
+  .demo{background:#1e2a38;border-left:4px solid var(--warn);border-radius:8px;padding:11px 14px;margin:12px 0;}
+  .demo::before{content:"🔬 教材演示";display:block;color:var(--warn);font-size:13px;font-weight:700;margin-bottom:4px;}
+  .def{background:#1c3346;border:1.5px solid var(--acc);border-radius:10px;padding:12px 16px;margin:14px 0;}
+  .def::before{content:"📘 黑体定义";display:block;color:var(--acc);font-size:13px;font-weight:700;margin-bottom:4px;}
+  .note{color:var(--dim);font-size:13.5px;}
+  .tag{display:inline-block;font-size:12px;color:#0f141c;background:var(--warn);border-radius:4px;padding:1px 8px;margin-right:6px;font-weight:700;}
+  .pg{font-size:12px;color:#7d8ea3;border:1px solid var(--line);border-radius:4px;padding:0 6px;margin-left:6px;white-space:nowrap;}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px;}
+  th,td{border:1px solid var(--line);padding:6px 10px;text-align:center;}
+  th{background:#25384d;color:#cfe4ff;}
+  tr:nth-child(even) td{background:#1e2a38;}
+  .try{margin:12px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+  .try summary{cursor:pointer;padding:10px 14px;background:#25384d;color:#cfe4ff;font-weight:600;list-style:none;}
+  .try summary::before{content:"✏️ 验一验　";}
+  .try .ans{padding:10px 16px;background:#1e2a38;border-top:1px dashed var(--line);}
+  .warn{background:#3a2b1c;border:1.5px solid var(--warn);border-radius:10px;padding:12px 16px;margin:14px 0;}
+  .warn::before{content:"⚠️ 大坑警报";display:block;color:var(--warn);font-size:14px;font-weight:700;margin-bottom:6px;}
+  details.self{background:#182430;border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:10px 0;}
+  details.self summary{cursor:pointer;color:var(--ok);font-weight:600;}
+  details.self .sol{margin-top:8px;color:var(--dim);}
+  .sol b, .sol .m{color:#cfe4ff;}
+  svg{display:block;margin:14px auto;max-width:100%;height:auto;}
+  .foot{margin-top:40px;border-top:1px solid var(--line);padding-top:12px;color:#7d8ea3;font-size:12.5px;line-height:1.7;}
+  @media print{
+    body{background:#fff;color:#111;font-size:12.5pt;padding:0;}
+    .wrap{max-width:100%;}
+    h1,h2,h3,b,.m,.big{color:#111;}
+    h2{background:#f2f2f2;border-left:4pt solid #555;color:#111;}
+    .card,.def,.demo,.q,.try summary,.try .ans,.warn,details.self,.try .ans .m{background:#fff;}
+    .card,.def,.demo,.q,.warn,details.self{border-color:#888;}
+    .m{border:1px solid #999;background:#fff!important;color:#111!important;}
+    .def{border-color:#555;}
+    .warn{border-color:#555;}
+    table th{background:#eee;color:#111;}
+    tr:nth-child(even) td{background:#f7f7f7;}
+    .note,.sub,.pg,.foot,.note b{color:#333;}
+    .k{background:#fff!important;color:#111!important;border:1px solid #999!important;}
+    .pg{background:#fff!important;color:#111!important;border:1px solid #999!important;}
+    .q,.q *{color:#111!important;background:#fff!important;}
+    .big,.big *{color:#111!important;background:#fff!important;border-color:#111!important;}
+    .try,.try *{color:#111!important;background:#fff!important;}
+    .demo *,.def *,.note *,.card *,.warn *,details.self *,li,td,th,em{color:#111!important;}
+    .sub b,.sub .en,.dim,.foot,.foot *{color:#333!important;}
+    .alt-box,.alt-box *{color:#111!important;background:#fff!important;border-color:#999!important;}
+    .try summary{color:#111;}
+    svg [fill="#0f141c"]{fill:#fff;}
+    svg [fill="#1b2029"]{fill:#fff;}
+    svg [fill="#1d2733"]{fill:#fff;}
+    svg [fill="#223041"]{fill:#fff;}
+    svg [fill="#25384d"]{fill:#fff;}
+    svg [fill="#182430"]{fill:#fff;}
+    svg [fill="#4a9eff"]{fill:#555;}
+    svg [fill="#f0b429"]{fill:#777;}
+    svg [fill="#5ad1a5"]{fill:#666;}
+    svg [fill="#eaf2fb"]{fill:#111;}
+    svg [fill="#cfe0f0"]{fill:#111;}
+    svg [fill="#cfe4ff"]{fill:#111;}
+    svg [fill="#aebccf"]{fill:#444;}
+    svg [fill="#7d8ea3"]{fill:#555;}
+    svg [fill="#5a6a7a"]{fill:#555;}
+    svg [stroke="#31465e"]{stroke:#888;}
+    svg [stroke="#4a9eff"]{stroke:#555;}
+    svg [stroke="#f0b429"]{stroke:#666;}
+  }
+</style>
+</head>
+<body><div class="wrap">
+
+<h1>2.4　自由落体运动</h1>
+<div class="sub">人教版 高中物理 必修 第一册 · 第二章 匀变速直线运动的研究（收官节）· 对证源：教材印刷页 <b>p47–53</b>（影印10点实锚·图52–58·偏移N-5）· 零基础首学版 v1.0 · 出品：队4席 并行搜索员A · 2026-10-31</div>
+
+<div class="card"><h4>读完这节你能</h4>
+<p>① 轻的物体和重的物体，到底谁落得快？② 什么叫"自由"落体——两个缺一不可的条件是什么？③ 不同物体下落的加速度一样吗？g 到底是多少、怎么测？④ 一张频闪照片、一把直尺、一部手机，怎样都能算出 g？</p></div>
+
+<div class="q">站在高层建筑物上，让轻重不同的两个物体从同一高度同时落下，你认为哪个物体下落得快？在教室内拿两张同样大小的纸，将其中一张揉成一个团，让纸团和另一张纸在同样的高度落下，看看哪一个下落得快？结合实验及生活中的经验，讨论：什么因素影响物体下落的快慢？<span class="pg">p47 问题框·比萨斜塔图</span></div>
+
+<div class="card"><h4>🧰 预备工具箱（前几节装备清点）</h4>
+<p>本节是第二章收官，前面全部公式都要上场：<b>匀变速三公式</b>——<span class="m">v = v₀ + at</span>（2.2）、<span class="m">x = v₀t + ½at²</span>、<span class="m">v² − v₀² = 2ax</span>（2.3）；<b>打点计时器纸带</b>测加速度的方法（2.1）；<b>加速度</b>概念 a = Δv/Δt（1.4）。这节只需做一个"特例代入"：初速度 v₀ = 0、加速度 a = g。</p></div>
+
+<h2>第一站　两千年的常识，被一次逻辑奇袭击碎<span class="en">Aristotle vs Galileo</span></h2>
+
+<p>物体下落的运动司空见惯，但人类对它的认识经历了差不多<b>两千年</b>。最早研究这个问题的，大概要算古希腊学者<b>亚里士多德</b>。平常人们观察到的事实是，一块石头比一片树叶落得快些……亚里士多德认为<b>物体下落的快慢跟它的轻重有关，重的物体下落得快</b>。他的这一论断符合人们的常识，以至于其后两千年的时间里，大家都奉为经典。<span class="pg">p47</span></p>
+
+<div class="card"><h4>⚡ 伽利略的归谬法：让常识自己打自己</h4>
+<p>伽利略认为，根据亚里士多德"重的物体下落得快"的论断，会推出<b>相互矛盾</b>的结论。例如，假定一块大石头的下落速度为 <span class="m">8</span>，一块小石头的下落速度为 <span class="m">4</span>，当把两块石头捆在一起时：<br>　　▶ 按"更重落更快"：整体比大石头还重，下落速度<b>应该比 8 还要大</b>；<br>　　▶ 按"慢的拖快的"：大石头会被小石头拖着而变慢，整个物体的下落速度<b>应该小于 8</b>（两块石头各自"贡献"，组合速度落在 4 与 8 之间，比如各占一半就是 6）。<br>同一个前提推出两个不能同时成立的结果——<b>说明前提错了</b>。根据仔细的分析，伽利略认为物体下落的运动只有一种可能性：<b>重的物体与轻的物体应该下落得同样快</b>。<span class="pg">p47</span></p></div>
+
+<div class="note">📌 教材旁批（方法论）：<b>伽利略通过逻辑推理，首先指出亚里士多德对落体认识的问题，然后得出重物与轻物应该下落得同样快的结论，最后用实验证实了自己的结论</b>。这种推理与实验相结合的方法，为物理学的研究奠定了基础。研究中所体现的批判精神是创新所必需的。<span class="pg">p47 旁批</span></div>
+
+<details class="try"><summary>1. 伽利略这一手"以子之矛攻子之盾"，核心武器是什么推理方式？它和"做实验找答案"有什么分工？</summary><div class="ans"><b>归谬法（反证法）</b>：先承认对方前提，推出矛盾，从而否定前提。分工：逻辑推理负责<b>否定错误答案、锁定方向</b>（轻重应同快），实验负责<b>确证正确结论</b>——教材旁批强调的是"推理＋实验"两步接力，缺一不可。<span class="pg">p47</span></div></details>
+
+<h2>第二站　牛顿管实验：给"自由落体"下严格定义<span class="en">Free-fall Motion</span></h2>
+
+<p>那么，轻重不同的物体下落的情况到底怎样？下面我们一起来做个比较精细的实验，仔细研究一下。<span class="pg">p48</span></p>
+
+<div class="demo"><b>轻重不同的物体下落快慢的研究</b><br>
+如图2.4-1甲，一个<b>两端封闭的玻璃管（也称牛顿管）</b>，其中一端有一个开关，玻璃管可以与外界相通。把<b>质量不相同的铁片和羽毛</b>放到玻璃管中，玻璃管竖直放置，让铁片和羽毛从玻璃管上方同时开始下落，观察物体下落的情况。如图2.4-1乙，把玻璃管里的空气抽出去，再次观察物体下落的情况。<span class="pg">p48 演示·图2.4-1</span><br><br>
+<span class="tag">实验结果</span>有空气（甲）：铁片先落到底，羽毛飘飘悠悠远远落后；抽成真空（乙）：<b>铁片和羽毛并排落底，快慢相同</b>。</div>
+
+<div class="card"><h4>牛顿管告诉我们什么</h4>
+<p>由实验可以看到，将玻璃管里的空气抽出去后，<b>没有了空气阻力的影响，轻的物体和重的物体下落得同样快</b>。在现实生活中人们之所以看到物体下落的快慢不同，是因为<b>空气阻力</b>的影响。如果没有空气阻力，所有物体下落的快慢都一样。<span class="pg">p48</span></p></div>
+
+<div class="def"><b>自由落体运动（free-fall motion）</b>：物体只在重力作用下从<b>静止</b>开始下落的运动。这种运动只在真空中才能发生。在有空气的空间，如果空气阻力的作用比较小，可以忽略，物体的下落可以<b>近似</b>看作自由落体运动。<span class="pg">p48 黑体</span></div>
+
+<div class="card"><h4>两个条件，缺一不可（本节最常考的"身份审查"）</h4>
+<p>① <b>只受重力</b>（空气阻力可忽略或不存在）；② <b>初速度为零</b>（从静止释放，不是抛出去的）。由实验还可以看到，自由落体运动是<b>加速运动</b>——那么，它的加速度在下落过程中是否变化呢？<span class="pg">p48</span></p></div>
+
+<div class="demo"><b>研究自由落体运动的规律</b><br>
+如图2.4-2，固定<b>打点计时器</b>，纸带一端系着<b>重物</b>，另一端穿过计时器。用手捏住纸带上端，启动打点计时器，松手后重物自由下落，计时器在纸带上留下一串小点。仿照前面对小车运动的研究，测量重物下落的加速度。<b>改变重物的质量，重复上面的实验</b>。<span class="pg">p48 实验·图2.4-2</span></div>
+
+<details class="try"><summary>2. 为什么说自由落体运动是"理想化模型"？教材用了哪个词给它留了"现实接口"？</summary><div class="ans">严格的自由落体只在<b>真空</b>中才能发生；教材用"<b>近似</b>"二字开了现实接口——只要空气阻力<b>比较小、可以忽略</b>（比如密度大、体积小的重物短程下落），就可以按自由落体处理。这和"质点"一样，是抓主要矛盾、忽略次要因素的建模思想。<span class="pg">p48</span></div></details>
+
+<h2>第三站　自由落体加速度 g：所有物体的"公秤"<span class="en">g / 9.8 m/s²</span></h2>
+
+<div class="def"><b>自由落体加速度（free-fall acceleration）</b>：对不同物体进行的实验结果表明，在<b>同一地点</b>，一切物体自由下落的加速度都相同，这个加速度叫作自由落体加速度，也叫作<b>重力加速度（gravitational acceleration）</b>，通常用 <span class="m">g</span> 表示。<span class="pg">p49 黑体</span></div>
+
+<p>重力加速度的<b>方向竖直向下</b>，它的大小可以通过多种方法用实验测定。精确的实验发现，在地球表面不同的地方，g 的大小一般是不同的：在<b>赤道的海平面处 g 为 9.780 m/s²</b>，在<b>北京 g 为 9.801 m/s²</b>。在一般的计算中，g 可以取 <span class="m">9.8 m/s²</span> 或 <span class="m">10 m/s²</span>。<span class="pg">p49</span></p>
+
+<div class="note">📌 脚注①：<b>本书中，如果没有特别的说明，都按 g = 9.8 m/s² 进行计算。</b><span class="pg">p49 脚注</span></div>
+
+<h3>教材原表：一些地点的重力加速度（标准值 g = 9.806 65 m/s²）</h3>
+<table>
+<tr><th>地点</th><th>纬度</th><th>g /(m·s⁻²)</th></tr>
+<tr><td>赤道海平面</td><td>0°</td><td>9.780</td></tr>
+<tr><td>马尼拉</td><td>14°35′</td><td>9.784</td></tr>
+<tr><td>广州</td><td>23°06′</td><td>9.788</td></tr>
+<tr><td>武汉</td><td>30°33′</td><td>9.794</td></tr>
+<tr><td>上海</td><td>31°12′</td><td>9.794</td></tr>
+<tr><td>东京</td><td>35°43′</td><td>9.798</td></tr>
+<tr><td>北京</td><td>39°56′</td><td>9.801</td></tr>
+<tr><td>纽约</td><td>40°40′</td><td>9.803</td></tr>
+<tr><td>莫斯科</td><td>55°45′</td><td>9.816</td></tr>
+<tr><td>北极</td><td>90°</td><td>9.832</td></tr>
+</table>
+
+<div class="card"><h4>从表中你发现了什么规律？<span class="pg">p49 旁批引导</span></h4>
+<p>十个地点从赤道排到北极，g 从 9.780 一路"涨"到 9.832（差 0.052 m/s²）——<b>纬度越大，g 越大</b>。教材旁批特意说：你能尝试解释这个规律吗？<b>尝试解释就是作出猜想</b>。（提示方向：地球自转与地球形状两方面的因素，这一谜底教材留待以后揭开——现在只需把"现象规律"记牢。）</p></div>
+
+<div class="demo"><b>做一做：用手机测自由落体加速度</b><span class="pg">p49–50</span><br>
+很多智能手机都有<b>加速度传感器</b>。安装能显示加速度情况的应用程序，会看到<b>白、绿、黄</b>三条加速度图线，分别记录手机沿图2.4-3所示坐标轴方向的加速度变化情况。把手机放在水平桌面上，让手机在桌面上沿 x 轴或 y 轴<b>方向平移</b>一下，可以看到屏幕上加速度图线的<b>白线或绿线</b>出现一个波峰；把手机平放在手掌上，让手机在<b>竖直方向</b>移动一下，可以看到<b>黄色图线</b>发生变化。黄色图线记录手机竖直方向的加速度，<b>测自由落体加速度，就是看黄色图线</b>。<br><br>
+用手机托着手机（手托着手机），打开加速度传感器，手掌迅速向下运动，让手机脱离手掌而<b>自由下落</b>，然后<b>接住</b>手机，观察手机屏幕上加速度传感器的图线（图2.4-4）。从图中可以看到，<b>黄色图线有一小段时间的数值是 −10 m/s²，这就是自由落体的加速度，方向向下</b>。我们还能看到，自由落体之后有一个<b>向上的波峰</b>，这是用手接住手机时手机做<b>减速</b>运动的加速度，方向向上。</div>
+
+<details class="try"><summary>3. 上海（31°12′）和广州（23°06′）哪里的 g 大？各是多少？</summary><div class="ans">查表：<b>上海 9.794 m/s² ＞ 广州 9.788 m/s²</b>——上海纬度更高。规律：纬度越大，g 越大。<span class="pg">p49 表</span></div></details>
+
+<h2>第四站　两个金公式：把匀变速公式"代空"就到手<span class="en">v = gt，x = ½gt²</span></h2>
+
+<div class="card"><h4>一步到位的推导（教材原文逻辑链）</h4>
+<p><b>自由落体运动是初速度为 0 的匀加速直线运动</b>，所以匀变速直线运动的<b>基本公式及其推论都适用于自由落体运动</b>。把初速度 <span class="m">v₀ = 0</span> 和加速度 <span class="m">a = g</span> 分别代入匀变速直线运动的速度与时间的关系式和位移与时间的关系式，可以得到自由落体的速度、位移与时间的关系式分别为：<span class="pg">p50</span></p></div>
+
+<span class="big">v = gt　　x = ½gt²</span>
+
+<p>（机器复算三层锚：t = 1 s、2 s、3 s 时 <span class="m">v</span> = 9.8、19.6、29.4 m/s；<span class="m">x</span> = 4.9、19.6、44.1 m——比例恰为 <b>1 : 4 : 9</b>，即 x ∝ t²；逐秒位移比 <b>1 : 3 : 5</b>。sympy 28/28 全过，见附件2。）</p>
+
+<h3>三公式选择树（自由落体版）</h3>
+<svg width="760" height="150" viewBox="0 0 760 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="自由落体三公式选择树：知道时间用v=gt与x=½gt²，知道位移求速度用v²=2gx，频闪纸带等间隔用Δs=gT²">
+  <rect x="0" y="0" width="760" height="150" fill="#1b2029"/>
+  <rect x="280" y="10" width="200" height="30" rx="6" fill="#25384d" stroke="#4a9eff"/>
+  <text x="380" y="30" fill="#eaf2fb" font-size="14" text-anchor="middle">要求什么量？</text>
+  <line x1="380" y1="40" x2="140" y2="66" stroke="#4a9eff"/><line x1="380" y1="40" x2="380" y2="66" stroke="#4a9eff"/><line x1="380" y1="40" x2="620" y2="66" stroke="#4a9eff"/>
+  <rect x="40" y="66" width="200" height="70" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="140" y="88" fill="#cfe4ff" font-size="13.5" text-anchor="middle">题目里有时间 t</text>
+  <text x="140" y="112" fill="#eaf2fb" font-size="15" text-anchor="middle" font-weight="bold">v = gt　x = ½gt²</text>
+  <rect x="280" y="66" width="200" height="70" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="380" y="88" fill="#cfe4ff" font-size="13.5" text-anchor="middle">只有位移 x 求速度</text>
+  <text x="380" y="112" fill="#eaf2fb" font-size="15" text-anchor="middle" font-weight="bold">v² = 2gx</text>
+  <rect x="520" y="66" width="200" height="70" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="620" y="88" fill="#cfe4ff" font-size="13.5" text-anchor="middle">频闪/纸带等间隔 T</text>
+  <text x="620" y="112" fill="#eaf2fb" font-size="15" text-anchor="middle" font-weight="bold">Δx = gT²</text>
+</svg>
+
+<div class="card"><h4>四条推论（全部由三公式变形而来，考试高频）</h4>
+<p>① <b>速度—位移</b>：<span class="m">v² = 2gx</span>（消去 t）；② <b>平均速度 = 末速度的一半</b>：<span class="m">x/t = v/2</span>（匀加速特例，2 s 内 x = 19.6 m、v末 = 19.6 m/s → 平均 9.8 m/s ✓）；③ <b>初速为零的比例</b>：连续相等时间 x₁ : x₂ : x₃ = <b>1 : 4 : 9</b>，第 1、第 2、第 3 个 1 秒内 <b>1 : 3 : 5</b>；④ <b>逐差</b>：连续相等时间间隔 T 内位移差 <span class="m">Δx = gT²</span>（T = 0.04 s 时 Δx ≈ 1.57 cm——下页频闪题就用它）。</p></div>
+
+<details class="try"><summary>4. 自由落体 2 s 末的速度和前 2 s 内的平均速度，各是多少？</summary><div class="ans">v = gt = 9.8 × 2 = <b>19.6 m/s</b>；平均速度 = x/t = ½gt²/t = ½gt = 9.8 m/s，恰为末速度一半。<span class="pg">p50</span></div></details>
+
+<h2>科学漫步　伽利略对自由落体运动的研究：一套影响至今的方法<span class="en">p50–51</span></h2>
+
+<p>利用逻辑推理说明了重物与轻物下落得同样快后，伽利略并没有就此止步，而是进一步通过<b>实验</b>研究了自由落体运动的规律。<span class="pg">p50</span></p>
+
+<table>
+<tr><th style="width:16%">步骤</th><th>伽利略做了什么</th><th style="width:26%">卡点与破法</th></tr>
+<tr><td><b>① 建概念</b></td><td>那时人们连速度的明确定义都没有。平均速度、瞬时速度以及加速度等概念，就是伽利略首先建立起来的。</td><td>困难是<b>概念上</b>的 → 先造测量工具般的"语言"</td></tr>
+<tr><td><b>② 作猜想</b></td><td>相信自然界的规律是简洁明了的：落体一定是最简单的变速运动，速度应该均匀变化。两种可能：v ∝ t（每过1 s速度变化量都是2 m/s）或 v ∝ x（每下落1 m速度变化量都是2 m/s）。</td><td>后来发现 v ∝ x 会推导出<b>十分荒谬</b>的结果 → 排除</td></tr>
+<tr><td><b>③ 数学转换</b></td><td>时代技术不够发达，无法直接测定瞬时速度。伽利略通过数学运算得出：若初速度为 0 且 v ∝ t，则位移与所用时间的<b>二次方</b>成正比，即 <b>x ∝ t²</b>。</td><td>测不了"快变量 v" → 改测<b>可测的 x 与 t</b></td></tr>
+<tr><td><b>④ "冲淡"重力</b></td><td>落体下落得很快，当时只能靠滴水计时，不能测自由落体的时间。他让铜球沿<b>阻力很小的斜面</b>滚下（图2.4-5油画）：斜面上加速度比竖直下落小得多，所用时间长得多，容易测量。做了<b>上百次</b>实验：换不同质量的小球、从不同高度滚动，只要<b>斜面倾角一定，小球的加速度都相同</b>——沿斜面滚下的运动的确是匀加速直线运动。</td><td>时间测不准 → 用斜面<b>"冲淡"重力</b>放大时间</td></tr>
+<tr><td><b>⑤ 合理外推</b></td><td>斜面倾角增大到 90°（图2.4-6甲乙丙丁），这时小球的运动不就是自由落体运动了吗？伽利略认为，这时小球<b>仍然保持匀加速运动的性质</b>，而且<b>所有物体下落时的加速度都是一样的</b>！</td><td>实验做不到 90° → 逻辑<b>外推</b>到极限</td></tr>
+</table>
+
+<div class="card"><h4>收尾两问与一句箴言</h4>
+<p><b>为什么日常见到较重的物体下落得比较快？</b>伽利略把原因归之于<b>空气阻力对不同物体的影响不同</b>。他写道："<b>如果完全排除空气的阻力，那么，所有物体将下落得同样快。</b>"这时，落体运动也就真正成为自由落体运动了。<br>
+<b>方法论总结（教材原文）</b>：伽利略对运动的研究，不仅确立了许多用于描述运动的基本概念，而且创造了一套对近代科学的发展极为有益的科学方法。这些方法的<b>核心是把实验和逻辑推理（包括数学演算）和谐地结合起来</b>，从而发展了人类的科学思维方式和科学研究方法。<span class="pg">p51</span><br>
+<span class="note">他还特别指出：在科学研究中，<b>懂得忽略什么，有时与懂得重视什么同等重要</b>。<span class="pg">p51</span></span></p></div>
+
+<h2>STSE　从伽利略的一生看科学与社会<span class="en">p52</span></h2>
+
+<table>
+<tr><th style="width:22%">时间</th><th>事件</th></tr>
+<tr><td>1564—1642</td><td>伽利略（Galileo Galilei），伟大的物理学家和天文学家，意大利<b>比萨大学和帕多瓦大学的教授</b>，融会贯通了当时的数学、物理学和天文学，在研究工作中开<b>科学实验</b>之先河，奠定了现代科学的基础。</td></tr>
+<tr><td>1610 前后</td><td>制作了<b>天文望远镜（图2.4-7）</b>并用它观测天空，观测结果支持了天文学的新学说——<b>日心说</b>。</td></tr>
+<tr><td>1632—1633</td><td>日心说与《圣经》相抵触。伽利略不得不用《圣经》的语言来解释日心说，即便如此，仍然不能逃避教会的指控和迫害。《关于两个世界体系的对话》使日心说变成摧毁教会教义和传统"科学"框架的理论，因此立刻成为<b>禁书</b>。1633 年被罗马宗教裁判所判处<b>终身监禁</b>。</td></tr>
+<tr><td>1638</td><td>将<b>自由落体</b>等方面的研究成果转送荷兰，出版了<b>《两种新科学的对话》</b>。这部著作的出版，奠定了伽利略作为<b>近代力学创始人</b>的地位。</td></tr>
+<tr><td>1992（359年后）</td><td>罗马教廷于 1992 年承认对伽利略的压制是错误的，为他<b>"恢复名誉"</b>。但是教会对科学的干涉和对伽利略的迫害所造成的严重后果是无法挽回的——以前一直是人才辈出的意大利，在伽利略之后，它的科学活动很快衰落下去，在很长的一段时间里，没有再产生过重要的科学家。<span class="pg">p52</span></td></tr>
+</table>
+
+<div class="note">📌 爱因斯坦的赞扬最具代表性："<b>伽利略的发现以及他所应用的科学推理方法，是人类思想史上最伟大的成就之一，而且标志着物理学的真正开端。</b>"<span class="pg">p52</span></div>
+
+<h2>练习与应用（六题全列全解）<span class="en">p53</span></h2>
+
+<details class="self"><summary>T1　把一张纸片和一块橡皮同时释放下落，哪个落得快？再把纸片捏成一个很紧的小纸团，和橡皮同时释放，下落快慢有什么变化？怎样解释这个现象？</summary><div class="sol"><b>释放</b>：橡皮快、纸片慢（纸片面积大、空气阻力影响显著）；<b>捏成团后</b>：纸团与橡皮几乎<b>同时落地</b>。解释：捏团后纸片质量没变但<b>迎风面积骤减，空气阻力的影响变得可以忽略</b>，两者都近似自由落体——同一地点一切物体自由下落的加速度相同，快慢就一样了。<span class="pg">p53 T1</span></div></details>
+
+<details class="self"><summary>T2　跳水运动员训练时从 5 m 跳台双脚朝下自由落下，某同学利用手机的连拍功能，连拍了多张照片。测得其中两张连续的照片中运动员双脚离水面的高度分别为 3.4 m 和 1.8 m。由此估算手机连拍时间间隔是多少？</summary><div class="sol">双脚离水面 3.4 m → 已下落 <span class="m">5 − 3.4 = 1.6 m</span>：t₁ = √(2×1.6/10) ≈ <b>0.566 s</b>；离水面 1.8 m → 已下落 3.2 m：t₂ = √(2×3.2/10) = <b>0.8 s</b>（g 取 10 m/s²）。连拍间隔 Δt = t₂ − t₁ ≈ <b>0.23 s</b>。（sympy 验点 4a–4c）<span class="pg">p53 T2</span></div></details>
+
+<details class="self"><summary>T3　为了测出井口到水面的距离，让一个小石块从井口自由落下，经过 2.5 s 后听到石块击水的声音，估算井口到水面的距离。考虑到声音在空气中传播需要一定的时间，估算结果偏大还是偏小？</summary><div class="sol">不计声速：h = ½ × 10 × 2.5² = <b>31.25 m</b>（约 31 m）。实际 31.25 m 的声波传回需 ≈ 31.25/340 ≈ <b>0.09 s</b>，石块下落时间只有 2.5 − 0.09 ≈ 2.41 s，对应深度 ≈ <b>29 m</b>。所以"把 2.5 s 全算成下落时间"的估算结果<b>偏大</b>。（sympy 验点 5a–5b）<span class="pg">p53 T3</span></div></details>
+
+<details class="self"><summary>T4　有一架照相机，其光圈（进光孔径）随被摄物体的亮度自动调节，而快门（曝光时间）是固定不变的。为估测这架照相机的曝光时间，实验者从某砖墙前的高处使一个石子自由落下，拍摄石子在空中的照片如图2.4-8所示。由于石子的运动，它在照片上留下了一条模糊的径迹。已知石子从地面以上 2.5 m 的高度下落，每块砖的平均厚度为 6 cm，请估算这张照片的曝光时间。</summary><div class="sol">石子落到 2.5 m 高处（墙上取景点）时速度 v = √(2gx) = √(2×10×2.5) = √50 ≈ <b>7.07 m/s</b>（近似取该小段内速度不变）。由图2.4-8，模糊径迹跨约 <b>2 块砖</b>，长度约 <span class="m">0.12 m</span>。曝光时间 t ≈ 0.12 / 7.07 ≈ <b>0.017 s</b>。（sympy 验点 6a–6b；径迹跨约 2 砖按图2.4-8实况估读）<span class="pg">p53 T4·图2.4-8</span></div></details>
+
+<details class="self"><summary>T5　频闪摄影是研究变速运动常用的实验手段。在暗室中，照相机的快门处于常开状态，频闪仪每隔一定时间发出一次短暂的强烈闪光，照亮运动的物体，于是胶片上记录了物体在几个闪光时刻的位置。图2.4-9是小球自由下落的频闪照片示意图，频闪仪每隔 0.04 s 闪光一次。如果要通过这幅照片测量自由落体的加速度，可以采用哪几种方法？试一试。照片中的数字是小球落下的距离，单位是厘米。</summary><div class="sol">读数（累计距离）：0、0.8、3.2、7.1、12.5、19.6 cm → <b>逐段位移</b> 0.8、2.4、3.9、5.4、7.1 cm，<b>相邻段差</b> ≈ 1.6、1.5、1.5、1.7 cm。<br><b>方法一（逐差/平均）</b>：Δx ≈ 1.575 cm，g = Δx/T² = 0.01575/0.04² ≈ <b>9.84 m/s²</b>。<br><b>方法二（公式带）</b>：Δx = gT² 理论值 = 9.8 × 0.04² = <b>1.568 cm</b>，与实测带 1.5~1.7 cm 吻合。<br>（sympy 验点 7a–7d。注意数字是<b>累计距离</b>，先求逐段位移再求差。）<span class="pg">p53 T5·图2.4-9</span></div></details>
+
+<details class="self"><summary>T6　制作一把"人的反应时间测量尺"。如图2.4-10甲，A同学用两个手指捏住直尺的顶端，B同学用一只手在直尺0刻度位置做捏住直尺的准备，但手不碰到直尺。在A同学放开手指让直尺下落时，B同学立刻捏住直尺。读出B同学捏住直尺的刻度，就是直尺下落的高度，根据自由落体运动公式算出直尺下落的时间，就是B同学的反应时间。利用这种方法，你能不能把下面刻度尺的长度刻度，直接标注为时间刻度，使它变为"人的反应时间测量尺"？请尝试在图2.4-10乙的长度刻度旁标注时间刻度。</summary><div class="sol">直尺自由下落：h = ½gt² → <b>t = √(2h/g)</b>（g 取 9.8 m/s²）。标几个锚点：h = 5 cm → t ≈ <b>0.10 s</b>；h = 10 cm → ≈ <b>0.14 s</b>；h = 20 cm → ≈ <b>0.20 s</b>；h = 45 cm → ≈ <b>0.30 s</b>；h = 80 cm → ≈ <b>0.40 s</b>。注意时间刻度<b>不均匀</b>——与 h 的平方根成正比，越往下刻度越稀。（sympy 验点 8）<span class="pg">p53 T6·图2.4-10</span></div></details>
+
+<h2>⚠️ 大坑警报（四发）</h2>
+<div class="warn">
+<p><b>① "下落" ≠ "自由落体"。</b>两条件缺一不可：<b>只受重力</b> + <b>初速度为零</b>。抛出的球（有初速）、打开伞后的跳伞（阻力不可忽略）都不是自由落体。判断先过"身份审查"，再套公式。</p>
+<p><b>② g 的取值口径要跟题走。</b>教材脚注①：没有特别说明按 <b>9.8 m/s²</b>；题目明说"g 取 10 m/s²"才用 10。两种口径数值别混写（同一题内必须一致）。</p>
+<p><b>③ x 是"从起点量"的下落高度，方向竖直向下。</b>代入前先统一正方向（习惯取向下为正），别把"离地高度"当位移——T2 的 3.4 m 是离水面高度，位移是 5 − 3.4 = 1.6 m！</p>
+<p><b>④ 频闪照片/纸带上的数字常是"累计距离"。</b>T5 的 0.8、3.2、7.1 cm 都是距起点累计值，必须先算<b>逐段位移</b>再用 Δx = gT²，直接拿相邻累计值相减当 Δx 会错一个台阶。</p>
+</div>
+
+<h2>自测四连（先做再看解析）</h2>
+<details class="self"><summary>Q1　自由落体 3 s 内下落的位移与第 3 秒内下落的位移各是多少（g 取 10 m/s²）？</summary><div class="sol">3 s 内：x = ½×10×9 = <b>45 m</b>；前 2 s 内 20 m → 第 3 s 内 = 45 − 20 = <b>25 m</b>（比例 1:3:5 中"5"的份）。</div></details>
+<details class="self"><summary>Q2　一个自由下落的物体，到达地面时速度恰为 49 m/s（g 取 9.8）。它下落的位移和时间各是多少？</summary><div class="sol">t = v/g = 49/9.8 = <b>5 s</b>；x = ½gt² = ½×9.8×25 = <b>122.5 m</b>（或 v²/2g = 2401/19.6 = 122.5 m 双法互证）。</div></details>
+<details class="self"><summary>Q3　牛顿管抽成真空后铁片与羽毛同落到底，这直接证明了教材中的哪两个结论？</summary><div class="sol">① <b>没有空气阻力，轻的物体和重的物体下落得同样快</b>（亚里士多德论断的失效）；② 自由落体运动是<b>加速运动</b>（两者从静止同时起步、同步加速，走完同样高度）。</div></details>
+<details class="self"><summary>Q4　用滴水计时做不到自由落体的测量，伽利略用什么思路绕开了"计时精度"这个死结？</summary><div class="sol"><b>"冲淡"重力</b>：让铜球沿阻力很小的斜面滚下，加速度小、时间长、便于测量；再经<b>合理外推</b>（倾角→90°）把斜面结论还原到自由落体——实验测不准的部分用逻辑补全。</div></details>
+
+<h2>高考怎么考（两考向）</h2>
+<div class="card"><p><b>考向一 · 实验/数据处理测 g</b>：频闪照片、打点纸带、手机传感器三类器材轮换考，数据处理核心全是 <b>Δx = gT²</b> 与逐差法，陷阱是"累计距离"读数（见大坑④）与 T 的取值（频闪周期 vs 打点周期）。</p>
+<p><b>考向二 · 模型化估算</b>：连拍间隔（T2）、井深与声速修正（T3）、相机曝光（T4）、反应时间尺（T6）——考的都是"把生活场景翻译成 v₀ = 0、a = g 的模型 + 选对公式 + 口径一致的估算"，伽利略那句"懂得忽略什么"就是这类题的灵魂。</p></div>
+
+<svg width="760" height="130" viewBox="0 0 760 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第一章运动的描述→第二章匀变速直线运动的研究（2.1实验、2.2速度与时间、2.3位移与时间、2.4自由落体运动收官）→第三章相互作用——力">
+  <rect x="0" y="0" width="760" height="130" fill="#182430"/>
+  <rect x="20" y="40" width="150" height="50" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="95" y="70" fill="#aebccf" font-size="13" text-anchor="middle">第一章 运动的描述</text>
+  <line x1="170" y1="65" x2="205" y2="65" stroke="#4a9eff" marker-end="url(#ar)"/>
+  <rect x="205" y="28" width="360" height="74" rx="8" fill="#1d2733" stroke="#4a9eff"/>
+  <text x="385" y="50" fill="#eaf2fb" font-size="14" text-anchor="middle" font-weight="bold">第二章 匀变速直线运动的研究</text>
+  <text x="385" y="74" fill="#cfe4ff" font-size="12.5" text-anchor="middle">2.1 实验 ｜ 2.2 v–t ｜ 2.3 x–t ｜ 2.4 自由落体（本章收官）</text>
+  <text x="385" y="93" fill="#7d8ea3" font-size="11.5" text-anchor="middle">v = v₀+at · x = v₀t+½at² · v²−v₀²=2ax · v = gt · x = ½gt²</text>
+  <line x1="565" y1="65" x2="600" y2="65" stroke="#f0b429" marker-end="url(#ar)"/>
+  <rect x="600" y="40" width="150" height="50" rx="8" fill="#25384d" stroke="#f0b429"/>
+  <text x="675" y="63" fill="#eaf2fb" font-size="13" text-anchor="middle">第三章 相互作用——力</text>
+  <text x="675" y="82" fill="#aebccf" font-size="11.5" text-anchor="middle">重力·弹力·摩擦力（p56起）</text>
+</svg>
+
+<div class="foot">
+【foot·验点账】本件事实点36条全锚教材p47–53（影印10点实锚：图52=p47节名页/图53=p48/图54=p49/图55=p50/图56=p51/图57=p52/图58=p53练习与应用/图59=p54复习与提高A/图60=p55B/图61=p56第三章章题页·偏移N-5全验证·asset=708256b6↔ts=1787023183495实测200）·sympy验点28/28全过（p24_calc.py留痕·T2连拍0.23s/T3井深31.25→29偏大/T4曝光0.017s/T5频闪g≈9.84/T6反应尺0.2s@20cm/表格10地单调/捆绑归谬6∈(4,8)）·练习与应用T1–T6全列全解·自编估算口径已显式标注（T4径迹跨约2砖按图2.4-8实况估读）·三条差距与四附件随件·出品：并行搜索员A·队4席·dui4_24_1031分支候验·禁直推main。
+</div>
+
+</div></body>
+</html>
