@@ -58,19 +58,34 @@ if __name__ == '__main__':
             targets.append(a)
     fail = 0
     import re as _re
-    工序件模式 = _re.compile(r'(工作单|台账|复核|复验|审校|普查|报告池|排查|卷源直读|字幕|帧验|底本|预研|销项|认领|claim|对账|留痕|对位表|簇-节|节对位|审计|豁免|验收|随验|QC|路由|总验|销项|归口|初筛|提数|销证|统筹|方案|提案|设计_|自检表|自验表|三条差距|影印对照|通读卡点|随件四附件)')
+    工序件模式 = _re.compile(r'(工作单|台账|复核|复验|审校|普查|报告池|排查|卷源直读|字幕|帧验|底本|预研|销项|认领|claim|对账|留痕|对位表|簇-节|节对位|审计|豁免|验收|随验|QC|路由|总验|销项|归口|初筛|提数|销证|统筹|方案|提案|设计_|自检表|自验表|三条差距|影印对照|通读卡点|随件四附件|模板|校准件|收官单|抽检|评估表|终验报告|质检报告|平行稿|速查|提取|试点|实采|任务包|执行单|执行计划|总纲|锁定表|监测日志|变更说明|放量令)')
+    def 面型(p):
+        """v1.6路径分层计账（1101凌晨队6席终机检归口·承管理员03:18:15令②·全仓复扫实证后落版）：
+        A学生面=红账执法面（❌命中计红账）：产出域首学版正本html+切片卡（学生直读面）
+        B工序面=留痕豁免面（⚪不计红账）：claim/台账/监测日志/QC单/报告/提取件/规程/群消息等一切工序文档——词面留痕系工作记录非学生内容（1029预案B层+裁定二全仓推广）
+        C原件面=不计账面（📁不扫描计账）：_归档位（销案留痕不删）+v18原册母本（源教材原件保真·机检对象是首学版产出非源书本身）"""
+        p = p.replace('\\', '/')
+        b = os.path.basename(p)
+        if p.startswith('_归档') or '/_归档/' in p: return 'C'
+        if b.startswith('v18原册'): return 'C'
+        if (b.startswith('首学版_') and b.endswith('.html')) or b.startswith('切片卡_'): return 'A'
+        return 'B'
     for t in targets:
         hits = scan(t)
         name = os.path.basename(t)[:24]
-        if hits and 工序件模式.search(os.path.basename(t)):
-            print(f'⚪{name}: {len(hits)}处（工序件·词面留痕不计红账·1029预案B层豁免+裁定二）')
-            continue
-        if hits:
-            fail += 1
-            print(f'❌{name}: {len(hits)}处')
-            for w, ctx in hits[:8]:
-                print(f'    [{w}] {ctx}')
-        else:
+        if not hits:
             print(f'✅{name}: 正文零命中')
+            continue
+        m = 面型(t)
+        if m == 'C':
+            print(f'📁{name}: {len(hits)}处（原件/归档面·母本保真不计红账·v1.6分层）')
+            continue
+        if m == 'B' or 工序件模式.search(os.path.basename(t)):
+            print(f'⚪{name}: {len(hits)}处（工序面·词面留痕不计红账·1029预案B层+裁定二+v1.6路径分层）')
+            continue
+        fail += 1
+        print(f'❌{name}: {len(hits)}处')
+        for w, ctx in hits[:8]:
+            print(f'    [{w}] {ctx}')
     print(f'\n=== {len(targets)}文件，{fail}个待修 ===')
     sys.exit(1 if fail else 0)
