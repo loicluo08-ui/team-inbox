@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>数学 4.4 对数函数 · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#16233a}
+h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
+h3{color:#2c5f8f;margin-top:1.6em}
+.station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
+.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
+.mark{background:#fff3cd;padding:0 4px;border-radius:3px;font-weight:bold}
+.note-red{background:#fdecea;border-left:4px solid #c0392b;padding:8px 14px;border-radius:6px;margin:10px 0}
+.walk{background:#e8f4ec;border-left:4px solid #3d8b5f;padding:10px 16px;border-radius:6px;margin:14px 0;color:#1d4d33}
+.try{background:#f0f7ff;border:1px solid #b8d4ee;border-radius:8px;padding:10px 16px;margin:12px 0}
+.selftest{background:#f7f4ff;border:1px solid #c9b8ee;border-radius:8px;padding:12px 18px;margin:14px 0}
+.ans{color:#7a5cc9;font-weight:bold}
+.kaowei{background:#fffbe8;border:2px solid #ffd94a;border-radius:10px;padding:14px 18px;margin:20px 0}
+.kw-title{font-weight:bold;color:#8a6d00;font-size:1.1em}
+.cmp{border-collapse:collapse;width:100%;margin:12px 0}
+.cmp th{background:#e4eef6;padding:6px 10px;border:1px solid #b8c8d8}
+.cmp td{padding:6px 10px;border:1px solid #c8d4de;vertical-align:top}
+.sub{color:#6b7a89;font-size:.85em}
+.detail{color:#7a5cc9}
+.alt{background:#fbf7ef;border:1px solid #e0d3b8;border-radius:8px;padding:10px 16px;margin:12px 0}
+.tag{display:inline-block;background:#2c5f8a;color:#fff;border-radius:4px;padding:0 8px;font-size:.8em;margin-right:6px}
+figure{margin:14px 0;text-align:center}
+.figcap{color:#6b7a89;font-size:.9em;margin-top:4px}
+@media print{body{max-width:100%;padding:0;font-size:13px}.station{break-inside:avoid}svg{max-width:100%}.kaowei{border-color:#999}.walk,.try,.selftest,.alt,.note-red{break-inside:avoid}}
+</style>
+</head>
+<body>
+<h1>4.4 对数函数 <span class="sub">数学 · 人教A必修一第四章 · 零基础首学版 v1.0 · 队2席 · 1031晚 · 节域p130-141</span></h1>
+
+<div class="check"><b>读完这节你能做到（出发前清点行囊）：</b>
+<ul>
+<li>从"已知含量求时间"的<b>反问题</b>出发，写出对数函数的定义 <b>y=log<sub>a</sub>x（a&gt;0且a≠1）</b>，并说清定义域为什么是 (0,+∞)；</li>
+<li>用描点法画 y=log<sub>2</sub>x 的图象，说出<b>底数互为倒数的两个对数函数图象关于x轴对称</b>；</li>
+<li>背下表4.4-2：过定点<b>(1,0)</b>、值域<b>R</b>、0&lt;a&lt;1减函数 / a&gt;1增函数；</li>
+<li>用单调性比大小三招：同底增、同底减、<b>含参数a要分类讨论</b>（例3第(3)问）；</li>
+<li>用对数模型解反问题：翻番年数（例2）、pH计算（例4）；</li>
+<li>说出<b>指数函数与对数函数互为反函数</b>（定义域与值域正好互换），会用"直线上升/对数增长/指数爆炸"描述三类增长差异。</li>
+</ul></div>
+
+<div class="station"><span class="station-title">第一站 · 反过来问：从碳14到对数函数（4.4.1·p130）</span>
+<p><b>思考照录（p130）：</b>在4.2.1的问题2中，我们已经研究了死亡生物体内碳14含量y随死亡时间x衰减的规律（y=(1/2)<sup>x/5730</sup>，x≥0）。<b>反过来</b>，已知死亡生物体内碳14含量，如何得知它死亡了多长时间？死亡时间x是碳14含量y的函数吗？</p>
+<p>根据指数与对数的关系，由 y=(1/2)<sup>x/5730</sup>（x≥0）得到 <b>x=log<sub>(1/2)<sup>1/5730</sup></sub>y（0&lt;y≤1）</b>。如图4.4-1，过y轴正半轴上任意一点(0,y₀)作x轴平行线，与y=(1/2)<sup>x/5730</sup>的图象<b>有且只有一个交点</b>——对任意y∈(0,1]，通过对应关系都有唯一确定的x与之对应，所以x也是y的函数。</p>
+<p>同样地，由 y=a<sup>x</sup>（a&gt;0且a≠1）可得 x=log<sub>a</sub>y（a&gt;0且a≠1）。通常用x表示自变量、y表示函数，把字母<b>x和y对调</b>，写成 y=log<sub>a</sub>x。</p>
+<div class="formula"><b>对数函数定义（p130照录）：</b>y=log<sub>a</sub>x（a&gt;0，且a≠1）叫做<span class="mark">对数函数</span>（logarithmic function），其中x是自变量，<b>定义域是(0,+∞)</b></div>
+<div class="note-red"><b>为什么x&gt;0？</b>对数 log<sub>a</sub>N 中真数N必须是正数（a^b=N要求N&gt;0），所以"装真数的盒子"x只能取(0,+∞)——这与指数函数"装指数的x取全体实数"正好互换了门牌。<i>（话术化讲法·自编显式标注）</i></div>
+<p><b>例1（p130照录）求下列函数的定义域：</b>(1) y=log<sub>3</sub>x²；(2) y=log<sub>a</sub>(4-x)。</p>
+<p><b>解（p131照录）：</b>(1) 因为x²&gt;0，即x≠0，定义域是{x|x≠0}；(2) 因为4-x&gt;0，即x&lt;4，定义域是{x|x&lt;4}。</p>
+<p><b>例2（p131照录）物价翻番：</b>某地初始物价为1，每年以5%的增长率递增，经过t年物价为w。(1)几年翻一番？(2)填表并说明物价变化规律。</p>
+<p><b>解（p131照录）：</b>w=(1+5%)<sup>t</sup>=1.05<sup>t</sup>（t∈[0,+∞)），由对数与指数间关系得 <b>t=log<sub>1.05</sub>w（w∈[1,+∞)）</b>。由计算工具：当w=2时t≈14——物价大约<b>14年翻一番</b>；表中w=1~10对应t=0,14,23,28,33,37,40,43,45,47——物价随时间增长，但<b>大约每增加1所需的年数在逐渐缩小</b>。（表格10格全验：留痕②）</p>
+</div>
+
+<div class="station"><span class="station-title">第二站 · 图象与性质：描点、对称、背表（4.4.2·p132-133）</span>
+<p><b>描点画 y=log<sub>2</sub>x（p132）：</b>表4.4-1对应值：x=0.5→y=-1，1→0，2→1，4→2，8→3，16→4（教材留白的4/6/8/12/16列由留痕③全补验：log₂4=2·log₂6≈2.585·log₂8=3·log₂12≈3.585·log₂16=4）。图4.4-2图象沿x轴向右缓慢爬升、沿y轴向下贴近y轴。</p>
+<figure>
+<svg width="88%" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="y=log2x图象复刻（图4.4-2）：过(1,0)，沿x轴向右缓慢爬升，向下无限贴近y轴">
+<rect width="640" height="300" fill="#ffffff"/>
+<line x1="60" y1="260" x2="620" y2="260" stroke="#5a6b7d" stroke-width="1.5"/><polygon points="620,255 630,260 620,265" fill="#5a6b7d"/>
+<line x1="120" y1="280" x2="120" y2="30" stroke="#5a6b7d" stroke-width="1.5"/><polygon points="115,30 120,20 125,30" fill="#5a6b7d"/>
+<line x1="118" y1="220" x2="122" y2="220" stroke="#5a6b7d"/><text x="108" y="225" font-size="11" fill="#5a6b7d">-1</text>
+<circle cx="120" cy="180" r="3.5" fill="#2c5f8a"/><text x="130" y="176" font-size="11" fill="#5a6b7d">(1,0)</text>
+<circle cx="220" cy="140" r="3.5" fill="#2c5f8a"/><text x="230" y="136" font-size="11" fill="#5a6b7d">(2,1)</text>
+<circle cx="320" cy="100" r="3.5" fill="#2c5f8a"/><text x="330" y="96" font-size="11" fill="#5a6b7d">(4,2)</text>
+<circle cx="420" cy="60" r="3.5" fill="#2c5f8a"/><text x="430" y="56" font-size="11" fill="#5a6b7d">(8,3)</text>
+<circle cx="520" cy="20" r="3.5" fill="#2c5f8a"/><text x="530" y="24" font-size="11" fill="#5a6b7d">(16,4)</text>
+<path d="M 132 275 C 150 220 175 170 220 140 C 270 108 330 88 420 60 C 470 45 520 32 560 26" fill="none" stroke="#2f8ab8" stroke-width="2.5"/>
+<text x="480" y="80" font-size="14" fill="#2f8ab8">y=log₂x</text>
+<text x="608" y="276" font-size="13" fill="#5a6b7d">x</text><text x="128" y="34" font-size="13" fill="#5a6b7d">y</text><text x="104" y="276" font-size="13" fill="#5a6b7d">O</text>
+</svg>
+<div class="figcap">图A · y=log₂x描点图象复刻（教材图4.4-2·浅线稿·五点全留痕验证）</div>
+</figure>
+<p><b>思考（p132照录）：</b>底数互为倒数的两个指数函数图象关于y轴对称；底数互为倒数的两个对数函数（如y=log₂x与y=log<sub>1/2</sub>x）呢？——利用换底公式 y=log<sub>1/2</sub>x=−log₂x，点(x,y)与(x,−y)关于x轴对称，所以<span class="mark">底数互为倒数的两个对数函数图象关于<b>x轴</b>对称</span>（图4.4-3）——<b>与指数函数"关于y轴对称"恰好轴换了方向</b>。</p>
+<p><b>多底数图象（图4.4-4）：</b>选取若干底数同坐标系画图，按底数分两类：0&lt;a&lt;1（下降·紫系）与a&gt;1（上升·蓝系）。</p>
+<table class="cmp">
+<tr><th>项目</th><th>0&lt;a&lt;1</th><th>a&gt;1</th></tr>
+<tr><td>图象（图4.4-5框内）</td><td>下降曲线，过(1,0)，以y轴为界贴近</td><td>上升曲线，过(1,0)，以y轴为界贴近</td></tr>
+<tr><td>定义域</td><td colspan="2" style="text-align:center">(0,+∞)</td></tr>
+<tr><td>值域</td><td colspan="2" style="text-align:center">R</td></tr>
+<tr><td>性质(1)</td><td colspan="2" style="text-align:center">过定点<b>(1,0)</b>，即x=1时y=0</td></tr>
+<tr><td>性质(2)</td><td>减函数</td><td>增函数</td></tr>
+</table>
+<div class="figcap">表B · 表4.4-2对数函数的图象和性质（照录重排·两小图渐近虚线x=1为图内标注）</div>
+<p><b>例3（p133照录）比较大小：</b>(1) log₂3.4 与 log₂8.5：底数2&gt;1为增函数且3.4&lt;8.5，所以 log₂3.4&lt;log₂8.5；(2) log<sub>0.3</sub>1.8 与 log<sub>0.3</sub>2.7：底数0.3&lt;1为减函数且1.8&lt;2.7，所以 log<sub>0.3</sub>1.8&gt;log<sub>0.3</sub>2.7；(3) log<sub>a</sub>5.1 与 log<sub>a</sub>5.9（a&gt;0且a≠1）：<b>单调性取决于a，需对底数分类讨论</b>——当a&gt;1为增函数，log<sub>a</sub>5.1&lt;log<sub>a</sub>5.9；当0&lt;a&lt;1为减函数，log<sub>a</sub>5.1&gt;log<sub>a</sub>5.9。（三组数值留痕④全验）</p>
+</div>
+
+<div class="station"><span class="station-title">第三站 · 用起来：pH与反函数（例4·p134-135）</span>
+<p><b>例4（p134照录）溶液酸碱度的测量：</b>pH=-lg[H⁺]，[H⁺]为氢离子浓度（摩尔/升）。(1)说明酸碱度与浓度的变化关系：pH=-lg[H⁺]=lg(1/[H⁺])，在(0,+∞)上随[H⁺]增大，1/[H⁺]减小，lg(1/[H⁺])也减小即pH减小——<b>浓度越大，酸性越强</b>；(2)纯净水[H⁺]=10⁻⁷摩尔/升，pH=-lg10⁻⁷=<b>7</b>。</p>
+<div class="try"><span class="tag">try·即时练</span>教材思考框：胃酸中氢离子浓度是2.5×10⁻²摩尔/升，胃酸的pH是多少？——pH=-lg(2.5×10⁻²)≈<span class="ans">1.60</span>（留痕⑤）。</div>
+<p><b>反函数（p134-135照录）：</b>由 y=(1/2)<sup>x/5730</sup>（x≥0）得到 x=log<sub>(1/2)<sup>1/5730</sup></sub>y（y∈(0,1]）——这个对数函数的<b>定义域(0,1]、值域[0,+∞)</b>分别是原指数函数的<b>值域和定义域</b>，这时就说 x=log<sub>(1/2)<sup>1/5730</sup></sub>y 是 y=(1/2)<sup>x/5730</sup> 的<span class="mark">反函数</span>（inverse function）。对调字母后，y=log<sub>(1/2)<sup>1/5730</sup></sub>x（x∈(0,1]）与y=(1/2)<sup>x/5730</sup>（x≥0）互为反函数，<b>定义域与值域正好互换</b>。</p>
+<div class="formula"><b>一般地（p135照录）：</b>指数函数 y=a<sup>x</sup>（a&gt;0且a≠1）与对数函数 y=log<sub>a</sub>x（a&gt;0且a≠1）<span class="mark">互为反函数</span>，它们的定义域与值域正好互换。</div>
+<div class="try"><span class="tag">try·即时练</span>练习2(2)：比较 log<sub>0.5</sub>6 与 log<sub>0.5</sub>4——底数0.5&lt;1减函数且6&gt;4，所以 log<sub>0.5</sub>6<span class="ans">&lt;</span>log<sub>0.5</sub>4（留痕⑥）。</div>
+</div>
+
+<div class="station"><span class="station-title">第四站 · 三种增长，三个"档次"（4.4.3·p136-138）</span>
+<p><b>y=2<sup>x</sup> 与 y=2x（p136-137照录）：</b>表4.4-3（x=0~3：2ˣ=1,1.414,2,2.828,4,5.657,8；2x=0,1,2,3,4,5,6）与图4.4-5——两图象有两个交点<b>(1,2)和(2,4)</b>：[0,1)上2ˣ&gt;2x，(1,2)上2ˣ&lt;2x，(2,3)上2ˣ&gt;2x。两个函数都单调递增但<b>增长速度不同</b>：y=2x速度保持不变，y=2ˣ速度在变化。更大范围（表4.4-4·图4.4-6）：x越大2ˣ越像与x轴垂直（1024、4096…），2x仍是20、24…——<b>不在同一个"档次"</b>。总会存在x₀，当x&gt;x₀时恒有2ˣ&gt;2x。</p>
+<figure>
+<svg width="80%" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="y=2x与y=2的x次幂图象复刻（图4.4-5）：两个交点(1,2)与(2,4)，指数曲线最终陡增">
+<rect width="520" height="260" fill="#ffffff"/>
+<line x1="50" y1="220" x2="500" y2="220" stroke="#5a6b7d" stroke-width="1.5"/><polygon points="500,215 510,220 500,225" fill="#5a6b7d"/>
+<line x1="90" y1="240" x2="90" y2="20" stroke="#5a6b7d" stroke-width="1.5"/><polygon points="85,20 90,10 95,20" fill="#5a6b7d"/>
+<line x1="160" y1="180" x2="460" y2="60" stroke="#2f8ab8" stroke-width="2.5"/>
+<path d="M 98 215 C 150 208 190 195 230 180 C 270 164 300 120 330 40" fill="none" stroke="#c2437a" stroke-width="2.5"/>
+<circle cx="160" cy="180" r="4" fill="#333"/><text x="166" y="172" font-size="12" fill="#333">(1,2)</text>
+<circle cx="230" cy="120" r="4" fill="#333"/><text x="236" y="112" font-size="12" fill="#333">(2,4)</text>
+<text x="360" y="60" font-size="14" fill="#c2437a">y=2ˣ</text><text x="430" y="90" font-size="14" fill="#2f8ab8">y=2x</text>
+<text x="66" y="184" font-size="11" fill="#5a6b7d">2</text><text x="66" y="140" font-size="11" fill="#5a6b7d">4</text>
+<text x="506" y="236" font-size="13" fill="#5a6b7d">x</text><text x="98" y="24" font-size="13" fill="#5a6b7d">y</text><text x="74" y="236" font-size="13" fill="#5a6b7d">O</text>
+</svg>
+<div class="figcap">图C · y=2ˣ与y=2x交点图复刻（教材图4.4-5·交点(1,2)(2,4)·浅线稿）</div>
+</figure>
+<p><b>一般地（p137照录）：</b>指数函数y=a<sup>x</sup>(a&gt;1)与一次函数y=kx(k≥0)的增长差异都与上述类似——即使k值远远大于a，y=a<sup>x</sup>(a&gt;1)的增长速度<b>最终都会大大超过</b>y=kx。教材边框：<span class="mark">指数函数不像一次函数那样按同一速度增长，而是越来越快，呈爆炸性增长</span>。</p>
+<p><b>y=lg x 与 y=x/10（p137-138照录）：</b>表4.4-5（lg10=1,lg100=2,lg1000=3,lg10000=4；而x/10=1,10,100,1000）——当x&gt;10即lg x&gt;1时，lg x比x/10增长<b>慢</b>很多。一般地：一次函数保持固定增长速度，对数函数增长速度<b>越来越慢</b>；即使k很小，一定范围内log<sub>a</sub>x可能大于kx，但最终会慢于kx——总会存在x₀，当x&gt;x₀时恒有log<sub>a</sub>x&lt;kx。教材边框：<span class="mark">对数函数比较适合描述增长速度平缓的变化规律</span>。</p>
+<p><b>类比探究（p138照录）：</b>画y=2x、y=lg x、y=2ˣ比较增长差异；概括三类函数增长差异；讨论交流"<b>直线上升</b>""<b>对数增长</b>""<b>指数爆炸</b>"的含义。</p>
+<div class="walk"><b>下一站预告（walk）：</b>第4章末节4.5《函数的应用（二）》（p142节名页预告亲读在案）——方程ln x+2x-6=0不能用公式求解怎么办？先学"函数的零点与方程的解"，再用<b>二分法</b>逼近近似解——今天的三种增长差异正是"选模型"的钥匙。</div>
+</div>
+
+<div class="kaowei"><div class="kw-title">高考怎么考 · 考位锚</div>
+<ul>
+<li><b>定义域求法</b>＝高频小题：真数&gt;0一层一层解（例1模式：log₃x²→x≠0·log_a(4-x)→x&lt;4）；</li>
+<li><b>比较大小</b>＝高频考点：同底看单调（增/减），<b>含参数底数必分类讨论</b>（例3(3)模式·a&gt;1与0&lt;a&lt;1两分支）；</li>
+<li><b>反函数概念</b>＝概念题常客：aˣ与log_a x互为反函数·<b>定义域值域互换</b>（p135黑体·常与过定点(1,0)/(0,1)联动考查）；</li>
+<li><b>增长模型选择</b>＝应用题与新定义题素材：直线上升/对数增长/指数爆炸三"档次"（4.4.3·教材探究(3)原话），配y=aˣ与y=kx存在x₀的"档次超越"结构；</li>
+<li class="detail">真题锚：真题池内暂未录"数学4.4"专行，本件按宁缺毋编原则不代拟，候采补录（哨兵线v2.12扩池中）。</li>
+</ul>
+</div>
+
+<div class="selftest"><b>自测四连（来源逐题标注）：</b>
+<ol>
+<li>比较正数m,n大小：log₃m&lt;log₃n ⇒ m与n谁大？——底数3&gt;1增函数，<span class="ans">m&lt;n</span>（习题4.4复习巩固2(1)原题·留痕⑧）。</li>
+<li>火箭最大速度v=2000·ln(1+M/m)（m/s）。燃料质量是火箭质量的多少倍时，最大速度可达12km/s？——2000·ln(1+M/m)=12000⇒ln(1+M/m)=6⇒1+M/m=e⁶≈403.43⇒<span class="ans">M/m≈402.4倍</span>（习题3原题·留痕⑨）。</li>
+<li>对数函数y=lg x的图象与一次函数y=f(x)的图象有A,B两个公共点，A=(1,0)、B=(2,lg 2)（读图口径），求f(x)解析式——直线过(1,0)与(2,lg 2)：f(x)=<span class="ans">lg 2·(x-1)</span>（练习3·读图口径显式标注·留痕⑩）。</li>
+<li>鲑鱼游速v=(1/2)·log₃(O/100)（m/s），O为耗氧量单位数。耗氧量2700个单位时游速多少？静止时耗氧量多少？——v=(1/2)log₃27=<span class="ans">1.5 m/s</span>；静止v=0⇒log₃(O/100)=0⇒<span class="ans">O=100</span>（习题5原题·留痕⑪）。</li>
+</ol></div>
+
+<div class="alt"><span class="tag">alt·课堂外延1</span><b>探究与发现：互为反函数的两个函数图象间的关系（教材p135栏目·照录改写）：</b>同坐标系画y=2ˣ与y=log₂x——两图象关于<b>直线y=x对称</b>；取y=2ˣ上P₁(-1,1/2)、P₂(0,1)、P₃(1,2)，它们关于y=x的对称点(1/2,-1)、(1,0)、(2,1)都在y=log₂x图象上（因为y=2ˣ⇔x=log₂y）；一般地P₀(x₀,y₀)在y=2ˣ上⇒(y₀,x₀)在y=log₂x上。结论对一般y=aˣ与y=log_a x同样成立（教材探究与发现栏目5问）。</div>
+
+<div class="alt"><span class="tag">alt·课堂外延2</span><b>习题6（图象判断·照录改写）：</b>2h内将药物注射进血液——注射期间药物含量线性增加，停止注射后呈指数衰减。能反映含量Q随时间t变化的图象是<b>(B)</b>：0~2h直线上升，t=2后下坡且越来越缓（指数型衰减·不坠为负）。（四选项判读留痕⑫）</div>
+
+<div class="alt"><span class="tag">alt·课堂外延3</span><b>习题9（照录改写）：</b>某疾病患病率每年降低15%，降低一半需多少年？(0.85)<sup>t</sup>=1/2⇒t=ln0.5/ln0.85≈<span class="ans">4.27年</span>；按整数年口径：4年后剩52.2%未达半，5年后剩44.4%——<b>约5年</b>（两口径并注·留痕⑬）。<b>习题13速览（留痕⑭）：</b>log<sub>0.2</sub>6&gt;log<sub>0.3</sub>6&gt;log<sub>0.4</sub>6（底越小负得越少）；log₂3≈1.585&gt;log₃4≈1.262&gt;log₄5≈1.161（换底数值留痕）。习题12（a∈(1/2,1)）推导入留痕不入正文。</div>
+
+<div class="figure">
+<svg width="100%" viewBox="0 0 840 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：4.3对数（已知幂求指数）→4.4对数函数（你在·反着看成长）→4.5函数的应用（二）→章末小结">
+<rect x="0" y="0" width="840" height="170" fill="#ffffff" stroke="#d7e3ee" rx="8"/>
+<rect x="30" y="42" width="160" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="110" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">4.3 对数</text>
+<text x="110" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">已知幂求指数</text>
+<line x1="194" y1="75" x2="228" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="228,69 240,75 228,81" fill="#8a9aa9"/>
+<rect x="244" y="34" width="200" height="82" rx="8" fill="#fffbe8" stroke="#ffd94a" stroke-width="2.5"/>
+<text x="344" y="66" font-size="14.5" text-anchor="middle" fill="#8a6d00">4.4 对数函数</text>
+<text x="344" y="90" font-size="12" text-anchor="middle" fill="#8a6d00">你在 · 反着看成长</text>
+<line x1="448" y1="75" x2="482" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="482,69 494,75 482,81" fill="#8a9aa9"/>
+<rect x="498" y="34" width="200" height="82" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="598" y="66" font-size="14.5" text-anchor="middle" fill="#5a6b7d">4.5 函数的应用（二）</text>
+<text x="598" y="90" font-size="12" text-anchor="middle" fill="#8a9aa9">零点·二分法·建模</text>
+<line x1="702" y1="75" x2="736" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="736,69 748,75 736,81" fill="#8a9aa9"/>
+<text x="790" y="79" font-size="12.5" text-anchor="middle" fill="#8a9aa9">章末小结</text>
+</svg>
+<div class="figcap">本节位置图：4.3→<b>4.4（你在）</b>→4.5→章末小结（浅线稿·打印安全）</div>
+</div>
+
+<div class="foot">版本链：v1.0 · 1031晚 · 队2席（搜索规划师）· 影印直读p130-141（图137-148）· 节界双端实锚（左界p130=4.4节名页亲读·右界p142=4.5《函数的应用（二）》节名页亲读）· 认领行9ad23d4·硬闸21:55 · 分支dui2_44_1031候并禁直推main · 事实簇锚源=人教A必修一影印（6e764703·ts=1787023173400·图N→印刷页N-7）· 例1/例2/例3/例4与练习/习题全收录· 习题12/13留痕备查不入正文· 自编/试答均显式标注 · 宁缺毋编 <br>
+（搜索规划师·队2席·1031晚20:2x会话）</div>
+
+</body>
+</html>
