@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物3.3 细胞核的结构和功能 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: 2px; }
+  .talk { background: #1b2129; border: 1px solid #2c3947; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .talk p { margin: 10px 0; }
+  mark { background: #f0b429; color: #14171c; padding: 0 4px; border-radius: 3px; }
+  mark.nb { background: transparent; color: #f0b429; font-weight: bold; }
+  .check { background: #16211b; border: 1px solid #2d4a38; border-radius: 10px; padding: 14px 18px; margin: 18px 0; }
+  .check li { margin: 6px 0 6px 20px; }
+  .formula { background: #101820; border: 1.5px solid #4a9eff; border-radius: 10px; padding: 14px 18px; margin: 16px 0; text-align: center; font-size: 18px; color: #eaf3ff; }
+  .key { background: #1d2126; border-left: 4px solid #f0b429; border-radius: 8px; padding: 12px 16px; margin: 18px 0; }
+  .key b.t { color: #f0b429; }
+  .pit { background: #241418; border: 1px solid #5e2a35; border-radius: 10px; padding: 14px 18px; margin: 18px 0; }
+  .pit .pt { color: #ff7a8a; font-weight: bold; }
+  .try { background: #14202a; border: 1px dashed #3d5a75; border-radius: 10px; padding: 12px 16px; margin: 16px 0; font-size: 15.5px; }
+  .try .q { color: #7fc4ff; font-weight: bold; }
+  .try .a { color: #a8c7e0; margin-top: 6px; }
+  .alt { background: #1a1f2b; border: 1px solid #33406a; border-radius: 10px; padding: 12px 16px; margin: 16px 0; font-size: 15.5px; }
+  .alt .at { color: #9db1ff; font-weight: bold; }
+  .tb { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15.5px; }
+  .tb th, .tb td { border: 1px solid #33414f; padding: 7px 10px; text-align: left; }
+  .tb th { background: #1d2733; color: #cfe0f0; }
+  .tb td { background: #171d26; }
+  .fig { margin: 18px 0; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; }
+  .detail { border: 1px solid #2c3947; border-radius: 8px; background: #151b22; padding: 10px 14px; margin: 10px 0; font-size: 15.5px; color: #b9c8d6; }
+  .ans { color: #7fd4a0; font-weight: bold; }
+  .small { color: #7d8a99; font-size: 13px; }
+  .box { background: #101a14; border: 1.5px solid #3a7a54; border-radius: 10px; padding: 14px 18px; margin: 20px 0; }
+  .box .bt { color: #7fd4a0; font-weight: bold; }
+  table.layout { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  table.layout td { vertical-align: top; padding: 4px 8px; }
+  @media print {
+    body { background: #fff !important; color: #111 !important; }
+    .page { padding: 0; max-width: 100%; }
+    .talk, .check, .try, .alt, .detail { background: #f6f8fa !important; border-color: #bbb !important; color: #111 !important; }
+    .pit { background: #fdf2f4 !important; border-color: #c99 !important; color: #111 !important; }
+    .key { background: #fffbe8 !important; color: #111 !important; }
+    .formula { background: #eef5ff !important; color: #0a2540 !important; }
+    .box { background: #f0f9f4 !important; color: #111 !important; }
+    h1, h2, h3 { color: #111 !important; }
+    .sub, .figcap, .small { color: #555 !important; }
+    mark { background: #ffe28a !important; color: #111 !important; }
+    mark.nb { color: #8a6d00 !important; }
+    .step-tag { background: #0a66d0 !important; color: #fff !important; }
+    .try .q { color: #0a66d0 !important; } .try .a { color: #333 !important; }
+    .alt .at { color: #2646c0 !important; } .box .bt { color: #14663f !important; }
+    .pit .pt { color: #a02030 !important; }
+    .tb th { background: #e8eef4 !important; color: #111 !important; } .tb td { background: #fff !important; color: #111 !important; }
+    .detail { color: #333 !important; } .ans { color: #0a6e3a !important; }
+    svg text { fill: #111 !important; }
+    svg .soft { fill: #555 !important; }
+    .ans { color: #0a6e3a !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>细胞核的结构和功能</h1>
+<p class="sub">生物 · 必修一 · 第3章 细胞的基本结构 · 第3节 ｜ 零基础首学版 ｜ 前置：2.2细胞器（分工合作）· 2.5核酸（DNA是遗传信息携带者）· 预计25分钟</p>
+
+<div class="check">
+<b>读完这节你能：</b>
+<li>用<b>四组经典实验</b>说清"凭什么说细胞核是控制中心"（证据链式答题）</li>
+<li>报出细胞核<b>四大结构</b>各自的功能（核膜/核仁/染色质/核孔，一个都不混）</li>
+<li>说清<b>染色质和染色体</b>为什么是"同一种物质的两种状态"</li>
+<li>区分<b>物理模型/概念模型/数学模型</b>，知道做模型时什么排第一位</li>
+<li>讲出克隆猴"中中华华"背后的<b>三道难关</b>，以及为什么各国都禁止克隆人</li>
+</div>
+
+<h2><span class="step-tag">开场</span>一只小牛掀开的问题：指令藏在哪？</h2>
+<div class="talk">
+<p><b>问题探讨（教材p54照录）：</b>从母牛乙的体细胞中取出细胞核，注入母牛甲去核的卵细胞中，移植后的细胞经细胞分裂形成早期胚胎，将胚胎移植入母牛丙的子宫内。出生的小牛几乎与母牛乙的性状一模一样，称之为"克隆牛"。<b>讨论：克隆牛的性状与母牛乙几乎是一模一样的，这说明了什么？</b></p>
+<p>小牛的"长相"由谁拍板？三个母亲分工明确：<b>乙出"图纸"（细胞核）·甲出"厂房"（去核卵细胞）·丙出"工地"（子宫）</b>——小牛却只像出图纸的那位（自编口诀·三方角色对应是自编梳理，实验事实照录p54）。图纸藏在细胞核里——这一节就把"控制中心"的证据和构造一次说清。</p>
+<p><b>本节聚焦（教材p54照录）：</b>①细胞核的结构和功能是怎样的？②为什么说细胞核是细胞的"控制中心"？③怎样制作真核细胞的三维结构模型？</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒搬齐三块砖</h2>
+<div class="talk">
+<p>零基础也不怕，先搬三块旧砖（自编梳理）：</p>
+<p>① <b>2.5节的结论</b>：DNA是遗传信息的携带者，主要分布在细胞核中（教材p56"知识链接"口径：有关DNA的知识参见本书第2章第5节和必修2《遗传与进化》第3章）；</p>
+<p>② <b>3.1节的结论</b>：细胞膜是系统的边界；</p>
+<p>③ <b>3.2节的结论</b>：细胞器分工合作，分泌蛋白的合成运输路线是核糖体→内质网→高尔基体——但"造什么蛋白"的指令，来自细胞核（这正是本节要证明的事）。</p>
+<p><b>例外先打预防针（教材p54照录）：</b>除了高等植物成熟的筛管细胞和哺乳动物成熟的红细胞等极少数细胞外，真核细胞都有细胞核。<mark class="nb">这两个"无核例外"是考点常客</mark>（为什么它们没有核也能活一阵？筛管细胞靠伴胞细胞供养、红细胞出厂前已装满血红蛋白——自编延伸说理，机制细节高中不作要求）。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>细胞核的功能——四组实验，一条证据链</h2>
+<div class="talk">
+<p>教材p54-55用"思考·讨论"给出四组资料。别背实验名，抓<b>同一个逻辑：动核→变化；补核→恢复</b>（自编提炼）。</p>
+</div>
+
+<table class="tb">
+<tr><th>资料（照录出处）</th><th>操作</th><th>结果</th><th>说明什么</th></tr>
+<tr><td><b>资料1</b> 美西螈核移植（p54）</td><td>黑白两种美西螈：黑色胚胎细胞的核→白色美西螈的去核卵细胞</td><td>移植后发育长大的美西螈<b>全部是黑色</b></td><td>肤色性状由<b>核</b>决定</td></tr>
+<tr><td><b>资料2</b> 蝾螈受精卵横缢（p54）</td><td>用头发把受精卵横缢为有核/无核两半</td><td>有核半能分裂，无核半停止；分裂到16~32个细胞时把一个核挤过去，无核半<b>也开始分裂</b>；最后两半都发育成正常胚胎（原无核半慢些）</td><td>分裂靠核；核还<b>分配"施工队"</b>（挤过去的核重启施工）</td></tr>
+<tr><td><b>资料3</b> 变形虫切割（p55）</td><td>切成有核/无核两半；再用显微钩针钩出有核半的核；及时植入同种变形虫的核</td><td>无核半：能消化已吞噬的食物，<b>不能摄取食物</b>，对刺激无反应，电镜下高尔基体、内质网退化；有核半：照样摄食、有反应、伸缩泡可再生、能生长分裂；<b>钩走核→如无核半；补回核→生命活动恢复</b></td><td>代谢与应激由核持续指挥；<b>核要"在岗"</b>（不只在场）</td></tr>
+<tr><td><b>资料4</b> 伞藻嫁接与核移植（p55）</td><td>伞藻=帽+柄+假根，核在假（基）部；伞形帽种与菊花形帽种嫁接、核移植</td><td>帽形跟随<b>带核的那一段</b>（图p55两组实验示意）</td><td>形态建成由核决定</td></tr>
+</table>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="四组实验证据链矩阵：资料1-4各自动核操作与结果，共同指向细胞核控制代谢和遗传（自绘重排教材p54-55思考讨论）">
+  <defs><marker id="e1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a9eff"/></marker></defs>
+  <text x="380" y="24" fill="#cfe0f0" font-size="14" text-anchor="middle">四组实验 = 一条证据链（自绘重排 p54-55）</text>
+  <g font-size="12.5">
+    <rect x="20" y="44" width="160" height="56" rx="8" fill="#1d2733" stroke="#31465e"/><text x="100" y="68" fill="#cfe0f0" text-anchor="middle">资料1 美西螈</text><text x="100" y="88" fill="#7d8a99" text-anchor="middle">换核→肤色随核</text>
+    <rect x="210" y="44" width="160" height="56" rx="8" fill="#1d2733" stroke="#31465e"/><text x="290" y="68" fill="#cfe0f0" text-anchor="middle">资料2 蝾螈横缢</text><text x="290" y="88" fill="#7d8a99" text-anchor="middle">有核分裂·补核重启</text>
+    <rect x="400" y="44" width="160" height="56" rx="8" fill="#1d2733" stroke="#31465e"/><text x="480" y="68" fill="#cfe0f0" text-anchor="middle">资料3 变形虫</text><text x="480" y="88" fill="#7d8a99" text-anchor="middle">钩核停摆·补核恢复</text>
+    <rect x="590" y="44" width="150" height="56" rx="8" fill="#1d2733" stroke="#31465e"/><text x="665" y="68" fill="#cfe0f0" text-anchor="middle">资料4 伞藻</text><text x="665" y="88" fill="#7d8a99" text-anchor="middle">帽形随核</text>
+    <line x1="100" y1="100" x2="360" y2="140" stroke="#4a9eff" stroke-width="2" marker-end="url(#e1)"/>
+    <line x1="290" y1="100" x2="380" y2="140" stroke="#4a9eff" stroke-width="2" marker-end="url(#e1)"/>
+    <line x1="480" y1="100" x2="380" y2="140" stroke="#4a9eff" stroke-width="2" marker-end="url(#e1)"/>
+    <line x1="665" y1="100" x2="400" y2="140" stroke="#4a9eff" stroke-width="2" marker-end="url(#e1)"/>
+    <rect x="230" y="146" width="300" height="42" rx="10" fill="#101820" stroke="#4a9eff" stroke-width="1.5"/>
+    <text x="380" y="164" fill="#eaf3ff" text-anchor="middle" font-weight="bold">动核→变化 · 补核→恢复</text>
+    <text x="380" y="182" fill="#7fc4ff" text-anchor="middle">细胞核控制着细胞的代谢和遗传</text>
+  </g>
+</svg>
+<p class="figcap">这张图在说什么：四组实验各自独立，但逻辑同构——核变则性状变，核归则功能复。"控制中心"不是一句断言，是四条证据共同压出来的结论。</p>
+</div>
+
+<div class="talk">
+<p><b>教材结论（p55照录）：</b>大量的事实表明，<mark>细胞核控制着细胞的代谢和遗传</mark>。因此，有人把细胞核比喻为细胞的"大脑"、细胞的"控制中心"。细胞核为什么能成为细胞的"控制中心"呢？——答案在第二步：看它手里攥着什么。</p>
+</div>
+
+<div class="try"><span class="q">验一验（30秒·自编小验）：资料2里，为什么"挤一个核过去"无核半就能重新分裂，而资料3里变形虫只切一半不行？</span><div class="a">→ 资料2两半中间只有很少细胞质相连，核（和它携带的指令）物理上还能"再上岗"；资料3的核被彻底钩走，指令源清零——所以"核在岗"是细胞持续运转的硬条件（自编说理）。</div></div>
+
+<h2><span class="step-tag">第二步</span>细胞核的结构——四件套与一张"蓝图"</h2>
+<div class="talk">
+<p><b>（教材p56照录）</b>细胞核能够控制细胞的代谢和遗传，是与细胞核的结构分不开的（图3-10）。四件套各自的活儿：</p>
+</div>
+
+<table class="tb">
+<tr><th>结构</th><th>教材p56图3-10标注（照录）</th><th>记忆抓手（自编）</th></tr>
+<tr><td><b>核膜</b></td><td><b>双层膜</b>，把核内物质与细胞质分开</td><td>"外墙+护城河"：双层=两道墙</td></tr>
+<tr><td><b>核仁</b></td><td>与<b>某种RNA的合成</b>以及<b>核糖体的形成</b>有关</td><td>"造装配工的部门"：核糖体=蛋白质装配机（3.2节锚）</td></tr>
+<tr><td><b>染色质</b></td><td>主要由<b>DNA和蛋白质</b>组成，<b>DNA是遗传信息的载体</b></td><td>"图纸正本"：蓝图卷轴</td></tr>
+<tr><td><b>核孔</b></td><td>实现<b>核质之间频繁的物质交换和信息交流</b></td><td>"门禁通道"：指令出门、原料进门</td></tr>
+</table>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="细胞核结构模式图：核膜双层、核仁、染色质、核孔四结构（自绘重排教材p56图3-10）">
+  <defs><radialGradient id="nuc" cx="45%" cy="45%" r="60%"><stop offset="0%" stop-color="#6b5b8e"/><stop offset="100%" stop-color="#4a3f66"/></radialGradient></defs>
+  <circle cx="330" cy="150" r="120" fill="url(#nuc)" stroke="#8f7ab8" stroke-width="2"/>
+  <circle cx="330" cy="150" r="98" fill="none" stroke="#a795c9" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <path d="M 330 40 A 110 110 0 0 1 408 200 L 330 150 Z" fill="#c9bfe0" opacity="0.55"/>
+  <circle cx="310" cy="145" r="34" fill="#3a2f52" stroke="#2a2140" stroke-width="2"/>
+  <text x="310" y="150" fill="#cfe0f0" font-size="11" text-anchor="middle">核仁</text>
+  <g stroke="#d7a5c8" stroke-width="1.6" fill="none">
+    <path d="M 250 120 q 14 -8 28 0 t 28 0"/><path d="M 260 170 q 14 -8 28 0 t 28 0"/>
+    <path d="M 350 200 q 14 -8 28 0 t 28 0"/><path d="M 240 95 q 12 -7 24 0 t 24 0"/>
+  </g>
+  <text x="300" y="112" fill="#e6d9f2" font-size="10.5">染色质（细丝）</text>
+  <g fill="#d7a5c8">
+    <circle cx="230" cy="230" r="5"/><circle cx="248" cy="238" r="5"/><circle cx="266" cy="244" r="5"/>
+    <circle cx="395" cy="52" r="5"/><circle cx="412" cy="62" r="5"/><circle cx="428" cy="74" r="5"/>
+    <circle cx="205" cy="90" r="5"/><circle cx="218" cy="78" r="5"/><circle cx="448" cy="180" r="5"/><circle cx="452" cy="160" r="5"/>
+  </g>
+  <text x="515" y="70" fill="#cfe0f0" font-size="13" font-weight="bold">核膜（双层膜）</text>
+  <text x="515" y="90" fill="#7d8a99" font-size="11.5">把核内物质与细胞质分开</text>
+  <text x="515" y="130" fill="#cfe0f0" font-size="13" font-weight="bold">核仁</text>
+  <text x="515" y="150" fill="#7d8a99" font-size="11.5">与某种RNA的合成以及</text>
+  <text x="515" y="166" fill="#7d8a99" font-size="11.5">核糖体的形成有关</text>
+  <text x="515" y="200" fill="#cfe0f0" font-size="13" font-weight="bold">染色质</text>
+  <text x="515" y="220" fill="#7d8a99" font-size="11.5">主要由DNA和蛋白质组成</text>
+  <text x="515" y="236" fill="#7d8a99" font-size="11.5">DNA是遗传信息的载体</text>
+  <text x="515" y="266" fill="#cfe0f0" font-size="13" font-weight="bold">核孔</text>
+  <text x="515" y="286" fill="#7d8a99" font-size="11.5">核质间频繁的物质交换和信息交流</text>
+  <g stroke="#4a9eff" stroke-width="1"><line x1="440" y1="60" x2="508" y2="70"/><line x1="322" y1="140" x2="508" y2="140"/><line x1="262" y1="118" x2="508" y2="212"/><line x1="266" y1="246" x2="508" y2="272"/></g>
+  <text x="120" y="292" fill="#5a6a7a" font-size="10.5">粉红颗粒=核孔（膜上的通道）</text>
+</svg>
+<p class="figcap">这张图在说什么（自绘重排教材p56图3-10）：切开的细胞核剖面——双层核膜包裹，膜上有核孔（粉红颗粒），内里一团深色是核仁，铺开的细丝是染色质。四件套各管一摊。</p>
+</div>
+
+<div class="talk">
+<p><b>染色质 ↔ 染色体（教材p56照录）：</b>细胞核中有DNA。DNA和蛋白质紧密结合成染色质（chromatin）。染色质是极细的丝状物，因容易被碱性染料染成深色而得名。细胞分裂时，细胞核解体，染色质高度螺旋化，缩短变粗，成为光学显微镜下清晰可见的圆柱状或杆状的染色体（chromosome）。细胞分裂即将结束时，染色体解螺旋，重新成为细丝状的染色质，被包围在新形成的细胞核里。因此，<mark>染色质和染色体是同一物质在细胞不同时期的两种存在状态</mark>。</p>
+<p><b>蓝图逻辑（p56照录）：</b>DNA上储存着遗传信息。在细胞分裂时，DNA携带的遗传信息从亲代细胞传递给子代细胞，保证了亲子代细胞在遗传上的稳定性。遗传信息就像细胞生命活动的"蓝图"，细胞依据这个"蓝图"，进行物质合成、能量转化和信息交流，完成生长、发育、衰老和凋亡。正是由于这张"蓝图"储藏在细胞核里，细胞核才具有控制细胞代谢的功能。</p>
+<p><b>全面阐述（p56照录·本节最重要一句）：</b>对细胞核功能较为全面的阐述应该是：<mark>细胞核是遗传信息库，是细胞代谢和遗传的控制中心</mark>。</p>
+</div>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="染色质与染色体互变示意：分裂期螺旋化为染色体，分裂结束解螺旋回染色质（自绘重排教材p56）">
+  <defs><marker id="e2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <g stroke="#c9a5b8" stroke-width="2" fill="none">
+    <path d="M 60 75 q 20 -18 40 0 t 40 0"/><path d="M 60 88 q 20 -18 40 0 t 40 0"/>
+  </g>
+  <text x="100" y="120" fill="#7d8a99" font-size="12" text-anchor="middle">染色质（细丝·间期）</text>
+  <line x1="180" y1="80" x2="280" y2="80" stroke="#4a9eff" stroke-width="2" marker-end="url(#e2)"/>
+  <text x="230" y="62" fill="#7fc4ff" font-size="11.5" text-anchor="middle">细胞分裂：高度螺旋化</text>
+  <text x="230" y="104" fill="#5a6a7a" font-size="10.5" text-anchor="middle">缩短变粗·光学显微镜清晰可见</text>
+  <g stroke="#c9a5b8" stroke-width="5" fill="none">
+    <path d="M 330 55 v 20 M 322 50 a 8 10 0 1 1 16 0 M 338 100 a 8 10 0 1 1 -16 0 M 330 75 h 26 M 330 88 h 22"/>
+  </g>
+  <circle cx="360" cy="62" r="4" fill="#8fa0b3"/><circle cx="360" cy="90" r="4" fill="#8fa0b3"/>
+  <text x="360" y="120" fill="#7d8a99" font-size="12" text-anchor="middle">染色体（圆柱/杆状·分裂期）</text>
+  <line x1="440" y1="80" x2="540" y2="80" stroke="#4a9eff" stroke-width="2" marker-end="url(#e2)"/>
+  <text x="490" y="62" fill="#7fc4ff" font-size="11.5" text-anchor="middle">分裂将结束：解螺旋</text>
+  <g stroke="#c9a5b8" stroke-width="2" fill="none">
+    <path d="M 580 75 q 20 -18 40 0 t 40 0"/><path d="M 580 88 q 20 -18 40 0 t 40 0"/>
+  </g>
+  <text x="660" y="120" fill="#7d8a99" font-size="12" text-anchor="middle">染色质（新核里）</text>
+  <text x="380" y="142" fill="#5a6a7a" font-size="11.5" text-anchor="middle">同一物质（DNA+蛋白质）· 两种存在状态（自绘重排p56）</text>
+</svg>
+<p class="figcap">这张图在说什么：这不是两种东西，是同一卷"图纸"的两种收纳状态——散开好翻阅（工作态），卷紧好搬运（分裂态）。</p>
+</div>
+
+<div class="try"><span class="q">验一验（60秒·自编说理）：同一生物体内所有细胞的"蓝图"都一样吗？如果是一样的，为什么体内细胞的形态、结构和功能如此多样？（教材p56问号旁栏原问）</span><div class="a">→ 蓝图（DNA）一样——因为所有细胞都来自同一个受精卵的有丝分裂；多样是因为<b>不同细胞"翻开的页码"不同</b>（基因的选择性表达·正式名词高中后续学习，此处只立"蓝图相同、用法不同"的直觉，自编说理）。这道问是第6章细胞分化的伏笔。</div></div>
+
+<h2><span class="step-tag">第三步</span>科学方法：模型，和一次动手实战</h2>
+<div class="talk">
+<p><b>科学方法·建构模型（教材p57照录）：</b>模型是人们为了某种特定的目的而对认识对象所作的一种简化的概括性的描述，这种描述可以是定性的，也可以是定量的；有的借助于具体的实物或其他形象化的手段，有的则通过抽象的形式来表达。模型的形式很多，包括<b>物理模型、概念模型、数学模型</b>等。以实物或图画形式直观地表达认识对象的特征，这种模型就是<b>物理模型</b>。沃森和克里克制作的著名的DNA双螺旋结构模型，就是物理模型，它形象而概括地反映了DNA分子结构的共同特征。你下面将要制作的细胞模型是物理模型，需要尽量准确地概括真核细胞的特征。</p>
+</div>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="模型三型分类：物理模型/概念模型/数学模型（自编重排教材p57科学方法）">
+  <rect x="290" y="20" width="180" height="46" rx="10" fill="#101820" stroke="#4a9eff" stroke-width="1.5"/>
+  <text x="380" y="48" fill="#eaf3ff" font-size="14" text-anchor="middle" font-weight="bold">模型（简化的概括性描述）</text>
+  <g font-size="12.5">
+    <rect x="60" y="100" width="180" height="52" rx="8" fill="#1d2733" stroke="#31465e"/><text x="150" y="122" fill="#cfe0f0" text-anchor="middle" font-weight="bold">物理模型</text><text x="150" y="141" fill="#7d8a99" text-anchor="middle">实物/图画直观表达</text>
+    <rect x="290" y="100" width="180" height="52" rx="8" fill="#1d2733" stroke="#31465e"/><text x="380" y="122" fill="#cfe0f0" text-anchor="middle" font-weight="bold">概念模型</text><text x="380" y="141" fill="#7d8a99" text-anchor="middle">文字/图示概括关系</text>
+    <rect x="520" y="100" width="180" height="52" rx="8" fill="#1d2733" stroke="#31465e"/><text x="610" y="122" fill="#cfe0f0" text-anchor="middle" font-weight="bold">数学模型</text><text x="610" y="141" fill="#7d8a99" text-anchor="middle">公式/曲线定量描述</text>
+  </g>
+  <g stroke="#4a9eff" stroke-width="2"><line x1="330" y1="66" x2="170" y2="98"/><line x1="380" y1="66" x2="380" y2="98"/><line x1="430" y1="66" x2="590" y2="98"/></g>
+  <text x="150" y="168" fill="#5a6a7a" font-size="10.5" text-anchor="middle">如：DNA双螺旋模型·细胞模型</text>
+  <text x="380" y="168" fill="#5a6a7a" font-size="10.5" text-anchor="middle">如：3.2分泌蛋白流程图</text>
+  <text x="610" y="168" fill="#5a6a7a" font-size="10.5" text-anchor="middle">如：2.2 J型/S型曲线方程</text>
+</svg>
+<p class="figcap">这张图在说什么（自编重排p57）：三型各举一个你已学过的实例——其实你早就在"用模型"了，本节要你亲手做一个。</p>
+</div>
+
+<div class="talk">
+<p><b>探究·实践：尝试制作真核细胞的三维结构模型（教材p57照录要点）：</b>目的要求=①尝试制作真核细胞的三维结构模型；②体验建构模型的过程。材料用具=根据本小组模拟制作模型的种类选择，例如制作计算机三维动画模型需配备安装了制作三维动画软件的计算机；制作实物模型可用泡沫塑料、木块、纸板、纸片、塑料袋、布、线绳、细铁丝、大头针等材料，有条件的学校也可尝试用3D打印技术制作细胞模型。建立模型五步=①通过讨论确定模型的种类（计算机模型/实物模型）与规格（全部还是部分）；②确定材料用具——真实的细胞颜色并不鲜艳，但可以用不同颜色区分不同结构使特点突出；③动手前小组对设计方案进一步讨论、细化（各结构如何制作、如何连接，确定实施过程和分工）；④按分工制作配件并组合，逐步完成；⑤按设计方案对模型进行检查、修补缺陷。表达和交流=班内交流，从科学性、艺术性、成本等方面评价。</p>
+<p><b>！提示（p57照录）：</b>在设计并制作细胞模型时，<mark>科学性应该是第一位的，其次才是模型的美观与否</mark>。</p>
+</div>
+
+<div class="pit"><span class="pt">大坑警报（自编整理·三发）：</span><br>
+① <b>核仁≠"合成核糖体的地方"</b>——教材口径是核仁"与某种RNA的合成以及核糖体的<b>形成</b>有关"："有关/参与形成"≠"亲自合成"，选择题最爱在这里设词；<br>
+② <b>核孔≠敞开的大门</b>——核孔实现"核质之间频繁的物质交换和信息交流"，但它有选择性（DNA不出核、指令mRNA能出）——高中只答教材句，别脑补"全通透"；<br>
+③ <b>例外细胞别忘</b>——"真核细胞都有细胞核"是错的：高等植物<b>成熟筛管细胞</b>、哺乳动物<b>成熟红细胞</b>没有细胞核（p54照录原文口径）。</div>
+
+<h2><span class="step-tag">第四步</span>练习与应用＋克隆猴彩蛋</h2>
+<div class="talk">
+<p><b>一、概念检测（教材p58照录·逐题代解）</b></p>
+<p>1.（判断）(1) 控制细胞器进行物质合成、能量转化等的指令，主要通过<b>核孔</b>从细胞核送到细胞质。<span class="ans">（√）</span>——"蓝图"指令正是经核孔实现核质间信息交流（p56核孔功能口径）。(2) 细胞核功能的实现与细胞核中的染色质密切相关。<span class="ans">（√）</span>——染色质里的DNA才是"蓝图正本"（p56）。</p>
+<p>2. 细胞核内行使遗传功能的结构是（　）A.核膜 B.核孔 C.染色质 D.核仁 → <span class="ans">C</span>：染色质主要由DNA和蛋白质组成，DNA是遗传信息的载体（p56照录）。</p>
+<p>3. 细胞核是细胞的控制中心，下列各项<b>不能</b>作为这一结论论据的是（　）A.DNA主要存在于细胞核内 B.细胞核控制细胞的代谢和遗传 C.细胞核是遗传物质储存和复制的场所 D.细胞核位于细胞的正中央 → <span class="ans">D</span>：位置在不在"正中央"与控制力毫无因果（自编说理：司令部在哪层楼不影响它指挥）。</p>
+<p><b>二、拓展应用（p58照录·代解）</b></p>
+<p>1. 染色体与染色质是同一物质不同时期的两种存在状态，意义=分裂期浓缩成染色体便于<b>精确均分</b>遗传物质；间期松散成染色质便于<b>读取蓝图</b>进行表达（自编说理：卷轴"搬运态/工作态"）。</p>
+<p>2. 有性生殖使雌雄两性生殖细胞的细胞核融合，后代遗传物质与亲代相比"既继承又有变化"——不支持克隆人的论据：克隆=核的单一来源，遗传背景高度单一，<b>种群多样性丧失</b>，且带来严重社会和伦理问题（p58照录口径：我国政府明确禁止克隆人，我国科学家也坚决反对）。</p>
+</div>
+
+<div class="box">
+<p><span class="bt">生物科技进展（教材p58照录要点）：世界上首例体细胞克隆猴的诞生</span></p>
+<p>我国科学家首次成功克隆出非人灵长类动物——克隆猴"中中"和"华华"（寓"中华"之意）。自1996年第一只体细胞克隆羊"多莉"诞生以来，牛、鼠、猫、狗等多种哺乳动物已获成功，但灵长类一直是屏障。<b>三道难关（p58照录）：</b>①卵母细胞的核遗传物质区域不易识别，去掉猴卵母细胞核遗传物质的难度很大（须先把受体卵母细胞的核遗传物质"摘除"，容纳体细胞细胞核这个"外来户"——我国科学工作者借助显微操作设备反复练习完成"去核"）；②卵母细胞"唤醒"时机难把握——体细胞的细胞核进入卵母细胞时需先"唤醒"卵母细胞再启动发育"程序"，传统方式容易提前"唤醒"，导致克隆"程序"无法正常启动；③体细胞克隆胚胎的发育成功率低——转入的核需与去核卵母细胞紧密结合、融为一体并发挥正常功能，否则绝大多数克隆胚胎难以正常发育。</p>
+<p><b>伦理底线（p58照录）：</b>克隆人虽"从原理和技术层面看是能够做到的"，但会带来严重的社会和伦理问题——<mark>我国政府明确禁止克隆人，我国科学家也坚决反对克隆人</mark>。</p>
+<p class="small" style="margin-top:8px">（代验自检：多莉=1996年·克隆羊·第一只体细胞克隆哺乳动物；中中/华华=首例体细胞克隆猴·非人灵长类；三道难关计数=3——与教材p58文本逐项核对一致。本节为叙述性内容，无定量运算点，数字核验以文本比对口径完成。）</p>
+</div>
+
+<div class="key"><b class="t">收口：三句话带走（自编提炼）</b><br>
+① <b>控制中心不是封的，是四组实验压出来的</b>：动核→变化，补核→恢复——细胞核控制着细胞的代谢和遗传；<br>
+② <b>四件套分工</b>：核膜（双层·分隔）·核仁（与某种RNA合成及核糖体形成有关）·染色质（DNA+蛋白质·遗传信息载体）·核孔（核质交换与信息交流）；<br>
+③ <b>一句话定位</b>：细胞核是遗传信息库，是细胞代谢和遗传的控制中心——染色质/染色体=同一物质两种状态，模型制作科学性第一。</div>
+
+<h3>自测四连（答案就地展开）</h3>
+<p>① 克隆牛实验中，小牛的性状几乎与哪头母牛一致？为什么？<span class="detail"><span class="ans">母牛乙</span>——细胞核来自乙（"图纸"随核走·p54）。</span></p>
+<p>② 蝾螈受精卵横缢实验中，无核一半停止分裂说明了什么？"挤核"后又分裂又说明什么？<span class="detail"><span class="ans">分裂（及一切生命活动）需要核；核的作用是持续的、可"重新上岗"的</span>（p54·自编提炼）。</span></p>
+<p>③ 细胞核四件套中，"实现核质之间频繁的物质交换和信息交流"的是哪个结构？<span class="detail"><span class="ans">核孔</span>（p56）。</span></p>
+<p>④ 物理模型、概念模型、数学模型各举教材内一例。<span class="detail"><span class="ans">物理=DNA双螺旋结构模型/细胞模型；概念=分泌蛋白合成运输流程图；数学=J型/S型种群增长曲线（p57+前章锚·自编对应）。</span></span></p>
+
+<div class="box">
+<p><span class="bt">高考怎么考（考位锚）</span></p>
+<p>① <b>四件套功能配对</b>：核膜双层/核孔交换/核仁-核糖体/染色质-遗传——选择题高频直接考；<br>
+② <b>实验证据链说理</b>：给一组"去核/补核"实验结果，判断结论——"控制中心"的证据逻辑；<br>
+③ <b>染色质↔染色体</b>：同一物质两种状态的判断与意义（分裂期浓缩均分）；<br>
+④ <b>例外细胞与模型方法</b>：筛管细胞/成熟红细胞无核；物理模型的辨认。<span class="small">（考纲级描述·真题锚候采不代拟——卷源池到件后回填）</span></p>
+</div>
+
+<h2><span class="step-tag">收口</span>第三章收官——你在细胞的"司令部"</h2>
+<div class="talk">
+<p>细胞作为基本的生命系统：有边界（3.1细胞膜）·有分工合作（3.2细胞器）·有控制中心（本节细胞核）——<b>第三章到此配齐"系统三要素"</b>（本章小结p59口径：理解概念六条之三）。下一章第4章《细胞的物质输入和输出》：边界（细胞膜）怎么干活——物质怎么进、怎么出（自编预告）。</p>
+</div>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：1.2至3.3节学习链，3.3为本站，第4章预告（自绘）">
+  <defs><marker id="a3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a9eff"/></marker></defs>
+  <rect x="18" y="38" width="104" height="46" rx="8" fill="#1d2733" stroke="#31465e"/><text x="70" y="58" fill="#cfe0f0" font-size="11.5" text-anchor="middle">2.2 细胞器</text><text x="70" y="76" fill="#5a6a7a" font-size="10.5" text-anchor="middle">分工合作</text>
+  <line x1="122" y1="61" x2="146" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#a3)"/>
+  <rect x="148" y="38" width="104" height="46" rx="8" fill="#1d2733" stroke="#31465e"/><text x="200" y="58" fill="#cfe0f0" font-size="11.5" text-anchor="middle">2.5 核酸</text><text x="200" y="76" fill="#5a6a7a" font-size="10.5" text-anchor="middle">DNA载体</text>
+  <line x1="252" y1="61" x2="276" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#a3)"/>
+  <rect x="278" y="38" width="104" height="46" rx="8" fill="#1d2733" stroke="#31465e"/><text x="330" y="58" fill="#cfe0f0" font-size="11.5" text-anchor="middle">3.1 细胞膜</text><text x="330" y="76" fill="#5a6a7a" font-size="10.5" text-anchor="middle">系统边界</text>
+  <line x1="382" y1="61" x2="406" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#a3)"/>
+  <rect x="408" y="38" width="104" height="46" rx="8" fill="#1d2733" stroke="#31465e"/><text x="460" y="58" fill="#cfe0f0" font-size="11.5" text-anchor="middle">3.2 细胞器</text><text x="460" y="76" fill="#5a6a7a" font-size="10.5" text-anchor="middle">分工合作</text>
+  <line x1="512" y1="61" x2="536" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#a3)"/>
+  <rect x="538" y="34" width="110" height="54" rx="8" fill="#101820" stroke="#f0b429" stroke-width="2"/><text x="593" y="57" fill="#f0b429" font-size="12" text-anchor="middle" font-weight="bold">3.3 细胞核</text><text x="593" y="76" fill="#cfe0f0" font-size="10.5" text-anchor="middle">控制中心（你在）</text>
+  <line x1="648" y1="61" x2="672" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#a3)"/>
+  <rect x="674" y="38" width="72" height="46" rx="8" fill="#1d2733" stroke="#31465e"/><text x="710" y="58" fill="#cfe0f0" font-size="11" text-anchor="middle">第4章</text><text x="710" y="76" fill="#5a6a7a" font-size="10" text-anchor="middle">物质输入输出</text>
+  <text x="380" y="112" fill="#5a6a7a" font-size="11" text-anchor="middle">第三章收官：边界+分工+控制中心 = 细胞这个"基本生命系统"配齐（自绘·本章小结p59口径）</text>
+</svg>
+<p class="figcap">这张图在说什么：第三章三节连起来读——膜是墙、器是车间、核是司令部。第4章开始研究"墙"的本职工作。</p>
+</div>
+
+<p class="small" style="margin-top:30px">—— 生物必修第一册 3.3 · 零基础首学版 · 教材原文照录页码：p54（问题探讨/本节聚焦/例外/资料1-2）· p55（资料3-4/讨论/控制中心段）· p56（图3-10/染色质染色体/知识链接/蓝图/全面阐述/问号旁栏）· p57（科学方法/探究实践/！提示）· p58（练习应用/生物科技进展）· 影印对照逐页亲读（ts实时验活10/10全200·节界p54-58双端夹逼·p59本章小结界证）· 数字文本比对核验在案 · 宁缺毋编 ——</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理3.2 大气受热过程 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1a212b; border: 1px solid #2e3a4a; border-radius: 10px; padding: 14px 18px; margin: 16px 0; color: #c8d4e0; }
+  .talk b { color: #ffd479; }
+  .try { background: #14202e; border: 1px dashed #3d6a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .try .tag { display: inline-block; background: #1f5c8f; color: #eaf4ff; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .try p { margin: 8px 0 0; }
+  .step-tag.ans { background: #2e7d52; color: #eafff3; }
+  .pit { background: #241a1e; border: 1px solid #5a3a44; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .pit .tag { display: inline-block; background: #8f3a4d; color: #ffe8ee; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .key { background: #1c2a3d; border: 1px solid #3d6a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .key .tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .alt { background: #1e2620; border: 1px solid #3d5a44; border-radius: 10px; padding: 12px 18px; margin: 16px 0; color: #c9d8cd; }
+  .alt b { color: #9fd4ae; }
+  .check { background: #1c2a3d; border: 1px solid #3d6a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .check .tag { display: inline-block; background: #9fd4ae; color: #10241a; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .box { background: #221e30; border: 1px solid #6a5a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .box .tag { display: inline-block; background: #9d7fe8; color: #17102a; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .note-red { background: #2a1a1c; border-left: 4px solid #d46a7a; padding: 10px 16px; margin: 16px 0; color: #f0d8dc; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; }
+  .note-yellow { background: #2a2418; border-left: 4px solid #d4b04a; padding: 10px 16px; margin: 16px 0; color: #efe6c8; }
+  .uline { border-bottom: 3px solid #4a9eff; }
+  .fig { background: #101620; border: 1px solid #26303e; border-radius: 12px; padding: 14px 10px; margin: 18px 0; text-align: center; }
+  .fig p { color: #8fa3b8; font-size: 13px; margin: 8px 0 0; }
+  .small { color: #8fa3b8; font-size: 14px; }
+  mark { background: #4a5a20; color: #f5f0d8; padding: 0 3px; border-radius: 3px; }
+  .foot { border-top: 1px solid #2e3a4a; margin-top: 50px; padding-top: 16px; color: #5a6a7a; font-size: 13px; line-height: 1.7; }
+  @media print {
+    body { background: #ffffff !important; color: #1a1a1a !important; }
+    .page { padding: 10mm 8mm; }
+    h1, h2, h3, b { color: #111111 !important; }
+    h2 { border-left-color: #1a5fb4 !important; }
+    .talk { background: #f2f4f7 !important; border-color: #c9d1d9 !important; color: #333333 !important; }
+    .check { background: #eef7f0 !important; border-color: #9fd4ae !important; color: #222222 !important; }
+    .try { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .box { background: #f3effc !important; border-color: #b6a8d4 !important; color: #222222 !important; }
+    .note-red { background: #fdf2f4 !important; border-left-color: #d46a7a !important; color: #333333 !important; }
+    .note-yellow { background: #fdf8e3 !important; color: #222222 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+    .uline { border-bottom-color: #1a5fb4 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>地理3.2 大气受热过程 · 零基础首学版</h1>
+<div class="sub">湘教版《高中地理·必修第一册》第三章 第二节（教材p77-82）· 零基础首学版 · 读完约35分钟</div>
+
+<div class="talk"><b>先看一组吓人的数字：</b>月球，中午的赤道高达<b>127℃</b>，夜晚最低<b>−183℃</b>，昼夜温差310℃（教材p82活动）——同一片太阳照着，月面白天能熔锡、夜里冻裂钢。可地球呢？没有大气保温作用时地表平均气温只有<b>−18℃</b>，正是大气把这张"温度账"拉回到<b>15℃左右</b>（教材p81阅读），才有万物生长。一边是310℃的过山车，一边是15℃的恒温房——中间差的不是太阳，是<b>一层大气怎么"管钱"</b>：太阳的能量进来时要过几道关卡？进来之后又怎么被"留住"？这就是本节"大气受热过程"的两站行程。</div>
+
+<div class="check"><span class="tag">读完这节你能</span><br>① 报出太阳辐射到达地面前的<b>三道关卡</b>（吸收、反射、散射），并说出每道关卡"<b>挑不挑食</b>"（有无选择性）——吸收挑、散射挑、反射不挑；<br>② 画出并讲清保温作用三环节"<b>太阳暖大地→大地暖大气→大气还地面</b>"，说出关键角色<b>大气逆辐射</b>；<br>③ 用受热过程原理现场解释四个生活现象：晴天天空为何蔚蓝、夏天多云白天为何不太热、霜冻为何多在晴朗的夜晚、月球昼夜温差为何比地球大；<br>④ 记住四组数据锚：地表均温<b>−18℃→15℃</b>、地面辐射被截留<b>75%~95%</b>、新雪反射率<b>84%~95%</b>（最高）、海洋赤道反射率<b>2%</b>（最低）。</div>
+
+<p class="small"><b>本件位置：</b>上一节（3.1）我们把大气这床"被子"的<b>材质</b>（干洁空气+水汽+杂质）和<b>层数</b>（对流层/平流层/高层大气）看完了；这一节看它怎么<b>干活</b>——太阳的能量穿进来、地面的热量被留住，全程直播。<u class="uline">没读过3.1也能学</u>，只需带上3.1埋的两个伏笔：对流层大气里<b>水汽和二氧化碳</b>是吸收高手（本节它们要挑大梁），以及一句3.1没讲透的话——"<b>地面是对流层大气主要的直接热源</b>"，答案就在本节第二节。</p>
+
+<h2><span class="step-tag">预备步</span>先领三张"辐射名片"：短波、长波、温度定波长</h2>
+
+<p>本节所有戏份都围绕"辐射"（物体向外释放能量的方式）展开。先立三条规矩（教材p80）：<br>① <b>温度越高，辐射中最强部分的波长越短</b>——这是教材"由实验得知"的实验规律，全节的地基；<br>② <b>太阳</b>温度极高，它的辐射波长很短，能量集中在可见光区，所以叫<mark>短波辐射</mark>（教材p80：根据辐射波长的差异，将太阳辐射称为短波辐射）；<br>③ <b>地面</b>温度比太阳低得多，地面辐射的波长比太阳辐射长得多，能量集中在红外线部分，所以叫<mark>长波辐射</mark>。<br>一句话记牢：<b>"热的发短波，凉的发长波"</b>——太阳发短波，地面发长波，大气（比地面还凉）也发长波。分清"谁发什么波"，后面所有关卡就不会串台。</p>
+
+<h2><span class="step-tag">第一步</span>大气对太阳辐射的削弱作用——进门前先过三道关卡</h2>
+
+<p>太阳辐射要穿过厚厚的大气才能到达地表。由于大气对太阳辐射的<b>反射、散射和吸收</b>作用，投射到大气上界的太阳辐射<mark>不能完全到达地表</mark>（教材p77）——这三件事，就是"削弱作用"的三道关卡。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="100%">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e8734a"/></marker><marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9fb8c8"/></marker></defs>
+  <rect x="0" y="0" width="720" height="300" fill="#0f1520"/>
+  <line x1="30" y1="90" x2="690" y2="90" stroke="#6a7a8a" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="36" y="82" fill="#8fa3b8" font-size="13">大气上界</text>
+  <rect x="30" y="90" width="660" height="140" fill="#12283a" opacity="0.55"/>
+  <text x="640" y="112" fill="#4a6a80" font-size="13">大 气</text>
+  <line x1="120" y1="20" x2="200" y2="150" stroke="#e8734a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="60" y="26" fill="#e8a08a" font-size="14">太阳辐射</text>
+  <line x1="300" y1="20" x2="360" y2="150" stroke="#e8734a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="480" y1="20" x2="430" y2="105" stroke="#e8734a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <ellipse cx="452" cy="122" rx="46" ry="18" fill="#2a3a4a" opacity="0.9"/>
+  <text x="404" y="160" fill="#c8d4e0" font-size="13">大气吸收</text>
+  <line x1="430" y1="122" x2="500" y2="88" stroke="#e8734a" stroke-width="2" marker-end="url(#arg)" stroke-dasharray="4 3"/>
+  <line x1="430" y1="122" x2="490" y2="52" stroke="#e8734a" stroke-width="2" marker-end="url(#arg)" stroke-dasharray="4 3"/>
+  <text x="500" y="70" fill="#9fb8c8" font-size="13">大气反射和散射</text>
+  <line x1="560" y1="120" x2="640" y2="86" stroke="#e8734a" stroke-width="2" marker-end="url(#arg)" stroke-dasharray="4 3"/>
+  <text x="600" y="112" fill="#9fb8c8" font-size="13">地面反射</text>
+  <path d="M30,230 L690,230 L660,258 L60,258 Z" fill="#1a2e22"/>
+  <path d="M80,230 L130,196 L180,230 Z" fill="#234030"/><path d="M180,230 L240,206 L300,230 Z" fill="#2a4a36"/><path d="M300,230 L370,190 L440,230 Z" fill="#315a42"/>
+  <line x1="200" y1="150" x2="240" y2="228" stroke="#e8734a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="360" y1="150" x2="380" y2="228" stroke="#e8734a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="300" y="282" fill="#9fd4ae" font-size="14">地面吸收</text>
+  <text x="210" y="30" fill="#5a6a7a" font-size="11">（示意复刻教材图3-11·p78）</text>
+</svg><p>图A · 到达地面的太阳辐射示意（示意复刻教材图3-11）：四条去路——大气吸收 / 大气反射和散射 / 地面反射 / 地面吸收</p></div>
+
+<h3>关卡一：吸收——挑食最狠的"偏科生"</h3>
+<p>大气对太阳辐射的吸收<mark>具有选择性</mark>（教材p79）：平流层中的<b>臭氧</b>，专门吸收波长较短的<b>紫外线</b>；对流层中的<b>水汽和二氧化碳</b>，专门吸收波长较长的<b>红外线</b>。最微妙的是——大气对太阳辐射中<b>能量最强的可见光却吸收得很少</b>，大部分可见光能透过大气直达地面。所以大气直接吸收的太阳辐射只占一小部分，<b>对流层大气拿太阳辐射当不了主要直接热源</b>（教材p79）——这是第一站的收束句，也是第二节保温作用的伏笔：太阳"喂"不饱对流层大气，那它靠谁喂？往下看。</p>
+
+<h3>关卡二：反射——不挑食的"白名单"，云层是主力</h3>
+<p>大气中的<b>云层和较大颗粒的尘埃</b>，能把投在其上的太阳辐射的一部分<b>又反射回宇宙空间</b>；其中云的反射作用最为显著——<mark>云层越低、越厚，云量越多，反射越强</mark>（教材p78）。夏季天空多云时白天气温不会太高，就是云的反射减少了到达地面的太阳辐射。关键性质：大气对太阳辐射的反射<b>没有选择性</b>，因而反射光呈<b>白色</b>（教材p78）——云是白的，就是这个道理。</p>
+
+<h3>关卡三：散射——把"直行"改成"四面八方"</h3>
+<p>当太阳辐射在大气中遇到<b>空气分子或微小尘埃</b>时，一部分辐射便以这些质点为中心<mark>向四面八方弥散</mark>，这叫大气的<b>散射</b>（教材p78）。散射改变了太阳辐射的方向，使一部分太阳辐射不能到达地面。散射挑食吗？挑：可见光中<b>蓝光、紫光波长较短，容易被空气分子散射</b>——所以<mark>晴朗的天空呈现蔚蓝色</mark>（教材p78）。教材p77探究的"霞"也是同一原理的下游应用：日出日落时太阳光斜穿大气，路程比正午长得多，蓝紫光半路全被散射掉，剩下的红光橙光才走到你眼前——这就是朝霞晚霞偏红的原因。</p>
+
+<div class="pit"><span class="tag">易错</span>三道关卡"挑不挑食"一张表：①吸收——<b>有选择性</b>（臭氧吃紫外线、水汽+CO₂吃红外线、可见光几乎不吃）；②散射——<b>有选择性</b>（波长越短越容易被散射·蓝紫光最吃亏）；③反射——<b>无选择性</b>（来什么反什么·反射光呈白色）。考试最爱问"晴天为什么蔚蓝"——答<b>散射</b>（不是反射！反射对应的是白云）；问"多云白天为什么凉快"——答<b>反射</b>。别把两道关卡答串。</div>
+
+<div class="try"><span class="tag">试一试 1</span>教材p79活动原题（显式试答·数据与表述以教材为准）：日出之前（黎明）和日没以后（黄昏）天空仍然明亮，处于半光明状态，天文学称之为<b>晨昏蒙影</b>——简析其成因。<p><span class="step-tag ans">试答</span>太阳虽在地平线以下，但阳光仍能斜射进大气层，经空气分子和水汽杂质<b>散射</b>后，部分散射光能到达地面照亮天空；随着太阳沉入地平线以下越深、光路越长，散射光越弱，天色才真正转黑。本质=大气的散射作用把"直射窗口"之外的时间也照亮了一段。</p></div>
+
+<div class="talk"><b>教材活动·反射率大排名（p80图3-14·数据直读）：</b>地面对太阳辐射并非照单全收，反射率取决于地面性质（颜色、干湿、粗糙程度）。新雪<b>84%~95%</b>全场最高（所以雪后晴天雪盲——阳光被雪面"弹"回你眼睛）；冰50%；城市水泥路面40%~50%；沙土29%~35%；浅色土22%~32%；草地26%；黏土20%；耕地14%；深色土10%~15%；海洋平均仅<b>7%</b>、赤道洋面低至<b>2%</b>全场最低（海面"吃"太阳辐射最狠）。规律一句话：<b>颜色越浅、越光滑的地面越"弹"，越深、越粗糙的越"吃"</b>。</div>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="100%">
+  <rect x="0" y="0" width="720" height="520" fill="#0f1520"/>
+  <text x="360" y="34" fill="#d8dee6" font-size="15" text-anchor="middle">不同性质地面的反射率（%）· 教材图3-14数据直读</text>
+  <line x1="80" y1="60" x2="80" y2="460" stroke="#5a6a7a" stroke-width="1.5"/>
+  <line x1="80" y1="460" x2="690" y2="460" stroke="#5a6a7a" stroke-width="1.5"/>
+  <text x="74" y="66" fill="#8fa3b8" font-size="12" text-anchor="end">100</text>
+  <text x="74" y="266" fill="#8fa3b8" font-size="12" text-anchor="end">50</text>
+  <text x="74" y="464" fill="#8fa3b8" font-size="12" text-anchor="end">0</text>
+  <line x1="80" y1="60" x2="690" y2="60" stroke="#2e3a4a" stroke-dasharray="3 4"/><line x1="80" y1="260" x2="690" y2="260" stroke="#2e3a4a" stroke-dasharray="3 4"/>
+  <rect x="98" y="280" width="34" height="180" fill="#4a7ab5"/><text x="115" y="272" fill="#c8d4e0" font-size="12" text-anchor="middle">40~50</text><text x="115" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">水泥路</text>
+  <rect x="152" y="332" width="34" height="128" fill="#c9a84a"/><text x="169" y="324" fill="#c8d4e0" font-size="12" text-anchor="middle">29~35</text><text x="169" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">沙土</text>
+  <rect x="206" y="380" width="34" height="80" fill="#6a9a5a"/><text x="223" y="372" fill="#c8d4e0" font-size="12" text-anchor="middle">20</text><text x="223" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">黏土</text>
+  <rect x="260" y="352" width="34" height="108" fill="#5a9a9a"/><text x="277" y="344" fill="#c8d4e0" font-size="12" text-anchor="middle">22~32</text><text x="277" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">浅色土</text>
+  <rect x="314" y="410" width="34" height="50" fill="#8a6a4a"/><text x="331" y="402" fill="#c8d4e0" font-size="12" text-anchor="middle">10~15</text><text x="331" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">深色土</text>
+  <rect x="368" y="356" width="34" height="104" fill="#5a8a3a"/><text x="385" y="348" fill="#c8d4e0" font-size="12" text-anchor="middle">26</text><text x="385" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">草地</text>
+  <rect x="422" y="404" width="34" height="56" fill="#7a5a3a"/><text x="439" y="396" fill="#c8d4e0" font-size="12" text-anchor="middle">14</text><text x="439" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">耕地</text>
+  <rect x="476" y="102" width="34" height="358" fill="#7a9ac8"/><text x="493" y="94" fill="#e8eef4" font-size="12" text-anchor="middle">84~95</text><text x="493" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">新雪</text>
+  <rect x="530" y="260" width="34" height="200" fill="#4a8ab5"/><text x="547" y="252" fill="#c8d4e0" font-size="12" text-anchor="middle">50</text><text x="547" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">冰</text>
+  <rect x="584" y="432" width="34" height="28" fill="#3a6a8a"/><text x="601" y="424" fill="#c8d4e0" font-size="12" text-anchor="middle">7(平均)</text><text x="601" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">海洋</text>
+  <rect x="638" y="452" width="34" height="8" fill="#b05a7a"/><text x="655" y="444" fill="#c8d4e0" font-size="12" text-anchor="middle">2(赤道)</text><text x="655" y="492" fill="#8fa3b8" font-size="12" text-anchor="middle">海洋</text>
+  <text x="360" y="514" fill="#5a6a7a" font-size="11" text-anchor="middle">条高按教材逐值python换算（geo32_calc.py代验留痕）· 区间值条高取中值示意</text>
+</svg><p>图B · 不同性质地面的反射率（复刻教材图3-14）：新雪84~95%最高，海洋（赤道）2%最低</p></div>
+
+<p><b>三道关卡打完，谁的辐射损失多、谁损失少？</b>答案跟纬度有关：<mark>到达地面的太阳辐射由低纬度向两极递减</mark>（教材p79）。低纬度地区太阳高度大，太阳辐射穿过大气的<b>路程短</b>，被削弱得少，到达地面的就多；两极地区太阳高度小、斜穿路程长，被削弱得多，到得少。教材p79图3-13（太阳高度与太阳辐射经过大气路程长短的关系示意）就是这句话的图解——同一束光，直插（路程短·削弱少）与斜穿（路程长·削弱多），结局不同。</p>
+
+<div class="try"><span class="tag">试一试 2</span>教材p79"两小儿辩日"提问（显式试答）：运用图3-13，你能帮孔子解答"早晨的太阳看着大却不热、中午的太阳看着小却更热"的疑问吗？<p><span class="step-tag ans">试答</span>早晨太阳斜射，在大气中经过的路程长，被反射、散射、吸收削弱的能量多，到达地面少，所以"凉"；中午太阳高度大，路径短、削弱少，到达地面的太阳辐射多，所以"热"。至于"早晨的太阳看着大"，是大气折射与人眼参照物造成的视觉错觉，与热度无关——<b>看清"路程长短→削弱多少→冷热"这条因果链</b>，辩日自然有解。</p></div>
+
+<h2><span class="step-tag">第二步</span>大气对地面的保温作用——三环节转账闭环</h2>
+
+<div class="talk"><b>接着第一站的悬念说：</b>太阳"喂"不饱对流层大气（可见光它吸收得很少），可对流层大气明明在增温，热量哪来的？答案：<mark>地面是对流层大气主要的直接热源</mark>（教材p80）。——这句话3.1就挂过账，现在兑现：地面吸收太阳辐射升温后，自己变身"二传手"，把能量以<b>长波辐射</b>的方式转交给大气。保温作用的整条链，就是一次三环节的"转账"。</div>
+
+<p><b>三环节转账（教材p80-81，建议背到能默画）：</b><br>① <b>太阳暖大地</b>：太阳辐射（短波）穿过大气时被削弱得不多（可见光大多透过来），到达地面被地面吸收，地面升温——<b>短波进得来</b>；<br>② <b>大地暖大气</b>：地面升温后持续向外释放<b>地面辐射</b>（长波）。对流层大气中的<mark>水汽和二氧化碳等，可强烈地吸收地面辐射</mark>——地面辐射释放的能量除极少一部分透过大气返回宇宙空间外，<mark>绝大部分（75%~95%）都被截留在大气中，使大气增温</mark>（教材p80）——<b>长波出不去</b>（大气对长波是"吸收高手"，对短波是"透明人"）；<br>③ <b>大气还地面</b>：大气增温的同时也向外辐射（大气温度比地面还低，大气辐射也是长波辐射），其大部分射向地面。射向地面的大气辐射方向与地面辐射相反，故称<mark>大气逆辐射</mark>——它把热量归还给地面，<b>补偿了地面辐射损失的热量，对地面起到保温作用</b>（教材p81）。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="100%">
+  <defs><marker id="p1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e87aa0"/></marker><marker id="p2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e8b45a"/></marker></defs>
+  <rect x="0" y="0" width="720" height="340" fill="#0f1520"/>
+  <line x1="30" y1="70" x2="690" y2="70" stroke="#6a7a8a" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="36" y="62" fill="#8fa3b8" font-size="13">大气上界</text>
+  <rect x="30" y="70" width="660" height="220" fill="#12283a" opacity="0.5"/>
+  <text x="620" y="92" fill="#4a6a80" font-size="13">大 气</text>
+  <line x1="120" y1="18" x2="150" y2="120" stroke="#e87aa0" stroke-width="4" marker-end="url(#p1)"/>
+  <text x="60" y="24" fill="#e8a0b8" font-size="14">太阳辐射(短波)</text>
+  <text x="170" y="112" fill="#c8d4e0" font-size="12">①太阳暖大地</text>
+  <line x1="150" y1="128" x2="170" y2="290" stroke="#e87aa0" stroke-width="3" marker-end="url(#p1)" stroke-dasharray="6 4"/>
+  <text x="150" y="240" fill="#9fb8c8" font-size="11">（少量被削弱）</text>
+  <line x1="400" y1="290" x2="400" y2="92" stroke="#e8b45a" stroke-width="4" marker-end="url(#p2)"/>
+  <text x="352" y="60" fill="#e8b45a" font-size="13">射向宇宙空间(小部分)</text>
+  <line x1="470" y1="290" x2="470" y2="130" stroke="#e8b45a" stroke-width="3" marker-end="url(#p2)"/>
+  <line x1="470" y1="130" x2="500" y2="290" stroke="#e8b45a" stroke-width="3" marker-end="url(#p2)" stroke-dasharray="6 4"/>
+  <text x="452" y="120" fill="#e8b45a" font-size="13">大气辐射(长波)</text>
+  <text x="472" y="205" fill="#9fb8c8" font-size="11">大部分→宇宙</text>
+  <path d="M600,80 Q660,180 610,292" stroke="#e8b45a" stroke-width="4" fill="none" marker-end="url(#p2)"/>
+  <text x="596" y="196" fill="#e8b45a" font-size="13">③大气逆辐射(还地面)</text>
+  <text x="560" y="176" fill="#9fb8c8" font-size="11">②大气吸收地面辐射</text>
+  <line x1="240" y1="296" x2="410" y2="296" stroke="#e8b45a" stroke-width="4" marker-end="url(#p2)"/>
+  <text x="252" y="286" fill="#e8b45a" font-size="13">②地面辐射(长波)</text>
+  <rect x="30" y="296" width="660" height="34" fill="#1a2e22"/>
+  <text x="330" y="318" fill="#9fd4ae" font-size="14">地面吸收 75%~95%的长波能量被大气截留→大气增温→逆辐射还热（示意复刻教材图3-15·p81）</text>
+</svg><p>图C · 大气对地面的保温作用（示意复刻教材图3-15）：粉箭头=短波进得来 · 橙箭头=长波出不去、还被逆辐射送回</p></div>
+
+<div class="key"><span class="tag">保温密码 · 一句话锁死</span>大气对<b>短波</b>（太阳辐射）几乎"放行"（吸收得很少），对<b>长波</b>（地面辐射）却"截留"（水汽+CO₂强烈吸收，75%~95%）——<b>进得来的出不去，出不去的被还回来</b>。三个关键词按顺序落袋：地面辐射（长波）→ 大气逆辐射（保温主角）→ 截留75%~95%。天气加成：天空有云、特别是有<b>浓密的低云</b>，或空气中湿度较大时，<mark>大气逆辐射增强</mark>（教材p81）——多云的夜晚比晴夜暖和，就是逆辐射在加班。</div>
+
+<div class="box"><span class="tag">教材阅读·大气热力作用的意义（p81）</span>削弱作用+保温作用联手：<b>降低白天的最高气温，提高夜间的最低气温，从而减小气温日较差</b>，让地面因昼夜交替导致的温度波动趋于缓和。数据锚：如果没有大气的保温作用，地球表面平均气温将降到<b>−18℃</b>，绝大多数生态系统将不复存在；正是保温作用把地表平均气温提高到<b>15℃左右</b>，才有了适宜人类生存的温度环境（−18→15，一张"温差33℃"的保单）。</div>
+
+<h2><span class="step-tag">第三步</span>原理变现——四个生活现场，逐一对号入座</h2>
+
+<p><b>现场一 · 月球的310℃过山车（教材p82活动2(1)）：</b>月球<b>基本没有大气</b>，赤道处中午高达127℃、晚上最低−183℃。没有大气=没有削弱作用（白天太阳直灌）+没有保温作用（夜里热量裸奔散尽）——两个作用一起缺席，昼夜温差自然飙到310℃。地球的温度舒适，不是太阳偏心，是<b>大气"白天打伞、晚上盖被"</b>。</p>
+
+<p><b>现场二 · 霜冻多出现在晴朗的夜晚（教材p82活动2(2)）：</b>晴夜<b>少云</b>→大气逆辐射<b>弱</b>→地面热量以长波形式散失多、补偿少→近地面气温骤降，水汽凝霜。反过来，阴夜多云、湿度大→逆辐射强→"被子"厚→不易霜冻。农民熏烟防霜冻，人为制造"烟幕被"，正是抢在逆辐射这条原理上。</p>
+
+<p><b>现场三 · 夏天多云的白天不太热（教材p78）：</b>云的<b>反射</b>作用显著，云层越低越厚、云量越多，反射越强——太阳辐射还没落地就被弹回去一大截。注意时间字段：这是<b>白天</b>反射在降温；若换成多云的<b>夜晚</b>，则是逆辐射在保温——同一片云，白天是"遮阳伞"、晚上是"电热毯"。</p>
+
+<p><b>现场四 · 青藏高原太阳辐射强、气温却低（跨册综合）：</b>海拔高→空气稀薄→云量少、尘埃少→<b>削弱作用弱</b>（到达地面的太阳辐射多·太阳能资源丰富）；但同样因为空气稀薄→<b>水汽和CO₂少→吸收地面辐射、产生逆辐射的能力弱→保温作用差</b>——"进得多、存不住"，所以拉萨日光城白天晒得狠、夜里照样冷。削弱与保温两套原理同台对账，这是本节最经典的综合题姿势。</p>
+
+<div class="note-red"><b>保命题：</b>看到"天空颜色"问散射，看到"云与温度"先分白天黑夜（白天反射削弱 / 夜晚逆辐射保温），看到"为什么地面是对流层大气直接热源"答"大气几乎不吸收太阳短波辐射（可见光），却强烈吸收地面长波辐射"——这三句是本节判据句，背下直接落笔。</div>
+
+<h2><span class="step-tag">验一验</span>自测四连</h2>
+
+<div class="try"><span class="tag">自测 1</span>平流层臭氧、对流层水汽和二氧化碳，各自主要吸收哪种太阳辐射？大气对可见光吸收多少？<p><span class="step-tag ans">答</span>臭氧主要吸收波长较短的<b>紫外线</b>；水汽和二氧化碳主要吸收波长较长的<b>红外线</b>；对能量最强的可见光<b>吸收得很少</b>，大部分可见光透过大气到达地面。</p></div>
+
+<div class="try"><span class="tag">自测 2</span>"晴朗天空呈蔚蓝色"与"反射光呈白色"分别对应哪道削弱关卡？<p><span class="step-tag ans">答</span>蔚蓝天空=空气分子对波长较短的蓝光、紫光的<b>散射</b>；白色反射光=云层尘埃的<b>反射</b>（无选择性，来什么反什么）。</p></div>
+
+<div class="try"><span class="tag">自测 3</span>说出保温作用三环节的顺序与各环节的辐射名称，并指出"地面是对流层大气主要直接热源"对应哪一环节。<p><span class="step-tag ans">答</span>太阳暖大地（太阳辐射·短波）→大地暖大气（地面辐射·长波·被水汽CO₂强烈吸收75%~95%）→大气还地面（大气逆辐射·长波）。"直接热源"对应<b>第二环节大地暖大气</b>。</p></div>
+
+<div class="try"><span class="tag">自测 4</span>深秋寒潮将至，果农为什么连夜熏烟？用受热过程原理写两句。<p><span class="step-tag ans">答</span>①烟幕增强大气对地面辐射的吸收，<b>增强大气逆辐射</b>；②把本要散失的地面长波能量更多地"还"给地面，补偿热量损失、减缓近地面降温——给果园夜里多盖一层"人造云被"。</p></div>
+
+<h2><span class="step-tag">高考怎么考</span>两个高频考向</h2>
+
+<p><b>考向一 · 削弱作用的应用解释（小题+综合题背景句）：</b>给一个新情境（高海拔防晒、火星昼夜温差、"雪后晴为什么刺眼"），考你定位是反射、散射还是吸收在起作用，以及低纬/高原太阳辐射强弱的比较判读。抓判据：<b>涉颜色问散射、涉云层问反射、涉成分波长问吸收</b>，再叠"太阳高度→路程→削弱多少"的因果链。</p>
+
+<p><b>考向二 · 保温作用的过程图解（综合题主力）：</b>给温室大棚、果园熏烟、多云昼夜温差小、"月球温差vs地球"等情境，要求按三环节顺序写过程，关键词漏一个就扣分——<b>地面吸收增温→地面长波辐射→大气（水汽CO₂）吸收截留→大气逆辐射补偿</b>。写综合题时把"短波进得来、长波出不去、逆辐射还回来"三句码齐，是最稳的答题骨架。</p>
+
+<h2><span class="step-tag">下一站</span>3.3 大气热力环流——大气"动"起来</h2>
+
+<p>这一节解决了"大气怎么<b>收钱、存钱</b>"（受热过程）；但地表受热从来<b>不均匀</b>——太阳辐射的差异分布造成不同地区气温不同，热的地方空气上升、冷的地方空气下沉，大气就这么"流"了起来。下一节（教材p83起·第三节《大气热力环流》）从热力环流这个"大气运动最简单的形式"讲起，把海陆风、山谷风、城市热岛一个个拆给你看——它们全都是"冷热不均→气流运动"的变装出场。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" width="100%" role="img" aria-label="本节位置图：第三章三节次序与本节所在">
+  <rect x="0" y="0" width="720" height="150" fill="#0f1520"/>
+  <text x="360" y="30" fill="#d8dee6" font-size="15" text-anchor="middle">第三章 地球上的大气 · 节位图</text>
+  <rect x="40" y="58" width="200" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="140" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">3.1 大气的组成与垂直分层</text>
+  <text x="140" y="98" fill="#7d8a99" font-size="11" text-anchor="middle">p70-76 · 已学（上节）</text>
+  <rect x="264" y="50" width="200" height="68" rx="8" fill="#264a66" stroke="#4a9eff" stroke-width="2"/>
+  <text x="364" y="76" fill="#eaf4ff" font-size="14" text-anchor="middle" font-weight="bold">3.2 大气受热过程</text>
+  <text x="364" y="95" fill="#9fd4ae" font-size="11" text-anchor="middle">p77-82 · 本节 ★</text>
+  <rect x="488" y="58" width="200" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="588" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">3.3 大气热力环流</text>
+  <text x="588" y="98" fill="#7d8a99" font-size="11" text-anchor="middle">p83-87 · 下一站</text>
+  <line x1="240" y1="84" x2="264" y2="84" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="464" y1="84" x2="488" y2="84" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar2)"/>
+  <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a9eff"/></marker></defs>
+  <text x="360" y="140" fill="#5a6a7a" font-size="11" text-anchor="middle">p88 = 第四章"地球上的水"章首（本节下游界标·已亲验）· 节界双端实锚见附件1</text>
+</svg><p>图D · 本件在第三章中的位置：受热过程承上（大气组成与分层）启下（大气运动）</p></div>
+
+<div class="foot">零基础首学版 v1.0（批3产出·队7席）· 事实层素材源：湘教版《普通高中教科书·地理 必修 第一册》p77-82 官方影印逐页对照（湖南教育出版社·智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a·ts=1754905526079（ndrv2端点18:3x实时复取同值·fig83-95十三图全200）·影印图存席位私有目录 geo32_jc/gNN.jpg（g83-g95）·图号→印刷页 N−6 映射复核（g83=p77/g85=p79/g91=p85/g94=p88）·节界实锚：p77第二节"大气受热过程"节题页（上界·与3.1交付行右界互证）至p82活动页（域内末页）·p83=第三节"大气热力环流"节题页（右界界标亲验）·p88=第四章"地球上的水"章首跨页（下游界标亲验）·p77-82直读锚定：探究朝晚霞与削弱作用起p77/图3-11与反射云层与散射蔚蓝与图3-12海天一色p78/吸收选择性与低纬两极递减与图3-13与两小儿辩日与晨昏蒙影活动p79/图3-14反射率十组值与保温作用起与地面辐射长波与75%~95%截留p80/大气逆辐射与图3-15与阅读-18℃15℃p81/经纬三环节与月球127℃-183℃与霜冻活动p82）<br>
+<br>本件为候验产出：走 dui7_32_1031 分支候终读，禁直推main。自测/试答块均已显式标注，数据与表述以教材影印为准。宁缺毋编：真题卷源未获取，高考怎么考为考向概括（非真题转录）。(并行搜索员C·队7席·dui7@team7.local)</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理3.1 重力与弹力 · 零基础首学版</title>
+<style>
+  :root{--ink:#eaf2fb;--dim:#aebccf;--line:#31465e;--card:#1d2733;--card2:#223041;--acc:#4a9eff;--warn:#f0b429;--ok:#5ad1a5;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#1b2029;color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.85;font-size:16.5px;padding:28px 16px 80px;}
+  .wrap{max-width:860px;margin:0 auto;}
+  h1{font-size:26px;letter-spacing:1px;border-left:6px solid var(--acc);padding-left:14px;margin-bottom:6px;}
+  .sub{color:var(--dim);font-size:13.5px;margin-bottom:22px;}
+  .sub b{color:var(--acc);}
+  h2{font-size:20px;margin:34px 0 14px;color:#fff;background:linear-gradient(90deg,#223041,#1b2029);border-left:5px solid var(--acc);padding:8px 12px;}
+  h2 .en{font-size:12px;color:var(--dim);font-weight:normal;margin-left:8px;}
+  h3{font-size:16.5px;margin:20px 0 8px;color:var(--acc);}
+  p{margin:10px 0;}
+  b{color:#fff;}
+  .k,.m{display:inline-block;background:#25384d;color:#cfe0f0;border:1px solid #31465e;border-radius:4px;padding:0 6px;font-size:0.92em;margin:0 1px;}
+  .k{color:#f0b429;border-color:#5a4a1e;}
+  .pg{display:inline-block;background:#223041;color:var(--dim);border-radius:3px;padding:0 5px;font-size:11.5px;vertical-align:2px;}
+  .q{background:#223041;border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:8px;padding:12px 16px;margin:14px 0;}
+  .q .t{color:var(--acc);font-weight:bold;}
+  .demo,.def,.note{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:14px 0;}
+  .def{border-left:4px solid var(--ok);}
+  .demo{border-left:4px solid var(--warn);}
+  .note{border-left:4px solid #8a7ddb;}
+  .lab{font-weight:bold;color:var(--warn);margin-right:6px;}
+  .def .lab{color:var(--ok);}
+  .note .lab{color:#b3a4ef;}
+  .big{display:block;background:#223041;border:2px solid var(--acc);border-radius:10px;text-align:center;font-size:22px;padding:14px;margin:16px 0;color:#fff;font-family:Georgia,"Times New Roman",serif;letter-spacing:1px;}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14.5px;}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;}
+  th{background:#223041;color:var(--acc);}
+  .try{background:var(--card2);border:1px dashed #4a9eff;border-radius:8px;padding:10px 14px;margin:14px 0;}
+  .try summary{cursor:pointer;color:var(--acc);font-weight:bold;}
+  .try .ans{border-top:1px dashed var(--line);margin-top:8px;padding-top:8px;color:var(--dim);}
+  details.self{background:#1f2937;border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:12px 0;}
+  details.self summary{cursor:pointer;color:var(--ok);font-weight:bold;}
+  .alt-box{background:#241f2e;border:1px solid #4a3a6e;border-left:4px solid #8a7ddb;border-radius:8px;padding:10px 14px;margin:12px 0;}
+  .foot{margin-top:40px;border-top:1px solid var(--line);padding-top:14px;color:var(--dim);font-size:12.5px;}
+  svg{display:block;margin:14px auto;max-width:100%;}
+  mark.nb{background:linear-gradient(transparent 42%,#ffe66b 42%,#ffe66b 88%,transparent 88%);color:inherit;padding:0 2px;font-weight:bold;}
+  @media print{
+    body{background:#fff;color:#111;font-size:12.5pt;padding:0;}
+    .wrap{max-width:100%;}
+    h1,h2,h3,b,.m,.big{color:#111;}
+    h2{background:#f2f2f2;border-left:4pt solid #555;color:#111;}
+    .card,.def,.demo,.q,.try summary,.try .ans,.warn,.note,details.self,.try .ans .m{background:#fff!important;}
+    .card,.def,.demo,.q,.warn,.note,details.self{border-color:#888;}
+    .m{border:1px solid #999;background:#fff!important;color:#111!important;}
+    .k{background:#fff!important;color:#111!important;border:1px solid #999!important;}
+    .pg{background:#fff!important;color:#111!important;border:1px solid #999!important;}
+    .q,.q *{color:#111!important;background:#fff!important;}
+    .big,.big *{color:#111!important;background:#fff!important;border-color:#111!important;}
+    .try,.try *{color:#111!important;background:#fff!important;}
+    .demo *,.def *,.note *,.card *,.warn *,details.self *,li,td,th,em{color:#111!important;}
+    .sub b,.sub .en,.dim,.foot,.foot *{color:#333!important;}
+    .alt-box,.alt-box *{color:#111!important;background:#fff!important;border-color:#999!important;}
+    .try summary{color:#111;}
+    .def{border-color:#555;}
+    .warn{border-color:#555;}
+    table th{background:#eee;color:#111;}
+    tr:nth-child(even) td{background:#f7f7f7;}
+    .note,.sub,.pg,.foot,.note b{color:#333;}
+    svg [fill="#0f141c"]{fill:#fff;}
+    svg [fill="#1b2029"]{fill:#fff;}
+    svg [fill="#1d2733"]{fill:#fff;}
+    svg [fill="#223041"]{fill:#fff;}
+    svg [fill="#25384d"]{fill:#fff;}
+    svg [fill="#eaf2fb"]{fill:#111;}
+    svg [fill="#cfe0f0"]{fill:#111;}
+    svg [fill="#aebccf"]{fill:#555;}
+    svg [fill="#7d8ea3"]{fill:#555;}
+    svg [fill="#5a6a7a"]{fill:#555;}
+    svg [fill="#4a9eff"]{fill:#333;}
+    svg [fill="#f0b429"]{fill:#333;}
+    svg [fill="#5ad1a5"]{fill:#333;}
+    svg [stroke="#31465e"]{stroke:#999;}
+    svg [stroke="#4a9eff"]{stroke:#555;}
+    svg [stroke="#f0b429"]{stroke:#555;}
+    mark.nb{background:#ffe66b!important;color:#111!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    h2 .en{color:#555!important;}
+  }
+</style>
+</head>
+<body><div class="wrap">
+
+<h1>3.1 重力与弹力</h1>
+<div class="sub">人教版 高中物理 必修 第一册 · 第三章 相互作用——力 · 首节　|　对照教材印刷页 <b>p57-62</b>（影印m61-m68九图实锚·偏移N-5·下界p63硬锚）　|　零基础首学版 v1.0 · 出品：队4席 并行搜索员A · 2026-10-31</div>
+
+<div class="q"><span class="t">📖 章首引言（照录 <span class="pg">p57</span>）</span><br>"相互作用是我们从现今自然科学的观点出发在整体上考察运动着的物质时首先遇到的东西。……相互作用是事物的真正的终极原因。"——恩格斯<span class="pg">脚注①</span><br><span style="font-size:13px">恩格斯（Friedrich Engels，1820 — 1895），马克思主义创始人之一。恩格斯曾致力于研究自然科学中的哲学问题，对当时自然科学最重要的成就作了辩证唯物主义的概括，逝世后这些札记被辑录成《自然辩证法》一书。</span></div>
+
+<div class="q"><span class="t">❓ 问题（照录 <span class="pg">p57</span>）</span><br>力是一个物体对另一个物体的作用。认识一个力，需要弄清以下几个问题：<br>1．谁受到的力，谁施加的力？<br>2．怎样量度它的大小？<br>3．它的方向如何？作用点在哪里？<br>分析空中人所受的重力。关于上述问题，你知道哪些？</div>
+
+<div class="q"><span class="t">🎯 读完这节你能</span><br>① 用"由于地球的吸引"说出重力的定义，会算 <span class="m">G=mg</span>；② 说出规则物体重心在哪，会用两次悬挂法找不规则薄板的重心；③ 判断一个弹力有没有、方向朝哪，会画力的图示与示意图；④ 用 <span class="m">F=kx</span> 做计算，并且知道 k 的单位为什么是 N/m。</div>
+
+<h2>预备工具箱（前几节装备清点）</h2>
+<p><b>力</b>：物体对物体的作用。初中你已经见过它的三个效果词——<span class="m">推、拉、提、举</span>；高中第一件事，是把"认识一个力"变成固定动作：问<b>施力物体、受力物体</b>（谁推谁），问<b>大小</b>（多少牛），问<b>方向与作用点</b>（朝哪、画在哪）。本节就按这三问，把最常见的两种力——<span class="k">重力</span>与<span class="k">弹力</span>——各办一次"入户登记"。</p>
+<p>工具提醒：第二章的 <span class="m">g=9.8 m/s²</span>（题目没特别说明时的默认值 <span class="pg">p49脚注①</span>）马上要回来了——它将以 <span class="m">10 N/kg</span> 的另一副面孔出现在 <span class="m">G=mg</span> 里。</p>
+
+<h2>第一站 重力：地球的"入户登记" <span class="en">p57</span></h2>
+<div class="def"><span class="lab">定义（黑体照录）</span>由于<b>地球的吸引</b>而使物体受到的力，叫作<b>重力</b>（gravity）。单位是<b>牛顿</b>，简称牛，符号用 <span class="m">N</span> 表示。</div>
+<p>三个登记项一次填全：①<b>施力物体＝地球</b>，受力物体＝你写的那个物体（问题框第1问）；②<b>方向竖直向下</b>（问题框第3问）；③<b>大小</b>用初中就有的关系式算（问题框第2问）：</p>
+<span class="big">G = mg</span>
+<p>其中 <span class="m">g</span> 是<b>自由落体加速度</b>。通过第二章的学习我们知道，没有空气阻力时，由静止下落的物体做自由落体运动，而做自由落体运动的物体<b>只受到重力</b>的作用——所以 <span class="m">g</span> 在这里"一鱼两吃"：它既是 2.4 节里下落快慢的"加速度 g"，也是本节称重时的"换算系数 g"。<span class="pg">p57</span></p>
+<div class="note"><span class="lab">旁批（照录）</span>g 的单位既可以是 N/kg，又可以是 m/s²，而且 <b>1 N/kg = 1 m/s²</b>。<br><span style="font-size:13.5px">为什么相等：N 就是 kg·m/s²（牛顿的定义），除以 kg 剩下 m/s²。同一系数，用 <span class="m">G=mg</span> 称重时读作 N/kg，用 <span class="m">v=gt</span> 算下落时读作 m/s²。<span class="pg">p57旁栏·自编解读已标</span></span></div>
+<details class="try"><summary>✍ 验一验 ①（60秒）体重60 kg的人在g取10 N/kg处受多大重力？施力物体是谁？</summary><div class="ans">G = mg = 60×10 = 600 N；施力物体是地球。（数值换算＝sympy验点8口径·g10m）</div></details>
+
+<div class="alt-box"><span class="lab">想多走一步？（可选）g 用 9.8 还是 10？</span><br>精确计算用 g=9.8 N/kg（p49脚注①默认值），估算用 10 N/kg——本节练习题题面都直接给了 g=10 N/kg，照题用即可；考试没给就用 9.8。跳过本块不损失主干。<span class="pg">自编导航·p49脚注承托</span></div>
+
+<h2>第二站 重心：把重力"画在一点" <span class="pg">p58</span></h2>
+<p>一个物体的<b>每一部分</b>都受到重力。但从<b>效果</b>上看，可以认为各部分受到的重力作用<b>集中于一点</b>——这一点叫作物体的<b>重心</b>（center of gravity）。因此，重心可以看作物体所受重力的<b>作用点</b>。<span class="pg">p58黑体照录</span></p>
+<h3>重心在哪：两条线索</h3>
+<p>① <b>质量均匀分布</b>的物体，重心位置只跟<b>形状</b>有关；形状规则的均匀物体容易确定——<b>均匀细直棒的重心在棒的中点，均匀球体的重心在球心，均匀圆柱体的重心在轴线的中点</b>（图3.1-1）。<span class="pg">p58</span></p>
+<p>② 质量分布不均匀时，重心除跟形状有关外，还跟<b>质量分布</b>有关——载重汽车的重心随着装货多少和装载位置而变化（图3.1-2甲空载、乙满载，重心位置C不同）。<span class="pg">p58</span></p>
+<div class="demo"><span class="lab">实验（照录逻辑）</span><b>悬挂法找不规则薄板的重心</b>（图3.1-3）：先在 A 点把物体悬挂起来，过 A 画一条竖直线 AB——由于 A 点悬线的拉力跟薄板的重力<b>二力平衡</b>，重心必定在 AB 连线上；再选另一处 D 点悬挂，过 D 画竖直线 DE——重心必在 DE 上。于是 <b>AB 与 DE 的交点 C，就是薄板的重心</b>。<span class="pg">p58</span><br><span style="font-size:13.5px">两次悬挂的逻辑＝两条"必经之路"，它们的交点唯一（sympy验点7）。为什么必须挂两次？一条线只能说"重心在线上"，说不清"在哪一点"。</span></div>
+<svg viewBox="0 0 700 270" role="img" aria-label="悬挂法找重心自编示意图：不规则薄板先在A点悬挂，过A画板内竖直线AB；再把薄板转过角度后在D点悬挂，过D画板内竖直线DE；AB与DE的交点C就是重心">
+  <rect x="0" y="0" width="700" height="270" fill="#1b2029"/>
+  <line x1="200" y1="14" x2="200" y2="90" stroke="#7d8ea3" stroke-width="2"/>
+  <circle cx="200" cy="92" r="5" fill="#f0b429"/>
+  <text x="182" y="82" fill="#f0b429" font-size="15">A</text>
+  <line x1="200" y1="40" x2="200" y2="222" stroke="#f0b429" stroke-width="2.2" stroke-dasharray="7 5"/>
+  <text x="206" y="240" fill="#f0b429" font-size="14">B</text>
+  <polygon points="120,55 340,42 380,150 262,218 112,180" fill="#25384d" stroke="#4a9eff" stroke-width="2.5"/>
+  <circle cx="262" cy="186" r="5" fill="#5ad1a5"/>
+  <text x="274" y="196" fill="#5ad1a5" font-size="15">D</text>
+  <line x1="262" y1="14" x2="262" y2="186" stroke="#7d8ea3" stroke-width="2"/>
+  <line x1="262" y1="186" x2="196" y2="45" stroke="#5ad1a5" stroke-width="2.2" stroke-dasharray="7 5"/>
+  <text x="182" y="38" fill="#5ad1a5" font-size="14">E</text>
+  <circle cx="200" cy="54" r="6" fill="#eaf2fb" stroke="#f0b429" stroke-width="2"/>
+  <text x="212" y="66" fill="#eaf2fb" font-size="15" font-weight="bold">C</text>
+  <text x="480" y="70" fill="#cfe0f0" font-size="13.5">第一次悬挂：A点悬线竖直，</text>
+  <text x="480" y="92" fill="#cfe0f0" font-size="13.5">重心必在板内竖直线AB上</text>
+  <text x="480" y="126" fill="#cfe0f0" font-size="13.5">第二次悬挂（板已转过角度）：过D</text>
+  <text x="480" y="148" fill="#cfe0f0" font-size="13.5">的板内"竖直线"DE随之换向，</text>
+  <text x="480" y="170" fill="#cfe0f0" font-size="13.5">重心又必在DE上</text>
+  <text x="480" y="204" fill="#f0b429" font-size="13.5">两条"必经之路"仅交于一点C</text>
+  <text x="480" y="226" fill="#7d8ea3" font-size="12">（自编示意·几何关系对验点7·非教材原图复刻）</text>
+</svg>
+<h3>把力画出来：力的图示与示意图</h3>
+<p>力可以用<b>有向线段</b>表示：线段按选定的标度画，<b>长短表示力的大小</b>，<b>箭头指向表示力的方向</b>，<b>箭尾（或箭头）表示力的作用点</b>——这种表示方法叫作<b>力的图示</b>（图3.1-4：球所受重力大小6 N、方向竖直向下，取标度2 N，线段长为3格）。<span class="pg">p58黑体照录</span> 在不需要准确标度力的大小时，通常只需画出力的作用点和方向，即只需画出力的<b>示意图</b>。<span class="pg">p58</span></p>
+<details class="try"><summary>✍ 验一验 ②（30秒）同一物体先后在A、D两点悬挂，得到两条竖直线AB、DE，为什么交点C就是重心？</summary><div class="ans">每次悬挂时悬线拉力与重力二力平衡，重力作用线必与悬线共线——重心既在AB上又在DE上，两条线只有一个交点C。（验点7）</div></details>
+
+<h2>第三站 弹力：被"压弯挤拉"后的还手之力 <span class="pg">p59</span></h2>
+<p>日常生活中的很多相互作用，无论是对物体<b>推、拉、提、举</b>，还是<b>牵引列车、锻打工件、击球、弯弓射箭</b>，都是在物体与物体<b>接触</b>时发生的——这种相互作用可以称为<b>接触力</b>。通常所说的拉力、压力、支持力都是接触力；接触力按性质可以分为<b>弹力和摩擦力</b>（摩擦力在 3.2 节，教材 <span class="pg">p63</span> 起已实锚）。<span class="pg">p59</span></p>
+<div class="def"><span class="lab">定义（黑体照录）</span>物体在力的作用下<b>形状或体积</b>会发生改变，这种变化叫作<b>形变</b>（deformation）。</div>
+<div class="demo"><span class="lab">眼见为实：形变可以小到看不见（照录）</span>图3.1-5：一块剖面为三角形的<b>有机玻璃</b>压在另一块有机玻璃上，形变肉眼不能看出；但形变后，特殊的光通过有机玻璃不同部位时产生的<b>花纹会发生变化</b>——工程设计时常用来研究按比例缩小的模型的形变，进而推测实际工程各部位的受力。<span class="pg">p59</span><br><span class="lab">演示</span><b>通过平面镜观察桌面的微小形变</b>（图3.1-6）：大桌上放两个平面镜 M、N，一束光依次被两镜反射射到墙上形成光点；<b>按压两镜之间的桌面</b>，墙上的光点位置移动——桌面确实发生了形变。<span class="pg">p59</span></div>
+<div class="def"><span class="lab">定义（黑体照录）</span>发生形变的物体，要<b>恢复原状</b>，对与它<b>接触</b>的物体会产生力的作用，这种力叫作<b>弹力</b>（elastic force）。</div>
+<p>被拉长的弹簧要恢复原状，对相连的小车产生<b>拉力</b>（图3.1-7）；被跳水运动员压弯的跳板要恢复原状，对上面的人产生<b>支持力</b>。<span class="pg">p59</span></p>
+<p><b>方向怎么定</b>（照录）：放在地板上的物体，它对地板的<b>压力</b>以及地板对它的<b>支持力</b>都是弹力，其方向<b>跟接触面垂直</b>；<b>绳子的拉力</b>也是弹力，其方向<b>沿着绳子而指向绳子收缩的方向</b>。<span class="pg">p59</span></p>
+<details class="try"><summary>✍ 验一验 ③（30秒）跳水运动员把跳板压弯，跳板对运动员的支持力方向如何？谁施力？</summary><div class="ans">垂直于跳板接触面向上（垂直接触面方向）；施力物体是发生形变要恢复原状的跳板。</div></details>
+
+<h2>第四站 胡克定律：给弹簧"办证" <span class="pg">p60-61</span></h2>
+<div class="def"><span class="lab">两个黑体词（照录）</span>物体在发生形变后，如果<b>撤去作用力能够恢复原状</b>，这种形变叫作<b>弹性形变</b>（elastic deformation）；如果形变过大，超过一定的限度，撤去作用力后物体<b>不能完全恢复</b>原来的形状，这个限度叫作<b>弹性限度</b>（elastic limit）。</div>
+<div class="demo"><span class="lab">实验（三步照录·图3.1-8）</span><b>探究弹簧弹力与形变量的关系</b>：<br>① 实验思路——要测量多组弹簧弹力和形变量的数据，如何测量？<br>② 进行实验——弹簧上端固定在铁架台横杆上，观察自由下垂时下端在刻度尺的位置；下端悬挂<b>不同质量的钩码</b>，记录弹力不同时伸长的长度（<b>弹簧弹力等于钩码的重力</b>）。<br>③ 数据处理——以弹力 F 为纵轴、弹簧伸长的长度 x 为横轴建系，描点作出 <b>F–x 图像</b>。由图像你得出了什么结论？<span class="pg">p60-61</span></div>
+<div class="def"><span class="lab">定律（黑体照录）</span>英国科学家<b>胡克</b>经过研究发现，在<b>弹性限度内</b>，弹簧发生弹性形变时，弹力 F 的大小跟弹簧<b>伸长（或缩短）的长度 x</b> 成正比，即</div>
+<span class="big">F = kx</span>
+<p>这个规律叫作<b>胡克定律</b>（Hooke's law）。式中弹力 F、伸长（或缩短）的长度 x 的单位分别是牛顿（N）、米（m）；<b>k 叫作弹簧的劲度系数</b>（coefficient of stiffness），单位是<b>牛顿每米</b>，符号是 N/m。生活中说有的弹簧"硬"，有的弹簧"软"，指的就是它们的<b>劲度系数不同</b>。<span class="pg">p61黑体照录</span></p>
+<h3>拿教材练习T6的真实数据把k算出来 <span class="pg">p62</span></h3>
+<table>
+<tr><th>钩码质量 m/g</th><td>0</td><td>30</td><td>60</td><td>90</td><td>120</td><td>150</td></tr>
+<tr><th>弹簧总长度 l/cm</th><td>6.0</td><td>7.2</td><td>8.3</td><td>9.5</td><td>10.6</td><td>11.8</td></tr>
+<tr><th>弹力 F=mg/N（g取10 N/kg）</th><td>0</td><td>0.3</td><td>0.6</td><td>0.9</td><td>1.2</td><td>1.5</td></tr>
+<tr><th>伸长量 x=(l−6.0)/cm</th><td>0</td><td>1.2</td><td>2.3</td><td>3.5</td><td>4.6</td><td>5.8</td></tr>
+</table>
+<p>各点 F/x 比值在 25.0–26.1 N/m 间小幅波动（真实数据带实验误差·教材原貌），首尾两点得 k=(1.5−0.3)/(0.058−0.012)≈<b>26.1 N/m</b>，过原点最小二乘拟合 k≈<b>25.9 N/m</b>——作 F–x 图像应得一条<b>过原点的直线</b>，斜率即 k。<span class="pg">p62 T6·sympy验点3-5支撑（p31_calc.py 16/16 PASS）</span></p>
+<svg viewBox="0 0 700 300" role="img" aria-label="F-x图像自编示意图：横轴伸长量x/cm，纵轴弹力F/N；T6六组数据描点，过原点直线穿过全部误差带内，直线斜率即劲度系数k约26N/m">
+  <rect x="0" y="0" width="700" height="300" fill="#1b2029"/>
+  <line x1="80" y1="260" x2="672" y2="260" stroke="#7d8ea3" stroke-width="2"/>
+  <polygon points="680,260 668,255 668,265" fill="#7d8ea3"/>
+  <line x1="80" y1="260" x2="80" y2="30" stroke="#7d8ea3" stroke-width="2"/>
+  <polygon points="80,22 75,34 85,34" fill="#7d8ea3"/>
+  <text x="668" y="282" fill="#cfe0f0" font-size="14">x/cm</text>
+  <text x="30" y="24" fill="#cfe0f0" font-size="14">F/N</text>
+  <text x="66" y="278" fill="#7d8ea3" font-size="12">O</text>
+  <line x1="80" y1="260" x2="640" y2="56" stroke="#4a9eff" stroke-width="2.5"/>
+  <circle cx="80"  cy="260" r="4.5" fill="#f0b429"/>
+  <circle cx="194" cy="220" r="4.5" fill="#f0b429"/>
+  <circle cx="299" cy="179" r="4.5" fill="#f0b429"/>
+  <circle cx="413" cy="139" r="4.5" fill="#f0b429"/>
+  <circle cx="517" cy="98"  r="4.5" fill="#f0b429"/>
+  <circle cx="631" cy="58"  r="4.5" fill="#f0b429"/>
+  <text x="560" y="46" fill="#f0b429" font-size="12.5">(5.8, 1.5)</text>
+  <text x="150" y="240" fill="#aebccf" font-size="12.5">描点全落在过原点直线附近（数据带实验误差）</text>
+  <text x="360" y="150" fill="#4a9eff" font-size="14" transform="rotate(-19.6 360 150)">斜率 = k ≈ 26 N/m</text>
+  <text x="100" y="290" fill="#7d8ea3" font-size="12">（自编示意·数据点=附件2之20-23行T6表·计算时代入米·非教材原图复刻）</text>
+</svg>
+<details class="try"><summary>✍ 验一验 ④（30秒）某弹簧挂0.5 N物体伸长2.0 cm，求k。x是什么的长度？</summary><div class="ans">k=F/x=0.5/0.020=25 N/m；x是<b>伸长量（形变量）</b>，不是弹簧总长——若题给总长要先减原长（大坑②）。</div></details>
+
+<div class="alt-box"><span class="lab">想多走一步？（可选）"最小二乘"是什么？</span><br>把一条直线放在所有数据点"中间"，让每个点到直线的竖直距离的平方加起来最小——直线由全部数据"投票"选出，比只取首尾两点更抗误差。本节算 k 用首尾法（26.1 N/m）已够用，最小二乘（25.9 N/m）是它的"全民投票版"。跳过本块不损失主干。<span class="pg">自编拓展·T6数据承托</span></div>
+
+<h2>⚠ 大坑警报（四发·自编警示）</h2>
+<div class="note">① <b>"竖直向下"≠"垂直向下"</b>：重力方向永远<b>竖直向下</b>（指向地面附近的重力线方向）；"垂直"必须说清垂直于哪个面——斜面上"垂直于斜面"的力不是重力方向。教材全节只说"竖直向下"<span class="pg">p57</span>。</div>
+<div class="note">② <b>F=kx 的 x 是形变量</b>（伸长或缩短的长度），<b>不是弹簧总长</b>：教材p60明写"伸长（或缩短）的长度 x"。给总长 l 先减原长 l₀ 再代公式——本节T6就是活例（总长11.8 cm→x=5.8 cm）。</div>
+<div class="note">③ <b>弹力方向三型分开判</b>：面与面接触→垂直于接触面（压力指向被压物、支持力指向被支持物）；点与面接触→垂直于面过点；绳→沿绳指向绳收缩方向。<span class="pg">p59照录+自编三分法</span></div>
+<div class="note">④ <b>k 是弹簧的"身份证"</b>：由弹簧自身决定（"硬"=k大），与 F、x 大小无关——同一根弹簧挂轻挂重，k 不变；换一根弹簧才换 k。<span class="pg">p61"硬软"照录+自编警示</span></div>
+
+<h2>练习与应用（七题全列全解 <span class="pg">p61-62</span>·题面照录·解为自编）</h2>
+<div class="q"><b>T1</b>　举出具体的实例来说明：（1）力能够改变物体的运动状态或使物体产生形变。（2）每一个力，都有一个施力物体和一个受力物体。</div>
+<p><b>解</b>：（1）改变运动状态：脚踢静止的足球，球飞出；产生形变：捏橡皮泥、压弯跳板（2.4节压弯跳板的支持力同源）。（2）任何力都成对登记：重力——地球施、物体受；桌面支持力——桌面施、书受。找不到施力物体的"力"不存在（防"冲力""惯性力"类杜撰）。</p>
+<div class="q"><b>T2</b>　画出下面几个力的图示，并指出受力物体和施力物体。（1）竖直向上飞行的火箭受到的重力，火箭质量为 2×10³ kg。g 取 10 N/kg。（2）人对车施加的水平向右 250 N 的推力。（3）用一根细绳竖直悬挂一件工艺品，工艺品对细绳的拉力为 0.5 N。</div>
+<p><b>解</b>：（1）G=mg=2×10³×10=<b>2×10⁴ N</b>（验点1），受力物体火箭、施力物体地球；图示：取标度 5×10³ N，画竖直向下4格、箭头朝下，作用点画在火箭重心。（2）受力物体车、施力物体人；水平向右，按标度画。（3）受力物体细绳、施力物体工艺品（注意：题目求的是"工艺品<b>对绳</b>"的拉力，作用点在绳上，方向竖直向下）；数值0.5 N。</p>
+<div class="q"><b>T3</b>　几何学中把三角形三条中线的交点叫作重心。物理学中也有重心的概念。均匀的三角形薄板的重心是不是与几何学上的重心位于同一点上？请你通过以下实验作出判断。首先作图把均匀等厚三角形纸板的三条中线的交点 C 找出来，然后用细线悬吊三角形纸板的任意位置，看悬线的延长线是否通过 C 点。</div>
+<p><b>解</b>：是同一点。均匀等厚三角形质量分布只由形状决定，悬挂法（第二站实验）每条悬线延长线都过 C——三线交于一点即几何重心＝物理重心。这正是"形状规则的均匀物体重心易确定"的三角版<span class="pg">p58</span>。</p>
+<div class="q"><b>T4</b>　质量均匀的钢管，一端支在光滑的水平地面上，另一端被竖直绳悬吊着（图3.1-9），钢管受到几个力的作用？各力的施力物体是什么？画出钢管受力的示意图。</div>
+<p><b>解</b>：三个力——①重力 G（施力：地球，作用点在钢管中部重心，竖直向下）；②地面支持力（施力：地面，垂直于地面过支点向上）；③绳的拉力（施力：绳，沿绳竖直向上过悬点）。示意图按"力的示意图"口径只画作用点与方向<span class="pg">p58</span>。</p>
+<div class="q"><b>T5</b>　物体在力的作用下产生的形变有时不容易被觉察，教科书列举了两个观察微小形变的实例，你还能想到用什么方法来观察力作用下的微小形变？请画示意图说明你的方法。</div>
+<p><b>解</b>（示例·自编）：激光测微法——在桌面边缘立一平面镜，激光笔照镜射向远墙，轻压桌面，墙上光点位移被"光路杠杆"放大（与教材图3.1-6同原理）；或用力传感器直接读微小力（原理不同但同属"放大+转换"思路）。</p>
+<div class="q"><b>T6</b>　某同学在竖直悬挂的弹簧下加挂钩码，做实验研究弹力与弹簧伸长量的关系。他将实验数据记录在表格中。实验时弹力始终未超过弹性限度，g 取 10 N/kg。（表：钩码质量 0/30/60/90/120/150 g·弹簧总长度 6.0/7.2/8.3/9.5/10.6/11.8 cm）（1）根据实验数据在坐标纸上作出弹力 F 跟弹簧伸长量 x 关系的 F–x 图像（图3.1-10）。（2）根据 F–x 图像计算弹簧的劲度系数。</div>
+<p><b>解</b>：（1）F=mg 得 0/0.3/0.6/0.9/1.2/1.5 N；x=l−6.0 cm 得 0/1.2/2.3/3.5/4.6/5.8 cm（先减原长！大坑②）——描点连成过原点直线。（2）k=ΔF/Δx，取两点（0.012, 0.3）（0.058, 1.5）：k≈1.2/0.046≈<b>26 N/m</b>（最小二乘25.9 N/m·各点比值25.0–26.1带实验误差——验点3-5）。答：k≈26 N/m。</p>
+<div class="q"><b>T7</b>　小发明——设计一个自动冲水装置。有一个排污沟，需要每隔十多分钟用水冲洗一次。请你应用重心的知识设计一个自动冲水装置。设计的思路是：用一个可以转动的容器接住从水龙头细细流出的水，容器中的水装到一定体积时，由于重心位置的变化，容器失去平衡而翻倒，容器中的水被全部倒出冲洗排污沟，倒完水的容器又能自动恢复到原来的位置重新接水，如此往复。调节水龙头的流量，还可以控制两次冲水的时间间隔。请你在图3.1-11的圆圈中画出你构想的这个装置的图示。</div>
+<p><b>解</b>（设计思路·自编）：转动轴取在容器空载重心上方，使空容器"头轻脚稳"；注水后整体重心随水位升高越过转轴正上方→失稳翻转倒空；倒空后重心回落→自动复位。图示要点：转轴O、空载重心C₁（轴下方）、满水重心C₂（轴上方）、翻转箭头。（重心随质量分布移动——第二站载重汽车例子的逆向应用）</p>
+
+<h2>🧳 三句话带走（收口·与节首清单呼应）</h2>
+<p><mark class="nb">重力＝地球的吸引，方向竖直向下，G=mg——g 两副面孔：称重读 N/kg、下落读 m/s²，1 N/kg=1 m/s²。</mark></p>
+<p><mark class="nb">重心是重力的作用点：均匀规则物体看形状，不规则薄板用两次悬挂法——两条"必经之路"的交点 C。</mark></p>
+<p><mark class="nb">弹力＝要恢复原状时对接触物体的力；弹性限度内 F=kx，x 是形变量（总长减原长），k 是弹簧的"身份证"。</mark></p>
+<p>练什么题：教材 p61-62 T1-T7（全解在上文）。<b>下一站</b>：3.2 摩擦力——弹簧测力计拖着木块匀速走，f=μF<sub>压</sub> 已在 p63 节名页等你（下界硬锚 m68 实锚在案）。</p>
+
+<h2>🎯 自测四连</h2>
+<details class="self"><summary>Q1　重力的施力物体、方向、大小公式各是什么？g的两副单位面孔？</summary>地球；竖直向下；G=mg；称重N/kg、下落m/s²，且1 N/kg=1 m/s²。<span class="pg">p57</span></details>
+<details class="self"><summary>Q2　为什么找不规则薄板重心要悬挂两次？</summary>一次悬挂只能确定重心在一条竖直线上；两次得两条线，交点唯一才是重心。<span class="pg">p58·验点7</span></details>
+<details class="self"><summary>Q3　发生形变的物体一定产生弹力吗？两个关键词是什么？</summary>教材口径：要<b>恢复原状</b>且与接触物体作用才叫弹力——两关键词"恢复原状、对接触物体"。<span class="pg">p59黑体</span></details>
+<details class="self"><summary>Q4　弹簧原长10 cm，挂0.4 N物体后总长12 cm（未超弹性限度），k=?</summary>x=12−10=2 cm=0.02 m（先减原长）；k=0.4/0.02=20 N/m。<span class="pg">p61 F=kx</span></details>
+
+<h2>📌 高考怎么考（考位锚·两考向·归纳自编）</h2>
+<div class="note"><b>考向一 弹力的有无与方向作图</b>：给静止物体受力分析（T4钢管型），考"三力齐全＋方向三型"——重力竖直向下、支持力垂直接触面、绳拉力沿绳；常配力的示意图作图。</div>
+<div class="note"><b>考向二 胡克定律实验与图像</b>：给数据表/图线求k（T6型），考"x=总长−原长""图线斜率即k""单位N/m"；进阶考两根不同弹簧同图比较"硬软"。真题锚候采不代拟（卷源在库候采·宁缺毋编）。</div>
+
+<h2>节末位置图（本节位置·第三章五节地图）</h2>
+<svg viewBox="0 0 780 110" role="img" aria-label="本节位置图：第一章运动的描述→第二章匀变速直线运动的研究（已收官）→第三章相互作用——力（3.1重力与弹力当前位置→3.2摩擦力→3.3牛顿第三定律→3.4力的合成→3.5力的分解）">
+  <rect x="10" y="30" width="120" height="50" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="70" y="52" fill="#aebccf" font-size="12.5" text-anchor="middle">第一章</text>
+  <text x="70" y="70" fill="#7d8ea3" font-size="11" text-anchor="middle">运动的描述 ✓</text>
+  <rect x="160" y="30" width="170" height="50" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="245" y="52" fill="#aebccf" font-size="12.5" text-anchor="middle">第二章 匀变速直线运动</text>
+  <text x="245" y="70" fill="#7d8ea3" font-size="11" text-anchor="middle">2.1-2.4 已收官 ✓</text>
+  <line x1="130" y1="55" x2="160" y2="55" stroke="#4a9eff"/><polygon points="160,55 152,51 152,59" fill="#4a9eff"/>
+  <line x1="330" y1="55" x2="360" y2="55" stroke="#f0b429"/><polygon points="360,55 352,51 352,59" fill="#f0b429"/>
+  <rect x="360" y="18" width="88" height="42" rx="8" fill="#25384d" stroke="#f0b429"/>
+  <text x="404" y="36" fill="#f0b429" font-size="12.5" text-anchor="middle">3.1 重力与弹力</text>
+  <text x="404" y="53" fill="#cfe0f0" font-size="10.5" text-anchor="middle">当前位置 p57-62</text>
+  <rect x="456" y="30" width="80" height="50" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="496" y="52" fill="#aebccf" font-size="12" text-anchor="middle">3.2 摩擦力</text>
+  <text x="496" y="70" fill="#5a6a7a" font-size="10.5" text-anchor="middle">p63 起</text>
+  <rect x="544" y="30" width="86" height="50" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="587" y="52" fill="#aebccf" font-size="12" text-anchor="middle">3.3 牛顿第三定律</text>
+  <rect x="638" y="30" width="64" height="50" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="670" y="52" fill="#aebccf" font-size="11.5" text-anchor="middle">3.4 力的合成</text>
+  <rect x="710" y="30" width="64" height="50" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="742" y="52" fill="#aebccf" font-size="11.5" text-anchor="middle">3.5 力的分解</text>
+  <text x="420" y="100" fill="#5a6a7a" font-size="11.5" text-anchor="middle">第三章共五节：重力与弹力→摩擦力→牛顿第三定律→力的合成→力的分解（3.2节名页p63已实锚）</text>
+</svg>
+
+<div class="foot">
+【foot·验点账】本件事实点31条全锚教材p57-62（影印实锚：图62=p57节名页/图63=p58重心/图64=p59弹力/图65=p60胡克定律实验/图66=p61定律+练习/T1-T5/图67=p62 T6-T7/图68=p63=3.2摩擦力节名页下界硬锚·偏移N-5全验证·asset=708256b6↔ts=1787023183495实测200·17:50复测存活）·sympy验点16/16全过（p31_calc.py留痕·T6钩码表F序列/x序列逐点/T6劲度系数首尾26.1与最小二乘25.9N/m/火箭2×10⁴N/1N=1kg·m/s²量纲/悬挂法二力平衡形式化/F₁/F₂=x₁/x₂）·练习与应用T1-T7全列全解（题面照录·解为自编·T6数据实算k≈26N/m）·大坑四发（竖直≠垂直/x是形变量/弹力方向三型/k是弹簧身份证）·自编内容显式标注·三条差距与四附件随件·出品：并行搜索员A·队4席·dui4_31_1031分支候验·禁直推main。
+</div>
+
+</div></body>
+</html>
