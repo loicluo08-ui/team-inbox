@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>数学4.1 指数 · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#16233a}
+h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
+h3{color:#2c5f8f;margin-top:1.6em}
+.station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
+.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.check .tag{font-weight:bold;color:#7a5c00}
+.formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
+.mark{background:#fff176;padding:0 4px;border-radius:3px}
+.uline{border-bottom:2px solid #4a90d9;padding-bottom:1px}
+.note-red{color:#c0392b;border:1px solid #e6b0aa;background:#fdf2f0;border-radius:8px;padding:8px 14px;margin:10px 0}
+.try{background:#e8f6ef;border-left:4px solid #27ae60;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.try .ans{color:#1e7e4e;font-weight:bold}
+.alt{background:#f6f2fb;border-left:4px solid #8e5cb8;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0;color:#4a3568}
+.alt .tag{font-size:.8em;color:#8e5cb8;font-weight:bold}
+.selftest{background:#fdf6ec;border:1px solid #e2c48d;border-radius:10px;padding:14px 18px;margin:16px 0}
+.kaowei{background:#eaf3ea;border:2px solid #3d8b5f;border-radius:10px;padding:12px 16px;margin:16px 0}
+.kaowei .kw-title{font-weight:bold;color:#2d6a45}
+.figure{text-align:center;margin:16px 0}
+.figure svg{max-width:100%;height:auto}
+.figcap{font-size:.88em;color:#5a6b7d;margin-top:6px}
+.walk{background:#eef7ee;border-radius:8px;padding:10px 16px;margin:12px 0}
+.walk li{margin:5px 0}
+table.cmp{border-collapse:collapse;width:100%;margin:12px 0}
+table.cmp th,table.cmp td{border:1px solid #b8c8d8;padding:8px 12px;text-align:center}
+table.cmp th{background:#e3edf6;color:#1e3a5f}
+.sub{font-size:.85em;color:#5a6b7d}
+.detail{color:#3d6a9e;font-size:.95em}
+@media print{
+ body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
+ .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
+ .station-title{background:#333!important;color:#fff!important}
+ h1{font-size:1.35em}h2{font-size:1.15em}
+ .formula{background:#f2f2f2!important}
+ a{color:#000;text-decoration:none}
+ .no-print{display:none}
+}
+</style>
+</head>
+<body>
+<h1>数学 4.1 指数 <span class="sub">人教A版 必修第一册 · 零基础首学版 v1.0 · 2026-10-31</span></h1>
+<p><strong>开场一句话：</strong>第三章学完函数的"机器、体检、新家族、上岗"（3.1→3.4），第四章换新主角——<span class="mark">指数函数与对数函数</span>。教材章首（p103）用良渚遗址测年起手："考古学家利用遗址中遗存物碳 14 的残留量测定，古城存在时期为公元前 3300 年～前 2300 年"——背后就是指数函数模型。但要用好 y=a<sup>x</sup> 这个机器，得先解决一件地基工程：<span class="uline">把指数 x 的取值范围从整数一路拓展到全体实数</span>。教材开场原句（p104）："为了研究指数函数，我们需要把指数的范围拓展到全体实数。"这一节就是两层拓展：<strong>4.1.1</strong> 从整数拓到有理数（分数指数幂），<strong>4.1.2</strong> 从有理数拓到实数（无理数指数幂）。</p>
+<div class="check">
+<span class="tag">读完这节你能做到</span>
+<ul>
+<li>按 n 的奇偶正确写 n 次方根：会算 <span class="mark">⁵√32=2、⁵√(−32)=−2、±⁴√16=±2</span>，并说明"负数没有偶次方根、0 的任何次方根都是 0"（p104）；</li>
+<li>识破偶次方根的绝对值陷阱：<span class="mark">ⁿ√(aⁿ)=|a|（n 偶）</span>，例1(3) 型 <span class="mark">⁴√((3−π)⁴)=π−3</span> 不丢符号（p105 例1）；</li>
+<li>根式 ⇄ 分数指数幂双向互化并按三条运算性质化简求值（<span class="mark">8^(2/3)=4、(16/81)^(−3/4)=27/8</span>，p106 例2 例3 例4）；</li>
+<li>说出无理数指数幂是"两串有理数指数幂夹逼出的确定的实数"（<span class="mark">5<sup>√2</sup></span> 逼近实验，p108），并会用条件求值套路解 <span class="mark">a^(1/2)+a^(−1/2)=3⟹a+a^(−1)=7、a²+a^(−2)=47</span>（p110 习题8）。</li>
+</ul>
+</div>
+<div class="station">
+<p class="station-title">第 0 站 · 预备块：初中底账 + 本节两层拓展地图</p>
+<p><strong>初中三件老工具：</strong>① 平方根/立方根——如果 x²=a，那么 x 叫做 a 的平方根（±2 是 4 的平方根）；如果 x³=a，那么 x 叫做 a 的立方根（2 是 8 的立方根）。② 整数指数幂——a⁰=1、a<sup>−n</sup>=1/aⁿ（a≠0）。③ 整数幂运算性质——同底相乘指数相加、幂的幂指数相乘、积的幂各取幂。</p>
+<p><strong>为什么拓展：</strong>在学习幂函数时，我们把正方形场地的边长 c 关于面积 S 的函数 c=√S 记作 c=S<sup>1/2</sup>（p104）。像 S<sup>1/2</sup> 这样<span class="mark">以分数为指数的幂，其意义是什么</span>？初中没有定义——本节从已知的平方根、立方根的意义入手展开研究。</p>
+<p><strong>本节地图（两步走）：</strong></p>
+<table class="cmp">
+<tr><th>小节</th><th>拓展动作</th><th>指数范围</th><th>页码</th></tr>
+<tr><td>4.1.1 n次方根与分数指数幂</td><td>根式 → 规定分数指数幂</td><td>整数 → <span class="mark">有理数</span></td><td>p104-107</td></tr>
+<tr><td>4.1.2 无理数指数幂及其运算性质</td><td>逼近实验 → 规定实数指数幂</td><td>有理数 → <span class="mark">实数</span></td><td>p107-109</td></tr>
+</table>
+</div>
+<div class="station">
+<p class="station-title">第 1 站 · 4.1.1 上半场：n 次方根与根式（p104-105）</p>
+<p><strong>定义（p104 原文口径）：</strong>一般地，如果 xⁿ=a，那么 x 叫做 a 的 <span class="uline">n 次方根</span>，其中 n&gt;1，且 n∈N*。<strong>分 n 的奇偶两种情形：</strong></p>
+<p><strong>n 是奇数时：</strong>正数的 n 次方根是一个正数，负数的 n 次方根是一个负数。这时 a 的 n 次方根用符号 <span class="mark">ⁿ√a</span> 表示。例如：</p>
+<div class="formula">⁵√32 = 2，　⁵√(−32) = −2，　∛(a⁶) = a²</div>
+<p><strong>n 是偶数时：</strong>正数的 n 次方根有两个，这两个数<span class="mark">互为相反数</span>。这时正数 a 的正的 n 次方根用 ⁿ√a 表示，负的 n 次方根用 −ⁿ√a 表示，可以合并写成 <span class="mark">±ⁿ√a（a&gt;0）</span>。例如：</p>
+<div class="formula">⁴√16 = 2，　−⁴√16 = −2，　±⁴√16 = ±2</div>
+<p><strong>两条红线（p104 原文）：</strong><span class="mark">负数没有偶次方根</span>；0 的任何次方根都是 0，记 ⁿ√0=0。教材旁设问题框"为什么负数没有偶次方根？"——<span class="ans" style="color:#1e7e4e;font-weight:bold">因为偶次幂非负：设 x^(2k)=a&lt;0，但任何实数的偶次幂 ≥0，矛盾。（自答）</span></p>
+<p><strong>根式概念：</strong>式子 ⁿ√a 叫做<span class="uline">根式</span>（radical），这里 n 叫做<span class="mark">根指数</span>，a 叫做<span class="mark">被开方数</span>。根据 n 次方根的意义，可得：</p>
+<div class="formula">(ⁿ√a)ⁿ = a　　例如 (√5)² = 5，(⁵√(−3))⁵ = −3</div>
+<p><strong>探究（p105·教材原题）：</strong>ⁿ√(aⁿ) 表示 aⁿ 的 n 次方根，ⁿ√(aⁿ)=a 一定成立吗？——<span class="ans" style="color:#1e7e4e;font-weight:bold">不一定。可以得到：当 n 为奇数时，ⁿ√(aⁿ)=a；当 n 为偶数时，ⁿ√(aⁿ)=|a|={ a，a≥0；−a，a&lt;0 }。（n 偶时先算出的是非负值，必须补绝对值再按 a 的符号拆）</span></p>
+<p><strong>例1（p105 原题）求下列各式的值：</strong></p>
+<div class="formula">(1) ∛((−8)³) = −8；　(2) √((−10)²) = |−10| = 10；　(3) ⁴√((3−π)⁴) = |3−π| = π−3；　(4) √((a−b)²) = |a−b| = { a−b，a≥b；b−a，a&lt;b }</div>
+<div class="try"><p><strong>验一验①（符号自检）：</strong>例1(3) 为什么不是 3−π？——<span class="ans">⁴√((3−π)⁴) 中根指数 4 是偶数，出来必须带绝对值：|3−π|。而 3−π&lt;0（π≈3.14），去绝对值得 <span class="mark">π−3</span>。凡是"偶次方根套平方数"（ⁿ√(□ⁿ)，n 偶），先写 |□| 再判符号——π−3 型陷阱年年考。</span></p></div>
+</div>
+<div class="station">
+<p class="station-title">第 2 站 · 4.1.1 下半场：分数指数幂 + 化简计算流水线（p105-107）</p>
+<p><strong>从根式到分数指数幂的桥（p105 原文口径）：</strong>根据 n 次方根的定义和数的运算，我们知道</p>
+<div class="formula">⁵√(a¹⁰) = ⁵√((a²)⁵) = a² = a<sup>10/5</sup>（a&gt;0），　⁴√(a¹²) = ⁴√((a³)⁴) = a³ = a<sup>12/4</sup>（a&gt;0）</div>
+<p>这就是说，当根式的被开方数（看成幂的形式）的指数<span class="mark">能被根指数整除</span>时，根式可以表示为分数指数幂的形式。<strong>思考（p105）：</strong>不能整除时呢？——教材直接给出：∛(a²)=a<sup>2/3</sup>（a&gt;0），√b=b<sup>1/2</sup>（b&gt;0），⁴√(c⁵)=c<sup>5/4</sup>（c&gt;0）。</p>
+<p><strong>正式规定（p106 原文）：</strong>我们希望整数指数幂的运算性质，如 (a<sup>k</sup>)<sup>n</sup>=a<sup>kn</sup>，对分数指数幂仍然适用。由此规定：</p>
+<div class="formula">正分数指数幂：a<sup>m/n</sup> = ⁿ√(a<sup>m</sup>)（a&gt;0，m，n∈N*，n&gt;1）<br>负分数指数幂：a<sup>−m/n</sup> = 1/a<sup>m/n</sup> = 1/ⁿ√(a<sup>m</sup>)（a&gt;0，m，n∈N*，n&gt;1）</div>
+<p>例如 5<sup>−4/3</sup>=1/5<sup>4/3</sup>=1/³√(5⁴)，a<sup>−2/3</sup>=1/a<sup>2/3</sup>=1/³√(a²)。<strong>0 的口径：</strong><span class="mark">0 的正分数指数幂等于 0，0 的负分数指数幂没有意义</span>。教材旁注两句思想提示：<span class="uline">"数学中，引进一个新的概念或法则时，总希望它与已有的概念或法则相容"</span>；"这里，略去了规定合理性的说明"。规定了分数指数幂的意义以后，幂 a<sup>x</sup> 中指数 x 的取值范围就从整数拓展到了<span class="mark">有理数</span>。</p>
+<p><strong>有理数指数幂运算性质（p106 原文三条）：</strong>对于任意有理数 r，s：</p>
+<div class="formula">(1) a<sup>r</sup>a<sup>s</sup> = a<sup>r+s</sup>（a&gt;0，r，s∈Q）；　(2) (a<sup>r</sup>)<sup>s</sup> = a<sup>rs</sup>（a&gt;0，r，s∈Q）；　(3) (ab)<sup>r</sup> = a<sup>r</sup>b<sup>r</sup>（a&gt;0，b&gt;0，r∈Q）</div>
+<p><strong>例2（p106）求值：</strong>(1) 8<sup>2/3</sup>=(2³)<sup>2/3</sup>=2<sup>3×2/3</sup>=2²=<span class="mark">4</span>；(2) (16/81)<sup>−3/4</sup>=(81/16)<sup>3/4</sup>=((3/2)⁴)<sup>3/4</sup>=(3/2)³=<span class="mark">27/8</span>。负指数一手换倒数、底数化成 <span class="mark">质数幂或完全次方</span>，指数约干净收工。</p>
+<p><strong>例3（p106）用分数指数幂的形式表示并计算（其中 a&gt;0）：</strong>(1) a²·∛(a²)=a²·a<sup>2/3</sup>=a<sup>2+2/3</sup>=<span class="mark">a<sup>8/3</sup></span>；(2) √(a∛a)=(a·a<sup>1/3</sup>)<sup>1/2</sup>=(a<sup>4/3</sup>)<sup>1/2</sup>=<span class="mark">a<sup>2/3</sup></span>。</p>
+<p><strong>例4（p107）计算下列各式（式中字母均是正数）：</strong></p>
+<div class="formula">(1) (2a<sup>2/3</sup>b<sup>1/2</sup>)(−6a<sup>1/2</sup>b<sup>1/3</sup>)÷(−3a<sup>1/6</sup>b<sup>5/6</sup>) = [2×(−6)÷(−3)]a<sup>2/3+1/2−1/6</sup>b<sup>1/2+1/3−5/6</sup> = 4ab⁰ = <strong>4a</strong>；<br>(2) (m<sup>1/4</sup>n<sup>−3/8</sup>)⁸ = (m<sup>1/4</sup>)⁸(n<sup>−3/8</sup>)⁸ = m²n<sup>−3</sup> = <strong>m²/n³</strong>；<br>(3) (∛(a²)−√(a³))÷⁴√(a²) = (a<sup>2/3</sup>−a<sup>3/2</sup>)÷a<sup>1/2</sup> = a<sup>2/3−1/2</sup>−a<sup>3/2−1/2</sup> = a<sup>1/6</sup>−a = <strong>⁶√a−a</strong></div>
+<p><strong>练习（p107·三题自测口径）：</strong>1. 用根式形式表示（a&gt;0）：a<sup>1/2</sup>=√a，a<sup>3/4</sup>=⁴√(a³)，a<sup>−3/5</sup>=1/⁵√(a³)，a<sup>−5/6</sup>=1/⁶√(a⁵)。2. 化分数指数幂并计算：∛(x²)=x<sup>2/3</sup>（x&gt;0）；⁵√((m−n)⁴)=(m−n)<sup>4/5</sup>（m&gt;n）；√(p⁶)·⁶√(p⁵)=p³·p<sup>5/6</sup>=<span class="mark">p<sup>23/6</sup></span>（p&gt;0）；a³÷√a 化分数指数幂得 a<sup>5/2</sup>（a&gt;0·教材原题 a³/√a 照录见随件附件1）。3. 计算：(36/49)<sup>3/2</sup>=(6/7)³=<span class="mark">216/343</span>；2√3×3√1.5×⁶√12=9·2<sup>5/6</sup>·3<sup>1/6</sup>=<span class="mark">9⁶√96</span>（sympy 核）；a<sup>1/2</sup>a<sup>1/4</sup>a<sup>−1/8</sup>=a<sup>5/8</sup>（a&gt;0）；2x<sup>−1/3</sup>(½x<sup>1/3</sup>−2x<sup>−2/3</sup>)=1−4/x=<span class="mark">(x−4)/x</span>。</p>
+<div class="try"><p><strong>验一验②（计算流水线自检）：</strong>例4(1) 里 b 的指数 1/2+1/3−5/6 为什么得 0？——<span class="ans">通分 12：6/12+4/12−10/12=0。三条运算性质分工明确：<span class="mark">系数管系数（2×(−6)÷(−3)=4）、同底管指数（通分加减）、b⁰=1（a&gt;0 语境下非零底数的零次幂）</span>。任何一步乱序都会错底错指。</span></p></div>
+<div class="note-red"><strong>易错红卡（自编，据例1-例4 提炼）：</strong>① ⁿ√(aⁿ) 当 n 偶时等于 |a| 不是 a——π−3、a−b 型先绝对值后拆（例1(3)(4) 双坑）；② 分数指数幂 a<sup>m/n</sup> 的合法底数是 <span class="mark">a&gt;0</span>——0 的负分数指数幂没有意义、负数的分数指数幂本节不定义，看到负底数先停手；③ 性质 (2) (a<sup>r</sup>)<sup>s</sup>=a<sup>rs</sup> 是"指数相乘"，别与 (1) 的"指数相加"混用（8<sup>2/3</sup> 拆 (2³)<sup>2/3</sup> 用的正是相乘）；④ 化简结果最好回根式或最简幂——⁶√a−a 别"顺手"写成 a<sup>1/6</sup>−a 后再乱合并，两个项底数同但已是最简。</div>
+</div>
+<div class="station">
+<p class="station-title">第 3 站 · 4.1.2 无理数指数幂：两串幂夹出一个确定的数（p107-109）</p>
+<p><strong>问题起点（p107 原文口径）：</strong>上面我们将 a<sup>x</sup>（a&gt;0）中指数 x 的取值范围从整数拓展到了有理数。那么，当指数 x 是<span class="uline">无理数</span>时，a<sup>x</sup> 的意义是什么？它是一个确定的数吗？如果是，那么它有什么运算性质？——教材的方法：在初中，我们通过有理数认识了一些无理数；类似地，也可以<span class="mark">通过有理数指数幂来认识无理数指数幂</span>。</p>
+<p><strong>探究实验（p108 原题）：</strong>根据 √2 的不足近似值 x 和过剩近似值 y（表 4.1-1），利用计算工具计算相应的 5<sup>x</sup>，5<sup>y</sup> 的近似值并填入表中，观察它们的变化趋势。</p>
+<table class="cmp">
+<tr><th>√2 的不足近似值 x</th><th>5<sup>x</sup> 近似值</th><th>√2 的过剩近似值 y</th><th>5<sup>y</sup> 近似值</th></tr>
+<tr><td>1.4</td><td>≈9.5183</td><td>1.5</td><td>≈11.1803</td></tr>
+<tr><td>1.41</td><td>≈9.6727</td><td>1.42</td><td>≈9.8297</td></tr>
+<tr><td>1.414</td><td>≈9.7351</td><td>1.415</td><td>≈9.7505</td></tr>
+<tr><td>1.4142</td><td>≈9.7382</td><td>1.4143</td><td>≈9.7398</td></tr>
+<tr><td>…</td><td>…</td><td>…</td><td>…</td></tr>
+</table>
+<p class="sub">（表 4.1-1 节录复刻：左列不足近似 1.4→1.41→1.414→1.4142→1.41421→1.414213→…，右列过剩近似 1.5→1.42→1.415→1.4143→1.41422→…，5<sup>x</sup> 值列为本席用计算工具代验补入·教材原表留白由学生计算。）</p>
+<div class="figure">
+<svg viewBox="0 0 780 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图4.1-1复刻：数轴上5的1.4次、1.41次、1.414次、1.4142次幂从左侧逼近5的根号2次幂，右侧1.4143、1.415、1.42、1.5次幂逼近">
+<rect x="0" y="0" width="780" height="130" fill="#fbfdff"/>
+<line x1="40" y1="72" x2="740" y2="72" stroke="#1a2332" stroke-width="1.6"/>
+<polygon points="740,66 752,72 740,78" fill="#1a2332"/>
+<g font-size="13" fill="#1a2332" text-anchor="middle">
+<text x="90" y="52">5<tspan baseline-shift="super" font-size="9">1.4</tspan></text>
+<text x="185" y="52">5<tspan baseline-shift="super" font-size="9">1.41</tspan></text>
+<text x="290" y="52">5<tspan baseline-shift="super" font-size="9">1.414</tspan></text>
+<text x="395" y="52">5<tspan baseline-shift="super" font-size="9">1.4142</tspan></text>
+<text x="525" y="52" fill="#c2427e" font-weight="bold">5<tspan baseline-shift="super" font-size="9">√2</tspan></text>
+<text x="590" y="52">5<tspan baseline-shift="super" font-size="9">1.4143</tspan></text>
+<text x="675" y="52">5<tspan baseline-shift="super" font-size="9">1.415</tspan></text>
+<text x="730" y="96">5<tspan baseline-shift="super" font-size="9">1.42</tspan></text>
+<text x="620" y="96">5<tspan baseline-shift="super" font-size="9">1.5</tspan></text>
+</g>
+<g fill="#1a2332">
+<circle cx="90" cy="72" r="3"/><circle cx="185" cy="72" r="3"/><circle cx="290" cy="72" r="3"/><circle cx="395" cy="72" r="3"/>
+<circle cx="525" cy="72" r="5" fill="#c2427e"/>
+<circle cx="590" cy="72" r="3"/><circle cx="675" cy="72" r="3"/><circle cx="730" cy="96" r="0"/>
+</g>
+<text x="390" y="122" font-size="12" fill="#5a6b7d">图 4.1-1 影印要义复刻（p108）：左串递增·右串递减·逐步逼近夹出 5^√2</text>
+</svg>
+</div>
+<p><strong>教材结论（p108 原文）：</strong>可以发现，当 √2 的不足近似值 x 和过剩近似值 y 逐渐逼近 √2 时，5<sup>x</sup> 和 5<sup>y</sup> 都趋向于<span class="mark">同一个数</span>，这个数就是 5<sup>√2</sup>。也就是说，5<sup>√2</sup> 是一串逐渐增大的有理数指数幂 5<sup>1.4</sup>，5<sup>1.41</sup>，5<sup>1.414</sup>，5<sup>1.4142</sup>，…和另一串逐渐减小的有理数指数幂 5<sup>1.5</sup>，5<sup>1.42</sup>，5<sup>1.415</sup>，5<sup>1.4143</sup>，…逐步逼近的结果，它是一个<span class="mark">确定的实数</span>。</p>
+<p><strong>思考（p108）：</strong>参照以上过程，你能再给出一个无理数指数幂，如 2<sup>√3</sup>，说明它也是一个确定的实数吗？——<span class="ans" style="color:#1e7e4e;font-weight:bold">同样的夹逼：√3≈1.7320508…，用不足近似串 1.7, 1.73, 1.732, … 对应 2<sup>x</sup> 递增串，过剩近似串 1.8, 1.74, 1.733, … 对应 2<sup>y</sup> 递减串，两串同夹一个确定实数 2<sup>√3</sup>（自答，sympy 值 ≈3.3220）。</span></p>
+<p><strong>一般化（p108 原文）：</strong>一般地，无理数指数幂 a<sup>α</sup>（a&gt;0，α 为无理数）是一个确定的实数。这样，我们就将指数幂 a<sup>x</sup>（a&gt;0）中指数 x 的取值范围<span class="mark">从整数逐步拓展到了实数</span>。实数指数幂是一个确定的实数。</p>
+<p><strong>实数指数幂运算性质（p108 原文）：</strong>整数指数幂的运算性质也适用于实数指数幂，即对于任意实数 r，s，均有：</p>
+<div class="formula">(1) a<sup>r</sup>a<sup>s</sup> = a<sup>r+s</sup>（a&gt;0，r，s∈R）；　(2) (a<sup>r</sup>)<sup>s</sup> = a<sup>rs</sup>（a&gt;0，r，s∈R）；　(3) (ab)<sup>r</sup> = a<sup>r</sup>b<sup>r</sup>（a&gt;0，b&gt;0，r∈R）</div>
+<p class="detail">与 p106 有理数版三条<span class="mark">逐字同构，只有 Q→R 一处升级</span>——这就是"相容性"思想的落点：新范围进来，老性质全保。</p>
+<p><strong>练习（p109·两题口径）：</strong>1. 计算：(1) (2<sup>√3</sup>·√(m<sup>√3</sup>))<sup>2√3</sup>=(2<sup>√3</sup>)<sup>2√3</sup>·(m<sup>√3/2</sup>)<sup>2√3</sup>=2<sup>2×3</sup>·m<sup>3</sup>=<span class="mark">64m³</span>（sympy 核）；(2) a<sup>π/3</sup>·a<sup>2π/5</sup>·a<sup>−π</sup>=a<sup>π/3+2π/5−π</sup>=<span class="mark">a<sup>−4π/15</sup></span>。2. 利用计算工具探究变化规律：(1) x 取负实数且 |x|→∞，2<sup>x</sup> 的值<span class="mark">趋近 0</span>；(2) x 取正实数且 x→∞，(1/2)<sup>x</sup> 的值<span class="mark">同样趋近 0</span>——两问合看：底数与 1 的位置关系决定"哪头趋 0"，这正是下一节 4.2 指数函数图象的两个基本走势。</p>
+</div>
+<div class="station">
+<p class="station-title">第 4 站 · 习题4.1 精讲：复习巩固 1-5 + 综合运用 6-8 + 拓广探索 9-10（p109-110）</p>
+<p><strong>复1（求值四连）。</strong>(1) ⁴√100⁴=<span class="mark">100</span>；(2) ⁵√((−0.1)⁵)=<span class="mark">−0.1</span>（n 奇·直接出原底数）；(3) √((π−4)²)=|π−4|=<span class="mark">4−π</span>（n 偶·绝对值拆负）；(4) ⁶√((x−y)⁶)=<span class="mark">|x−y|</span>（n 偶·字母型保留绝对值）。</p>
+<p><strong>选2（运算正误辨析）。</strong>(1) 设 a&gt;0：(A) a<sup>4/3</sup>a<sup>3/4</sup>=a<sup>25/12</sup>≠a ✗；(B) a÷a<sup>2/3</sup>=a<sup>1/3</sup>≠a<sup>3/2</sup> ✗；(C) a<sup>2/3</sup>a<sup>−2/3</sup>=a⁰=1≠0 ✗；(D) (a<sup>1/4</sup>)⁴=a<sup>1/4×4</sup>=a ✓——<span class="mark">答案 D</span>。(2) a<sup>m/n</sup>=ⁿ√(a<sup>m</sup>)、a⁰=1、a<sup>−m/n</sup>=1/ⁿ√(a<sup>m</sup>) 三式（a&gt;0，m,n∈N*，n&gt;1）全部符合规定——<span class="mark">正确个数 3，答案 A</span>。</p>
+<p><strong>填3。</strong>(1) 四数比大小：(−1/2)<sup>−1</sup>=−2，2<sup>−1/2</sup>≈0.707，(1/2)<sup>−1</sup>=2，2<sup>−1</sup>=0.5——最大是 <span class="mark">(1/2)<sup>−1</sup>=2</span>（负指数=换倒数，倒数越大原数越小）。(2) 排序 2<sup>√3</sup>，3<sup>√2</sup>，π<sup>√5</sup>，2<sup>π</sup>（可用计算工具）：数值 3.3220、4.7288、12.9319、8.8250——从小到大 <span class="mark">2<sup>√3</sup> &lt; 3<sup>√2</sup> &lt; 2<sup>π</sup> &lt; π<sup>√5</sup></span>（sympy 逐值核）。</p>
+<p><strong>习4（分数指数幂表示并计算·字母均正）。</strong>(1) √(b³/a·√(a²/b⁶))：内层 √(a²/b⁶)=a/b³，则 b³/a·a/b³=1，原式=<span class="mark">1</span>；(2) √(a<sup>1/2</sup>√(a<sup>1/2</sup>√a))：由内向外逐层换指数 a<sup>1/2</sup>·a<sup>1/2</sup>=a、√a=a<sup>1/2</sup>、a<sup>1/2</sup>·a<sup>1/2</sup>=a、√a=<span class="mark">a<sup>1/2</sup></span>；(3) (√m·∛m·⁴√m)/((⁶√m)⁵·m<sup>1/4</sup>)：指数 1/2+1/3+1/4=13/12 对 5/6+1/4=13/12——<span class="mark">m<sup>13/12</sup>/m<sup>13/12</sup>=1</span>。</p>
+<p><strong>习5（计算四连·字母均正）。</strong>(1) a<sup>1/3</sup>a<sup>3/4</sup>a<sup>7/12</sup>=a<sup>4/12+9/12+7/12</sup>=<span class="mark">a<sup>5/3</sup></span>；(2) a<sup>2/3</sup>a<sup>3/4</sup>÷a<sup>5/6</sup>=a<sup>8/12+9/12−10/12</sup>=<span class="mark">a<sup>7/12</sup></span>；(3) (x<sup>1/3</sup>y<sup>−3/4</sup>)<sup>12</sup>=x⁴y<sup>−9</sup>=<span class="mark">x⁴/y⁹</span>；(4) 4a<sup>2/5</sup>b<sup>−2/3</sup>÷(−(2/3)a<sup>−1/3</sup>b<sup>−1/3</sup>)=−6a<sup>2/5+1/3</sup>b<sup>−2/3+1/3</sup>=<span class="mark">−6a<sup>11/15</sup>b<sup>−1/3</sup></span>。</p>
+<p><strong>综6（细菌分裂·幂模型首秀）。</strong>细菌每 10 min 分裂 1 次（1 个分裂成 2 个），经过 1 h（=60 min，分裂 6 次），1 个细菌分裂成 2⁶=<span class="mark">64</span> 个。（这就是章首"细胞分裂"指数模型的离散版）</p>
+<p><strong>综7（条件求值·指数搬运）。</strong>(1) 已知 10<sup>m</sup>=2，10<sup>n</sup>=3，求 10<sup>(3m−2n)/2</sup>：=10<sup>3m/2</sup>÷10<sup>n</sup>=(10<sup>m</sup>)<sup>3/2</sup>÷10<sup>n</sup>=2<sup>3/2</sup>/3=<span class="mark">2√2/3</span>；(2) 已知 a<sup>2x</sup>=3，求 (a<sup>3x</sup>+a<sup>−3x</sup>)/(a<sup>x</sup>+a<sup>−x</sup>)：分子提出公因式 (a<sup>x</sup>+a<sup>−x</sup>)，剩 a<sup>2x</sup>−1+a<sup>−2x</sup>=3−1+1/3=7/3——<span class="mark">原式=7/3</span>。</p>
+<p><strong>习8（条件求值·平方套娃）。</strong>已知 a<sup>1/2</sup>+a<sup>−1/2</sup>=3（a&gt;0）：(1) 两边平方：a+a<sup>−1</sup>+2=9⟹<span class="mark">a+a<sup>−1</sup>=7</span>；(2) 再平方：a²+a<sup>−2</sup>+2=49⟹<span class="mark">a²+a<sup>−2</sup>=47</span>。</p>
+<p><strong>拓9（倒酒精·剩余幂串）。</strong>从盛有 1 L 纯酒精的容器中倒出 1/3 L，然后用水填满；再倒出 1/3 L，又用水填满……(1) 连续 5 次：每次操作纯酒精剩 2/3，剩 (2/3)⁵=<span class="mark">32/243 L</span>；(2) 连续 n 次：<span class="mark">(2/3)ⁿ L</span>。</p>
+<p><strong>拓10（(1+1/n)ⁿ·e 的伏笔）。</strong>(1) 当 n=1，2，3，10，100，1 000，10 000，100 000，…时用计算工具算 (1+1/n)ⁿ：2、2.25、2.3704、2.5937、2.7048、2.7169、2.7181、2.7183，…逐步逼近一个常数；(2) 底数越来越小、指数越来越大，(1+1/n)ⁿ 是否也越来越大？有没有最大值？——<span class="ans" style="color:#1e7e4e;font-weight:bold">单调递增但<span class="mark">没有最大值</span>，上界是 e≈2.71828（自然对数的底）——教材在此为后续对数与 e<sup>x</sup> 埋伏笔，首学知道"数列递增有上界、极限无最大"的直觉即可（自答）。</span></p>
+<div class="alt"><p><span class="tag">拓展 · 可跳过</span> <strong>拓展方法论收口（自编）：</strong>本节所有"规定"背后是一条主轴——<span class="mark">相容性</span>（p106 旁注原话）。分数指数幂规定 a<sup>m/n</sup>=ⁿ√(a<sup>m</sup>) 是为了保住运算性质；无理数指数幂用夹逼定义是为了保住"确定的实数"；性质三条原封不动升级到 R 是为了保住已有计算习惯。以后学对数、学向量扩充，还会反复见到这套"新概念须与旧法则相容"的建桥术。</p></div>
+</div>
+<div class="walk">
+<p><strong>收口三问（合上书自答）：</strong></p>
+<ul>
+<li>本节把指数范围拓到实数，走了哪两步？——<span class="mark">整数→有理数（规定分数指数幂）→实数（无理数指数幂夹逼确定）</span>，每步都保住三条运算性质（相容性）。</li>
+<li>ⁿ√(aⁿ) 什么时候不是 a？——n 为<span class="mark">偶数</span>时等于 |a|；⁵√((−32)⁵) 型 n 奇才直接出原数。例1(3) 的 π−3 与习1(4) 的 |x−y| 是同一条铁律。</li>
+<li>条件求值 a<sup>1/2</sup>+a<sup>−1/2</sup>=3 为什么能"平方两次"？——平方产生交叉项 2（a<sup>1/2</sup>·a<sup>−1/2</sup>=2a⁰=2 是常数），于是 a+a<sup>−1</sup> 与 a²+a<sup>−2</sup> 逐级可求——<span class="mark">交叉项恒为常数是整套套娃的地基</span>。</li>
+</ul>
+</div>
+<div class="selftest">
+<p><strong>节末自测四连（先做再看答案）：</strong></p>
+<ol>
+<li>化简 ⁴√((2−a)⁴)（a&gt;2）与 ∛((π−4)³)。——<span class="detail">|2−a|=a−2；∛((π−4)³)=π−4。（变式考奇偶分治：偶次出绝对值、奇次直出）</span></li>
+<li>计算 (27/8)<sup>−2/3</sup> 与 2√2×⁴√2×⁸√2。——<span class="detail">(27/8)<sup>−2/3</sup>=(8/27)<sup>2/3</sup>=(2/3)²=4/9；2√2×⁴√2×⁸√2=2¹·2<sup>1/2</sup>·2<sup>1/4</sup>·2<sup>1/8</sup>=2<sup>15/8</sup>。（变式考负指数换底+同底指数加）</span></li>
+<li>已知 2<sup>x</sup>=a（a&gt;0 且 a≠1 型直觉），用 x 表示 (2<sup>3x</sup>−2<sup>−3x</sup>)/(2<sup>x</sup>−2<sup>−x</sup>)。——<span class="detail">分子提 (2<sup>x</sup>−2<sup>−x</sup>) 剩 2<sup>2x</sup>+1+2<sup>−2x</sup>，原式=2<sup>2x</sup>+1+2<sup>−2x</sup>。（仿综7(2) 自编变式·考因式分解提公因式）</span></li>
+<li>若 a<sup>1/2</sup>+a<sup>−1/2</sup>=5，求 a²+a<sup>−2</sup>。——<span class="detail">平方：a+a<sup>−1</sup>=25−2=23；再平方：a²+a<sup>−2</sup>=23²−2=<span class="mark">527</span>。（变式考平方套娃链·仿习题8）</span></li>
+</ol>
+</div>
+<div class="kaowei">
+<p class="kw-title">高考怎么考 · 考位锚（真题锚候采·考向考位如下）</p>
+<p>· 高频考位：<strong>根式与分数指数幂互化 + 实数指数幂运算性质化简求值</strong>（选择填空常客，纯运算 3-5 分位）；<br>
+· <strong>偶次方根绝对值陷阱</strong>（ⁿ√(aⁿ)=|a|·π−3 型）是小题第一埋雷点，例1(3) 原型常驻；<br>
+· <strong>条件求值（整体代换+平方套娃）</strong>：a<sup>1/2</sup>+a<sup>−1/2</sup> 给值求 a+a<sup>−1</sup>、a²+a<sup>−2</sup>，习题8 就是标准原型；<br>
+· 与 4.2 指数函数串场：本节运算性质是解指数方程与比大小（填3(2) 型多底数幂排序）的工具箱；<br>
+· <span class="sub">真题锚申报：真题锚池内未录"数学4.1"专行，候采不代拟（宁缺毋编·沿 3.1/2.2/3.3/3.4 件同口径）。</span></p>
+</div>
+<div class="figure">
+<svg viewBox="0 0 800 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第三章（函数概念与性质）→4.1指数（你在·底座工程·指数拓展到实数）→4.2指数函数→4.3对数→4.4对数函数→4.5函数的应用二">
+<rect x="0" y="0" width="800" height="170" fill="#ffffff" stroke="#d7e3ee" rx="8"/>
+<rect x="18" y="42" width="118" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="77" y="70" font-size="13" text-anchor="middle" fill="#5a6b7d">第三章收尾</text>
+<text x="77" y="92" font-size="11" text-anchor="middle" fill="#8a9aa9">函数机器与模型</text>
+<line x1="140" y1="75" x2="172" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="172,69 184,75 172,81" fill="#8a9aa9"/>
+<rect x="186" y="34" width="150" height="82" rx="8" fill="#fffbe8" stroke="#ffd94a" stroke-width="2.5"/>
+<text x="261" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#8a6d1a">4.1 指数（你在）</text>
+<text x="261" y="84" font-size="11" text-anchor="middle" fill="#a08520">底座工程：整数→有理数</text>
+<text x="261" y="102" font-size="11" text-anchor="middle" fill="#a08520">→实数·性质三条全保</text>
+<line x1="340" y1="75" x2="372" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="372,69 384,75 372,81" fill="#8a9aa9"/>
+<rect x="386" y="42" width="112" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="442" y="70" font-size="13" text-anchor="middle" fill="#5a6b7d">4.2 指数函数</text>
+<text x="442" y="92" font-size="11" text-anchor="middle" fill="#8a9aa9">y=a^x 上岗</text>
+<line x1="502" y1="75" x2="534" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="534,69 546,75 534,81" fill="#8a9aa9"/>
+<rect x="548" y="42" width="88" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="592" y="70" font-size="13" text-anchor="middle" fill="#5a6b7d">4.3 对数</text>
+<text x="592" y="92" font-size="11" text-anchor="middle" fill="#8a9aa9">逆运算</text>
+<line x1="640" y1="75" x2="672" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="672,69 684,75 672,81" fill="#8a9aa9"/>
+<rect x="686" y="42" width="102" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="737" y="70" font-size="13" text-anchor="middle" fill="#5a6b7d">4.4/4.5 对数</text>
+<text x="737" y="92" font-size="11" text-anchor="middle" fill="#8a9aa9">函数与应用(二)</text>
+<text x="400" y="152" font-size="12" text-anchor="middle" fill="#8a9aa9">第四章 指数函数与对数函数 · 人教A必修第一册（本节节域 p104-110·p103 第四章章名页·p111 起 4.2）</text>
+</svg>
+<p class="figcap">本节位置图（自绘）：4.1 是全章"底座工程"——指数范围两步拓展完成后，4.2 起指数函数才有完整实数定义域可用；性质三条 Q→R 原样升级是全章运算的总钥匙。</p>
+</div>
+<p class="sub" style="text-align:center">—— 本件节界：4.1 全节 p104-110（左界=p104 节名页"4.1 指数"亲目检实锚·右界=p111"4.2 指数函数"节名页直读在案·p103 第四章章名页域外结构件·p109 习题4.1/p110 综合运用+拓广探索均亲目检），影印图 107-121 十五页全 HTTP 200 实取（p100-114 连续活性验证非盲抄）、核心 7 页（p104/105/106/107/108/109/110）亲目检，ts=1787023173400 实测图通道 200 验证（meta 详情端点沿用本席 3.4 件同口径如实注记）。</p>
+<div class="no-print" style="text-align:center;color:#8a9bb0;font-size:.85em;margin-top:18px">并行搜索员B · 队2席 · 承任务包v3队2行滚动序+汇总员19:46默认路径照准（硬闸21:5x·认领行bdad155·dui2_41_1031分支）· 标准v2.3 · 产出走分支候并不直推main</div>
+</body>
+</html>

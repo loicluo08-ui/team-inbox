@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>数学3.4 函数的应用（一） · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#16233a}
+h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
+h3{color:#2c5f8f;margin-top:1.6em}
+.station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
+.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.check .tag{font-weight:bold;color:#7a5c00}
+.formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
+.mark{background:#fff176;padding:0 4px;border-radius:3px}
+.uline{border-bottom:2px solid #4a90d9;padding-bottom:1px}
+.note-red{color:#c0392b;border:1px solid #e6b0aa;background:#fdf2f0;border-radius:8px;padding:8px 14px;margin:10px 0}
+.try{background:#e8f6ef;border-left:4px solid #27ae60;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.try .ans{color:#1e7e4e;font-weight:bold}
+.alt{background:#f6f2fb;border-left:4px solid #8e5cb8;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0;color:#4a3568}
+.alt .tag{font-size:.8em;color:#8e5cb8;font-weight:bold}
+.selftest{background:#fdf6ec;border:1px solid #e2c48d;border-radius:10px;padding:14px 18px;margin:16px 0}
+.kaowei{background:#eaf3ea;border:2px solid #3d8b5f;border-radius:10px;padding:12px 16px;margin:16px 0}
+.kaowei .kw-title{font-weight:bold;color:#2d6a45}
+.figure{text-align:center;margin:16px 0}
+.figure svg{max-width:100%;height:auto}
+.figcap{font-size:.88em;color:#5a6b7d;margin-top:6px}
+.walk{background:#eef7ee;border-radius:8px;padding:10px 16px;margin:12px 0}
+.walk li{margin:5px 0}
+table.cmp{border-collapse:collapse;width:100%;margin:12px 0}
+table.cmp th,table.cmp td{border:1px solid #b8c8d8;padding:8px 12px;text-align:center}
+table.cmp th{background:#e3edf6;color:#1e3a5f}
+.sub{font-size:.85em;color:#5a6b7d}
+.detail{color:#3d6a9e;font-size:.95em}
+@media print{
+ body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
+ .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
+ .station-title{background:#333!important;color:#fff!important}
+ h1{font-size:1.35em}h2{font-size:1.15em}
+ .formula{background:#f2f2f2!important}
+ a{color:#000;text-decoration:none}
+ .no-print{display:none}
+}
+</style>
+</head>
+<body>
+<h1>数学 3.4 函数的应用（一） <span class="sub">人教A版 必修第一册 · 零基础首学版 v1.0 · 2026-10-31</span></h1>
+<p><strong>开场一句话：</strong>3.1 搭好"机器"（函数概念），3.2 配齐"体检工具"（单调性/最值/奇偶性），3.3 认识了新朋友幂函数——前三节都在<span class="mark">研究函数本身</span>。这一节换个方向：把已学的一次、二次、幂函数模型<span class="mark">接到现实问题上</span>。教材开场原句（p93）："我们学习过的一次函数、二次函数、幂函数等都与现实世界有紧密联系。下面通过一些实例感受它们的广泛应用，体会利用函数模型解决实际问题的过程与方法。"——两个大例题：<span class="uline">个税分段计税</span>（例1）和<span class="uline">汽车行程分段计程</span>（例2），套路都是同一条：<strong>读题翻译成解析式 → 分段处理 → 回到实际含义作答</strong>。</p>
+<div class="check">
+<span class="tag">读完这节你能做到</span>
+<ul>
+<li>把"个税九段税率表"翻译成<span class="mark">分段函数解析式</span>（先算应纳税所得额 t，再套税率 y=f(t)），并在给定收入 x=153 600 元时手算出应缴个税 2 752 元（p93-94 例1）；</li>
+<li>把"速度-时间柱状图"翻译成行程问题：<span class="mark">阴影面积=路程</span>，并写出里程表读数 s(t) 的五段解析式（p94-95 例2）；</li>
+<li>用 <span class="uline">y=ax²、一次函数、二次函数</span>三种模型处理刹车滑行、广告牌最优设计、企业成本利润三道练习（p95）；</li>
+<li>独立解出"往返行程、蓄水池造价、阶梯水价"三道习题3.4综合运用题（p96），并知道 p97-98"文献阅读与数学写作*"是选学栏目、不作考试要求。</li>
+</ul>
+</div>
+<div class="station">
+<p class="station-title">第 0 站 · 预备块：三件老模型 + 一张个税底账（3.1.2 例8 回收）</p>
+<p><strong>老模型三件（初中+本章）：</strong>一次函数 <strong>y=kx+b</strong>（匀速行程、分段计价每段都是它）；二次函数 <strong>y=ax²＋bx＋c（a、b、c 为常数且 a≠0）</strong>（面积最优、利润顶点）；幂函数 y=x<sup>α</sup>（3.3 新学，本节主要用前两件）。</p>
+<p><strong>例1 的底账（教材明确"设小王的专项扣除比例、专项附加扣除金额、依法确定的其他扣除金额与 3.1.2 例8 相同"，p93）：</strong>工薪收入先扣三样——专项扣除比例 <span class="mark">8%+2%+1%+9%=20%</span>（养老8%+医疗2%+失业1%+住房公积金9%），专项附加扣除 <span class="mark">9 600 元</span>，依法确定的其他扣除 <span class="mark">560 元</span>；免征额 <span class="mark">60 000 元/年</span>。剩下的才叫<span class="uline">应纳税所得额 t</span>，个税按 t 分九段累进计税。例8 已给出个税 y=f(t) 的解析式③，本节要做的是把它和 t=g(x) <span class="mark">复合</span>成 y 关于全年综合所得收入 x 的解析式。</p>
+</div>
+<div class="station">
+<p class="station-title">第 1 站 · 例1 逐行拆：九段个税模型（p93-94）</p>
+<p><strong>例1 原题（p93）：</strong>设小王的专项扣除比例、专项附加扣除金额、依法确定的其他扣除金额与 3.1.2 例8 相同，全年综合所得收入额为 x（单位：元），应缴纳综合所得个税税额为 y（单位：元）。（1）求 y 关于 x 的函数解析式；（2）如果小王全年的综合所得由 117 600 元增加到 153 600 元，那么他全年应缴纳多少综合所得个税？</p>
+<p><strong>第一步：应纳税所得额 t=g(x)（教材解原文口径）。</strong>由个人应纳税所得额计算公式：</p>
+<div class="formula">t = x − 60 000 − x(8%+2%+1%+9%) − 9 600 − 560 = <strong>0.8x − 70 160</strong></div>
+<p>令 t=0 得 x=<span class="mark">87 700</span>。根据个人应纳税所得额的规定，当 0≤x≤87 700 时 t=0。所以</p>
+<div class="formula">t = { 0，0≤x≤87 700； 0.8x−70 160，x&gt;87 700 }</div>
+<p><strong>第二步：与例8 解析式③复合，得九段④式（p94 原样）。</strong>当 87 700&lt;x≤132 700 时 0&lt;t≤36 000，y=t×3%=0.024x−2 104.8；当 132 700&lt;x≤267 700 时 36 000&lt;t≤144 000，y=t×10%−2 520=0.08x−9 536；当 267 700&lt;x≤462 700 时 y=t×20%−16 920=0.16x−30 952；当 462 700&lt;x≤612 700 时 y=t×25%−31 920=0.2x−49 460；当 612 700&lt;x≤912 700 时 y=t×30%−52 920=0.24x−73 968；当 912 700&lt;x≤1 287 700 时 y=t×35%−85 920=0.28x−110 476；当 x&gt;1 287 700 时 y=t×45%−181 920=0.36x−213 492。合起来：</p>
+<div class="formula">y = { 0； 0.024x−2 104.8； 0.08x−9 536； 0.16x−30 952； 0.2x−49 460； 0.24x−73 968； 0.28x−110 476； 0.36x−213 492 }（分九段，p94 ④式）</div>
+<p><strong>第三步：代数作答（(2) 问）。</strong>根据④，当 x=153 600 时（落在 132 700&lt;x≤267 700 段）：y=0.08×153 600−9 536=<span class="mark">2 752</span>。所以小王全年需要缴纳的综合所得个税税额为 <strong>2 752 元</strong>（p94 教材原答）。教材收束句（p94）："根据个人收入情况，利用上面获得的个税和综合所得收入关系的函数解析式，就可以直接求得应缴纳的个税。"</p>
+<div class="try"><p><strong>验一验①（段位归属自检）：</strong>为何 153 600 落在第三段？——<span class="ans">先算 t=0.8×153 600−70 160=52 720，而 36 000&lt;52 720≤144 000，属"10% 税率段"，对应 y=0.08x−9 536。复合函数分段时<span class="mark">先算内层 t 定段，再查外层税率</span>，两段边界（x=87 700 处 t=0、x=132 700 处 t=36 000）刚好严丝合缝。</span></p></div>
+<div class="note-red"><strong>易错红卡（自编，据例1 结构提炼）：</strong>① 系数 0.8 不是"打八折"——它是 <span class="mark">1−20% 专项扣除比例</span>，扣的是比例、免的是定额，两种扣除别混；② 9 600 与 560 是<span class="mark">定额扣除</span>，从 x 里一次性减，不随 x 变；③ 分段函数各段<span class="mark">区间端点必须无缝衔接</span>（87 700 用≤还是&lt;，看教材原文："当 0≤x≤87 700 时 t=0"、后续段左开右闭，照抄不改动）；④ 税率段边界（3 600/14 400/30 000/42 000/66 000/96 000 等 t 值）是<span class="mark">应纳税所得额 t 的边界</span>，除以 0.8 换算后才是 x 的边界（132 700=87 700+36 000/0.8），直接拿 t 边界当 x 边界会整段错位。</div>
+</div>
+<div class="station">
+<p class="station-title">第 2 站 · 例2 逐行拆：柱状图里的行程问题（p94-95）</p>
+<p><strong>例2 原题（p94）：</strong>一辆汽车在某段路程中行驶的平均速率 v（单位：km/h）与时间 t（单位：h）的关系如图 3.4-1 所示。（1）求图 3.4-1 中阴影部分的面积，并说明所求面积的实际含义；（2）假设这辆汽车的里程表在汽车行驶这段路程前的读数为 2 004 km，试建立行驶这段路程时汽车里程表读数 s（单位：km）与时间 t 的函数解析式，并画出相应的图象。</p>
+<div class="figure">
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图3.4-1复刻：v-t柱状图五段速率50,80,90,75,65各一小时，0到5小时坐标系">
+<rect x="0" y="0" width="640" height="300" fill="#fbfdff"/>
+<line x1="60" y1="250" x2="600" y2="250" stroke="#1a2332" stroke-width="1.6"/>
+<line x1="90" y1="270" x2="90" y2="30" stroke="#1a2332" stroke-width="1.6"/>
+<polygon points="600,246 608,250 600,254" fill="#1a2332"/><polygon points="86,30 90,22 94,30" fill="#1a2332"/>
+<text x="608" y="264" font-size="14" fill="#1a2332">t</text><text x="70" y="34" font-size="14" fill="#1a2332">v</text>
+<text x="78" y="258" font-size="12" fill="#1a2332">O</text>
+<g fill="#cfe8f5" stroke="#4a90d9" stroke-width="1.2">
+<rect x="90" y="150" width="76" height="100"/>
+<rect x="166" y="90" width="76" height="160"/>
+<rect x="242" y="70" width="76" height="180"/>
+<rect x="318" y="100" width="76" height="150"/>
+<rect x="394" y="120" width="76" height="130"/>
+</g>
+<g stroke="#c2427e" stroke-width="2" stroke-dasharray="5,4">
+<line x1="166" y1="150" x2="166" y2="250"/><line x1="242" y1="90" x2="242" y2="250"/><line x1="318" y1="70" x2="318" y2="250"/><line x1="394" y1="100" x2="394" y2="250"/><line x1="470" y1="120" x2="470" y2="250"/>
+</g>
+<circle cx="166" cy="150" r="3.5" fill="#c2427e"/><circle cx="242" cy="90" r="3.5" fill="#c2427e"/><circle cx="318" cy="70" r="3.5" fill="#c2427e"/><circle cx="394" cy="100" r="3.5" fill="#c2427e"/><circle cx="470" cy="120" r="3.5" fill="#c2427e"/>
+<g font-size="12" fill="#5a6b7d">
+<text x="66" y="154">50</text><text x="66" y="94">80</text><text x="66" y="74">90</text><text x="66" y="104">75</text><text x="66" y="124">65</text>
+<text x="86" y="266">1</text><text x="162" y="266">2</text><text x="238" y="266">3</text><text x="314" y="266">4</text><text x="390" y="266">5</text>
+</g>
+<text x="260" y="290" font-size="13" fill="#5a6b7d">图 3.4-1 影印复刻（p94·五段柱高=各段平均速率·虚线为分段界）</text>
+</svg>
+</div>
+<p><strong>分析（p95 教材原文口径）：</strong>当时间 t 在 [0,5] 内变化时，对于任意的时刻 t 都有唯一确定的行驶路程与之相对应。根据图 3.4-1，在时间段 [0,1)、[1,2)、[2,3)、[3,4)、[4,5] 内行驶的平均速率分别为 <span class="mark">50、80、90、75、65 km/h</span>，因此在每个时间段内，行驶路程与时间的关系也不一样，需要<span class="uline">分段表述</span>。</p>
+<p><strong>解（1）：</strong>阴影部分的面积为 50×1+80×1+90×1+75×1+65×1=<span class="mark">360</span>。阴影部分的面积表示汽车在这 5 h 内行驶的路程为 <strong>360 km</strong>（p95 原答）。</p>
+<p><strong>解（2）：</strong>根据图 3.4-1，有</p>
+<div class="formula">s = { 50t+2 004，0≤t&lt;1； 80(t−1)+2 054，1≤t&lt;2； 90(t−2)+2 134，2≤t&lt;3； 75(t−3)+2 224，3≤t&lt;4； 65(t−4)+2 299，4≤t≤5 }</div>
+<p>这个函数的图象如图 3.4-2 所示（p95）：五段折线，斜率逐段变缓又变陡——<span class="mark">斜率=当段速率</span>，2000 起步、2 364 收尾（2 004+360）。教材点睛（p95 原文）："本题的解答过程表明，函数图象对分析和理解题意很有帮助。因此，我们要注意提高读图能力。另外，本题用到了<span class="uline">分段函数</span>，解决现实问题时经常会用到这类函数。"</p>
+<div class="try"><p><strong>验一验②（衔接自检）：</strong>第二段为什么是 80(t−1)+2 054？——<span class="ans">第一段末 s(1)=50×1+2 004=2 054 是第二段起点；第二段速率 80 km/h 行驶 (t−1) h，路程增量 80(t−1)。逐段验算：s(2)=80+2 054=2 134、s(3)=90+2 134=2 224、s(4)=75+2 224=2 299、s(5)=65+2 299=2 364=2 004+360 ✓ 全程自洽。分段函数<span class="mark">段末值=下段常数项</span>，错了整条链就断。</span></p></div>
+</div>
+<div class="station">
+<p class="station-title">第 3 站 · 练习三题：三种模型的独立首练（p95）</p>
+<p><strong>练1（刹车滑行·幂函数模型 y=ax²）。</strong>若用模型 y=ax² 描述汽车紧急刹车后滑行的距离 y（单位：m）与刹车时的速率 x（单位：km/h）的关系，而某种型号的汽车在速率为 60 km/h 时，紧急刹车后滑行的距离为 20 m。在限速为 100 km/h 的高速公路上，一辆这种型号的车紧急刹车后滑行的距离为 50 m，那么这辆车是否超速行驶？——<span class="ans" style="color:#1e7e4e;font-weight:bold">参考解（自解，教材留白）：20=a·60²⟹a=1/180；由 y=50 得 x²=50×180=9 000，x≈94.9 km/h&lt;100，<span class="mark">未超速</span>（若按限速 100 计算滑行距离应为 100²/180≈55.6 m&gt;50 m，同一结论）。</span></p>
+<p><strong>练2（广告牌·二次函数最值）。</strong>某广告公司要为客户设计一幅周长为 l（单位：m）的矩形广告牌，如何设计这个广告牌可以使广告牌的面积最大？——<span class="ans" style="color:#1e7e4e;font-weight:bold">参考解（自解）：设宽 x，则长 l/2−x，面积 S(x)=x(l/2−x)，开口向下的抛物线在 x=l/4 处取最大值 S=l²/16，此时<span class="mark">长=宽=l/4，正方形最大</span>。</span></p>
+<p><strong>练3（成本利润·四函数一族）。</strong>某公司生产某种产品的固定成本为 150 万元，而每件产品的可变成本为 2 500 元，每件产品的售价为 3 500 元。若该公司所生产的产品全部销售出去，（1）设总成本为 y₁（单位：万元），单位成本为 y₂（单位：万元），销售总收入为 y₃（单位：万元），总利润为 y₄（单位：万元），分别求出它们关于总产量 x（单位：件）的函数解析式；（2）根据所求函数的图象，对这个公司的经济效益做出简单分析。——<span class="ans" style="color:#1e7e4e;font-weight:bold">参考解（自解）：y₁=150+0.25x（x≥0）；y₂=150/x+0.25（x&gt;0）；y₃=0.35x；y₄=y₃−y₁=0.1x−150。（2）y₄=0 在 x=1 500 件：产量<span class="mark">低于 1 500 件亏损、等于 1 500 件保本、高于 1 500 件盈利</span>且随产量线性增长；y₂ 单调递减说明批量越大单位成本越低（薄利多销的数学底稿）。</span></p>
+</div>
+<div class="station">
+<p class="station-title">第 4 站 · 习题3.4 精讲：三道综合运用 + 选学栏目指北（p96-98）</p>
+<p><strong>习1（往返行程·双向分段）。</strong>某人开汽车以 60 km/h 的速率从 A 地到 150 km 远处的 B 地，在 B 地停留 1 h 后，再以 50 km/h 的速率返回 A 地。把汽车与 A 地的距离 x（单位：km）表示为时间 t（单位：h）（从 A 地出发时开始）的函数；再把车速 v（单位：km/h）表示为时间 t 的函数，并分别画出这两个函数的图象。——<span class="ans" style="color:#1e7e4e;font-weight:bold">参考解（自解）：去程 150/60=2.5 h、停留 1 h、返程 150/50=3 h，总 6.5 h。x(t)={ 60t，0≤t≤2.5； 150，2.5&lt;t≤3.5； 150−50(t−3.5)，3.5&lt;t≤6.5 }；v(t)={ 60，0≤t≤2.5； 0，2.5&lt;t≤3.5； 50（相对 A 地速率取 −50 亦可，按"速率"口径为正），3.5&lt;t≤6.5 }。x(t) 图象=升-平-降三段折线，v(t)=阶梯三平台。</span></p>
+<p><strong>习2（蓄水池造价·约束优化）。</strong>要建造一个容积为 1 200 m³、深为 6 m 的长方体无盖蓄水池，池壁的造价为 95 元/m²，池底的造价为 135 元/m²，如何设计水池的长与宽，才能使水池的总造价控制在 7 万元以内（精确到 0.1 m）？——<span class="ans" style="color:#1e7e4e;font-weight:bold">参考解（自解）：底面积=1 200/6=200 m²，设长 x 宽 y 则 xy=200。总造价 W=95×6×2(x+y)+135×200=1 140(x+y)+27 000≤70 000⟹x+y≤43 000/1 140≈37.7。由 xy=200 知 x+y≥2√200≈28.3（均值不等式直觉，正式工具在后续章节），取 x=y=√200≈<span class="mark">14.1 m</span> 时 W≈59 148 元≤70 000，造价最低且达标；长宽越悬殊 W 越大，控制 x+y≤37.7（如 20 m×10 m，W=64 380 元）均可。</span></p>
+<p><strong>习3（阶梯水价·分段反求）。</strong>为了保护水资源，提倡节约用水，某城市对居民生活用水实行"阶梯水价"。计费方法：每户每月用水量不超过 12 m³ 的部分 3 元/m³；超过 12 m³ 但不超过 18 m³ 的部分 6 元/m³；超过 18 m³ 的部分 9 元/m³。若某户居民本月交纳的水费为 48 元，求此户居民本月用水量。——<span class="ans" style="color:#1e7e4e;font-weight:bold">参考解（自解）：设月用水量 x m³。第一段满额 12×3=36 元；若全落第二段需 36+6×6=72 元&gt;48，故 12&lt;x≤18 且 36+6(x−12)=48⟹x−12=2⟹<span class="mark">x=14 m³</span>。反求型分段题先算"各段满额价"定位所处段，再解一段一元方程。</span></p>
+<p><strong>选学栏目指北（p97-98·文献阅读与数学写作*）：</strong>第三章收尾栏目"函数的形成与发展"（标题带 * 号）——教材脚注原文：<span class="uline">"标有 * 的内容为选学内容，不作为考试要求"</span>（p97）。栏目给出文献综述四步（目标→实施建议→参考选题→文献综述的结构：标题/提要或前言/正文/参考文献），参考选题含"函数产生的社会背景、函数概念发展的历史过程、函数符号的故事、数学家与函数"（开普勒、伽利略、笛卡儿、牛顿、莱布尼茨和欧拉等，p97）。<span class="mark">首学版定位：知道它是章末选学活动、了解文献综述长什么样即可，不占本节考试考位。</span></p>
+<div class="alt"><p><span class="tag">拓展 · 可跳过</span> <strong>建模方法论收口（自编，承例1例2共性）：</strong>现实问题函数化三步——<span class="mark">①认模型</span>（匀速变化=一次/分段一次；面积最值=二次；比例滑行=幂）；<span class="mark">②译约束</span>（税率表/柱状图/阶梯价都是"分段规则"的白话版，逐段翻译）；<span class="mark">③答人事</span>（算完代回实际含义：2 752 元、360 km、14 m³——带单位带语义，不交裸数字）。教材 p95 点睛句"解决现实问题时经常会用到分段函数"就是本节的题眼。</p></div>
+</div>
+<div class="walk">
+<p><strong>收口三问（合上书自答）：</strong></p>
+<ul>
+<li>例1 为什么必须分段？——<span class="mark">个税累进税率按应纳税所得额 t 分九段</span>，t 又是 x 的一次函数（0.8x−70 160），复合后 x 的分段边界=87 700 加上各 t 边界除以 0.8 的换算。</li>
+<li>例2 的"阴影面积"为什么就是路程？——速率×时间的量纲是 (km/h)×h=km，柱状图每段"高×宽"恰是当段路程，<span class="mark">五段面积和 360 km</span>；里程表读数=初始 2 004+累计路程。</li>
+<li>分段函数各段之间的"接力"怎么验？——<span class="mark">段末函数值=下段常数项</span>（2 054→2 134→2 224→2 299→2 364），链条一处断全线错。</li>
+</ul>
+</div>
+<div class="selftest">
+<p><strong>节末自测四连（先做再看答案）：</strong></p>
+<ol>
+<li>某人全年综合所得收入 x=120 000 元（扣除结构与例1 相同），应缴个税多少？——<span class="detail">t=0.8×120 000−70 160=25 840，落 3% 段（0&lt;t≤36 000），y=25 840×3%=775.2 元。（仿例1(2) 自编变式）</span></li>
+<li>例2 中若 [2,3) 段速率改为 100 km/h，s(5)=？——<span class="detail">五段路程和=50+80+100+75+65=370，s(5)=2 004+370=2 374 km；第三段解析式变为 s=100(t−2)+2 134（2≤t&lt;3），后续段常数项顺次 +10。（变式考"段末值=下段常数项"接力）</span></li>
+<li>练3 中若售价提高到 3 800 元/件，保本产量是多少件？——<span class="detail">y₄=0.38x−(150+0.25x)=0.13x−150=0 ⟹ x≈1 154 件（取整 1 154），售价每提 300 元保本点降约 346 件，<span class="mark">利润斜率从 0.1 升到 0.13</span>。（变式考模型参数敏感性）</span></li>
+<li>习题3.4 习3 中若某户交水费 90 元，用水量是多少？——<span class="detail">第一段满额 36 元+第二段满额 36 元=72 元&lt;90，故进入第三段：90=72+9(x−18)⟹x=18+2=<span class="mark">20 m³</span>。（变式考跨两段定位）</span></li>
+</ol>
+</div>
+<div class="kaowei">
+<p class="kw-title">高考怎么考 · 考位锚（真题锚候采·考向考位如下）</p>
+<p>· 高频考位：<strong>分段函数建模（个税/水价/行程计费三原型）＋分段解析式求值与参数反求＋分段函数图象识别</strong>；<br>
+· 新高考卷应用大题常以"计费阶梯/行程图象"为壳考分段一次函数，例2 的"面积=路程"是 v-t 图象题的通用钥匙；<br>
+· 本节与 3.1.2 例8（个税底账）、2.3 二次函数（最值优化）串联出题概率高；<br>
+· <span class="sub">真题锚申报：真题锚池内未录"数学3.4"专行，候采不代拟（宁缺毋编·沿 3.1/2.2/3.3 件同口径）。</span></p>
+</div>
+<div class="figure">
+<svg viewBox="0 0 800 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：3.1函数的概念及其表示（机器）→3.2函数的基本性质（体检工具）→3.3幂函数（新家族）→3.4函数的应用一（你在·模型上岗）→章末小结与第四章">
+<rect x="0" y="0" width="800" height="170" fill="#ffffff" stroke="#d7e3ee" rx="8"/>
+<rect x="22" y="42" width="128" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="86" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">3.1 概念与表示</text>
+<text x="86" y="92" font-size="11" text-anchor="middle" fill="#8a9aa9">机器：输入→输出</text>
+<line x1="154" y1="75" x2="186" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="186,69 198,75 186,81" fill="#8a9aa9"/>
+<rect x="200" y="42" width="128" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="264" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">3.2 基本性质</text>
+<text x="264" y="92" font-size="11" text-anchor="middle" fill="#8a9aa9">单调/最值/奇偶</text>
+<line x1="332" y1="75" x2="364" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="364,69 376,75 364,81" fill="#8a9aa9"/>
+<rect x="378" y="42" width="112" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="434" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">3.3 幂函数</text>
+<text x="434" y="92" font-size="11" text-anchor="middle" fill="#8a9aa9">y=x^α 家族</text>
+<line x1="494" y1="75" x2="526" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="526,69 538,75 526,81" fill="#8a9aa9"/>
+<rect x="540" y="34" width="156" height="82" rx="8" fill="#fffbe8" stroke="#ffd94a" stroke-width="2.5"/>
+<text x="618" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#8a6d1a">3.4 应用(一)（你在）</text>
+<text x="618" y="84" font-size="11" text-anchor="middle" fill="#a08520">模型上岗：个税/行程/</text>
+<text x="618" y="102" font-size="11" text-anchor="middle" fill="#a08520">水价·分段函数唱主角</text>
+<line x1="700" y1="75" x2="728" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="728,69 740,75 728,81" fill="#8a9aa9"/>
+<rect x="742" y="42" width="50" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="767" y="70" font-size="12" text-anchor="middle" fill="#5a6b7d">章末</text>
+<text x="767" y="92" font-size="11" text-anchor="middle" fill="#8a9aa9">→第四章</text>
+<text x="400" y="152" font-size="12" text-anchor="middle" fill="#8a9aa9">第三章 函数的概念与性质 · 人教A必修第一册（本节节域 p93-98·p99 起本章小结）</text>
+</svg>
+<p class="figcap">本节位置图（自绘）：前三节备好的函数模型在本节"上岗接单"，分段函数是全节题眼；p97-98 文献阅读与数学写作*为选学构件不占考位。</p>
+</div>
+<p class="sub" style="text-align:center">—— 本件节界：3.4 全节 p93-98（左界=p93 节名页"3.4 函数的应用（一）"亲目检实锚·右界=p99 本章小结直读在案·p96 习题3.4/p97-98 文献阅读选学栏均亲目检），影印图 99-108 十页全 HTTP 200 实取（p92-101 连续活性验证非盲抄）、核心 6 页（p93/94/95/96/97/98/99）亲目检，ts=1787023173400 实测图通道 200 验证（meta 详情端点本环境 AccessDenied·如实注记）。</p>
+<div class="no-print" style="text-align:center;color:#8a9bb0;font-size:.85em;margin-top:18px">并行搜索员B · 队2席 · 承任务包v3队2行滚动序（3.2表外线/3.3另一会话先落池有主后顺延·硬闸21:4x·认领行98ffe00·dui2_34_1031分支）· 标准v2.3 · 产出走分支候并不直推main</div>
+</body>
+</html>

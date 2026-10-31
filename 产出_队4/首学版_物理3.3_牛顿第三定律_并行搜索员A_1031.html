@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理3.3 牛顿第三定律 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: 2px; }
+  .talk { background: #1b2029; border: 1px solid #2a3342; border-radius: 10px; padding: 14px 18px; margin: 14px 0; }
+  .check { background: #16202b; border: 1px solid #274257; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .tag { display: inline-block; background: #2d4a63; color: #cfe6ff; font-size: 12.5px; padding: 1px 8px; border-radius: 4px; margin-right: 6px; }
+  .try { background: #20262f; border-left: 3px solid #f0b429; border-radius: 6px; padding: 10px 14px; margin: 14px 0; }
+  .try .q { color: #f0c85a; font-weight: bold; }
+  .try .a { color: #9fd0a0; display: block; margin-top: 6px; }
+  .detail { color: #9fd0a0; }
+  .pit { background: #2a1d20; border: 1px solid #5c3238; border-radius: 10px; padding: 12px 16px; margin: 14px 0; }
+  .pit b { color: #ff8f95; }
+  .note-red { background: #2a1d20; border-left: 3px solid #e05c66; border-radius: 6px; padding: 10px 14px; margin: 14px 0; font-size: 15.5px; }
+  .note-red b { color: #ff8f95; }
+  .key { background: #16242e; border: 1px solid #2c566e; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .alt { background: #1d2430; border: 1px dashed #3d5a7a; border-radius: 10px; padding: 12px 16px; margin: 16px 0; font-size: 15.5px; }
+  .box { background: #1f242e; border: 1px solid #3a4458; border-radius: 10px; padding: 12px 16px; margin: 16px 0; font-size: 15.5px; }
+  mark.nb { background: #35506b; color: #eaf6ff; padding: 0 5px; border-radius: 4px; }
+  .formula { background: #0f1319; border: 1px solid #34435c; border-radius: 8px; padding: 12px 16px; margin: 14px auto; text-align: center; font-size: 21px; color: #ffffff; font-family: Georgia, "Times New Roman", serif; }
+  .fig { margin: 18px 0; text-align: center; }
+  .figcap { font-size: 14px; color: #8fa0b3; margin-top: 8px; }
+  table.tb { border-collapse: collapse; margin: 14px auto; width: 100%; font-size: 15px; }
+  table.tb th, table.tb td { border: 1px solid #3a4458; padding: 6px 10px; text-align: center; }
+  table.tb th { background: #202a37; color: #dce8f5; }
+  .small { font-size: 14px; color: #8fa0b3; }
+  .m { font-family: Georgia, serif; color: #eaf2fb; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3 { color: #000; }
+    .talk, .check, .try, .pit, .key, .alt, .box, .note-red { background: #f6f8fa !important; border-color: #999 !important; color: #111; }
+    .formula { background: #fff; color: #000; }
+    mark.nb { background: #d9e8f5; color: #000; }
+    .try .q { color: #7a5c00; } .try .a, .detail { color: #1c5c20; }
+    .pit b, .note-red b { color: #a02025; }
+    .figcap, .small, .sub { color: #444; }
+    .step-tag { background: #e8f0fa; color: #000; border: 1px solid #789; }
+    .tag { background: #dde8f2; color: #000; }
+    table.tb th { background: #eef2f6; color: #000; }
+    .m { color: #000; }
+    svg text { fill: #222 !important; }
+    svg [fill="#1d2733"] { fill: #999; }
+    svg [fill="#5a6a7a"], svg [fill="#8fa0b3"] { fill: #888; }
+    svg [stroke="#31465e"] { stroke: #888; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>牛顿第三定律——你推我，我必推你</h1>
+<div class="sub">物理3.3 · 第三章"相互作用——力"第3节 · 前面已学：3.1 重力与弹力 · 3.2 摩擦力 · 零基础首学版 v1.0 · 前置：初中的二力平衡＋3.1/3.2的弹力、摩擦力就够 · 预计35分钟</div>
+
+<div class="check">
+<span class="tag">读完这节你能</span><br>
+① 说清"力的作用是相互的"——力从不单飞，任何力都成对出现（作用力＋反作用力）；② 背准牛顿第三定律的三个关键词：<b>等大、反向、共线</b>，外加"同生同灭"；③ 用"作用在<b>谁</b>身上＋是不是<b>同种</b>力"两刀，一眼分清"一对平衡力"和"一对作用力与反作用力"（猴子判据）；④ 用定律解释划龙舟、汽车驱动、鸡蛋碰石头这些现象，并戳破"大人赢＝大人给的力大"的错觉；⑤ 受力分析入门：按"重力→弹力→摩擦力"的顺序数力，并且只画"研究对象受的力"。
+</div>
+
+<h2><span class="step-tag">开场</span>教材的公案：掰手腕，谁的力大？</h2>
+<div class="talk">
+<p>教材p68"问题"栏（照录大意）：力的作用是相互的。相互作用的力其大小有什么关系？例如，大人跟小孩掰手腕，很容易就把小孩的手压在桌面上。那么，<b>他们施加给对方的力，大小相等吗？</b></p>
+<p>多数人脱口而出："当然大人的力大，不然怎么会赢？"——这一节就办三件事：<b>把"力成对出现"这件事说破（第一步），用两只测力计把"这对力的大小关系"量出来（第二步），再把掰手腕、鸡蛋碰石头这些公案一次性结案（第三步之后）</b>。先把话放在这：答案可能和你的直觉完全相反（自编预告）。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒搬齐三块砖（都已学过·这里全用上）</h2>
+<div class="talk">
+<p>① <b>力的物质性</b>：力是物体对物体的作用，谈一个力必有施力物体和受力物体（初中＋第一章常识）——没有"孤立的力"；② <b>二力平衡</b>（初中）：一个物体受两个力保持静止，这两力"大小相等、方向相反、作用在同一条直线上"——注意它是<b>同一个物体</b>受的力；③ <b>弹力与摩擦力</b>（3.1/3.2已学）：本节实验靠弹簧测力计的弹力读数，辨析环节要用"同种力"这个概念。三块砖齐了，开工。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>作用力和反作用力——力从不单飞</h2>
+<div class="talk">
+<p>教材p68（照录）：力是物体对物体的作用。只要谈到力，就一定存在着受力物体和施力物体。用手拉弹簧，弹簧受到手的拉力 <span class="m">F</span>，同时弹簧发生形变，手也就受到弹簧的拉力 <span class="m">F′</span>（图3.3-1）。坐在椅子上用力推桌子，会感到桌子也在推我们，我们的身体要向后仰。我们常说，地面上及地球附近的物体受到地球的吸引（重力）。其实，<mark class="nb">地球也受到它们的吸引，地球和物体之间的作用也是相互的</mark>（图3.3-2）。如此等等，不胜枚举。</p>
+<p>教材p68（照录）：观察和实验的结果表明，两个物体之间的作用总是相互的。当一个物体对另一个物体施加了力，后一个物体一定同时对前一个物体也施加了力。物体间相互作用的这一对力，通常叫作<b>作用力</b>（acting force）和<b>反作用力</b>（reacting force）。<mark class="nb">作用力和反作用力总是互相依赖、同时存在的</mark>。我们可以把其中任何一个力叫作作用力，另一个力叫作反作用力。</p>
+<p>白话拆解（自编）：这对关系有三个要点——<b>谁对谁</b>（A对B施力，B一定同时对A施力，称呼可以互换，不分先后主次）；<b>同时</b>（没有"我先推你、你过一会儿才推我"这种时差）；<b>成对</b>（说"一个力"时，它的搭档已经在场）。类比：拍手——左手拍右手，右手不可能"毫无反应"，两只手同时都在疼（自编类比）。</p>
+</div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="手与弹簧互拉：手对弹簧拉力F向左，弹簧对手拉力F撇向右，一对力分别作用在两个物体上（自绘重排教材p68图3.3-1）">
+  <defs><marker id="b31" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <path d="M60,90 q14,-16 28,0 q14,16 28,0 q14,-16 28,0 q14,16 28,0 q14,-16 28,0" stroke="#6fc2ff" stroke-width="2.2" fill="none"/>
+  <rect x="58" y="86" width="8" height="30" fill="#8fa0b3"/>
+  <rect x="300" y="70" width="92" height="56" rx="10" fill="#1d2733" stroke="#4a9eff"/>
+  <text x="346" y="104" fill="#cfe0f0" font-size="13.5" text-anchor="middle">弹簧</text>
+  <rect x="404" y="66" width="120" height="64" rx="14" fill="#25384d" stroke="#f0b429"/>
+  <text x="464" y="96" fill="#ffe9a8" font-size="13" text-anchor="middle">手</text>
+  <line x1="396" y1="52" x2="316" y2="52" stroke="#f0b429" stroke-width="2" marker-end="url(#b31)"/>
+  <text x="352" y="42" fill="#f0c85a" font-size="13.5">F（手拉弹簧）</text>
+  <line x1="404" y1="150" x2="484" y2="150" stroke="#6fc2ff" stroke-width="2" marker-end="url(#b31)"/>
+  <text x="452" y="172" fill="#6fc2ff" font-size="13.5">F′（弹簧拉手）</text>
+  <text x="150" y="130" fill="#5a6a7a" font-size="12.5">施力＝手 · 受力＝弹簧</text>
+  <text x="540" y="130" fill="#5a6a7a" font-size="12.5">施力＝弹簧 · 受力＝手</text>
+  <text x="380" y="196" fill="#5a6a7a" font-size="12.5" text-anchor="middle">同一时刻 · 两个物体 · 各挨一记（自绘重排教材图3.3-1）</text>
+</svg>
+<p class="figcap">这张图在说什么：F和F′不是同一个力的两个名字，而是"两笔账"——分别记在弹簧和手两个账本上。</p>
+</div>
+<div class="try"><span class="q">验一验（30秒·自编情境）：</span>两只弹簧测力计A、B互相钩住对拉，A的示数稳定在 3.0 N。此刻B的示数是多少？若手慢慢加大力气，两只表的示数怎么变？<div class="a">→ B示数也是 <b>3.0 N</b>（同一对作用力反作用力，永远等大——sympy核验：|3.0|−|3.0|=0✓）。加大力气时两表<b>同时</b>增大，任何时刻都相等，不存在"B慢半拍"（教材p68"同时存在"＋p70传感器句的双表版·自编代答）。</div></div>
+
+<h2><span class="step-tag">第二步</span>实验＋牛顿第三定律——两只测力计的对话</h2>
+<div class="talk">
+<p>教材p69"实验"栏（照录标题）：用弹簧测力计探究作用力和反作用力的关系。</p>
+<p>教材p69（照录）：探究作用力和反作用力的关系，要同时测量这两个力，你认为应该如何测量？我们可以通过图3.3-3所示的装置进行实验。把A、B两个弹簧测力计连接在一起，B的一端固定，用手拉测力计A。可以看到两个测力计的指针同时移动。这时测力计B受到A的拉力 <span class="m">F</span>，测力计A则受到B的拉力 <span class="m">F′</span>。F与F′有什么关系？</p>
+<p>教材p69（照录）：从实验中可以发现，<mark class="nb">两个弹簧测力计的示数是相等的，方向相反</mark>。上面是通过弹力进行的实验，摩擦力满足上面的关系吗？如果是不相互接触的力呢？</p>
+<p>教材p69（照录定律）：牛顿经过研究指出：<mark class="nb">两个物体之间的作用力和反作用力总是大小相等，方向相反，作用在同一条直线上</mark>。这就是<b>牛顿第三定律</b>（Newton's third law）。</p>
+<p>追问的答案（自编代答）：教材那句追问不是白问的——摩擦力也满足（3.2里"车轮向后推地面、地面给车轮向前推力"就是一对等大反向的摩擦力，见第三步）；不接触的力也满足（地球拉卫星、卫星也拉地球，隔空照样成对）。所以定律对<b>每一种力</b>都成立，弹力实验只是"量得最顺手"的代表。</p>
+</div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A、B两只测力计实验：B端固定墙上，手拉A，两指针同时移动，F与F撇等大反向（自绘重排教材p69图3.3-3）">
+  <defs><marker id="b32" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <rect x="50" y="70" width="14" height="90" fill="#3a4458"/>
+  <text x="57" y="180" fill="#5a6a7a" font-size="12" text-anchor="middle">墙（固定端）</text>
+  <rect x="80" y="86" width="180" height="34" rx="8" fill="#1d3a2c" stroke="#4a9eff"/>
+  <text x="170" y="108" fill="#cfe0f0" font-size="13" text-anchor="middle">测力计 B</text>
+  <circle cx="238" cy="103" r="4" fill="#f0b429"/>
+  <path d="M260,103 h36" stroke="#8fa0b3" stroke-width="2"/><circle cx="300" cy="103" r="4" fill="#8fa0b3"/>
+  <rect x="316" y="86" width="180" height="34" rx="8" fill="#25384d" stroke="#f0b429"/>
+  <text x="406" y="108" fill="#ffe9a8" font-size="13" text-anchor="middle">测力计 A</text>
+  <circle cx="316" cy="103" r="4" fill="#f0b429"/>
+  <rect x="510" y="76" width="110" height="54" rx="12" fill="#25384d" stroke="#f0b429"/>
+  <text x="565" y="108" fill="#ffe9a8" font-size="13" text-anchor="middle">手（拉A）</text>
+  <line x1="470" y1="60" x2="360" y2="60" stroke="#f0b429" stroke-width="2" marker-end="url(#b32)"/>
+  <text x="415" y="50" fill="#f0c85a" font-size="13">F（B受A的拉力）</text>
+  <line x1="310" y1="150" x2="420" y2="150" stroke="#6fc2ff" stroke-width="2" marker-end="url(#b32)"/>
+  <text x="425" y="170" fill="#6fc2ff" font-size="13">F′（A受B的拉力）</text>
+  <text x="300" y="200" fill="#5a6a7a" font-size="12.5" text-anchor="middle">指针同时移动 · 示数相等 · 方向相反（自绘重排教材图3.3-3）</text>
+</svg>
+<p class="figcap">这张图在说什么：实验的关键在"同时测两个力"——所以把两只表串在一根绳上，一拉，两只表同时开口作证。</p>
+</div>
+<div class="formula">作用力与反作用力：大小相等 · 方向相反 · 作用在同一条直线上<br><span style="font-size:14px;color:#8fa0b3">——牛顿第三定律（教材p69照录·同生同灭·分别作用在两个物体上）</span></div>
+
+<h2><span class="step-tag">拓展学习</span>力传感器：把"任何时刻"四个字钉死（教材p70）</h2>
+<div class="talk">
+<p>教材p70（照录白话）：力传感器可以把它所受力的大小、方向随时间变化的情况，由计算机屏幕显示出来。把两个互相钩着的力传感器，同时连在计算机上，其中，一个系在墙壁上固定，另一个握在手中（图3.3-6甲）。图3.3-6乙中上下两条图线分别表示两个力传感器受力的大小。用手拉一个力传感器，可以看到在一个力传感器受力的同时，另一个力传感器也同时受到力的作用。<mark class="nb">从而可以知道在任何时刻两个力的大小相等、方向相反</mark>。</p>
+<p>教材p70（照录白话）：两位同学各持一个力传感器，互相钩着。一人用力拉力传感器朝自己的方向运动。可以发现，在运动的过程中，尽管力的大小随运动时间不断变化，但在运动中的任何时刻，<mark class="nb">作用力和反作用力总是大小相等、方向相反的</mark>。</p>
+<p>为什么这栏重要（自编说理）：弹簧测力计只能读"静止/缓拉"的稳定值；传感器把每一瞬间都记录下来——曲线像镜子里的一对倒影：上条鼓包，下条同刻也鼓包，一正一负。<b>"等大反向"不是稳定状态下的巧合，是每一瞬间都成立的硬约束</b>。这直接堵死了"先有作用力、后有反作用力"的误解。</p>
+</div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="传感器两条曲线：F随时间变化，上下两条曲线关于时间轴镜像，同一时刻一正一负等大（自绘重排教材p70图3.3-6乙要义）">
+  <defs><marker id="b33" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <line x1="70" y1="115" x2="700" y2="115" stroke="#8fa0b3" stroke-width="1.6" marker-end="url(#b33)"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#8fa0b3" stroke-width="1.6" marker-end="url(#b33)"/>
+  <text x="708" y="131" fill="#8fa0b3" font-size="13">t/s</text><text x="30" y="44" fill="#8fa0b3" font-size="13">F/N</text>
+  <path d="M70,115 C130,115 150,60 200,62 S260,110 300,80 S370,58 420,88 S500,110 560,74 S650,100 690,92" stroke="#f0b429" stroke-width="2.2" fill="none"/>
+  <path d="M70,115 C130,115 150,170 200,168 S260,120 300,150 S370,172 420,142 S500,120 560,156 S650,130 690,138" stroke="#6fc2ff" stroke-width="2.2" fill="none"/>
+  <line x1="330" y1="115" x2="330" y2="66" stroke="#5a6a7a" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="330" y1="115" x2="330" y2="164" stroke="#5a6a7a" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="200" y="50" fill="#f0c85a" font-size="12.5">传感器1（甲握在手中）</text>
+  <text x="200" y="192" fill="#6fc2ff" font-size="12.5">传感器2（乙系在墙上）</text>
+  <text x="345" y="60" fill="#5a6a7a" font-size="12">t＝某一刻</text>
+  <text x="380" y="222" fill="#5a6a7a" font-size="12.5" text-anchor="middle">曲线是"倒影"：同一时刻一正一负·绝对值相等（自绘重排教材图3.3-6乙要义）</text>
+</svg>
+<p class="figcap">这张图在说什么：不管曲线怎么扭，两条线永远关于零点对称——"任何时刻等大反向"长这个样子。</p>
+</div>
+
+<h2><span class="step-tag">第三步</span>定律用起来：划龙舟、汽车驱动，以及掰手腕结案</h2>
+<div class="talk">
+<p>教材p69（照录）：在生活和生产中应用牛顿第三定律的例子是很多的。人在划船时，桨向后推水，水就向前推桨，将船向前推进（图3.3-4）。与此类似，轮船的螺旋桨旋转时也是向后推水，水同时给螺旋桨一个反作用力，推动轮船前进。</p>
+<p>教材p69（照录）：汽车的发动机驱动车轮转动，由于轮胎和地面之间的摩擦，车轮向后推地面，地面给车轮一个向前的反作用力，使汽车前进（图3.3-5）。汽车受到的驱动力就是这样产生的。若把驱动轮架空，不让它跟地面接触，这时车轮虽然转动，但车轮不推地面，地面也就不会产生向前推车的力，汽车就不会前进。陷在泥泞中的汽车，尽管车轮飞转，但是如果泥和车轮之间太滑，车轮得不到足够的摩擦力，车也是出不来的。许多越野车可以按需要分别由前轮或后轮驱动，必要时甚至可以四轮同时驱动，以便根据车轮与地面接触的不同情况来获得足够的驱动力。</p>
+<p>一句话总结（自编白话）：<b>想往前走，就得找一个"能被你往后蹬的东西"</b>——船蹬水、车轮蹬地、螺旋桨蹬水/空气。蹬得动（有摩擦/有介质）才有前进的份；架空轮子、冰面打滑，是"找不到往后蹬的对象"，不是发动机不行。</p>
+</div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="汽车驱动力示意：车轮向后推地面，地面给车轮向前的反作用力，驱动力来自摩擦（自绘重排教材p69图3.3-5）">
+  <defs><marker id="b34" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <line x1="40" y1="140" x2="720" y2="140" stroke="#8fa0b3" stroke-width="2"/>
+  <text x="728" y="156" fill="#5a6a7a" font-size="12">地面</text>
+  <path d="M210,128 h250 a14,14 0 0 1 0,-28 h-190 a30,20 0 0 1 40,-22 h90 l30,20 h30 a14,14 0 0 1 0,30 z" fill="#25384d" stroke="#4a9eff" transform="translate(-60,-20)"/>
+  <circle cx="250" cy="122" r="20" fill="#14171c" stroke="#f0b429" stroke-width="2.5"/>
+  <circle cx="470" cy="122" r="20" fill="#14171c" stroke="#f0b429" stroke-width="2.5"/>
+  <path d="M250,122 l12,-12 M250,122 l-12,-12" stroke="#f0b429" stroke-width="2"/>
+  <text x="360" y="86" fill="#cfe0f0" font-size="13" text-anchor="middle">汽车（向右开）</text>
+  <line x1="270" y1="150" x2="205" y2="150" stroke="#ff8f95" stroke-width="2.2" marker-end="url(#b34)"/>
+  <text x="150" y="168" fill="#ff8f95" font-size="12.5">车轮向后推地面（摩擦）</text>
+  <line x1="450" y1="108" x2="515" y2="108" stroke="#6fc2ff" stroke-width="2.2" marker-end="url(#b34)"/>
+  <text x="525" y="100" fill="#6fc2ff" font-size="12.5">地面给车轮向前的反作用力＝驱动力</text>
+  <text x="380" y="36" fill="#5a6a7a" font-size="12.5" text-anchor="middle">一对作用力反作用力都发生在"轮-地"之间·分别记在地面账本和车轮账本上（自绘重排教材图3.3-5）</text>
+</svg>
+<p class="figcap">这张图在说什么：发动机的力气是"经手人"，真正推车前进的那一下，是<b>地面</b>给车轮的摩擦反作用力。</p>
+</div>
+<div class="note-red"><b>掰手腕结案（回到开场·自编直答）：</b>大人跟小孩互施的力，任何时刻都<b>等大反向</b>——假设这一刻是 120 N，大人压小孩 120 N，小孩也压大人 120 N（sympy核验：|120|−|120|=0✓）。大人赢，赢在<b>小孩先扛不住</b>：手腕被压过去的后果取决于"你自己这边怎么应对这 120 N"（力气、臂长、姿势），而不取决于"对方给的力比你的小"。鸡蛋碰石头同理：蛋与石头之间的力一样大，碎不碎是<b>材料扛不扛得住</b>的事（自编同源说理）。所以"谁赢/谁碎"根本不是这对力谁大谁小的问题——<b>定律从不偏袒谁</b>。</div>
+
+<h2><span class="step-tag">第四步</span>物体受力的初步分析——数力三步走＋一条纪律</h2>
+<div class="talk">
+<p>教材p70（照录）：分析物体的受力，有两条思路。一是根据物体运动状态的变化来分析和判断其受力情况，这是下一章学习的内容；二是根据各种力的特点，从相互作用的角度来分析物体的受力。下面我们先从后一思路来分析物体的受力情况，为力与运动关系的分析奠定必要的基础。在高中物理的力学部分，我们遇到的力主要是重力、弹力和摩擦力。</p>
+<p>教材p70（照录白话）：例如，一个木块静止在粗糙斜面上，我们按重力、弹力和摩擦力的顺序来分析它的受力情况。木块受到重力G，方向竖直向下；木块和斜面接触并相互挤压，木块受到垂直于斜面向上的弹力F<sub>N</sub>；假设木块和斜面之间没有摩擦，木块就会向下滑动，由此可以判断，静止的木块相对斜面有向下滑动的趋势，所受的静摩擦力F<sub>f</sub>是沿斜面向上的（图3.3-7）。</p>
+<p>教材p70（照录）：需要强调的是，<mark class="nb">必须明确我们是在分析哪个物体所受的力</mark>。在上面的例子中，涉及木块的作用力和反作用力共有三对：重力G和木块对地球的引力、弹力F<sub>N</sub>和木块对斜面的压力、静摩擦力F<sub>f</sub>和木块对斜面的静摩擦力。由于我们是在对木块的受力情况进行分析，所以只把这六个力中木块所受的三个力画出来了。</p>
+<p>数力三步走（自编口诀整理）：①先"点名"——重力必有；②再"摸接触面"——挤就有弹力、糙且有相对滑动趋势（或滑动）就有摩擦力；③最后"对账"——每个力都要能说出施力物体，说不出的力是你编的。纪律一条：<b>画的是"它受的"，不是"它给的"</b>——六力三对，只取三力（教材p70判据·受力图里的反作用力一律不入图）。</p>
+</div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="斜面上的木块受三力：G竖直向下、F_N垂直斜面向上、F_f沿斜面向上；旁注三对六力清单（自绘重排教材p70图3.3-7）">
+  <defs><marker id="b35" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <path d="M60,190 L560,190 L560,60 Z" fill="none" stroke="#8fa0b3" stroke-width="1.6"/>
+  <text x="70" y="208" fill="#5a6a7a" font-size="12">θ</text>
+  <path d="M330,132 l90,-25 l25,90 l-90,25 Z" fill="#25384d" stroke="#4a9eff" transform="translate(-60,0) rotate(-1 330 132)"/>
+  <rect x="228" y="112" width="66" height="52" fill="#25384d" stroke="#4a9eff" transform="rotate(-13.4 261 138)"/>
+  <line x1="261" y1="135" x2="261" y2="200" stroke="#ff8f95" stroke-width="2.2" marker-end="url(#b35)"/>
+  <text x="268" y="214" fill="#ff8f95" font-size="13">G（竖直向下）</text>
+  <line x1="261" y1="130" x2="222" y2="76" stroke="#6fc2ff" stroke-width="2.2" marker-end="url(#b35)"/>
+  <text x="130" y="70" fill="#6fc2ff" font-size="13">F_N（垂直斜面向上）</text>
+  <line x1="268" y1="120" x2="330" y2="86" stroke="#f0c85a" stroke-width="2.2" marker-end="url(#b35)"/>
+  <text x="338" y="82" fill="#f0c85a" font-size="13">F_f（沿斜面向上）</text>
+  <text x="600" y="60" fill="#cfe0f0" font-size="12.5">六力三对（本节清单法）：</text>
+  <text x="600" y="84" fill="#8fa0b3" font-size="12">G ↔ 木块对地球的引力</text>
+  <text x="600" y="108" fill="#8fa0b3" font-size="12">F_N ↔ 木块对斜面的压力</text>
+  <text x="600" y="132" fill="#8fa0b3" font-size="12">F_f ↔ 木块对斜面的静摩擦力</text>
+  <text x="600" y="156" fill="#9fd0a0" font-size="12">画图只取"木块所受的三个"</text>
+  <text x="380" y="222" fill="#5a6a7a" font-size="12.5" text-anchor="middle">三力目视检查：施力物体分别是地球/斜面/斜面——个个有主（自绘重排教材图3.3-7）</text>
+</svg>
+<p class="figcap">这张图在说什么：木块只"收"三个力，另外三个是它"付"出去的——收付分开记，受力图才不乱。</p>
+</div>
+<div class="try"><span class="q">验一验（30秒·自编排查）：</span>有人说："木块静止在斜面上，还受到一个'下滑力'，所以一共四个力。"这第四个力该不该画？<div class="a">→ 不该。"下滑力"是重力沿斜面的<b>效果分项</b>（3.4"力的分解"正式处理），它没有施力物体——对不上账的力不画（数力三步走第③步·自编代答）。斜面木块就是三力：G、F_N、F_f。</div></div>
+
+<h2><span class="step-tag">辨析站</span>平衡力 vs 作用力反作用力——猴子判据（教材p71·本节最易失分点）</h2>
+<div class="talk">
+<p>教材p71（照录）：在分析物体的受力情况时，不要把某个力的反作用力跟这个力的平衡力混淆。</p>
+<p>教材p71（照录白话）：例如，在图3.3-8甲中，猴子吊在空中，我们分析猴子所受的力。猴子受到重力G，还受到树枝对它的拉力F。由于猴子是静止的，而且不再受到其他力的作用，所以拉力F和重力G这两个力是一对相互平衡的力，它们"大小相等、方向相反，作用在同一条直线上"。应该注意，<mark class="nb">这两个力作用在同一物体（猴子）上</mark>。</p>
+<p>教材p71（照录白话）：另一方面，树枝在以拉力F向上拉着猴子，猴子同时也在以向下的拉力F′拉着树枝，这是一对作用力和反作用力，它们的关系也是"大小相等、方向相反，作用在同一条直线上"（图3.3-8乙）。但不同的是，<mark class="nb">它们分别作用在两个物体（猴子和树枝）上</mark>。</p>
+<p>教材p71（照录）："一对相互平衡的力"和"一对作用力和反作用力"还有一个区别：<mark class="nb">后者一定是同一种类的力</mark>（例如F和F′都是弹力），而前者则不一定是同一种类的力（例如F是弹力，而G是重力）。</p>
+</div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 780 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="对照图：甲猴子受F与G平衡作用在同一物体；乙猴子与树枝之间F与F撇为作用反作用力作用在两个物体（自绘重排教材p71图3.3-8要义）">
+  <defs><marker id="b36" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <text x="190" y="26" fill="#cfe0f0" font-size="14" text-anchor="middle">甲 · 一对平衡力（同体）</text>
+  <rect x="120" y="60" width="10" height="26" fill="#3a4458"/>
+  <path d="M125,86 q0,26 8,40" stroke="#3a4458" stroke-width="4" fill="none"/>
+  <ellipse cx="150" cy="150" rx="26" ry="34" fill="#25384d" stroke="#f0b429"/>
+  <circle cx="150" cy="108" r="13" fill="#25384d" stroke="#f0b429"/>
+  <text x="150" y="204" fill="#5a6a7a" font-size="12" text-anchor="middle">猴子（研究对象）</text>
+  <line x1="150" y1="128" x2="150" y2="94" stroke="#6fc2ff" stroke-width="2.2" marker-end="url(#b36)"/>
+  <text x="160" y="100" fill="#6fc2ff" font-size="12.5">F（树枝拉猴子）</text>
+  <line x1="142" y1="162" x2="142" y2="196" stroke="#ff8f95" stroke-width="2.2" marker-end="url(#b36)"/>
+  <text x="60" y="196" fill="#ff8f95" font-size="12.5">G（重力）</text>
+  <line x1="330" y1="140" x2="450" y2="140" stroke="#31465e" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="620" y="26" fill="#cfe0f0" font-size="14" text-anchor="middle">乙 · 一对作用力反作用力（异体）</text>
+  <rect x="540" y="60" width="10" height="26" fill="#3a4458"/>
+  <path d="M545,86 q0,26 8,40" stroke="#3a4458" stroke-width="4" fill="none"/>
+  <ellipse cx="570" cy="150" rx="26" ry="34" fill="#25384d" stroke="#f0b429"/>
+  <circle cx="570" cy="108" r="13" fill="#25384d" stroke="#f0b429"/>
+  <text x="570" y="204" fill="#5a6a7a" font-size="12" text-anchor="middle">猴子（手抓树枝处）</text>
+  <line x1="570" y1="126" x2="570" y2="96" stroke="#6fc2ff" stroke-width="2.2" marker-end="url(#b36)"/>
+  <text x="580" y="98" fill="#6fc2ff" font-size="12.5">F（树枝拉猴子·作用在猴子）</text>
+  <line x1="558" y1="120" x2="558" y2="150" stroke="#f0c85a" stroke-width="2.2" marker-end="url(#b36)"/>
+  <text x="404" y="150" fill="#f0c85a" font-size="12.5">F′（猴子拉树枝·作用在树枝）</text>
+  <text x="390" y="224" fill="#5a6a7a" font-size="12.5" text-anchor="middle">F与G同账本（猴子）·F与F′两个账本（猴子/树枝）·F与F′同为弹力（自绘重排教材图3.3-8要义）</text>
+</svg>
+<p class="figcap">这张图在说什么：四组"等大反向共线"里，只有"记在同一本账上"的那组才是平衡——账本（受力物体）是第一判据。</p>
+</div>
+<table class="tb">
+<tr><th>判据</th><th>一对平衡力</th><th>一对作用力与反作用力</th></tr>
+<tr><td>受力物体</td><td><b>同一物体</b>（猴子）</td><td><b>两个物体</b>（猴子·树枝）</td></tr>
+<tr><td>力的种类</td><td>可以不同种（F弹力·G重力）</td><td><b>一定同种</b>（F与F′都是弹力）</td></tr>
+<tr><td>能否合成抵消</td><td>能（合力为零·猴子静止）</td><td><b>不能</b>（作用在不同物体·无"合力"可谈）</td></tr>
+<tr><td>时间关系</td><td>平衡可先有后有（撤去F·G还在）</td><td><b>同生同灭·互相依赖</b>（教材p68句）</td></tr>
+</table>
+<p class="small" style="text-align:center">（表格＝自编整理·判据句全部出自教材p68/p71照录）</p>
+<div class="try"><span class="q">验一验（40秒·自编双判断）：</span>①"猴子拉树枝的力"和"树枝拉猴子的力"是一对平衡力吗？②"猴子拉树枝的力"和"猴子受的重力"呢？<div class="a">→ ①不是——它们作用在<b>两个</b>物体上、同种（都是弹力），是作用力反作用力。②更不是——不同物体、不同种、无相互性，纯属"两个不相干的力"，既不平衡也不成对（自编代答·判据两刀：先看账本再看种类）。</div></div>
+
+<h2><span class="step-tag">练习站</span>练习与应用：四题全解（教材p71照录代验）</h2>
+<div class="talk">
+<p><b>题1（照录）</b>：一个物体静止地放在台式弹簧秤上（图3.3-9），试证明物体对弹簧秤的压力大小等于物体所受的重力大小。证明时，请在图上标出所涉及的力。<br>
+<b>证明（自编代验·三步接力）</b>：设物体重 G＝25 N。①物体静止 → 受重力G与秤的支持力F_N，二力平衡 → F_N＝G＝25 N（sympy核验：|25|−|25|=0✓）；②F_N（秤对物体）与物体对秤的压力F_压是一对作用力反作用力 → F_压＝F_N（等大）；③接力得 F_压＝G＝25 N（sympy核验：F_压−G=25−25=0✓）。图上要标的力：G、F_N（都画在物体上），F_压（画在秤上）——支持力入物体账本，压力入秤账本，别画串门。</p>
+<p><b>题2（照录）</b>：小强说："我记得在初中学过，如果两个力的大小相等、方向相反，这两个力就会互相平衡，看不到作用的效果了。既然作用力和反作用力也是大小相等、方向相反的，它们也应该互相平衡呀！"应该怎么解答小强的疑问？<br>
+<b>解（自编代答）</b>：平衡的资格线是"作用在<b>同一物体</b>上"。作用力和反作用力作用在<b>两个</b>物体上，各自找各自的对象去记账——它们根本不在同一本账里，谈不上"合在一起抵消"。效果当然看得见：手拍桌，桌子受力（会响/留印），手也受力（会疼），两边效果都真实发生（猴子判据两刀·教材p71"作用在两个物体上"句）。</p>
+<p><b>题3（照录）</b>：如图3.3-10，油桶放在汽车上，汽车停于水平地面。涉及油桶、汽车、地球三个物体之间的作用力和反作用力一共有几对？这几对力中，油桶受哪几个力？汽车受哪几个力？地球受哪几个力？<br>
+<b>解（自编代验）</b>：三物体握手只有三组，但每组可出不止一对力，共 <b>4</b> 对（sympy核验：2引力对＋2接触对=4✓）——油桶↔汽车（压力/支持力，接触对）、油桶↔地球（引力/引力，吸引对）、汽车↔地球有<b>两组</b>：既相互吸引（重力/引力，吸引对），又相互挤压（汽车压地面/地面支持汽车，接触对）。<b>油桶受</b>：重力、汽车的支持力（2个）；<b>汽车受</b>：重力、油桶的压力、地面的支持力（3个）；<b>地球受</b>：油桶对它的引力、汽车对它的引力、汽车压地面的压力（3个）。易错警报：漏数"汽车-地面"接触对、答成3对最常见——你脚下那记"地面对汽车的支持力"，反作用力正记在地球上。口诀：研究对象换谁，就换谁的账本——"受"字后面只填它收的。</p>
+</div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="油桶、汽车、地球三物体握手三组共四对作用力反作用力：引力对两条加接触对两条（自编配图对应教材p71图3.3-10情境）">
+  <defs><marker id="b37" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <rect x="300" y="30" width="110" height="46" rx="9" fill="#1d2733" stroke="#4a9eff"/>
+  <text x="355" y="58" fill="#cfe0f0" font-size="13.5" text-anchor="middle">油桶</text>
+  <rect x="150" y="120" width="110" height="46" rx="9" fill="#1d2733" stroke="#4a9eff"/>
+  <text x="205" y="148" fill="#cfe0f0" font-size="13.5" text-anchor="middle">汽车</text>
+  <rect x="470" y="120" width="110" height="46" rx="9" fill="#1d2733" stroke="#4a9eff"/>
+  <text x="525" y="148" fill="#cfe0f0" font-size="13.5" text-anchor="middle">地球</text>
+  <line x1="280" y1="102" x2="330" y2="80" stroke="#8fa0b3" stroke-width="1.6" marker-end="url(#b37)"/>
+  <line x1="380" y1="80" x2="430" y2="102" stroke="#8fa0b3" stroke-width="1.6" marker-end="url(#b37)"/>
+  <text x="240" y="80" fill="#8fa0b3" font-size="12" text-anchor="middle">对①压力/支持力</text>
+  <line x1="264" y1="130" x2="468" y2="130" stroke="#8fa0b3" stroke-width="1.6" marker-end="url(#b37)"/>
+  <line x1="468" y1="112" x2="264" y2="112" stroke="#8fa0b3" stroke-width="1.6" marker-end="url(#b37)"/>
+  <text x="366" y="172" fill="#8fa0b3" font-size="12" text-anchor="middle">对②引力/引力（重力）</text>
+  <line x1="330" y1="86" x2="500" y2="122" stroke="#8fa0b3" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#b37)"/>
+  <text x="560" y="90" fill="#8fa0b3" font-size="12">对③油桶↔地球</text>
+  <line x1="470" y1="128" x2="262" y2="152" stroke="#8fa0b3" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#b37)"/>
+  <line x1="262" y1="144" x2="468" y2="120" stroke="#8fa0b3" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#b37)"/>
+  <text x="470" y="168" fill="#8fa0b3" font-size="12">对④汽车↔地球（压力/支持力）</text>
+  <text x="360" y="196" fill="#5a6a7a" font-size="12.5" text-anchor="middle">三物体握手三组·共4对（引力对×2＋接触对×2·自编配图·对应教材图3.3-10情境）</text>
+</svg>
+<p class="figcap">这张图在说什么：数"几对"不数"几个力"——握手只有三组，但汽车与地球之间既有吸引又有挤压，一组握手可出两对力——合计4对。</p>
+</div>
+<div class="talk">
+<p><b>题4（照录）</b>：如图3.3-11，粗糙的长方体木块A、B叠在一起，放在水平桌面上，B木块受到一个水平方向的力的牵引，但仍然保持静止。问B木块受到哪几个力的作用？<br>
+<b>解（自编代验）</b>：对B数力（对象＝B）：①重力G_B（地球）；②A压B的压力（A·接触挤压必有）；③桌面支持力F_N（桌面·接触挤压）；④水平牵引力F（题给·设 F＝8 N）；⑤桌面给B的静摩擦力f——因为B静止，水平方向必须合力为零 → f＝F＝8 N，方向与F相反（sympy核验：|f|−|F|=8−8=0✓）。<b>A对B没有摩擦力</b>：A也静止且水平方向不受任何其他力，若A受B的摩擦力就找不到平衡它的搭档力了——由"无施必无受"（牛顿第三定律的镜像用法），A对B也无摩擦。共 <b>5个力</b>。误区：顺手给A、B之间编一对摩擦力——对A账本对不上，就是编的。</p>
+</div>
+
+<div class="pit"><b>大坑警报（本节五个高频坑）：</b>①<b>"赢家用力大"</b>——掰手腕、鸡蛋碰石头里互施的力永远等大反向（例题120 N档），胜负/碎否是"谁扛得住"，不是"谁给的力大"；②<b>平衡力与作用反作用力混认</b>——两刀判据：先看"记在谁身上"（同体/异体），再看"同种力吗"（平衡可异种·作用反作用必同种）（猴子判据·教材p71）；③<b>"等大反向所以抵消"</b>——异体力不能合成，小强疑问（题2）就是栽在这；④<b>把反作用力画进受力图</b>——画木块只画G、F_N、F_f三个"收进来的"，"付出去"的三个不入图（教材p70"只把六个力中木块所受的三个力画出来了"）；⑤<b>数力乱添"下滑力/向前的冲力"</b>——每个力必须报出施力物体，报不出的不画（题4的"A对B摩擦力"骗术同理）。</div>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选）</span><br>
+<b>①"马拉车"悖论结案</b>：马拉车的力＝车拉马的力（等大反向），车为什么还能动？——车动不动看<b>车</b>这本账：拉力−地面阻力＞0就加速；"被反拉力抵消"是记错了账本，反拉力作用在<b>马</b>身上，与车的运动无关（自编·第四章学了合力与加速度后你会算得更狠）。<br>
+<b>②火箭与反冲</b>：火箭向后猛喷燃气，燃气就向前推火箭——它"往后蹬"的是自己喷出的气体，所以太空里没有地面也能加速（教材汽车驱动句的升级版·自编白话，动量观点到选修再收账）。<br>
+<b>③受力分析"握手清单法"</b>：先列"研究对象和谁握手/和谁相吸"（接触对＋吸引对），每对必收一记、必付一记——T3的四对、T4的A-B无摩擦，都是这张清单的复制粘贴（自编方法·第四章系统受力分析的地基）。
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走＋自测</h2>
+<div class="key">
+<b>三句话带走：</b><br>
+1. <mark class="nb">力成对·等大·反向·共线</mark>：两个物体之间的作用力和反作用力总是大小相等，方向相反，作用在同一条直线上（牛顿第三定律·p69）；没有先后、不分主次、同生同灭。<br>
+2. <mark class="nb">两刀分清两对力</mark>：先看记账本（同体＝平衡力/异体＝作用反作用力），再看种类（平衡可异种·作用反作用必同种）——猴子判据（p71）。<br>
+3. <mark class="nb">受力分析只画"它收的"</mark>：对象意识＋数力三步走（重力→接触弹力→摩擦力）＋施力物体人人有主；六力三对只画三力（p70）。
+</div>
+<p class="small"><b>自测四连</b>（先自己想再看答案）：</p>
+<p>①（定律源·自编）牛顿第三定律的三个关键词是什么？"小孩推大人的力"和"大人推小孩的力"谁先谁后？</p>
+<p>②（教材题2同型·自编说理）"作用力和反作用力等大反向，为什么看不到它们互相抵消？"</p>
+<p>③（教材题4同型·自编数字）A、B叠放于桌面，B受水平拉力 F＝8 N 仍静止，B受几个力？桌面给B的摩擦力多大、朝哪？</p>
+<p>④（辨析源·自编判断）下列哪对是作用力与反作用力：a) 灯受的重力与电线对灯的拉力；b) 电线拉灯的力与灯拉电线的力。</p>
+<div class="detail">
+<p class="small"><b>答案：</b><span class="ans">① 等大、反向、共线（＋同生同灭·异体·同种）；不分先后——同时产生、同时变化、同时消失</span>　<span class="ans">② 两力作用在两个物体上，不在同一本账，无"合力"可谈；各自的效果都真实发生（题2代答）</span>　<span class="ans">③ 5个力：G_B、A的压力、桌面支持力、拉力F、桌面静摩擦力；f＝F＝8 N，方向与F相反（sympy核验：8−8=0✓）</span>　<span class="ans">④ b)——异体且同为弹力；a)是平衡力（同体·一重力一弹力）</span></p>
+</div>
+<div class="box"><b>高考怎么考（考位锚）：</b>①概念辨析选择题——平衡力vs作用反作用力两刀判断（猴子同型·年年基础档高频）；②"等大反向"情境判断——掰手腕/鸡蛋碰石头/马拉车式选项，考"谁赢谁碎与这对力的大小无关"；③受力分析＋连接体——题4同型（隔离对象数力·"A对B有无摩擦"排查，第四章牛顿定律综合题的入场券）；④解释类简答——汽车驱动/直升机悬停/火箭反冲情境，答题要落到"往后蹬→向前反作用"的定律句式。具体真题锚候采（本节卷源池外·哨兵扩池件097c025未含物理3.3·宁缺毋编不代拟）。</div>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 820 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：3.1重力与弹力→3.2摩擦力→3.3牛顿第三定律（你在）→3.4力的合成和分解→第四章运动和力的关系">
+  <defs><marker id="b38" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a9eff"/></marker></defs>
+  <rect x="16" y="38" width="120" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="76" y="58" fill="#cfe0f0" font-size="11.5" text-anchor="middle">3.1 重力与弹力</text><text x="76" y="76" fill="#5a6a7a" font-size="10.5" text-anchor="middle">弹力 F=kx</text>
+  <line x1="136" y1="61" x2="154" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#b38)"/>
+  <rect x="156" y="38" width="110" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="211" y="58" fill="#cfe0f0" font-size="11.5" text-anchor="middle">3.2 摩擦力</text><text x="211" y="76" fill="#5a6a7a" font-size="10.5" text-anchor="middle">f=μF_N</text>
+  <line x1="266" y1="61" x2="284" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#b38)"/>
+  <rect x="286" y="30" width="128" height="62" rx="8" fill="#25384d" stroke="#f0b429" stroke-width="2"/>
+  <text x="350" y="54" fill="#ffe9a8" font-size="12" text-anchor="middle">3.3 牛顿第三定律（你在）</text><text x="350" y="74" fill="#f0c85a" font-size="10.5" text-anchor="middle">等大·反向·共线</text>
+  <line x1="414" y1="61" x2="432" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#b38)"/>
+  <rect x="434" y="38" width="132" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="500" y="58" fill="#cfe0f0" font-size="11.5" text-anchor="middle">3.4 力的合成和分解</text><text x="500" y="76" fill="#5a6a7a" font-size="10.5" text-anchor="middle">合力/分力</text>
+  <line x1="566" y1="61" x2="584" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#b38)"/>
+  <rect x="586" y="38" width="140" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="656" y="58" fill="#cfe0f0" font-size="11.5" text-anchor="middle">第四章 运动和力的关系</text><text x="656" y="76" fill="#5a6a7a" font-size="10.5" text-anchor="middle">牛顿定律上场</text>
+  <text x="410" y="118" fill="#5a6a7a" font-size="11.5" text-anchor="middle">本节给"力"立好对账规则（作用反作用·平衡·对象意识）——第四章分析"力怎么改变运动"时，这本账天天用（自编预告·呼应3.2件脚注"下节会学到这一知识"）</text>
+</svg>
+<p class="figcap">这张图在说什么：第三章的"力"到本节补完"对账规则"，下一站学"力的合成和分解"，然后带着全套工具进牛顿定律。</p>
+</div>
+
+<p class="small" style="margin-top:30px">—— 物理必修第一册 3.3 · 零基础首学版 · 教材原文照录页码：p68（问题栏掰手腕/作用力和反作用力/图3.3-1/图3.3-2）· p69（实验用弹簧测力计/图3.3-3/牛顿第三定律陈述/划龙舟图3.3-4/汽车驱动图3.3-5）· p70（拓展学习力传感器/图3.3-6/物体受力的初步分析/图3.3-7）· p71（平衡力辨析/图3.3-8/练习与应用四题/图3.3-9/3.3-10/3.3-11）· 影印对照逐页亲读（ts=1787023183495实时验活16/16全200·节界p68-71双端夹逼实锚·左接3.2练习页p67·右界3.4节名页p72）· 全部代验数字 sympy 核验 · 宁缺毋编 ——</p>
+
+</div>
+</body>
+</html>
