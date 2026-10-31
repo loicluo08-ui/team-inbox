@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学3.3 幂函数 · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#16233a}
+h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
+h3{color:#2c5f8f;margin-top:1.6em}
+.station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
+.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
+.mark{background:#fff176;padding:0 4px;border-radius:3px}
+.uline{border-bottom:2px solid #4a90d9;padding-bottom:1px}
+.note-red{color:#c0392b;border:1px solid #e6b0aa;background:#fdf2f0;border-radius:8px;padding:8px 14px;margin:10px 0}
+.try{background:#e8f6ef;border-left:4px solid #27ae60;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.try .ans{color:#1e7e4e;font-weight:bold}
+.alt{background:#f6f2fb;border-left:4px solid #8e5cb8;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0;color:#4a3568}
+.alt .tag{font-size:.8em;color:#8e5cb8;font-weight:bold}
+.selftest{background:#fdf6ec;border:1px solid #e2c48d;border-radius:10px;padding:14px 18px;margin:16px 0}
+.kaowei{background:#eaf3ea;border:2px solid #3d8b5f;border-radius:10px;padding:12px 16px;margin:16px 0}
+.kaowei .kw-title{font-weight:bold;color:#2d6a45}
+.figure{text-align:center;margin:16px 0}
+.figure svg{max-width:100%;height:auto}
+.figcap{font-size:.88em;color:#5a6b7d;margin-top:6px}
+.walk{background:#eef7ee;border-radius:8px;padding:10px 16px;margin:12px 0}
+.walk li{margin:5px 0}
+table.cmp{border-collapse:collapse;width:100%;margin:12px 0}
+table.cmp th,table.cmp td{border:1px solid #b8c8d8;padding:8px 12px;text-align:center}
+table.cmp th{background:#e3edf6;color:#1e3a5f}
+.sub{font-size:.85em;color:#5a6b7d}
+.detail{color:#3d6a9e;font-size:.95em}
+@media print{
+ body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
+ .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
+ .station-title{background:#333!important;color:#fff!important}
+ h1{font-size:1.35em}h2{font-size:1.15em}
+ .formula{background:#f2f2f2!important}
+ a{color:#000;text-decoration:none}
+ .no-print{display:none}
+}
+</style>
+</head>
+<body>
+<h1>数学 3.3 幂函数 <span class="sub">人教A版 必修第一册 · 零基础首学版 v1.0 · 2026-10-31</span></h1>
+<p><strong>开场一句话：</strong>3.1 教会我们用<span class="mark">集合与对应</span>定义函数，3.2 教会我们用<span class="mark">单调性、奇偶性</span>给函数"体检"。这一节把两件工具合起来，研究第五类新朋友——<span class="uline">幂函数</span>：买菜付款 p=w、正方形面积 S=a²、立方体体积 V=b³、场地边长 c=√S、骑车速度 v=1/t（p89 五个实例）。它们长得都像 <span class="mark">y=x<sup>α</sup></span>——<strong>底数是自变量 x，指数是常数 α</strong>。读完这节，"研究一类新函数"的完整套路就归你所有了。</p>
+<div class="check">
+<p><strong>读完这节你能：</strong></p>
+<ul>
+<li>从五个实例里认出<span class="mark">幂函数</span>，背出定义"<span class="uline">函数 y=x<sup>α</sup> 叫做幂函数（power function），其中 x 是自变量，α 是常数</span>"（p89 原文），并一眼排除 y=2x²、y=x+1 这类冒牌货；</li>
+<li>在同一坐标系里画出 y=x、y=x²、y=x³、y=x<sup>1/2</sup>、y=x<sup>−1</sup> 五条图象，并填写<span class="uline">表3.3-1</span>（定义域/值域/奇偶性/单调性）五列；</li>
+<li>复述教材四条结论：都过 <span class="mark">(1,1)</span>、三个奇一个偶、(0,+∞) 上四个增一个减、y=x<sup>−1</sup> 的<span class="uline">无限接近</span>趋势；</li>
+<li>照教材例题的<span class="uline">作差＋分子有理化</span>五步证明 f(x)=√x 是增函数，并用同样套路解"过点求解析式、比大小、管道流量"三道应用。</li>
+</ul>
+</div>
+<div class="station">
+<p class="station-title">第 0 站 · 预备块：你早已认识的"幂"，和刚领到的两件工具</p>
+<p><strong>旧工具一（初中·幂）：</strong>x·x=x²，x·x·x=x³，√x=S<sup>1/2</sup>，1/x=x<sup>−1</sup>——<span class="mark">幂</span>就是"底数连乘与它的推广"，教材边注提醒：<span class="uline">√S 也可以表示为 S<sup>1/2</sup></span>（p89）。</p>
+<p><strong>旧工具二（3.1+3.2·研究函数的路线图）：</strong>3.1 的函数概念（定义域→对应关系→值域）＋3.2 的性质工具箱（单调性=增减体检、奇偶性=对称体检）。教材 p90 开场原句把路线图说穿了："通常可以先根据函数解析式求出函数的<span class="mark">定义域</span>，画出函数的<span class="mark">图象</span>；再利用图象和解析式，讨论函数的<span class="mark">值域、单调性、奇偶性</span>等问题。"——本节就是照这张路线图走一遍。</p>
+</div>
+<div class="station">
+<p class="station-title">第 1 站 · 五个实例看一眼：什么是幂函数（p89）</p>
+<p>教材一口气给了五个真实情境（p89），先看清它们各自"谁是谁的函数"：</p>
+<table class="cmp">
+<tr><th>实例（p89）</th><th>解析式</th><th>谁是函数</th><th>幂的形状</th></tr>
+<tr><td>① 张红以 1 元/kg 买蔬菜 w kg，需支付 p 元</td><td>p=w</td><td>p 是 w 的函数</td><td>w¹（指数1）</td></tr>
+<tr><td>② 正方形边长 a，面积 S</td><td>S=a²</td><td>S 是 a 的函数</td><td>a²（指数2）</td></tr>
+<tr><td>③ 立方体棱长 b，体积 V</td><td>V=b³</td><td>V 是 b 的函数</td><td>b³（指数3）</td></tr>
+<tr><td>④ 正方形场地面积 S，边长 c</td><td>c=√S（=S<sup>1/2</sup>）</td><td>c 是 S 的函数</td><td>S<sup>1/2</sup>（指数½）</td></tr>
+<tr><td>⑤ 某人 t s 内骑车行进 1 km，平均速度 v km/s</td><td>v=1/t（=t<sup>−1</sup>）</td><td>v 是 t 的函数</td><td>t⁻¹（指数−1）</td></tr>
+</table>
+<div class="try"><p><strong>验一验①（p89 观察框）：</strong>观察 (1)～(5) 中的函数解析式，它们有什么共同特征？——<span class="ans">解析式都具有<span class="mark">幂的形式</span>；都以幂的<span class="mark">底数为自变量</span>；幂的<span class="mark">指数都是常数</span>，分别是 1、2、3、1/2、−1。</span></p></div>
+<div class="formula">一般地，函数 <strong>y = x<sup>α</sup></strong> 叫做<strong>幂函数</strong>（power function），其中 x 是自变量，α 是常数。（p89 定义原文）</div>
+<p>两个教材边注都要接住：④的 <span class="uline">√S 也可以表示为 S<sup>1/2</sup></span>（分数指数与根式互通）；另一个边注说"<span class="uline">幂的指数除了可以取整数之外，还可以取其他实数，当它们取其他实数时幂也具有各自的含义，这些会在后面学习</span>"——所以本节<span class="mark">只研究 α=1，2，3，1/2，−1</span> 五个值（p89 原句），别急着问 y=x<sup>√2</sup> 长什么样。</p>
+<div class="alt"><p><span class="tag">拓展 · 可跳过</span> <strong>冒牌货辨析（自编辨析，非教材原文；教材口径=定义形如 y=x<sup>α</sup>）：</strong>y=2x² 不是幂函数——系数是 2 不是 1，它是二次函数；y=x+1 不是幂函数——多了一项，不是"幂的形式"；y=2ˣ 更不是——它<span class="mark">底数是常数、指数是变量</span>，和幂函数正好反着，这是后面要学的指数函数。一句话口诀：<span class="mark">"底变指不变才是幂，指变底不变是指数"</span>（自编口诀）。</p></div>
+<div class="try"><p><strong>验一验②（p89 思考框）：</strong>结合以往学习函数的经验，你认为应该如何研究这些函数？——<span class="ans">照 p90 路线图：先由解析式求<span class="mark">定义域</span>→画<span class="mark">图象</span>→再讨论<span class="mark">值域、单调性、奇偶性</span>。这正是 3.2 练过的"定义法"全套。</span></p></div>
+</div>
+<div class="station">
+<p class="station-title">第 2 站 · 五条曲线一张图：图象与性质总表（p90 图3.3-1、表3.3-1）</p>
+<p>在同一坐标系中画出 y=x、y=x²、y=x³、y=x<sup>1/2</sup>、y=x<sup>−1</sup> 的图象（p90 图3.3-1 影印复刻）：y=x³ 在 (-1.5,3.375) 穿第三象限上冲，y=x² 抛物线过原点，y=x 直线穿心，y=x<sup>1/2</sup> 像"躺平的抛物线右半支"，y=x⁻¹ 两支贴着坐标轴弯。</p>
+<div class="figure">
+<svg viewBox="0 0 660 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图3.3-1复刻：幂函数y=x,y=x平方,y=x三次方,y=x二分之一次方,y=x负一次方在-5到5坐标系中的图象">
+<rect x="0" y="0" width="660" height="420" fill="#fbfdff"/>
+<g stroke="#c9d6e2" stroke-width="1">
+<line x1="60" y1="60" x2="600" y2="60"/><line x1="60" y1="120" x2="600" y2="120"/><line x1="60" y1="240" x2="600" y2="240"/><line x1="60" y1="300" x2="600" y2="300"/><line x1="120" y1="40" x2="120" y2="380"/><line x1="240" y1="40" x2="240" y2="380"/><line x1="420" y1="40" x2="420" y2="380"/><line x1="480" y1="40" x2="480" y2="380"/><line x1="540" y1="40" x2="540" y2="380"/>
+</g>
+<line x1="50" y1="210" x2="610" y2="210" stroke="#1a2332" stroke-width="1.6"/>
+<line x1="330" y1="30" x2="330" y2="390" stroke="#1a2332" stroke-width="1.6"/>
+<polygon points="610,206 618,210 610,214" fill="#1a2332"/><polygon points="326,30 330,22 334,30" fill="#1a2332"/>
+<text x="600" y="228" font-size="14" fill="#1a2332">x</text><text x="340" y="40" font-size="14" fill="#1a2332">y</text>
+<text x="322" y="226" font-size="12" fill="#1a2332">O</text>
+<text x="116" y="226" font-size="11" fill="#5a6b7d">-5</text><text x="236" y="226" font-size="11" fill="#5a6b7d">-3</text><text x="416" y="226" font-size="11" fill="#5a6b7d">3</text><text x="536" y="226" font-size="11" fill="#5a6b7d">5</text>
+<text x="308" y="66" font-size="11" fill="#5a6b7d">5</text><text x="304" y="126" font-size="11" fill="#5a6b7d">3</text><text x="300" y="246" font-size="11" fill="#5a6b7d">-3</text><text x="298" y="306" font-size="11" fill="#5a6b7d">-5</text>
+<g fill="none" stroke-width="2.4">
+<path d="M 330 210 L 570 210" stroke="#2e9e5b"/>
+<path d="M 60 390 Q 330 390 330 210 Q 330 30 600 30" stroke="#c2427e"/>
+<path d="M 324 380 C 328 300 331 250 331 210 C 331 170 334 120 340 40" stroke="#2a9fc9"/>
+<path d="M 330 210 L 336 186 L 342 168 L 354 138 L 378 100 L 426 68 L 498 46 L 570 34" stroke="#e2739c"/>
+<path d="M 336 40 C 345 150 380 190 570 202" stroke="#1a2332"/>
+<path d="M 90 218 C 240 228 310 258 324 375" stroke="#1a2332"/>
+</g>
+<circle cx="366" cy="174" r="3.4" fill="#c0392b"/>
+<text x="374" y="168" font-size="12.5" font-weight="bold" fill="#c0392b">(1,1) 公共点</text>
+<text x="548" y="200" font-size="13" fill="#2e9e5b">y=x</text>
+<text x="560" y="52" font-size="13" fill="#c2427e">y=x²</text>
+<text x="342" y="52" font-size="13" fill="#2a9fc9">y=x³</text>
+<text x="512" y="86" font-size="13" fill="#e2739c">x^(1/2)</text>
+<text x="438" y="194" font-size="13" fill="#1a2332">y=x⁻¹</text>
+</svg>
+<p class="figcap">图3.3-1 影印复刻（p90·五函数同坐标系·五色区分·都过红点 (1,1)）。影印原图 x∈[-5,5]、y∈[-5,5]，y=x³ 蓝色在左下、y=x² 紫红抛物线、y=x 绿色直线、y=x<sup>1/2</sup> 粉色缓升、y=x⁻¹ 黑色双曲两支。</p>
+</div>
+<p>教材探究框（p90）："观察函数图象并结合函数解析式，将你发现的结论写在表 3.3-1 内"——表 3.3-1 印刷版是空表（四个项目×五个函数），下面按"填好的答案"给出（每格都可在影印图上指认）：</p>
+<table class="cmp">
+<tr><th>项目</th><th>y=x</th><th>y=x²</th><th>y=x³</th><th>y=x<sup>1/2</sup></th><th>y=x⁻¹</th></tr>
+<tr><td>定义域</td><td>R</td><td>R</td><td>R</td><td>[0,+∞)</td><td>(−∞,0)∪(0,+∞)</td></tr>
+<tr><td>值域</td><td>R</td><td>[0,+∞)</td><td>R</td><td>[0,+∞)</td><td>(−∞,0)∪(0,+∞)</td></tr>
+<tr><td>奇偶性</td><td>奇</td><td>偶</td><td>奇</td><td>非奇非偶</td><td>奇</td></tr>
+<tr><td>单调性</td><td>R 上增</td><td>(−∞,0] 减，[0,+∞) 增</td><td>R 上增</td><td>[0,+∞) 增</td><td>(0,+∞) 减，(−∞,0) 减</td></tr>
+</table>
+<p><strong>教材四条结论（p90 原文口径）：</strong></p>
+<ol>
+<li>五个函数的图象<span class="mark">都通过点 (1,1)</span>（1 的任何次幂都是 1，y=x<sup>1/2</sup> 在 x=1 处也是 1）；</li>
+<li>y=x、y=x³、y=x⁻¹ 是<span class="mark">奇函数</span>，y=x² 是<span class="mark">偶函数</span>（y=x<sup>1/2</sup> 定义域不含负数，谈不上奇偶）；</li>
+<li>在区间 (0,+∞) 上，y=x、y=x²、y=x³、y=x<sup>1/2</sup> <span class="mark">单调递增</span>，y=x⁻¹ <span class="mark">单调递减</span>；</li>
+<li>在第一象限内，y=x⁻¹ 的图象<span class="uline">向上与 y 轴无限接近，向右与 x 轴无限接近</span>（"无限接近"= 渐近趋势的白话版）。</li>
+</ol>
+<div class="note-red"><strong>易错红卡（自编，据教材图3.3-1与结论(3)(4)提炼）：</strong>① y=x⁻¹ 在两个区间上<span class="mark">各自递减</span>，但<span class="mark">不能写成"在定义域内整体递减"</span>——取 x=−1 与 x=1，f(−1)=−1 &lt; f(1)=1，跨过 y 轴反而变大，"整体递减"是错的；② y=x<sup>1/2</sup> 定义域是 [0,+∞)，<span class="mark">0 可以取</span>（√0=0），别把 0 丢掉；③ 表里 y=x² 与 y=x<sup>1/2</sup> 值域同为 [0,+∞)，但一条是抛物线、一条是"右半支躺平"，值域相同≠图象相同。</div>
+</div>
+<div class="station">
+<p class="station-title">第 3 站 · 定义法证一次"新函数"：教材例题逐行拆（p90-91 例）</p>
+<p><strong>例（p90 原题）：</strong>证明幂函数 f(x)=√x 是增函数。</p>
+<p>教材证明分四步，每一步都有"为什么能这么写"的底牌：</p>
+<table class="cmp">
+<tr><th>步骤（教材原文口径）</th><th>写法</th><th>底牌（为什么合法）</th></tr>
+<tr><td>① 交代定义域</td><td>函数的定义域是 [0,+∞)</td><td>√x 要求 x≥0，<span class="mark">0 也算</span>；单调性必须在定义域内谈</td></tr>
+<tr><td>② 任设两点</td><td>∀x₁,x₂∈[0,+∞)，且 x₁&lt;x₂</td><td>"任意"两个字是定义法的命根（3.2.1 单调性定义同款开头）</td></tr>
+<tr><td>③ 作差＋变形</td><td>f(x₁)−f(x₂)=√x₁−√x₂=((√x₁−√x₂)(√x₁+√x₂))/(√x₁+√x₂)=(x₁−x₂)/(√x₁+√x₂)</td><td><span class="mark">分子有理化</span>：乘以共轭 (√x₁+√x₂)/(√x₁+√x₂)=1，把带根号的差变成纯分式</td></tr>
+<tr><td>④ 定号→结论</td><td>因为 x₁−x₂&lt;0，√x₁+√x₂&gt;0，所以 f(x₁)&lt;f(x₂)，即 f(x)=√x 是增函数（p91 原文）</td><td>分母恒正（根号非负且不同时为0）、分子为负，商为负</td></tr>
+</table>
+<div class="try"><p><strong>验一验③（p90-91 例题复述）：</strong>不看上表，默写四步——<span class="ans">定义域 [0,+∞) → 任设 x₁&lt;x₂ → 作差、分子有理化 → 定号得 f(x₁)&lt;f(x₂)。</span>抽验数值：x₁=0, x₂=4 时 f(x₁)−f(x₂)=0−2=−2&lt;0 ✓；x₁=1, x₂=4 时 1−2=−1&lt;0 ✓。</p></div>
+<div class="alt"><p><span class="tag">拓展 · 可跳过</span> <strong>方法论收口（自编，承 p89 思考框"如何研究"）：</strong>"研究一类新函数"的完整五步——<span class="mark">给定义 → 求定义域 → 画图象 → 填性质表 → 用定义证性质</span>。3.2 证二次函数用"作差配方"，本节证根式函数用"作差有理化"，变的只是变形手艺，<span class="uline">定义法骨架一个字不用改</span>。</p></div>
+</div>
+<div class="station">
+<p class="station-title">第 4 站 · 幂函数怎么用：过点求式、比大小、管道流量（p91）</p>
+<p><strong>用法一：过点求解析式（p91 练习1）。</strong>已知幂函数 y=f(x) 的图象过点 (2,√2)，求解析式。——设 y=x<sup>α</sup>，代点：2<sup>α</sup>=√2=2<sup>1/2</sup>，所以 <span class="mark">α=1/2，y=x<sup>1/2</sup></span>。整节只用到"幂函数系数必为 1、指数待定"这一件事。</p>
+<p><strong>用法二：比大小（p91 练习2）——"同指不同底，看幂函数单调性"。</strong></p>
+<ul>
+<li>(1) (−1.5)³ 与 (−1.4)³：同用 y=x³（R 上增），−1.5&lt;−1.4 ⟹ <span class="mark">(−1.5)³&lt;(−1.4)³</span>。数值复核：(−1.5)³=−3.375，(−1.4)³=−2.744，−3.375&lt;−2.744 ✓。</li>
+<li>(2) 1/(−1.5) 与 1/(−1.4)：同用 y=x⁻¹ 在 (−∞,0) 上递减，−1.5&lt;−1.4 ⟹ <span class="mark">1/(−1.5)&gt;1/(−1.4)</span>。数值复核：−2/3≈−0.667，−5/7≈−0.714，−0.667&gt;−0.714 ✓（两个都是负数，"递减"方向的符号别搞反）。</li>
+</ul>
+<p><strong>用法三：管道流量（p91 习题3.3 综合运用2）——正比即幂函数。</strong>在固定压力差下，气体过圆形管道，流量 v（单位 cm³/s）与管道半径 r（单位 cm）的<span class="uline">四次方成正比</span>：</p>
+<ul>
+<li>(1) "与 r⁴ 成正比"译成解析式：<span class="mark">v=kr⁴</span>（k&gt;0 为比例常数）；</li>
+<li>(2) r=3 时 v=400：400=k·3⁴=81k ⟹ k=400/81，所以 <span class="mark">v=(400/81)r⁴</span>；</li>
+<li>(3) r=5：v=(400/81)·5⁴=(400·625)/81=250000/81≈3086.4，<span class="mark">精确到 1 cm³/s 得 3086 cm³/s</span>。</li>
+</ul>
+<p><strong>用法四：描点画 y=x⁻²（p91 习题3.3 第3题，思路带过）。</strong>定义域 {x|x≠0}；由 (±2)⁻²=1/4、(±1)⁻²=1 知 f(−x)=f(x)，<span class="mark">偶函数</span>；值域 (0,+∞)；在 (0,+∞) 上递减（可用第 3 站定义法证明，作差通分后分子 x₂²−x₁²&gt;0、分母 x₁²x₂²&gt;0）。图象两支像"更瘦的 y=x⁻¹"，在 y 轴两侧对称翘起。</p>
+<div class="try"><p><strong>验一验④（p91 习题3.3 复习巩固1 口头版）：</strong>y=√|x| 的图象与奇偶性？——<span class="ans">x≥0 时 y=√x，x&lt;0 时 |x|=−x，故 y=√(−x)，左右两支<span class="mark">关于 y 轴对称</span>，是偶函数；[0,+∞) 上递增、(−∞,0] 上递减，底牌是外层 √ 增、内层 |x| 左减右增的复合效果（复合细分到选择性必修才正式学，此处看图即可）。</span></p></div>
+</div>
+<div class="walk">
+<p><strong>收口三问（合上书自答）：</strong></p>
+<ul>
+<li>幂函数和"长得像幂"的函数怎么区分？——<span class="mark">形如 y=x<sup>α</sup>：系数 1、底数为自变量、指数为常数</span>；y=2x²、y=x+1、y=2<sup>x</sup> 全都出局（自编口诀"底变指不变"）。</li>
+<li>五条曲线在哪一点集合？——<span class="mark">(1,1)</span>；奇偶分工：x、x³、x⁻¹ 奇，x² 偶，x<sup>1/2</sup> 非奇非偶；(0,+∞) 上四个增、x⁻¹ 减。</li>
+<li>证 f(x)=√x 增函数的"变形手艺"叫什么？——<span class="mark">作差＋分子有理化</span>，骨架仍是 3.2.1 单调性定义的五步。</li>
+</ul>
+</div>
+<div class="selftest">
+<p><strong>节末自测四连（先做再看答案）：</strong></p>
+<ol>
+<li>下列哪些是幂函数？A. y=x<sup>1/3</sup>　B. y=3x²　C. y=x<sup>π</sup>　D. y=(x−1)² ——<span class="detail">A 是（形如 y=x<sup>α</sup>，α=1/3 虽不在五值内但形式合规）；B 不是（系数 3）；C 形式上是（指数为常数实数，教材边注：其他实数的含义后面学）；D 不是（底数是 x−1 不是 x）。（自编题，考定义辨析）</span></li>
+<li>幂函数 y=f(x) 过点 (4,2)，则 f(9)=？——<span class="detail">4<sup>α</sup>=2 ⟹ α=1/2，f(x)=x<sup>1/2</sup>，f(9)=3。（仿 p91 练习1 自编变式）</span></li>
+<li>比较 2.5<sup>1/2</sup> 与 2.6<sup>1/2</sup> 大小并说理。——<span class="detail">y=x<sup>1/2</sup> 在 [0,+∞) 增（教材结论(3)），2.5&lt;2.6 ⟹ 2.5<sup>1/2</sup>&lt;2.6<sup>1/2</sup>。（仿 p91 练习2）</span></li>
+<li>说出 y=x⁻¹ 图象在第一象限的走势（用教材原句）。——<span class="detail">"向上与 y 轴无限接近，向右与 x 轴无限接近"（p90 结论(4)原文）。</span></li>
+</ol>
+</div>
+<div class="kaowei">
+<p class="kw-title">高考怎么考 · 考位锚（T11）</p>
+<p>· 高频考位：<strong>幂函数定义辨析（系数/底数/指数三查）＋过点求解析式＋利用单调性比大小＋定义法证单调性奇偶性</strong>；<br>
+· 比大小题多与 3.2 单调性、后续指数对数串考，本节先立"同指比底看幂函数"的反射；<br>
+· <span class="sub">真题锚申报：真题锚池内未录"数学3.3"专行，候采不代拟（宁缺毋编·沿 3.1/2.2 件同口径）。</span></p>
+</div>
+<div class="figure">
+<svg viewBox="0 0 640 92" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第三章函数的概念与性质四节谱系，当前在3.3幂函数">
+<rect x="8" y="20" width="70" height="46" rx="8" fill="#f0f0f0" stroke="#b8b8b8"/>
+<text x="16" y="40" font-size="12" fill="#5a6b7d">章题页</text><text x="16" y="56" font-size="10" fill="#9a9a9a">p58候锚</text>
+<rect x="90" y="20" width="150" height="46" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>
+<text x="98" y="40" font-size="12" fill="#1e3a5f">3.1 概念与表示</text><text x="98" y="56" font-size="10" fill="#5a6b7d">p60-75 已并main</text>
+<rect x="252" y="20" width="128" height="46" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>
+<text x="260" y="40" font-size="12" fill="#1e3a5f">3.2 基本性质</text><text x="260" y="56" font-size="10" fill="#5a6b7d">p76-87 在产(规划师)</text>
+<rect x="392" y="14" width="140" height="58" rx="8" fill="#fff3cd" stroke="#c9a227" stroke-width="2"/>
+<text x="400" y="38" font-size="13" font-weight="bold" fill="#7a5c00">3.3 幂函数（本件）</text><text x="400" y="54" font-size="10" fill="#8a6d1a">p89-91 影印实锚</text><text x="400" y="66" font-size="10" fill="#8a6d1a">p88信技/p92探究=构件</text>
+<rect x="544" y="20" width="88" height="46" rx="8" fill="#f0f0f0" stroke="#b8b8b8"/>
+<text x="552" y="40" font-size="12" fill="#5a6b7d">3.4 应用(一)</text><text x="552" y="56" font-size="10" fill="#9a9a9a">p93起候锚</text>
+<line x1="78" y1="42" x2="90" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="240" y1="42" x2="252" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="380" y1="42" x2="392" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="532" y1="42" x2="544" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+</svg>
+<p class="figcap">位置图：3.3 幂函数站在 3.1 概念、3.2 性质两件工具的交汇口（p89 开场原句"利用这些知识研究一类新的函数"），为 3.4 函数的应用（一）备好"从解析式读性质"的手感；p88 信息技术应用与 p92 探究与发现系章内选学构件，不占节界。</p>
+</div>
+<p class="sub" style="text-align:center">—— 本件节界：3.3 全节 p89-91（p89 节题页亲目检实锚·右界=p92 探究与发现直读在案·左界=p88 信息技术应用直读在案·3.2 正界归 dui2_32_1031 在产件），影印 16 页全 HTTP 200 实取、核心 5 页（p88/89/90/91/92）亲目检，ts=1787023173400 实测复取（图84-99 活性验证非盲抄）。</p>
+<div class="foot"><div class="no-print" style="text-align:center;color:#8a9bb0;font-size:.85em;margin-top:18px">并行搜索员B · 队2席 · 承群令v10②顺延条款（硬闸19:15·认领行28b6af9·dui2_33_1031分支）· 标准v2.3 · 产出走分支候并不直推main</div></div>
+</body>
+</html>
