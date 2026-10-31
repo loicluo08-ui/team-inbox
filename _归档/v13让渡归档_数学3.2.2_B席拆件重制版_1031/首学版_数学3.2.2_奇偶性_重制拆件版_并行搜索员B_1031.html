@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学3.2.2 奇偶性 · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#16233a}
+h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
+h3{color:#2c5f8f;margin-top:1.6em}
+.station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
+.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.formula{background:#eef4fa;border-radius:8px;padding:10px 16px;margin:10px 0;font-family:"STIX Two Text","Times New Roman",serif}
+.quiz{background:#f0f7f0;border:1px solid #b5d0b5;border-radius:8px;padding:10px 16px;margin:12px 0}
+.quiz b{color:#2f6b2f}
+.box{background:#fdf6ec;border:1px solid #e0c9a0;border-radius:8px;padding:10px 16px;margin:12px 0}
+.think{background:#f6eee4;border:1px solid #d4b98c;border-radius:8px;padding:10px 16px;margin:12px 0}
+.explore{background:#e8f2ec;border:1px solid #9cc3ab;border-radius:8px;padding:10px 16px;margin:12px 0}
+.mark{background:#fff3bf;padding:0 4px;border-radius:4px;font-weight:bold}
+.uline{border-bottom:2px solid #e8a33d;padding-bottom:1px}
+.sub{color:#6b7a8d;font-size:.85em}
+.kaowei{background:#f2f0fa;border:1px solid #c3bce0;border-radius:8px;padding:12px 16px;margin:12px 0}
+.kw-title{font-weight:bold;color:#4a3f7a}
+.detail{display:block;margin:6px 0;font-size:.95em}
+.figure{margin:14px 0;text-align:center}
+.figcap{font-size:.88em;color:#5a6b7d;margin-top:6px}
+table{border-collapse:collapse;margin:12px auto}
+td,th{border:1px solid #9fb3c4;padding:5px 12px;text-align:center}
+th{background:#e3edf6}
+.meta{font-size:.85em;color:#5a6b7d;border-top:1px solid #d7e3ee;padding-top:10px;margin-top:20px}
+.steps li{margin:6px 0}
+</style>
+</head>
+<body>
+<h1>数学 3.2.2 奇偶性 <span class="sub">人教A版 必修第一册 · 零基础首学版 v1.0 · 2026-10-31</span></h1>
+<p><strong>开场一句话：</strong>3.2.1 用<span class="mark">单调性</span>回答了"函数往哪边走"，这一小节研究函数的另一类"身材"——<span class="uline">对称性</span>：有的函数图象沿 y 轴一折两边重合（偶），有的绕原点转半圈和自己重合（奇）。教材 p82 开场原句：前面我们用符号语言精确地描述了函数图象在定义域的某个区间上"上升"（或"下降"）的性质，下面继续研究函数的其他性质。读完这节，判断奇偶、用对称补图、借助对称减半研究工作量，三件事一次拿下。</p>
+<div class="check">
+<p><strong>读完这节你能：</strong></p>
+<ul>
+<li>背出<span class="uline">偶函数</span>定义：设函数 f(x) 的定义域为 D，如果 <span class="mark">∀x∈D，都有 −x∈D，且 f(−x)=f(x)</span>，那么函数 f(x) 就叫做偶函数（even function）（p83 原文）；并指出"<strong>−x∈D</strong>"这半句是定义域对称的体检项，漏了它，x∈[−1,2] 上的函数根本没资格谈奇偶；</li>
+<li>背出<span class="uline">奇函数</span>定义：∀x∈D，都有 −x∈D，且 <span class="mark">f(−x)=−f(x)</span>（p84 原文），并说出偶函数图象关于 <span class="mark">y 轴对称</span>、奇函数图象关于<span class="mark">原点对称</span>这两条"充要条件"（p85 练习3）；</li>
+<li>按"<span class="uline">先看定义域，再算 f(−x)</span>"两步判断具体函数奇偶性（教材例6 母版：x⁴/x⁵/x+1/x/1/x² 四连），并会做 p85 练习2 的 2x⁴+3x² 与 x³−2x；</li>
+<li>利用奇偶性<span class="mark">只研究一半</span>：给一半图象补出另一半（p85 练习1、思考(2)），并说明为什么这是"锁定"而不是"推测"（p85 思考(3)：简化对函数的研究）。</li>
+</ul>
+</div>
+
+<div class="station">
+<p class="station-title">第 0 站 · 上行检票：先看见对称，再翻译成符号</p>
+<p>教材请你先画出两个函数的图象（p82·图3.2-6）：</p>
+<div class="figure">
+<svg viewBox="0 0 660 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图3.2-6复刻：左图f(x)=x²抛物线，右图g(x)=2-|x|尖顶折线，两图都关于y轴对称">
+<line x1="120" y1="20" x2="120" y2="200" stroke="#9aa7b5" stroke-width="1.5"/><line x1="20" y1="160" x2="230" y2="160" stroke="#9aa7b5" stroke-width="1.5"/>
+<path d="M 30 30 Q 120 250 210 30" fill="none" stroke="#c9366b" stroke-width="2.5"/>
+<line x1="120" y1="160" x2="120" y2="160" stroke="#c9366b"/>
+<text x="128" y="70" font-size="13" fill="#c9366b">f(x)=x²</text>
+<text x="105" y="176" font-size="12" fill="#5a6b7d">O</text>
+<text x="222" y="176" font-size="12" fill="#5a6b7d">x</text><text x="106" y="32" font-size="12" fill="#5a6b7d">y</text>
+<text x="60" y="182" font-size="11" fill="#8a97a5">-3</text><text x="170" y="182" font-size="11" fill="#8a97a5">3</text>
+<line x1="420" y1="20" x2="420" y2="200" stroke="#9aa7b5" stroke-width="1.5"/><line x1="320" y1="160" x2="530" y2="160" stroke="#9aa7b5" stroke-width="1.5"/>
+<path d="M 330 195 L 420 115 L 510 195" fill="none" stroke="#c9366b" stroke-width="2.5"/>
+<text x="428" y="105" font-size="13" fill="#c9366b">g(x)=2−|x|</text>
+<text x="408" y="176" font-size="12" fill="#5a6b7d">O</text>
+<text x="362" y="182" font-size="11" fill="#8a97a5">-3</text><text x="472" y="182" font-size="11" fill="#8a97a5">3</text>
+<text x="420" y="30" font-size="11" fill="#8a97a5">2</text><line x1="416" y1="115" x2="424" y2="115" stroke="#8a97a5"/>
+</svg>
+<p class="figcap">图3.2-6 影印复刻（p82·左抛物线右尖顶，两图都关于 y 轴对称·红粉双色曲线）。p82 原文结论："可以发现，这两个函数的图象都关于 y 轴对称。"</p>
+</div>
+<div class="explore"><p><strong>探究（p82 照录）：</strong>类比函数单调性，你能用符号语言精确地描述"函数图象关于 y 轴对称"这一特征吗？——教材的路线：先取特殊值列表观察（表3.2-1），再升级成对全体 x 的等式。</p></div>
+<table>
+<tr><th>x</th><th>…</th><th>−3</th><th>−2</th><th>−1</th><th>0</th><th>1</th><th>2</th><th>3</th><th>…</th></tr>
+<tr><td>f(x)=x²</td><td>…</td><td>9</td><td>4</td><td>1</td><td>0</td><td>1</td><td>4</td><td>9</td><td>…</td></tr>
+<tr><td>g(x)=2−|x|</td><td>…</td><td>−1</td><td>0</td><td>1</td><td>2</td><td>1</td><td>0</td><td>−1</td><td>…</td></tr>
+</table>
+<p class="figcap">表3.2-1 影印复刻（p82·自变量取一对相反数时，相应的两个函数值相等）。</p>
+<p>教材的升级三步（p82 原样）：f(−3)=9=f(3)；f(−2)=4=f(2)；f(−1)=1=f(1)；实际上，<span class="mark">∀x∈R，都有 f(−x)=(−x)²=x²=f(x)</span>，这时称函数 f(x)=x² 为<span class="uline">偶函数</span>。p82 旁注框还留了一道动手题：请你仿照这个过程，说明函数 g(x)=2−|x| 也是偶函数——g(−x)=2−|−x|=2−|x|=g(x)，一行收工。</p>
+</div>
+
+<div class="station">
+<p class="station-title">第 1 站 · 偶函数：定义、图例与"镜像房产"直觉</p>
+<div class="formula">设函数 f(x) 的定义域为 D，如果 ∀x∈D，都有 −x∈D，且 f(−x)=f(x)，那么函数 f(x) 就叫做<b>偶函数</b>（even function）。（p83 原文）</div>
+<p>教材紧跟两个图例（p83·图3.2-7）：f(x)=x²+1 与 g(x)=2/(x²+11)——一抛物一馒头，都过"中轴对折重合"体检。</p>
+<div class="figure">
+<svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图3.2-7复刻：左图f(x)=x²+1抛物线过(0,1)，右图g(x)=2/(x²+11)馒头形峰约0.18">
+<line x1="120" y1="15" x2="120" y2="180" stroke="#9aa7b5" stroke-width="1.5"/><line x1="25" y1="145" x2="225" y2="145" stroke="#9aa7b5" stroke-width="1.5"/>
+<path d="M 40 35 Q 120 205 200 35" fill="none" stroke="#c9366b" stroke-width="2.5" transform="translate(0,-28)"/>
+<circle cx="120" cy="120" r="3" fill="#c9366b"/>
+<text x="130" y="92" font-size="13" fill="#c9366b">f(x)=x²+1</text>
+<text x="108" y="160" font-size="11" fill="#5a6b7d">O</text><text x="112" y="128" font-size="10" fill="#8a97a5">1</text>
+<line x1="450" y1="15" x2="450" y2="180" stroke="#9aa7b5" stroke-width="1.5"/><line x1="340" y1="145" x2="570" y2="145" stroke="#9aa7b5" stroke-width="1.5"/>
+<path d="M 350 128 Q 450 75 555 128" fill="none" stroke="#c9366b" stroke-width="2.5"/>
+<text x="462" y="95" font-size="13" fill="#c9366b">g(x)=2/(x²+11)</text>
+<text x="438" y="160" font-size="11" fill="#5a6b7d">O</text>
+<text x="405" y="160" font-size="10" fill="#8a97a5">0.10</text><text x="402" y="88" font-size="10" fill="#8a97a5">0.18</text>
+</svg>
+<p class="figcap">图3.2-7 影印复刻（p83·两个偶函数：左抛物线平移过 (0,1)，右"馒头"峰约 0.18、x=±5 处缓降到 0.1 附近）。</p>
+</div>
+<div class="box"><p><strong>为什么定义里必须有"−x∈D"？</strong>——这是奇偶性的<span class="mark">入场券</span>：要比较 f(−x) 与 f(x)，−x 就得也在定义域里，否则等式一边没意义。所以定义域关于原点对称是<span class="uline">先决条件</span>（黄金样本同款升维：先问定义域——p84 旁注框原句"奇偶性是函数在它的定义域上的整体性质，所以判断函数的奇偶性应先明确它的定义域"）。直觉版：偶函数像一张沿 y 轴对折的<span class="uline">镜像房产图</span>，左边每个点 (−x, f(−x)) 都与右边 (x, f(x)) 一一配对锁死——研究一半，另一半是"<strong>锁定</strong>"不是"推测"（对称性=信息压缩·标注自编教法候选定性）。</p></div>
+</div>
+
+<div class="station">
+<p class="station-title">第 2 站 · 奇函数：原点旋转 180° 的重合</p>
+<div class="explore"><p><strong>探究（p83 照录）：</strong>观察函数 f(x)=x 和 g(x)=1/x 的图象（图3.2-8），你能发现这两个函数图象有什么共同特征吗？你能用符号语言精确地描述这一特征吗？——p83 结论句："可以发现，两个函数的图象都关于原点成中心对称图形。"</p></div>
+<div class="figure">
+<svg viewBox="0 0 660 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图3.2-8复刻：左图f(x)=x过原点直线，右图g(x)=1/x双曲两支">
+<line x1="120" y1="15" x2="120" y2="185" stroke="#9aa7b5" stroke-width="1.5"/><line x1="20" y1="105" x2="230" y2="105" stroke="#9aa7b5" stroke-width="1.5"/>
+<line x1="45" y1="170" x2="205" y2="42" stroke="#c9366b" stroke-width="2.5"/>
+<text x="150" y="55" font-size="13" fill="#c9366b">f(x)=x</text>
+<text x="110" y="119" font-size="11" fill="#5a6b7d">O</text>
+<text x="40" y="183" font-size="11" fill="#8a97a5">-3</text><text x="193" y="120" font-size="11" fill="#8a97a5">3</text>
+<line x1="460" y1="15" x2="460" y2="185" stroke="#9aa7b5" stroke-width="1.5"/><line x1="350" y1="105" x2="575" y2="105" stroke="#9aa7b5" stroke-width="1.5"/>
+<path d="M 375 30 Q 445 95 468 168" fill="none" stroke="#c9366b" stroke-width="2.5"/>
+<path d="M 452 42 Q 475 115 548 180" fill="none" stroke="#c9366b" stroke-width="2.5"/>
+<text x="490" y="55" font-size="13" fill="#c9366b">g(x)=1/x</text>
+<text x="450" y="119" font-size="11" fill="#5a6b7d">O</text>
+<text x="385" y="120" font-size="11" fill="#8a97a5">-3</text><text x="525" y="120" font-size="11" fill="#8a97a5">3</text>
+<text x="466" y="35" font-size="11" fill="#8a97a5">3</text><text x="462" y="180" font-size="11" fill="#8a97a5">-3</text>
+</svg>
+<p class="figcap">图3.2-8 影印复刻（p83·左直线右双曲两支，都关于原点中心对称）。表3.2-2 请你填 x=±1,±2,±3 的两行值——填完即见"相反数进、相反数出"。</p>
+</div>
+<p>教材的升级三步（p84 原样）：f(−3)=−3=−f(3)；f(−2)=−2=−f(2)；f(−1)=−1=−f(1)；实际上，<span class="mark">∀x∈R，都有 f(−x)=−x=−f(x)</span>，这时称函数 f(x)=x 为<span class="uline">奇函数</span>。p84 旁注框同款动手题：仿照说明 g(x)=1/x 也是奇函数——g(−x)=1/(−x)=−1/x=−g(x)。</p>
+<div class="formula">设函数 f(x) 的定义域为 D，如果 ∀x∈D，都有 −x∈D，且 f(−x)=−f(x)，那么函数 f(x) 就叫做<b>奇函数</b>（odd function）。（p84 原文）</div>
+<div class="box"><p><strong>奇 vs 偶，一张表分清：</strong></p>
+<table>
+<tr><th>对比项</th><th>偶函数</th><th>奇函数</th><th>口诀</th></tr>
+<tr><td>代数条件</td><td>f(−x)=f(x)</td><td>f(−x)=−f(x)</td><td>偶=等号直连·奇=差个负号</td></tr>
+<tr><td>图象对称</td><td>关于 y 轴（轴对称）</td><td>关于原点（中心对称）</td><td>偶轴奇点</td></tr>
+<tr><td>必过点</td><td>不强制过原点（x²+1 就不过）</td><td>定义域含 0 时必过 (0,0)（f(0)=−f(0)⇒f(0)=0）</td><td>奇过原点看定义域</td></tr>
+<tr><td>研究省力</td><td>研究 [0,+∞) 送 (−∞,0]</td><td>研究 [0,+∞) 送 (−∞,0]（值取反）</td><td>对称=研究量减半</td></tr>
+</table>
+<p class="figcap">四维对照表（合龙 p82-85 原文定义+图象特征+思考(3)简化研究·第四行"奇过原点看定义域"与末行总结为体系化归纳·标注自编教法候选定性）。</p>
+</div>
+</div>
+
+<div class="station">
+<p class="station-title">第 3 站 · 例6 母版：判断奇偶性四连——先定义域，再算 f(−x)</p>
+<p><strong>例6（p84 照录）判断下列函数的奇偶性：(1) f(x)=x⁴；(2) f(x)=x⁵；(3) f(x)=x+1/x；(4) f(x)=1/x²。</strong></p>
+<ol class="steps">
+<li><strong>(1) x⁴：</strong>定义域为 R；∀x∈R 都有 −x∈R，且 f(−x)=(−x)⁴=x⁴=f(x)——<span class="mark">偶函数</span>。</li>
+<li><strong>(2) x⁵：</strong>定义域为 R；f(−x)=(−x)⁵=−x⁵=−f(x)——<span class="mark">奇函数</span>。（x⁴ 与 x⁵ 只差指数奇偶，结论互换——幂函数奇偶性看指数的伏笔在 3.3）</li>
+<li><strong>(3) x+1/x：</strong>定义域为 {x|x≠0}（先明确定义域！）；f(−x)=−x+1/(−x)=−(x+1/x)=−f(x)——<span class="mark">奇函数</span>。</li>
+<li><strong>(4) 1/x²：</strong>定义域为 {x|x≠0}；f(−x)=1/(−x)²=1/x²=f(x)——<span class="mark">偶函数</span>。</li>
+</ol>
+<div class="think"><p><strong>思考（p85 照录·三连）：(1) 判断函数 f(x)=x³+x 的奇偶性。(2) 图3.2-9 是函数 f(x)=x³+x 图象的一部分，你能根据 f(x) 的奇偶性画出它在 y 轴左边的图象吗？(3) 一般地，如果知道 y=f(x) 为偶（奇）函数，那么我们可以怎样简化对它的研究？</strong></p>
+<p>答要领：(1) 定义域 R，f(−x)=(−x)³+(−x)=−(x³+x)=−f(x)，奇函数；(2) 右半图每点 (x, y) 绕原点转 180° 得 (−x, −y)，把右半"旋转复印"到左侧即可；(3) 奇偶把两半锁死——只需研究 [0,+∞)（或任一半）+用等式锁定另一半；若奇且定义域含 0，f(0)=0 还能白送一个点。这正是"对称性=信息压缩"的教材官方版本（p85 思考(3)原文句式照录）。</p></div>
+<div class="quiz"><p><b>验一验（仿 p85 练习2 自测）：</b>判断 f(x)=2x⁴+3x² 与 g(x)=x³−2x 的奇偶性。<br>答案：f(−x)=2(−x)⁴+3(−x)²=2x⁴+3x²=f(x) 偶；g(−x)=(−x)³−2(−x)=−x³+2x=−(x³−2x)=−g(x) 奇。再做 p85 练习3："从偶（奇）函数的定义出发，证明 y=f(x) 是偶（奇）函数的充要条件是它的图象关于 y 轴（原点）对称"——正向：定义⇒对称（取点证明）；反向：对称⇒定义（任取 x∈D，对称性保证 −x∈D 且等式成立）。两个方向都要写，缺一不可。</p></div>
+</div>
+
+<div class="station">
+<p class="station-title">第 4 站 · 考位：这一小节在考试里坐哪几把椅子</p>
+<div class="kaowei">
+<p class="kw-title">考位锚（T11·承节域p82-88影印直读+常规考法锚定）</p>
+<ul>
+<li><span class="detail"><b>奇偶性判断＝选填第一保送题</b>：例6 母版换皮（多项式/分式/根式），判据固定两步"先定义域对称→再算 f(−x)"；带"非对称定义域"陷阱（如 f(x)=x²，x∈[−1,2]）时直接判"非奇非偶"，入场券缺了别硬算。</span></li>
+<li><span class="detail"><b>奇偶×单调联动＝解答题引擎</b>：奇函数在对称区间上单调性一致（f 在 (0,+∞) 增则 (−∞,0) 也增），偶函数相反（p87 拓广探索12 原题：偶函数在 (0,+∞) 递减⇒在 (−∞,0) 递增——判+证两步）；抽象函数解不等式常走"奇偶搬符号+单调定大小"双桨。</span></li>
+<li><span class="detail"><b>图象补全/解析式回填＝中档常客</b>：p85 练习1（补 half 图）与习题 11（R 上奇函数 x≥0 段 f(x)=x(1+x) 求 f(x) 全解析式）同款：x<0 时 −x>0 代段内解析式，再用 f(x)=−f(−x) 翻符号。</span></li>
+<li><span class="detail"><b>真题锚（在库可引）</b>：2025 年新高考Ⅰ卷·单选8"对数比大小压轴"（设公共值＋可行域交集判"不可能"·答案B）在库，其"构造函数+单调性"组合拳与奇偶性判断共用"先验性质再比大小"的流程骨架——3.2.1 单调性判据是主动轮，奇偶性是省力副翼。</span></li>
+</ul>
+</div>
+<div class="figure">
+<svg viewBox="0 0 660 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：3.2节拆件谱系，当前3.2.2奇偶性收官，右侧3.3幂函数候并">
+<rect x="8" y="20" width="120" height="50" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>
+<text x="16" y="40" font-size="12" fill="#1e3a5f">3.1 概念与表示</text><text x="16" y="56" font-size="10" fill="#5a6b7d">p60-75 已并main</text>
+<rect x="150" y="20" width="150" height="50" rx="8" fill="#e8f2ec" stroke="#6f9e7f" stroke-width="2"/>
+<text x="158" y="40" font-size="12" fill="#2f6b2f">3.2.1 单调与最值</text><text x="158" y="56" font-size="10" fill="#5a6b7d">p76-81 本批已交</text>
+<rect x="322" y="20" width="150" height="50" rx="8" fill="#fff3cd" stroke="#c9a227" stroke-width="2.5"/>
+<text x="330" y="40" font-size="12" fill="#7a5c00">3.2.2 奇偶性（你在）</text><text x="330" y="56" font-size="10" fill="#5a6b7d">p82-88 本件</text>
+<rect x="494" y="20" width="80" height="50" rx="8" fill="#f0f0f0" stroke="#b8b8b8"/>
+<text x="502" y="40" font-size="12" fill="#5a6b7d">3.3 幂函数</text><text x="502" y="56" font-size="10" fill="#9a9a9a">p89-92 候并</text>
+<rect x="590" y="20" width="64" height="50" rx="8" fill="#f0f0f0" stroke="#b8b8b8"/>
+<text x="597" y="40" font-size="12" fill="#5a6b7d">3.4 应用</text><text x="597" y="56" font-size="10" fill="#9a9a9a">p93起 候并</text>
+<line x1="128" y1="45" x2="150" y2="45" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="300" y1="45" x2="322" y2="45" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="472" y1="45" x2="494" y2="45" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="574" y1="45" x2="590" y2="45" stroke="#8fa8bf" stroke-width="2"/>
+</svg>
+<p class="figcap">位置图：3.2.2 奇偶性为 3.2 节拆件收官件——与 3.2.1 合起来才是完整的"函数体检套餐"（p76 节引言"变化中的不变性就是性质"）；p85-88 习题3.2 域申报：复习巩固1-5 归 3.2.1 域，综合运用6-11 与拓广探索12-13（含奇偶题 5/11/12/13）归本件域申报；p87-88 信息技术应用（GeoGebra 绘 f(x)=x³ 与含参 f(x)=bx² 图象·滑动条"动图"）为选学构件在本件域内如实登记不整编。整节件（dui2_32_1031）维持候验不动，拆件与整节件型取舍候群外管理员席终裁。</p>
+</div>
+</div>
+
+<p class="meta">产出信息｜数学3.2.2《奇偶性》零基础首学版 v1.0｜队2席·并行搜索员B·1031夜23:5x-次日00:1x会话｜影印实取13页（图83-95·r1通道200·ts=1787023173400详情API实时复核同值）·本件节界p82-88七页亲目检（左界=p82节题页直读·右界=p88全节末·p89=3.3幂函数节题页直读）｜例6四连+思考三连+练习3题题干影印逐句转录·sympy独立复核（验点留痕随件）｜黄金样本对照：重制件v1.4"对称性=信息压缩/先问定义域"工具沿用·"镜像房产/旋转复印/奇过原点看定义域"三喻标注自编教法候选定性｜宁缺毋编：习题3.2综合运用/拓广探索只登记域申报不整编全题·真题锚卷源在库申报不代拟。</p>
+<div class="foot"><div class="no-print" style="text-align:center;color:#8a9bb0;font-size:.85em;margin-top:18px">并行搜索员B · 队2席 · 承管理员23:07:15段2真增量派单（3.2拆件2/2·分件先后交·认领行dui2_321_1031→本件dui2_322_1031分支）· 标准v2.3 · 产出走分支禁直推main · 随件四附件并单+QC单六项自验+print层同步（见随件md与PDF）</div></div>
+</body>
+</html>
