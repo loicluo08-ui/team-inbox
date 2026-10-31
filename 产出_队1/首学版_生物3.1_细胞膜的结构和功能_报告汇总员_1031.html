@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物3.1 细胞膜的结构和功能 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: 2px; }
+  .talk { background: #1c2129; border: 1px solid #2a3444; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .talk .t { color: #4a9eff; font-weight: bold; }
+  .box { background: #232a36; border: 1px solid #3a4658; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .key { background: #1a2230; border-left: 4px solid #ffd166; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .try { background: #14202e; border: 1px dashed #4a9eff; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .try .t { color: #4a9eff; font-weight: bold; }
+  .ans { display: block; margin-top: 8px; color: #9fd0ff; }
+  .alt { background: #241f14; border: 1px solid #6b5b2a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .alt .t { color: #ffd166; font-weight: bold; }
+  .check { background: #14231a; border: 1px solid #2e5c40; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .check .t { color: #7ee2a8; font-weight: bold; }
+  .note-red { color: #ff9b9b; font-size: 15px; }
+  .fig { margin: 22px 0; }
+  .figcap { color: #7d8a99; font-size: 14px; margin-top: 6px; }
+  .detail { color: #9aa7b8; font-size: 15px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; }
+  th, td { border: 1px solid #33405a; padding: 8px 10px; text-align: left; }
+  th { background: #1d2735; color: #cfe0f5; }
+  .ul-blue { border-left: 3px solid #2e5c8a; padding-left: 16px; margin: 10px 0; }
+  li { margin: 8px 0; }
+  mark { background: #2d4a7a; color: #cfe6ff; padding: 1px 4px; border-radius: 3px; }
+  .markbox { background: #2d4a7a; color: #cfe6ff; display: inline-block; padding: 2px 6px; border-radius: 4px; }
+  .foot { margin-top: 50px; padding-top: 18px; border-top: 1px solid #2a3444; color: #5c6b80; font-size: 13px; line-height: 1.7; }
+  @media print {
+    body { background: #fff !important; color: #111 !important; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3, p, li, td, th, .talk, .box, .key, .try, .alt, .check, .figcap, .detail, .ans { color: #111 !important; background: #fff !important; }
+    .talk, .box, .key, .try, .alt, .check { border: 1px solid #999 !important; }
+    .try { border-style: dashed !important; }
+    mark { background: #ffe28a !important; color: #111 !important; }
+    .step-tag, .talk .t, .try .t, .alt .t, .check .t { background: #d9ecff !important; color: #111 !important; border: 1px solid #7ab3d8; }
+    .foot { color: #555 !important; border-top: 1px solid #999 !important; }
+    .note-red { color: #a03030 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>细胞的"边界"长什么样、管什么事？——从一滴染液说起</h1>
+<p class="sub">生物必修一（人教2019）· 第3章 细胞的基本结构 · 第1节 细胞膜的结构和功能 · 零基础首学版 v1.0 · 前置只有一课——1.1那句"细胞是基本的生命系统"和第2章"分子清单"的大致印象，没读过也不怕，这里自足成课。配套教材：p40-46（对照教材影印逐页写成，原文引用都标了页码；p39=第3章章题页已实锚、p47=第2节节名页已实锚——本节是第3章的开门第一节）。</p>
+
+<ul class="ul-blue"><b>读完这节你能：</b>
+<li>说出细胞膜的三大功能，并用"控制作用是相对的"这句纠错口播堵住判断题的坑（p40-41）。</li>
+<li>复述细胞间信息交流的三种方式，并能给每种方式配一个教材例子（p41）。</li>
+<li>按时间线讲清科学家怎么一步步摸清膜的成分与结构：从1895年欧文顿的推理，到1972年流动镶嵌模型定型（p42-44）。</li>
+<li>说出流动镶嵌模型的基本内容（基本支架、两种运动、糖被），并用它解释"为什么说细胞膜是流动的"（p44-45）。</li>
+</ul>
+
+<div class="box"><b>30秒立好地基（预备块）</b><br>
+初中你已经见过"细胞膜"这个名字，也知道细胞外面有一层边界；"让需要的进、把不需要的挡住"这种安检场景你在机场、车站都经历过。本节全部新词就六个，都在用到时就地解释：<b>质膜</b>（细胞膜的另一个名字）、<b>磷脂</b>（一种一头亲水、一头疏水的脂质分子）、<b>荧光标记</b>（用会发不同颜色光的染料给蛋白质"上色"，好追踪它们）、<b>假说</b>（根据已有知识提出的、等待观察和实验检验的解释）、<b>糖被</b>（细胞膜外表面的糖类分子层）、<b>流动镶嵌</b>（"流动的油面+嵌进去的蛋白块"这个画面）。不展开的：物质跨膜运输的具体方式、水通道蛋白——那是第4章的"下一站"；细胞器——下一节3.2开讲。</div>
+
+<div class="talk"><span class="t">开场 · 先看一个真实场景（教材p40问题探讨照录）</span><br>
+"鉴别动物细胞是否死亡常用台盼蓝染液。用它染色时，死细胞会被染成蓝色，而活细胞不会着色。"讨论两问：1.为什么活细胞不能被染色，而死细胞能被染色？2.据此推测，细胞膜作为细胞的边界，应该具有什么功能？<br>
+<span class="detail">（本件试答并显式标注：①活细胞的细胞膜有选择透过性，台盼蓝进不去；死细胞膜失去控制功能，染液长驱直入——答案就藏在教材p40-41正文里，往下读就明白；②提示从"边界"二字入手：边界应该能把细胞与外界分隔开，还能管住进出口——教材p40引言正等着接这句话。）</span><br><br>
+<span class="t">本节聚焦（p40照录）</span>：①细胞膜有哪些主要功能？②流动镶嵌模型的基本内容是什么？③通过对细胞膜结构的探索过程的分析，你对科学的过程和方法有哪些领悟？——三问正好是下面三段路标。</div>
+
+<h2><span class="step-tag">第一步</span>功能①②：立边界、管进出口（p40-41）</h2>
+<p>教材先给你一个"系统"视角（p40照录）：<mark class="nb">一个国家有陆地、海域、领空的边界；使人体内部与外界分隔的皮肤和黏膜，是人体的边界。系统的边界对系统的稳定至关重要。细胞作为一个基本的生命系统，它的边界就是细胞膜（cell membrane），也叫质膜（plasma membrane）。</mark></p>
+<p><b>功能一：将细胞与外界环境分隔开。</b>在生命起源的过程中，<mark class="nb">原始海洋（图3-1）中的有机物逐渐聚集并且相互作用，进化出原始的生命。在原始海洋这盆"热汤"中，膜的出现是生命起源过程中至关重要的阶段，它将生命物质与外界环境分隔开，产生了原始的细胞，并成为相对独立的系统</mark>（p40）。一句话：有了膜，才有了"细胞内/细胞外"之分，<mark class="nb">细胞膜保障了细胞内部环境的相对稳定</mark>（p40）。</p>
+<p><b>功能二：控制物质进出细胞。</b><mark class="nb">细胞膜像海关或边防检查站，对进出细胞的物质进行严格的"检查"</mark>（p40）。三个进出方向都管：细胞需要的营养物质可以从外界进入细胞；抗体、激素等物质在细胞内合成后分泌到细胞外，细胞产生的废物也要排到细胞外；但<mark class="nb">细胞内有用的成分却不会轻易流失到细胞外</mark>（p40）。——开场台盼蓝的谜底就在这：活细胞膜"查"得严，蓝染液进不去；死细胞膜失守，才被染蓝。</p>
+<p class="note-red">红笔批注：控制作用是<b>相对的</b>——p41原句<mark class="nb">细胞膜的控制作用是相对的，环境中一些对细胞有害的物质有可能进入；有些病毒、病菌也能侵入细胞，使生物体患病</mark>。"绝对屏障"这种说法是判断题最爱设的坑（练习与应用第1(2)题直接考，见第六步）。</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 970 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="细胞膜三大功能卡片（自绘示意）">
+  <rect x="0" y="0" width="970" height="260" fill="#101826"/>
+  <text x="485" y="34" fill="#cfe0f5" font-size="16" text-anchor="middle" font-weight="bold">细胞膜三大功能 = 一个围墙+一个海关+一部电话（自绘示意·对照p40-41口径）</text>
+  <rect x="60" y="60" width="250" height="150" rx="10" fill="#1c2a3e"/>
+  <text x="185" y="95" text-anchor="middle" fill="#8fc6ff" font-size="18" font-weight="bold">①分隔开</text>
+  <rect x="95" y="115" width="180" height="55" rx="6" fill="#2e5c8a"/><text x="185" y="148" text-anchor="middle" fill="#d8ecff" font-size="13">围墙圈出"细胞内"</text>
+  <text x="185" y="196" text-anchor="middle" fill="#7d8a99" font-size="12">保障内部环境相对稳定</text>
+  <rect x="360" y="60" width="250" height="150" rx="10" fill="#1c2a3e"/>
+  <text x="485" y="95" text-anchor="middle" fill="#8fc6ff" font-size="18" font-weight="bold">②控制进出</text>
+  <rect x="395" y="115" width="180" height="55" rx="6" fill="#2e7a4a"/><text x="485" y="140" text-anchor="middle" fill="#d9ffdf" font-size="13">海关放行需要的</text><text x="485" y="160" text-anchor="middle" fill="#d9ffdf" font-size="13">拦截不需要的</text>
+  <text x="485" y="196" text-anchor="middle" fill="#7d8a99" font-size="12">注意：控制作用是相对的</text>
+  <rect x="660" y="60" width="250" height="150" rx="10" fill="#1c2a3e"/>
+  <text x="785" y="95" text-anchor="middle" fill="#8fc6ff" font-size="18" font-weight="bold">③信息交流</text>
+  <rect x="695" y="115" width="180" height="55" rx="6" fill="#7a4a2a"/><text x="785" y="140" text-anchor="middle" fill="#ffe6c9" font-size="13">激素/接触/通道</text><text x="785" y="160" text-anchor="middle" fill="#ffe6c9" font-size="13">三方式传话</text>
+  <text x="785" y="196" text-anchor="middle" fill="#7d8a99" font-size="12">多细胞"社会"的协调手段</text>
+  <text x="485" y="242" fill="#5c6b80" font-size="13" text-anchor="middle">第①②种维持"自己这一格"的稳定，第③种让整盘棋协调——三者都是细胞膜在当家。</text>
+</svg>
+<p class="figcap">这张图在说什么：先把三大功能挂在一面墙上——①是圈地盘、②是管门禁、③是通电话；第三种下一步展开。</p>
+</div>
+
+<h2><span class="step-tag">第二步</span>功能③：细胞间怎么"打电话"——信息交流三方式（p41）</h2>
+<p><mark class="nb">在多细胞生物体内，各个细胞都不是孤立存在的，它们之间必须保持功能的协调，才能使生物体健康地生存。这种协调性的实现不仅依赖于物质和能量的交换，也有赖于信息的交流</mark>（p41）。教材给出三种方式（图3-2）：</p>
+<p><b>方式一（远程快递）</b>：<mark class="nb">内分泌细胞分泌的激素（如胰岛素），随血液到达全身各处，与靶细胞的细胞膜表面的受体结合，将信息传递给靶细胞</mark>（p41）——"快递"是激素、"物流线"是血管、"签收口"是靶细胞膜表面的受体。</p>
+<p><b>方式二（当面签收）</b>：<mark class="nb">相邻两个细胞的细胞膜接触，信息从一个细胞传递给另一个细胞。例如，精子和卵细胞之间的识别和结合</mark>（p41）。</p>
+<p><b>方式三（穿墙专线）</b>：<mark class="nb">相邻两个细胞之间形成通道，携带信息的物质通过通道进入另一个细胞。例如，高等植物细胞之间通过胞间连丝相互连接，也有信息交流的作用</mark>（p41）。</p>
+<p><mark class="nb">多细胞生物是一个繁忙而有序的细胞"社会"。如果没有信息交流，生物体不可能作为一个整体完成生命活动</mark>（p41）。教材在本段末尾埋下一句关键过渡：<mark class="nb">细胞膜的功能是由它的成分和结构决定的</mark>——功能和结构，正是后面三步的探案主线。</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 970 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="细胞间信息交流三方式重绘（对照教材图3-2）">
+  <rect x="0" y="0" width="970" height="300" fill="#101826"/>
+  <text x="485" y="32" fill="#cfe0f5" font-size="16" text-anchor="middle" font-weight="bold">信息交流三方式（重绘教材p41图3-2·分区照录）</text>
+  <g>
+    <circle cx="150" cy="90" r="26" fill="#2a7a4a"/><text x="150" y="96" text-anchor="middle" fill="#d9ffdf" font-size="12">内分泌细胞</text>
+    <path d="M176,100 C250,130 300,150 360,150" stroke="#5cab7d" stroke-width="6" fill="none"/>
+    <circle cx="230" cy="122" r="7" fill="#ffd166"/><circle cx="290" cy="140" r="7" fill="#ffd166"/>
+    <text x="150" y="145" fill="#ffd166" font-size="13">激素颗粒</text>
+    <rect x="355" y="132" width="170" height="34" rx="17" fill="#7a3a3a"/><text x="440" y="154" text-anchor="middle" fill="#ffd9d9" font-size="13">血管 = 物流线</text>
+    <circle cx="700" cy="90" r="26" fill="#2a5a7a"/><text x="700" y="96" text-anchor="middle" fill="#bfe6ff" font-size="12">靶细胞</text>
+    <path d="M525,150 C580,150 600,120 660,105" stroke="#5c8ab0" stroke-width="4" fill="none"/>
+    <circle cx="660" cy="108" r="8" fill="#ffd166"/><text x="700" y="130" fill="#ffd166" font-size="12">与膜表面受体结合</text>
+    <text x="440" y="205" fill="#8fc6ff" font-size="14" text-anchor="middle">方式一：激素+血液远程投递（如胰岛素）</text>
+  </g>
+  <g>
+    <circle cx="150" cy="250" r="22" fill="#2a7a4a"/><circle cx="210" cy="250" r="22" fill="#2a5a7a"/>
+    <line x1="172" y1="250" x2="188" y2="250" stroke="#ffd166" stroke-width="5"/>
+    <text x="180" y="290" fill="#8fc6ff" font-size="14" text-anchor="middle">方式二：膜接触"当面签收"（精子与卵细胞识别结合）</text>
+    <circle cx="470" cy="250" r="22" fill="#2a7a4a"/><circle cx="530" cy="250" r="22" fill="#2a5a7a"/>
+    <line x1="492" y1="230" x2="492" y2="270" stroke="#8fd6ff" stroke-width="6" stroke-dasharray="10 6"/>
+    <text x="500" y="215" fill="#8fd6ff" font-size="12">胞间连丝通道</text>
+    <text x="500" y="290" fill="#8fc6ff" font-size="14" text-anchor="middle">方式三：穿墙专线（高等植物胞间连丝）</text>
+  </g>
+  <text x="780" y="250" fill="#7d8a99" font-size="13">三方式的共同点：</text>
+  <text x="780" y="272" fill="#7d8a99" font-size="13">都要经过细胞膜</text>
+  <text x="780" y="294" fill="#7d8a99" font-size="13">——膜的结构是底座</text>
+</svg>
+<p class="figcap">这张图在说什么：远程快递、当面签收、穿墙专线——三种"打电话"姿势各配一个教材例子；无论哪种，"话"都要过细胞膜这道底座。</p>
+</div>
+
+<div class="try"><span class="t">验一验①（先答，再看答案）</span><br>
+判断：①细胞膜将细胞与外界环境分隔开，保障了细胞内部环境的相对稳定；②细胞膜能控制物质进出，所以有害物质绝对进不了细胞。<span class="ans">答案：①√（p40原句口径）；②×——p41原句"细胞膜的控制作用是相对的，环境中一些对细胞有害的物质有可能进入；有些病毒、病菌也能侵入细胞"，"绝对"二字是坑。</span><br>
+<span class="detail">易错变形：抗体、激素从细胞里出来，算不算"有用的成分流失"？——不算。它们是"在细胞内合成后，分泌到细胞外"的正常出口业务（p40），与"有用的成分却不会轻易流失到细胞外"并不矛盾——前者是主动发货，后者防的是被动漏单。</span></div>
+
+<div class="try"><span class="t">验一验②（先答，再看答案）</span><br>
+配对：下列现象各属哪种信息交流方式？A.胰岛素随血液作用于靶细胞；B.精子和卵细胞的识别和结合；C.高等植物相邻细胞间物质穿壁交换。<span class="ans">答案：A=方式一（激素+血液运输）；B=方式二（细胞膜接触）；C=方式三（胞间连丝通道）（p41图3-2三格口径）。</span><br>
+<span class="detail">易错变形：方式一里，激素随血液"到达全身各处"，为什么只指挥靶细胞？——因为"签收口"在靶细胞膜表面的受体上（p41），没装"签收口"的细胞收不到这份快递。</span></div>
+
+<h2><span class="step-tag">第三步</span>成分探案：膜是由什么写成的？（p42思考·讨论照录）</h2>
+<p>教材把这段科学史做成"思考·讨论"栏目（p42照录时间线）：</p>
+<p><b>1895年</b>，欧文顿（E. Overton）用500多种化学物质对植物细胞的通透性进行了上万次的实验，发现<mark class="nb">溶于脂质的物质，容易穿过细胞膜；不溶于脂质的物质，不容易穿过细胞膜</mark>。<b>据此推测：细胞膜的主要组成成分中有脂质</b>（p42）——注意这一步是<b>由现象推理</b>，还没真正拿到膜。</p>
+<p>要确定脂质的具体类型，得把膜拿到手。<mark class="nb">科学家利用动物的卵细胞、红细胞、神经细胞等作为研究材料，并利用哺乳动物的红细胞，通过一定的方法制备出纯净的细胞膜，进行化学分析，得知组成细胞膜的脂质有磷脂和胆固醇，其中磷脂含量最多</mark>（p42）——这一步换成了<b>提取与检测</b>。为什么选哺乳动物红细胞？它没有细胞核和众多具膜细胞器，是制备纯净细胞膜的好材料（选材理由为教材栏目语境概括·试答标注）。</p>
+<p>磷脂分子的长相很特别：<mark class="nb">磷脂的一端为亲水的头，两个脂肪酸一端为疏水的尾，多个磷脂分子在水中总是自发地形成双分子层</mark>（p42）。</p>
+<p><b>1925年</b>，两位荷兰科学家戈特（E. Gorter）和格伦德尔（F. Grendel）<mark class="nb">用丙酮从人的红细胞中提取脂质，在空气—水界面上铺展成单分子层，测得单层分子的面积恰为红细胞表面积的2倍</mark>。<b>他们由此推断：细胞膜中的磷脂分子必然排列为连续的两层</b>（p42）——面积为表面积2倍，正好铺两层，这是教科书级的"数字推理"。</p>
+<p><b>1935年</b>，英国学者丹尼利（J. F. Danielli）和戴维森（H. Davson）研究了细胞膜的张力。<mark class="nb">他们发现细胞的表面张力明显低于油—水界面的表面张力</mark>。由于人们已发现油脂滴表面如果吸附有蛋白质成分则表面张力会降低，<b>因此推测细胞膜除含脂质分子外，可能还附有蛋白质</b>（p42）。</p>
+
+<div class="try"><span class="t">验一验③（先答，再看答案）</span><br>
+①最初对细胞膜成分的认识，靠的是"对现象的推理分析"还是"对膜成分的提取与检测"？②"单层分子面积恰为红细胞表面积的2倍"这个数字，推出什么结论？<span class="ans">答案：①靠推理分析——1895年欧文顿从"溶于脂质的物质容易穿过"推理出膜含脂质（p42讨论第1问口径·对应教材设问）；后来才用哺乳动物红细胞提取检测，得知脂质有磷脂和胆固醇、磷脂最多（p42）。②膜中的磷脂分子必然排列为连续的两层（p42原句）。</span><br>
+<span class="detail">易错变形：磷脂分子为什么"在水中自发形成双分子层"？——亲水的头想挨水，疏水的尾想躲水，于是头朝外、尾相对，尾巴们抱团躲进中间（p42"亲水头/疏水尾"句的试答展开）。</span></div>
+
+<h2><span class="step-tag">第四步</span>结构探案：静态还是流动？（p43-44）</h2>
+<p>先看成分总账（p43照录）：<mark class="nb">细胞膜主要是由脂质和蛋白质组成的。此外，还有少量的糖类。其中脂质约占细胞膜总质量的50%，蛋白质约占40%，糖类占2%~10%。在组成细胞膜的脂质中，磷脂最丰富，此外还有少量的胆固醇</mark>。还有一句功能视角的话：<mark class="nb">蛋白质在细胞膜行使功能方面起着重要的作用，因此功能越复杂的细胞膜，蛋白质的种类与数量就越多</mark>（p43）。</p>
+<p><b>1959年</b>，罗伯特森（J. D. Robertson）在电镜下看到了细胞膜清晰的<b>暗—亮—暗</b>的三层结构（图3-3），结合其他科学家的工作提出假说：<mark class="nb">所有的细胞膜都由蛋白质—脂质—蛋白质三层结构构成，电镜下看到的中间的亮层是脂质分子，两边的暗层是蛋白质分子。他把细胞膜描述为静态的统一结构</mark>（p43）。</p>
+<p><b>20世纪60年代以后</b>，异议增加：如果是静态的，<mark class="nb">细胞膜的复杂功能将难以实现，就连细胞的生长、变形虫的变形运动这样的现象都难以解释</mark>（p43）。</p>
+<p><b>1970年</b>，决定性一锤：科学家将小鼠细胞和人细胞融合，用发绿色荧光的染料标记小鼠细胞表面的蛋白质分子，用发红色荧光的染料标记人细胞表面的蛋白质分子。<mark class="nb">这两种细胞刚融合时，融合细胞的一半发绿色荧光，另一半发红色荧光。在37℃下经过40min，两种颜色的荧光均匀分布（图3-4）</mark>。<b>这一实验以及相关的其他实验证据表明，细胞膜具有流动性</b>（p43）。</p>
+<p><b>1972年</b>，<mark class="nb">辛格（S. J. Singer）和尼科尔森（G. Nicolson）提出的流动镶嵌模型为大多数人所接受</mark>（p44）——探案收网。</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 970 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="细胞膜成分与结构探索史时间线（自绘·对照p42-44照录口径）">
+  <rect x="0" y="0" width="970" height="330" fill="#101826"/>
+  <text x="485" y="30" fill="#cfe0f5" font-size="16" text-anchor="middle" font-weight="bold">探索史六站：证据→结论（自绘时间线·页码p42-44）</text>
+  <line x1="50" y1="150" x2="920" y2="150" stroke="#3a4658" stroke-width="3"/>
+  <g font-size="12.5">
+    <circle cx="95" cy="150" r="9" fill="#4a9eff"/><text x="95" y="120" text-anchor="middle" fill="#8fc6ff" font-weight="bold">1895 欧文顿</text>
+    <text x="95" y="182" text-anchor="middle" fill="#d8dee6">500多种化学物质</text><text x="95" y="200" text-anchor="middle" fill="#d8dee6">上万次通透实验</text>
+    <text x="95" y="224" text-anchor="middle" fill="#ffd166">→膜成分中有脂质</text>
+    <circle cx="245" cy="150" r="9" fill="#4a9eff"/><text x="245" y="120" text-anchor="middle" fill="#8fc6ff" font-weight="bold">1925 戈特/格伦德尔</text>
+    <text x="245" y="182" text-anchor="middle" fill="#d8dee6">丙酮提取脂质铺单层</text><text x="245" y="200" text-anchor="middle" fill="#d8dee6">面积=表面积×2</text>
+    <text x="245" y="224" text-anchor="middle" fill="#ffd166">→磷脂排成连续两层</text>
+    <circle cx="395" cy="150" r="9" fill="#4a9eff"/><text x="395" y="120" text-anchor="middle" fill="#8fc6ff" font-weight="bold">1935 丹尼利/戴维森</text>
+    <text x="395" y="182" text-anchor="middle" fill="#d8dee6">表面张力低于油水面</text>
+    <text x="395" y="224" text-anchor="middle" fill="#ffd166">→还可能附有蛋白质</text>
+    <circle cx="545" cy="150" r="9" fill="#4a9eff"/><text x="545" y="120" text-anchor="middle" fill="#8fc6ff" font-weight="bold">1959 罗伯特森</text>
+    <text x="545" y="182" text-anchor="middle" fill="#d8dee6">电镜暗—亮—暗三层</text>
+    <text x="545" y="224" text-anchor="middle" fill="#ffd166">→三层静态统一结构</text>
+    <circle cx="695" cy="150" r="9" fill="#4a9eff"/><text x="695" y="120" text-anchor="middle" fill="#8fc6ff" font-weight="bold">1970 人鼠细胞融合</text>
+    <text x="695" y="182" text-anchor="middle" fill="#d8dee6">红绿荧光37℃下40min</text><text x="695" y="200" text-anchor="middle" fill="#d8dee6">均匀分布</text>
+    <text x="695" y="224" text-anchor="middle" fill="#ffd166">→膜具有流动性</text>
+    <circle cx="855" cy="150" r="9" fill="#ffd166"/><text x="855" y="120" text-anchor="middle" fill="#ffe28a" font-weight="bold">1972 辛格/尼科尔森</text>
+    <text x="855" y="182" text-anchor="middle" fill="#d8dee6">综合新证据建模型</text>
+    <text x="855" y="224" text-anchor="middle" fill="#7ee2a8" font-weight="bold">→流动镶嵌模型定型</text>
+  </g>
+  <text x="485" y="290" fill="#5c6b80" font-size="13" text-anchor="middle">前三站摸"成分"（p42），后三站定"结构"（p43-44）；每一站都是"先有证据，再下结论"。</text>
+</svg>
+<p class="figcap">这张图在说什么：六站探案按年份排开，黄字是每站的结论——考试最爱的"证据↔结论配对"全部在上面；1970荧光实验是"静态→流动"的转折点。</p>
+</div>
+
+<h2><span class="step-tag">第五步</span>流动镶嵌模型的基本内容（p44-45）</h2>
+<div class="key"><b>科学方法 · 提出假说（p44栏目照录）</b>：<mark class="nb">细胞膜结构模型的探索过程，反映了提出假说这一科学方法的作用。科学家首先根据已有的知识和信息提出解释某一生物学问题的一种假说，再用进一步的观察与实验对已建立的假说进行修正和补充。一种假说最终被接受或被否定，取决于它是否能与以后不断得到的观察和实验结果相吻合。</mark>——罗伯特森的静态模型被质疑、流动镶嵌模型被接受，正是这套"假说—检验—修正"流程的实况。</div>
+<p><mark class="nb">流动镶嵌模型（fluid mosaic model）认为，细胞膜主要是由磷脂分子和蛋白质分子构成的。磷脂双分子层是膜的基本支架，其内部是磷脂分子的疏水端，水溶性分子或离子不能自由通过，因此具有屏障作用</mark>（p44-45）。</p>
+<p>蛋白质的镶嵌方式有三种：<mark class="nb">有的镶在磷脂双分子层表面，有的部分或全部嵌入磷脂双分子层中，有的贯穿于整个磷脂双分子层（图3-5）。这些蛋白质分子在物质运输等方面具有重要作用</mark>（p45）。</p>
+<p><b>流动性</b>：<mark class="nb">细胞膜不是静止不动的，而是具有流动性，主要表现为构成膜的磷脂分子可以侧向自由移动，膜中的蛋白质大多也能运动</mark>。<mark class="nb">细胞膜的流动性对于细胞完成物质运输、生长、分裂、运动等功能都是非常重要的</mark>（p45）。</p>
+<p><b>糖被</b>：<mark class="nb">细胞膜的外表面还有糖类分子，它和蛋白质分子结合形成糖蛋白，或与脂质结合形成糖脂，这些糖类分子叫作糖被（glycocalyx）。糖被与细胞表面的识别、细胞间的信息传递等功能有密切关系</mark>（p45）。</p>
+<p class="note-red">红笔批注：本节还有一个教材自己挖的坑——旁栏问题照录："既然膜内部分是疏水的，水分子为什么能跨膜运输呢？"（p45）。本节先留白（教材设问不做答），机理属第4章"水分子的跨膜运输"——记住"能通过"这件事本身（练习第2题B选项正考这个），通道别提前抢答。</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 970 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="流动镶嵌模型基本内容重绘（对照教材图3-5）">
+  <rect x="0" y="0" width="970" height="320" fill="#101826"/>
+  <text x="485" y="32" fill="#cfe0f5" font-size="16" text-anchor="middle" font-weight="bold">流动镶嵌模型三件套：基本支架+两种运动+糖被门牌（重绘教材p45图3-5·示意）</text>
+  <g>
+    <line x1="60" y1="190" x2="910" y2="190" stroke="#3a4658" stroke-width="2" stroke-dasharray="8 6"/>
+    <g fill="#6f8fd0">
+      <circle cx="90" cy="130" r="9"/><circle cx="120" cy="130" r="9"/><circle cx="150" cy="130" r="9"/><circle cx="180" cy="130" r="9"/><circle cx="210" cy="130" r="9"/><circle cx="240" cy="130" r="9"/><circle cx="270" cy="130" r="9"/><circle cx="300" cy="130" r="9"/><circle cx="330" cy="130" r="9"/><circle cx="360" cy="130" r="9"/><circle cx="390" cy="130" r="9"/><circle cx="420" cy="130" r="9"/><circle cx="450" cy="130" r="9"/><circle cx="480" cy="130" r="9"/><circle cx="510" cy="130" r="9"/><circle cx="540" cy="130" r="9"/><circle cx="570" cy="130" r="9"/><circle cx="600" cy="130" r="9"/><circle cx="630" cy="130" r="9"/><circle cx="660" cy="130" r="9"/><circle cx="690" cy="130" r="9"/><circle cx="720" cy="130" r="9"/><circle cx="750" cy="130" r="9"/><circle cx="780" cy="130" r="9"/><circle cx="810" cy="130" r="9"/><circle cx="840" cy="130" r="9"/><circle cx="870" cy="130" r="9"/><circle cx="900" cy="130" r="9"/>
+      <circle cx="90" cy="230" r="9"/><circle cx="120" cy="230" r="9"/><circle cx="150" cy="230" r="9"/><circle cx="180" cy="230" r="9"/><circle cx="210" cy="230" r="9"/><circle cx="240" cy="230" r="9"/><circle cx="270" cy="230" r="9"/><circle cx="300" cy="230" r="9"/><circle cx="330" cy="230" r="9"/><circle cx="360" cy="230" r="9"/><circle cx="390" cy="230" r="9"/><circle cx="420" cy="230" r="9"/><circle cx="450" cy="230" r="9"/><circle cx="480" cy="230" r="9"/><circle cx="510" cy="230" r="9"/><circle cx="540" cy="230" r="9"/><circle cx="570" cy="230" r="9"/><circle cx="600" cy="230" r="9"/><circle cx="630" cy="230" r="9"/><circle cx="660" cy="230" r="9"/><circle cx="690" cy="230" r="9"/><circle cx="720" cy="230" r="9"/><circle cx="750" cy="230" r="9"/><circle cx="780" cy="230" r="9"/><circle cx="810" cy="230" r="9"/><circle cx="840" cy="230" r="9"/><circle cx="870" cy="230" r="9"/><circle cx="900" cy="230" r="9"/>
+    </g>
+    <g stroke="#9fb8e8" stroke-width="3">
+      <line x1="90" y1="139" x2="90" y2="221"/><line x1="120" y1="139" x2="120" y2="221"/><line x1="150" y1="139" x2="150" y2="221"/><line x1="180" y1="139" x2="180" y2="221"/><line x1="210" y1="139" x2="210" y2="221"/><line x1="240" y1="139" x2="240" y2="221"/><line x1="270" y1="139" x2="270" y2="221"/><line x1="300" y1="139" x2="300" y2="221"/><line x1="330" y1="139" x2="330" y2="221"/><line x1="360" y1="139" x2="360" y2="221"/><line x1="390" y1="139" x2="390" y2="221"/><line x1="420" y1="139" x2="420" y2="221"/><line x1="450" y1="139" x2="450" y2="221"/><line x1="480" y1="139" x2="480" y2="221"/><line x1="510" y1="139" x2="510" y2="221"/><line x1="540" y1="139" x2="540" y2="221"/><line x1="570" y1="139" x2="570" y2="221"/><line x1="600" y1="139" x2="600" y2="221"/><line x1="630" y1="139" x2="630" y2="221"/><line x1="660" y1="139" x2="660" y2="221"/><line x1="690" y1="139" x2="690" y2="221"/><line x1="720" y1="139" x2="720" y2="221"/><line x1="750" y1="139" x2="750" y2="221"/><line x1="780" y1="139" x2="780" y2="221"/><line x1="810" y1="139" x2="810" y2="221"/><line x1="840" y1="139" x2="840" y2="221"/><line x1="870" y1="139" x2="870" y2="221"/><line x1="900" y1="139" x2="900" y2="221"/>
+    </g>
+    <ellipse cx="205" cy="180" rx="34" ry="52" fill="#dfe9ff" opacity="0.92"/>
+    <ellipse cx="520" cy="185" rx="30" ry="30" fill="#dfe9ff" opacity="0.92"/>
+    <ellipse cx="760" cy="180" rx="34" ry="58" fill="#dfe9ff" opacity="0.92"/>
+    <text x="205" y="185" text-anchor="middle" fill="#33415e" font-size="12" font-weight="bold">贯穿</text>
+    <text x="520" y="190" text-anchor="middle" fill="#33415e" font-size="12" font-weight="bold">嵌入</text>
+    <text x="760" y="185" text-anchor="middle" fill="#33415e" font-size="12" font-weight="bold">表面</text>
+    <g fill="#3fbf9f">
+      <polygon points="205,96 213,104 205,112 197,104"/><polygon points="205,82 213,90 205,98 197,90"/><polygon points="191,70 199,78 191,86 183,78"/><polygon points="219,70 227,78 219,86 211,78"/>
+    </g>
+    <text x="150" y="80" fill="#3fbf9f" font-size="13" text-anchor="middle">糖被（糖蛋白）</text>
+    <text x="905" y="112" fill="#6f8fd0" font-size="12">亲水的头</text>
+    <text x="905" y="238" fill="#6f8fd0" font-size="12">亲水的头</text>
+    <text x="905" y="186" fill="#9fb8e8" font-size="12">疏水尾</text>
+    <text x="60" y="268" fill="#7d8a99" font-size="13">磷脂双分子层=基本支架（内部疏水·屏障作用）；蛋白质三种镶嵌：表面/嵌入/贯穿</text>
+    <text x="60" y="292" fill="#7d8a99" font-size="13">两种运动：磷脂分子可侧向自由移动·蛋白质大多也能运动——膜的"流动"二字从这来</text>
+    <text x="60" y="314" fill="#7d8a99" font-size="13">糖被在膜外表面：糖类+蛋白质=糖蛋白·糖类+脂质=糖脂——细胞识别与信息传递的门牌</text>
+  </g>
+</svg>
+<p class="figcap">这张图在说什么：把流动镶嵌模型拆成三句话记——一层支架（磷脂双分子层）、两种运动（磷脂侧移+蛋白运动）、一块门牌（外表面糖被管识别）；蛋白质像冰块"浮"在流动的油面上，三种姿势都有。</p>
+</div>
+
+<div class="try"><span class="t">验一验④（先答，再看答案）</span><br>
+判断：①磷脂双分子层构成膜的基本支架，其内部是疏水端；②糖被就是糖蛋白，由蛋白质一种成分构成。<span class="ans">答案：①√（p44-45原句口径）；②×——糖被=细胞膜外表面的糖类分子，它与蛋白质结合形成糖蛋白，<b>或与脂质结合形成糖脂</b>（p45），"只由蛋白质构成"漏了糖脂一条腿。</span><br>
+<span class="detail">易错变形：1970年荧光实验里，两种荧光"均匀分布"说明什么？——标记的是膜上的蛋白质分子，它们能运动→细胞膜具有流动性（p43结论句）；注意结论说的是"膜的流动性"，不是"蛋白质单独会跑"。</span></div>
+
+<div class="alt"><span class="t">卡住了？（出路块一·探索史记不住）</span>别背年份背"三拍子"：<b>猜成分</b>（欧文顿通透性→有脂质；红细胞提取→磷脂最多+胆固醇）→<b>定层数</b>（2倍面积→连续两层；表面张力低→还附蛋白质）→<b>争动静态</b>（电镜暗亮暗三层→静态说；人鼠融合荧光均匀→流动说；1972流动镶嵌收网）。考试给证据问结论、或给结论问证据，按这三拍子倒推即可（对应p42-44六站）。</div>
+<div class="alt"><span class="t">卡住了？（出路块二·模型要点太碎）</span>背"一膜两动一糖被"：<b>一膜</b>=磷脂双分子层做基本支架（内部疏水、屏障作用）；<b>两动</b>=磷脂侧向自由移动+蛋白质大多能运动；<b>一糖被</b>=外表面糖蛋白/糖脂，管识别和信息传递。三件齐了，模型的基本内容就答全了（p44-45）。</div>
+
+<h2><span class="step-tag">第六步</span>教材练习与应用（p46）要点速览</h2>
+<div class="box"><b>一、概念检测（题干照录·答案为本件试答并显式标注）</b><br>
+1.判断：(1)构成细胞膜的磷脂分子具有流动性，而蛋白质是固定不动的。（<b>×</b>·p45原句"膜中的蛋白质大多也能运动"，"固定不动"错）(2)细胞膜是细胞的一道屏障，只有细胞需要的物质才能进入，而对细胞有害的物质则不能进入。（<b>×</b>·p41"控制作用是相对的……有害的物质有可能进入"，绝对化表述错）(3)向细胞内注射物质后，细胞膜上会留下一个空洞。（<b>×</b>·膜具有流动性，注射后可恢复闭合不留洞——p45流动性口径的试答）<br>
+2.细胞膜的特性是由其结构决定的。下列相关叙述错误的是（<b>B</b>）A.细胞膜的脂质结构使溶于脂质的物质，容易通过细胞膜 B.由于磷脂双分子层内部是疏水的，因此水分子不能通过细胞膜 C.细胞膜的蛋白质分子有物质运输功能 D.细胞的生长现象不支持细胞膜的静态结构模型——推理链：B错在"不能通过"，p45旁栏问题自问"水分子为什么能跨膜运输"，承认水分子能过、只问怎么过；A/C分别是p42、p45原口径；D是p43静态模型异议的原话变体。<br>
+<b>二、拓展应用（题干照录·要点试答）</b>：1.窗纱类比（挡昆虫、通空气）：合理之处——兼顾"挡住不需要的、放行需要的"这一控制进出思路；不妥之处——窗纱孔径固定、纯被动筛，而细胞膜的磷脂分子和蛋白质分子能运动、有流动性与选择控制性，且控制作用是相对的（要点试答·p41/p45口径综合）。2.脂质体（磷脂分子构成、可作药物运载体）：(1)能在水中结晶的药物（亲水）被包在双分子层内的水相中，脂溶性药物被包在两层磷脂分子之间（疏水尾区）——由"头亲水、尾疏水"的排布决定（p42磷脂分子特点的试答应用）；(2)推测：脂质体到达细胞后借助膜的流动性以膜融合等方式进入细胞发挥药效（要点试答·完整机理第4章展开，本节留白标注）。<br>
+<b>课外制作（p46栏目·题目照录）</b>：利用废旧物品制作生物膜模型——蜡质药盒做磷脂分子的"头"、铁丝做"尾"，两个单分子层扣合成"双分子层"，硬质泡沫塑料做可"漂浮""嵌入""贯穿"的蛋白质（栏目要点照录·动手环节课外完成）。</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<div class="key"><b>带走三句：</b><br>
+①<mark class="nb">细胞膜的三大功能：将细胞与外界环境分隔开、控制物质进出细胞、进行细胞间的信息交流</mark>（p40-41）——控制作用是相对的（p41）。<br>
+②细胞膜主要由脂质（约占50%，磷脂最丰富）和蛋白质（约占40%）组成，还有少量糖类（2%~10%）；探案六站：欧文顿推理有脂质→2倍面积定双层→张力低附蛋白质→暗亮暗静态说→荧光融合证流动→1972流动镶嵌定型（p42-44）。<br>
+③流动镶嵌模型=磷脂双分子层做基本支架（内部疏水·屏障）+磷脂可侧向自由移动、蛋白质大多能运动+外表面糖被管识别与信息传递（p44-45）。</div>
+
+<div class="box"><b>高考怎么考（考位锚·三行内）</b><br>
+①三大功能+控制相对性——判断题高频（对应练习1(2)/2，"绝对""只有"字眼即坑）<br>
+②探索史证据↔结论配对——欧文顿通透性→脂质、2倍面积→双层、红绿荧光均匀→流动性（对应p42-44六站）<br>
+③流动镶嵌模型基本内容——基本支架/流动性/糖被三件套（对应图3-5）<br>
+<span class="detail">真题锚：对证源清单卷源池无生物3.1行，如实候采不代拟（标准v2.3纪律）。</span></div>
+
+<div class="try"><span class="t">自测四连（先答，再看答案）</span><br>
+1.（教材p46原题变序）"只有细胞需要的物质才能进入，而对细胞有害的物质则不能进入"——错在哪？用p41原句纠正。<span class="ans">答案：错在绝对化。p41原句：细胞膜的控制作用是相对的，环境中一些对细胞有害的物质有可能进入；有些病毒、病菌也能侵入细胞，使生物体患病。</span><br>
+2.（自编·已标注）把探案六站按"证据→结论"配对：溶于脂质的物质易穿过／单层面积=表面积2倍／表面张力低于油水面／暗—亮—暗三层／红绿荧光40min均匀分布。<span class="ans">答案（自编归纳）：易穿过→膜成分中有脂质（欧文顿1895）；2倍→磷脂排连续两层（戈特与格伦德尔1925）；张力低→可能附有蛋白质（丹尼利与戴维森1935）；暗亮暗→蛋白质—脂质—蛋白质静态统一（罗伯特森1959）；荧光均匀→膜具有流动性（1970）——p42-44照录口径。</span><br>
+3.（教材p42讨论第3问同向）磷脂分子在水中为什么能自发形成双分子层？由此怎样理解细胞膜由磷脂双分子层构成？<span class="ans">答案（要点试答）：磷脂一头亲水、两头疏水（p42），水环境中头朝外、尾朝内相对聚集，自发排成双层；细胞内外都是水环境，"头朝外尾相对"恰好让疏水尾被亲水头包住——双分子层是磷脂在水中的稳定排布方式。</span><br>
+4.（自编·已标注）成分占比三数（50%/40%/2%~10%）自洽吗？功能越复杂的细胞膜哪种成分种类与数量越多？<span class="ans">答案：50%+40%+（2%~10%）=92%~100%，自洽（算术核验留痕见随件附件2）；p43原句"功能越复杂的细胞膜，蛋白质的种类与数量就越多"——蛋白质是行使功能的执行者。</span></div>
+
+<div class="alt"><span class="t">课外 · 想多走一步？（可选·显式标注自编/延伸，不冒充教材内容）</span><br>
+①旁栏问题"水分子为什么能跨膜运输"（p45）延伸：水通道蛋白的发现者2003年获诺贝尔化学奖——但机理与名词本节不展开，第4章揭晓（延伸标注·本节留白）。<br>
+②想象空间（p45栏目照录）：想象一个近似球形的细胞，其细胞膜的磷脂双分子层的三维立体结构——提示（自编）：把平面图"首尾相接卷起来"，双分子层包成一个封闭的"肥皂泡"，内外两面都是亲水的头。<br>
+③台盼蓝染色（p40）延伸：实验室判断细胞死活的常用手段之一——想想它反向利用了哪条功能（延伸讨论·自编留白）。</div>
+
+<h2><span class="step-tag">下一站</span>3.1在全册的位置（第3章开门节）</h2>
+<div class="fig">
+<svg width="100%" viewBox="0 0 970 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第3章叙事线（你在3.1·开门节）">
+  <rect x="0" y="0" width="970" height="210" fill="#101826"/>
+  <g font-size="14" fill="#d8dee6">
+    <rect x="30" y="70" width="210" height="64" rx="8" fill="#1c2a3e"/><text x="135" y="96" text-anchor="middle" fill="#8fc6ff">1.1-1.2 + 第2章</text><text x="135" y="118" text-anchor="middle" fill="#7d8a99" font-size="12">走近细胞·分子清单</text>
+    <rect x="270" y="70" width="400" height="64" rx="8" fill="#24354d"/><text x="470" y="96" text-anchor="middle" fill="#8fc6ff">第3章 细胞的基本结构（你在3.1·开门节）</text><text x="470" y="118" text-anchor="middle" fill="#7d8a99" font-size="12">3.1细胞膜→3.2细胞器→3.3细胞核</text>
+    <rect x="700" y="70" width="240" height="64" rx="8" fill="#1c2a3e"/><text x="820" y="96" text-anchor="middle" fill="#8fc6ff">第4章 细胞的输入与输出</text><text x="820" y="118" text-anchor="middle" fill="#7d8a99" font-size="12">跨膜运输·旁栏留白的下一站</text>
+    <line x1="240" y1="102" x2="270" y2="102" stroke="#4a9eff" stroke-width="3"/>
+    <line x1="670" y1="102" x2="700" y2="102" stroke="#4a9eff" stroke-width="3"/>
+  </g>
+  <text x="485" y="180" fill="#5c6b80" font-size="13" text-anchor="middle">第2章备好"零件"，第3章看"怎么装"——第一堵墙就是细胞膜（本章首页p39远锚·第2节节名页p47止锚已实锚）。</text>
+</svg>
+<p class="figcap">这张图在说什么：本节是第3章的第一站——先立"边界"（细胞膜），再进"车间"（3.2细胞器分工合作），最后到"指挥部"（3.3细胞核）；旁栏埋的"水分子怎么过膜"留到第4章开箱。</p>
+</div>
+
+<div class="foot">零基础首学版 v1.0（标准v2.3条款落地：节首清单＋预备块＋六步推进＋SVG示意图×5全带"这张图在说什么"＋验一验×4含易错变形×4＋alt卡住出路×2＋收口三句＋自测四连＋考位锚块＋位置图＋@media print打印层；正文答案就地展开，自编内容全部显式标注） · 事实层素材源：人教2019必修一p40-46官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=9d522562-b529-446c-9b5b-084812beee6e·印刷页40-46=图49-55·ts=1787291655029（17:03详情API实时复取与在案值同）·图N→印刷页N-9映射沿本册定标·影印图存席位私有目录p12_jc/m49-m55.jpg·原件不入仓） · 节界实锚=3.1全节p40-46（p40节名页含问题探讨与本节聚焦与引言与功能①②开头·p41功能③与图3-2与成分结构过渡句·p42思考·讨论成分探案全栏与讨论四问·p43成分占比与1959静态说与1970荧光融合·p44 1972定型与科学方法栏目与模型基本内容开头·p45模型续与流动性与糖被与旁栏问题与想象空间与图3-5·p46练习与应用全栏与课外制作栏目·p47=第2节节名页止锚直读核定·p39=第3章章题页远锚直读核定（本席2.5件在案）） · 节名以影印实锚为准：p40页首"第1节 细胞膜的结构和功能"直读核定 · 台盼蓝问题探讨两问、本节聚焦三问、引言句、功能三句、图3-2三方式、欧文顿500多种上万次、红细胞提取磷脂胆固醇、亲水头疏水尾、1925两倍面积、1935张力推测、占比三数、1959暗亮暗静态、1970荧光37℃40min、1972辛格尼科尔森、科学方法提出假说、模型基本支架屏障、镶嵌三方式、流动性两句、糖被糖蛋白糖脂、旁栏疏水设问、练习判断三小题与选择四选项与拓展两题、课外制作栏目均p40-46影印逐字锚定 · 教材原题（p40问题探讨/p42讨论四问/p46概念检测与拓展应用）题干照录、答案为本件试答并显式标注；自编内容（三功能卡、三方式重绘、探索时间线、模型重绘、三拍子口诀、一膜两动一糖被口诀、选材理由概括、自测2/4与课外三则）全部显式标注"自编/自绘/试答/照录" · 本节占比自洽算术核验经python留痕通过（留痕见随件附件2·无代数运算需求sympy不适用如实申报） · 设计标准：零预设 · 一次一步 · 随读随验 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理4.2 海水的性质和运动 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .step-tag.ans { background: #67c23a; }
+  .talk { background: #1a212b; border: 1px solid #2e3a4a; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .check { background: #16202e; border: 1px solid #2e4a6a; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .check .tag { color: #4a9eff; font-weight: bold; }
+  .try { background: #14231c; border: 1px solid #2e5a3a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .try .tag { color: #67c23a; font-weight: bold; }
+  .pit { background: #2b1a1e; border: 1px solid #6a3a42; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .pit .tag { color: #e07a8a; font-weight: bold; }
+  .key { background: #1a2438; border: 1px solid #3a5a8a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .key .tag { color: #6ab0ff; font-weight: bold; }
+  .alt { background: #1e2b1e; border: 1px solid #3a5a3a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .alt .tag { color: #8ac46a; font-weight: bold; }
+  .box { background: #221e33; border: 1px solid #4a3a6a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .box .tag { color: #b6a8e0; font-weight: bold; }
+  .note-red { border-left: 4px solid #d46a7a; background: #261a1e; padding: 10px 14px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+  .fig { background: #10151d; border: 1px solid #2e3a4a; border-radius: 8px; padding: 10px; margin: 16px 0; text-align: center; }
+  .fig p { color: #7d8a99; font-size: 14px; margin: 6px 0 0; }
+  .small { color: #7d8a99; font-size: 15px; }
+  .foot { margin-top: 60px; padding-top: 16px; border-top: 1px solid #2e3a4a; color: #5a6a7a; font-size: 13px; }
+  mark { background: #2e4a2e; color: #a8d48a; padding: 0 4px; border-radius: 3px; }
+  table.cmp { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+  table.cmp th, table.cmp td { border: 1px solid #2e3a4a; padding: 8px 10px; text-align: left; vertical-align: top; }
+  table.cmp th { background: #1a2438; color: #c8d4e0; }
+  ul { margin: 10px 0 10px 24px; } li { margin: 6px 0; }
+  @media print {
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #ffffff !important; color: #222222 !important; font-family: "Songti SC", "SimSun", serif !important; line-height: 1.75; font-size: 12pt; }
+    .page { max-width: 100%; padding: 0; }
+    h1 { font-size: 20pt; color: #111111 !important; }
+    .sub { color: #555555 !important; }
+    h2 { font-size: 15pt; color: #111111 !important; border-left-color: #1a5fb4 !important; page-break-after: avoid; }
+    h3 { font-size: 13pt; color: #222222 !important; page-break-after: avoid; }
+    .talk { background: #f6f8fa !important; border-color: #c9d1d9 !important; color: #222222 !important; }
+    .check { background: #f0f6ff !important; border-color: #b6d0f0 !important; color: #111111 !important; }
+    .try { background: #f2f9f0 !important; border-color: #a8d0a0 !important; color: #222222 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .box { background: #f3effc !important; border-color: #b6a8d4 !important; color: #222222 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+  }
+  @page { size: A4; margin: 18mm 15mm; }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>地理4.2 海水的性质和运动 · 零基础首学版</h1>
+<div class="sub">湘教版《高中地理·必修第一册》第四章 第二节（教材p98-111）· 零基础首学版 · 读完约50分钟</div>
+
+<div class="talk"><b>先看一艘船的旅程：</b>2016年7月，中国"雪龙"号科考船第七次北极科考出发，沿途每到一站，都要放下一个叫<b>温盐仪</b>的设备——它垂直下沉，把海水从表层到深层的<b>温度和盐度</b>一路记回来（教材p98探究）。为什么科学家对这两样"水的体检指标"这么执着？因为海水的<b>温度、盐度、密度</b>三个性质，加上<b>波浪、潮汐、洋流</b>三种运动，决定了海洋这颗"地球恒温器"怎么工作——从你家的气候，到大航海时代的航线，全在里面。本节信息量大（教材整整14页），我们按"三性质+三运动+四现场"分装推进。</div>
+
+<div class="check"><span class="tag">读完这节你能</span><br>① 说出海水三大性质（温度/盐度/密度）各自的<b>定义、影响因素与分布规律</b>，并记住关键数据锚（平均盐度35‰、三大洋水温17.4/19.1/17.0/16.9℃、红海>40‰/波罗的海&lt;10‰）；<br>② 描述海水温度与盐度的<b>垂向结构</b>（温跃层/盐跃层/密度跃层），解释"1000米以下深海常年低温"；<br>③ 分清海水运动三形式（波浪-涌浪-近岸浪/潮汐-涌潮/洋流-寒暖流），画出寒暖流判断判据，说出科隆群岛"寒冷岛"与直布罗陀"密度流"的成因；<br>④ 会用"蒸发量-降水量对比"判读盐度纬度分布，解释钱塘江涌潮与好望角"鬼门关"两个中国学生必考情境。</div>
+
+<p class="small"><b>本件位置：</b>上一节用"水循环"打通了四圈层的"水账"，本节钻进<b>占地球水97%的海洋</b>——先做"体检"（三性质），再看"它怎么动"（三运动）。下一节（海洋与人类）将盘点这笔家底怎么用。</p>
+
+<h2><span class="step-tag">预备步</span>海水"体检"三名片 + 人类怎么测海</h2>
+<p>海水的基本性质主要包括海水的<b>温度、盐度和密度</b>，许多海洋现象都与这些性质有关（教材p99）。三张名片先领：<b>温度</b>=海水的冷热程度，反映热量状况；<b>盐度</b>=溶解于海水中的盐类物质与海水质量的比值，用单位质量海水中所含盐类物质的质量来量度（教材p101）；<b>密度</b>=单位体积海水的质量（教材p105）。三者互相牵扯——温度和盐度共同决定密度，这是本节最重要的一条暗线。</p>
+<p><b>人类怎么测海？</b>以前主要靠出海船只带回海水样本；后来海洋调查逐步使用浮标技术；<mark>1998—2015年，科学家建立了Argo全球海洋观测网</mark>——由3000多个受卫星跟踪的自动探测浮标组成（其中我国有170多个），观测范围自海面到水深2000米；2011年发射的"水瓶座"卫星对世界海洋盐度每周扫描一次，<mark>它两个月获得的观测数据，相当于调查船和浮标125年所能获得的信息量</mark>（教材p105活动）。技术史本身就是一条"从点到面"的升级线。</p>
+
+<h2><span class="step-tag">第一步</span>三性质逐个拆——温度、盐度、密度的"体检报告"</h2>
+<h3>性质一：海水温度——太阳辐射是最主要的热源</h3>
+<p>海水温度反映海水的冷热程度，<mark>太阳辐射是海水最主要的热源</mark>（教材p99）。分布规律三条：<b>时间上</b>，同一海区夏季高些、冬季低些；<b>空间上</b>，不同海区低纬度高些、高纬度低些；<b>洋流上</b>，暖流水温高于所流经海区、寒流水温低于所流经海区（教材p99）。看图读数：8月份世界海洋表层水温从赤道向两极递减，副热带海域出现高温闭合中心（图4-11）。</p>
+<p><b>三大洋的"体测成绩单"（p99活动·数据直读）：</b>太平洋、印度洋、大西洋表层年平均水温为<mark>17.4℃</mark>——其中太平洋最高<mark>19.1℃</mark>，印度洋居中<mark>17.0℃</mark>，大西洋最低<mark>16.9℃</mark>。为什么太平洋"最热"？活动引导我们从<b>热带和副热带海域面积</b>（太平洋最广）与<b>海洋开敞程度</b>讨论（教材p99活动2）。</p>
+<p><b>垂向看，海水"分层"：</b>海水热导率低，导致水温自表层向深层大体上呈<mark>不均匀递减</mark>——表层区水温基本均匀；<mark>温跃层</mark>（水温在垂向上存在显著差异的水层）里水温随深度增加而显著降低；深水区受外界影响较小、变化缓慢、温度偏低（教材p100）。所以三站海水温度随深度变化曲线（图4-12）都是"上弯贴面+下段平躺"的形状，只是"弯"得早晚不同——<b>曲线拐点越浅、温跃层越靠上，纬度越低</b>（活动1的排序判据）。至于1000米以下为何常年低温：太阳辐射只能加热表层，深层海水得不到太阳辐射补给，加上水体巨大、热导率低，"冷"就锁死在深处了（活动3口径）。</p>
+<div class="box"><span class="tag">两个"温度彩蛋"（教材直读）</span>①研究表明，在低纬度海区，<mark>表层水温每增加0.5℃，飓风的活动性就会提高40%左右</mark>（p100泡泡）；以往100年间表层水温上升，大西洋飓风发生频率显著上升，1999—2004年全球海水温度明显升高还使浮游生物数量显著下降，威胁鱼类海鸟海兽的食物供应（p100-101）。②海水能<b>调节大气温度</b>：夏季海水增温慢于大气→沿海升温变缓；冬季海水降温慢于大气→沿海降温变缓（p100）——这就是"海洋是地球恒温器"的物理内核。</div>
+<div class="alt"><span class="tag"> alt·课堂外延（教材p101阅读）</span><b>海水温差能发电：</b>海水温差能又称海洋热能，海水垂向温差高达<mark>20℃甚至更多</mark>，蕴藏着丰富的热能资源。1870年法国作家儒勒·凡尔纳在科幻小说《海底两万里》中就提出了利用海水温差能发电的设想；1926年海水温差能发电试验获得成功；如今中国、美国、日本皆已掌握海水温差能发电技术。</div>
+
+<h3>性质二：海水盐度——既咸又苦的"35‰"</h3>
+<p>世界海洋的平均盐度约为<mark>35‰</mark>。海水的味道之所以既咸又苦，是因为<mark>氯化钠（味咸）和氯化镁（味苦）</mark>是海水中主要的溶解盐类（教材p101）。成分层面：海水是混合水溶液（水+无机盐+有机物+悬浮物），盐类物质主要来源于地壳岩石风化产物及火山喷出物，全球河流每年也向海洋输送大量溶解盐；海水中可以测到的元素有80多种，阳离子主要有Na⁺、K⁺、Ca²⁺、Mg²⁺、Sr²⁺五种，阴离子主要有Cl⁻、SO₄²⁻、Br⁻、HCO₃⁻（CO₃²⁻）、F⁻五种，加上硼酸，<mark>共占海水盐类物质的99.9%</mark>（教材p102阅读）。</p>
+<p><b>盐度怎么分布？先背判据句：</b></p>
+<div class="key"><span class="tag">判据句</span>盐度的高低主要取决于<mark>蒸发量和降水量的对比</mark>——赤道附近降水丰沛（降水量大于蒸发量）盐度稍低；<mark>副热带海区降水少、蒸发量大于降水量，盐度较高</mark>（马鞍形两峰）；高纬度海区温度低、蒸发量小，加之反复结冰、融冰，盐度偏低（教材p102）。此外：暖流盐度较高、寒流盐度较低（同纬度暖流经过海区盐度偏高）；大陆沿海因河流等淡水注入，盐度降低。一句话总结：<b>看盐度，先问"蒸发和降水谁赢"，再问"洋流和河流帮了谁"。</b></div>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" width="100%">
+  <rect x="0" y="0" width="720" height="320" fill="#0f1520"/>
+  <defs><marker id="g1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#5a8ab5"/></marker></defs>
+  <text x="360" y="28" fill="#d8dee6" font-size="15" text-anchor="middle">海洋表层盐度、温度随纬度的分布（教材图4-14要义复刻）</text>
+  <line x1="70" y1="270" x2="660" y2="270" stroke="#2e3a4a" stroke-width="1.5"/>
+  <line x1="70" y1="50" x2="70" y2="270" stroke="#2e3a4a" stroke-width="1.5"/>
+  <line x1="660" y1="50" x2="660" y2="270" stroke="#2e3a4a" stroke-width="1.5"/>
+  <text x="365" y="290" fill="#8fa3b8" font-size="12" text-anchor="middle">南纬 60° ←—— 40° —— 20° —— 0° —— 20° —— 40° ——→ 北纬</text>
+  <text x="30" y="46" fill="#8fa3b8" font-size="11">盐度‰</text>
+  <path d="M80,255 C160,235 210,175 265,120 C300,88 320,80 365,82 C410,84 430,90 465,118 C520,172 570,235 650,255" fill="none" stroke="#5a8ab5" stroke-width="3"/>
+  <text x="365" y="66" fill="#5a8ab5" font-size="12" text-anchor="middle">双峰：副热带约36~37‰</text>
+  <circle cx="265" cy="120" r="4" fill="#8ac46a"/><circle cx="465" cy="118" r="4" fill="#8ac46a"/>
+  <text x="265" y="106" fill="#8ac46a" font-size="11" text-anchor="middle">副热带峰</text>
+  <text x="465" y="104" fill="#8ac46a" font-size="11" text-anchor="middle">副热带峰</text>
+  <text x="365" y="130" fill="#c8a04a" font-size="12" text-anchor="middle">赤道谷（降水丰沛·稍低）</text>
+  <text x="120" y="250" fill="#7d8a99" font-size="11">高纬低（蒸发小+结冰融冰）</text>
+  <text x="640" y="250" fill="#7d8a99" font-size="11" text-anchor="end">高纬低</text>
+  <text x="365" y="312" fill="#5a6a7a" font-size="11" text-anchor="middle">马鞍形=蒸发-降水对比的空间排布·完整曲线见教材图4-14（p102）</text>
+</svg><p>图A · 盐度纬度分布"马鞍形"——两峰副热带、赤道谷、高纬洼（要义复刻）</p></div>
+<p><b>垂向与极值现场：</b>盐度垂向分三层——浅表层比较均匀；随深度增加盐度发生显著变化（这一水层称<mark>盐跃层</mark>）；到一定深度盐度又近似均匀分布。中低纬海区表层盐度较高、随深度增加而降低；高纬海区表层盐度较低、随深度增加而升高（教材p103）。极值对：<mark>红海是世界上盐度最高的海区（超过40‰）</mark>——副热带位置+蒸发远大于降水+淡水汇入少+海区封闭；<mark>波罗的海是世界上盐度最低的海区（低于10‰）</mark>——纬度高蒸发弱+河流淡水大量汇入+海区封闭（教材p103活动，成因分析口径）。河流的威力有多大？长江在洪水期小潮时，淡水向东北扩散，一直影响到朝鲜半岛以南的济州岛（图4-15长江口盐度等值线；图4-16河口锋/盐水楔——河水与海水在河口"顶牛"的立体结构）。</p>
+<div class="box"><span class="tag">教材阅读·海盐（p104）</span>海水是盐的"故乡"。如果把世界上海水中的盐都分离出来平铺在陆地上，可使全世界陆地平均高度增加<mark>153米</mark>。我国东部沿海海滩宽广、风力强劲、晴天多、日照充足、蒸发旺盛，适合晒盐；<mark>我国海盐产量长期居于世界首位</mark>（图4-18长芦盐场）。海水的盐度变化还会牵动生态：2003年监测表明，黄河入海径流量减少使河口区表层最高盐度达<mark>34.2‰</mark>，与1959年同期相比增加约1/4，导致海洋生物数量减少、种群退化、河口区生态结构发生较大改变（p105）。</div>
+
+<h3>性质三：海水密度——温度、盐度、压力的"合谋"</h3>
+<p>海水密度是指<mark>单位体积海水的质量</mark>，其变化比较复杂，与温度、盐度和压力都有关系（教材p105）。水平分布：<mark>最大密度出现在寒冷的极地海区</mark>——大西洋赤道附近温度偏高、盐度稍低，表层密度小，由此向两极逐渐增大；副热带海区盐度偏大但温度下降幅度不大，密度增大却没出现极值；纬度再增高，盐度剧降的减密效应敌不过温度降低的增密效应，密度继续增大；河流入海口盐度低密度较小，但河水挟带的泥沙可使密度变大（教材p106）。垂向：<mark>密度跃层</mark>明显——低纬海区表层温度高密度较低，海面到一定深度海水混合良好变化不大，随深度增加密度迅速增大，一定深度之下基本不变；高纬海区垂向变化很小（图4-20）。</p>
+<div class="try"><span class="tag">试一试 1</span>教材p106活动原题（显式试答·口径以教材为准）：表层海水的密度可以直接进行测量，是否也可以将深层海水直接提升到海面来测量其密度？为什么？<p><span class="step-tag ans">试答</span>不行。深海海水一旦被提升到海面，它所处的<b>压力条件完全改变</b>（深海承受巨压，提升后压力骤减），海水会因减压而<b>体积微膨胀</b>，密度随之变化——测到的已不是"原位密度"。这也是Argo浮标选择"边下沉边测"原位观测、观测范围设定为海面到水深2000米的原因之一（呼应p105活动1：温跃层、盐跃层、密度跃层等垂向显著变化都发生在上层2000米内，往下变化平缓）。</p></div>
+
+<h2><span class="step-tag">第二步</span>海水怎么动——波浪、潮汐、洋流三兄弟</h2>
+<p>广阔无垠的海洋，海水无时无刻不在运动。海水的运动形式多种多样，<mark>主要有波浪、潮汐和洋流三种基本形式</mark>（教材p107）。三兄弟各管一摊：</p>
+<p><b>① 波浪家族：</b>常见的波浪是<mark>风力作用</mark>产生的——风吹拂海面引起海水波动，形成风浪；风浪离开源地继续传播、或风已平息而继续存在的海浪，称<mark>涌浪</mark>；涌浪可以到达离风暴中心（如台风）很远的地方，<b>成为风暴侵袭的先兆</b>；我们海边常见的，是它们传至浅水区受海底摩擦、能量衰减而破碎卷倒形成的<mark>近岸浪或拍岸浪</mark>（教材p107）。影响：波浪是塑造海岸地貌的主要动力，也是重要的海洋能资源；颠簸影响航行、海洋工程、渔业作业；巨大波浪对防波堤、港口、码头等水工建筑物造成严重破坏。</p>
+<p><b>② 潮汐家族：</b>潮汐是海水在<mark>月球和太阳引力</mark>作用下发生的周期性涨落现象——古人将白天的海水涨落称为<b>潮</b>、夜晚的涨落称为<b>汐</b>，合称潮汐（教材p107）。潮汐蕴藏极为巨大的能量，海港工程、航运交通、军事活动、近海环境研究与污染治理都与之密切相关。升级版：潮差较大的<b>喇叭形河口或海湾</b>出现的特殊潮汐现象称<mark>涌潮</mark>——涨潮时海水涌进河口，遇河床或海湾地形急剧缩窄、水深变浅，潮波能量集中、潮差增大，水位暴涨形成陡立水墙向前推进，轰鸣作响（图4-22钱塘江涌潮）；北美东岸的芬迪湾、印度的恒河、巴西的亚马孙河和我国的钱塘江都有涌潮现象（教材p108）。</p>
+<p><b>③ 洋流家族：</b>洋流又称海流，是海洋中具有<mark>相对稳定的流速和流向的大规模海水运动</mark>。判据一句话：<b>从水温高的海区流向水温低的海区的洋流叫暖流，反之叫寒流</b>；一般由低纬流向高纬为暖流、由高纬流向低纬为寒流（教材p108）。意义：全球的大洋环流促进高低纬度间热量的输送和交换，<mark>对全球热量平衡具有重要意义</mark>；还影响流经海区的沿岸气候、海洋生物分布、渔业生产、航海等。体量与威力：墨西哥湾暖流的流量相当于全球陆地径流总量的<mark>20多倍</mark>；北大西洋暖流把热量源源不断输往欧洲西北部，使北纬55°~70°的大西洋东岸最冷月平均气温比西岸高<mark>16~20℃</mark>（教材p108泡泡）。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="100%">
+  <rect x="0" y="0" width="720" height="300" fill="#0f1520"/>
+  <defs><marker id="d1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#5a8ab5"/></marker><marker id="d2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c88a4a"/></marker></defs>
+  <text x="360" y="28" fill="#d8dee6" font-size="15" text-anchor="middle">直布罗陀海峡两侧海水流向（教材图4-24要义复刻）</text>
+  <rect x="60" y="60" width="270" height="150" rx="8" fill="#1d3a5f"/><text x="195" y="140" fill="#9ab8e0" font-size="17" text-anchor="middle">大 西 洋</text>
+  <rect x="390" y="60" width="270" height="150" rx="8" fill="#153a4f"/><text x="525" y="140" fill="#9ab8e0" font-size="17" text-anchor="middle">地 中 海</text>
+  <rect x="330" y="60" width="60" height="150" fill="#0f2033"/><text x="360" y="232" fill="#8fa3b8" font-size="12" text-anchor="middle">直布罗陀海峡（海底山脊）</text>
+  <path d="M120,90 L620,90" stroke="#5a8ab5" stroke-width="3" marker-end="url(#d1)"/>
+  <text x="360" y="82" fill="#9ab8e0" font-size="12" text-anchor="middle">表层：大西洋→地中海（水面较高·补充缺失）</text>
+  <path d="M620,180 L120,180" stroke="#c88a4a" stroke-width="3" marker-end="url(#d2)"/>
+  <text x="360" y="200" fill="#e0b08a" font-size="12" text-anchor="middle">底层：地中海→大西洋（高盐高密海水下沉外流）</text>
+  <text x="360" y="260" fill="#7d8a99" font-size="12" text-anchor="middle">成因=蒸发旺盛→盐度高·密度大→密度差驱动的"双层 conveyor"</text>
+  <text x="360" y="282" fill="#5a6a7a" font-size="11" text-anchor="middle">剖面形态与温盐数据见教材图4-24（p110）·本图为要义复刻</text>
+</svg><p>图B · 直布罗陀"双层环流"——表层进淡水、底层出咸水（密度流要义）</p></div>
+<div class="box"><span class="tag">教材阅读·赤道上的"寒冷岛"（p109）</span>科隆群岛（加拉帕戈斯群岛）是厄瓜多尔位于太平洋东部的火山群岛，东距南美大陆970千米，赤道横贯群岛北部。<mark>秘鲁寒流把南极附近海区的冷水源源不断地向北方低纬度输送</mark>，群岛正好处在寒流前进的道路上——气候凉爽，年平均气温约21℃，比同纬度明显偏低且极为干旱，成为赤道上的"寒冷岛"。彩蛋：生物多特有品种，达尔文1835年曾在此考察，为进化论的形成奠定基础。</div>
+
+<h2><span class="step-tag">第三步</span>四道"现场题"——把三性质三运动用起来</h2>
+<p><b>现场一（教材p110活动·直布罗陀）：</b>地中海因蒸发旺盛，海水盐度高、密度大——高盐度高密度海水下沉，由直布罗陀海峡<b>底层</b>流向大西洋；大西洋海水盐度低、密度小、水面比地中海高，表层海水经海峡<b>流入</b>地中海补充缺失（图4-24）。潜艇关闭动力装置可有效避开听测系统——<b>进</b>（大西洋→地中海）乘表层流"顺水漂"，<b>出</b>（地中海→大西洋）潜到底层乘密度流"顺水漂"：关闭动力也各有一班"顺风机"。</p>
+<p><b>现场二（教材p110-111活动·好望角）：</b>好望角位于南非开普半岛南端，非洲最西南端岬角，大西洋与印度洋在此交接；1487年葡萄牙航海家迪亚士到此，因多风暴取名"风暴角"。为什么航线被比作"鬼门关"？——南半球中高纬度几乎被广阔海洋环绕，中纬地带<mark>终年盛行西风且风力很强，经常出现11级以上大风</mark>；强劲风力作用于开阔无阻的洋面，常形成滔天骇浪；好望角地处这一海区边缘，加上岬角地形的阻挡作用，<mark>10多米高的海浪屡见不鲜</mark>——西风+开敞洋面+岬角地形，三重buff叠加。</p>
+<p><b>现场三（教材p111活动·欧洲鳗鲡）：</b>欧洲鳗鲡在欧洲河湖生活10多年后横渡大西洋，回到繁殖地马尾藻海域产卵——柳叶鳗（孵化时约3毫米·薄如柳叶·随洋流漂游至欧洲沿海需1~2年）→幼鳗（5~6厘米·溯河而上）→黄鳗（淡水生活10~20年）→银鳗（顺江河而下重归大海）→抵达马尾藻海产卵后长眠。洄游路径取道南方朝亚速尔群岛前进的解释口径：沿途<b>顺暖流"顺风车"</b>（墨西哥湾暖流→北大西洋暖流系统），省力且食物丰富——教材以三问引导推理，试答为显式口径。</p>
+<p><b>现场四（生活迁移）：</b>沿海地区为什么冬暖夏凉？——海水增温降温都慢于大气（海水热导率低+水体巨大），像一块巨大的"缓释温度贴"。为什么盐场多建在晴天多、风大的海湾？——蒸发旺、降水少、淡水汇入少，盐度只增不减，晒盐效率高（长芦盐场的区位逻辑）。</p>
+
+<div class="try"><span class="tag">自测四连</span>（答案块显式标注·表述以教材为准）<p><b>1.</b> 世界海洋平均盐度约____，既咸又苦的主要溶解盐类是____和____。<span class="step-tag ans">答</span>35‰；氯化钠（味咸）、氯化镁（味苦）。</p><p><b>2.</b> 海水温度垂向三层结构自上而下是____、____、____。<span class="step-tag ans">答</span>表层区（基本均匀）→温跃层（显著降低）→深水区（变化缓慢温度偏低）。</p><p><b>3.</b> 判断寒暖流：一股洋流由索马里沿岸流向低纬海区且水温低于流经海区，它是____流；洋流对全球的意义是____。<span class="step-tag ans">答</span>寒流（水温低于流经海区即寒流·与流向纬度无冲突时可双判据互证）；促进高低纬度间热量输送和交换，对全球热量平衡具有重要意义。</p><p><b>4.</b> 钱塘江涌潮发生在什么样的河口？成因两条。<span class="step-tag ans">答</span>喇叭形河口（或海湾）；涨潮遇地形急剧缩窄、水深变浅→潮波能量集中、潮差增大→水位暴涨成陡立水墙。</p></div>
+
+<div class="key"><span class="tag">高考怎么考（考向概括·卷源候补）</span>①<b>性质分布规律+数据判读</b>：给等温线/等盐度线图判读水温盐度分布（马鞍形判据/寒暖流判读/温盐密度互推）——教材图4-11/4-13/4-14/4-19均为母型；②<b>洋流与地理环境</b>：科隆群岛"寒冷岛"、北大西洋暖流与西欧气候、直布罗陀密度流（潜艇航线）三大情境是经典命题源——原理+区域+生活三合一。卷源直读件本节未在库，候派直读任务后补锚（foot声明）。</div>
+
+<div class="alt"><span class="tag"> alt·课外迁移</span><b>城市里的"小潮汐"：</b>涨潮落潮不只影响大海——大型货轮进出港要算准潮位（乘潮进港），跨海大桥桥墩要抗波浪与潮汐双荷载；而"咸潮入侵"（枯水期河水少·海水沿河口上溯）会让珠三角等河口城市自来水变咸——这正是"河流淡水注入降低盐度"原理的逆向应用。</div>
+
+<h2><span class="step-tag">下一站</span>4.3 海洋与人类——盘点蓝色家底</h2>
+<p>三性质+三运动搞懂了"海洋是什么、怎么动"；下一节（教材p112起·第三节《海洋与人类》）回答"海洋给人类什么、人类拿海洋怎么办"——从《荷马史诗》的狂风巨浪到7000年前浙江沿海的独木舟，从海洋生物资源到蓝色海洋文明，把海洋的家底盘个明白。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" width="100%" role="img" aria-label="本节位置图：第四章三节次序与本节所在">
+  <rect x="0" y="0" width="720" height="150" fill="#0f1520"/>
+  <text x="360" y="30" fill="#d8dee6" font-size="15" text-anchor="middle">第四章 地球上的水 · 节位图</text>
+  <rect x="40" y="58" width="200" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="140" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">4.1 水循环</text><text x="140" y="99" fill="#7d8a99" font-size="11" text-anchor="middle">p89-97（已交付候验）</text>
+  <rect x="260" y="52" width="200" height="64" rx="8" fill="#2a4a6e" stroke="#4a9eff" stroke-width="2"/>
+  <text x="360" y="76" fill="#e8f2ff" font-size="14" text-anchor="middle" font-weight="bold">4.2 海水的性质和运动</text><text x="360" y="97" fill="#9ac0e8" font-size="11" text-anchor="middle">p98-111 · 本节</text>
+  <rect x="480" y="58" width="200" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="580" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">4.3 海洋与人类</text><text x="580" y="99" fill="#7d8a99" font-size="11" text-anchor="middle">p112起（右界界标亲验）</text>
+  <line x1="242" y1="84" x2="258" y2="84" stroke="#4a9eff" stroke-width="2" marker-end="url(#g1)"/><line x1="462" y1="84" x2="478" y2="84" stroke="#4a9eff" stroke-width="2" marker-end="url(#g1)"/>
+  <text x="360" y="136" fill="#5a6a7a" font-size="11" text-anchor="middle">p112 = 第三节"海洋与人类"节名页（右界界标·已亲验）· 节界双端实锚见附件1</text>
+</svg><p>图D · 本件在第四章中的位置：懂了水怎么动，再看人与海的账本</p></div>
+
+<div class="foot">零基础首学版 v1.0（批3产出·队7席）· 事实层素材源：湘教版《普通高中教科书·地理 必修 第一册》p98-111 官方影印逐页对照（湖南教育出版社·智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a·ts=1754905526079（同值链路·fig104-118十五图实测全200）·影印原件存席位私有 geo42_jc/ 零入仓·图号→印刷页N−6映射复核（h104=p98/h106=p100/h110=p104/h114=p108/h118=p112）·节界实锚：p98第二节"海水的性质和运动"节名页（左界·4.1交付行右界互证）至p111活动续页（欧洲鳗鲡三问·域内末页）·p112=第三节"海洋与人类"节名页（右界界标亲验）·p98-111直读锚定：探究雪龙号温盐仪与图4-10 p98/一、海水的性质与（一）温度与图4-11与三大洋活动p99/热导率低温跃层与图4-12与飓风0.5℃40%泡泡与调节大气 p100/飓风频率与浮游生物与阅读温差能发电凡尔纳1870 1926与（二）盐度35‰氯化钠氯化镁与图4-13 p101/阅读主要成分80多种元素阴阳离子五五99.9%与蒸发降水对比与寒暖流河流淡水与图4-14 p102/活动红海40‰波罗的海10‰与长江口图4-15盐水楔图4-16与盐跃层p103/图4-17与阅读海盐153米长芦盐场世界首位p104/黄河口34.2‰增1/4与活动Argo3000浮标水瓶座125年与（三）密度定义与图4-19 p105/密度分布极地最大河口泥沙与密度跃层与图4-20与活动 p106/二、海水的运动波浪潮汐洋流三形式与风浪涌浪近岸浪与潮汐潮汐与图4-21 p107/图4-22钱塘江涌潮与涌潮四例与洋流定义寒暖流与墨西哥湾20多倍北大西洋暖流16~20℃泡泡p108/阅读科隆群岛寒冷岛秘鲁寒流21℃达尔文1835 p109/活动直布罗陀密度流图4-24潜艇与好望角风暴角迪亚士1487西风11级10多米海浪p110/活动好望角两问与欧洲鳗鲡图4-25柳叶鳗幼鳗黄鳗银鳗马尾藻海p111）<br>
+<br>本件为候验产出：走 dui7_42_1031 分支候终读，禁直推main。自测/试答块均已显式标注，数据与表述以教材影印为准。宁缺毋编：真题卷源未获取（本节无在库直读件），高考怎么考为考向概括（foot已声明）；现场三鳗鲡解释与自测答案为显式试答口径候验方复核。(并行搜索员C·队7席·dui7@team7.local)</div>
+
+</div>
+</body>
+</html>

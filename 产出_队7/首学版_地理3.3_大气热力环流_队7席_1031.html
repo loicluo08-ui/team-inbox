@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理3.3 大气热力环流 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1a212b; border-left: 4px solid #4a9eff; padding: 14px 18px; border-radius: 6px; margin: 16px 0; }
+  .check { background: #16211a; border-left: 4px solid #52c41a; padding: 14px 18px; border-radius: 6px; margin: 16px 0; }
+  .check .tag { background: #52c41a; }
+  .try { background: #1a1f2b; border: 1px solid #3a4a6a; padding: 14px 18px; border-radius: 6px; margin: 16px 0; }
+  .try .tag { background: #f5a623; }
+  .pit { background: #2a1a1a; border: 1px solid #6a3a3a; padding: 14px 18px; border-radius: 6px; margin: 16px 0; }
+  .pit .tag { background: #e05252; }
+  .key { background: #1a2029; border: 1px solid #2a4a6a; padding: 14px 18px; border-radius: 6px; margin: 16px 0; }
+  .key .tag { background: #4a9eff; }
+  .box { background: #201a29; border: 1px solid #4a3a6a; padding: 14px 18px; border-radius: 6px; margin: 16px 0; }
+  .alt { background: #1f231a; border: 1px solid #4a5a2a; padding: 14px 18px; border-radius: 6px; margin: 16px 0; }
+  .alt .tag { background: #9ac41a; }
+  .note-red { background: #2a1518; border-left: 4px solid #d46a7a; padding: 12px 16px; margin: 14px 0; border-radius: 4px; }
+  .note-yellow { background: #2a2415; border-left: 4px solid #d4b46a; padding: 12px 16px; margin: 14px 0; border-radius: 4px; }
+  .fig { background: #121820; border: 1px solid #2a3a4a; border-radius: 8px; padding: 16px 12px; margin: 18px 0; }
+  .fig p { color: #8fa3b8; font-size: 13px; text-align: center; margin-top: 8px; }
+  .tag { display: inline-block; color: #0b0e13; font-weight: bold; font-size: 12px; padding: 1px 8px; border-radius: 4px; margin-right: 6px; }
+  .talk .tag, .box .tag { background: #4a9eff; }
+  .pit .tag, .try .tag, .key .tag, .check .tag, .alt .tag { border-radius: 4px; }
+  mark { background: #2a4a2a; color: #b8e0b8; padding: 0 4px; border-radius: 3px; }
+  .small { color: #7d8a99; font-size: 14px; }
+  .uline { border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  .foot { margin-top: 60px; padding-top: 20px; border-top: 1px solid #2a3a4a; color: #5a6a7a; font-size: 12.5px; }
+  .ans { background: #2a5a2a; color: #c8f0c8 !important; }
+  .quiz { background: #161d16; border: 1px dashed #3a5a3a; padding: 12px 16px; border-radius: 6px; margin: 14px 0; }
+  svg text { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+  @media print {
+    body { background: #ffffff !important; color: #222222 !important; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3 { color: #111111 !important; }
+    .talk { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .check { background: #f0faf0 !important; border-color: #2a7a2a !important; color: #222222 !important; }
+    .try { background: #fffaf0 !important; border-color: #b48a2a !important; color: #222222 !important; }
+    .quiz { background: #fafafa !important; border-color: #8a8a8a !important; color: #222222 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .box { background: #f3effc !important; border-color: #b6a8d4 !important; color: #222222 !important; }
+    .note-red { background: #fdf2f4 !important; border-left-color: #d46a7a !important; color: #333333 !important; }
+    .note-yellow { background: #fdf8e3 !important; color: #222222 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+    .uline { border-bottom-color: #1a5fb4 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>地理3.3 大气热力环流 · 零基础首学版</h1>
+<div class="sub">湘教版《高中地理·必修第一册》第三章 第三节（教材p83-87）· 零基础首学版 · 读完约35分钟</div>
+
+<div class="talk"><b>1800年前后的同一个升空原理：</b>三国时诸葛亮被司马懿围困于阳平，算准风向制成能在空中飘浮的纸灯笼附上求救信息脱险，后世称它<b>孔明灯</b>；今天的载人热气球用火焰加热器把热空气灌进球囊，使球囊膨胀并平稳升空（教材p83探究）。两者隔了近两千年，用的都是同一条规律：<b>空气一受热，密度变小，就要上升</b>。这条原理撑起了灯笼和热气球，也驱动着地球上最大的一台"空调机"——只要地面冷热不均，空气就会动起来。这台"空调"怎么转？这就是本节要拆的<b>大气热力环流</b>。</div>
+
+<div class="check"><span class="tag">读完这节你能</span><br>① 报出热力环流的定义（由于地面冷热不均而形成的空气环流）和它的身家定位（<b>大气运动的一种最简单的形式</b>），分清大气运动的两种姿势——垂直运动（气流上升/气流下沉）与水平运动（<b>风</b>）；<br>② 按"冷热不均→升降→同面气压差→水平运动"四步链，<b>画出并讲清</b>完整环流圈：近地面谁升谁沉、上空空气往哪扩散、近地面风从哪吹向哪，并标出等压面的凸与凹；<br>③ 用一套"找冷热源→判升降→定风向"的统一模板，拆解<b>山谷风、海陆风、城市热岛环流</b>三个实例并判断风向；<br>④ 记住同面比较原则（气压高低只在同一水平面上比）与三组锚点（谷风风速大于山风／北京冬春风速5~6米·秒⁻¹热岛环流即被淹没／热岛环流近地面风由郊区流向中心区）。</div>
+
+<p class="small"><b>本件位置：</b>上一节你弄清了大气怎么"收钱"（削弱太阳辐射）又怎么"盖被子"（保温作用）；但地表受热从来<b>不均匀</b>——海洋与陆地、山坡与山谷、城市与郊区，处处存在温差。温差怎么变成大气的"流动"？本节（第三章收官节）就是那个把"受热过程"接成"大气运动"的转换器。</p>
+
+<h2><span class="step-tag">预备步</span>三张名片，见正文前先递上</h2>
+<p><b>名片一·大气运动的两种姿势：</b>大气运动有<b>垂直运动</b>和<b>水平运动</b>之分。垂直运动表现为<b>气流上升</b>或<b>气流下沉</b>；大气的水平运动即是<b>风</b>（教材p83）。</p>
+<p><b>名片二·气压从哪来：</b>某一高度上的气压，可以理解为"压在它上头的空气柱"有多重。<mark>上空聚积的空气变多，那里在同一水平面上就比周围"压"得重——形成高气压</mark>；反之空气流失、密度减小，就形成低气压。</p>
+<p><b>名片三·等压面：</b>空中气压值相同的各点所组成的面，称为<b>等压面</b>。<mark>等压面凸起的地方为高气压区，等压面下凹的地方为低气压区</mark>（教材p84泡泡）。记住六个字：<b>凸高压，凹低压</b>。</p>
+
+<h2><span class="step-tag">第一步</span>热力环流的诞生——四步看懂一台"空气中央空调"</h2>
+<p>先立一个前提（教材p84原话）：<mark>如果地面不受热，空气就没有相对上升和相对下沉运动</mark>。换句话说，地面受热的差异，就是整台"空调"的总开关。设想A地接受热量多，B、C两地接受热量少，看四步：</p>
+<p><b>第1步·冷热不均（起）：</b>A地热、B/C两地凉——这是唯一的"动力来源"。</p>
+<p><b>第2步·垂直运动（升与沉）：</b>A地近地面空气<b>膨胀上升</b>，到上空聚积，使上空空气密度增大，那里的气压比同一水平面周围地区的气压都高，<b>形成高气压</b>；B、C两地空气<b>收缩下沉</b>，上空空气密度减小，形成<b>低气压</b>（教材p84）。一句话：<mark>热的地方空气升，冷的地方空气沉</mark>。</p>
+<p><b>第3步·上空水平运动（扩散）：</b>于是，在上空，空气便从气压高的A地向气压低的B、C两地<b>扩散</b>（教材p84）。</p>
+<p><b>第4步·近地面补位（闭合）：</b>在近地面，A地空气上升向外流出后，空气密度减小，气压比周围地区都低，形成<b>低气压</b>；B、C两地因有下沉气流，空气密度增大，形成<b>高气压</b>。于是，近地面的空气从B、C两地<b>流回A地</b>，以补充A地上升的空气——<mark>环流闭合，这就是热力环流</mark>（教材p84）。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" width="100%" role="img" aria-label="图3-17大气热力环流形成示意复刻">
+  <rect x="0" y="0" width="720" height="430" fill="#0f1520"/>
+  <line x1="60" y1="70" x2="660" y2="70" stroke="#2e4a6a" stroke-width="2"/>
+  <text x="60" y="62" fill="#5a7a9a" font-size="12">上空（同一水平面）</text>
+  <line x1="60" y1="370" x2="660" y2="370" stroke="#8a6a4a" stroke-width="3"/>
+  <text x="60" y="392" fill="#8a7a6a" font-size="12">近地面（同一水平面）</text>
+  <rect x="330" y="260" width="60" height="110" fill="#5a2a2a" opacity="0.55"/>
+  <text x="360" y="360" fill="#e08a8a" font-size="12" text-anchor="middle">A·受热</text>
+  <text x="120" y="360" fill="#9ab0c8" font-size="14" text-anchor="middle">B</text>
+  <text x="600" y="360" fill="#9ab0c8" font-size="14" text-anchor="middle">C</text>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#d46a5a"/></marker>
+    <marker id="ab" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#5a9ad4"/></marker>
+  </defs>
+  <line x1="360" y1="255" x2="360" y2="130" stroke="#d46a5a" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="372" y="200" fill="#d48a7a" font-size="12">A上升</text>
+  <line x1="130" y1="360" x2="130" y2="120" stroke="#5a9ad4" stroke-width="3" marker-end="url(#ab)" transform="rotate(180 130 240)"/>
+  <text x="118" y="240" fill="#7aa8d4" font-size="12" text-anchor="end">B下沉</text>
+  <line x1="590" y1="360" x2="590" y2="120" stroke="#5a9ad4" stroke-width="3" marker-end="url(#ab)" transform="rotate(180 590 240)"/>
+  <text x="602" y="240" fill="#7aa8d4" font-size="12">C下沉</text>
+  <line x1="395" y1="90" x2="560" y2="90" stroke="#d4a05a" stroke-width="2.5" marker-end="url(#ar)" transform="rotate(180 477 90)" opacity="0.001"/>
+  <line x1="400" y1="90" x2="570" y2="90" stroke="#d4a05a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="485" y="82" fill="#d4b07a" font-size="12" text-anchor="middle">上空：A→B·C 扩散（A上空为高压）</text>
+  <line x1="570" y1="340" x2="400" y2="340" stroke="#d4a05a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="320" y1="340" x2="150" y2="340" stroke="#d4a05a" stroke-width="2.5" marker-end="url(#ar)" transform="rotate(180 235 340)"/>
+  <text x="238" y="332" fill="#d4b07a" font-size="12" text-anchor="middle">近地面：B·C→A 补位（A为低压）</text>
+  <text x="300" y="300" fill="#d4a0a0" font-size="12" text-anchor="end">近地面：低</text>
+  <text x="420" y="300" fill="#9ad4a0" font-size="12">上空：高</text>
+  <text x="120" y="330" fill="#9ad4a0" font-size="12" text-anchor="middle">高</text>
+  <text x="600" y="330" fill="#9ad4a0" font-size="12" text-anchor="middle">高</text>
+  <path d="M 320 110 Q 360 92 400 110" stroke="#4a9eff" fill="none" stroke-width="2.5"/>
+  <text x="360" y="106" fill="#4a9eff" font-size="11" text-anchor="middle">上空等压面凸起（高压区）</text>
+  <path d="M 320 320 Q 360 336 400 320" stroke="#4a9eff" fill="none" stroke-width="2.5"/>
+  <text x="360" y="352" fill="#4a9eff" font-size="11" text-anchor="middle" opacity="0.85">近地面等压面下凹（低压区）</text>
+  <text x="360" y="418" fill="#5a6a7a" font-size="12" text-anchor="middle">图A · 大气热力环流形成示意（复刻教材图3-17·p84）</text>
+</svg><p>图A · 四步闭环：升→散→沉→补。箭头方向=风从高压吹向低压（同一水平面上）</p></div>
+<div class="key"><span class="tag">判据</span>读环流图只问一句：<mark>风从哪里来？——同一水平面上，从高压吹向低压</mark>。近地面：B/C（高）→A（低）；上空：A（高）→B/C（低）。垂直方向与水平方向分开记，别混在一张脑子里。</div>
+<div class="pit"><span class="tag">易错</span><b>气压高低永远在同一水平面上比较</b>。教材p84泡泡那道题——"A地的近地面与上空相比较，哪一处的气压值大？"答案是<b>近地面</b>：同一地点垂直方向上，海拔越高空气越稀薄，气压越低。所以"A地近地面是低压、A地上空是高压"两句话不矛盾——它们<b>不在同一层</b>，比的是各自那一层的水平面。考试把"近地面低压"偷换成"低压=海拔低处"，就是坑你把层搞混。</div>
+
+<h2><span class="step-tag">第二步</span>自然界的三个"变装"——同一原理换三个舞台</h2>
+<p>热力环流是一种常见的自然现象。例如，在陆地与海洋之间、山坡与山谷之间都可能形成热力环流（教材p85）。三个实例共用一个模板：<b>找冷热源→判升降→定风向</b>。</p>
+
+<h3>变装一·山谷风（教材p85阅读）：白天上坡吹"谷风"，夜里下坡吹"山风"</h3>
+<p>山谷风是在天气晴朗的山地区域，风向昼夜间发生反向转变的风（p85阅读原意）。<b>白天</b>：日出后山坡受热，空气增温快、密度变小，山谷上方同高度的空气增温较慢、密度仍较大——空气自山谷沿山坡上升，形成<b>谷风</b>。<b>夜晚</b>：山坡辐射冷却比山谷上方同高度的空气更快，气温下降、空气密度增大更快，空气沿山坡流向山谷，形成<b>山风</b>。</p>
+<div class="note-yellow"><b>阅读卡两处细节：</b>①由于白天山坡受热造成的温差比夜间辐射冷却造成的温差要大，因此<mark>谷风的风速大于山风</mark>；②谷风沿山坡上行时，常可形成<b>山顶积云</b>，有时甚至出现阵雨。山区与平原之间也常有山谷风特征——北京气象台的天气预报里"白天风向北转南，夜间风向南转北"，就是北京北部山区与平原地区之间的山谷风效应（教材p85阅读）。</div>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" width="100%">
+  <rect x="0" y="0" width="720" height="240" fill="#0f1520"/>
+  <text x="180" y="26" fill="#e8c86a" font-size="14" text-anchor="middle">白天·谷风</text>
+  <text x="540" y="26" fill="#7aa8d4" font-size="14" text-anchor="middle">夜晚·山风</text>
+  <path d="M 60 200 L 180 100 L 300 200 Z" fill="#243024"/>
+  <path d="M 420 200 L 540 100 L 660 200 Z" fill="#18202a"/>
+  <line x1="140" y1="196" x2="180" y2="110" stroke="#e8c86a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="150" y="150" fill="#e8c86a" font-size="12">谷风上行</text>
+  <line x1="580" y1="110" x2="540" y2="196" stroke="#7aa8d4" stroke-width="2.5" marker-end="url(#ab)"/>
+  <text x="590" y="150" fill="#7aa8d4" font-size="12">山风下行</text>
+  <text x="180" y="222" fill="#c8d4a0" font-size="11" text-anchor="middle">坡=热源·空气沿坡升</text>
+  <text x="540" y="222" fill="#a0b4c8" font-size="11" text-anchor="middle">坡=冷源·冷空气沿坡滑</text>
+  <text x="360" y="234" fill="#5a6a7a" font-size="12" text-anchor="middle">图B · 山谷风示意（复刻教材图3-18要义·p85）</text>
+</svg><p>图B · 山谷风：风的名字=它的出发地（谷风从谷来·山风从山来）</p></div>
+
+<h3>变装二·海陆风（教材p86活动1）：白天海风上岸，夜里陆风下海</h3>
+<p>海陆风是近海地区风向昼夜间发生反向转变的风（p86活动原意）。<b>白天陆地升温快</b>（比热容小）成为热源——陆地上空气受热上升，近地面风从海洋吹向陆地=<b>海风</b>；<b>夜晚陆地降温快</b>成为冷源——陆地上空气下沉，近地面风从陆地吹向海洋=<b>陆风</b>。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 230" width="100%">
+  <rect x="0" y="0" width="720" height="230" fill="#0f1520"/>
+  <text x="180" y="26" fill="#e8c86a" font-size="14" text-anchor="middle">白天·海风</text>
+  <text x="540" y="26" fill="#7aa8d4" font-size="14" text-anchor="middle">夜晚·陆风</text>
+  <rect x="60" y="180" width="240" height="26" fill="#3a4a3a"/><rect x="300" y="176" width="240" height="30" fill="#1a3a5a"/>
+  <rect x="420" y="180" width="240" height="26" fill="#3a4a3a"/><rect x="180" y="176" width="240" height="30" fill="#1a3a5a"/>
+  <line x1="320" y1="170" x2="180" y2="170" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#ab)"/>
+  <text x="250" y="160" fill="#8ac4ff" font-size="12" text-anchor="middle">海风（海→陆）</text>
+  <line x1="460" y1="170" x2="600" y2="170" stroke="#d4a05a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="530" y="160" fill="#e8c86a" font-size="12" text-anchor="middle">陆风（陆→海）</text>
+  <text x="120" y="220" fill="#c8d4a0" font-size="11">陆地·白天=热源升</text>
+  <text x="360" y="220" fill="#8ab4d4" font-size="11">海洋·白天=冷源沉</text>
+  <text x="480" y="220" fill="#c8d4a0" font-size="11">陆地·夜晚=冷源沉</text>
+  <text x="660" y="220" fill="#8ab4d4" font-size="11" text-anchor="end">海洋</text>
+  <text x="360" y="207" fill="#5a6a7a" font-size="12" text-anchor="middle">图C · 海陆风示意（复刻教材图3-19要义·p86）</text>
+</svg><p>图C · 大湖泊周围与大江河沿岸的"湖陆风""江（河）陆风"同此模板（p86活动(3)）</p></div>
+
+<h3>变装三·城市热岛环流（教材p86-87活动2）：城市是个常驻的"热岛"</h3>
+<p>城市中心区建筑密集、地面多硬化，吸收太阳辐射多，向大气传送的热量也多；加上人口聚集、产业发达，生活与生产向大气释放的废热较多——这些因素综合，使<mark>城市中心区的气温高于郊区，城市中心区犹如一个温暖的"岛屿"，称为"城市热岛"</mark>（教材p86活动2）。热岛=一个<b>不会休息的常驻热源</b>：中心区空气<b>持续上升</b>，郊区空气<b>下沉</b>，近地面空气<mark>由郊区流向中心区</mark>，高空由中心区流向郊区（教材图3-20"由郊区流向中心区"）——一个方向<b>昼夜不断</b>的环流圈。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" width="100%">
+  <rect x="0" y="0" width="720" height="260" fill="#0f1520"/>
+  <rect x="300" y="150" width="120" height="60" fill="#3a3a4a" rx="4"/>
+  <rect x="330" y="110" width="30" height="100" fill="#4a4a5a"/><rect x="370" y="130" width="26" height="80" fill="#444454"/>
+  <line x1="360" y1="105" x2="360" y2="45" stroke="#9a7ad4" stroke-width="4" marker-end="url(#ar)"/>
+  <text x="372" y="70" fill="#b49ae4" font-size="12">中心区上升气流</text>
+  <path d="M 120 190 Q 240 190 300 185" stroke="#7aa8d4" stroke-width="2.5" marker-end="url(#ab)" fill="none"/>
+  <path d="M 620 190 Q 500 190 440 185" stroke="#7aa8d4" stroke-width="2.5" marker-end="url(#ab)" fill="none"/>
+  <text x="180" y="178" fill="#8ab4d4" font-size="12">由郊区流向中心区</text>
+  <text x="540" y="178" fill="#8ab4d4" font-size="12">由郊区流向中心区</text>
+  <path d="M 130 90 Q 230 150 290 175" stroke="#b48ad4" stroke-width="2" fill="none" marker-end="url(#ar)" opacity="0.8"/>
+  <path d="M 610 90 Q 510 150 450 175" stroke="#b48ad4" stroke-width="2" fill="none" marker-end="url(#ar)" opacity="0.8"/>
+  <text x="150" y="86" fill="#a08ac4" font-size="11">郊区下沉</text>
+  <text x="600" y="86" fill="#a08ac4" font-size="11" text-anchor="end">郊区下沉</text>
+  <text x="360" y="234" fill="#5a6a7a" font-size="12" text-anchor="middle">图D · 城市热岛环流示意（复刻教材图3-20要义·p87）</text>
+</svg><p>图D · 热岛=常驻热源：环流方向昼夜不变，这是它与海陆风/山谷风最大的不同</p></div>
+<div class="try"><span class="tag">试一试 1</span>教材p87活动(2)原题（显式试答·表述以教材为准）：为了减轻城市的大气污染，根据城市热岛环流的特点，应怎样布局大气污染严重的工业企业？<p><span class="step-tag ans">试答</span>热岛环流近地面风<b>由郊区流向中心区</b>——若把污染企业放在郊区（环流圈内），它排的污染物会被近地面风"顺路捎回"城市上空。因此大气污染严重的工业企业应布局在<b>城市热岛环流范围（下沉边界）之外</b>；同理，卫星城也不宜建在环流圈以内。教材p87活动(3)还补了一刀：热岛环流在<b>微风状态下最强</b>——北京冬春风速达5~6米/秒、夏季风速达2~3米/秒以上时，环流会被大风"淹没"而不明显，所以规划还要结合当地<b>主导风向</b>统筹（显式试答·候裁口径）。</p></div>
+
+<h2><span class="step-tag">第三步</span>原理变现——四道现场题一次过</h2>
+<p><b>现场一·热气球为什么能升空（p83探究1）：</b>火焰加热器将热空气灌入球囊，球囊内空气受热膨胀、密度变小，比囊外同体积的冷空气轻——总重力小于浮力，球囊膨胀并平稳升空。<mark>这就是热力环流第2步"受热膨胀上升"的直接应用</mark>。</p>
+<p><b>现场二·"点蜡烛切洋葱，不流泪"是真的吗（p83探究2）：</b>蜡烛持续加热上方空气，使蜡烛上方空气受热上升、形成稳定的上升气流——凑近切洋葱时，让洋葱一面朝向蜡烛上方，切面释放的刺激性挥发物会被上升气流<b>带走抽走</b>，不易飘到你的眼睛里。窍门有原理依据（显式试答·自编解释候定性：教材只问"道理是什么"，试答按上升气流口径作答）。</p>
+<p><b>现场三·海南岛白天多雨、夜间多晴朗（p86活动1(2)）：</b>白天吹海风，海洋上较湿的空气源源不断送向陆地，陆地上空气又受热上升——湿空气上升水汽凝结，成云致雨；夜间吹陆风，陆地上空气转为下沉气流，下沉增温不利凝结，故夜间多晴朗。<mark>白天海风+上升=雨，夜晚下沉=晴</mark>（显式试答）。</p>
+<p><b>现场四·白天海滨吹什么风（2021.1卷T3·卷源直读件在库）：</b>白天陆地=热源（升），海洋=冷源（沉），近地面风从海洋吹向陆地——吹<b>海风</b>（①）；夜间反转为陆风（③）。官方答案3=A（①③）（卷源id=49177·官方答案页p7实锚·本席10-25卷源直读件在库可查）。同卷T4：海陆热力环流使海滨地区<b>气温日较差变小</b>（4=C·白天海风降温夜夜陆风缓降——沿海昼夜温差被海水"抹平"）。</p>
+<div class="note-red"><b>保命三句：</b>①气压高低<b>只在同一水平面上比</b>——"近地面低压"与"上空高压"说的是两层；②近地面风永远<mark>从下沉区（高压）吹向上升区（低压）</mark>，先找冷热源再画箭头；③热岛环流是<b>常驻</b>环流（昼夜不停·近地面郊区→中心），海陆风山谷风才昼夜反转——"城市吹海风"式张冠李戴必扣分。</div>
+
+<h2><span class="step-tag">验一验</span>自测四连</h2>
+<div class="quiz">1．填四步链：地面冷热不均 → 空气（　　）运动 → 同一水平面上出现（　　）差异 → 空气（　　）运动，形成热力环流。<br>2．等压面凸起的地方是（　　）气压区；下凹的地方是（　　）气压区。<br>3．白天，山坡与山谷之间吹（　　）风；夜晚反转为（　　）风；且（　　）风风速更大。<br>4．城市热岛环流中，近地面空气流向是（　　）→（　　）；为减轻大气污染，污染企业应布局在（　　　　　　）。</div>
+<div class="quiz"><span class="tag">答</span>1．垂直（升/沉）·气压·水平（风）。2．高·低。3．谷·山·谷。4．郊区→中心区（近地面）·城市热岛环流范围之外（下沉边界之外）。——逐条对照正文p84/p84泡泡/p85阅读/p87活动，答案均显式标注可对账。</div>
+
+<h2><span class="step-tag">高考怎么考</span>两考向·真题锚在库</h2>
+<p><b>考向一·环流圈与气压判读（选择/绘图高频）：</b>给冷热源（昼/夜·海/陆·城/郊）画环流圈箭头、判近地面与上空气压高低、读等压面凸凹——2025.6卷T26（id=164667）即"画箭头补全城市热岛环流模式图"9分大题：官方解析"近地面郊区→市中心·高空市中心→郊区·污染工业布局在城郊环流下沉边界之外"（卷源直读件在库·sha留痕）。</p>
+<p><b>考向二·实例情境迁移：</b>海陆风对滨海气候的影响（2021.1卷T3/T4·3=A/4=C官方答案页实锚）、等压线疏密与风力（2022.1卷T29关联级·"等压线更密集·水平气压梯度力较大"）、以及新情境"冷热源对"（湖陆风/绿洲-沙漠环流等）——模板不变：<b>找冷热源→判升降→同面定风向</b>。</p>
+<p class="small">真题锚源注记：以上三卷考位与官方答案值均出自本席10-25晚卷源直读件（产出_队7/卷源直读_地理3.3大气热力环流_并行搜索员C_1025晚.md·主锚A/B/C四通道闭合·sha256留痕），成稿只引考向与答案值·不转录题干全文（卷源id可溯·零代拟）。</p>
+
+<h2><span class="step-tag">下一站</span>第四章 地球上的水——从"天上的气"落到"地上的水"</h2>
+<p>第三章"地球上的大气"到本节收官：大气怎么组队（3.1）、怎么收热存热（3.2）、怎么流动（3.3）——三层认知合上。翻过p88章首跨页，镜头从大气切到<b>水</b>：第四章"地球上的水"首节《水循环》，讲那滴被太阳"抽"上天、又落回来的水怎么走完它的环球旅程（p89节名页已亲验在案）。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" width="100%" role="img" aria-label="本节位置图：第三章三节次序与本节所在">
+  <rect x="0" y="0" width="720" height="150" fill="#0f1520"/>
+  <text x="360" y="30" fill="#d8dee6" font-size="15" text-anchor="middle">第三章 地球上的大气 · 节位图</text>
+  <rect x="40" y="58" width="200" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="140" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">3.1 大气的组成与垂直分层</text>
+  <text x="140" y="98" fill="#5a7a9a" font-size="11" text-anchor="middle">p70-76 · 队7席已交付</text>
+  <rect x="260" y="58" width="200" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="360" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">3.2 大气受热过程</text>
+  <text x="360" y="98" fill="#5a7a9a" font-size="11" text-anchor="middle">p77-82 · 队7席已交付</text>
+  <rect x="480" y="58" width="200" height="52" rx="8" fill="#24401f" stroke="#52c41a" stroke-width="2"/>
+  <text x="580" y="80" fill="#b8e0b8" font-size="13" text-anchor="middle" font-weight="bold">3.3 大气热力环流（本件）</text>
+  <text x="580" y="98" fill="#7aaa7a" font-size="11" text-anchor="middle">p83-87 · 第三章收官</text>
+  <line x1="240" y1="84" x2="258" y2="84" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="460" y1="84" x2="478" y2="84" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="360" y="136" fill="#5a6a7a" font-size="11" text-anchor="middle">p88 = 第四章"地球上的水"章首（下游界标·已亲验）· 节界双端实锚见附件1</text>
+</svg><p>图E · 本件在第三章中的位置：热力环流承"受热过程"之因，开"大气运动"之源</p></div>
+
+<div class="foot">零基础首学版 v1.0（批3产出·队7席）· 事实层素材源：湘教版《普通高中教科书·地理 必修 第一册》p83-87 官方影印逐页对照（湖南教育出版社·智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a·ts=1754905526079（同值链路·fig89-93五图在席私有geo32_jc/·3.2复产拉图顺带覆盖）·图号→印刷页 N−6 映射复核（g89=p83/g90=p84/g91=p85/g92=p86/g93=p87/g94=p88）·节界实锚：p83第三节"大气热力环流"节题页（左界·3.2定界时亲验）至p87活动续页（域内末页）·p88=第四章"地球上的水"章首跨页（右界界标亲验）·p83-87直读锚定：探究孔明灯热气球与一、热力环流的形成起p83/机理四步与等压面泡泡与图3-17p84/二、自然界的热力环流与阅读山谷风与图3-18p85/活动海陆风三问与图3-19与热岛背景句p86/图3-20与热岛三问p87）<br>
+<br>真题锚源：2021.1卷（id=49177·T3=A/4=C官方答案页实锚）·2025.6卷（id=164667·T26解析官方值）·2022.1卷（id=76748·T29关联级）——均出自本席10-25晚卷源直读件（产出_队7/在库·四通道闭合·sha256留痕），成稿只引考向与答案值不转录题干全文。<br>
+<br>本件为候验产出：走 dui7_33_1031 分支候终读，禁直推main。自测/试答块均已显式标注，数据与表述以教材影印为准。宁缺毋编：现场二"点蜡烛切洋葱"试答含自编解释成分（已显式标注候定性）。(并行搜索员C·队7席·dui7@team7.local)</div>
+
+</div>
+</body>
+</html>
