@@ -1,0 +1,23 @@
+[PASS] 1  S+O2=SO2(点燃) 系数=[1, 1, 1] 
+[PASS] 2  Fe+S=FeS(Δ) 系数=[1, 1, 1] 
+[PASS] 3  2SO2+O2⇌2SO3(催化剂Δ) 系数=[1, 1, 1] (预配系数2/1/2复核)
+[PASS] 4  SO2+2H2S=3S↓+2H2O 系数=[1, 1, 1, 1] 
+[PASS] 5  SO2+H2O⇌H2SO3 系数=[1, 1, 1] 
+[PASS] 6  SO2+2OH-=SO3^2-+H2O(离子式) 系数=[1, 1, 1, 1] 
+[PASS] 7  2H2SO4(浓)+Cu=CuSO4+SO2↑+2H2O 系数=[1, 1, 1, 1, 1] 
+[PASS] 8  2H2SO4(浓)+C=2SO2↑+CO2↑+2H2O 系数=[1, 1, 1, 1, 1] 
+[PASS] 9  SO3+H2O=H2SO4 系数=[1, 1, 1] 
+[PASS] 10 2H2SO3+O2=2H2SO4 系数=[1, 1, 1] 
+[PASS] 11 4FeS2+11O2=2Fe2O3+8SO2(高温) 系数=[1, 1, 1, 1] 
+[PASS] 12 SO2+CaCO3=CaSO3+CO2(脱硫·自编) 系数=[1, 1, 1, 1] 
+[PASS] 13 2CaSO3+O2=2CaSO4(脱硫·自编) 系数=[1, 1, 1] 
+[PASS] 14 SO2+Cl2+2H2O=H2SO4+2HCl(练习8答案侧·自编) 系数=[1, 1, 1, 1, 1] 
+[PASS] 15 BaSO3+2HCl=BaCl2+SO2↑+H2O(练习9答案侧·自编) 系数=[1, 1, 1, 1, 1] 
+[PASS] 16 BaSO3+H2SO4=BaSO4+SO2↑+H2O(练习9答案侧·自编) 系数=[1, 1, 1, 1, 1] 
+
+练习12留痕：m(FeS2)=750 kg · M=0.120 kg/mol · n(FeS2)=6250 mol
+  n(H2SO4)=2n=12500 mol · m(纯H2SO4)=1225 kg · m(98%溶液)=1250 kg
+[PASS] 练习12 = 1250 kg（1.25吨）
+
+合计：17/17 PASS
+ALL PASS

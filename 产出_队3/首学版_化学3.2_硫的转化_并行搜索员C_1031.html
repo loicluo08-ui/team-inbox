@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>化学3.2 硫的转化 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  b { color: #ffd479; }
+  .key { background: #233043; border-left: 4px solid #4a9eff; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .nb { background: #3a2f1a; border-left: 4px solid #ffd479; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .try { background: #1c2b22; border-left: 4px solid #6fcf97; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .ans { color: #6fcf97; }
+  .pit { background: #2e1f22; border-left: 4px solid #eb5757; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .alt { background: #1f2733; border: 1px dashed #4a9eff; padding: 12px 16px; border-radius: 6px; margin: 18px 0; color: #a9c4e4; }
+  .box { background: #1d2b3a; border: 1px solid #3a5578; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .kao { background: #2b1f33; border-left: 4px solid #b98cff; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .eq { text-align: center; font-size: 19px; letter-spacing: 1px; margin: 16px 0; color: #eaf2ff; background: #1a222e; border-radius: 8px; padding: 10px 8px; }
+  .fig { text-align: center; margin: 24px 0; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 8px; }
+  .small { font-size: 14px; color: #9aa7b8; }
+  .talk { color: #cfe0f5; background: #1a2433; padding: 14px 18px; border-radius: 8px; margin: 20px 0; }
+  .check { background: #1a2433; padding: 14px 18px; border-radius: 8px; margin: 20px 0; }
+  .check li { margin: 6px 0 6px 20px; }
+  .next { background: #14202e; border: 1px solid #2e4a6b; padding: 12px 16px; border-radius: 8px; margin: 30px 0 10px; color: #a9c4e4; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; }
+  th, td { border: 1px solid #3a4a5e; padding: 7px 10px; font-size: 15px; }
+  th { background: #1d2b3a; color: #cfe0f5; }
+  .foot { border-top: 1px solid #2e3a4a; margin-top: 50px; padding-top: 16px; color: #7d8a99; font-size: 12.5px; line-height: 1.7; }
+  .mark { background: #4a3a00; color: #ffe28a; padding: 0 4px; border-radius: 3px; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 0; }
+    h1,h2,h3 { color: #000; }
+    .key { background: #e8f0fe; color: #111; }
+    .nb { background: #fff7dd; color: #111; }
+    .try { background: #eafaf1; color: #111; }
+    .pit { background: #fdecec; color: #111; }
+    .alt { background: #eef4fb; color: #333; }
+    .box,.kao { background: #f2f4f8; color: #111; }
+    .talk,.check { background: #f2f6fb; color: #111; }
+    .eq { background: #eef2f8; color: #000; }
+    .figcap,.sub,.small,.foot { color: #555; }
+    b { color: #8a6d00; }
+    .ans { color: #1d7a46; }
+    .mark { background: #ffe9a8; color: #6b5200; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>硫的转化：一张"价—类"地图走通硫的一家</h1>
+<div class="sub">化学 3.2 · 鲁科版《必修 第一册》第3章第2节 · 教材印刷页 p97–109 · 零基础首学版 v1.0（出品：并行搜索员C·队3席·1031）</div>
+
+<div class="talk">
+火山喷发，熔岩喷涌、浓烟滚滚——这不仅释放出巨大的能量，还产生了许多含硫元素的气体，火山口上甚至能找到<b>硫单质</b>（p97 图3-2-1"火山口的硫单质"）。硫是人类最早认识的化学元素之一：古代炼丹家常拿硫单质及含硫化合物做实验，我国古代四大发明之一的<b>黑火药</b>，主要成分里就有它（p97 引言）。本节的四连问就在 p97 联想·质疑里：自然界中还有哪些含硫化合物？它们怎样产生、以什么形态存在？人们怎样把它们转化成所需物质？使用中遇到了哪些问题、又如何解决？我们把 2.3 节装好的"价态眼镜"戴起来，从 −2 价一路走到 +6 价，把硫的一家走个遍。
+</div>
+
+<div class="check">
+<b>读完这节你能：</b>
+<li>用<b>"价—类"二维图</b>给含硫物质"定位"（−2、0、+4、+6 四种价态 × 氢化物、单质、氧化物、酸、盐五类），并说出自然界中硫循环的大致路径；</li>
+<li>说出<b>硫单质</b>的物理性质与两种<b>同素异形体</b>（正交硫、单斜硫），写出硫与铁、硫与氧气反应的化学方程式并指出化合价变化；</li>
+<li>总结<b>二氧化硫</b>的四类性质（还原性、氧化性、酸性氧化物通性、漂白性）与<b>浓硫酸</b>的三大特性（强氧化性、吸水性、脱水性），会用"⇌"书写<b>可逆反应</b>；</li>
+<li>说出<b>硫酸型酸雨</b>的成因、危害与防治思路，看懂<b>接触法制硫酸</b>的生产流程（p104 图3-2-12）。</li>
+</div>
+
+<div class="nb">
+<b>开讲前的三件预备（都没有就先补这三件）：</b>
+<p>① <b>化合价怎么标（2.3 节工具）：</b>单质中元素化合价为 0；化合物里 H 通常 +1、O 通常 −2。自己动手：H<sub>2</sub>S 里 S 是 −2，SO<sub>2</sub> 里 S 是 +4，SO<sub>3</sub>、H<sub>2</sub>SO<sub>4</sub>、Na<sub>2</sub>SO<sub>4</sub> 里 S 都是 +6——这四种价态正是本节地图的纵轴。</p>
+<p>② <b>价态规律（2.3 节 p69–70 已学）：</b>元素处于<b>最高价态</b>只可能表现氧化性、<b>最低价态</b>只可能表现还原性、<b>中间价态</b>两可。硫的 −2 / 0 / +4 / +6 四个价态把三种情形全占了——本节就是这套规律的实战演练场。</p>
+<p>③ <b>酸性氧化物（初中 CO<sub>2</sub> 类比）：</b>与水化合成酸、与碱反应成盐和水。SO<sub>2</sub> 是"硫版 CO<sub>2</sub>"，但它比 CO<sub>2</sub> 多两样东西：<b>漂白性</b>和<b>还原性</b>——学的时候留个心眼。</p>
+</div>
+
+<h2><span class="step-tag">第①站</span>自然界中的硫：四个价态一张图（p97–98）</h2>
+
+<p>硫元素广泛存在于自然界中：海洋、大气和地壳中乃至动植物体内，都含有硫元素（p97）。它的"旅行路线"是这样转圈的——火山喷发时，部分硫元素转化成<b>硫化氢</b>气体，部分转化成<b>二氧化硫</b>和<b>三氧化硫</b>气体；SO<sub>2</sub> 在大气中存在时间比较短，当有<b>氧气、水蒸气、阳光</b>等存在时会被氧化成 SO<sub>3</sub>；SO<sub>2</sub> 和 SO<sub>3</sub> 溶于水，分别生成<b>亚硫酸</b>和<b>硫酸</b>；一些微生物又会把部分亚硫酸和硫酸转化成<b>硫单质或硫化氢</b>（p97 原文口径，微生物这一手别漏）。</p>
+
+<p>地下与地表还各有一批含硫矿物（p98 图3-2-2）：火山喷发时，熔融态的含硫物质与含<b>铁、砷、汞</b>等元素的物质反应形成矿物——<b>黄铁矿（FeS<sub>2</sub>）、雄黄（As<sub>4</sub>S<sub>4</sub>）、雌黄（As<sub>2</sub>S<sub>3</sub>）、辰砂（HgS）</b>；暴露于地球表面的多种含硫矿物，受空气中氧气和水蒸气等的作用，转化成新的物质——如<b>石膏（CaSO<sub>4</sub>·2H<sub>2</sub>O）、芒硝（Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O）</b>等。</p>
+
+<div class="fig">
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" aria-label="自然界中硫的循环示意（结构简图）">
+  <defs><marker id="ar1" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#e0884a" stroke-width="1.6"/></marker></defs>
+  <rect x="30" y="30" width="150" height="58" rx="8" fill="#1d2b3a" stroke="#3a5578"/>
+  <text x="105" y="55" fill="#cfe4ff" font-size="13.5" text-anchor="middle">火山喷发</text>
+  <text x="105" y="74" fill="#9aa7b8" font-size="11" text-anchor="middle">（p97–98 图3-2-2）</text>
+  <rect x="250" y="20" width="120" height="40" rx="6" fill="#1a222e" stroke="#3a5578"/>
+  <text x="310" y="45" fill="#eaf2ff" font-size="13" text-anchor="middle">H<sub>2</sub>S（−2价）</text>
+  <rect x="250" y="80" width="120" height="40" rx="6" fill="#1a222e" stroke="#3a5578"/>
+  <text x="310" y="105" fill="#eaf2ff" font-size="13" text-anchor="middle">SO<sub>2</sub>、SO<sub>3</sub>（+4/+6）</text>
+  <rect x="440" y="80" width="130" height="40" rx="6" fill="#1a222e" stroke="#3a5578"/>
+  <text x="505" y="105" fill="#eaf2ff" font-size="13" text-anchor="middle">H<sub>2</sub>SO<sub>3</sub>、H<sub>2</sub>SO<sub>4</sub></text>
+  <rect x="440" y="20" width="130" height="40" rx="6" fill="#1a222e" stroke="#3a5578"/>
+  <text x="505" y="45" fill="#eaf2ff" font-size="13" text-anchor="middle">S、H<sub>2</sub>S（微生物转化）</text>
+  <rect x="620" y="80" width="76" height="40" rx="6" fill="#1a222e" stroke="#3a5578"/>
+  <text x="658" y="105" fill="#eaf2ff" font-size="13" text-anchor="middle">溶于水</text>
+  <line x1="180" y1="52" x2="246" y2="42" stroke="#e0884a" stroke-width="1.6" marker-end="url(#ar1)"/>
+  <line x1="180" y1="68" x2="246" y2="98" stroke="#e0884a" stroke-width="1.6" marker-end="url(#ar1)"/>
+  <line x1="370" y1="100" x2="436" y2="100" stroke="#e0884a" stroke-width="1.6" marker-end="url(#ar1)"/>
+  <line x1="570" y1="96" x2="616" y2="96" stroke="#e0884a" stroke-width="1.6" marker-end="url(#ar1)"/>
+  <path d="M505,124 C505,158 505,150 505,158" fill="none" stroke="#e0884a" stroke-width="1.6" marker-end="url(#ar1)"/>
+  <text x="516" y="150" fill="#9aa7b8" font-size="10.5">部分被微生物</text>
+  <text x="516" y="163" fill="#9aa7b8" font-size="10.5">转化为 S / H<sub>2</sub>S</text>
+  <rect x="30" y="200" width="200" height="66" rx="8" fill="#1d2b3a" stroke="#3a5578"/>
+  <text x="130" y="226" fill="#cfe4ff" font-size="13" text-anchor="middle">地下：与 Fe、As、Hg 等化合</text>
+  <text x="130" y="248" fill="#9ecbff" font-size="11.5" text-anchor="middle">黄铁矿FeS<sub>2</sub>·雄黄As<sub>4</sub>S<sub>4</sub>·雌黄As<sub>2</sub>S<sub>3</sub>·辰砂HgS</text>
+  <rect x="300" y="200" width="220" height="66" rx="8" fill="#1d2b3a" stroke="#3a5578"/>
+  <text x="410" y="226" fill="#cfe4ff" font-size="13" text-anchor="middle">地表：受 O<sub>2</sub> 和水蒸气作用</text>
+  <text x="410" y="248" fill="#9ecbff" font-size="11.5" text-anchor="middle">石膏 CaSO<sub>4</sub>·2H<sub>2</sub>O · 芒硝 Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O</text>
+  <text x="620" y="240" fill="#5a6a7a" font-size="11" text-anchor="middle">四种价态</text>
+  <text x="620" y="256" fill="#5a6a7a" font-size="11" text-anchor="middle">都在自然循环里</text>
+</svg>
+<p class="figcap">这张图在说什么：自然界含硫物质在 −2、0、+4、+6 四个价态之间循环流转（p97–98 文字口径 + 图3-2-2 结构简画，仅示意不含数据）。</p>
+</div>
+
+<p>把"旅行路线"上的物质全列出来：<b>硫化氢、硫单质、二氧化硫、三氧化硫、亚硫酸、硫酸、硫酸钠</b>等。怎么给这一大家子建户口本？教材用两个视角（p98）：从<b>物质类别</b>看，包括氢化物、单质、氧化物、酸、盐等；从<b>硫元素化合价</b>看，包括 −2、0、+4、+6 价。两个视角一交叉，就是下面这张"价—类"二维图（图3-2-3）——硫及其化合物之间可以相互转化。</p>
+
+<div class="fig">
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" aria-label="硫及其化合物的价-类二维图（p98 图3-2-3）">
+  <line x1="110" y1="250" x2="660" y2="250" stroke="#5a6a7a" stroke-width="1.6"/>
+  <line x1="110" y1="250" x2="110" y2="40" stroke="#5a6a7a" stroke-width="1.6"/>
+  <text x="70" y="34" fill="#9aa7b8" font-size="12">硫元素化合价</text>
+  <text x="665" y="270" fill="#9aa7b8" font-size="12" text-anchor="end">物质类别</text>
+  <text x="92" y="76" fill="#d8dee6" font-size="13" text-anchor="end">+6</text>
+  <text x="92" y="126" fill="#d8dee6" font-size="13" text-anchor="end">+4</text>
+  <text x="92" y="176" fill="#d8dee6" font-size="13" text-anchor="end">0</text>
+  <text x="92" y="226" fill="#d8dee6" font-size="13" text-anchor="end">−2</text>
+  <text x="175" y="272" fill="#9aa7b8" font-size="12.5" text-anchor="middle">氢化物</text>
+  <text x="290" y="272" fill="#9aa7b8" font-size="12.5" text-anchor="middle">单质</text>
+  <text x="405" y="272" fill="#9aa7b8" font-size="12.5" text-anchor="middle">氧化物</text>
+  <text x="520" y="272" fill="#9aa7b8" font-size="12.5" text-anchor="middle">酸</text>
+  <text x="635" y="272" fill="#9aa7b8" font-size="12.5" text-anchor="middle">盐</text>
+  <text x="405" y="80" fill="#eaf2ff" font-size="14.5">SO<sub>3</sub></text>
+  <text x="520" y="80" fill="#eaf2ff" font-size="14.5">H<sub>2</sub>SO<sub>4</sub></text>
+  <text x="635" y="80" fill="#eaf2ff" font-size="14.5">Na<sub>2</sub>SO<sub>4</sub></text>
+  <text x="405" y="130" fill="#eaf2ff" font-size="14.5">SO<sub>2</sub></text>
+  <text x="520" y="130" fill="#eaf2ff" font-size="14.5">H<sub>2</sub>SO<sub>3</sub></text>
+  <text x="635" y="130" fill="#eaf2ff" font-size="14.5">Na<sub>2</sub>SO<sub>3</sub></text>
+  <text x="290" y="180" fill="#eaf2ff" font-size="14.5">S</text>
+  <text x="175" y="230" fill="#eaf2ff" font-size="14.5">H<sub>2</sub>S</text>
+  <circle cx="405" cy="74" r="3" fill="#4a9eff"/><circle cx="520" cy="74" r="3" fill="#4a9eff"/><circle cx="635" cy="74" r="3" fill="#4a9eff"/>
+  <circle cx="405" cy="124" r="3" fill="#6fcf97"/><circle cx="520" cy="124" r="3" fill="#6fcf97"/><circle cx="635" cy="124" r="3" fill="#6fcf97"/>
+  <circle cx="290" cy="174" r="3" fill="#ffd479"/><circle cx="175" cy="224" r="3" fill="#e05c5c"/>
+  <text x="175" y="56" fill="#5a6a7a" font-size="11">最高价 +6：只可能氧化性</text>
+  <text x="175" y="196" fill="#5a6a7a" font-size="11">中间价 0 / +4：两可</text>
+  <text x="175" y="212" fill="#5a6a7a" font-size="11">最低价 −2：只可能还原性</text>
+</svg>
+<p class="figcap">这张图在说什么：p98 图3-2-3"价—类"二维图——横轴物质类别、纵轴化合价，九种代表物质各就各位。这张图是本节的"总地图"，第③站的所有反应都是在格点之间连线。</p>
+</div>
+
+<div class="try">
+<b>验一验①（30秒）：</b>把 <b>Na<sub>2</sub>SO<sub>3</sub></b> 和 <b>Na<sub>2</sub>SO<sub>4</sub></b> 放进价—类二维图，各落在哪个格？<br>
+<span class="ans">都落在"盐"列：Na<sub>2</sub>SO<sub>3</sub> 中 S 为 +4（与 SO<sub>2</sub>、H<sub>2</sub>SO<sub>3</sub> 同排）；Na<sub>2</sub>SO<sub>4</sub> 中 S 为 +6（与 SO<sub>3</sub>、H<sub>2</sub>SO<sub>4</sub> 同排）——p98 图3-2-3 原图已把这两个盐画出，自验目的是让你把"同价态同排"刻进脑子。</span>
+</div>
+
+<h2><span class="step-tag">第②站</span>认识硫单质：同素异形体与"两副面孔"（p99–100）</h2>
+
+<p>教材先安排 <b>观察·思考</b>（p99"硫单质的性质"）：先预测硫单质会有哪些化学性质，再做三个小实验——【实验1】少量硫粉放入试管，观察颜色、状态，在酒精灯上加热观察现象；【实验2】研细的硫粉和铁粉按一定比例混合均匀，放在石棉网上堆成条状，用灼热的玻璃棒触及一端，当混合物呈<b>红热状态</b>时移开玻璃棒，观察发生的现象；【实验3】硫粉放入燃烧匙加热至熔化并燃烧后，迅速伸入<b>盛满氧气的集气瓶</b>（底部有少量水），观察发生的现象。观察记录表（实验编号/预测性质/实验现象/结论及化学方程式）在 p99 是<b>空白留白</b>，要自己填。</p>
+
+<div class="key">硫单质（sulfur）俗称硫黄。通常状况下，它是一种<b>黄色或淡黄色的固体</b>；很脆，易研成粉末；<b>不溶于水，微溶于酒精，易溶于二硫化碳（CS<sub>2</sub>）</b>；熔点和沸点都不高（p100）。</div>
+
+<div class="key">由同一种元素组成的<b>性质不同的几种单质</b>，叫作该元素的<b>同素异形体</b>（allotrope）。同素异形体之间的性质差异，<b>主要表现在物理性质上</b>。正交硫和单斜硫是常见的硫元素的同素异形体（p100）：正交硫熔点 <b>112.8 ℃</b>、单斜硫熔点 <b>119.3 ℃</b>（图3-2-7）。</div>
+
+<p>化学性质上，硫单质"两副面孔"（p100 原文口径）：能与金属铁反应生成<b>硫化亚铁（FeS）</b>，体现了硫单质的<b>氧化性</b>；能与氧气反应生成二氧化硫，体现了硫单质的<b>还原性</b>——0 价的硫，降价做氧化剂、升价做还原剂，两头都能当。</p>
+
+<div class="eq">Fe + S <span class="small">Δ</span> FeS　　（S：0 → −2，氧化剂）</div>
+<div class="eq">S + O<sub>2</sub> <span class="small">点燃</span> SO<sub>2</sub>　　（S：0 → +4，还原剂）</div>
+
+<p>硫黄的用途（p100）：主要用于制造<b>硫酸、化肥、火柴及杀虫剂</b>等——注意第一项就是硫酸，为第③站的工业路线埋下伏笔。</p>
+
+<div class="try">
+<b>验一验②（30秒·实验2 现象与结论）：</b>硫粉与铁粉混合物红热后移开玻璃棒，为什么还能继续红热下去？<br>
+<span class="ans">红热引发了 Fe + S <span class="small">Δ</span> FeS 的反应，该反应放热（教材 p99 未明写"放热"，"呈红热状态时移开玻璃棒"仍持续反应为现象侧描述），维持反应自行进行下去；产物 FeS 中 S 为 −2 价，硫做<b>氧化剂</b>（结论及方程式一栏的填写口径，现象侧描述按 p99 实验记录表自填并标注）。</span>
+</div>
+
+<div class="pit"><b>坑点1：同素异形体必须是"单质对单质"。</b>由<b>同一种元素</b>组成的<b>性质不同的几种单质</b>才互称同素异形体——正交硫与单斜硫算（熔点 112.8 ℃ / 119.3 ℃，差异主要在物理性质，p100）；O<sub>2</sub> 与 O<sub>3</sub>、金刚石与石墨也是同类关系（初中已知，自编类比注记）。但"硫单质"和"SO<sub>2</sub>"绝不能算——后者是化合物；同一元素的不同<b>同位素</b>更不是——那是原子层面的概念。三个"像"要分清：同素异形体（单质 vs 单质）、同位素（原子 vs 原子）、同分异构体（有机化学再会）。</div>
+
+<h2><span class="step-tag">第③站</span>实验室里研究不同价态硫元素之间的转化：SO<sub>2</sub> 与浓硫酸（p100–104）</h2>
+
+<h3>先拿到"探究说明书"（p100–101）</h3>
+<p>本节安排了<b>活动·探究（学生必做实验）</b>"不同价态硫元素之间的转化"（p100）：实验目的是选取含有硫元素的物质，通过实验探究 <b>0、+4、+6</b> 这三种价态硫元素之间的相互转化。实验用品两栏：试剂有 SO<sub>2</sub> 水溶液、Na<sub>2</sub>SO<sub>3</sub> 溶液、浓硫酸、Na<sub>2</sub>S 溶液、稀硫酸、NaOH 溶液、酸性 KMnO<sub>4</sub> 溶液、氯水、KI 溶液、淀粉溶液、品红溶液、铜片；仪器有酒精灯、玻璃管、橡胶塞、导气管、试管夹、试管、胶头滴管、铁架台等。<b>安全提示三条</b>（p100 原框）：氯水、酸性 KMnO<sub>4</sub> 溶液、浓硫酸等具有腐蚀性，取用时应避免沾到皮肤或衣服上；二氧化硫气体有毒，应避免将其释放到空气中；涉及浓硫酸的实验由教师辅助学生完成。</p>
+
+<div class="box"><b>方法导引（p101）：探究不同价态硫元素之间相互转化的思路。</b>①<b>选物质</b>——要选择含有不同价态硫元素的物质，如含 +4 价硫元素的物质可以选择二氧化硫或亚硫酸钠；②<b>找对手</b>——实现不同价态硫元素之间的相互转化，依据的是氧化还原理论，需要寻找合适的氧化剂或还原剂；③<b>留证据</b>——提供表明相应转化实际发生的证据。</div>
+
+<div class="key">含有不同价态硫元素的物质之间转化时，所发生的反应属于<b>氧化还原反应</b>。当硫元素处于<b>中间价态</b>时，含有这种价态硫元素的物质（如硫黄、二氧化硫、亚硫酸钠），<span class="mark">既具有氧化性又具有还原性</span>；当硫元素处于<b>最高价态</b>时，含有这种价态硫元素的物质（如三氧化硫、浓硫酸），<span class="mark">只具有氧化性</span>；当硫元素处于<b>最低价态</b>时，含有这种价态硫元素的物质（如硫化氢、硫化钠），<span class="mark">只具有还原性</span>（p101 原文口径）。</div>
+
+<h3>二氧化硫（SO<sub>2</sub>，sulfur dioxide）：中间价态的"多面手"（p102）</h3>
+<p>SO<sub>2</sub> 是一种<b>无色、有刺激性气味的有毒气体，易溶于水</b>（p102）。它的四类性质按"价态账"分家——</p>
+<p><b>性质一：还原性</b>。在催化剂和加热的条件下能被氧气氧化（p102）：</p>
+<div class="eq">2SO<sub>2</sub> + O<sub>2</sub> <span class="small">催化剂·Δ</span> ⇌ 2SO<sub>3</sub>　　（S：+4 → +6）</div>
+<div class="box"><b>可逆反应（p102 原框）：</b>在相同条件下能同时向正、反两个方向进行的反应称为<b>可逆反应</b>。二氧化硫与氧气的反应以及前面学过的氯气与水的反应都属于可逆反应。在可逆反应的化学方程式中用 <b>"⇌"</b> 代替 "="。书写要点：同页另一反应 SO<sub>2</sub> + H<sub>2</sub>O ⇌ H<sub>2</sub>SO<sub>3</sub> 也用可逆号——"同时、双向、相同条件"三要素缺一不可。</div>
+<p><b>性质二：氧化性</b>。能与硫化氢（或硫化钠）反应，体现了二氧化硫的氧化性及硫化氢（或硫化钠）的还原性（p102）：</p>
+<div class="eq">SO<sub>2</sub> + 2H<sub>2</sub>S ═══ 3S↓ + 2H<sub>2</sub>O　　（S：+4 → 0；−2 → 0，"价态归中"，图3-2-8 溶液变淡黄色浑浊）</div>
+<p><b>性质三：酸性氧化物的一般性质</b>（p102）：与水反应生成亚硫酸、与 NaOH 溶液反应生成亚硫酸钠和水——</p>
+<div class="eq">SO<sub>2</sub> + H<sub>2</sub>O ⇌ H<sub>2</sub>SO<sub>3</sub>　　SO<sub>2</sub> + 2OH<sup>−</sup> ═══ SO<sub>3</sub><sup>2−</sup> + H<sub>2</sub>O</div>
+<p><b>性质四：漂白性</b>。二氧化硫具有漂白性，能使<b>品红</b>等有色物质褪色；但用二氧化硫漂白过的有色物质，<b>在一定条件下会恢复原来的颜色</b>（p102，图3-2-9：品红溶液→通入二氧化硫→褪色→加热→红色恢复）。</p>
+<div class="alt"><b>用途链接（p102 末段）：</b>二氧化硫是一种<b>食品添加剂</b>。我国《食品安全国家标准 食品添加剂使用标准》规定了二氧化硫作为<b>漂白剂、防腐剂、抗氧化剂</b>的使用范围、使用限量和残留量——"漂白性"落到生产里的正面用场。</div>
+
+<div class="try">
+<b>验一验③（30秒）：</b>SO<sub>2</sub> 与 H<sub>2</sub>S 反应里，谁做氧化剂、谁做还原剂？转移几个电子？<br>
+<span class="ans">SO<sub>2</sub> 中 S +4→0 得 2e<sup>−</sup>，做氧化剂；2 个 H<sub>2</sub>S 中 S 各 −2→0 共失 2e<sup>−</sup>，做还原剂（0 价 S 都是<b>还原产物</b>）。同一反应里 +4 和 −2 向中间价态 0 靠拢——教材把这类反应叫"价态归中"没有明说，此归纳为自编注记，记住现象与电子账即可（p102 原式）。</span>
+</div>
+
+<h3>浓硫酸：最高价态的"强氧化剂"（p103）</h3>
+<p>硫酸（H<sub>2</sub>SO<sub>4</sub>，sulfuric acid）中的硫元素处于<b>最高价态</b>。浓硫酸能与许多物质发生氧化还原反应，是常见的<b>氧化剂</b>。例如，在加热时浓硫酸可与<b>铜、木炭</b>等单质发生反应（p103）：</p>
+<div class="eq">2H<sub>2</sub>SO<sub>4</sub>(浓) + Cu <span class="small">Δ</span> CuSO<sub>4</sub> + SO<sub>2</sub>↑ + 2H<sub>2</sub>O　　（Cu：0→+2；S：+6→+4，图3-2-10 品红溶液褪色验证 SO<sub>2</sub>）</div>
+<div class="eq">2H<sub>2</sub>SO<sub>4</sub>(浓) + C <span class="small">Δ</span> 2SO<sub>2</sub>↑ + CO<sub>2</sub>↑ + 2H<sub>2</sub>O　　（C：0→+4；S：+6→+4）</div>
+<p>两个方程式里的 2H<sub>2</sub>SO<sub>4</sub> 都只有<b>一半被还原</b>：CuSO<sub>4</sub>、盐里的 SO<sub>4</sub><sup>2−</sup> 那一份没变价——电子账别把两份都算成降价。</p>
+<div class="key"><b>钝化（p103）：</b>在常温下，浓硫酸与<b>铁、铝</b>接触时，会使金属表面生成一层<b>致密的氧化物薄膜</b>而钝化，阻止了内部的金属继续与硫酸发生反应。因此，<span class="mark">冷的浓硫酸可以用铁质或铝质容器储存</span>。</div>
+<div class="key"><b>脱水性（p103）：</b>浓硫酸具有脱水性，能按水的元素组成质量比脱去纸屑、棉花所含有机化合物中的<b>氢、氧元素</b>，使这些有机化合物<b>炭化</b>（图3-2-11：蔗糖加入浓硫酸后炭化蓬松成黑"面包"）。</div>
+<div class="key"><b>吸水性（p103）：</b>浓硫酸还具有吸水性，能吸收气体中的水分，在实验室里常用于<b>干燥不与它发生反应的气体</b>。</div>
+
+<div class="try">
+<b>验一验④（30秒·辨析）：</b>浓硫酸使蔗糖变成黑色多孔固体，体现的是吸水性还是脱水性？用它干燥 H<sub>2</sub> 气体呢？<br>
+<span class="ans">蔗糖炭化是<b>脱水性</b>（把有机物里的 H、O 按水的组成比"拆走"，生成了新的水分子——H、O 原来并不以水形式存在）；干燥气体是<b>吸水性</b>（吸收现成的水蒸气）。一个"造水"，一个"收水"（p103 两条定义对照）。</span>
+</div>
+
+<div class="pit"><b>坑点2："钝化"不是"不反应"，"冷的"三个字是前提。</b>常温下浓硫酸把 Fe、Al 表面氧化成致密氧化物薄膜挡住内部（p103），所以冷的浓硫酸可用铁质或铝质容器<b>储存</b>；可一旦<b>加热</b>，膜挡不住，反应照常进行——铜与浓硫酸的反应就要加热。同款钝化后面学浓硝酸时还会再遇到。另外吸水性干燥气体有排他条款："<b>不与它发生反应的</b>气体"才行（p103），碱性气体 NH<sub>3</sub> 就不能用它干燥（NH<sub>3</sub> 是 3.3 节主角，先记一笔）。</div>
+
+<h3>硫酸的用途与工业制法（p104）</h3>
+<p>硫酸既是化学实验室中的重要试剂，也是重要的化工原料：工业上常用于制造<b>化肥、农药、炸药、染料</b>等，还用于<b>石油精炼、金属加工</b>等（p104）。含有不同价态硫元素的物质之间的转化在工农业生产中有着重要的应用：工业上常以<b>氧气为氧化剂</b>把硫单质或含硫矿物中的硫转化为二氧化硫，再将二氧化硫转化为三氧化硫，最后制得硫酸（p104）——这正是"价—类图"上 +4 → +6 的两连升。</p>
+<div class="box"><b>化学与技术：硫酸工业生产的演变（p104）。</b>我国制造硫酸的历史可以追溯到<b>7 世纪</b>，炼丹家曾利用<b>胆矾（CuSO<sub>4</sub>·5H<sub>2</sub>O）</b>来制备硫酸（先除去胆矾中的水，再使之分解产生气体，溶于水制得硫酸）；国外早期的炼金士曾用<b>绿矾（FeSO<sub>4</sub>·7H<sub>2</sub>O）</b>。<b>17 世纪</b>，炼金士菲伏尔（N.Fevre）和药剂师勒梅里（N.Lemery）采用类似钟罩的装置点燃硫黄和硝石的混合物制得硫酸。<b>1740 年</b>，英国人瓦尔特（J.Ward）建立了人类历史上第一座生产硫酸的工厂。<b>1831 年</b>，英国人菲利浦（P.Philips）把硫黄装入内部镶有<b>铂催化剂</b>的瓷管里加热并通入足量空气，再将生成的三氧化硫溶于水制得硫酸——这就是<b>接触法制硫酸的雏形</b>。后来以<b>钒代替铂</b>为催化剂、用<b>氧气代替空气</b>等使生产效率极大提高；现代硫酸工业还注重原料来源多样化，如以煤、石油加工过程中产生的含硫化合物以及金属冶炼过程中产生的炉气（含二氧化硫）等为原料。</div>
+
+<div class="fig">
+<svg viewBox="0 0 720 190" xmlns="http://www.w3.org/2000/svg" aria-label="接触法制硫酸的生产流程（p104 图3-2-12 结构简图）">
+  <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7" fill="none" stroke="#8ab4f8" stroke-width="1.6"/></marker></defs>
+  <rect x="20" y="60" width="130" height="66" rx="8" fill="#1d2b3a" stroke="#3a5578"/>
+  <text x="85" y="86" fill="#cfe4ff" font-size="12.5" text-anchor="middle">硫黄或黄铁矿矿石</text>
+  <text x="85" y="106" fill="#cfe4ff" font-size="12.5" text-anchor="middle">+ 空气</text>
+  <rect x="190" y="72" width="110" height="42" rx="6" fill="#1a222e" stroke="#3a5578"/>
+  <text x="245" y="98" fill="#eaf2ff" font-size="12.5" text-anchor="middle">生成二氧化硫</text>
+  <rect x="340" y="72" width="120" height="42" rx="6" fill="#1a222e" stroke="#3a5578"/>
+  <text x="400" y="91" fill="#eaf2ff" font-size="12" text-anchor="middle">气体混合物通过</text>
+  <text x="400" y="108" fill="#eaf2ff" font-size="12" text-anchor="middle">静电除尘净化</text>
+  <rect x="500" y="52" width="130" height="82" rx="6" fill="#1a222e" stroke="#4a9eff"/>
+  <text x="565" y="72" fill="#cfe4ff" font-size="12" text-anchor="middle">混合气体发生反应</text>
+  <text x="565" y="92" fill="#eaf2ff" font-size="12.5" text-anchor="middle">2SO<sub>2</sub>+O<sub>2</sub> ⇌ 2SO<sub>3</sub></text>
+  <text x="565" y="110" fill="#9ecbff" font-size="10.5" text-anchor="middle">400~500℃·常压</text>
+  <text x="565" y="126" fill="#9ecbff" font-size="10.5" text-anchor="middle">V<sub>2</sub>O<sub>5</sub> 做催化剂</text>
+  <rect x="500" y="150" width="200" height="34" rx="6" fill="#1a222e" stroke="#3a5578"/>
+  <text x="600" y="172" fill="#eaf2ff" font-size="11.5" text-anchor="middle">用98.3%的浓硫酸吸收SO<sub>3</sub>：SO<sub>3</sub>+H<sub>2</sub>O═══H<sub>2</sub>SO<sub>4</sub></text>
+  <line x1="150" y1="93" x2="186" y2="93" stroke="#8ab4f8" stroke-width="1.6" marker-end="url(#ar2)"/>
+  <line x1="300" y1="93" x2="336" y2="93" stroke="#8ab4f8" stroke-width="1.6" marker-end="url(#ar2)"/>
+  <line x1="460" y1="93" x2="496" y2="93" stroke="#8ab4f8" stroke-width="1.6" marker-end="url(#ar2)"/>
+  <line x1="565" y1="134" x2="565" y2="146" stroke="#8ab4f8" stroke-width="1.6" marker-end="url(#ar2)"/>
+</svg>
+<p class="figcap">这张图在说什么：p104 图3-2-12 接触法制硫酸生产流程——S（0 价）→ SO<sub>2</sub>（+4）→ SO<sub>3</sub>（+6）→ H<sub>2</sub>SO<sub>4</sub>，三连升价，氧气全程做氧化剂；"接触法"之名来自气体与催化剂的接触（p104 化学与技术栏目）。</p>
+</div>
+
+<h2><span class="step-tag">第④站</span>酸雨及其防治：把价态工具用在真问题上（p105–106）</h2>
+
+<p>工业生产和日常生活中要大量使用<b>煤和石油</b>等化石燃料。煤和石油中含有硫元素，燃烧时除了产生二氧化碳外还产生<b>二氧化硫</b>。<b>硫的氧化物是形成酸雨的主要物质</b>（p105）。排放到空气中的二氧化硫在<b>氧气和水蒸气</b>的共同作用下形成酸雾，随雨水降落就成为酸雨——这样形成的酸雨也常称<b>硫酸型酸雨</b>（p105）。教材给出两条转化路径（p105 原式）：</p>
+<div class="eq">路径A：2SO<sub>2</sub> + O<sub>2</sub> <span class="small">催化剂</span>⇌ 2SO<sub>3</sub>，　SO<sub>3</sub> + H<sub>2</sub>O ═══ H<sub>2</sub>SO<sub>4</sub></div>
+<div class="eq">路径B：SO<sub>2</sub> + H<sub>2</sub>O ⇌ H<sub>2</sub>SO<sub>3</sub>，　2H<sub>2</sub>SO<sub>3</sub> + O<sub>2</sub> ═══ 2H<sub>2</sub>SO<sub>4</sub></div>
+<p>交流·研讨四问（p105）值得对着念一遍：①排放到大气中的二氧化硫是如何转化成硫酸的？请预测转化路径并说明依据；②酸雨有哪些危害？③如何防治酸雨——查找资料了解减少二氧化硫排放的具体措施并结合二氧化硫的性质分析；如何治理已酸化的湖泊和土壤？如何保护暴露在大气中的建筑？④谈谈科学、技术以及观念、法规在解决酸雨问题中的作用。</p>
+<p><b>危害清单（p105 原文口径）：</b>酸雨会使<b>湖泊的水质变酸，导致水生生物死亡</b>；酸雨浸渍土壤，会使<b>土壤变得贫瘠</b>；长期的酸雨侵蚀会造成<b>森林大面积死亡</b>；酸雨腐蚀建筑，会使<b>建筑变得面目全非</b>；酸雨对人体健康也有直接影响——酸雨渗入地下会导致<b>地下水中的重金属元素含量增加</b>，饮用这样的水会危害人体健康（图3-2-13 被酸雨侵蚀的树木和雕像）。</p>
+<p><b>防治思路（p106 原文口径）：</b>首先要从<b>消除污染源</b>着手——改变能源结构，开发利用<b>氢能、风能、太阳能</b>等清洁能源，从根本上解决问题；其次要从实际情况出发，对酸性物质的排放加以控制——利用物理方法和化学方法对<b>含硫燃料预先进行脱硫</b>，对废气中的二氧化硫进行<b>回收处理</b>等；为了防治酸雨，还需要<b>健全法律法规</b>，严格规定污染物的排放标准，提高人们的环境保护意识等（图3-2-14 太阳能和风能互补发电、图3-2-15 飞机向酸化的湖中撒石灰石粉——治理已酸化湖泊的一个实例）。</p>
+
+<div class="try">
+<b>验一验⑤（30秒·烟气脱硫）：</b>教材 p109 练习11(3) 配图给出废气脱硫流程：煤燃烧排放的废气（O<sub>2</sub>、CO<sub>2</sub>、N<sub>2</sub>、SO<sub>2</sub>）与空气一起通入，加入 CaCO<sub>3</sub> + H<sub>2</sub>O 浆状物，主要化学反应为 SO<sub>2</sub>→CaSO<sub>3</sub>、CaSO<sub>3</sub>→CaSO<sub>4</sub>，产物之一是石膏。写出对应的化学方程式。<br>
+<span class="ans">SO<sub>2</sub> + CaCO<sub>3</sub> ═══ CaSO<sub>3</sub> + CO<sub>2</sub>；2CaSO<sub>3</sub> + O<sub>2</sub> ═══ 2CaSO<sub>4</sub>（教材流程图只给"SO<sub>2</sub>→CaSO<sub>3</sub>→CaSO<sub>4</sub>"转化箭头未写方程式，此两式为答案侧自编补写并已用机器配平验证；脱硫后气体 N<sub>2</sub>、CO<sub>2</sub>、O<sub>2</sub> 排放，p109 第11题图）。</span>
+</div>
+
+<h2>收口：把这一节带走</h2>
+
+<p><b>三句话（能默写才算读完）：</b></p>
+<p>① 自然界含硫物质横跨 −2、0、+4、+6 四个价态，用<b>"价—类"二维图</b>定位物质、用价态升降预测转化方向；微生物也会参与循环（p97–98）。</p>
+<p>② SO<sub>2</sub> 处 +4 中间价态"两副面孔"：还原性（被 O<sub>2</sub> 氧化成 SO<sub>3</sub>，可逆）、氧化性（氧化 H<sub>2</sub>S 出淡黄色 S）、酸性氧化物通性（与水成亚硫酸、与碱成盐）、漂白性（品红褪色可恢复）；浓硫酸 +6 最高价只显氧化性：与 Cu、C 加热反应、常温使 Fe/Al 钝化，另有吸水性（干燥剂）与脱水性（炭化有机物）（p101–103）。</p>
+<p>③ 含硫燃料燃烧排放的 SO<sub>2</sub> 经"氧气+水蒸气"作用形成<b>硫酸型酸雨</b>；防治三手抓：清洁能源改结构、脱硫回收控排放、法规标准提意识（p105–106）。</p>
+
+<div class="box">
+<b>自测六连（改编自教材 p107–109 练习与活动·答案侧自编并标注）：</b><br>
+1．（改编自 p107 练习1）判断对错并改正：①硫是淡黄色固体，不溶于水；②硫在自然界中仅以化合态存在；③硫与铁反应生成硫化亚铁，硫做氧化剂；④硫在空气中的燃烧产物是二氧化硫——<span class="ans">①√（p100）；②×，火山喷发时火山口有硫单质出现（p97 联想·质疑、图3-2-1）；③√，S 0→−2 得电子做氧化剂（p100）；④√，S+O<sub>2</sub><span class="small">点燃</span>SO<sub>2</sub>（p100）</span><br>
+2．（改编自 p107 练习2）判断对错：①SO<sub>2</sub> 是无色、有刺激性气味的有毒气体；②SO<sub>2</sub> 只具有氧化性；③SO<sub>2</sub> 使品红褪色，加热后红色恢复——<span class="ans">①√（p102）；②×，+4 为中间价态，既有氧化性又有还原性（p101–102）；③√（p102 图3-2-9）</span><br>
+3．（改编自 p107 练习3）下列反应中硫表现出还原性的是（　）：A.硫与氢气　B.硫与氧气　C.硫与铁　D.硫与钠——<span class="ans">B。S 0→+4 升价做还原剂；A/C/D 中 S 均降价（0→−2）做氧化剂</span><br>
+4．（改编自 p108 练习8）二氧化硫和氯气都具有漂白作用。将两种气体共同作用于潮湿的有色物质，能否增强漂白作用？——<span class="ans">不能。两者先自行反应：SO<sub>2</sub>+Cl<sub>2</sub>+2H<sub>2</sub>O═══H<sub>2</sub>SO<sub>4</sub>+2HCl（答案侧自编方程式，已机器配平），漂白主力相互消耗，褪色效果反而丧失</span><br>
+5．（改编自 p108 练习9）有一瓶 Na<sub>2</sub>SO<sub>3</sub> 溶液可能部分被氧化。某同学取少量该溶液，滴加 BaCl<sub>2</sub> 溶液产生白色沉淀，再加入足量稀硫酸，充分振荡后仍有白色沉淀。能否据此确定 Na<sub>2</sub>SO<sub>3</sub> 已部分被氧化？——<span class="ans">不能。未被氧化时沉淀为 BaSO<sub>3</sub>，遇稀硫酸也会转化为不溶的 BaSO<sub>4</sub>：BaSO<sub>3</sub>+H<sub>2</sub>SO<sub>4</sub>═══BaSO<sub>4</sub>+SO<sub>2</sub>↑+H<sub>2</sub>O（答案侧自编方程式），两种情形现象相同；改进思路（自编注记）：先用足量稀盐酸酸化——BaSO<sub>3</sub> 溶解（BaSO<sub>3</sub>+2HCl═══BaCl<sub>2</sub>+SO<sub>2</sub>↑+H<sub>2</sub>O）而 BaSO<sub>4</sub> 不溶，再检验</span><br>
+6．（改编自 p109 练习12）某化工厂使用含杂质 25% 的黄铁矿原料，取 1 吨该矿石可制得 98% 的浓硫酸多少吨（设生产过程中硫的损失为零）？已知 4FeS<sub>2</sub>+11O<sub>2</sub><span class="small">高温</span>2Fe<sub>2</sub>O<sub>3</sub>+8SO<sub>2</sub>——<span class="ans">1.25 吨。S 元素守恒链：FeS<sub>2</sub>→2H<sub>2</sub>SO<sub>4</sub>，1 吨矿石含 FeS<sub>2</sub> 0.75 吨（750 kg÷120 g/mol=6250 mol），得 H<sub>2</sub>SO<sub>4</sub> 12500 mol（1225 kg 纯硫酸），÷0.98=1250 kg 纯品÷98%浓度=1.25 吨 98% 浓硫酸；已用 sympy 按质量守恒逐元素复核（留痕 log 随 commit）</span>
+</div>
+
+<div class="kao">
+<b>高考怎么考（考位锚）：</b>①<b>SO<sub>2</sub> 性质四件套</b>：漂白性（品红可逆褪色）与还原性（使酸性 KMnO<sub>4</sub> 溶液褪色）的区分、SO<sub>2</sub> 与 BaCl<sub>2</sub> 溶液不反应的陷阱（配套"检验 SO<sub>3</sub><sup>2−</sup>/SO<sub>4</sub><sup>2−</sup>"情境题）；②<b>浓硫酸三特性</b>：钝化的温度前提、吸水/脱水辨析、与 Cu/C 反应的电子转移数目；③<b>价—类二维图</b>：补全转化关系网、按价态预测性质（最高价只氧化/最低价只还原/中间价两可，p101 原文口径）；④<b>酸雨与工业</b>：硫酸型酸雨两条路径方程、烟气脱硫流程方程式书写、S 守恒型计算（如黄铁矿制硫酸）。考法示意·真题锚候采（对证源池内无化学 3.2 行·如实申报不代拟）。
+</div>
+
+<div class="next"><b>下一站（3.3 氮的循环，p110 起）：</b>同一副"价态眼镜"换个主角——氮横跨 −3（NH<sub>3</sub>/铵盐）、0（N<sub>2</sub>）、+2/+4（NO/NO<sub>2</sub>）、+5（HNO<sub>3</sub>/硝酸盐）五个价态，比硫还多一档。N<sub>2</sub> 的"三键锁链"为什么让它在常温下"高冷"？NO 与 NO<sub>2</sub> 怎么"变脸"？硝酸又凭什么坐进"常见氧化剂名单"（p70 名单里就有它）？下节见分晓。</div>
+
+<div class="fig">
+<svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" aria-label="本节位置图：第3章物质性质与转化">
+  <defs><marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#4a9eff"/></marker></defs>
+  <rect x="20" y="44" width="110" height="52" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="75" y="66" fill="#9aa7b8" font-size="12" text-anchor="middle">3.1 铁的多样性</text>
+  <text x="75" y="84" fill="#6b7686" font-size="10.5" text-anchor="middle">p86–96 · 价态实战</text>
+  <rect x="160" y="38" width="140" height="64" rx="8" fill="#1d2b3a" stroke="#4a9eff" stroke-width="2"/>
+  <text x="230" y="64" fill="#cfe4ff" font-size="13.5" text-anchor="middle" font-weight="bold">3.2 硫的转化</text>
+  <text x="230" y="84" fill="#9ecbff" font-size="10.5" text-anchor="middle">本节：p97–109 · 四价态全图</text>
+  <rect x="330" y="44" width="110" height="52" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="385" y="66" fill="#9aa7b8" font-size="12" text-anchor="middle">3.3 氮的循环</text>
+  <text x="385" y="84" fill="#6b7686" font-size="10.5" text-anchor="middle">p110–125</text>
+  <rect x="470" y="44" width="120" height="52" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="530" y="62" fill="#9aa7b8" font-size="11" text-anchor="middle">微项目</text>
+  <text x="530" y="78" fill="#6b7686" font-size="9.5" text-anchor="middle">论证重污染天气</text>
+  <text x="530" y="90" fill="#6b7686" font-size="9.5" text-anchor="middle">"汽车限行"的合理性</text>
+  <rect x="620" y="44" width="80" height="52" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="660" y="66" fill="#9aa7b8" font-size="11.5" text-anchor="middle">本章自我评价</text>
+  <text x="660" y="84" fill="#6b7686" font-size="10.5" text-anchor="middle">p133</text>
+  <line x1="130" y1="70" x2="156" y2="70" stroke="#4a9eff" marker-end="url(#arr3)"/>
+  <line x1="300" y1="70" x2="326" y2="70" stroke="#4a9eff" marker-end="url(#arr3)"/>
+  <line x1="440" y1="70" x2="466" y2="70" stroke="#4a9eff" marker-end="url(#arr3)"/>
+  <line x1="590" y1="70" x2="616" y2="70" stroke="#4a9eff" marker-end="url(#arr3)"/>
+  <text x="360" y="128" fill="#5a6a7a" font-size="11" text-anchor="middle">第3章三节按"价态地图"推进：铁（0/+2/+3）→ 硫（−2/0/+4/+6）→ 氮（−3/0/+2/+4/+5）；微项目（p126）用本章知识论证社会性科学议题</text>
+</svg>
+<p class="figcap">这张图在说什么：本节承接 3.1 铁的价态实战，把"价—类"方法升级到四个价态的完整地图，并通向 3.3 氮的循环与第3章微项目。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0 · 事实层素材源：鲁科版《普通高中教科书·化学 必修 第一册》（山东科学技术出版社）p97–109 影印逐页对照（智慧平台 contentId=88874a47-cd9b-4dbc-bd48-bb2ea5d63115 · ts=1754905612635 · 图N→正文页N+6 · 影印图30张（图102–131）存席位私有目录 chem32_jc/；图103 sha256 前16位=1f9ade40044609c2、图116=94ade6c4068d94a8、图131=f996d64317fc13b8；ts详情API实时复核=资源路径ti_storages同值1754905612635（update_time 2026-09-04 派生ts不用于图床，防asset-ts错配403）；目录页（图5）自读实锚：3.2硫的转化/97、3.3氮的循环/110、微项目/126、本章自我评价/133，与2.3交付件右界锚（p97=3.2节名页）互证；p97 引言与联想·质疑四连问及图3-2-1、自然界中不同价态硫元素之间的转化段、p98 图3-2-2 硫循环四矿物两水合盐、图3-2-3"价—类"二维图九物质、p99 观察·思考三实验与留白记录表、p100 物理性质、同素异形体定义与正交硫112.8℃/单斜硫119.3℃、氧化性还原性两式、用途、活动·探究实验目的用品与安全提示三条、p101 实验方案空白表、思考三问、方法导引三步、中间/最高/最低价态结论、p102 SO<sub>2</sub>物性与四类性质（2SO<sub>2</sub>+O<sub>2</sub>⇌2SO<sub>3</sub>/SO<sub>2</sub>+2H<sub>2</sub>S式/与水与OH<sup>−</sup>式/品红图3-2-9/食品添加剂）、可逆反应原框、p103 浓硫酸与Cu/C两式、钝化、脱水性、吸水性、p104 用途、价态转化应用、化学与技术硫酸工业演变（7世纪胆矾/绿矾→17世纪钟罩→1740瓦尔特→1831菲利浦→钒代铂）、图3-2-12流程、p105 三、酸雨及其防治、交流·研讨四问、两条路径四方程、危害五项、图3-2-13、p106 防治三手抓、图3-2-14/15、概括·整合三问、p107 练习1–6、p108 练习7–11题面、p109 练习11(3)脱硫流程图与练习12黄铁矿数据（含杂质25%/1吨/98%/4FeS<sub>2</sub>+11O<sub>2</sub>式）、练习13 SO<sub>2</sub>"功与过"题面均逐字/逐项锚定）<br>
+设计标准（黄金样本1.1/3.2定版延续·模板v2.3）：零预设 · 一次一步 · 随读随验×5 · 卡住有出路 · 收口能复述 · 自编内容全部显式标注（同素异形体三辨析/价态归中归纳/脱硫两方程/练习8-9-12答案侧/自测全答案侧） · 教材原题标注页码 · 图示必配（硫循环/价—类二维图/接触法流程/节末位置图均结构示意·无数据曲线）
+</div>
+
+</div>
+</body>
+</html>
