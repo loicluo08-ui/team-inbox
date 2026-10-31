@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""金融语域黑名单机检 v1.2（队1贡献·全队复用；v1.1=1023晚B席补白名单机制；v1.2=1031午裁定二黑名单收窄·教学类比词出名单）
+"""金融语域黑名单机检 v1.2（队1贡献·全队复用；v1.1=1023晚B席补白名单机制；v1.2=1031午裁定二黑名单收窄+件型分层（工序件词面留痕⚪不计红账））
 用法: python3 qc_金融语域机检_v1.py <md文件或目录>...
 规则:
   - 正文区扫描（自动剥离"附：自检记录"段——对照区引用原词是必要留痕，不算命中）
@@ -44,9 +44,14 @@ if __name__ == '__main__':
         else:
             targets.append(a)
     fail = 0
+    import re as _re
+    工序件模式 = _re.compile(r'(工作单|台账|复核|复验|审校|普查|报告池|排查|卷源直读|字幕|帧验|底本|预研|销项|认领|claim|对账|留痕|对位表|簇-节|节对位|审计|豁免|验收|随验|QC|路由|总验|销项|归口|初筛|提数|销证|统筹|方案|提案|设计_)')
     for t in targets:
         hits = scan(t)
         name = os.path.basename(t)[:24]
+        if hits and 工序件模式.search(os.path.basename(t)):
+            print(f'⚪{name}: {len(hits)}处（工序件·词面留痕不计红账·1029预案B层豁免+裁定二）')
+            continue
         if hits:
             fail += 1
             print(f'❌{name}: {len(hits)}处')
