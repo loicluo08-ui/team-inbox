@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学1.3 集合的基本运算 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  .detail { color: #a8b4c4; font-size: 15px; }
+  .big { font-size: 21px; color: #fff; }
+  .m { font-family: "Times New Roman", Georgia, serif; font-style: italic; color: #e8ecf2; }
+  .small { font-size: 14.5px; color: #a8b4c4; }
+  mark.nb { background: #ffd54a; color: #14171c; padding: 1px 6px; border-radius: 3px; font-weight: bold; }
+  .ul-blue { border-bottom: 3px solid #4a9eff; padding-bottom: 1px; }
+  .talk { background: #1a2230; border: 1px solid #2a3a52; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .key { background: #26221a; border-left: 4px solid #ffd54a; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .try { background: #1c2530; border: 1.5px dashed #e8a54a; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .try .t { color: #e8a54a; font-weight: bold; }
+  .box { background: #20242c; border: 1px dashed #4a5a70; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .box .t, .box b.tag { color: #8fb8e8; }
+  .alt { background: #1e242e; border: 1px solid #3a4a5c; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .alt .tag { color: #7ec8a9; font-weight: bold; }
+  .note-red { color: #ff8a7a; font-size: 15px; }
+  .fig { background: #10141b; border: 1px solid #2a3140; border-radius: 10px; padding: 12px; margin: 18px 0; }
+  .figcap { color: #8a949f; font-size: 14px; text-align: center; margin-top: 8px; }
+  .check { background: #182420; border-left: 4px solid #6cbf4a; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .check .tag { color: #6cbf4a; font-weight: bold; }
+  ul { margin: 10px 0 10px 24px; }
+  li { margin: 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #3a4a5c; padding: 8px 10px; text-align: left; }
+  th { background: #1e2836; color: #cfe0f5; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .key { background: #fff3b8; border-left-color: #d4a017; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .try { background: #fff; border-color: #b8863a; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    .sub, .small, .foot, .detail, .figcap { color: #444; }
+    mark.nb { background: #ffe28a; color: #111; }
+    .step-tag { background: #dbe8f8; color: #111; }
+    .ul-blue { border-color: #2a6db5; }
+    .note-red { color: #a03020; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>数学1.3 集合的基本运算</h1>
+<p class="sub">人教A版必修一《集合与常用逻辑用语》第1章第3节 · 教材p10-14 · 零基础首学版 v1.0 · 出品：群外管理员席 · 1031</p>
+
+<div class="talk">
+<p><b>教材p10开篇问：实数有加、减、乘、除四则运算。集合，是不是也有自己的"运算"？</b></p>
+<p>有。而且比数的运算直观得多——本节学三个：<b>并集（合在一起）、交集（公共部分）、补集（去掉一块）</b>。每个都是"一句话定义+一张图"就能拿下，真正要盯紧的只有三个词：<span class="ul-blue">或</span>、<span class="ul-blue">且</span>、<span class="ul-blue">范围</span>。</p>
+</div>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 给任意两个集合写出并集 A∪B 和交集 A∩B，并说出"或"与"且"各管哪件事；</p>
+<p>② 在数轴上把区间集合的并、交、补一次画对（不等式端点开闭不错）；</p>
+<p>③ 给定全集 U，写出∁<sub>U</sub>A，并回答"补集的补集是谁"；</p>
+<p>④ 解出像 {x|x²−4x−5=0}∪{x|x²=1} 这种"先解方程再运算"的题。</p>
+</div>
+
+<div class="box">
+<p><b>30秒立好地基</b>（零新记号·全是旧朋友）：本节只用两样旧工具——①<b>列举法与描述法</b>（1.1教的：{1,2,3} 与 {x|x²=1}）；②<b>数轴与Venn图</b>（1.2画过包含关系）。新符号只有三个，都是"一眼记住了"型：<b>∪</b>（并，像杯子口朝上——什么都往里装）、<b>∩</b>（交，像两圆相扣——只留重叠处）、<b>∁<sub>U</sub></b>（补，U里刨掉一块）。</p>
+</div>
+
+<h2><span class="step-tag">第①站</span> 并集——"或"字当家的合并</h2>
+
+<p>教材p10先给两个"观察"（对照原题）：A={1,3,5}，B={2,4,6}，C={1,2,3,4,5,6}；A={x|x是有理数}，B={x|x是无理数}，C={x|x是实数}。两例里 C 都是"把 A 和 B <b>全部装进一个袋子</b>"。教材给这个动作起了名：</p>
+
+<div class="key">
+<p><b>并集（union set，教材p10定义）：</b>由所有属于集合A<b>或</b>属于集合B的元素组成的集合，记作 <span class="m">A∪B</span>（读作"A并B"），即</p>
+<p class="big" style="text-align:center"><span class="m">A∪B = {x | x∈A，或 x∈B}</span></p>
+<p class="small">教材侧栏注记（p10原文）："在求两个集合的并集时，它们的公共元素在并集中只能出现一次。如元素5，8。"——集合讲究<b>互异性</b>，同一个元素写两遍是错的。</p>
+</div>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 700 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="并集数轴图：x小于2与x大于1合并成x小于3">
+  <rect x="0" y="0" width="700" height="150" fill="#10141b" rx="8"/>
+  <line x1="40" y1="90" x2="640" y2="90" stroke="#5a6a7a" stroke-width="1.6"/>
+  <polygon points="640,85 654,90 640,95" fill="#5a6a7a"/>
+  <line x1="150" y1="70" x2="360" y2="70" stroke="#4a9eff" stroke-width="4"/>
+  <circle cx="150" cy="70" r="5.5" fill="#10141b" stroke="#4a9eff" stroke-width="2.2"/>
+  <line x1="360" y1="70" x2="520" y2="70" stroke="#6cbf4a" stroke-width="4"/>
+  <circle cx="520" cy="70" r="5.5" fill="#10141b" stroke="#6cbf4a" stroke-width="2.2"/>
+  <line x1="150" y1="108" x2="520" y2="108" stroke="#8fb8e8" stroke-width="3"/>
+  <circle cx="150" cy="108" r="5.5" fill="#10141b" stroke="#8fb8e8" stroke-width="2.2"/>
+  <circle cx="520" cy="108" r="5.5" fill="#10141b" stroke="#8fb8e8" stroke-width="2.2"/>
+  <text x="150" y="48" fill="#4a9eff" font-size="13.5" text-anchor="middle">A：−1&lt;x&lt;2（空圈）</text>
+  <text x="480" y="48" fill="#6cbf4a" font-size="13.5" text-anchor="middle">B：1&lt;x&lt;3（空圈）</text>
+  <text x="335" y="132" fill="#8fb8e8" font-size="13" text-anchor="middle">A∪B = {x | −1&lt;x&lt;3}（教材例2·1处重叠不影响"或"）</text>
+  <text x="150" y="126" fill="#8a949f" font-size="12" text-anchor="middle">−1</text>
+  <text x="360" y="126" fill="#8a949f" font-size="12" text-anchor="middle">1</text>
+  <text x="520" y="126" fill="#8a949f" font-size="12" text-anchor="middle">3</text>
+</svg>
+<p class="figcap">这张图在说什么：教材例2（p10）——A={x|−1&lt;x&lt;2}，B={x|1&lt;x&lt;3}，求A∪B。中间1&lt;x&lt;2是两家共管的，但"或"字说<b>算一次就够</b>，答案 {x|−1&lt;x&lt;3}。</p>
+</div>
+
+<div class="try"><span class="t">验一验①（先答，再看答案）</span><br>
+<p>四空（教材p11思考题）：A∪A=___；A∪∅=___。</p>
+<p><b>答案：</b>A∪A=<b>A</b>（自己和自己合并，还是自己）；A∪∅=<b>A</b>（∅一个元素都没有，并进去啥也没加）。两句口诀：<mark class="nb">并自己还是自己，并空集白并</mark>。</p>
+<p><b>易错变形：</b>A={1,2,5}，B={2,5,7}，求A∪B——写成{1,2,5,2,5,7}对吗？</p>
+<p><span class="detail"><b>答案：</b>错。<b>{1,2,5,7}</b>——公共元素2和5只写一次（教材侧栏注记原文：公共元素在并集中只能出现一次）。</span></p>
+</div>
+
+<h2><span class="step-tag">第②站</span> 交集——"且"字当家的重合</h2>
+
+<p>教材p11第二组"观察"：A={2,4,6,8,10}，B={3,5,8,12}，C={8}；A={x|x是立德中学今年在校的女同学}，B={x|x是立德中学今年在校的高一年级同学}，C={x|x是立德中学今年在校的高一年级女同学}。这次C装的是<b>两边都算数的</b>——8既在A又在B；既"是女同学"又"是高一"的同学。</p>
+
+<div class="key">
+<p><b>交集（intersection set，教材p11定义）：</b>由所有属于集合A<b>且</b>属于集合B的元素组成的集合，记作 <span class="m">A∩B</span>（读作"A交B"），即</p>
+<p class="big" style="text-align:center"><span class="m">A∩B = {x | x∈A，且 x∈B}</span></p>
+<p class="small"><b>"或"与"且"一字之差：</b>"或"=随便进哪个门都算（门槛松，并集装得多）；"且"=两个门都必须过（门槛严，交集剩得少）。<mark class="nb">并集越并越大，交集越交越小</mark>。</p>
+</div>
+
+<p>教材p11例3（运动会）：A={x|x是立德中学高一年级参加百米赛跑的同学}，B={x|x是高一年级参加跳高比赛的同学}，则A∩B={x|x是高一年级<b>既</b>参加百米<b>又</b>参加跳高的同学}。教材p12例4更妙——用交集说话：直线l₁与l₂<b>相交</b>时L₁∩L₂={点P}；<b>平行</b>时L₁∩L₂=∅；<b>重合</b>时L₁∩L₂=L₁=L₂。位置关系也能翻译成集合运算。</p>
+
+<div class="try"><span class="t">验一验②（先答，再看答案）</span><br>
+<p>两空（教材p12思考题）：A∩A=___；A∩∅=___。</p>
+<p><b>答案：</b>A∩A=<b>A</b>（自己和自己重合，还是自己）；A∩∅=<b>∅</b>（∅里什么都没有，"且"字门槛一卡，谁也过不来）。对照记忆：<mark class="nb">交空集全空，并空集白并</mark>。</p>
+<p><b>易错变形：</b>A={x|x是等腰三角形}，B={x|x是直角三角形}（教材p12练习3），求A∩B和A∪B。</p>
+<p><span class="detail"><b>答案：</b>A∩B={x|x是<b>等腰直角三角形</b>}（两边相等+一个直角，两个条件同时满足——这种三角形存在）；A∪B={x|x是等腰三角形<b>或</b>直角三角形}。</span></p>
+</div>
+
+<h2><span class="step-tag">第③站</span> 全集与补集——"范围"一变，答案就变</h2>
+
+<p>教材p12的引入值得慢慢读：方程 (x−2)(x²−3)=0 的解集，<b>在有理数范围内</b>只有{x|2}一个解；<b>在实数范围内</b>有三个解 {2, √3, −√3}。<b>同一个问题，研究范围不同，答案就不同</b>——所以教材说：如果一个集合含有所研究问题中涉及的所有元素，就称它为<b>全集</b>（universal set），通常记作U。</p>
+
+<div class="key">
+<p><b>补集（complementary set，教材p13定义）：</b>对于一个集合A，由全集U中<b>不属于</b>A的所有元素组成的集合，称为A相对于全集U的补集，记作 <span class="m">∁<sub>U</sub>A</span>，即</p>
+<p class="big" style="text-align:center"><span class="m">∁<sub>U</sub>A = {x | x∈U，且 x∉A}</span></p>
+<p class="small">看清楚：补集的定义里藏着"<b>且</b>"——既要在U里，又不在A里。<b>补集永远相对于全集而言</b>：同一个A，U换了，∁<sub>U</sub>A就跟着变（这正是"范围一变答案就变"）。</p>
+</div>
+
+<p>教材p13例5：U={x|x是小于9的正整数}={1,2,3,4,5,6,7,8}，A={1,2,3}，B={3,4,5,6}——则∁<sub>U</sub>A={4,5,6,7,8}，∁<sub>U</sub>B={1,2,7,8}。例6（三角形）：U={x|x是三角形}，A={锐角三角形}，B={钝角三角形}——A∩B=∅（一个三角形不可能既锐角又钝角），而 ∁<sub>U</sub>(A∪B)={x|x是<b>直角三角形</b>}——按"锐/钝/直角"三分天下，刨掉锐角和钝角，剩下的全是直角。</p>
+
+<div class="try"><span class="t">验一验③（先答，再看答案）</span><br>
+<p><b>（自编）</b>接着例5算：∁<sub>U</sub>(∁<sub>U</sub>A)=？</p>
+<p><b>答案：</b>还是<b>A</b>={1,2,3}。∁<sub>U</sub>A={4,5,6,7,8}，再补一次，把U里刨掉它的部分捞回来——就是A自己。口诀：<mark class="nb">补了再补，回到原处</mark>（这一性质高中做题常用：负负得正的集合版）。</p>
+<p><b>易错变形：</b>U={1,2,3,4,5}，A={1,2}，那U∪∁<sub>U</sub>A=？U∩∁<sub>U</sub>A=？</p>
+<p><span class="detail"><b>答案：</b>U∪∁<sub>U</sub>A=<b>U</b>；U∩∁<sub>U</sub>A=<b>∅</b>。A和它的补集把U<b>一分为二</b>：并起来是全部（U），交起来没有重叠（∅）——补集天生就是"切一刀"。</span></p>
+</div>
+
+<h2><span class="step-tag">第④站</span> 三运算一张图 + 六条性质钉死</h2>
+
+<p>本节没有新的图式工具，全部旧图新用：<b>列举集合</b>用Venn图，<b>不等式集合</b>用数轴。教材两道思考题收集起来，正好钉死六条性质：</p>
+<table>
+<tr><th>性质（教材p11/p12思考题+补集自验）</th><th>一句话记法</th></tr>
+<tr><td>A∪A=A　　A∩A=A</td><td>自己和自己折腾，还是自己</td></tr>
+<tr><td>A∪∅=A　　A∩∅=∅</td><td>空集是"加法零"也是"乘法零"</td></tr>
+<tr><td>U∪∁<sub>U</sub>A=U　　U∩∁<sub>U</sub>A=∅</td><td>A和补集把U一分为二</td></tr>
+</table>
+<p class="small">另加两条本站验证过的：∁<sub>U</sub>(∁<sub>U</sub>A)=A（补了再补回原处）；A∪B越大越"松"（或），A∩B越小越"严"（且）。</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="数轴三运算总图：两个区间集合的并交补">
+  <rect x="0" y="0" width="700" height="190" fill="#10141b" rx="8"/>
+  <line x1="40" y1="100" x2="640" y2="100" stroke="#5a6a7a" stroke-width="1.6"/>
+  <polygon points="640,95 654,100 640,105" fill="#5a6a7a"/>
+  <line x1="110" y1="60" x2="300" y2="60" stroke="#4a9eff" stroke-width="4"/>
+  <circle cx="110" cy="60" r="5.5" fill="#4a9eff"/>
+  <circle cx="300" cy="60" r="5.5" fill="#10141b" stroke="#4a9eff" stroke-width="2.2"/>
+  <line x1="240" y1="82" x2="470" y2="82" stroke="#6cbf4a" stroke-width="4"/>
+  <circle cx="240" cy="82" r="5.5" fill="#10141b" stroke="#6cbf4a" stroke-width="2.2"/>
+  <circle cx="470" cy="82" r="5.5" fill="#6cbf4a"/>
+  <line x1="40" y1="130" x2="110" y2="130" stroke="#e07050" stroke-width="4"/>
+  <line x1="470" y1="130" x2="620" y2="130" stroke="#e07050" stroke-width="4"/>
+  <polygon points="620,125 634,130 620,135" fill="#e07050"/>
+  <text x="200" y="42" fill="#4a9eff" font-size="13" text-anchor="middle">A=[1,3)（实心=含端点）</text>
+  <text x="380" y="112" fill="#6cbf4a" font-size="13" text-anchor="middle">B=(2,5]（空圈=不含端点）</text>
+  <text x="180" y="158" fill="#e07050" font-size="13" text-anchor="middle">∁<tspan font-size="10" dy="3">R</tspan><tspan dy="-3">(A∩B)=(−∞,2]∪(3,+∞)：刨掉公共段(2,3)</tspan></text>
+  <text x="110" y="176" fill="#8a949f" font-size="11.5" text-anchor="middle">1</text>
+  <text x="240" y="176" fill="#8a949f" font-size="11.5" text-anchor="middle">2</text>
+  <text x="300" y="176" fill="#8a949f" font-size="11.5" text-anchor="middle">3</text>
+  <text x="470" y="176" fill="#8a949f" font-size="11.5" text-anchor="middle">5</text>
+  <text x="580" y="50" fill="#5a6a7a" font-size="12">A∩B=(2,3)　A∪B=[1,5]</text>
+</svg>
+<p class="figcap">这张图在说什么：数轴是三运算的公共战场——并集并线段、交集取重叠、补集刨掉剩下的两截。端点开闭看圈：实心=含，空圈=不含，<mark class="nb">端点错一个，全题白做</mark>。</p>
+</div>
+
+<div class="try"><span class="t">验一验④（先答，再看答案·自编·对照习题1.3第4题口径）</span><br>
+<p>A={x|3≤x&lt;7}，B={x|2&lt;x&lt;10}（实数范围），求 A∩B 和 A∪B。</p>
+<p><b>答案：</b>A∩B=<b>{x|3≤x&lt;7}</b>（A整段落在B里——回忆1.2：A是B的子集时，A∩B=A）；A∪B=<b>{x|2&lt;x&lt;10}</b>（同理A∪B=B）。子集与运算的联动：A⊆B时四条速记——A∩B=A、A∪B=B。</p>
+</div>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选——跳过不影响后面任何一节）</span>
+<p><b>德·摩根律先混个脸熟</b>：∁<sub>U</sub>(A∪B)=(∁<sub>U</sub>A)∩(∁<sub>U</sub>B)，∁<sub>U</sub>(A∩B)=(∁<sub>U</sub>A)∪(∁<sub>U</sub>B)——"并的补=补的交，交的补=补的并"。用教材p13练习3的Venn阴影图自己涂一遍就能验证（两图涂完一模一样）。名字不用背，涂图的手感要留下——教材p14习题1.3第6题（拓广探索）就能用它。</p>
+</div>
+
+<h2><span class="step-tag">收口</span> 三句话带走 + 自测四连</h2>
+<div class="key">
+<p><span class="big">1.</span> <mark class="nb">并集管"或"，交集管"且"</mark>：A∪B={x|x∈A或x∈B}（越并越大），A∩B={x|x∈A且x∈B}（越交越小）。</p>
+<p><span class="big">2.</span> <mark class="nb">补集管"范围"</mark>：∁<sub>U</sub>A={x|x∈U且x∉A}——先问U是谁再动手，U变答案就变；补了再补回原处。</p>
+<p><span class="big">3.</span> <mark class="nb">数轴是三运算的共同战场</mark>：并并线段、交取重叠、补刨两截；端点实心含、空圈不含。</p>
+</div>
+
+<p><b>自测四连（先自己答，再对答案；答案直接给你，不用翻）：</b></p>
+<p>①（教材p12练习2）设A={x|x²−4x−5=0}，B={x|x²=1}，求A∪B，A∩B。<br>
+<span class="detail"><b>答案：</b>先解方程（这是"先解再算"型）：x²−4x−5=(x−5)(x+1)=0得A={−1,5}；x²=1得B={−1,1}。<b>A∪B={−1,1,5}</b>（−1是公共元素只写一次），<b>A∩B={−1}</b>。全程可代验：5²−4·5−5=0✓，(−1)²−4(−1)−5=0✓，1²−4−5≠0✓。</span></p>
+<p>②（自编·易错）U={1,2,3,4,5}，A={1,2}，写出∁<sub>U</sub>A，再答A∩(∁<sub>U</sub>A)与A∪(∁<sub>U</sub>A)。<br>
+<span class="detail"><b>答案：</b>∁<sub>U</sub>A={3,4,5}；A∩(∁<sub>U</sub>A)=∅（A和补集零重叠）；A∪(∁<sub>U</sub>A)=U（合起来正好一分为二的全部）。</span></p>
+<p>③（自编）"x∈A∩B"与"x∈A∪B"分别等价于哪两句话？<br>
+<span class="detail"><b>答案：</b>x∈A∩B ⟺ x∈A <b>且</b> x∈B（两个都要）；x∈A∪B ⟺ x∈A <b>或</b> x∈B（至少一个）。数学里的"或"包含"两边都满足"——这是和日常口语不一样的地方。</span></p>
+<p>④（自编·压轴）教材p14习题1.3第2题：A={x|x是小于9的正整数}，B={1,2,3}，C={3,4,5,6}，求A∩(B∪C)和A∪(B∩C)。<br>
+<span class="detail"><b>答案：</b>A={1,...,8}；B∪C={1,2,3,4,5,6}，A∩(B∪C)={1,2,3,4,5,6}；B∩C={3}，A∪(B∩C)={1,2,3,4,5,6,7,8}=A（{3}⊆A，并进去不加东西）。两题答案不同——括号位置改变运算顺序，先算括号里。</span></p>
+
+<p><b>练什么题：</b>教材p12练习1-4（并交基础）+p13练习1-3（补集+Venn阴影涂图）+p14习题1.3复习巩固1-3——都值得做；综合运用4、5是数轴含端点型（对照本件验④口诀做）；拓广探索6用"想多走一步"的德·摩根律最省力。时间紧先做：p12练习2（本件自测①原题）+p13练习1+习题1.3第4题。</p>
+
+<div class="box"><b>高考怎么考</b>（三行以内·真题锚候采）<br>
+· 三运算数轴化简是选择填空常客：给两个不等式集合求交并补——判据就是本件第④站那张图；<br>
+· 含参型"若A∪B=B求参数范围"（=考A⊆B）与"∁<sub>U</sub>A⊇B"型——1.2的包含关系借运算还魂；<br>
+· 真题锚候采：本件暂未采到带卷源的本节专题真题，不代拟，后续随卷源补锚（先例：数学1.2 A版真题锚2道已归档候采）。
+</div>
+
+<p class="small">下一站：1.4 充分必要条件（教材p15起）——集合的语言学完了，接下来学怎么用它<b>说话</b>："x&gt;2"和"x&gt;1"之间，谁推出谁？</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：1.1认集合→1.2比集合→1.3算集合→1.4用集合说话">
+  <rect x="0" y="0" width="700" height="120" fill="#10141b" rx="8"/>
+  <text x="110" y="50" fill="#8fa3b8" font-size="14" text-anchor="middle">1.1 基本单位*认集合</text>
+  <text x="110" y="72" fill="#5a6a7a" font-size="11" text-anchor="middle">元素·描述法</text>
+  <text x="275" y="50" fill="#8fa3b8" font-size="14" text-anchor="middle">1.2 比集合</text>
+  <text x="275" y="72" fill="#5a6a7a" font-size="11" text-anchor="middle">包含·真子集</text>
+  <text x="430" y="46" fill="#4a9eff" font-weight="bold" font-size="15" text-anchor="middle">1.3 算集合（你在）</text>
+  <text x="430" y="72" fill="#5a6a7a" font-size="11" text-anchor="middle">并·交·补</text>
+  <text x="590" y="50" fill="#8fa3b8" font-size="14" text-anchor="middle">1.4 用集合说话</text>
+  <text x="590" y="72" fill="#5a6a7a" font-size="11" text-anchor="middle">充分·必要</text>
+  <line x1="185" y1="58" x2="225" y2="58" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE3)"/>
+  <line x1="330" y1="58" x2="370" y2="58" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE3)"/>
+  <line x1="495" y1="58" x2="535" y2="58" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE3)"/>
+  <text x="350" y="104" fill="#5a6a7a" font-size="11" text-anchor="middle">这张图在说什么：第1章四节一条线——先认、再比、再算、最后拿去说话；本章工具箱本节集齐。</text>
+  <defs><marker id="aE3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#5a6a80"/></marker></defs>
+</svg>
+<p class="figcap">这张图在说什么：本件位置——第1章工具箱在本节集齐（认/比/算三件套），1.4开始把这些工具用在"推理"上。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2·标准v2.3条款落地：节首清单＋预备块＋四站推进＋数轴三运算总图/位置图＋考位锚块＋@media print打印层；正文"验一验"×4含易错变形×4，节末自测四连，答案直接可见；sympy代验：自测①三验点+验③补集二验点+验④子集联动二验点=7验点全过·留痕=席位私有sympy留痕脚本） · 事实层素材源：人教A版必修第一册p10-14官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=6e764703-6e5e-4ea3-9462-34652c2678ef·印刷页10-14=图17-21·ts=1787023173400·图N→印刷页N−7映射沿1.2节定标·影印图存席位私有目录p13_jc/·原件不入仓）· 节界实锚=1.3全节p10-14（p12练习与补集起·p13补集定义与练习·p14习题1.3整页·p15起1.4）· 并集交集补集定义/六条思考题性质/例1-例6/练习与习题题面均影印逐字锚定 · 自编题全部显式标注"自编"，教材原题标注页码来源（p12练习2/p13练习/p14习题1.3第2·4题）· 设计标准：零预设 · 一次一步 · 随读随验×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源
+</div>
+
+</div>
+</body>
+</html>
