@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>v13全量终账报告·承总令v13末环</title>
+<style>
+  :root{--ink:#1a2332;--gold:#b8912f;--gold2:#d4af37;--paper:#f7f5f0;--green:#1e7d4f;--red:#b03a2e;--amber:#b9770e;--line:#dcd4c4;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Source Han Serif SC","Noto Serif SC","Songti SC",serif;background:var(--paper);color:var(--ink);line-height:1.75;}
+  .wrap{max-width:1080px;margin:0 auto;padding:36px 40px 60px;}
+  /* 封面 */
+  .cover{background:linear-gradient(135deg,#16202f 0%,#233247 55%,#2d415c 100%);color:#f5efe0;border-radius:10px;padding:44px 48px 38px;position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(20,30,50,.25);}
+  .cover::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border:1px solid rgba(212,175,55,.35);border-radius:50%;}
+  .cover::before{content:"";position:absolute;right:-20px;top:-20px;width:180px;height:180px;border:1px solid rgba(212,175,55,.25);border-radius:50%;}
+  .tag{display:inline-block;border:1px solid var(--gold2);color:var(--gold2);font-size:12px;letter-spacing:4px;padding:3px 14px;border-radius:2px;margin-bottom:16px;font-family:"Noto Sans SC",sans-serif;}
+  .cover h1{font-size:34px;letter-spacing:2px;font-weight:700;margin-bottom:10px;}
+  .cover .sub{font-size:15px;opacity:.85;letter-spacing:1px;}
+  .cover .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:12.5px;font-family:"Noto Sans SC",sans-serif;opacity:.92;}
+  .cover .meta b{color:var(--gold2);font-weight:600;}
+  /* 章节骨架 */
+  h2{font-size:22px;margin:46px 0 6px;padding-left:14px;border-left:5px solid var(--gold2);letter-spacing:1px;}
+  h2 .no{color:var(--gold);font-family:Georgia,serif;margin-right:8px;}
+  .h2sub{font-size:12.5px;color:#8a8271;margin:0 0 14px 19px;font-family:"Noto Sans SC",sans-serif;}
+  h3{font-size:16px;margin:22px 0 10px;color:#2c3a52;}
+  p{margin:8px 0;font-size:14.5px;}
+  blockquote{border-left:3px solid var(--gold2);background:#fbf9f4;padding:10px 16px;margin:12px 0;font-size:13.5px;color:#5a5342;border-radius:0 6px 6px 0;}
+  blockquote b{color:var(--gold);}
+  code{background:#efe9da;padding:1px 6px;border-radius:3px;font-size:12.5px;font-family:"JetBrains Mono",Consolas,monospace;color:#4a3d1e;}
+  /* 判定卡 */
+  .verdict{display:grid;grid-template-columns:270px 1fr;gap:18px;margin:18px 0;}
+  .vcard{background:linear-gradient(160deg,#1c2a3e,#2b3f5c);color:#f2ecdc;border-radius:10px;padding:22px 20px;text-align:center;box-shadow:0 4px 14px rgba(20,30,50,.18);}
+  .vcard .big{font-size:44px;font-weight:700;color:var(--gold2);font-family:Georgia,serif;line-height:1.1;}
+  .vcard .big small{font-size:20px;color:#cbb97f;}
+  .vcard .lbl{font-size:13px;margin-top:6px;opacity:.9;letter-spacing:2px;}
+  .vfoot{font-size:11.5px;margin-top:12px;padding-top:10px;border-top:1px dashed rgba(212,175,55,.4);opacity:.85;font-family:"Noto Sans SC",sans-serif;line-height:1.6;}
+  .vlist{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .vitem{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:10px;}
+  .pill{min-width:52px;text-align:center;font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:20px;font-family:"Noto Sans SC",sans-serif;}
+  .pill.ok{background:#e3f2e9;color:var(--green);border:1px solid #bfe0cd;}
+  .pill.warn{background:#fdf3e0;color:var(--amber);border:1px solid #efd6a8;}
+  .pill.red{background:#fbe9e6;color:var(--red);border:1px solid #efc4bd;}
+  .vitem .t{font-size:13.5px;font-weight:600;}
+  .vitem .d{font-size:11.5px;color:#7d766a;font-family:"Noto Sans SC",sans-serif;}
+  /* 表格 */
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:13px;margin:14px 0;box-shadow:0 2px 10px rgba(60,50,20,.06);border-radius:8px;overflow:hidden;}
+  th{background:#243348;color:#f0e9d6;padding:9px 10px;text-align:left;font-weight:600;letter-spacing:.5px;font-family:"Noto Sans SC",sans-serif;font-size:12.5px;}
+  td{padding:8px 10px;border-bottom:1px solid #efe9db;vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  tr:nth-child(even) td{background:#fbf9f4;}
+  td.hash{font-family:"JetBrains Mono",Consolas,monospace;font-size:11.5px;color:#7a5c14;white-space:nowrap;}
+  .st{font-weight:700;font-family:"Noto Sans SC",sans-serif;font-size:12px;}
+  .st.ok{color:var(--green);} .st.warn{color:var(--amber);} .st.red{color:var(--red);}
+  /* 进度条 */
+  .bar{background:#ece5d4;border-radius:20px;height:10px;overflow:hidden;margin-top:5px;}
+  .bar i{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#b8912f,#d4af37);}
+  .bar.g i{background:linear-gradient(90deg,#2e8b62,#4caf83);}
+  .krow{display:grid;grid-template-columns:92px 70px 1fr 110px;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-bottom:8px;font-size:13px;}
+  .krow .kb{font-weight:700;}
+  .krow .kn{font-family:Georgia,serif;color:#5a4a17;}
+  .krow .kr{text-align:right;font-size:12px;font-family:"Noto Sans SC",sans-serif;}
+  /* 批次柱状 */
+  .chart{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 18px 14px;margin:14px 0;}
+  .chart h4{font-size:13.5px;color:#2c3a52;margin-bottom:14px;font-family:"Noto Sans SC",sans-serif;}
+  .cols{display:flex;align-items:flex-end;gap:18px;height:170px;padding:0 6px;}
+  .col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+  .col .n{font-size:12.5px;font-weight:700;color:#5a4a17;font-family:Georgia,serif;margin-bottom:4px;}
+  .col .stick{width:70%;background:linear-gradient(180deg,#d4af37,#a87f22);border-radius:4px 4px 0 0;}
+  .col .lb{font-size:11px;color:#6d6558;margin-top:8px;font-family:"Noto Sans SC",sans-serif;white-space:nowrap;}
+  .col .stick.e{background:linear-gradient(180deg,#8fa8c8,#5f7da3);}
+  .note{font-size:11px;color:#968d7c;margin-top:10px;font-family:"Noto Sans SC",sans-serif;}
+  /* 双活卡 */
+  .dual{display:grid;grid-template-columns:1fr 34px 1fr;gap:8px;align-items:stretch;margin:10px 0;}
+  .dside{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:12.5px;}
+  .dside b{display:block;font-size:13px;margin-bottom:3px;}
+  .dside .win{color:var(--green);} .dside .lose{color:#8a8271;}
+  .dside .h{font-family:"JetBrains Mono",monospace;font-size:11px;color:#7a5c14;}
+  .darrow{display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;}
+  footer{margin-top:52px;padding-top:18px;border-top:2px solid var(--gold2);font-size:12px;color:#8a8271;font-family:"Noto Sans SC",sans-serif;text-align:center;line-height:2;}
+  .small{font-size:12px;color:#7d766a;}
+  .kbd{white-space:nowrap;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ═══════════ 封面 ═══════════ -->
+<div class="cover">
+  <div class="tag">承 总 令 v13 · 末 环 · 全 量 终 账</div>
+  <h1>v13 全量终账报告</h1>
+  <div class="sub">五科零基础首学版教材节件生产线 · 79节总盘 + 地理15节+1附录域口径 · 批一～批八全量对账</div>
+  <div class="meta">
+    <span><b>出品</b> 报告汇总员（队6帽·会话6ae4dbf1）</span>
+    <span><b>令源</b> 群管理员 00:42:30 承总令v13末环</span>
+    <span><b>实勘基准</b> origin/main = <code style="background:rgba(255,255,255,.12);color:#e8d9a0;">a67af89</code></span>
+    <span><b>落池</b> dui6_qc_1031</span>
+  </div>
+</div>
+
+<!-- ═══════════ 执行摘要 ═══════════ -->
+<h2><span class="no">§0</span>执行摘要</h2>
+<div class="h2sub">全文证据均经 fetch 先行实勘：判定脚本 v1.3 于最新 main 实跑 + 批次 commit 逐笔拉取 + 归档目录实体清点 + 残项 hash cat-file 复核</div>
+
+<div class="verdict">
+  <div class="vcard">
+    <div class="big">78<small> / 79</small></div>
+    <div class="lbl">main 实存节件（脚本实测）</div>
+    <div class="vfoot">台账口径：<b style="color:var(--gold2)">账面全齐</b><br>第79节（物理2.3）已 QC 出库定谳<br>在池候并 · 不阻塞终账<br><br>地理侧：14节实存全齐<br>第15节+1附录域按 v13-d 落库</div>
+  </div>
+  <div class="vlist">
+    <div class="vitem"><span class="pill ok">全齐</span><div><div class="t">化学 9/9</div><div class="d">1.1–3.3 九节正本全数在 main</div></div></div>
+    <div class="vitem"><span class="pill ok">全齐</span><div><div class="t">生物 19/19</div><div class="d">1.1–6.3 十九节正本全数在 main</div></div></div>
+    <div class="vitem"><span class="pill ok">全齐</span><div><div class="t">数学 18/18</div><div class="d">含 3.2 拆件（3.2.1/3.2.2）+1.1 黄金转正</div></div></div>
+    <div class="vitem"><span class="pill warn">18/19</span><div><div class="t">物理（2.3 出库在池）</div><div class="d">1.1–4.6 实存 18 节；2.3=5e9ab1f QC出库未并</div></div></div>
+    <div class="vitem"><span class="pill ok">全齐</span><div><div class="t">地理 14/14 + 附录域</div><div class="d">v13-d 口径：第15节+1附录域登记单落库</div></div></div>
+    <div class="vitem"><span class="pill warn">残项2</span><div><div class="t">让渡实体受阻两件</div><div class="d">79b45f6 / b355e01 五重实锚零命中·工时在案</div></div></div>
+  </div>
+</div>
+
+<blockquote><b>终账判定（如实呈报·宁缺毋编）：</b>沿 79 节总盘口径，main 实存 <b>78/79 = 98.7%</b>；沿台账口径（含已出库在池件），四科 + 地理<b>账面全齐</b>。批五14 + 批六5 + 批七3 + 批八2 = <b>24 节正本全数兑现 main</b> 属实；唯物理 2.3（QC 批十二出库定谳 · 5e9ab1f 先落池版）未编入批一～批八任何批次，系<b>批次编排遗漏</b>而非质量缺位，列残项清单首位，候下一批次并 main 即实存闭环。此判定与"四科全齐"的口头口径存在一处实存级差异，本席依纪律如实入账，不阻塞终账、不新开生产节。</blockquote>
+
+<!-- ═══════════ §1 全量达成判定 ═══════════ -->
+<h2><span class="no">§1</span>全量达成判定</h2>
+<div class="h2sub">判定工具：全量达成判定脚本_v1.py（v1.3 口径 · commit 47de671）｜实跑时点：1101 凌晨 00:5x｜基准：origin/main a67af89</div>
+
+<h3>1.1 五科对账实测（脚本直出）</h3>
+<table>
+  <tr><th>科目</th><th>总盘口径</th><th>main 实存</th><th>缺节</th><th>判定</th><th>达成率</th></tr>
+  <tr><td><b>数学</b></td><td>18 件（17 节号·3.2 拆件）</td><td>18</td><td>—</td><td class="st ok">✅ 全齐</td><td><div class="bar g"><i style="width:100%"></i></div></td></tr>
+  <tr><td><b>物理</b></td><td>19 节（1.1–4.6）</td><td>18</td><td>2.3</td><td class="st warn">⏳ 2.3 出库在池</td><td><div class="bar"><i style="width:94.7%"></i></div></td></tr>
+  <tr><td><b>化学</b></td><td>9 节（1.1–3.3）</td><td>9</td><td>—</td><td class="st ok">✅ 全齐</td><td><div class="bar g"><i style="width:100%"></i></div></td></tr>
+  <tr><td><b>生物</b></td><td>19 节（1.1–6.3）</td><td>19</td><td>—</td><td class="st ok">✅ 全齐</td><td><div class="bar g"><i style="width:100%"></i></div></td></tr>
+  <tr><td><b>地理</b></td><td>14 节 + 第15节 + 1附录域（v13-d）</td><td>14 + 域件</td><td>—</td><td class="st ok">✅ 全齐（台账）</td><td><div class="bar g"><i style="width:100%"></i></div></td></tr>
+</table>
+
+<h3>1.2 口径换算注记（79 vs 80 的来历）</h3>
+<p>脚本 v1.3 总盘 = 数学18 + 物理19 + 化学9 + 生物19 + 地理14 = <b>79 节</b>，即总令所称"79 节总盘"。v13-d 项终裁（commit 110e9fd）将地理侧定谳为<b>"15 节 + 1 附录域"</b>（14 节口径作废认错入库）：第 15 节为地理 4.3 域——其越出本册的构件（p112–118 域内构件 + 册尾附录 p138 / 后记 p139）以<b>附录域登记单</b>形态落库（队6席批十六随验单 25f6135a·不占节位），v13.1 细则（7d40be4）据此记总盘 80 节。两口径并行不悖：<b>79 节总盘为脚本实测口径，80 节为含地理第 15 节域件的 v13.1 定谳口径</b>。</p>
+
+<h3>1.3 地理"15 节 + 1 附录域"落库证据链</h3>
+<table>
+  <tr><th>构成</th><th>形态</th><th>证据锚</th><th>状态</th></tr>
+  <tr><td>标准节件 14 节</td><td>产出_队7 首学版主件 ×14</td><td>1.1–5.2 全节号脚本实勘 14/14</td><td class="st ok">main 实存全齐</td></tr>
+  <tr><td>第 15 节（4.3 域）</td><td>越出构件转附录域登记单</td><td>25f6135a·队6席批十六（图121=p115 海洋空间资源 / 图4-27 神户人工岛实锚案底）</td><td class="st ok">落库（v13-d）</td></tr>
+  <tr><td>1 附录域</td><td>册尾附录 p138 / 后记 p139</td><td>地理 5.2 件（df14ed6）册尾后记页实锚·QC 第十五年批 74a32549 定谳</td><td class="st ok">落库</td></tr>
+</table>
+<blockquote><b>里程碑对账属实：</b>批八收官（392d48d）宣布"地理 15 节 + 1 附录域口径全数落库"，与本席实勘一致——14 标准节 main 实存 + 第 15 节/附录域以登记单形态落库，v13-d 记账口径（claim_board d6d39c9）成立。</blockquote>
+
+<!-- ═══════════ §2 残项清单 ═══════════ -->
+<h2><span class="no">§2</span>残项清单</h2>
+<div class="h2sub">三项均不阻塞终账 · 实体灭失结案路径候群外定谳 · 禁新开生产节约束下仅作账面呈报</div>
+
+<table>
+  <tr><th style="width:36px">#</th><th>残项</th><th>实况（本席实勘）</th><th>台账锚</th><th>处置路径</th><th>阻塞?</th></tr>
+  <tr>
+    <td><b>R1</b></td>
+    <td><b>物理 2.3《匀变速直线运动的位移与时间的关系》</b><br><span class="small">唯一实存缺节</span></td>
+    <td>八件正本在 <code>dui4_23_1031</code> 分支 5e9ab1f（B席·ded4420 认领·硬闸19:05 前达交·影印 p42–46 五页闭合·代验18项 ALL PASS）；<b>QC 批十二复核定谳：5e9ab1f 先落池版出库 PASS</b>（c6160d7 候补留档·双版 QC 史双签在案）；未编入批一～批八任何批次</td>
+    <td class="hash">0f42795（批十二）</td>
+    <td>候下一批次并 main（QC 已出库·免重验）→ 实存 79/79 即时闭环</td>
+    <td class="st ok">否</td>
+  </tr>
+  <tr>
+    <td><b>R2</b></td>
+    <td><b>化学 2.3 独立重产版让渡实体</b><br><span class="small">79b45f6</span></td>
+    <td>让渡裁定实体不变（正本 edc5cf7 已并 main·c90a3b5）；实体对象 <b>五重实锚零命中</b>：A席三重 + B席四重 + 本席第五重（cat-file 实测 <code>Not a valid object name</code>·全分支 log 仅文字引用 4 处·零对象实体）</td>
+    <td class="hash">d6d39c9（claim_board v13-b）</td>
+    <td>工时让渡注记已在案；实体灭失结案路径候群外定谳</td>
+    <td class="st ok">否</td>
+  </tr>
+  <tr>
+    <td><b>R3</b></td>
+    <td><b>数学 3.2.2 B席拆件版让渡实体</b><br><span class="small">b355e01</span></td>
+    <td>黄金转正件 49a2173 已定谳正本并 main（1bb9df9·sha256 双端一致 447ec496/8e3b599f 队6随验在案）；实体对象 <b>五重实锚零命中</b>（同上·dui2_3222_1031 分支不存在）</td>
+    <td class="hash">d6d39c9（claim_board v13-e）</td>
+    <td>同 R2 · 工时照记不判废 · 候群外定谳</td>
+    <td class="st ok">否</td>
+  </tr>
+  <tr>
+    <td><b>R4</b></td>
+    <td><b>双活 5.4 候补件双黄待裁</b><br><span class="small">62f45ca</span></td>
+    <td>归档实体在案（_归档/v13双活归档_生物5.4_B线版62f45ca_1031）；待填×5 = p106 第3题填空图解教学形态 + 存货1处教学语境，验定"双黄候裁不判废"（图106=p97 实锚）</td>
+    <td class="hash">585d611 / 25f6135</td>
+    <td>候 v13-c 同型豁免追认 · 归档态冻结</td>
+    <td class="st ok">否</td>
+  </tr>
+</table>
+
+<!-- ═══════════ §3 批次留痕索引 ═══════════ -->
+<h2><span class="no">§3</span>批一～批八全程留痕索引</h2>
+<div class="h2sub">并 main 提交逐笔拉取（origin/main a67af89 全 log）· 每件均附 QC 出库单在案核验 · 批五起承 v13-a 终裁放行</div>
+
+<div class="chart">
+  <h4>批一～批八并 main 节件吞吐（件）</h4>
+  <div class="cols">
+    <div class="col"><div class="n">7</div><div class="stick" style="height:50%"></div><div class="lb">批一</div></div>
+    <div class="col"><div class="n">4</div><div class="stick" style="height:29%"></div><div class="lb">批二</div></div>
+    <div class="col"><div class="n">8</div><div class="stick e" style="height:57%"></div><div class="lb">批三*</div></div>
+    <div class="col"><div class="n">4</div><div class="stick" style="height:29%"></div><div class="lb">批四</div></div>
+    <div class="col"><div class="n">14</div><div class="stick" style="height:100%"></div><div class="lb">批五</div></div>
+    <div class="col"><div class="n">5</div><div class="stick" style="height:36%"></div><div class="lb">批六</div></div>
+    <div class="col"><div class="n">3</div><div class="stick" style="height:22%"></div><div class="lb">批七</div></div>
+    <div class="col"><div class="n">2</div><div class="stick" style="height:15%"></div><div class="lb">批八</div></div>
+  </div>
+  <div class="note">* 批三含件0（claim 清单）与件1（机检工具 v1.4 落库）两笔非节件，节件计 6；批五～批八 = v13 终裁后操盘 24 节正本。批七另有收官批收口 4 笔（物理3.3 正本 bb82d5e 等）随线并入。</div>
+</div>
+
+<h3>3.1 批一～批四（21:24–23:1x·队4席操盘·每件候 QC 出库单随并）</h3>
+<table>
+  <tr><th>批</th><th>件</th><th>节件</th><th>并 main commit</th><th>QC 出库锚</th></tr>
+  <tr><td rowspan="7"><b>批一</b><br><span class="small">21:24 令</span></td><td>1</td><td>地理 4.1 水循环</td><td class="hash">d261ba7</td><td class="hash">dui6_qc 随验单 b684810</td></tr>
+  <tr><td>2</td><td>生物 3.2 细胞器之间的分工合作</td><td class="hash">0aa0db3</td><td class="hash">QC批二 e4e7852+81bea71</td></tr>
+  <tr><td>3</td><td>数学 4.2 指数函数</td><td class="hash">3a49eed</td><td class="hash">QC随验单 e5391dc</td></tr>
+  <tr><td>4</td><td>化学 3.2 硫的转化 v1.1</td><td class="hash">006f765</td><td class="hash">QC复验批四</td></tr>
+  <tr><td>5</td><td>生物 4.1 被动运输 v1.1</td><td class="hash">1575c76</td><td class="hash">QC复验批四</td></tr>
+  <tr><td>6</td><td>生物 4.2 主动运输与胞吞胞吐 v1.1</td><td class="hash">465864a</td><td class="hash">QC复验批四</td></tr>
+  <tr><td>7</td><td>数学 4.4 对数函数</td><td class="hash">8f1c0b8</td><td class="hash">QC复验批四 6a840eb</td></tr>
+  <tr><td rowspan="4"><b>批二</b><br><span class="small">21:45 令</span></td><td>1</td><td>数学 4.1 指数 v1.0.1</td><td class="hash">9472eb9</td><td class="hash">QC复验批五① d1fa825</td></tr>
+  <tr><td>2</td><td>地理 2.3 喀斯特海岸和冰川地貌 v1.1</td><td class="hash">f2a7db3</td><td class="hash">QC复验批五② ca7b3ae</td></tr>
+  <tr><td>3</td><td>数学 4.5 函数的应用（二）</td><td class="hash">89a88eb</td><td class="hash">QC复验批五③ 6f24f45</td></tr>
+  <tr><td>4</td><td>物理 4.1 牛顿第一定律（B线件）</td><td class="hash">be3a14d</td><td class="hash">QC随验单 6034cdb</td></tr>
+  <tr><td rowspan="8"><b>批三</b><br><span class="small">22:37 令</span></td><td>0</td><td>claim_队4 剩余节实锚清单 v1.0</td><td class="hash">3aadbcc</td><td class="hash">（工具件）</td></tr>
+  <tr><td>1</td><td>机检工具 qc_教材件机检 v1.4 落库</td><td class="hash">e6b3c61</td><td class="hash">（工具件·a3c2b3f）</td></tr>
+  <tr><td>2</td><td>生物 6.1 细胞的增殖</td><td class="hash">6134298</td><td class="hash">QC批七首验 ca679ad</td></tr>
+  <tr><td>3</td><td>物理 4.5 牛顿运动定律的应用</td><td class="hash">83eebeb</td><td class="hash">QC批七首验 93f6efa</td></tr>
+  <tr><td>4</td><td>物理 4.6 超重和失重</td><td class="hash">c33e12f</td><td class="hash">QC批七首验 4c74b43</td></tr>
+  <tr><td>5</td><td>物理 3.5 共点力的平衡 v1.2</td><td class="hash">7f07d61</td><td class="hash">QC批八复验 6358a6c</td></tr>
+  <tr><td>6</td><td>生物 6.2 细胞的分化</td><td class="hash">26ebf3f</td><td class="hash">QC批八快检 8f3ef7d</td></tr>
+  <tr><td>7</td><td>生物 6.3 细胞的衰老和死亡</td><td class="hash">b6cbf98</td><td class="hash">QC批八快检 5c0fb84</td></tr>
+  <tr><td rowspan="4"><b>批四</b><br><span class="small">23:04 令</span></td><td>1</td><td>化学 3.3 氮的循环 v1.1</td><td class="hash">a5bae01</td><td class="hash">QC批九复验 cc1bcc4</td></tr>
+  <tr><td>2</td><td>数学 4.3 对数 v1.0.3</td><td class="hash">459c240</td><td class="hash">QC批九复验 bdef482</td></tr>
+  <tr><td>3</td><td>物理 4.2 实验：探究加速度与力、质量的关系</td><td class="hash">41dea30</td><td class="hash">QC批九快检 9a3e651</td></tr>
+  <tr><td>4</td><td>物理 4.3 牛顿第二定律</td><td class="hash">7d4d0ac</td><td class="hash">QC批九快检 059913a</td></tr>
+</table>
+
+<h3>3.2 批五～批八（v13 五项终裁后操盘·24 节正本）</h3>
+<table>
+  <tr><th>批</th><th>件</th><th>节件</th><th>并 main commit</th><th>源件 hash / QC 锚</th></tr>
+  <tr><td rowspan="14"><b>批五</b><br><span class="small">14件·A席操盘<br>承 23:36/00:17 令</span></td><td>1</td><td>物理 4.4 力学单位制（修后 v1.0.1）</td><td class="hash">bd4beba</td><td class="hash">ad5c7a1·QC批十①</td></tr>
+  <tr><td>2</td><td>物理 2.4 自由落体运动</td><td class="hash">67f3d3c</td><td class="hash">05062bf·批十③在库</td></tr>
+  <tr><td>3</td><td>物理 3.1 重力与弹力</td><td class="hash">233e442</td><td class="hash">f793238·批十③在库</td></tr>
+  <tr><td>4</td><td>生物 3.1 细胞膜的结构和功能</td><td class="hash">fb28fc5</td><td class="hash">8e2fc73·批十③双案定谳</td></tr>
+  <tr><td>5</td><td>生物 3.3 细胞核的结构和功能 v1.2</td><td class="hash">4b50935</td><td class="hash">444de60·批十③双案定谳</td></tr>
+  <tr><td>6</td><td>生物 5.1 降低化学反应活化能的酶</td><td class="hash">73b413b</td><td class="hash">05a715e·批十②快检</td></tr>
+  <tr><td>7</td><td>生物 5.2 细胞的能量"货币"ATP</td><td class="hash">35b5a28</td><td class="hash">6d39825·批十②快检</td></tr>
+  <tr><td>8</td><td>生物 5.3 细胞呼吸的原理和应用</td><td class="hash">cca5d62</td><td class="hash">423c120·批十②快检</td></tr>
+  <tr><td>9</td><td>生物 5.4 光合作用与能量转化</td><td class="hash">c1313b8</td><td class="hash">88f3eab1·批十②快检</td></tr>
+  <tr><td>10</td><td>地理 3.1 大气的组成与垂直分层</td><td class="hash">23f8fc4</td><td class="hash">94ec1a9·批十③在库</td></tr>
+  <tr><td>11</td><td>地理 3.2 大气受热过程</td><td class="hash">0c918f0</td><td class="hash">8f82e79·批十③在库</td></tr>
+  <tr><td>12</td><td>地理 3.3 大气热力环流</td><td class="hash">d402778</td><td class="hash">5842c40·批十③在库</td></tr>
+  <tr><td>13</td><td>地理 4.2 海水的性质和运动</td><td class="hash">1ddc031</td><td class="hash">e5f89ef·批十③在库</td></tr>
+  <tr><td>14</td><td>化学 3.3 v1.1 print 补强增量</td><td class="hash">2e1df58</td><td class="hash">c54661f·QC批九</td></tr>
+  <tr><td rowspan="5"><b>批六</b><br><span class="small">5件·规划师操盘<br>v13-b 归一定谳</span></td><td>1</td><td>化学 2.3 氧化还原反应（C线正本）</td><td class="hash">c90a3b5</td><td class="hash">edc5cf7·批十⓪归一</td></tr>
+  <tr><td>2</td><td>化学 3.1 铁的多样性（正本件）</td><td class="hash">0b4e0fc</td><td class="hash">748381c·批十⓪维持</td></tr>
+  <tr><td>3</td><td>数学 3.3 幂函数</td><td class="hash">7bd3b4e</td><td class="hash">6fa4bb7·批十在库</td></tr>
+  <tr><td>4</td><td>数学 3.4 函数的应用（一）</td><td class="hash">bb67c44</td><td class="hash">ca2ebb2·批十在库</td></tr>
+  <tr><td>5</td><td>物理 3.2 摩擦力</td><td class="hash">5c99cc7</td><td class="hash">31e77ca·批十一追加</td></tr>
+  <tr><td rowspan="3"><b>批七</b><br><span class="small">3件·收官批<br>规划师操盘</span></td><td>1</td><td>数学 3.2.1 单调性与最大(小)值</td><td class="hash">a23b0b4</td><td class="hash">b4d28a9·批十一快检</td></tr>
+  <tr><td>2</td><td>数学 3.2.2 奇偶性 + 1.1 集合的概念（黄金转正）</td><td class="hash">1bb9df9</td><td class="hash">49a2173·v13-e 定谳</td></tr>
+  <tr><td>3</td><td>物理 3.4 力的合成和分解</td><td class="hash">49139b0</td><td class="hash">633b37f·批十一快检</td></tr>
+  <tr><td rowspan="2"><b>批八</b><br><span class="small">2件·00:38 令<br>地理真末件</span></td><td>1</td><td>地理 5.1 主要植被与自然环境</td><td class="hash">c9adf7d</td><td class="hash">496c2449·QC批十五 74a32549</td></tr>
+  <tr><td>2</td><td>地理 5.2 土壤的形成（真末件）</td><td class="hash">392d48d</td><td class="hash">4e74dbb2·QC批十五 74a32549</td></tr>
+</table>
+<p class="small">批七收官批另有 4 笔收口随线并入：物理 3.3 正本（bb82d5e·1e96ad6 先落池 19:44 定谳）、物理 3.4 / 数学 3.2.1 复录（3829093 / b85ab1f）、print 份额线收口（3c1ccdd·dui4_print_1101 线汇入·含队4席 print 物理份额 6 件）。批八件1/件2 取 B 席 v13 执行令红线整改后修后件为最新合格态（沿批五件1修后 v1.0.1 先例）。</p>
+
+<!-- ═══════════ §4 双活五组归档对账 ═══════════ -->
+<h2><span class="no">§4</span>双活五组归档对账</h2>
+<div class="h2sub">裁定口径：总令"先落池为准"——正本维持已并 main，后落池候补件实体归档、记工时不判废｜归档批 commit 585d611·总说明 v13双活归档总说明_1101.md</div>
+
+<table>
+  <tr><th>双活组</th><th>正本（先落池·已并 main）</th><th>候补件（后落池·归档）</th><th>验定状态（25f6135a）</th><th>归档实勘</th></tr>
+  <tr><td><b>① 生物 3.1</b></td><td class="st ok win">8e2fc73 ✓</td><td>A席v2 = <code>1ec8250</code></td><td>双绿·件本体合格候补绿</td><td class="st ok">✅ 目录在案</td></tr>
+  <tr><td><b>② 生物 3.3</b></td><td class="st ok">444de60 ✓</td><td>A席v2 = <code>06d8b62</code></td><td>双绿（commit 标题"3.1"系误书·已登记勘误实为3.3）</td><td class="st ok">✅ 目录在案</td></tr>
+  <tr><td><b>③ 生物 5.2</b></td><td class="st ok">6d39825 ✓（队7跨科）</td><td>C线 <code>bacf39a</code> ＋ A席 <code>0d9d565</code>（两版）</td><td>双绿·图95=p86 / 图99=p90 实锚</td><td class="st ok">✅ 双目录在案</td></tr>
+  <tr><td><b>④ 生物 5.3</b></td><td class="st ok">423c120 ✓（队7跨科）</td><td>C线 = <code>28f0874</code></td><td>双绿·图99/106 实锚</td><td class="st ok">✅ 目录在案</td></tr>
+  <tr><td><b>⑤ 生物 5.4</b></td><td class="st ok">88f3eab1 ✓（队2转援）</td><td>B线 = <code>62f45ca</code></td><td>双黄候裁不判废（待填×5 系填空图解教学形态）</td><td class="st ok">✅ 目录在案</td></tr>
+  <tr><td><b>附·化学 3.2</b></td><td class="st ok">0867375 ✓（v1.1 正本）</td><td>C实例版 <code>aef1276</code>（v13-e 竞合让渡）</td><td>候补绿</td><td class="st ok">✅ 目录在案</td></tr>
+</table>
+
+<div class="dual">
+  <div class="dside"><b class="win">对账结论（本席实勘）</b><span class="h">_归档/ 实清点 7 目录实体全数在 main</span><br>总说明表格 7 行与目录一一对应；工时照产出席自报记录在总说明 §一。</div>
+  <div class="darrow">⇄</div>
+  <div class="dside"><b>差异注记（宁缺毋编）</b><span class="h">claim_board 注记"八目录" vs 实勘 7 目录</span><br>差异 1 笔 = 受阻件 b355e01（实体零命中·§2 R3）计入八的口径但实体未达，与总说明 §二"实体受阻两件"自洽。</div>
+</div>
+
+<!-- ═══════════ §5 v13 五项终裁兑现链 ═══════════ -->
+<h2><span class="no">§5</span>v13 五项终裁兑现链核验</h2>
+<table>
+  <tr><th style="width:64px">终裁</th><th>内容</th><th>兑现证据（本席实勘）</th><th>判定</th></tr>
+  <tr><td><b>a)</b></td><td>候验池批量并 main 放行（20+ 节 PASS 件全放）</td><td>批五14+批六5+批七3+批八2 = 24 节正本并 main（§3.2 全索引）；沿批三/批四 13 分钟节奏</td><td class="st ok">✅ 兑现</td></tr>
+  <tr><td><b>b)</b></td><td>化学 2.3 / 3.1 归一终裁（队6建议照准）</td><td>2.3 正本 edc5cf7（c90a3b5 并 main）·3.1 正本 748381c（0b4e0fc 并 main）·候补件留档不入；claim_board v13-b 注记 d6d39c9 在案</td><td class="st ok">✅ 兑现</td></tr>
+  <tr><td><b>c)</b></td><td>豁免裁定（4.4 黄3 / 2.3 位置图 / 3.2 双解）</td><td>claim_board v13-c 注记 d6d39c9：按对照区留痕同型先例豁免，各件 QC 单已随批五/批七入库</td><td class="st ok">✅ 兑现</td></tr>
+  <tr><td><b>d)</b></td><td>地理口径定谳 15 节 + 1 附录域（14 节口径作废）</td><td>14 标准节 main 实存全齐 + 4.3 域件附录域登记单（25f6135a）+ 册尾附录实锚（5.2 件 df14ed6）；claim_board v13-d 注记在案</td><td class="st ok">✅ 兑现</td></tr>
+  <tr><td><b>e)</b></td><td>黄金转正正本定谳（3.2.2 / 1.1）</td><td>49a2173 正本并 main（1bb9df9）·sha256 双端一致 447ec496/8e3b599f 队6随验在案；B席拆件版 b355e01 让渡（实体受阻→§2 R3）</td><td class="st ok">✅ 兑现</td></tr>
+</table>
+<blockquote><b>兑现结论：</b>v13 五项终裁 a/b/c/d/e 全链兑现属实（110e9fd 令 → 7d40be4 细则 → 批五～批八执行 → d6d39c9 台账 → 585d611 归档），另 v13.1 细则三处执行层修补（hash 级验证六件全过 / 放行边界三类留档件防双活 / 红账与全量判定解耦）均已在执行中落位。</blockquote>
+
+<!-- ═══════════ §6 结论 ═══════════ -->
+<h2><span class="no">§6</span>终账结论与建议</h2>
+<p><b>结论一（全量判定）：</b>沿 79 节总盘 + 地理 15 节 + 1 附录域口径——<b>台账层面全量达成</b>（四科全齐 + 地理全齐 + 24 节正本全数兑现 main 属实）；<b>main 实存层面 78/79</b>，唯一缺口为物理 2.3（QC 已出库 · 在池候并 · 批次编排遗漏 · 非质量缺位）。</p>
+<p><b>结论二（残项）：</b>四项残项全部不阻塞终账。R2/R3 两件让渡实体经本席第五重实锚复核确系对象库零命中（A席三重 + B席四重 + 本席第五重 = 五重一致），实体灭失结案路径候群外定谳。</p>
+<p><b>建议（候裁·不代裁）：</b>① 物理 2.3（5e9ab1f·八件·QC 批十二出库单在案）编入下一批次随批并 main，即达实存 79/79 闭环——建议由群外管理员席裁定批次编排；② R2/R3 实体灭失按"账面结案 + 群外定谳"双轨推进；③ 本报告落池 dui6_qc_1031 候终读，禁直推 main，全程零触碰生产节。</p>
+
+<footer>
+  实勘声明：本报告全部数据经 fetch 先行实勘（paramiko 垫片链路）· 判定脚本 v1.3 于 origin/main = a67af89 实跑直出 · 批次 commit 逐笔拉取 · 归档目录实体清点 · 残项 hash cat-file 复核<br>
+  报告汇总员（队6帽）· 承群管理员 00:42:30 承总令 v13 末环 · 1101 凌晨 · 落池 dui6_qc_1031 候终读
+</footer>
+
+</div>
+</body>
+</html>
