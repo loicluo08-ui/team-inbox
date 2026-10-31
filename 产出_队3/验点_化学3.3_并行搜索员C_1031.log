@@ -1,0 +1,20 @@
+C01 [PASS] N₂+O₂=放电=2NO  | 教材p113
+C02 [PASS] 2NO+O₂=2NO₂  | 教材p113
+C03 [PASS] 3NO₂+H₂O=2HNO₃+NO  | 教材p113
+C04 [PASS] N₂+3H₂⇌2NH₃  | 教材p113
+C05 [PASS] 4NH₃+5O₂=4NO+6H₂O  | 教材p117
+C06 [PASS] NH₄HCO₃=Δ=NH₃↑+CO₂↑+H₂O  | 教材p117
+C07 [PASS] NH₄Cl=Δ=NH₃↑+HCl↑  | 教材p117
+C08 [PASS] NH₄⁺+OH⁻=Δ=NH₃↑+H₂O  | 教材p117
+C09 [PASS] 2NH₄Cl+Ca(OH)₂=2NH₃↑+CaCl₂+2H₂O  | 教材p117
+C10 [PASS] NH₃+HCl=NH₄Cl  | 教材p116
+C11 [PASS] NH₃·H₂O⇌NH₄⁺+OH⁻  | 教材p116
+C12 [PASS] 4HNO₃=4NO₂↑+O₂↑+2H₂O  | 教材p120
+C13 [PASS] 4HNO₃(浓)+Cu=Cu(NO₃)₂+2NO₂↑+2H₂O  | 教材p120
+C14 [PASS] 8HNO₃(稀)+3Cu=3Cu(NO₃)₂+2NO↑+4H₂O  | 教材p120
+C15 [PASS] 4HNO₃(浓)+C=Δ=CO₂↑+4NO₂↑+2H₂O  | 教材p120
+C16 [PASS] NH₃+H₂O⇌NH₃·H₂O  | 教材p116
+N01 [PASS] 尿素含氮量复算 2N/CO(NH₂)₂=28.014/60.056×100=46.65% ≈ 教材46.65%（原子量取整差如实注记）| 教材p118
+N02 [照录] 氨标况密度0.771 g·L⁻¹·1体积水溶约700体积氨·市售硝酸68%~70%·1.42 g·cm⁻³·发烟硝酸95%以上·硝酸熔点-42℃沸点83℃密度1.5 g·cm⁻³·稀4mol·L⁻¹浓15mol·L⁻¹——教材原生数值逐字照录（p115/p119/p120）
+N03 [照录] 生物固氮约占自然固氮总量90%·闪电约占10%·合成氨对粮食增产贡献率50%左右·哈伯测得0.012%体积（p112/p114）
+SYMPY-16式配平+数值总判：ALL PASS

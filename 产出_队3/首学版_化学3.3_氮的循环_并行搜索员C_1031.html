@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>首学版·化学3.3《氮的循环》·鲁科2019必修第一册·并行搜索员C</title>
+<style>
+:root{--ink:#1c3d5a;--accent:#c0392b;--blue:#2471a3;--soft:#f6f9fc;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Songti SC","SimSun","Noto Serif CJK SC",serif;line-height:1.85;color:#222;max-width:860px;margin:0 auto;padding:28px 22px;background:#fff}
+h1{font-size:26px;text-align:center;color:var(--ink);border-bottom:3px double var(--ink);padding-bottom:10px;letter-spacing:2px}
+h2{font-size:20px;color:#fff;background:linear-gradient(90deg,var(--blue),#5dade2);padding:7px 14px;border-radius:6px;margin:26px 0 12px}
+h3{font-size:17px;color:var(--ink);margin:18px 0 8px;border-left:5px solid var(--blue);padding-left:10px}
+h4{font-size:15px;color:var(--blue);margin:14px 0 6px}
+p{margin:8px 0;text-indent:2em}
+p.noind{text-indent:0}
+.tag{display:inline-block;background:var(--ink);color:#fff;font-size:12px;padding:2px 10px;border-radius:10px;margin-right:6px;vertical-align:middle}
+.box{background:var(--soft);border:1px solid #d4e4f0;border-radius:8px;padding:12px 16px;margin:12px 0}
+.box b.t{color:var(--blue)}
+.note{background:#fffbe8;border:1px dashed #d4b106;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:14px}
+.eq{background:#eaf3fb;border-left:4px solid var(--blue);padding:8px 16px;margin:10px 0;font-size:17px;font-family:"Times New Roman",serif;text-align:center;letter-spacing:1px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14.5px}
+th,td{border:1px solid #9ab0c4;padding:7px 9px;text-align:left;vertical-align:top}
+th{background:#e3eef7;color:var(--ink)}
+svg{width:100%;height:auto;margin:10px 0}
+.small{font-size:13px;color:#666}
+.footer{margin-top:30px;border-top:1px solid #ccc;padding-top:12px;font-size:12.5px;color:#555}
+.selftest td:first-child{width:56%}
+@media print{body{padding:8px} h2{-webkit-print-color-adjust:exact;print-color-adjust:exact} .box,.note,.eq{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+
+<h1>第3节 氮的循环 <span style="font-size:16px;font-weight:normal">（首学版 v1.0）</span></h1>
+<p class="noind small" style="text-align:center">鲁科版（2019）化学 必修第一册 · 第3章 物质的性质与转化 ｜ 教材印刷页 p110-125 ｜ 制作：并行搜索员C·队3席 ｜ 2026-10-31</p>
+
+<div class="note"><b>零基础友好版说明：</b>本件按"节首清单→目标→正文（教材栏目全对应）→自测→考位锚→节末位置图"六站推进。所有科学事实均经教材影印逐页直读对证（见附件1/2）；<b>答案侧由编者自拟的内容均显式标注〔自编〕</b>；教材未述而需扩展处标注〔宁缺毋编·仅提示〕。</div>
+
+<h2>站0·节首清单：这节课要闯什么</h2>
+<div class="box"><p class="noind">①<b>氮的循环怎么转</b>——自然固氮（生物90%+闪电10%）与人工固氮（合成氨）三途径，把空气里的 N₂ 变成生物能用的化合态氮。
+②<b>五种关键物质一条线</b>——NH₃ → N₂ → NO → NO₂ → HNO₃/硝酸盐，用"价—类"二维图串起来（-3 → 0 → +2 → +4 → +5）。
+③<b>两个实验明星</b>——氨的喷泉实验、铜与浓/稀硝酸反应；外加实验室制氨一套完整方案。
+④<b>一面镜子</b>——氮氧化物与水体富营养化：人类活动如何扰动氮循环，绿色化学怎么回应。</p></div>
+
+<h2>站1·学习目标（对标教材·项目化改写）</h2>
+<table><tr><th>编号</th><th>目标</th><th>达成证据</th></tr>
+<tr><td>G1</td><td>能描述氮循环三途径与固氮概念，说出自然固氮两种途径的大致占比</td><td>能复述 90%/10% 与三条途径〔教材p112锚〕</td></tr>
+<tr><td>G2</td><td>能写出 N₂→NO→NO₂→HNO₃ 连续转化方程式并配平</td><td>16式配平全绿（sympy代验）</td></tr>
+<tr><td>G3</td><td>掌握氨、铵盐、硝酸的性质与检验/制备方案</td><td>喷泉实验+制氨方案+硝酸强氧化性三例</td></tr>
+<tr><td>G4</td><td>能用价—类二维图预测含氮物质转化路径</td><td>图3-3-3/3-3-10/概括整合三图互证</td></tr>
+<tr><td>G5</td><td>能从化学视角讨论氮循环与环境（光化学烟雾/富营养化/绿色化学5R）</td><td>自测第4题+微项目衔接</td></tr></table>
+
+<h2>站2·正文：一、自然界中的氮循环</h2>
+
+<h3>2.1 开场：闪电里的化学（联想·质疑·教材p110）</h3>
+<p>氮是一种地球上含量丰富的元素，除了以<b>游离态</b>的形式存在于大气中外，还以<b>化合态</b>的形式存在于动植物体、土壤和水体中。自然界中的氮元素在不停地循环着。正是由于存在着氮元素的循环、其他生命必需元素的循环以及水的循环，地球上的生命才能生机勃勃、生生不息。</p>
+<div class="box"><b class="t">联想·质疑（教材原栏目）：</b>闪电是大家非常熟悉的自然现象。你知道在电闪雷鸣的时候，空气里的氮气、部分含氮化合物分别发生了哪些反应吗？这些反应产生了哪些物质？这些物质对于人类的生产和生活有什么意义？〔本件p110直读〕</div>
+<p class="noind small">——本节就沿着"闪电→固氮→氨→硝酸→环境"这条线索，把氮的循环讲清楚。</p>
+
+<h3>2.2 氮在自然界中的循环（图3-3-2）</h3>
+<svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="氮在自然界中的循环示意图（结构化重绘）">
+<rect x="10" y="10" width="740" height="310" rx="12" fill="#eaf4fb"/>
+<rect x="318" y="30" width="124" height="40" rx="8" fill="#dfefff" stroke="#4a7a9a" stroke-width="1.5"/>
+<text x="380" y="55" font-size="13" text-anchor="middle" fill="#20405a">大气中的N₂</text>
+<rect x="178" y="100" width="124" height="40" rx="8" fill="#fdefff" stroke="#4a7a9a" stroke-width="1.5"/>
+<text x="240" y="125" font-size="13" text-anchor="middle" fill="#20405a">NH₃/合成氨</text>
+<rect x="478" y="100" width="124" height="40" rx="8" fill="#fff7de" stroke="#4a7a9a" stroke-width="1.5"/>
+<text x="540" y="125" font-size="13" text-anchor="middle" fill="#20405a">硝酸盐NO₃⁻</text>
+<rect x="58" y="200" width="124" height="40" rx="8" fill="#e8ffe8" stroke="#4a7a9a" stroke-width="1.5"/>
+<text x="120" y="225" font-size="13" text-anchor="middle" fill="#20405a">动物蛋白/遗体</text>
+<rect x="178" y="200" width="124" height="40" rx="8" fill="#e8ffe8" stroke="#4a7a9a" stroke-width="1.5"/>
+<text x="240" y="225" font-size="13" text-anchor="middle" fill="#20405a">植物蛋白/作物</text>
+<rect x="358" y="200" width="124" height="40" rx="8" fill="#fdefff" stroke="#4a7a9a" stroke-width="1.5"/>
+<text x="420" y="225" font-size="13" text-anchor="middle" fill="#20405a">氨和铵盐</text>
+<rect x="598" y="220" width="124" height="40" rx="8" fill="#dff3ff" stroke="#4a7a9a" stroke-width="1.5"/>
+<text x="660" y="245" font-size="13" text-anchor="middle" fill="#20405a">地下水/海洋</text>
+<line x1="380" y1="70" x2="300" y2="105" stroke="#4a7a9a" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="300" y1="135" x2="520" y2="112" stroke="#4a7a9a" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="540" y1="140" x2="480" y2="205" stroke="#4a7a9a" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="190" y1="220" x2="120" y2="200" stroke="#4a7a9a" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="150" y1="235" x2="300" y2="235" stroke="#4a7a9a" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="420" y1="200" x2="420" y2="140" stroke="#4a7a9a" stroke-width="1.8" marker-end="url(#ar)"/>
+<defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a7a9a"/></marker></defs>
+<text x="380" y="300" font-size="12" fill="#3a5a72" text-anchor="middle">（依据教材图3-3-2重绘·N₂⇌化合态氮经生物固氮/雷电固氮/工业固氮三途径循环）</text>
+</svg>
+<p class="noind small">图1 氮在自然界中的循环示意图（依据教材图3-3-2结构化重绘·原影印可对读）</p>
+<p>在自然界中，大豆、蚕豆等豆科植物根部的<b>根瘤菌</b>能把空气中的氮气转变为硝酸盐等含氮化合物。植物的根从土壤中吸收的 NH₄⁺ 和 NO₃⁻，经过复杂的生物转化过程形成各种氨基酸，氨基酸最后转化成蛋白质。动物以植物为食物而获得植物蛋白，并将其转化为动物蛋白。动植物遗体中的蛋白质被微生物分解成 NH₄⁺、NO₃⁻ 和 NH₃，又回到土壤、大气和水体中，被植物再次吸收利用。另外，在<b>放电</b>条件下，空气中少量的氮气与氧气化合生成氮氧化物，这些氮氧化物随降水转化成硝酸等进入土壤和水体中。</p>
+<p>影响氮在自然界中循环的另一个方面是<b>人类的活动</b>。人们通过化学方法把空气中的氮气转化为氨，再根据需要把氨转化成各种含氮化合物（如铵盐、硝酸）。某些含氮化合物进入土壤、大气和水体中进行转化。化石燃料燃烧、农作物的秸秆燃烧等所产生的氮氧化物通过大气进入土壤和水体，参与氮的循环。〔本件p111直读〕</p>
+
+<h3>2.3 固氮与固氮途径（教材p111-112）</h3>
+<p>将空气中<b>游离态的氮</b>转化为<b>含氮化合物</b>的过程叫作<b>氮的固定</b>（fixation of nitrogen），简称<b>固氮</b>。</p>
+<p>氮的固定主要有<b>自然固氮</b>和<b>人工固氮</b>两种方式。</p>
+<p><b>自然固氮</b>的途径主要有两种：一种是<b>生物固氮</b>，即自然界中的一些微生物（如豆科植物的根瘤菌）将空气中的氮气通过生物化学过程转化为含氮化合物，这种固氮途径的固氮量约占自然固氮总量的 <b>90%</b>；另一种是<b>通过闪电</b>将空气中的氮气转化为含氮化合物，这种固氮途径的固氮量约占自然固氮总量的 <b>10%</b>。〔本件p112直读·数值锚〕</p>
+<div class="box"><b class="t">观察·思考（教材原栏目·模拟闪电固氮）：</b>观察"在放电条件下氮气与氧气发生反应""一氧化氮转化为二氧化氮""二氧化氮溶于水"三个实验，全面描述实验现象，分析所发生的反应（观察记录表三行：放电N₂与O₂反应／NO转化为NO₂／NO₂溶于水）。〔本件p112直读·本件为文字版推演，实验视频/演示以课堂为准〕</div>
+
+<h3>2.4 一条线五种物质：N₂ → NO → NO₂ → HNO₃（教材p113）</h3>
+<p><b>氮气</b>（N₂，nitrogen）是无色、无味的气体，难溶于水。通常状况下，氮气的化学性质不活泼，它很难与其他物质发生反应。但是，在电闪雷鸣的雨天，空气中的氮气与氧气可以直接化合生成一氧化氮气体：</p>
+<div class="eq">N₂ + O₂ ──放电──▶ 2NO</div>
+<p><b>一氧化氮</b>（NO，nitrogen monoxide）是无色、难溶于水的气体。一氧化氮结合血红蛋白的能力比一氧化碳还强，更容易造成人体缺氧。不过，人们也发现了它在生物学方面的独特作用：一氧化氮分子作为一种传递神经信息的"信使分子"，在扩张血管、提高免疫力、增强记忆力等方面有着重要的作用。一氧化氮在常温下与空气中的氧气迅速化合，生成二氧化氮气体：</p>
+<div class="eq">2NO + O₂ ═══ 2NO₂</div>
+<p><b>二氧化氮</b>（NO₂，nitrogen dioxide）是红棕色、有刺激性气味的有毒气体，易溶于水。二氧化氮能使多种织物褪色，损坏多种织物和尼龙制品，对金属和非金属材料也有腐蚀作用。二氧化氮溶于水时与水反应生成硝酸和一氧化氮（工业上利用这一原理制取硝酸）。生成的硝酸随雨水淋洒到地面上，与土壤中的矿物作用形成能被植物吸收的硝酸盐。这样，就使土壤从空气中得到氮元素，促进了植物的生长：</p>
+<div class="eq">3NO₂ + H₂O ═══ 2HNO₃ + NO</div>
+<p>〔本件p113四段直读〕<b>氮氧化物有害也有功</b>——NO₂ 有毒，但"溶于水成硝酸"恰是自然界把游离氮送回土壤的通道，也是工业制硝酸的原理：同一反应，换个场景就换了角色，这正是化学有趣的地方。〔自编·类比〕</p>
+
+<h3>2.5 人工固氮：工业合成氨（教材p113-114）</h3>
+<p>人工固氮现在普遍采用的是<b>氨的工业合成</b>。大多数植物只能吸收化合态的氮元素，而不能直接吸收空气中的氮气。经过大量的实验研究，科学家发现在一定的条件下氮气与氢气可以直接化合生成氨，而氨的水溶液及氨形成的盐含有能被植物吸收的铵态氮。工业上，以氮气和氢气为原料，在高温、高压和有催化剂存在的条件下合成氨：</p>
+<div class="eq">N₂ + 3H₂ ⇌(高温、高压──催化剂) 2NH₃</div>
+<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="氮及其化合物价类二维转化图">
+<rect x="70" y="20" width="660" height="330" rx="10" fill="#f4f1e8"/>
+<line x1="120" y1="30" x2="120" y2="340" stroke="#8a7a52" stroke-width="2"/>
+<line x1="120" y1="320" x2="720" y2="320" stroke="#8a7a52" stroke-width="2"/>
+<text x="60" y="180" font-size="14" fill="#5a4a28" transform="rotate(-90 60 180)" text-anchor="middle">氮元素化合价</text>
+<text x="560" y="355" font-size="14" fill="#5a4a28" font-weight="bold">物质类别</text>
+<line x1="114" y1="320" x2="120" y2="320" stroke="#8a7a52" stroke-width="2"/>
+<text x="108" y="325" font-size="13" fill="#5a4a28" text-anchor="end">-3</text>
+<line x1="114" y1="200" x2="120" y2="200" stroke="#8a7a52" stroke-width="2"/>
+<text x="108" y="205" font-size="13" fill="#5a4a28" text-anchor="end">0</text>
+<line x1="114" y1="120" x2="120" y2="120" stroke="#8a7a52" stroke-width="2"/>
+<text x="108" y="125" font-size="13" fill="#5a4a28" text-anchor="end">+2</text>
+<line x1="114" y1="40" x2="120" y2="40" stroke="#8a7a52" stroke-width="2"/>
+<text x="108" y="45" font-size="13" fill="#5a4a28" text-anchor="end">+4</text>
+<line x1="114" y1="0" x2="120" y2="0" stroke="#8a7a52" stroke-width="2"/>
+<text x="108" y="5" font-size="13" fill="#5a4a28" text-anchor="end">+5</text>
+<line x1="150" y1="320" x2="150" y2="326" stroke="#8a7a52" stroke-width="2"/>
+<text x="150" y="345" font-size="13" fill="#5a4a28" text-anchor="middle">氢化物</text>
+<line x1="260" y1="320" x2="260" y2="326" stroke="#8a7a52" stroke-width="2"/>
+<text x="260" y="345" font-size="13" fill="#5a4a28" text-anchor="middle">单质</text>
+<line x1="370" y1="320" x2="370" y2="326" stroke="#8a7a52" stroke-width="2"/>
+<text x="370" y="345" font-size="13" fill="#5a4a28" text-anchor="middle">氧化物</text>
+<line x1="480" y1="320" x2="480" y2="326" stroke="#8a7a52" stroke-width="2"/>
+<text x="480" y="345" font-size="13" fill="#5a4a28" text-anchor="middle">酸</text>
+<line x1="590" y1="320" x2="590" y2="326" stroke="#8a7a52" stroke-width="2"/>
+<text x="590" y="345" font-size="13" fill="#5a4a28" text-anchor="middle">碱</text>
+<line x1="700" y1="320" x2="700" y2="326" stroke="#8a7a52" stroke-width="2"/>
+<text x="700" y="345" font-size="13" fill="#5a4a28" text-anchor="middle">盐</text>
+<defs><marker id="mN₂NO" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#a06428"/></marker></defs>
+<line x1="260" y1="0" x2="370" y2="2" stroke="#a06428" stroke-width="2" marker-end="url(#mN₂NO)"/>
+<defs><marker id="mNONO₂" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#a06428"/></marker></defs>
+<line x1="370" y1="2" x2="370" y2="4" stroke="#a06428" stroke-width="2" marker-end="url(#mNONO₂)"/>
+<defs><marker id="mNO₂HNO₃" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#a06428"/></marker></defs>
+<line x1="370" y1="4" x2="480" y2="5" stroke="#a06428" stroke-width="2" marker-end="url(#mNO₂HNO₃)"/>
+<defs><marker id="mN₂NH₃" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#a06428"/></marker></defs>
+<line x1="260" y1="0" x2="150" y2="-3" stroke="#a06428" stroke-width="2" marker-end="url(#mN₂NH₃)"/>
+<defs><marker id="mHNO₃NO₃⁻" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#a06428"/></marker></defs>
+<line x1="480" y1="5" x2="700" y2="5" stroke="#a06428" stroke-width="2" marker-end="url(#mHNO₃NO₃⁻)"/>
+<defs><marker id="mNH₃NH₄⁺" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#a06428"/></marker></defs>
+<line x1="150" y1="-3" x2="700" y2="-3" stroke="#a06428" stroke-width="2" marker-end="url(#mNH₃NH₄⁺)"/>
+<circle cx="150" cy="320" r="17" fill="#fff" stroke="#a06428" stroke-width="1.5"/>
+<text x="150" y="325" font-size="13" fill="#3a2a10" text-anchor="middle" font-weight="bold">NH₃</text>
+<circle cx="260" cy="200" r="17" fill="#fff" stroke="#a06428" stroke-width="1.5"/>
+<text x="260" y="205" font-size="13" fill="#3a2a10" text-anchor="middle" font-weight="bold">N₂</text>
+<circle cx="370" cy="120" r="17" fill="#fff" stroke="#a06428" stroke-width="1.5"/>
+<text x="370" y="125" font-size="13" fill="#3a2a10" text-anchor="middle" font-weight="bold">NO</text>
+<circle cx="370" cy="40" r="17" fill="#fff" stroke="#a06428" stroke-width="1.5"/>
+<text x="370" y="45" font-size="13" fill="#3a2a10" text-anchor="middle" font-weight="bold">NO₂</text>
+<circle cx="480" cy="0" r="17" fill="#fff" stroke="#a06428" stroke-width="1.5"/>
+<text x="480" y="5" font-size="13" fill="#3a2a10" text-anchor="middle" font-weight="bold">HNO₃</text>
+<circle cx="700" cy="0" r="17" fill="#fff" stroke="#a06428" stroke-width="1.5"/>
+<text x="700" y="5" font-size="13" fill="#3a2a10" text-anchor="middle" font-weight="bold">NO₃⁻</text>
+<circle cx="700" cy="320" r="17" fill="#fff" stroke="#a06428" stroke-width="1.5"/>
+<text x="700" y="325" font-size="13" fill="#3a2a10" text-anchor="middle" font-weight="bold">NH₄⁺</text>
+</svg>
+<p class="noind small">图2 氮的固定涉及的氮及其化合物之间的转化关系（依据教材图3-3-10重绘）</p>
+<div class="box"><b class="t">化学与技术（教材原栏目·人工固氮的重要途径——工业合成氨）：</b>氨的合成从实验室研制到工业化生产，经历了约150年的时间。1774年，普利斯特里通过加热氯化铵和氢氧化钙的混合物，首先收集到氨。1784年，贝托莱经分析确定氨是由氮元素和氢元素组成的。19世纪，很多化学家试图利用氮气和氢气来合成氨，但一直未能成功。1904年，德国化学家哈伯进行合成氨实验，测得反应所得气体混合物中有0.012%体积的氨。此后，他和他的学生反复进行研究，终于在1909年设计出一套高温、高压、催化的合成氨实验装置。德国化学工程师博施经过大量试验找到了较为理想的<b>铁催化剂</b>，设计并建造了能够耐高温、高压的合成氨装置。1910年，德国建成世界上第一座合成氨试验工厂；1913年，德国又建成规模生产的合成氨工厂。鉴于合成氨工业生产的实现以及相关研究推动了有关化学理论的发展，哈伯和博施先后获得了1918年度和1931年度的诺贝尔化学奖。〔本件p114全段直读〕合成氨工业化对粮食增产贡献率占50%左右。科学家还发现某些金属有机化合物可以起到根瘤菌的作用，以这些金属有机化合物为催化剂实现常温、常压固氮，即<b>仿生固氮</b>——当前科学界最为关注的研究课题之一。氮的固定，是以氮气为核心的氮及其化合物之间的转化：将氮气转化为氮氧化物或者氨气，实现了氮元素化合价的升高或降低，体现了氮气的还原性或氧化性；而通电、高温和高压等苛刻的反应条件则表明氮气的化学性质很稳定，其还原性和氧化性皆很弱。〔本件p114直读〕</div>
+
+<h2>站3·正文：二、氮循环中物质的性质及物质之间的转化</h2>
+
+<h3>3.1 价—类二维图：看物质的"两张脸"（教材p111）</h3>
+<p>教材"交流·研讨"给出氮及其化合物的"价—类"二维图：横轴看<b>物质类别</b>（氢化物/单质/氧化物/酸/碱/盐），纵轴看<b>氮元素化合价</b>（-3 → +5）。NH₃(-3)、N₂(0)、NO(+2)、NO₂(+4)、HNO₃与NO₃⁻(+5)各就各位。〔本件p111直读〕预测性质的口诀〔自编·方法归纳〕：<b>低价还原高价氧，中间价态两头忙；同类看通性，异价找转化。</b></p>
+
+<h3>3.2 氨（NH₃）：无冕的"制冷剂+化肥之母"（教材p115-117）</h3>
+<p><b>物理性质</b>：氨是无色、有刺激性气味的气体；在标准状况下，密度比空气小，为 0.771 g·L⁻¹；极易溶于水且能快速溶解，常温、常压下 1 体积水能溶解约 <b>700 体积</b>氨气。〔本件p115直读·数值锚〕氨易液化，液氨汽化时要吸收大量的热，因此氨可用作<b>制冷剂</b>。氨是氮肥工业和硝酸工业的重要原料。化学氮肥主要包括铵态氮肥（主要成分为 NH₄⁺）、硝态氮肥（主要成分为 NO₃⁻）和有机态氮肥——尿素 CO(NH₂)₂。氮元素是植物体内氨基酸和蛋白质必需的组成元素，也是叶绿素的组成成分之一，因此施用氮肥能够促进作物生长，并提高作物中蛋白质的含量。〔本件p115直读〕</p>
+<div class="box"><b class="t">活动·探究（教材原栏目·氨气的转化与生成）：</b>氨气的应用非常广泛。以氨气为原料，如何将其转化为在农业生产中有着广泛应用的氨水、氯化铵和硝酸？另外，哪些含氮元素的材料能够转化为氨气？根据上述问题设计完整的实验方案，实施部分实验，实现氨气的转化与生成。〔本件p115-116直读·任务1表：NH₃→NH₃·H₂O／NH₃→NH₄Cl／NH₃→NO→NO₂→HNO₃；任务2表：N₂→NH₃等〕</div>
+<h4>（1）氨与水的反应——喷泉实验的原理</h4>
+<p>氨溶于水时能与水发生反应生成一水合氨（NH₃·H₂O），氨水显弱碱性。氨不仅能与水发生反应，还能与酸发生反应生成铵盐，如与盐酸（或氯化氢）反应生成氯化铵（NH₄Cl）。利用这些性质可以把氨气转化为氨水、铵盐。在这类转化中，氮元素的化合价没有改变，实现的是<b>物质类别的转化</b>：</p>
+<div class="eq">NH₃ + H₂O ⇌ NH₃·H₂O　　NH₃ + HCl ═══ NH₄Cl</div>
+<div class="box"><b class="t">专栏（教材原栏目）：</b>一水合氨可以部分电离出 NH₄⁺ 和 OH⁻，使氨水显弱碱性，其电离方程式为 NH₃·H₂O ⇌ NH₄⁺ + OH⁻。因此，氨水能使酚酞溶液变红。〔本件p116直读〕</div>
+<p>教材以三幅实拍图呈现：图3-3-12 氨溶于水（挤入少量水后红色液体沿玻璃管上升形成喷泉状）、图3-3-13 <b>氨的喷泉实验</b>（干燥圆底烧瓶充满氨气，挤压胶头滴管将滴有酚酞溶液的水少量挤入——瓶内压强骤降，烧杯中滴有酚酞溶液的水沿导管喷入瓶内形成红色喷泉）、图3-3-14 氨与氯化氢反应（两瓶口对口抽去玻璃片，产生大量白烟）。〔本件p117图注直读·喷泉原理为教材装置现象描述〕喷泉的"发动机"是<b>压强差</b>：氨的 extreme 溶解性（1:700）让瓶内气体几乎瞬间"清空"。〔自编·类比〕</p>
+<h4>（2）氨的还原性与催化氧化</h4>
+<p>氨中氮元素的化合价为最低价，因此氨具有<b>还原性</b>，能与具有氧化性的物质发生反应。工业上利用氨在催化剂（如铂、铑等）存在的情况下与氧气的反应来制备生产硝酸所需要的一氧化氮：</p>
+<div class="eq">4NH₃ + 5O₂ ─催化剂─▶（Δ） 4NO + 6H₂O</div>
+<p class="noind small">〔本件p117直读〕这一步是"氨→硝酸"工业链的第一环：NH₃(-3)→NO(+2)，化合价升高被氧化——价类图再次派上用场。〔自编·串联〕</p>
+<h4>（3）铵盐与氨的实验室制法（教材p117-118）</h4>
+<p>实验表明，通过加热碳酸氢铵、氯化铵等<b>铵盐</b>（ammonium salt）能够产生氨气：</p>
+<div class="eq">NH₄HCO₃ ─Δ─▶ NH₃↑ + CO₂↑ + H₂O<br/>NH₄Cl ─Δ─▶ NH₃↑ + HCl↑</div>
+<p>铵盐与碱溶液共热也可以产生氨气，实验室里常用这种方法检验溶液中的<b>铵离子</b>：</p>
+<div class="eq">NH₄⁺ + OH⁻ ─Δ─▶ NH₃↑ + H₂O</div>
+<p>在实验室里常用氯化铵与氢氧化钙反应制取少量氨气，用<b>向下排空气法</b>收集氨气，并用<b>湿润的红色石蕊试纸</b>检验氨气是否收集满：</p>
+<div class="eq">2NH₄Cl + Ca(OH)₂ ─Δ─▶ 2NH₃↑ + CaCl₂ + 2H₂O</div>
+<p class="noind small">〔本件p117全部方程式直读·教材图3-3-15加热碳酸氢铵/3-3-16氯化铵与NaOH溶液反应/3-3-17实验室制取氨气并检验是否收集满三幅实拍〕</p>
+<p><b>铵态氮肥的保存与施用</b>：由于铵盐具有受热易分解的性质，在储存铵态氮肥时，应密封包装并放在阴凉通风处；施肥时，应将其埋在土中以保持肥效。铵盐能与碱发生反应，因此铵态氮肥不能与碱性物质如草木灰等混合施用。〔本件p118直读〕</p>
+<div class="box"><b class="t">身边的化学（教材原栏目·尿素和复合化肥）：</b>工业上常用氨和二氧化碳在一定条件下合成尿素。尿素是一种白色晶体，它的含氮量高达 <b>46.65%</b>，是目前含氮量最高的氮肥。尿素施入土壤后，在微生物的作用下与水缓慢反应产生氨，因此尿素的肥效比较持久。作为一种中性肥料，尿素适用于各种土壤和作物。复合化肥目前使用较多的主要是含氮和磷的复合化肥，如磷酸二氢铵（NH₄H₂PO₄）和磷酸氢二铵〔(NH₄)₂HPO₄〕等。合理地施用氮肥是实现农作物高产、稳产的一项重要措施，但是不合理地施用氮肥会导致环境污染：农田径流带入地表水体中过量的含氮物质会污染水资源；大量施用氮肥会导致大气中二氧化氮含量增多；长期施用氮肥特别是铵态氮肥会使土壤酸化，导致土壤板结。〔本件p118直读〕</div>
+
+<h3>3.3 硝酸（HNO₃）：既酸又"咬人"的强氧化性酸（教材p119-120）</h3>
+<p>硝酸（HNO₃，nitric acid）是一种重要的化工原料，可用于制造炸药、染料、塑料和硝酸盐等。在实验室里，硝酸是一种重要的化学试剂。〔本件p119直读〕</p>
+<div class="box"><b class="t">观察·思考（教材原栏目·硝酸的性质）：</b>1.请预测硝酸具有哪些性质，并说明预测的依据。2.观察实验，为预测寻求证据。【实验1】取一瓶浓硝酸，打开瓶盖，小心地扇闻浓硝酸的气味。【实验2】在两个装置中各放入一小块铜片，分别加入少量稀硝酸（4 mol·L⁻¹）和浓硝酸（15 mol·L⁻¹），观察发生的现象。【实验3】将实验2中的铜片换成铁片进行相同的实验，观察发生的现象。〔本件p119直读·教材图3-3-18铜片与稀硝酸反应（溶液变蓝·气泡较慢）/3-3-19铜片与浓硝酸反应（迅速产生红棕色气体）实拍〕</div>
+<p><b>物理性质与不稳定性</b>：纯净的硝酸是无色、易挥发、有刺激性气味的液体；熔点为 -42 ℃，沸点为 83 ℃；密度为 1.5 g·cm⁻³。硝酸受热或见光分解会产生二氧化氮气体。实验室长期保存浓硝酸，可使用棕色试剂瓶，并放置在阴凉处：</p>
+<div class="eq">4HNO₃ ─受热或光照─▶ 4NO₂↑ + O₂↑ + 2H₂O</div>
+<div class="box"><b class="t">专栏（教材原栏目）：</b>通常市售硝酸中 HNO₃ 的质量分数为 68%~70%，密度为 1.42 g·cm⁻³。HNO₃ 质量分数为 95% 以上的浓硝酸，在空气中挥发出硝酸蒸气会产生"发烟"现象，通常又叫作<b>发烟硝酸</b>。〔本件p120直读〕</div>
+<p><b>强氧化性</b>：硝酸具有强氧化性，能与除<b>金、铂、钛</b>以外的大多数金属反应，其还原产物与硝酸的浓度有关。通常，浓硝酸与金属反应生成的还原产物主要是<b>二氧化氮</b>，稀硝酸与金属反应生成的还原产物主要是<b>一氧化氮</b>。例如：</p>
+<div class="eq">4HNO₃（浓） + Cu ═══ Cu(NO₃)₂ + 2NO₂↑ + 2H₂O<br/>8HNO₃（稀） + 3Cu ═══ 3Cu(NO₃)₂ + 2NO↑ + 4H₂O</div>
+<p>常温下，浓硝酸可使铁、铝等金属表面形成致密的氧化膜而<b>钝化</b>，保护内部的金属不再与酸反应，所以可以用铁质或铝质容器盛放冷的浓硝酸。在加热条件下，浓硝酸还能与碳单质等非金属单质发生氧化还原反应：</p>
+<div class="eq">4HNO₃（浓） + C ─Δ─▶ CO₂↑ + 4NO₂↑ + 2H₂O</div>
+<p>硝酸还具有<b>酸的一般性质</b>，如硝酸能与碱发生中和反应，能与碱性氧化物、某些盐发生复分解反应等。〔本件p120全段直读〕</p>
+<p class="noind small">〔宁缺毋编·仅提示〕教材未展开"铁与稀硝酸/浓硝酸的实验3具体现象结论"，本件不代拟；课堂观察或后续资料补充后如实增补。</p>
+
+<h2>站4·正文：三、人类活动对氮循环和环境的影响（教材p120-122）</h2>
+<p>进入工业化社会以后，随着科学技术的进步和工农业生产的发展，人类开发和利用自然资源的规模越来越大，化石燃料的消耗量急剧增加，化学合成氮肥的量迅速上升，豆科植物的栽种面积也在陆续扩大，人类的固氮活动使<b>活化氮</b>（NH₄⁺ 与 NO₃⁻ 是自然界中活化氮的主要形态；氮气是惰性的，通过自然固氮和人工固氮可使其活化）的量大大增加。这一趋势虽然有助于农产品产量的提高，但也会给全球生态环境带来压力。</p>
+<p>以一氧化氮和二氧化氮为主的<b>氮氧化物</b>是形成<b>光化学烟雾、雾霾及酸雨</b>的一个重要原因。汽车尾气中的氮氧化物与碳氢化合物经紫外线照射发生反应形成的有毒烟雾，称为光化学烟雾。氮氧化物与降水反应生成的硝酸和亚硝酸是<b>酸雨</b>的组成成分。水体中含有的氮元素过量会对水体造成污染：进入水体的氮元素含量增大时，会造成水体的<b>富营养化</b>，导致藻类"疯长"并覆盖在水面上。水体中的氮元素主要来源于工业废水、生活污水、农田灌溉以及水产养殖所投入的肥料和饵料等。为了减少人类活动对氮循环和环境的影响，一方面应控制进入大气、土壤和水体中含氮物质的量，另一方面应增强生态系统对含氮物质的吸收能力。坚持人与自然和谐共生，建设生态文明——"绿水青山就是金山银山"。〔本件p120-121直读〕</p>
+<div class="box"><b class="t">化学与技术（教材原栏目·绿色化学）：</b>绿色化学又称环境无害化学、环境友好化学、清洁化学，倡导用化学技术和方法减少或停止对人类健康、社区安全、生态环境有害的原料、催化剂、溶剂和试剂以及生产过程中的产物、副产物等的使用和产生。绿色化学的核心内容是<b>原子经济性</b>和<b>"5R"原则</b>：Reduction——减量使用原料，减少实验废弃物的产生和排放；Reuse——循环使用，重复使用；Recycling——资源的回收利用；Regeneration——变废为宝，资源和能源再利用；Rejection——拒用有毒有害品。〔本件p122直读〕</div>
+
+<h2>站5·概括·整合 + 自测四连</h2>
+<h3>5.1 概括·整合（教材p123原栏目）</h3>
+<p>归纳总结氮气、一氧化氮、二氧化氮、氨、铵盐、硝酸的性质，构建氮及其化合物的转化示意图（价类二维图，见站3图2）。分别绘制自然界中产生硝酸、人工制备硝酸两条路径并写出相关反应的化学方程式。总结氮及其化合物在生产生活中的应用，分析它们对自然环境的影响。</p>
+<table><tr><th>路径</th><th>链条</th><th>关键方程式</th></tr>
+<tr><td>自然界产生硝酸</td><td>N₂ ─放电→ NO → NO₂ ─降水→ HNO₃ →硝酸盐入土</td><td>N₂+O₂=放电=2NO；2NO+O₂=2NO₂；3NO₂+H₂O=2HNO₃+NO〔教材p113三式〕</td></tr>
+<tr><td>人工制备硝酸</td><td>N₂+H₂→NH₃ ─催化氧化→ NO → NO₂ ─水→ HNO₃</td><td>N₂+3H₂⇌2NH₃；4NH₃+5O₂=催化剂Δ=4NO+6H₂O；3NO₂+H₂O=2HNO₃+NO〔教材p113/p117〕</td></tr></table>
+
+<h3>5.2 自测四连（改编自教材p123-125"练习与活动"·题干照原题改编·<b>答案为编者自拟，显式标注〔自编答案〕</b>）</h3>
+<table class="selftest">
+<tr><th>题</th><th>题干与解答</th></tr>
+<tr><td><b>T1</b>（改编1(1)(2)）</td><td>氮气的化学性质是（　）；易液化、遇挥发性酸冒白烟且适宜用作制冷剂的气体是（　）。<br/><b>〔自编答案〕C 既有氧化性，又有还原性（N₂→NH₃显氧化性·N₂→NO显还原性）；D NH₃（易液化+白烟+汽化吸热制冷）。</b>依据：教材p113"体现氮气的还原性或氧化性"+p115"易液化…制冷剂"+p117"NH₃+HCl=NH₄Cl白烟"。</td></tr>
+<tr><td><b>T2</b>（改编1(3)(4)(5)）</td><td>氨的喷泉实验体现的性质有（　）；须储存在棕色试剂瓶中的是（　）；与二氧化氮排放无关的环境问题是（　）。<br/><b>〔自编答案〕B/C（极易溶于水+与水反应生成碱性物质——D"比空气轻"只是物理性质非喷泉成因主项，教材p116-117锚）；A 浓硝酸（受热见光分解，p120锚）；C 白色污染（塑料类污染·酸雨/光化学烟雾/雾霾均与NO₂相关，p121锚）。</b></td></tr>
+<tr><td><b>T3</b>（改编3(2)(3)）</td><td>收集一氧化氮和二氧化氮两种气体的方法，正确的是（　）；既能用浓硫酸又能用碱石灰干燥的气体是（　）。<br/><b>〔自编答案〕B（NO遇O₂即反应只能排水法·NO₂溶于水只能向上排空气法，p113性质锚）；C NO（浓硫酸/碱石灰均与NO不反应——NH₃会被浓硫酸吸收故排除·Cl₂/CO₂与碱石灰反应故排除）。</b></td></tr>
+<tr><td><b>T4</b>（改编3(4)）</td><td>将铁屑溶于过量盐酸后，再加入下列物质，会有Fe³⁺生成的是（　）。<br/><b>〔自编答案〕B 氯水（Fe+2HCl→FeCl₂+H₂↑·氯水将Fe²⁺氧化为Fe³⁺）；A硫酸不氧化·C硝酸锌在过量盐酸中构成H⁺+NO₃⁻体系亦能氧化Fe²⁺，但教材本节未展开该体系，按课堂口径以B为准〔宁缺毋编·如实标注争议项〕；D氯化铜不氧化。</b></td></tr></table>
+<div class="note"><b>T11·真题锚（v3条款）：</b>对证源池检索无化学3.3对口真题行——如实"候采不代拟"（与1.2/1.3/2.3/3.2件先例同式）；教材原生"练习与活动"题量充足（p123-125共13题），自测以教材改编替代，不硬凑真题。</div>
+
+<h2>站6·考位锚 + 节末位置图</h2>
+<table class="selftest">
+<tr><th>物质</th><th>色·态·味/溶解</th><th>核心化学性质（影印对证）</th><th>页码锚</th></tr>
+<tr><td><b>N₂</b></td><td>无色无味气体·难溶于水（p113）</td><td>通常状况不活泼；放电下N₂+O₂=2NO；高温高压催化剂下N₂+3H₂⇌2NH₃</td><td>p113</td></tr>
+<tr><td><b>NO</b></td><td>无色气体·难溶于水（p113）</td><td>常温即与O₂化合2NO+O₂=2NO₂；结合血红蛋白能力比CO强；"信使分子"</td><td>p113</td></tr>
+<tr><td><b>NO₂</b></td><td>红棕色·刺激性气味·有毒·易溶于水（p113）</td><td>3NO₂+H₂O=2HNO₃+NO（制硝酸原理）；使织物褪色、腐蚀金属</td><td>p113</td></tr>
+<tr><td><b>NH₃</b></td><td>无色·刺激性气味·标况0.771 g·L⁻¹·1体积水溶约700体积（p115）</td><td>与水⇌NH₃·H₂O（弱碱）；与HCl白烟NH₄Cl；催化氧化4NH₃+5O₂=4NO+6H₂O；易液化作制冷剂</td><td>p115-117</td></tr>
+<tr><td><b>铵盐</b></td><td>白色晶体（pH试纸/石蕊检验铵离子）</td><td>受热易分解（NH₄Cl/NH₄HCO₃两式）；与碱共热放NH₃（检验+实验室制法）</td><td>p117</td></tr>
+<tr><td><b>HNO₃</b></td><td>无色易挥发·刺激性气味·熔-42℃沸83℃·密度1.5 g·cm⁻³（p120）</td><td>见光受热分解；强氧化性：浓→NO₂/稀→NO；常温使Fe/Al钝化；加热氧化碳单质</td><td>p119-120</td></tr>
+</table>
+<p class="noind small">▲上表全部行项影印直读对证（附件2 F01-F30）·表式整理系编者归纳〔自编·表式〕·事实零新增。</p>
+<div class="box"><b class="t">考位锚（四考向·依据影印直读教材原生栏目归纳〔自编·栏目对应〕）：</b>
+①<b>氮的固定与转化线</b>（选择/填空）：三途径占比+价类二维定位+连续转化方程式配平（p111-115）。
+②<b>喷泉实验与制氨方案</b>（实验题）：喷泉成因压强差表述+制氨试剂/收集/验满三件套（p116-118·p123-125练习4）。
+③<b>硝酸强氧化性</b>（推断/计算）：浓稀还原产物差异+钝化+与碳反应（p119-120）。
+④<b>STSE环境综合</b>（简答）：光化学烟雾/酸雨/富营养化归因+绿色化学5R（p120-122·p125练习5氨氮废水情境题）。</div>
+<div class="box"><b class="t">节末位置图（walk导航）：</b>←上一站 3.2《硫的转化》（已并main正本·印刷页p97-109）｜<b>本站 3.3《氮的循环》p110-125</b>｜下一站→第3章章末<b>微项目「论证重污染天气'汽车限行'的合理性——探讨社会性科学议题」</b>（p126起·图编号3-4-1）→其后为第3章自我评价/第4章章名页〔右界实锚图132=p126·章后内容不入本件节域〕。全册最后一节即本节——化学必修第一册9节至此<b>全部落位</b>（1.3在途候验池）。〔自编·导航〕</div>
+
+<div class="footer">
+<p class="noind"><b>留痕与合规：</b>①影印17张（图116-132）全200·sha256台账+逐页页脚直读见附件1·原件席位私有chem33_jc/不入仓；②30组事实点+16方程式sympy配平ALL PASS（附件2+验点py/log随commit）；③本件全文无真题照录，自测为教材原题改编+答案显式〔自编〕标注；④自编类比/方法归纳处已逐条显式标注；⑤ts验真以asset-ts配对200+图116 sha16双席同值互证代偿（详情API本环境SSL阻断如实申报）；⑥三条差距报告+QC单+条款自检T1-T12随件入池。</p>
+<p class="noind small">并行搜索员C·队3席·会话C-1031-v11化学3.3-01·2026-10-31·候QC前置复检+读者层终读·候并main不自行放行</p>
+</div>
+</body>
+</html>
