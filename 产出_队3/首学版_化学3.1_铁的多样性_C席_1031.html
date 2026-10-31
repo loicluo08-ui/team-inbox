@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化学3.1 铁的多样性 · 零基础首学版 v1.0（队3席C线）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  b { color: #f0f3f7; }
+  .talk { background: #1c2230; border: 1px solid #2c3a4e; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .q { color: #4a9eff; font-weight: bold; }
+  .check { background: #182430; border-left: 4px solid #4a9eff; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .check .tag, .try .tag, .pit .tag, .alt .tag { display: inline-block; background: #324358; color: #cfe4ff; font-size: 13px; font-weight: bold; padding: 2px 10px; border-radius: 4px; margin-bottom: 6px; }
+  .box { background: #1a222e; border: 1px solid #33445a; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
+  .key { background: #223047; border-left: 4px solid #ffc94d; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .try { background: #1b242f; border: 1px dashed #3d5573; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit { background: #2a1f22; border-left: 4px solid #ff7a6e; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit .tag { background: #5a3038; color: #ffd6d0; }
+  .wrong { color: #ff8f84; font-weight: bold; }
+  .ans { color: #7ee2a8; font-weight: bold; }
+  .alt { background: #20283a; border: 1px solid #354764; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .m { font-family: "SF Mono", Consolas, monospace; background: #0f1420; color: #9ecbff; padding: 1px 6px; border-radius: 4px; font-size: 0.95em; }
+  .big { font-size: 19px; color: #fff; }
+  .detail { color: #9aa7b8; font-size: 15px; }
+  .small { color: #8a97a8; font-size: 14px; }
+  .fig { text-align: center; margin: 18px 0; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 6px; }
+  mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.35) 55%); color: #eaf2ff; padding: 0 2px; }
+  .note-red { color: #ff9a90; font-size: 14px; }
+  ul.blue { padding-left: 22px; } ul.blue li { margin: 6px 0; }
+  .foot { border-top: 1px solid #2c3644; margin-top: 48px; padding-top: 16px; color: #67737f; font-size: 13px; line-height: 1.7; }
+  .box.kao { border-left: 4px solid #ffc94d; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 10mm 8mm; }
+    .page b, .page h1, .page h3, .page .m, .page .big, .page .detail, .page .try .q, .page .ans, .page .wrong, .page .q { color: #111; }
+    .page .talk, .page .box, .page .try, .page .check, .page .key, .page .pit, .page .alt { background: #f5f5f5 !important; border-color: #999 !important; }
+    .page .key { background: #fff8e0 !important; }
+    .page .pit { background: #fdeeee !important; }
+    .page .step-tag { background: #d8e8ff !important; color: #111 !important; }
+    .page .tag { background: #e8ecf2 !important; color: #111 !important; }
+    .page mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.30) 55%) !important; color: #111 !important; }
+    .page .foot { color: #444; }
+    .page .small, .page .figcap, .page .note-red { color: #333 !important; }
+    .page h2 { color: #111; border-left-color: #2b6cb0; }
+    .page .note-red { color: #b03020 !important; }
+    .page .fig rect { fill: #f2f4f8 !important; stroke: #666 !important; }
+    .page .fig text { fill: #111 !important; }
+    .page .fig line { stroke: #666 !important; }
+    .page .fig circle { fill: #7aa5d8 !important; }
+    .page .fig marker path { fill: #666 !important; }
+  }
+    .page .m { background: #eef2f7 !important; color: #111 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>铁的多样性：一张"价-类二维地图"走遍铁的化合态与游离态</h1>
+<div class="sub">化学 3.1 · 第3章 物质的性质与转化（鲁科版《普通高中教科书·化学 必修 第一册》·山东科学技术出版社·正文 p86–96 · 影印图92–102）</div>
+
+<p class="small" style="color:#7d8a99">📍 本件属于<b>第3章"物质的性质与转化"模块首节</b>，前面已学：2.3氧化还原反应（电子转移·氧化剂还原剂·价态趋势）。没读过2.3？看这句就够：<b>化合价升高=失电子=被氧化，化合价降低=得电子=被还原</b>——本节全程用这把钥匙开铁的锁。</p>
+
+<div class="talk">
+  <p>看教材p86那张大图（图3-1-1）：<b>绿矾晶体FeSO₄·7H₂O</b>、<b>实验室的铁粉</b>、<b>黄色的FeCl₃溶液</b>、<b>黄铁矿FeS₂</b>、<b>磁铁矿Fe₃O₄</b>、<b>赤铁矿Fe₂O₃</b>，还有墙上的<b>红色涂料</b>、家里的<b>铁锅</b>、药盒里的<b>补铁保健品</b>——全都是"铁"。</p>
+  <p>同一个元素，在不同物质里"性格"完全不同：有的能被磁铁吸住，有的能让血红蛋白扛着氧气跑，有的能把铜从溶液里"顶"出来。教材说：铁元素在地壳中的含量<b>仅次于氧、硅、铝</b>（p86原句），自然界里有的以<b>游离态</b>（如陨铁）存在，更多的以<b>+2价或+3价的化合态</b>存在。</p>
+  <p>本节干一件事：给铁建一张<b>"价-类二维地图"</b>——纵轴0／+2／+3三种价态，横轴单质／氧化物／盐／碱四类物质，铁的全部"性格"与"路线"都画在这张图上。</p>
+</div>
+
+<div class="check">
+  <span class="tag">读完这节你能</span>
+  <p>① 用<b>物质类别+核心元素化合价</b>两个基本角度预测含铁物质的性质（教材p88方法导引原思路）；</p>
+  <p>② 会用<b>KSCN溶液</b>检验Fe³⁺，说清铁盐的氧化性、亚铁盐的"两性"（既氧化又还原）；</p>
+  <p>③ 画出铁的<b>价-类二维图</b>并标注转化路线（同价态走复分解、异价态走氧化还原）；</p>
+  <p>④ 设计<b>补铁剂中铁元素价态检验</b>的实验方案（教材学生必做实验）。</p>
+</div>
+
+<h2>先拆掉两个旧印象</h2>
+<p><b>误会一：<span class="wrong">"铁锈就是Fe₃O₄"</span>。</b>铁锈的主要成分是<b>Fe₂O₃（红棕色粉末）</b>——所以油漆、涂料、油墨用它当红色颜料（p90原句）；<b>Fe₃O₄</b>是黑色有磁性的固体（磁铁矿·磁性材料），跟铁锈不是一回事。</p>
+<p><b>误会二：<span class="wrong">"+2价的铁盐也叫'铁盐'"</span>。</b>教材的命名规矩（p87）：含<b>+2价</b>铁的盐叫<b>亚铁盐</b>（硫酸亚铁FeSO₄、氯化亚铁FeCl₂），含<b>+3价</b>铁的盐才叫<b>铁盐</b>（硫酸铁、氯化铁FeCl₃）。一个"亚"字，价态差1、性质两重天。</p>
+
+<div class="box"><span class="tag">名词补齐</span> <b>游离态</b>：元素以单质形式存在（如陨铁里的Fe）；<b>化合态</b>：元素藏在化合物里（如Fe₂O₃）。<b>KSCN（硫氰酸钾）</b>：一种盐，它的SCN⁻遇到Fe³⁺会让溶液变<b>红色</b>——本节的"显色试剂"（p88）。</div>
+
+<h2><span class="step-tag">第1步</span> 研究物质的两个基本角度</h2>
+<p>教材方法导引（p88蓝框原思路）：<mark class="nb">在研究物质的性质时，可以从<b>物质类别</b>、<b>物质所含核心元素的化合价</b>这两个基本角度预测物质可能具有的性质，并通过实验进行验证</mark>。本章所有节都用这把"双角度"尺子，本节拿铁先示范一遍。</p>
+<h3>活动·探究（学生必做实验）：亚铁盐和铁盐的性质（p87）</h3>
+<p>实验用品（p87原单）：FeSO₄溶液、FeCl₃溶液、NaOH溶液、酸性KMnO₄溶液、氯水、KSCN溶液、KI溶液、淀粉溶液、铁粉、锌片、铜片；试管、胶头滴管、镊子、药匙。安全提示：氯水、稀硫酸、酸性KMnO₄等有腐蚀性，沾到皮肤立即大量清水冲洗。</p>
+<p><b>预测</b>（两把尺子齐上）：</p>
+<p>① <b>类别角度</b>——亚铁盐、铁盐都属于<b>盐</b>，都能与碱溶液反应生成相应的铁的氢氧化物（p88原句）；</p>
+<p>② <b>价态角度</b>——铁盐含<b>+3价</b>铁（最高价·只能降）→可能具<b>氧化性</b>；亚铁盐含<b>+2价</b>铁（中间价·可升可降）→<b>既可能氧化性又可能还原性</b>。</p>
+<div class="alt"><span class="tag">卡住了？换个说法</span> 把"+2价中间价态"想成楼层：+3是顶楼、0是地面。住在顶楼的Fe³⁺只能下楼（被还原=氧化剂）；住地面的Fe单质只能上楼（被氧化=还原剂）；住中间的Fe²⁺上下楼都行——先上去再下来，或者反过来，全看对手是谁。</div>
+
+<h2><span class="step-tag">第2步</span> 铁盐的氧化性：Fe³⁺的"抢电子"三连</h2>
+<h3>先解决"怎么认出Fe³⁺"：KSCN显色法（p88）</h3>
+<p>依据Fe³⁺与SCN⁻反应使溶液<b>显红色</b>的性质，可以用KSCN溶液检验Fe³⁺的存在（p88原句）——FeCl₃溶液滴加KSCN，黄色变红色（图3-1-2）。<b>这一手后面每个实验都要用</b>，先装进口袋。</p>
+<p>从化合价的角度看，铁盐因含有<b>+3价</b>铁元素而具有<b>氧化性</b>（p88原句）。三个经典离子方程式（p88蓝底原式）：</p>
+<p class="m">2Fe³⁺ + Fe = 3Fe²⁺</p>
+<p class="m">2Fe³⁺ + Cu = 2Fe²⁺ + Cu²⁺</p>
+<p class="m">2Fe³⁺ + 2I⁻ = 2Fe²⁺ + I₂</p>
+<p>三个式子一个道理：Fe³⁺降价（+3→+2·被还原·做氧化剂），对手Fe/Cu/I⁻升价（被氧化）。注意第一式——<b>Fe³⁺连"自己人"单质铁都抢电子</b>，这正是工业上"FeCl₃溶液腐蚀铜箔制印刷电路板"（p96 T12）与"FeCl₂溶液里加铁粉防变质"（p95 T11）的原理两头。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 290" width="740" height="290">
+<defs><marker id="g1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c9a227"/></marker><marker id="g2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7ee2a8"/></marker><marker id="g3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ff9a90"/></marker></defs>
+<rect width="740" height="290" fill="#0f1420"/>
+<circle cx="110" cy="205" r="34" fill="#1a222e" stroke="#e8ecf2" stroke-width="2"/>
+<text x="110" y="200" fill="#e8ecf2" font-size="17" text-anchor="middle" font-weight="bold">Fe</text>
+<text x="110" y="219" fill="#7d8a99" font-size="11" text-anchor="middle">0价·铁单质</text>
+<circle cx="370" cy="205" r="34" fill="#1a222e" stroke="#c9a227" stroke-width="2"/>
+<text x="370" y="200" fill="#c9a227" font-size="17" text-anchor="middle" font-weight="bold">Fe²⁺</text>
+<text x="370" y="219" fill="#7d8a99" font-size="11" text-anchor="middle">+2价·亚铁（中间）</text>
+<circle cx="630" cy="205" r="34" fill="#1a222e" stroke="#ff9a90" stroke-width="2"/>
+<text x="630" y="200" fill="#ff9a90" font-size="17" text-anchor="middle" font-weight="bold">Fe³⁺</text>
+<text x="630" y="219" fill="#7d8a99" font-size="11" text-anchor="middle">+3价·铁（最高）</text>
+<path d="M144,190 Q240,150 336,190" fill="none" stroke="#7ee2a8" stroke-width="1.8" marker-end="url(#g2)"/>
+<text x="240" y="142" fill="#7ee2a8" font-size="12.5" text-anchor="middle">弱氧化剂（H⁺·稀盐酸/稀硫酸）→ 0→+2</text>
+<path d="M130,170 Q370,60 615,172" fill="none" stroke="#ff9a90" stroke-width="1.8" marker-end="url(#g3)"/>
+<text x="370" y="52" fill="#ff9a90" font-size="12.5" text-anchor="middle">强氧化剂（Cl₂等）→ 0→+3 一步到位</text>
+<path d="M404,190 Q502,148 598,192" fill="none" stroke="#ff9a90" stroke-width="1.8" marker-end="url(#g3)"/>
+<text x="502" y="140" fill="#ff9a90" font-size="12.5" text-anchor="middle">继续被氧化（Cl₂/酸性KMnO₄）</text>
+<path d="M598,222 Q502,262 404,220" fill="none" stroke="#c9a227" stroke-width="1.8" marker-end="url(#g1)"/>
+<text x="502" y="276" fill="#c9a227" font-size="12.5" text-anchor="middle">被还原（Fe/Cu/KI等）·p88三离子方程</text>
+<path d="M336,222 Q240,262 144,220" fill="none" stroke="#c9a227" stroke-width="1.8" marker-end="url(#g1)"/>
+<text x="240" y="276" fill="#c9a227" font-size="12.5" text-anchor="middle">被还原（Zn等活泼金属）·p89</text>
+</svg></div>
+<div class="figcap">图A 铁三角转化图——0／+2／+3三个价态间"谁抢谁、谁被抢"的全部路线（依p88-89离子方程与价态趋势重绘·SVG坐标python脚本生成）</div>
+
+<div class="try">
+  <span class="tag">⚡ 30秒自验 1</span>
+  <p class="q">FeCl₂溶液和FeCl₃溶液各是什么颜色？（p94练习T2的易错点）</p>
+  <p><span class="ans">FeCl₂浅绿色</span>（亚铁·+2价）——<b>不是</b>黄色；<span class="ans">FeCl₃黄色</span>（铁·+3价）。答完再想一层：颜色也是"价态身份证"的一部分。</p>
+</div>
+
+<h2><span class="step-tag">第3步</span> 亚铁盐的两性：上下楼都行的Fe²⁺</h2>
+<p>亚铁盐因含有<b>+2价</b>铁元素，<b>既具有氧化性，又具有较强的还原性</b>（p88-89原句）。两个方向各给实证（p89）：</p>
+<p>① <b>表现氧化性</b>（Fe²⁺降价+2→0）：与金属锌反应，Fe²⁺被还原为铁单质——<span class="m">Fe²⁺ + Zn = Zn²⁺ + Fe</span>；</p>
+<p>② <b>表现还原性</b>（Fe²⁺升价+2→+3）：与氯水反应，<span class="m">2Fe²⁺ + Cl₂ = 2Fe³⁺ + 2Cl⁻</span>；与酸性KMnO₄溶液反应，紫色褪去（图3-1-4、图3-1-5两个实物对照实验）。</p>
+<div class="pit"><span class="tag">易错</span> 检验Fe²⁺的还原性时，"变色"的证人得选对：FeSO₄里<b>先加好KSCN不变红</b>（证明无Fe³⁺），再滴氯水——变红（Fe³⁺新生成）才能坐实Fe²⁺被氧化（图3-1-4的原设计）。直接往FeCl₃里滴氯水什么也证不了。</div>
+<div class="try">
+  <span class="tag">⚡ 30秒自验 2</span>
+  <p class="q">铁分别与氯气、盐酸反应，产物滴KSCN谁会变红？（p95练习T7原题）</p>
+  <p><span class="ans">只有氯气那管变红</span>——Cl₂是强氧化剂直接把铁"送顶楼"（→Fe³⁺）；盐酸里H⁺是弱氧化剂只到Fe²⁺（KSCN不认）。边界补一刀：CuSO₄那管也只到+2（Fe+Cu²⁺=Fe²⁺+Cu）。</p>
+</div>
+
+<h3>随手解一道教材题：实验室怎么保存FeSO₄溶液？（p87思考4问·p95 T11）</h3>
+<p>答案两手：<b>加少量铁粉</b>（万一氧化出了Fe³⁺，2Fe³⁺+Fe=3Fe²⁺就地"还原归队"）＋<b>密封隔绝空气</b>（防O₂慢慢氧化）。</p>
+
+<h2><span class="step-tag">第4步</span> 铁单质、铁的氧化物、铁的氢氧化物（p89-91）</h2>
+<h3>铁单质（0价·只能上楼）</h3>
+<p>纯净的铁（Fe，iron）是光亮的<b>银白色金属</b>，密度<b>7.86 g·cm⁻³</b>，熔点<b>1538℃</b>；抗腐蚀能力强，延展性导热性良好，导电性比铜、铝差，能被磁铁吸引（p90原句）。化学上：与稀盐酸、稀硫酸发生置换反应放出氢气（0→+2·还原剂本色）；与某些盐溶液发生置换反应生成亚铁盐（如Fe+CuSO₄）；<b>不能与冷水、热水反应</b>，但能与水蒸气在高温下反应（p89）：</p>
+<p class="m">3Fe + 4H₂O(g) <b>==高温==</b> Fe₃O₄ + 4H₂</p>
+<p>图3-1-6装置：硬质试管里湿棉花（水源）+还原铁粉，加热后肥皂液里吹出气泡——点火有爆鸣声=氢气（实验现象分析见p89交流·研讨2问）。</p>
+<h3>三种氧化物（+2／+2与+3混合／+3）</h3>
+<p><b>FeO</b>黑色粉末，可作色素（瓷器釉呈绿色）；<b>Fe₃O₄</b>有磁性的黑色固体（磁性材料）；<b>Fe₂O₃</b>红棕色粉末（油漆涂料油墨的红色颜料）。铁的氧化物都<b>不溶于水，也不与水反应</b>；FeO与Fe₂O₃都是金属氧化物，皆能与稀盐酸或稀硫酸反应（p90原句）：</p>
+<p class="m">FeO + 2H⁺ = Fe²⁺ + H₂O　　Fe₂O₃ + 6H⁺ = 2Fe³⁺ + 3H₂O</p>
+<p class="small">（注：Fe₃O₄中Fe为+2、+3混合价态·教材本页未展开其与酸的离子方程——宁缺毋编·留待后续课程。）</p>
+<h3>两种氢氧化物：一个"短命"，一个"稳定"（p90-91）</h3>
+<p><b>Fe(OH)₂</b>[iron(II) hydroxide]白色固体，难溶于水；<b>Fe(OH)₃</b>[iron(III) hydroxide]红褐色固体，也难溶于水。都能与稀盐酸或稀硫酸反应（复分解·同价态路线）：</p>
+<p class="m">Fe(OH)₂ + 2H⁺ = Fe²⁺ + 2H₂O　　Fe(OH)₃ + 3H⁺ = Fe³⁺ + 3H₂O</p>
+<p>价态角度：Fe(OH)₂里铁+2价（可升）→<b>很不稳定，容易被氧化</b>。FeSO₄溶液与NaOH溶液反应产生的<b>白色沉淀</b>，在空气中<b>迅速变成灰绿色，最后变成红褐色</b>——被O₂氧化成Fe(OH)₃的"变色三连"（p90-91原句+图3-1-8）：</p>
+<p class="m">4Fe(OH)₂ + O₂ + 2H₂O = 4Fe(OH)₃</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 200" width="740" height="200">
+<defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a97a8"/></marker></defs>
+<rect width="740" height="200" fill="#0f1420"/>
+<rect x="75" y="45" width="70" height="95" rx="10" fill="#c8d8e8" opacity="0.85" stroke="#8a97a8"/>
+<rect x="75" y="45" width="70" height="18" rx="9" fill="#d8dee6" opacity="0.5"/>
+<text x="110" y="162" fill="#e8ecf2" font-size="13" text-anchor="middle">FeSO₄溶液</text>
+<text x="110" y="180" fill="#7d8a99" font-size="11.5" text-anchor="middle">浅绿近无色</text>
+<rect x="335" y="45" width="70" height="95" rx="10" fill="#e8e8e8" opacity="0.85" stroke="#8a97a8"/>
+<rect x="335" y="45" width="70" height="18" rx="9" fill="#d8dee6" opacity="0.5"/>
+<text x="370" y="162" fill="#e8ecf2" font-size="13" text-anchor="middle">Fe(OH)₂</text>
+<text x="370" y="180" fill="#7d8a99" font-size="11.5" text-anchor="middle">白色沉淀</text>
+<rect x="595" y="45" width="70" height="95" rx="10" fill="#b5651d" opacity="0.85" stroke="#8a97a8"/>
+<rect x="595" y="45" width="70" height="18" rx="9" fill="#d8dee6" opacity="0.5"/>
+<text x="630" y="162" fill="#e8ecf2" font-size="13" text-anchor="middle">Fe(OH)₃</text>
+<text x="630" y="180" fill="#7d8a99" font-size="11.5" text-anchor="middle">红褐色</text>
+<path d="M150,90 L330,90" fill="none" stroke="#8a97a8" stroke-width="1.6" marker-end="url(#a3)"/>
+<text x="240" y="80" fill="#8a97a8" font-size="12" text-anchor="middle">滴加NaOH溶液</text>
+<text x="240" y="112" fill="#c9a227" font-size="11.5" text-anchor="middle">白色沉淀生成</text>
+<path d="M410,90 L590,90" fill="none" stroke="#8a97a8" stroke-width="1.6" marker-end="url(#a3)"/>
+<text x="500" y="80" fill="#8a97a8" font-size="12" text-anchor="middle">充分振荡·空气中静置</text>
+<text x="500" y="112" fill="#c9a227" font-size="11.5" text-anchor="middle">白→灰绿→红褐</text>
+<text x="370" y="24" fill="#9ecbff" font-size="13" text-anchor="middle" font-weight="bold">4Fe(OH)₂ + O₂ + 2H₂O = 4Fe(OH)₃（p91原式）</text>
+</svg></div>
+<div class="figcap">图C 白→灰绿→红褐变色三连——Fe(OH)₂被空气中O₂氧化的全程（依p91图3-1-8复绘·SVG坐标python脚本生成）</div>
+<p class="note-red">红笔旁批：这"白→灰绿→红褐"是高中化学最著名的颜色序列之一，实验题问"预测现象"就按这个顺序写全三段，只写两端要丢分。</p>
+
+<h2><span class="step-tag">第5步</span> 转化关系：把全部路线画成一张图（p91-93）</h2>
+<p>教材交流·研讨（p91）：在"价—类"二维图（纵轴0／+2／+3价，横轴单质／氧化物／盐／碱）上标注含铁物质并画转化箭头。实现转化只有两条路（p91原句）：</p>
+<p>① <b>同价态</b>的转化（如Fe²⁺↔Fe(OH)₂、Fe³⁺↔Fe(OH)₃、氧化物↔盐）——可借助<b>复分解反应</b>等实现；</p>
+<p>② <b>不同价态</b>的转化（如Fe↔Fe²⁺↔Fe³⁺）——可借助<b>氧化还原反应</b>实现。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 330" width="740" height="330">
+<defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a97a8"/></marker></defs>
+<rect width="740" height="330" fill="#0f1420"/>
+<line x1="60" y1="280" x2="700" y2="280" stroke="#8a97a8" stroke-width="1.6" marker-end="url(#a2)"/>
+<line x1="60" y1="280" x2="60" y2="40" stroke="#8a97a8" stroke-width="1.6" marker-end="url(#a2)"/>
+<text x="700" y="300" fill="#8a97a8" font-size="12" text-anchor="end">物质类别</text>
+<text x="52" y="34" fill="#8a97a8" font-size="12" text-anchor="end">铁元素化合价</text>
+<line x1="55" y1="280" x2="65" y2="280" stroke="#8a97a8"/>
+<text x="48" y="284" fill="#8a97a8" font-size="12" text-anchor="end">0</text>
+<line x1="55" y1="175" x2="65" y2="175" stroke="#8a97a8"/>
+<text x="48" y="179" fill="#8a97a8" font-size="12" text-anchor="end">+2</text>
+<line x1="55" y1="70" x2="65" y2="70" stroke="#8a97a8"/>
+<text x="48" y="74" fill="#8a97a8" font-size="12" text-anchor="end">+3</text>
+<text x="95" y="300" fill="#8a97a8" font-size="12" text-anchor="middle">单质</text>
+<text x="230" y="300" fill="#8a97a8" font-size="12" text-anchor="middle">氧化物</text>
+<text x="375" y="300" fill="#8a97a8" font-size="12" text-anchor="middle">盐</text>
+<text x="545" y="300" fill="#8a97a8" font-size="12" text-anchor="middle">碱</text>
+<rect x="63" y="266" width="64" height="28" rx="6" fill="#1a222e" stroke="#4a9eff"/>
+<text x="95" y="285" fill="#e8ecf2" font-size="12.5" text-anchor="middle">Fe</text>
+<rect x="198" y="161" width="64" height="28" rx="6" fill="#1a222e" stroke="#4a9eff"/>
+<text x="230" y="180" fill="#e8ecf2" font-size="12.5" text-anchor="middle">FeO</text>
+<rect x="198" y="56" width="64" height="28" rx="6" fill="#1a222e" stroke="#4a9eff"/>
+<text x="230" y="75" fill="#e8ecf2" font-size="12.5" text-anchor="middle">Fe₂O₃</text>
+<rect x="343" y="161" width="64" height="28" rx="6" fill="#1a222e" stroke="#4a9eff"/>
+<text x="375" y="180" fill="#e8ecf2" font-size="12.5" text-anchor="middle">Fe²⁺</text>
+<rect x="343" y="56" width="64" height="28" rx="6" fill="#1a222e" stroke="#4a9eff"/>
+<text x="375" y="75" fill="#e8ecf2" font-size="12.5" text-anchor="middle">Fe³⁺</text>
+<rect x="513" y="161" width="64" height="28" rx="6" fill="#1a222e" stroke="#4a9eff"/>
+<text x="545" y="180" fill="#e8ecf2" font-size="12.5" text-anchor="middle">Fe(OH)₂</text>
+<rect x="513" y="56" width="64" height="28" rx="6" fill="#1a222e" stroke="#4a9eff"/>
+<text x="545" y="75" fill="#e8ecf2" font-size="12.5" text-anchor="middle">Fe(OH)₃</text>
+<path d="M127,273 L343,182" fill="none" stroke="#c9a227" stroke-width="1.5" marker-end="url(#a2)"/>
+<path d="M262,168 L343,172" fill="none" stroke="#c9a227" stroke-width="1.5" marker-end="url(#a2)"/>
+<path d="M262,66 L343,70" fill="none" stroke="#c9a227" stroke-width="1.5" marker-end="url(#a2)"/>
+<path d="M375,161 L375,84" fill="none" stroke="#ff9a90" stroke-width="1.5" marker-end="url(#a2)"/>
+<path d="M361,84 L361,161" fill="none" stroke="#c9a227" stroke-width="1.5" marker-end="url(#a2)"/>
+<path d="M407,66 L513,66" fill="none" stroke="#c9a227" stroke-width="1.5" marker-end="url(#a2)"/>
+<path d="M513,84 L407,84" fill="none" stroke="#c9a227" stroke-width="1.5" marker-end="url(#a2)"/>
+<path d="M407,168 L513,168" fill="none" stroke="#c9a227" stroke-width="1.5" marker-end="url(#a2)"/>
+<path d="M513,182 L407,182" fill="none" stroke="#c9a227" stroke-width="1.5" marker-end="url(#a2)"/>
+<path d="M340,74 L130,262" fill="none" stroke="#7ee2a8" stroke-width="1.5" marker-end="url(#a2)"/>
+<text x="205" y="250" fill="#7ee2a8" font-size="11.5" text-anchor="middle">2Fe³⁺+Fe=3Fe²⁺</text>
+<text x="375" y="126" fill="#8a97a8" font-size="11" text-anchor="middle">↑氧化 ↓还原</text>
+<text x="460" y="140" fill="#8a97a8" font-size="11" text-anchor="middle">同价态↔复分解（酸/碱）</text>
+<text x="370" y="322" fill="#7d8a99" font-size="12" text-anchor="middle">价—类二维图（依教材p93"概括·整合"示例复绘·SVG坐标python脚本生成）</text>
+</svg></div>
+<div class="figcap">图B 铁的价—类二维地图——纵轴价态0／+2／+3·横轴单质／氧化物／盐／碱·实线箭头为转化路线（依p93"概括·整合"示例图复绘·SVG坐标python脚本生成）</div>
+<p>这张图怎么用？看两个实例：<b>制备</b>——想要Fe(OH)₃，就从图上找Fe³⁺（如FeCl₃）加碱走复分解；想要Fe单质，就找含+2、+3价的东西还原（工业高炉/铝热p89）。<b>保存</b>——亚铁盐怕氧化，加铁粉"备一个向下拉的把手"（2Fe³⁺+Fe=3Fe²⁺）。</p>
+<h3>活动·探究（学生必做实验）：补铁剂中铁元素价态的检验（p92）</h3>
+<p>背景（p92原句）：补铁口服液除含铁化合物外，常添加抗氧化物质（如维生素C）等，某补铁口服液100 mL含铁元素<b>20~30 mg</b>、维生素C<b>200~300 mg</b>。实验目的：检验某补铁口服液中<b>铁元素的价态</b>。实验用品：某补铁口服液、H₂SO₄溶液、NaOH溶液、酸性KMnO₄溶液、氯水、KSCN溶液；试管、胶头滴管。</p>
+<p><b>参考方案</b>（教材原表为学生填写·成稿给出供对照）：</p>
+<table border="1" style="width:100%;border-collapse:collapse;font-size:14px">
+  <tr style="background:#223047"><th style="padding:4px">实验步骤</th><th>实验现象</th><th>实验结论</th></tr>
+  <tr><td style="padding:4px">取口服液稀释，滴加KSCN溶液</td><td>不变红</td><td>无Fe³⁺（或量极少）</td></tr>
+  <tr><td style="padding:4px">另取稀释液滴加酸性KMnO₄溶液</td><td>紫色褪去</td><td>含还原性Fe²⁺（被氧化为Fe³⁺）</td></tr>
+  <tr><td style="padding:4px">再取稀释液滴加NaOH溶液</td><td>白色沉淀→灰绿→红褐</td><td>旁证Fe²⁺（三段变色）</td></tr>
+</table>
+<p class="small">（思考3问的钥匙：①方案涉及Fe²⁺→Fe³⁺转化·因KSCN只认Fe³⁺不认Fe²⁺，需"先转化后显色"的间接思路；②不能用NaOH直接检验价态——两种氢氧化物都立刻变色且Fe(OH)₂极不稳定；③维C等抗氧化成分可能先于Fe²⁺还原KMnO₄造成干扰·需对照实验排除——成稿给出·候QC核。）</p>
+
+<h2><span class="step-tag">第6步</span> 身边的化学：铁元素与人体健康（p93）</h2>
+<p>铁元素是人体中<b>含量最高的生命必需微量元素</b>。血红蛋白分子含有Fe²⁺——正是这些Fe²⁺使血红蛋白具有<b>载氧功能</b>，把肺部的氧气输送到全身；若Fe²⁺被氧化成Fe³⁺，血红蛋白就<b>丧失载氧能力</b>（p93原句——"价态决定性质"在身体里的版本）。人体只能吸收<b>Fe²⁺</b>；维生素C具还原性，能把Fe³⁺还原成Fe²⁺促进吸收——所以补铁剂里要加维C，吃菠菜时配点维C高的水果也是同款道理（p93框原意）。</p>
+
+<h2>练习与活动（p94–96）·答案速查</h2>
+<h3>高考怎么考（考位导览·三行）</h3>
+<p class="small">① KSCN检验+离子方程式书写（Fe³⁺/Fe²⁺转化）——选择题与填空双高频；② 实验方案设计（价态检验/除杂/保存）——实验题核心素材；③ 价-类二维图转化路线——推断题骨架。命题频率：高（元素化合物主干节·学生必做实验双落点）。</p>
+<div class="box kao">
+<p class="q">T1 连线（p94）：具有磁性的黑色固体→Fe₃O₄｜治疗缺铁性贫血→亚铁盐｜涂料红色颜料→Fe₂O₃｜保存亚铁盐溶液→铁单质｜空气中很不稳定→Fe(OH)₂｜遇KSCN变色→铁盐。</p>
+<p class="q">T2 不正确的是 <span class="ans">A</span>——FeCl₂是<b>浅绿色</b>不是黄色（FeCl₃才黄）。</p>
+<p class="q">T3 与稀盐酸反应且铁元素被氧化的是 <span class="ans">A（Fe）</span>——0→+2；B/C/D铁价态不变（复分解）。</p>
+<p class="q">T4 Fe³⁺表现氧化性的是 <span class="ans">A</span>——使淀粉碘化钾试纸变蓝（2Fe³⁺+2I⁻=2Fe²⁺+I₂）；B/C为复分解·D中Fe³⁺在变化但问的是"表现氧化性"且D是Fe³⁺被还原的题眼变体（铁粉消失=Fe³⁺→Fe²⁺）——按题意答案A（试纸变蓝是I⁻被氧化的直接证据）。</p>
+<p class="q">T5 不能一步实现的是 <span class="ans">D</span>——Fe与HCl只能到FeCl₂（H⁺是弱氧化剂）；A（Cl₂强氧化剂直接+3）/B（点燃+O₂）/C（高温水蒸气）均可一步。</p>
+<p class="q">T6 讨论Fe²⁺的还原性：理论（+2中间价可升）→实验事实（被Cl₂/酸性KMnO₄/H₂O₂氧化·p89图3-1-4/3-1-5）→实际应用（FeSO₄保存加铁粉·防O₂）。</p>
+<p class="q">T7 与铁反应产物能与KSCN显红的是 <span class="ans">B（氯气）</span>——Cl₂把Fe氧化到+3；盐酸/稀硫酸/CuSO₄都只到+2。</p>
+<p class="q">T8 错误的是 <span class="ans">B</span>——事实是Cl₂氧化Fe²⁺，氧化性Cl₂＞Fe³⁺（不能反写）；A/C/D均对。</p>
+<p class="q">T9 不会出现的是 <span class="ans">D（有铁无铜）</span>——Fe³⁺先氧化谁？Cu还原性＜Fe，若连Cu都没反应完铁不可能消失；"铁、铜均无"只在Fe³⁺足量时出现（D为不可能·因铁粉先失电子）。<span class="small">（解析为成稿给出）</span></p>
+<p class="q">T10 除杂：<b>FeCl₂中除FeCl₃</b>→加过量铁粉后过滤（2Fe³⁺+Fe=3Fe²⁺）；<b>FeCl₃中除FeCl₂</b>→通足量Cl₂（2Fe²⁺+Cl₂=2Fe³⁺+2Cl⁻·不引入新杂质）。</p>
+<p class="q">T11 探究FeCl₂：（1）加铁粉目的=<span class="ans">防止Fe²⁺被空气氧化</span>；（2）预测依据=<span class="ans">Fe为+2价中间价态·既可升可降</span>；（3）①滴氯水探究的是Fe²⁺的<span class="ans">还原</span>性·<span class="ans">2Fe²⁺+Cl₂=2Fe³⁺+2Cl⁻</span>；②选<span class="ans">KSCN溶液</span>·变<span class="ans">红</span>；③证明氧化性：<span class="ans">向FeCl₂溶液加入锌片，锌片表面析出黑色（灰）固体、溶液质量变化——Fe²⁺+Zn=Zn²⁺+Fe</span>（解析为成稿给出）。</p>
+<p class="q">T12 印刷电路板：（1）2Fe³⁺+Cu=2Fe²⁺+Cu²⁺·未被油墨覆盖的Cu被Fe³⁺氧化溶解；（2）①<span class="ans">Fe</span>（过量铁粉）②<span class="ans">FeCl₂</span> ③<span class="ans">Cu与Fe</span>（滤渣）④<span class="ans">盐酸</span>（过量·溶Fe留Cu）⑤<span class="ans">FeCl₂</span> ⑥<span class="ans">Cl₂</span>（合并滤液通氯气重获FeCl₃）；B方程式：<span class="ans">Fe+2FeCl₃=3FeCl₂／Fe+2HCl=FeCl₂+H₂↑／2FeCl₂+Cl₂=2FeCl₃</span>（解析为成稿给出）。</p>
+</div>
+
+<h2>三句话带走 + 自测四连</h2>
+<div class="key">
+  <p>① 研究铁的"双角度"：<b>类别</b>定通性（盐遇碱沉淀·碱性氧化物遇酸成盐），<b>价态</b>定性格（+3只降=氧化剂·0只升=还原剂·+2上下都行）；</p>
+  <p>② 一句口诀挂墙上：<b>三点一线记转化</b>——同价态复分解换装、异价态氧化还原搬家；KSCN专认Fe³⁺（红）；</p>
+  <p>③ 最容易错：Fe²⁺检验要先"藏起Fe³⁺"再变红（图3-1-4设计）；颜色三连白→灰绿→红褐写全；除杂选试剂"不引新杂质"。</p>
+</div>
+<div class="try">
+  <span class="tag">⚡ 自测四连（先做再看答案·答案直接可见）</span>
+  <p class="q">1. Fe₂O₃+6H⁺=2Fe³⁺+3H₂O属于氧化还原反应吗？</p>
+  <p><span class="ans">不属于</span>——Fe+3→+3、H+1→+1，全无升降，纯复分解（同价态路线）。</p>
+  <p class="q">2. 把Fe³⁺变Fe²⁺，选铁粉还是氯水？</p>
+  <p><span class="ans">铁粉</span>（2Fe³⁺+Fe=3Fe²⁺·Fe³⁺被还原）；氯水干的是反方向（把Fe²⁺变Fe³⁺）。</p>
+  <p class="q">3. 补铁剂里加维C，用了铁的哪条性质？</p>
+  <p><span class="ans">维C的还原性</span>——把可能被氧化的Fe³⁺拉回Fe²⁺（人体只吸收Fe²⁺·p93），呼应"剂性正相反"。</p>
+  <p class="q">4. Fe(OH)₂白色沉淀久置为什么最后是红褐色而不是"铁锈色"焦虑？</p>
+  <p><span class="ans">就是被O₂氧化成了Fe(OH)₃（红褐）</span>——4Fe(OH)₂+O₂+2H₂O=4Fe(OH)₃；"灰绿色"是过渡态的中间颜值。</p>
+</div>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 150" width="740" height="150">
+<defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a97a8"/></marker></defs>
+<rect width="740" height="150" fill="#0f1420"/>
+<text x="370" y="24" fill="#9ecbff" font-size="13" text-anchor="middle" font-weight="bold">本节在模块中的位置：第3章 物质的性质与转化（已学→正在学→将学）</text>
+<rect x="30" y="46" width="135" height="58" rx="9" fill="#1a222e" stroke="#8a97a8" stroke-width="1"/>
+<text x="97.5" y="70" fill="#8a97a8" font-size="12" text-anchor="middle">第2章 2.3</text>
+<text x="97.5" y="90" fill="#8a97a8" font-size="12" text-anchor="middle">氧化还原反应</text>
+<text x="97.5" y="122" fill="#7d8a99" font-size="11" text-anchor="middle">已学·钥匙</text>
+<path d="M165,75 L180,75" fill="none" stroke="#8a97a8" stroke-width="1.4" marker-end="url(#a4)"/>
+<rect x="180" y="46" width="135" height="58" rx="9" fill="#1a222e" stroke="#8a97a8" stroke-width="1"/>
+<text x="247.5" y="70" fill="#8a97a8" font-size="12" text-anchor="middle">第3章 p84-85</text>
+<text x="247.5" y="90" fill="#8a97a8" font-size="12" text-anchor="middle">章首·目录</text>
+<text x="247.5" y="122" fill="#7d8a99" font-size="11" text-anchor="middle">已入章</text>
+<path d="M315,75 L330,75" fill="none" stroke="#8a97a8" stroke-width="1.4" marker-end="url(#a4)"/>
+<rect x="330" y="46" width="135" height="58" rx="9" fill="#223047" stroke="#ffc94d" stroke-width="2"/>
+<text x="397.5" y="70" fill="#ffc94d" font-size="12" text-anchor="middle">3.1 铁的</text>
+<text x="397.5" y="90" fill="#ffc94d" font-size="12" text-anchor="middle">多样性·本节</text>
+<text x="397.5" y="122" fill="#7d8a99" font-size="11" text-anchor="middle">正在学</text>
+<path d="M465,75 L490,75" fill="none" stroke="#8a97a8" stroke-width="1.4" marker-end="url(#a4)"/>
+<rect x="490" y="46" width="135" height="58" rx="9" fill="#1a222e" stroke="#8a97a8" stroke-width="1"/>
+<text x="557.5" y="70" fill="#8a97a8" font-size="12" text-anchor="middle">3.2 p97</text>
+<text x="557.5" y="90" fill="#8a97a8" font-size="12" text-anchor="middle">硫的转化</text>
+<text x="557.5" y="122" fill="#7d8a99" font-size="11" text-anchor="middle">将学</text>
+<path d="M625,75 L630,75" fill="none" stroke="#8a97a8" stroke-width="1.4" marker-end="url(#a4)"/>
+<rect x="630" y="46" width="135" height="58" rx="9" fill="#1a222e" stroke="#8a97a8" stroke-width="1"/>
+<text x="697.5" y="70" fill="#8a97a8" font-size="12" text-anchor="middle">3.3</text>
+<text x="697.5" y="90" fill="#8a97a8" font-size="12" text-anchor="middle">氮的循环</text>
+<text x="697.5" y="122" fill="#7d8a99" font-size="11" text-anchor="middle">将学</text>
+</svg></div>
+<div class="figcap">图D 本节在模块中的位置——第3章首节·用2.3的氧化还原钥匙开铁的锁·通向3.2硫的转化（SVG坐标python脚本生成）</div>
+
+<div class="foot">
+  <p>对证源：国家中小学智慧教育平台 鲁科版《普通高中教科书·化学 必修 第一册》官方影印（山东科学技术出版社）｜可复现三要素：平台=basic.smartedu.cn教材库｜asset=<b>88874a47-cd9b-4dbc-bd48-bb2ea5d63115</b>｜ts=<b>1754905612635</b>｜直链=<span class="small">https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/{asset}.t/zh-CN/{ts}/transcode/image/{N}.jpg</span>（Referer: basic.smartedu.cn）｜<b>图N=正文页N+6</b>。</p>
+  <p>本节影印域：3.1《铁的多样性》=正文p86–96=图92–102（四锚自实锚：图92=p86节名页／图103=p97"第2节 硫的转化"题页=右界；p95-96为节末练习页）。逐页直读台账随附件1。</p>
+  <p>七件制交付：①成稿本件 ②附件1影印对照报告 ③附件2事实点自验表（含SVG坐标脚本留痕） ④附件3条款自检表（T1–T12） ⑤附件4零基础通读卡点记录 ⑥三条差距报告 ⑦QC单随件。宁缺毋编声明：教材留白处（p87/p92活动探究表·p91价类图）标注"参考方案·成稿给出"；拓展推论（Fe₃O₄混合价态不展开/T9解析/T12流程填空）均标注。</p>
+  <p>队3席（并行搜索员C·agent 6a9cf52e26f40cafe9f060ac）·1031·承v10群令+调度归口裁定·分支候并零直推main·硬闸23:01。</p>
+</div>
+
+</div>
+</body>
+</html>
