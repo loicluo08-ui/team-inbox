@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理3.4 力的合成和分解 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .talk .tag { color: #6ec6ff; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #274a63; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .key .tag { color: #7fd0ff; font-weight: bold; }
+  .big { text-align: center; font-size: 24px; color: #fff; margin: 16px 0; font-family: Georgia, serif; }
+  .big sub { font-size: 14px; }
+  .pit { background: #231720; border: 1px solid #5a3a44; border-radius: 8px; padding: 12px 18px; margin: 14px 0; }
+  .pit .tag { color: #e58b99; font-weight: bold; }
+  .try { background: #18231a; border: 1px solid #2f4a33; border-radius: 8px; padding: 12px 18px; margin: 14px 0; }
+  .try .q { color: #79c98a; font-weight: bold; }
+  .try .a { color: #a9b6ac; }
+  .check { background: #1a2230; border: 1px solid #33415e; border-radius: 8px; padding: 12px 18px; margin: 14px 0; }
+  .check .tag { color: #8fb8ff; font-weight: bold; }
+  .ans { color: #58d68d; }
+  .small { font-size: 14px; color: #93a1b0; }
+  .m { color: #ffd97a; font-family: Georgia, serif; }
+  .wrong { color: #d64541; text-decoration: line-through; text-decoration-thickness: 2px; }
+  .detail { font-size: 15px; color: #a8b4c0; margin: 8px 0 8px 18px; }
+  .fig { margin: 18px 0; text-align: center; }
+  .fig svg { max-width: 100%; background: #fafafa; border-radius: 8px; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  b { color: #f0f3f7; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 16px; line-height: 1.7; }
+  em { color: #1a5c99; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a323e; padding: 9px 12px; text-align: left; }
+  th { background: #1b2029; color: #fff; }
+  .alt { background: #221c2a; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; color: #eef2f7; font-size: 16px; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    p, .talk, .key, .pit, .detail, .figcap { color: #222; }
+    .sub, .small, .foot { color: #444; }
+    .try .q { color: #1e5c1e; } .try .a { color: #333; }
+    .pit .tag { color: #c0392b; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong, .note-red { color: #c0392b; }
+    em { color: #1a5c99; }
+    mark.nb, .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { background: #f0f0f0; color: #111; }
+    th, td { border-color: #bbb; }
+    .box { color: #222; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>力的合成和分解：一个力顶几个力——平行四边形定则</h1>
+<div class="sub">物理3.4 · "相互作用——力"模块第四件（第三章 第4节·2024印次合并节）· 前面已学：3.1 重力与弹力（G=mg·弹力⊥接触面）、3.2 摩擦力（F<sub>f</sub>=μF<sub>N</sub>·0＜F≤F<sub>max</sub>）、3.3 牛顿第三定律（压力=支持力已证）· 零基础首学版 v1.0 · 前置：3.1＋3.2＋3.3＋初中的二力平衡＋会勾股定理 · 预计45分钟</div>
+
+<h2><span class="step-tag">开场</span>五个力拉着一个物体，它往哪边跑？</h2>
+<p>教材p72问题框摆了个看起来吓人的局面：<b>一个静止的物体，在某平面上受到5个力作用，你能判断它将向哪个方向运动吗？</b>五个力一个个比划，头都大了。教材给出破局思路：如果我们能找到一种方法，即"<mark class="nb">用一个力的单独作用替代两个力的共同作用，而效果不变</mark>"，上述问题就迎刃而解了——<b>你觉得这个力和被替代的两个力会有怎样的关系呢？</b>这一节就锻造这件"化简神器"：合力的平行四边形定则（顺带认识它的反面——分解），再给"矢量"这个大概念上户口。另外交代一句：你手里的教材是2024年印次，旧版"力的合成""力的分解"两节在这里<b>合并成一节</b>（第4节力的合成和分解p72起、第5节共点力的平衡p76起），目录页亲验在案。</p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 说出<b>合力/分力</b>与<b>共点力</b>的定义，理解"等效替代"是全部故事的钥匙；<br>
+② 复述<b>平行四边形定则</b>，会用图解法（选标度·画邻边·连对角线）求两力的合力；<br>
+③ 知道同一个力可以分解成<b>无数对</b>分力，会按"实际效果/题目条件"定分解方案；<br>
+④ 会算合力范围 <b>|F<sub>1</sub>−F<sub>2</sub>| ≤ F ≤ F<sub>1</sub>+F<sub>2</sub></b>，会说夹角变化怎么拉动合力；<br>
+⑤ 给物理量上户口：<b>矢量</b>（遵平行四边形定则）vs <b>标量</b>（算术相加），并把力/位移/速度/加速度、质量/路程/功/电流各归各家。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒备齐旧工具</h2>
+<div class="talk"><span class="tag">talk</span>　① <b>等效替代</b>：3.2节里"马匀速拉雪橇，拉力替摩擦力扛活"你已用过一回——效果相同，就可以互换，这回轮到力与力互换。② <b>力的图示</b>：有向线段＝力（长度定大小·箭头定方向·起点定作用点），1.3节速度矢量图的老朋友。③ <b>勾股定理与三角函数</b>：c²=a²+b²、sin/cos，数学初三的旧工具，本节作图后核对数值要用。④ <b>二力平衡</b>（初中）：同体等大反向共线——本节实验里"小圆环不动"就是它在站台。</div>
+
+<h2><span class="step-tag">第一步</span>合力与分力：一个力顶几个力（p72原文照录）</h2>
+<div class="box"><b>【教材p72原文】</b>　几个力如果都作用在物体的同一点，或者它们的作用线相交于一点，这几个力叫作<b>共点力</b>。下面我们先研究共点力的合成。</div>
+<p>生活中常常见到这样的事例：<b>一个力的单独作用与两个或者更多力的共同作用，其效果相同。</b>例如，两个小孩分别用力F<sub>1</sub>、F<sub>2</sub>共同提着一桶水，水桶静止（图3.4-1甲）；一个大人单独向上用力F也能提着这桶水，让水桶保持静止（图3.4-1乙）。一盏吊灯悬吊在天花板上保持静止，悬线对吊灯的拉力是F（图3.4-2甲），若用两根线共同悬挂吊灯，悬线上端分别固定在天花板的左右两处，线的拉力是F<sub>1</sub>和F<sub>2</sub>，也能产生使吊灯保持静止的效果（图3.4-2乙）。</p>
+<div class="key"><span class="tag">定义（p72照录）</span>　假设一个力<b>单独</b>作用的效果跟某几个力<b>共同</b>作用的效果相同，这个力就叫作那几个力的<b>合力</b>（resultant force）。假设几个力<b>共同</b>作用的效果跟某个力<b>单独</b>作用的效果相同，这几个力就叫作那个力的<b>分力</b>（component force）。图3.4-1中的F等于F<sub>1</sub>和F<sub>2</sub>的合力，图3.4-2中的F<sub>1</sub>和F<sub>2</sub>可以看成F的分力。</div>
+<div class="fig">
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图A：水桶提水受力示意（重绘自教材图3.4-1）">
+  <defs><marker id="arA" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c2455a"/></marker></defs>
+  <rect x="0" y="0" width="340" height="240" fill="#f2ede4" rx="10"/><rect x="360" y="0" width="340" height="240" fill="#f2ede4" rx="10"/>
+  <text x="28" y="34" font-size="15" fill="#333" font-weight="bold">甲：两小孩共同提</text><text x="392" y="34" font-size="15" fill="#333" font-weight="bold">乙：一大人单独提</text>
+  <line x1="170" y1="180" x2="105" y2="70" stroke="#5a6a7a" stroke-width="4"/><line x1="170" y1="180" x2="235" y2="70" stroke="#5a6a7a" stroke-width="4"/>
+  <line x1="105" y1="70" x2="105" y2="42" stroke="#c2455a" stroke-width="3.5" marker-end="url(#arA)"/><line x1="235" y1="70" x2="235" y2="42" stroke="#c2455a" stroke-width="3.5" marker-end="url(#arA)"/>
+  <text x="62" y="38" font-size="15" fill="#c2455a" font-style="italic">F₁</text><text x="246" y="38" font-size="15" fill="#c2455a" font-style="italic">F₂</text>
+  <circle cx="128" cy="55" r="9" fill="#e8b88a"/><circle cx="212" cy="55" r="9" fill="#e8b88a"/>
+  <path d="M125,180 L215,180 L203,222 L137,222 z" fill="#e8a25c" stroke="#a06a30"/><rect x="163" y="166" width="14" height="12" fill="none" stroke="#a06a30"/>
+  <text x="150" y="238" font-size="13.5" fill="#666">水桶静止：F₁+F₂ 的效果=一个F</text>
+  <line x1="530" y1="180" x2="530" y2="52" stroke="#5a6a7a" stroke-width="4"/>
+  <line x1="530" y1="120" x2="530" y2="52" stroke="#c2455a" stroke-width="3.5" marker-end="url(#arA)"/>
+  <text x="543" y="70" font-size="15" fill="#c2455a" font-style="italic">F</text>
+  <circle cx="530" cy="165" r="9" fill="#e8b88a"/>
+  <path d="M485,180 L575,180 L563,222 L497,222 z" fill="#e8a25c" stroke="#a06a30"/><rect x="523" y="166" width="14" height="12" fill="none" stroke="#a06a30"/>
+  <text x="475" y="238" font-size="13.5" fill="#666">同一桶水，同样静止——效果相同</text>
+</svg>
+<div class="figcap">图A（重绘自教材图3.4-1）｜两力共提一桶水 ↔ 一个力单提同一桶水：静止效果相同，F与F₁、F₂互为"合"与"分"</div>
+</div>
+<div class="pit"><span class="tag">坑点·"效果相同"是唯一的等效凭据</span>　合力与分力<b>不是同时存在的两拨力</b>——水桶上要么算F₁F₂（两个小孩拉着），要么算F（大人拉着），<span class="note-red">不能既画F又画F₁F₂凑成五个力</span>。它们是同一效果的两本账，分析受力时二选一。</div>
+<div class="try"><span class="q">验一验①（自编·辨共点力）：</span><span class="a">下列各组力哪些是共点力？a.两个小孩提桶的F₁、F₂（均过提手同一点）——<b>是</b>；b.3.2节雪橇的拉力F与摩擦力F<sub>f</sub>（均沿水平冰面、作用线共线）——<b>是</b>（作用线相交于无穷远也算共线共点族）；c.3.2节木块的F<sub>N</sub>（过底面）与F<sub>f</sub>（沿底面）——作用线一个竖直一个水平，<b>相交于木块底面角上一点，是共点力</b>。判据一句话：看作用线是否交于一点（或延长后相交），不看箭头画在哪。</span></div>
+
+<h2><span class="step-tag">第二步</span>实验与平行四边形定则：合力到底怎么"合"（p73原文照录）</h2>
+<div class="box"><b>【教材p73·力的合成/分解的定义】</b>　在物理学中，我们把求几个力的合力的过程叫作<b>力的合成</b>（composition of forces），把求一个力的分力的过程叫作<b>力的分解</b>（resolution of force）。</div>
+<div class="box"><b>【实验·探究两个互成角度的力的合成规律】（p73照录）</b>　如图3.4-3甲，橡皮条的一端连接轻质小圆环，另一端固定，橡皮条的长度为GE。在图3.4-3乙中，用手通过两个弹簧测力计共同拉动小圆环。小圆环受到拉力F<sub>1</sub>、F<sub>2</sub>的共同作用，处于O点，橡皮条伸长的长度为EO。撤去F<sub>1</sub>、F<sub>2</sub>，改用一个力F单独拉住小圆环，仍使它处于O点（图3.4-3丙）。力F单独作用，与F<sub>1</sub>、F<sub>2</sub>共同作用的效果是一样的，都能使小圆环保持静止，由于两次橡皮条伸长的长度相同，即橡皮条对小圆环的拉力相同，所以F等于F<sub>1</sub>、F<sub>2</sub>的合力。</div>
+<p>我们要探究的是：<b>合力F与F<sub>1</sub>、F<sub>2</sub>有什么关系？</b>F<sub>1</sub>和F<sub>2</sub>的大小和方向都会对合力F产生影响，力的图示法能同时描述力的大小和方向，画出F、F<sub>1</sub>和F<sub>2</sub>（图3.4-3丁），看看三者间是什么关系？说出你的猜想。怎样检验你的猜想，说出你的方法。</p>
+<p>通过多次的实验探究我们会发现，两个力合成时，如果以表示这两个力的有向线段为邻边作平行四边形，这两个邻边之间的对角线就代表合力的大小和方向（图3.4-4）。这个规律叫作<mark class="nb">平行四边形定则</mark>（parallelogram rule）。</p>
+<div class="fig">
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图B：平行四边形定则（重绘自教材图3.4-4）">
+  <defs><marker id="arB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#1a7a8a"/></marker><marker id="arBp" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c2455a"/></marker></defs>
+  <rect x="0" y="0" width="640" height="300" fill="#f2ede4" rx="10"/>
+  <line x1="320" y1="230" x2="20" y2="90" stroke="#9aa5ae" stroke-width="2" stroke-dasharray="7 5"/><line x1="320" y1="230" x2="560" y2="90" stroke="#9aa5ae" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="80" y1="230" x2="320" y2="230" stroke="#1a7a8a" stroke-width="4" marker-end="url(#arB)"/>
+  <line x1="80" y1="230" x2="20" y2="90" stroke="#1a7a8a" stroke-width="4" marker-end="url(#arB)"/>
+  <line x1="80" y1="230" x2="560" y2="90" stroke="#c2455a" stroke-width="4.5" marker-end="url(#arBp)"/>
+  <circle cx="80" cy="230" r="6" fill="#333"/>
+  <text x="62" y="252" font-size="17" fill="#333" font-style="italic">O</text>
+  <text x="200" y="258" font-size="17" fill="#1a7a8a" font-style="italic">F₂</text>
+  <text x="8" y="72" font-size="17" fill="#1a7a8a" font-style="italic">F₁</text>
+  <text x="540" y="72" font-size="17" fill="#c2455a" font-style="italic" font-weight="bold">F</text>
+  <text x="330" y="118" font-size="13.5" fill="#8a6a72">对角线=合力（大小+方向）</text>
+  <text x="60" y="286" font-size="13.5" fill="#666">两邻边：F₁、F₂的图示　虚线补平行四边形</text>
+</svg>
+<div class="figcap">图B（重绘自教材图3.4-4）｜平行四边形定则：以F₁、F₂为邻边作平行四边形，从O出发的对角线就是合力F</div>
+</div>
+<p>在上述实验中，如果把图3.4-3乙和图3.4-3丙的操作顺序对调，即先用拉力F把小圆环拉到O点，再用拉力F<sub>1</sub>和F<sub>2</sub>共同拉小圆环产生相同效果，则F<sub>1</sub>和F<sub>2</sub>可以看成F的分力，这就变成了"探究力的分解规律"的实验。由于各个力的数据都没有改变，因此，<b>力的分解也遵从平行四边形定则</b>。</p>
+<div class="pit"><span class="tag">坑点·定则的"表"与实验的"里"</span>　平行四边形定则不是"规定出来的画法"，而是<b>实验事实的总结</b>——证据就是橡皮条：两次都拉到同一个O点，伸长相同＝效果相同＝F就是那个"顶用"的力。<span class="note-red">两个力合成绝不是把大小一加了事</span>：F₁=F₂=10N、夹角120°时合力只有10N（练一练你会自己算）——"1+1"在矢量世界可以等于任何值，区间见第四步。</div>
+<div class="try"><span class="q">验一验②（自编·同向/反向特例）：</span><span class="a">夹角θ=0°（同向）：平行四边形压扁成一条线，F=F₁+F₂（最大）；θ=180°（反向）：F=|F₁−F₂|（最小，方向沿大者）。夹角从0°增到180°，合力一路从最大滑到最小——平行四边形"越撑越扁"，对角线越缩越短。</span></div>
+
+<h2><span class="step-tag">第三步</span>分解的自由与例题精读：对角线反过来用（p74原文照录）</h2>
+<p>需要指出的是，如果没有限制，对于同一条对角线，可以作出<b>无数个</b>不同的平行四边形（图3.4-5）。也就是说，同一个力F可以分解为<b>无数对</b>大小、方向不同的分力。一个已知力究竟应该怎样分解，要<b>根据具体问题</b>来确定。如果两个以上的共点力作用在一个物体上，也可以应用平行四边形定则求出它们的合力。先求出任意两个力的合力，再求出这个合力跟第三个力的合力，直到把所有的力都合成进去，最后得到的结果就是这些力的合力。</p>
+<div class="box"><b>【例题】（教材p74原题）</b>　某物体受到一个大小为32N的力，方向水平向右，还受到另一个大小为44N的力，方向竖直向上。通过作图求出这两个力的合力的大小和方向。</div>
+<p><b>分析</b>：两力互相垂直、作用于同一点，是平行四边形定则最"方正"的舞台——平行四边形退化成矩形，对角线最好量。</p>
+<p><b>解</b>　选择某一标度，例如用1.0cm长的线段表示10N的力。根据题意，作出二力合成的平行四边形（图3.4-6）。表示F<sub>1</sub>的有向线段长3.2cm，表示F<sub>2</sub>的有向线段长4.4cm。用刻度尺测量后得知，表示合力F的对角线长为5.4cm，则</p>
+<div class="big">F = 5.4 cm × 10 N/cm = 54 N</div>
+<p>用量角器测得合力F与力F<sub>1</sub>的夹角为54°。合力的大小为54N，方向与力F<sub>1</sub>的夹角为54°。</p>
+<div class="fig">
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图C：例题作图（重绘自教材图3.4-6）">
+  <defs><marker id="arC" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#1a7a8a"/></marker><marker id="arCp" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c2455a"/></marker></defs>
+  <rect x="0" y="0" width="640" height="320" fill="#f2ede4" rx="10"/>
+  <line x1="90" y1="270" x2="266" y2="270" stroke="#1a7a8a" stroke-width="4" marker-end="url(#arC)"/>
+  <line x1="90" y1="270" x2="90" y2="28" stroke="#1a7a8a" stroke-width="4" marker-end="url(#arC)"/>
+  <line x1="266" y1="270" x2="266" y2="28" stroke="#9aa5ae" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="90" y1="28" x2="266" y2="28" stroke="#9aa5ae" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="90" y1="270" x2="266" y2="28" stroke="#c2455a" stroke-width="4.5" marker-end="url(#arCp)"/>
+  <circle cx="90" cy="270" r="6" fill="#333"/>
+  <text x="72" y="292" font-size="16" fill="#333" font-style="italic">O</text>
+  <text x="238" y="296" font-size="16" fill="#1a7a8a" font-style="italic">F₁</text><text x="56" y="44" font-size="16" fill="#1a7a8a" font-style="italic">F₂</text>
+  <text x="250" y="52" font-size="16" fill="#c2455a" font-style="italic" font-weight="bold">F</text>
+  <line x1="110" y1="270" x2="110" y2="263" stroke="#333"/><line x1="145" y1="270" x2="145" y2="263" stroke="#333"/><line x1="200" y1="270" x2="200" y2="263" stroke="#333"/><line x1="255" y1="270" x2="255" y2="263" stroke="#333"/>
+  <text x="133" y="292" font-size="11.5" fill="#666">10</text><text x="188" y="292" font-size="11.5" fill="#666">20</text><text x="243" y="292" font-size="11.5" fill="#666">30</text>
+  <line x1="83" y1="215" x2="90" y2="215" stroke="#333"/><line x1="83" y1="160" x2="90" y2="160" stroke="#333"/><line x1="83" y1="105" x2="90" y2="105" stroke="#333"/><line x1="83" y1="50" x2="90" y2="50" stroke="#333"/>
+  <text x="58" y="219" font-size="11.5" fill="#666">10</text><text x="58" y="164" font-size="11.5" fill="#666">20</text><text x="58" y="109" font-size="11.5" fill="#666">30</text><text x="58" y="54" font-size="11.5" fill="#666">40</text>
+  <line x1="330" y1="60" x2="385" y2="60" stroke="#333" stroke-width="3"/><line x1="330" y1="53" x2="330" y2="67" stroke="#333"/><line x1="385" y1="53" x2="385" y2="67" stroke="#333"/>
+  <text x="340" y="44" font-size="13.5" fill="#333">10 N</text><text x="322" y="84" font-size="12.5" fill="#8a6a72">标度：1.0 cm = 10 N</text>
+  <text x="300" y="140" font-size="13.5" fill="#8a6a72">F₁=3.2 cm　F₂=4.4 cm</text>
+  <text x="300" y="162" font-size="13.5" fill="#8a6a72">对角线实测5.4 cm → F=54 N</text>
+  <text x="128" y="256" font-size="14" fill="#8a6a72">54°</text>
+</svg>
+<div class="figcap">图C（重绘自教材图3.4-6）｜例题作图：标度换算、邻边画F₁F₂、对角线量F——图解法全流程</div>
+</div>
+<div class="pit"><span class="tag">坑点·54N是"作图口径"，不是"精确值"</span>　按勾股定理精确算：F=√(32²+44²)N=√2960N≈<b>54.4N</b>。教材量得对角线5.4cm给54N，差0.4N来自<b>作图与读数的刻度误差</b>（1cm标度下最小刻度就是0.1cm=1N）。两口径并行不判错：<span class="note-red">题目说"通过作图求"，就交图解答案并注明标度；题目说"求合力"，才上勾股精算</span>——这跟2.3节例题2"674m vs 675m"是同一家族的事。</div>
+<div class="try"><span class="q">验一验③（自编·换数重走例题）：</span><span class="a">把两力换成30N（水平）与40N（竖直）：对角线精确=√(30²+40²)=<b>50N</b>（勾股股3-4-5整倍，与F₁夹角atan(40/30)≈53°）——选标度1.0cm=10N时对角线恰好5.0cm，作图与精算此番严丝合缝。</span></div>
+
+<h2><span class="step-tag">第四步</span>矢量和标量：给物理量上户口（p74-75原文照录）</h2>
+<p>力的合成，可以认为是力的相加。二力相加时，<b>不能</b>简单地把两个力的大小相加，而要按平行四边形定则来确定合力的大小和方向。</p>
+<p>我们曾经学过位移。一个人从A走到B，发生的位移是AB，又从B走到C（图3.4-7），发生的位移是BC。在整个运动过程中，这个人的位移是AC，AC是合位移。如果平行地移动矢量BC，使它的始端B与第一次位移的始端A重合，于是我们看到，两次表示位移的线段构成了一个平行四边形的一组邻边，而表示合位移的正是它们所夹的对角线AC（图3.4-8）。所以说，<b>位移合成时也遵从平行四边形定则</b>。</p>
+<div class="key"><span class="tag">定义（p75照录）</span>　既有大小又有方向，相加时遵从平行四边形定则的物理量叫作<b>矢量</b>（vector）。只有大小，没有方向，相加时遵从算术法则的物理量叫作<b>标量</b>（scalar）。除了力和位移以外，速度、加速度都是矢量。在我们学过的物理量中，质量、路程、功、电流等都是标量。</div>
+<div class="fig">
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图D：位移的合成（重绘自教材图3.4-8）">
+  <defs><marker id="arD" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#1a7a8a"/></marker><marker id="arDp" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c2455a"/></marker></defs>
+  <rect x="0" y="0" width="640" height="300" fill="#f2ede4" rx="10"/>
+  <line x1="330" y1="185" x2="250" y2="45" stroke="#9aa5ae" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="150" y1="260" x2="330" y2="185" stroke="#1a7a8a" stroke-width="3" stroke-dasharray="8 5" marker-end="url(#arD)"/>
+  <line x1="150" y1="260" x2="70" y2="120" stroke="#1a7a8a" stroke-width="4" marker-end="url(#arD)"/>
+  <line x1="70" y1="120" x2="250" y2="45" stroke="#1a7a8a" stroke-width="4" marker-end="url(#arD)"/>
+  <line x1="150" y1="260" x2="250" y2="45" stroke="#c2455a" stroke-width="4.5" marker-end="url(#arDp)"/>
+  <circle cx="150" cy="260" r="5.5" fill="#333"/><circle cx="70" cy="120" r="5.5" fill="#333"/><circle cx="250" cy="45" r="5.5" fill="#333"/>
+  <text x="138" y="284" font-size="16" fill="#333" font-style="italic">A</text><text x="46" y="116" font-size="16" fill="#333" font-style="italic">B</text><text x="262" y="42" font-size="16" fill="#333" font-style="italic">C</text>
+  <text x="112" y="200" font-size="15" fill="#1a7a8a" font-style="italic">AB</text><text x="150" y="70" font-size="15" fill="#1a7a8a" font-style="italic">BC</text>
+  <text x="215" y="170" font-size="15" fill="#c2455a" font-style="italic" font-weight="bold">AC（合位移）</text>
+  <text x="248" y="222" font-size="12.5" fill="#8a6a72">虚线BC′=平行移动过来的BC</text>
+  <text x="60" y="290" font-size="13.5" fill="#666">AB与BC′为邻边·AC为对角线——位移合成同遵平行四边形定则</text>
+</svg>
+<div class="figcap">图D（重绘自教材图3.4-8）｜把BC平移到始端A：AB、BC′成邻边，合位移AC是它们夹的对角线</div>
+</div>
+<div class="pit"><span class="tag">坑点·"有方向"不等于"是矢量"</span>　电流（I）有方向（正负流向），但相加遵<b>算术法则</b>，是标量；判据只有一条——<span class="note-red">相加时遵不遵平行四边形定则</span>，而不是"有没有方向三个字"。同理，路程（标量）与位移（矢量）这对老对手，差的也正是加法法则。</div>
+<div class="try"><span class="q">验一验④（自编·户口簿速记）：</span><span class="a">矢量：力、位移、速度、加速度（本册前两章主角全到齐）；标量：质量、路程、功、电流（功为什么标量？它由"力×距离"算出按算术加——高中后期你会再遇到它）。</span></div>
+
+<h2><span class="step-tag">节末自测</span>教材p75练习与应用·7题原题全答</h2>
+<div class="try"><span class="q">1.（p75原题）有两个力，一个是10N，一个是2N，它们的合力有可能等于5N、10N、15N吗？合力的最大值是多少？最小值是多少？</span><span class="a">　<span class="ans">参考答案：合力范围|10−2|≤F≤10+2，即8N≤F≤12N。故5N<span class="wrong">不可能</span>（＜8N）、10N<b>可能</b>（如夹角120°时恰为10N）、15N<span class="wrong">不可能</span>（＞12N）；最大值12N（两力同向），最小值8N（两力反向）。</span></span></div>
+<div class="try"><span class="q">2.（p75原题）有两个力，它们的合力为0。现把其中一个向东的6N的力改为向南（大小不变），它们合力的大小、方向如何？</span><span class="a">　<span class="ans">参考答案：原合力为0→另一力与"向东6N"等大反向=6N向西。改为向南后，两力为6N向西与6N向南，夹角90°：F=√(6²+6²)N=6√2N≈8.5N，方向沿两力夹角的对角线——<b>西南方向（西偏南45°）</b>。</span></span></div>
+<div class="try"><span class="q">3.（p75原题）两个力互成30°角，大小分别是90N和120N。通过作图求出合力的大小和方向。如果这两个力的大小不变，两个力之间的夹角变为150°，通过作图求出合力的大小和方向。</span><span class="a">　<span class="ans">参考答案（作图口径）：30°时选标度1cm=20N，对角线量得约10.2cm→<b>约203N</b>，方向与90N力成约<b>17°</b>（偏向120N一侧）；150°时对角线量得约3.1cm→<b>约62N</b>，方向与90N力成约<b>103°</b>（钝角·越过90N力偏向120N对侧）。夹角变大，合力大幅缩水——204N量级跌到62N量级。</span></span></div>
+<div class="try"><span class="q">4.（p75原题）一个竖直向下的180N的力分解为两个分力，一个分力在水平方向上并等于240N（图3.4-9），求另一个分力的大小和方向。</span><span class="a">　<span class="ans">参考答案：180N（竖直向下）=240N（水平）+F₂。F₂=矢量差=√(240²+180²)N=<b>300N</b>；方向：与竖直向下方向夹角β，tanβ=240/180=4/3→β≈<b>53°</b>（即斜向下、与水平方向约成37°，指向与240N分力相反的一侧）。反过来看：240N与300N的"合力"恰好180N竖直向下。</span></span></div>
+<div class="try"><span class="q">5.（p75原题）两个力F₁和F₂之间的夹角为θ，其合力为F。请判断以下说法是否正确，并简述理由。(1)合力F总比力F₁和F₂中的任何一个都大。(2)若力F₁和F₂大小不变，θ角越小，则合力F就越大。(3)若夹角θ不变，力F₁大小不变，F₂增大，则合力F一定增大。</span><span class="a">　<span class="ans">参考答案：(1)<b>错</b>——反例：F₁=F₂=10N、θ=120°，F=10N（等于分力）；θ再大合力可小于分力。(2)<b>对</b>——F²=F₁²+F₂²+2F₁F₂cosθ，θ越小cosθ越大，F越大（θ∈[0°,180°]内单调）。(3)<b>错</b>——反例：F₁=10N、θ=120°，F₂由1N增至5N，合力由约9.5N降至约8.7N（F²=F₁²+F₂²+2F₁F₂cosθ对F₂求导=(F₂+F₁cosθ)/F，cosθ＜0且F₂＜−F₁cosθ时为负）。</span></span></div>
+<div class="try"><span class="q">6.（p75原题）如图3.4-10，倾角为15°的斜面上放着一个木箱，用100N的拉力F斜向上拉着木箱，F与水平方向成45°角。分别以平行于斜面和垂直于斜面的方向为x轴和y轴建立直角坐标系，把F分解为沿着两个坐标轴的分力。试在图中作出分力F<sub>x</sub>和F<sub>y</sub>，并计算它们的大小。</span><span class="a">　<span class="ans">参考答案：F与斜面（x轴）的夹角=45°−15°=30°。F<sub>x</sub>=Fcos30°=100×0.866N≈<b>86.6N</b>（沿斜面向上）；F<sub>y</sub>=Fsin30°=100×0.5N=<b>50N</b>（垂直斜面向上）。作图：过F的箭端向两轴作垂线即可。</span></span></div>
+<div class="try"><span class="q">7.（p75原题）如图3.4-11，把一个物体放在倾角为θ的斜面上，物体受重力G（物体还受到其他力的作用，图中没有画出）。现在需要沿平行于斜面方向和垂直于斜面方向对物体的运动分别进行研究，把重力G沿平行于斜面和垂直于斜面方向分解，求两个分力的大小。</span><span class="a">　<span class="ans">参考答案：把G沿斜面、垂直斜面两方向正交分解：沿斜面向下的分力G<sub>∥</sub>=<b>Gsinθ</b>，垂直斜面（压斜面）的分力G<sub>⊥</sub>=<b>Gcosθ</b>。θ越大"下滑的那份"越大——斜面越陡越滑就是这个式子。（这对分力是第4章斜面动力学问题的常备工具。）</span></span></div>
+
+<h2><span class="step-tag">收口</span>复述三问（答不上就点锚回看）</h2>
+<p><b>① 平行四边形定则的"证据"是什么、"用法"是什么？</b>——证据：橡皮条实验两次拉到同一O点效果相同（<a>第一步实验</a>）；用法：两分力图示为邻边→对角线=合力，反过来对角线定好了、邻边就是分解（<b>图B</b>）。</p>
+<p><b>② 为什么说一个力的分解有无数组、那到底怎么分？</b>——同一条对角线能作无数个平行四边形（第三步）；按<b>实际效果/题目给的条件</b>定方案，如练习6按"沿斜面/垂直斜面"正交分解（<b>图C</b>）。</p>
+<p><b>③ 矢量与标量的唯一判据是什么？</b>——不是"有没有方向"，是<b>相加时遵不遵平行四边形定则</b>：力/位移/速度/加速度遵→矢量；质量/路程/功/电流算术加→标量（<b>第四步</b>）。</p>
+
+<div class="fig">
+<svg viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图G：第三章五节串联（2024印次实锚版）">
+  <defs><marker id="arG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <rect x="10" y="55" width="118" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="69" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">3.1 重力与弹力</text><text x="69" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">G=mg·p57</text>
+  <line x1="128" y1="87" x2="148" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="150" y="55" width="104" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="202" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">3.2 摩擦力</text><text x="202" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">μF_N·p63</text>
+  <line x1="254" y1="87" x2="274" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="276" y="55" width="104" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="328" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">3.3 牛顿第三定律</text><text x="328" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">压力=支持力·p68</text>
+  <line x1="380" y1="87" x2="400" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="402" y="48" width="150" height="78" rx="7" fill="#14202b" stroke="#4a9eff" stroke-width="2"/><text x="477" y="74" font-size="13.5" fill="#cfe4ff" text-anchor="middle" font-weight="bold">本节 3.4 力的合成和分解</text><text x="477" y="96" font-size="12" fill="#9fc3e8" text-anchor="middle">平行四边形定则·p72</text><text x="477" y="114" font-size="12" fill="#9fc3e8" text-anchor="middle">矢量/标量上户口</text>
+  <line x1="552" y1="87" x2="572" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="574" y="55" width="150" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="649" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">3.5 共点力的平衡</text><text x="649" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">合力为0·p76</text>
+</svg>
+<div class="figcap">图G（本节位置图·2024印次实锚版）｜3.1重力与弹力→3.2摩擦力→3.3牛顿第三定律→<b>3.4力的合成和分解（本节）</b>→3.5共点力的平衡：本节把"力的加法"定则化，下一节用它收割"平衡"。</div>
+</div>
+
+<h3>考位锚（T11）·高考怎么考</h3>
+<p class="small">· 考什么：平行四边形/三角形图解法与合力范围 |F₁−F₂|≤F≤F₁+F₂、作图口径vs计算口径、力的分解按效果分（斜面正交分解是全家福）、矢量标量概念判断。<br>· 怎么考：选择题考"合力可能值/夹角变化趋势/矢量标量识别"（教材练习1、5题同款）、作图题考标度-邻边-对角线全流程（例题同款）、实验题考"等效法"思想（橡皮条+小圆环——教材"实验"栏目的直改），后续第4章与牛顿定律组合成大题。<br>· 真题锚：候采——对证源卷源池（v2.8-v2.11）暂未录入 3.4 对口卷源，不代拟；候池内补录后回填。</p>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① <b>三角形法首秀</b>：把F₂平移到F₁箭端，首尾相接，从起点直连终点就是合力——教材图3.4-3丁已经是它的雏形，图D的位移平移就是它的正规演出，下一节平衡问题里它是主力画法。② <b>合力范围的"三段式"</b>：同向最大F₁+F₂、反向最小|F₁−F₂|、垂直时√(F₁²+F₂²)——练习1、3全在这把尺子上。③ <b>例题两口径的根源</b>：图解法精度=标度的最小刻度（1cm=10N时读数误差±1N量级），计算法才谈"精确值"——考卷问"作图求"就别交勾股数，问"计算求"就别交刻度尺。④ <b>为什么"效果相同"能定义合力</b>：这是物理学"等效替代"思想的又一次亮相（2.1实验的小车、3.2的测力计示数都是同族），第4章"合力改变运动状态"将让F真正上岗。
+</div>
+
+<div class="foot">
+<em>素材源溯源（foot区·豁免条款）：影印源＝国家中小学智慧教育平台教材电子版·普通高中教科书·物理必修 第一册（人教版·2024印次）·contentId 708256b6-6f06-4d14-89c7-4df16dfe3b81·ts=1787023183495（1031午后ndrv2/resources详情API实时取·title核对人教正本·与速查表物理行同值批次稳定）·图77-84→印刷页p72-79·偏移N-5·本节影印范围p72-75（3.5节名页p76=图81为节界边界锚·另取图4目录页核五节结构）·影印对照逐页直读（p72页脚"72 高中物理必修第一册"·节名"4 力的合成和分解"/p73页脚"第三章 相互作用——力 73"/p74页脚"74 高中物理必修第一册"/p75页脚"第三章 相互作用——力 75"/p76节名"5 共点力的平衡"）·节界互证：左界p72=3.3交付行右界实锚（dui4_33b_1031·286c2b7）·右界p76=3.5节名页本席图81目检实锚·目录页五节直读=1重力与弹力57/2摩擦力63/3牛顿第三定律68/4力的合成和分解72/5共点力的平衡76（2024印次合并节·本席3.2交付件G图已同步勘误31e77ca）·本件为自学辅导讲义·教材原文引用仅作教学讲解用途·原文以纸质教材为准。</em>
+</div>
+</div>
+</body>
+</html>
