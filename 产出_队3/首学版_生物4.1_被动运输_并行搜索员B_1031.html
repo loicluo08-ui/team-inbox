@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物4.1 被动运输 · 零基础首学版 v1.1（队1线·任务包v3）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  b { color: #f0f3f7; }
+  .talk { background: #1a2230; border-left: 4px solid #c9a227; padding: 14px 18px; border-radius: 6px; margin: 18px 0; font-size: 16px; }
+  .check { background: #12241c; border-left: 4px solid #3fae72; padding: 14px 18px; border-radius: 6px; margin: 18px 0; }
+  .check li { margin: 6px 0 6px 20px; }
+  .box { background: #1a2230; border: 1px solid #3a4a5f; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .box.kao { border-color: #b06030; }
+  .warn { background: #2a1a1a; border-left: 4px solid #d05a5a; padding: 12px 16px; border-radius: 6px; margin: 14px 0; }
+  .key { background: #231a2e; border-left: 4px solid #9a6adf; padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
+  .try { background: #1c2438; border: 1px dashed #4a7adf; padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
+  .fig { margin: 20px 0; text-align: center; }
+  .figcap { font-size: 13px; color: #7d8a99; margin-top: 6px; text-align: left; }
+  .m { background: #0f1420; padding: 10px 14px; border-radius: 6px; font-family: "Cambria Math", serif; margin: 10px 0; overflow-x: auto; }
+  u { text-decoration: underline; text-decoration-color: #c9a227; text-underline-offset: 4px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15px; }
+  th, td { border: 1px solid #3a4a5f; padding: 8px 10px; text-align: left; }
+  th { background: #1a2230; color: #f0f3f7; }
+  .ans { color: #3fae72; font-weight: bold; }
+  .note-red { color: #e8908a; }
+  .small { font-size: 14px; color: #7d8a99; }
+  .tag { display: inline-block; background: #2a3a52; color: #cfe3ff; font-size: 12px; padding: 1px 8px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+  .foot { border-top: 1px solid #2a3342; margin-top: 44px; padding-top: 16px; font-size: 12.5px; color: #66768a; }
+  @media print {
+    body { background: #ffffff !important; color: #222222 !important; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3, b { color: #111111 !important; }
+    .talk, .box, .key, .try, .m, .check, .warn { background: #f5f7fa !important; color: #222 !important; border-color: #99a !important; }
+    .step-tag { background: #dde8f5 !important; color: #123 !important; }
+    .tag { background: #e8edf4 !important; color: #234 !important; }
+    th { background: #e8edf4 !important; color: #111 !important; }
+    .ans { color: #1a7a45 !important; }
+    .note-red { color: #a03028 !important; }
+    svg { background: #ffffff !important; }
+    .figcap, .sub, .small, .foot { color: #555 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>生物4.1 被动运输</h1>
+<div class="sub">人教版《生物学 必修1·分子与细胞》第4章第1节 · 零基础首学版 v1.0 · 队1线（并行搜索员B·任务包v3承办）· 节域p62–68（影印图71–78）</div>
+
+<div class="talk">🧗 <b>开篇钩子</b>：高血压患者吃下的"钙通道阻滞剂"，药效战场不在血管粗细，而在<b>细胞膜上一道道蛋白质闸门</b>——第4章章首诗说得直白："掌控着道道闸门，驱动着各式舟车。输入输出中忙碌，被动主动间选择。"本章第一个角色就是最省力的那条通路：<b>被动运输</b>——水与氧的日常通勤路线。</div>
+
+<div class="check"><span class="tag">读完这节你能</span>
+<ul>
+<li>说出<b>渗透作用</b>发生的两个条件，并用它解释红细胞吸水/失水/形态不变的三种结局；</li>
+<li>解释<b>质壁分离与复原</b>的全过程，说清"原生质层"为什么相当于半透膜；</li>
+<li>区分<b>自由扩散与协助扩散</b>，说出转运蛋白（载体蛋白/通道蛋白）的分工；</li>
+<li>用"浓度梯度大小+转运蛋白数量"两个变量预测被动运输的<b>速率</b>。</li>
+</ul></div>
+
+<div class="warn"><span class="tag">先拆三个误会</span>
+<b>①"水分子都是自由扩散进出细胞的"？</b>——过去人们确实这么认为，后来研究表明：水分子<b>更多的是借助细胞膜上的水通道蛋白以协助扩散方式</b>进出细胞（p67）。<br>
+<b>②"原生质层=细胞质"？</b>——不是。原生质层=<b>细胞膜+液泡膜+这两层膜之间的细胞质</b>（p63），三件套整体才相当于半透膜。<br>
+<b>③"质壁分离就是细胞膜离开细胞壁"？</b>——分离的是<b>原生质层</b>与细胞壁；细胞壁本身全透性、伸缩性小，被"甩下"的是伸缩性大的原生质层（p65）。</div>
+
+<h2><span class="step-tag">第1步</span> 水进出细胞的原理：一场渗透（p62–63）</h2>
+<p>回顾p62"问题探讨"长颈漏斗装置：漏斗口封<b>玻璃纸（半透膜）</b>，内装蔗糖溶液浸入清水——水分子能自由透过、蔗糖分子不能。一段时间后漏斗管内液面升高。<b>水分子（或其他溶剂分子）通过半透膜的扩散，称为渗透作用</b>；若半透膜两侧存在浓度差，渗透的方向就是<b>水从水的相对含量高的一侧向相对含量低的一侧渗透</b>（p62）。</p>
+<p>把半透膜换成细胞膜呢？p63图4-1给出红细胞的三种结局：</p>
+<table>
+<tr><th>外界溶液浓度</th><th>水分子净移动</th><th>红细胞结局</th></tr>
+<tr><td>比细胞质浓度<b>低</b></td><td>净进入</td><td>吸水膨胀（可涨破）</td></tr>
+<tr><td>比细胞质浓度<b>高</b></td><td>净流出</td><td>失水皱缩</td></tr>
+<tr><td>与细胞质浓度<b>相同</b></td><td>进出动态平衡</td><td>形态不变</td></tr>
+</table>
+<div class="box"><span class="tag">思考·讨论五问速答</span>（p63原问）①红细胞内血红蛋白等有机物<b>不能</b>透过细胞膜——它们相当于装置里的<b>蔗糖</b>（被截留的溶质）；②红细胞膜相当于一层<b>半透膜</b>；③浓度低时<b>不一定涨破</b>——有限吸水后可达平衡（还有红细胞本身的缓冲空间）；④吸水或失水取决于<b>外界溶液浓度与细胞质浓度的差</b>；⑤输液用生理盐水，是为了让外界溶液浓度与细胞内环境浓度<b>相当</b>，防止血细胞吸水涨破或失水皱缩（教材只要求"想"这层道理；具体质量分数数值教材未给出，此处不代拟）。</div>
+<p>水进出其他动物细胞的原理与红细胞一样，都是<b>渗透作用</b>（p63）。植物细胞有差别：细胞膜外有<b>细胞壁</b>——对水分子<b>全透性</b>，作用主要是<b>保护和支持</b>，伸缩性比较小。成熟植物细胞的中央液泡占据大部分空间，把细胞质挤成一薄层；细胞内的液体环境主要指<b>液泡里的细胞液</b>。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 300" width="740" height="300">
+<rect width="740" height="300" fill="#0f1420"/>
+<text x="370" y="30" fill="#e8ecf2" font-size="15" text-anchor="middle" font-weight="bold">红细胞的三种结局（图4-1要义复刻）</text>
+<g text-anchor="middle">
+<rect x="35" y="60" width="200" height="150" rx="10" fill="#12203a" stroke="#3a5a8f"/>
+<circle cx="90" cy="120" r="30" fill="#8a2030"/><circle cx="150" cy="110" r="34" fill="#8a2030"/><circle cx="115" cy="165" r="32" fill="#8a2030"/><circle cx="180" cy="160" r="28" fill="#8a2030"/>
+<text x="135" y="235" fill="#7fd4a8" font-size="13">外界浓度低→吸水膨胀</text>
+<rect x="270" y="60" width="200" height="150" rx="10" fill="#2a1a1c" stroke="#8f3a3a"/>
+<path d="M330,110 l12,-14 l12,14 l14,-12 l10,16 l16,-8 l6,16 l14,-4 M330,110 q-4,26 14,40 q16,14 36,6 q22,-6 22,-28 q2,-18 -14,-26 q-18,-10 -36,-2 q-20,6 -22,20 z" fill="#5a1520" stroke="#d07070"/>
+<text x="370" y="235" fill="#e8908a" font-size="13">外界浓度高→失水皱缩</text>
+<rect x="505" y="60" width="200" height="150" rx="10" fill="#1a2430" stroke="#5a7a9f"/>
+<circle cx="585" cy="130" r="34" fill="#8a2030"/><circle cx="645" cy="120" r="32" fill="#8a2030"/><circle cx="615" cy="165" r="30" fill="#8a2030"/>
+<text x="605" y="235" fill="#d8dee6" font-size="13">外界浓度相同→形态不变</text>
+</g>
+<text x="370" y="272" fill="#7d8a99" font-size="12" text-anchor="middle">决定因素：外界溶液浓度 vs 细胞质浓度 的差（图A·aria-label：红细胞在低浓度高浓度等渗溶液中分别吸水膨胀失水皱缩形态不变三联示意）</text>
+</svg><div class="figcap">图A（aria-label：水进出哺乳动物红细胞示意图——外界溶液浓度低于细胞质时吸水膨胀、高于时失水皱缩、相同时形态不变）</div></div>
+
+<h2><span class="step-tag">第2步</span> 植物细胞的吸水和失水：一次完整的探究（p63–65）</h2>
+<p>p63生活现象三连：萎蔫菜叶泡清水变硬挺／白菜剁碎做馅放盐水渗出／施肥过多"烧苗"——植物细胞也会吸水或失水，同样与外界溶液浓度有关。教材以<b>探究·实践</b>带我们走完科学探究全流程：</p>
+<table>
+<tr><th>环节</th><th>教材要点</th></tr>
+<tr><td>提出问题</td><td>水分进出植物细胞是通过渗透作用吗？原生质层是否相当于一层半透膜？</td></tr>
+<tr><td>作出假设</td><td>假设是对问题的尝试性回答，<b>不是凭空猜测</b>，要根据已有知识和经验合理推断</td></tr>
+<tr><td>设计思路</td><td>外界溶液浓度高于细胞液浓度→细胞失水；低于→细胞吸水；如何提高/降低外界浓度？如何看到细胞？预测可观察变化</td></tr>
+<tr><td>参考案例</td><td><b>紫色洋葱鳞片叶外表皮</b>（有紫色大液泡好观察）+显微镜；<b>0.3 g/mL蔗糖溶液</b>与清水；盖玻片一侧滴液、另一侧吸水纸<b>引流</b>，重复几次</td></tr>
+<tr><td>记录</td><td>观察三个指标：中央液泡大小／原生质层位置／细胞大小（蔗糖溶液vs清水两行对照）</td></tr>
+<tr><td>结论</td><td>植物细胞的<b>原生质层相当于一层半透膜</b>，植物细胞也是通过渗透作用吸水和失水的</td></tr>
+</table>
+<div class="box"><span class="tag">核心机制</span>（p65原意）细胞液浓度<b>小于</b>外界溶液浓度时，细胞液中的水透过原生质层进入外界溶液，细胞壁和原生质层都出现一定程度收缩；由于<b>原生质层比细胞壁的伸缩性大</b>，不断失水时原生质层就会与细胞壁逐渐分离开来——<b>质壁分离</b>。细胞液浓度<b>大于</b>外界溶液浓度时，外界溶液中的水透过原生质层进入细胞液，整个原生质层慢慢恢复原来的状态——<b>质壁分离的复原</b>（图4-3：左图刚开始分离、右图已明显分离，放大200倍）。</div>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 260" width="740" height="260">
+<rect width="740" height="260" fill="#0f1420"/>
+<text x="370" y="28" fill="#e8ecf2" font-size="15" text-anchor="middle" font-weight="bold">原生质层＝细胞膜＋液泡膜＋两层膜之间的细胞质（图4-2要义）</text>
+<g>
+<path d="M120,60 Q370,30 620,60 L620,200 Q370,230 120,200 Z" fill="#1c3a24" stroke="#7fd4a8" stroke-width="3"/>
+<path d="M150,75 Q370,52 590,75 L590,190 Q370,212 150,190 Z" fill="none" stroke="#4a9eff" stroke-width="2" stroke-dasharray="6 3"/>
+<ellipse cx="370" cy="132" rx="150" ry="58" fill="#2a1a3e" stroke="#9a6adf" stroke-width="2.5"/>
+<text x="370" y="138" fill="#c9a2e8" font-size="14" text-anchor="middle">中央液泡（细胞液）</text>
+<text x="370" y="48" fill="#7fd4a8" font-size="12" text-anchor="middle">细胞壁（全透性·伸缩性小）</text>
+<text x="150" y="70" fill="#4a9eff" font-size="12">细胞膜</text>
+<text x="560" y="205" fill="#4a9eff" font-size="12" text-anchor="end">液泡膜</text>
+<text x="215" y="165" fill="#d8dee6" font-size="11">细胞质</text>
+<line x1="90" y1="255" x2="650" y2="255" stroke="#c9a227" stroke-width="2"/>
+<text x="370" y="250" fill="#c9a227" font-size="12" text-anchor="middle">细胞膜＋细胞质＋液泡膜 ＝ 原生质层（相当于半透膜）</text>
+</g>
+</svg><div class="figcap">图B（aria-label：成熟植物细胞模式图——细胞壁全透性，细胞膜液泡膜与两层膜之间的细胞质合称原生质层相当于半透膜）</div></div>
+
+<h2><span class="step-tag">第3步</span> 被动运输两大类：自由扩散 vs 协助扩散（p65–67）</h2>
+<div class="key"><span class="tag">定义（教材黑体）</span> 像<b>水分子</b>这样，<b>物质以扩散方式进出细胞，不需要消耗细胞内化学反应所释放的能量</b>，这种物质跨膜运输方式称为<b>被动运输（passive transport）</b>。被动运输又分为<b>自由扩散</b>和<b>协助扩散</b>两类。</div>
+<p><b>自由扩散（free diffusion，也叫简单扩散 simple diffusion）</b>：物质通过<b>简单的扩散作用</b>进出细胞的方式。教材实例——O₂和CO₂很容易自由通过磷脂双分子层：肺泡内O₂浓度＞肺泡细胞内部→O₂扩散进入；细胞内呼吸作用使CO₂浓度升高→CO₂扩散排出进入细胞外液。<b>甘油、乙醇、苯等脂溶性的小分子有机物</b>也较易通过自由扩散进出细胞（p66）。</p>
+<p><b>协助扩散（facilitated diffusion，也叫易化扩散）</b>：离子和一些小分子有机物如<b>葡萄糖、氨基酸</b>等不能自由通过细胞膜，<b>借助膜上的转运蛋白</b>顺浓度梯度跨膜运输——这种借助膜上的转运蛋白进出细胞的物质扩散方式叫协助扩散（p66）。</p>
+<table>
+<tr><th>项目</th><th>自由扩散</th><th>协助扩散</th></tr>
+<tr><td>是否需要转运蛋白</td><td>不需要</td><td>需要（载体蛋白或通道蛋白）</td></tr>
+<tr><td>方向</td><td colspan="2">都是<b>顺浓度梯度</b>（高→低）</td></tr>
+<tr><td>是否耗能</td><td colspan="2">都<b>不消耗</b>细胞内化学反应释放的能量</td></tr>
+<tr><td>典型物质</td><td>O₂、CO₂、水（少量）、甘油、乙醇、苯</td><td>葡萄糖、氨基酸进出部分细胞；水（主要通过水通道蛋白）</td></tr>
+<tr><td>速率影响因素</td><td>膜内外浓度梯度大小</td><td>浓度梯度＋<b>转运蛋白的数量</b></td></tr>
+</table>
+<div class="box"><span class="tag">转运蛋白两兄弟</span>（p66–67）<b>载体蛋白</b>：只容许与自身<b>结合部位相适应</b>的分子或离子通过，而且<b>每次转运时都会发生自身构象的改变</b>；<b>通道蛋白</b>：只容许与自身<b>通道的直径和形状相适配、大小和电荷相适宜</b>的分子或离子通过，分子或离子通过通道蛋白时<b>不需要与通道蛋白结合</b>（图4-5钾离子通道模式图）。水通道蛋白也属通道蛋白——人类细胞中已发现13种（肾小球滤过、肾小管重吸收都靠它），拟南芥细胞中已发现35种（p68）。</div>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 240" width="740" height="240">
+<rect width="740" height="240" fill="#0f1420"/>
+<text x="370" y="26" fill="#e8ecf2" font-size="15" text-anchor="middle" font-weight="bold">自由扩散与协助扩散（图4-4要义复刻）</text>
+<rect x="40" y="90" width="660" height="70" fill="#1a2a4a" stroke="#4a7adf"/>
+<circle cx="60" cy="92" r="7" fill="#4a7adf"/><circle cx="680" cy="92" r="7" fill="#4a7adf"/><circle cx="370" cy="92" r="7" fill="#4a7adf"/><circle cx="200" cy="92" r="7" fill="#4a7adf"/><circle cx="540" cy="92" r="7" fill="#4a7adf"/>
+<circle cx="60" cy="158" r="7" fill="#4a7adf"/><circle cx="680" cy="158" r="7" fill="#4a7adf"/><circle cx="370" cy="158" r="7" fill="#4a7adf"/><circle cx="200" cy="158" r="7" fill="#4a7adf"/><circle cx="540" cy="158" r="7" fill="#4a7adf"/>
+<g text-anchor="middle">
+<circle cx="120" cy="62" r="8" fill="#9a5adf"/><line x1="120" y1="74" x2="120" y2="176" stroke="#9a5adf" stroke-width="4" marker-end="url(#ab1)"/>
+<text x="120" y="205" fill="#9a5adf" font-size="12">自由扩散</text>
+<path d="M330,158 q0,-40 0,-56 q-14,-2 -14,-10 q0,-8 14,-8 q14,0 14,8 q0,8 -14,10 q0,16 0,56 z" fill="#2a6a5a" stroke="#3fae72"/>
+<text x="330" y="205" fill="#3fae72" font-size="12">协助扩散·载体蛋白（构象改变）</text>
+<rect x="520" y="92" width="26" height="66" rx="13" fill="#2a6a5a" stroke="#3fae72"/>
+<circle cx="533" cy="62" r="8" fill="#df8a3a"/><circle cx="533" cy="178" r="8" fill="#df8a3a"/>
+<line x1="533" y1="74" x2="533" y2="164" stroke="#df8a3a" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#ab1)"/>
+<text x="560" y="205" fill="#3fae72" font-size="12">协助扩散·通道蛋白（不结合）</text>
+</g>
+<text x="30" y="82" fill="#7d8a99" font-size="11">细胞外</text><text x="30" y="172" fill="#7d8a99" font-size="11">细胞内</text>
+<defs><marker id="ab1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#c9a227"/></marker></defs>
+<text x="370" y="230" fill="#7d8a99" font-size="11" text-anchor="middle">共同点：顺浓度梯度·不耗能（图C·aria-label：磷脂双分子层上自由扩散直接穿膜，协助扩散经载体蛋白构象改变或通道蛋白不结合转运）</text>
+</svg><div class="figcap">图C（aria-label：自由扩散和协助扩散示意图——物质顺浓度梯度，载体蛋白结合后构象改变，通道蛋白形成孔道不需结合）</div></div>
+<div class="box"><span class="tag">速率法则</span>（p67）自由扩散与协助扩散都是<b>顺浓度梯度</b>进行跨膜运输，不消耗细胞内化学反应产生的能量——因此<b>膜内外物质浓度梯度的大小</b>会直接影响物质运输的速率；但协助扩散需要转运蛋白，因而<b>某些物质运输的速率还与转运蛋白的数量</b>有关。</div>
+
+<h2><span class="step-tag">收口</span> 一张表带走本节（p62–68）</h2>
+<p>渗透作用=水的扩散（条件：半透膜+浓度差）→红细胞三结局（图4-1）→植物细胞原生质层=半透膜（质壁分离/复原，原生质层伸缩性＞细胞壁）→被动运输定义（扩散方式·不耗能）→两类：自由扩散（O₂/CO₂/甘油乙醇苯）vs协助扩散（转运蛋白=载体构象改变/通道不结合；水走水通道蛋白）→速率=浓度梯度（+转运蛋白数量）。</p>
+<div class="box kao"><span class="tag">考位锚</span> <b>高考考向一①质壁分离实验探究题</b>——教材探究实践全流程（0.3 g/mL蔗糖+洋葱鳞片叶外表皮+引流法）是实验大题母版：考假设表述、预测"蔗糖→分离／清水→复原"双向结果、延伸"测细胞液等渗浓度"的梯度设计（p67拓展应用1）；注意死细胞不发生质壁分离、甘油/K⁺等可被吸收的物质会"自动复原"（p67概念检测2、3）。<b>高考考向二②三种运输方式的判断与曲线题</b>——给物质+条件判运输方式：O₂/CO₂/甘油=自由扩散；葡萄糖进红细胞=协助扩散；水=主要走水通道蛋白（p67概念检测1(2)即考点）；速率曲线题抓两个变量（浓度梯度×蛋白数量），通道蛋白"不结合不耗能"与载体蛋白"结合+构象改变"是设错点。</div>
+<div class="figure">
+<svg viewBox="0 0 640 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="位置图：第四章《细胞的物质输入和输出》两节谱系，当前在4.1被动运输">
+<rect x="8" y="20" width="130" height="44" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>
+<text x="18" y="38" font-size="13" fill="#1a2332">第四章章题页</text>
+<text x="18" y="56" font-size="11" fill="#5a6b7d">p61 物质的输入和输出</text>
+<line x1="138" y1="42" x2="152" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<rect x="156" y="16" width="150" height="52" rx="8" fill="#fff3cd" stroke="#c0392b"/>
+<text x="166" y="38" font-size="13" fill="#8a5a00" font-weight="bold">4.1 被动运输（你在）</text>
+<text x="166" y="58" font-size="11" fill="#a08520">p62–68 · 渗透与质壁分离</text>
+<line x1="306" y1="42" x2="320" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<rect x="324" y="20" width="172" height="44" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>
+<text x="334" y="38" font-size="13" fill="#1a2332">4.2 主动运输与胞吞、胞吐</text>
+<text x="334" y="56" font-size="11" fill="#5a6b7d">p69–72 · 逆梯度+耗能</text>
+<line x1="496" y1="42" x2="510" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<rect x="514" y="20" width="118" height="44" rx="8" fill="#f0f0f0" stroke="#b8b8b8"/>
+<text x="524" y="38" font-size="13" fill="#5a6b7d">本章小结</text>
+<text x="524" y="56" font-size="11" fill="#9a9a9a">p73 → 第五章p75起</text>
+</svg>
+<p class="figcap">位置图：4.1《被动运输》是第四章第一节（承第三章细胞结构，启4.2主动运输与胞吞胞吐）；节界p62–68，p69=4.2节名页（影印实锚）。</p>
+</div>
+<div class="try"><span class="tag">试一试</span> 不翻教材回答：①渗透作用两个条件是什么？②质壁分离为什么能自动复原？③通道蛋白和载体蛋白最核心的区别是什么？（答完对照p62/p65/p67——①半透膜+浓度差；②外界清水浓度低于细胞液，水经渗透回流，原生质层恢复原状；③通道不结合、按直径形状电荷筛，载体结合且每次转运构象改变。）</div>
+
+<h3>练习与应用要点（p67–68）</h3>
+<div class="box"><span class="tag">练习要点</span> 概念检测1判断：(1)细胞膜和液泡膜都相当于半透膜<span class="ans">（√）</span>；(2)水分子进入细胞都是自由扩散<span class="ans">（×·主要通过水通道蛋白协助扩散）</span>；(3)载体蛋白与通道蛋白作用机制一样<span class="ans">（×·结合+构象改变 vs 不结合孔道）</span>。2.无法通过质壁分离实验证明的是<span class="ans">D</span>（水分子经通道蛋白进入细胞——质壁分离只能证明渗透与伸缩性差异，A死活/B伸缩性/C渗透吸水均可证）；3.甲放蔗糖溶液、乙放甘油溶液（浓度均高于细胞液）：<span class="ans">B</span>——两细胞都先发生质壁分离，但甘油以自由扩散缓慢进入细胞液，乙细胞随后自动复原。拓展应用1思路：配制<b>梯度浓度</b>蔗糖溶液系列分别处理外表皮装片，恰好不发生质壁分离（或刚发生）的浓度即细胞液等渗浓度附近值；2思路：控温度变量观察扩散速率（如染色剂经半透膜扩散或植物质壁分离时间差），提假设+对照实验。</div>
+<div class="key"><span class="tag">本节金句</span> <b>被动运输=顺浓度梯度+不耗能；水走水通道，脂溶自由穿，葡萄糖要搭"蛋白车"；质壁分离看的不是膜，是伸缩性的差距。</b></div>
+<p class="small" style="margin-top:26px">➡ 下一站 4.2《主动运输与胞吞、胞吐》（p69起）：甲状腺滤泡上皮细胞内碘浓度比血液高<b>20~25倍</b>——逆水行舟式运输登场，能量账单开始走起。</p>
+
+<div class="foot">
+  <p>本件为教材（人教版《生物学 必修1》第4章第1节·p62–68）零基础首学版学习笔记。节界实锚：4.1节名页=印刷页62=影印图71（亲读实锚·节题"第1节 被动运输"+问题探讨渗透装置）；右界=4.2节名页=印刷页69=影印图78（亲读实锚·节题"第2节 主动运输与胞吞、胞吐"）；节域p62–68共7页闭合（p67练习与应用+p68生物科学史话入域）。影印偏移=印刷页=图N−9（p60=图69/p62=图71/p69=图78三页互证·与A席3.3定标吻合）；contentId=9d522562·ts=1787291655029（19:39实时复核200✓）。事实点均影印直读并附页码；四附件（影印对照7页/事实点自验/条款自检T1-T12/通读卡点）+三条差距+QC单+print七查PDF+数字自洽py/log随commit同链（sympy不适用于本节定量内容·数字自洽校验代之·如实申报）。队1线·任务包v3承办·硬闸22:41·候验禁直推main。</p>
+</div>
+</div>
+</body>
+</html>
