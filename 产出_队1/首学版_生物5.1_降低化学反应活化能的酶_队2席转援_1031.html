@@ -7,7 +7,6 @@
 body{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:16px 20px;line-height:1.75;color:#222}
 h1{font-size:1.45em;border-bottom:3px solid #2e7d32;padding-bottom:8px}
 .station{border:2px solid #2e7d32;border-radius:12px;padding:14px 18px;margin:18px 0;background:#f6faf6}
-.station-title{font-size:1.18em;font-weight:bold;color:#1b5e20;margin-bottom:8px}
 .check{background:#eef7ee;border:1.5px dashed #388e3c;border-radius:10px;padding:10px 14px;margin:14px 0}
 .try{background:#fff8e1;border:1.5px solid #f9a825;border-radius:10px;padding:10px 14px;margin:12px 0}
 .alt{background:#e8eef7;border:1.5px solid #5c6bc0;border-radius:10px;padding:9px 13px;margin:10px 0;font-size:0.95em}
@@ -29,6 +28,10 @@ td,th{border:1.2px solid #666;padding:5px 10px;text-align:center}
 @media print{.station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;color:#000!important}
 .note-red{background:#fff!important;border-left:3px solid #333!important}.no-print{display:none}
 body{max-width:100%;padding:0;font-size:10.5pt}h1{font-size:14pt}}
+<!-- v15.3第一波重排·黄金样板step-tag落位(并行搜索员B) -->
+.step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle}
+h2{font-size:1.28em;color:#1b5e20;border-left:4px solid #2e7d32;padding-left:10px;margin-top:2em;margin-bottom:10px}
+@media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}.mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -42,10 +45,10 @@ body{max-width:100%;padding:0;font-size:10.5pt}h1{font-size:14pt}}
 <li>看到温度/pH曲线图能读出最适值，并解释为什么酶制剂要低温保存（第四站）</li>
 </ol></div>
 
-<div class="station"><div class="station-title">出发前清点行囊</div>
+<div class="station"><h2><span class="step-tag">预备</span>出发前清点行囊</h2>
 <p class="detail">上一章（第4章）你学会了物质怎么进出细胞；本章回答一个更带劲的问题：<mark>细胞怎么从外界获取能量、又怎么把能量用起来</mark>。这一站你先认识一位"全能加速员"——酶（enzyme），下一节它会变成"能量货币"ATP 的左右手。带着课本 p76 那幅画：斯帕兰札尼把肉块塞进金属笼让鹰吞下去——肉块消失了，鹰没事。这就是我们出发的谜题。</p></div>
 
-<div class="station"><div class="station-title">第一站 · 细胞代谢为什么离不开酶——活化能</div>
+<div class="station"><h2><span class="step-tag">第一步</span>细胞代谢为什么离不开酶——活化能</h2>
 <p class="detail"><b>细胞代谢</b>＝细胞中每时每刻进行的许多化学反应的总称（教材p76）。这些反应有的会产生"危险品"，比如过氧化氢（H₂O₂，具有腐蚀性），幸好细胞里有<b>过氧化氢酶</b>能及时把它分解成氧气和水。</p>
 <p class="detail"><b>活化能</b>（activation energy，教材p78）＝<mark>分子从常态转变为容易发生化学反应的活跃状态所需要的能量</mark>。加热能促进过氧化氢分解，就是因为加热给了分子这份能量。</p>
 <p class="detail">而 Fe³⁺ 和过氧化氢酶呢？它们<mark>没有给分子提供能量，而是降低了反应的活化能</mark>——山还是那座山，但它们帮你挖了条隧道（教材p78比喻：加热＝加大油门，催化剂＝找到穿山隧道）。</p>
@@ -66,7 +69,7 @@ body{max-width:100%;padding:0;font-size:10.5pt}h1{font-size:14pt}}
 <p class="detail"><b>结论（教材p78）</b>：与无机催化剂相比，<mark>酶降低活化能的作用更显著，催化效率更高</mark>。正是由于酶的催化作用，细胞代谢才能在温和条件下快速有序地进行。</p>
 <div class="alt">💡 读不懂"活化能"？三步走：①常态分子要反应，得先"翻过一座能量山"；②翻山要的力气＝活化能；③酶不替你翻山，它把山挖矮——穿山隧道比喻（教材p78原比喻）。</div></div>
 
-<div class="station"><div class="station-title">第二站 · 四管实验：酶的作用是怎么被证明的</div>
+<div class="station"><h2><span class="step-tag">第二步</span>四管实验：酶的作用是怎么被证明的</h2>
 <p class="detail">教材p77"探究·实践"《比较过氧化氢在不同条件下的分解》。先记一组数字：<mark>每滴质量分数3.5%的FeCl₃溶液中Fe³⁺数，约是每滴质量分数20%肝脏研磨液中过氧化氢酶分子数的25万倍</mark>——这是后面比较"效率"的底气。</p>
 <table><tr><th>试管</th><th>处理</th><th>变量身份</th></tr>
 <tr><td>1号</td><td>2 mL 3%过氧化氢溶液，不做处理</td><td><b>对照组</b>（空白对照）</td></tr>
@@ -80,7 +83,7 @@ body{max-width:100%;padding:0;font-size:10.5pt}h1{font-size:14pt}}
 <p class="detail"><span class="ans">答（自编）：</span>两管卫生香都会复燃（O₂放出），4号燃烧更猛烈（气泡更多更快）——"复燃"是O₂产生的证据，"猛烈程度"是速率的半定量证据。</p>
 <div class="note-red">⚠️ 易错：酶和无机催化剂<b>都不为反应物提供能量</b>，它们只是降低活化能（教材p78原句"没有给过氧化氢分子提供能量"）——选"能为反应物提供能量"直接掉坑（教材p80概念检测2A项）。</div></div>
 
-<div class="station"><div class="station-title">第三站 · 酶是什么——两百年探索史</div>
+<div class="station"><h2><span class="step-tag">第三步</span>酶是什么——两百年探索史</h2>
 <p class="detail">教材p79-80"思考·讨论"《关于酶本质的探索》，一条时间线背下来：</p>
 <table><tr><th>时间</th><th>人物</th><th>观点/贡献</th></tr>
 <tr><td>4000多年前</td><td>我国夏禹时代</td><td>已掌握酿酒技术；1716年《康熙字典》收"酶"字，释为"酒母也"</td></tr>
@@ -95,7 +98,7 @@ body{max-width:100%;padding:0;font-size:10.5pt}h1{font-size:14pt}}
 <div class="alt">💡 记不住六位科学家？抓三条主线：①"活细胞之争"（巴斯德vs李比希）；②"分离之路"（毕希纳粗提取→萨姆纳纯结晶，历时9年）；③"本质修正"（绝大多数蛋白质＋少数RNA）。</div>
 <p class="detail">教材p80引马克思："在科学上没有平坦的大道，只有不畏劳苦沿着陡峭山路攀登的人，才有希望达到光辉的顶点。"——萨姆纳9年磨一剑就是注脚。</p></div>
 
-<div class="station"><div class="station-title">第四站 · 酶的三大特性</div>
+<div class="station"><h2><span class="step-tag">第四步</span>酶的三大特性</h2>
 <p class="detail"><b>①高效性（教材p81）</b>：酶的催化效率是无机催化剂的<mark>10⁷～10¹³倍</mark>。设想你在冲刺，肌细胞供能反应若慢悠悠，你根本跑不快。目前已发现的酶有8000多种（教材p81"相关信息"）。</p>
 <p class="detail"><b>②专一性（教材p82）</b>：过氧化氢酶只能催化过氧化氢分解；脲酶只催化尿素分解；<mark>每一种酶只能催化一种或一类化学反应</mark>。教材p81"探究·实践"用淀粉酶同时面对淀粉和蔗糖：淀粉液加斐林试剂水浴后出现砖红色沉淀（水解出还原糖），蔗糖液不出现——证明专一。</p>
 <p class="detail"><b>③作用条件较温和（教材p84）</b>：<mark>酶所催化的化学反应一般是在比较温和的条件下进行的</mark>。科学家定量测定不同温度/pH下同一种酶的活性绘成曲线（图5-2、图5-3）：<mark>在最适宜的温度和pH条件下酶活性最高，偏高偏低都明显降低</mark>。过酸、过碱或温度过高会破坏酶的空间结构，<mark>永久失活</mark>；0℃左右活性很低但空间结构稳定，适宜温度下可恢复——所以<b>酶制剂适宜低温保存</b>。</p>
@@ -116,7 +119,7 @@ body{max-width:100%;padding:0;font-size:10.5pt}h1{font-size:14pt}}
 <p class="detail"><b>区室分工（教材p84）</b>：与光合作用有关的酶分布在叶绿体内，与呼吸作用有关的酶分布在细胞质基质和线粒体内——不同区室同时进行、互不干扰。这为第5章后面的呼吸与光合埋下伏笔。</p>
 <div class="note-red">⚠️ 易错：低温是<b>抑制</b>（结构稳定可恢复），高温/过酸/过碱是<b>破坏</b>（空间结构损毁永久失活）——"低温保存"≠"低温永远失活"（教材p84原句）。</div></div>
 
-<div class="station"><div class="station-title">收口 · 三句话带走这一节</div>
+<div class="station"><h2><span class="step-tag">收口</span>三句话带走这一节</h2>
 <p class="detail">①酶通过<mark>降低活化能</mark>高效催化反应——不供能、只"挖隧道"；②酶是<mark>活细胞产生的具有催化作用的有机物</mark>，绝大多数是蛋白质、少数是RNA——两百年探索史就是"活细胞→物质→蛋白质→RNA"的修正链；③酶有<mark>高效性、专一性、作用条件较温和</mark>三大特性，温度pH曲线的峰＝最适值。</p>
 <div class="selftest"><b>自测四连</b>（先动笔再对答案；来源逐题标注）
 <ol style="margin:4px 0 2px 1.3em">
