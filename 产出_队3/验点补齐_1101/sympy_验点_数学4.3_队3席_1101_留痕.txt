@@ -1,0 +1,6 @@
+PASS log1p11_2_664
+PASS log2_8_eq_3
+PASS lg100_eq_2
+PASS log_a_1_eq_0
+PASS 换底公式
+5/5 ALL PASS

@@ -1,0 +1,6 @@
+PASS p85_2a_even
+PASS p85_2b_odd
+PASS domain_-3_2_不对称
+PASS odd_f0_0
+PASS x加1_非奇非偶
+5/5 ALL PASS
