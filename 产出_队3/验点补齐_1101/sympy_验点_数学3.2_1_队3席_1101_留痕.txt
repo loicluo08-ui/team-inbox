@@ -1,0 +1,6 @@
+PASS vertex_t_1_5
+PASS vertex_h_29
+PASS 单调性_斜率判据
+PASS f_x2_min_0
+PASS 1x导数
+5/5 ALL PASS

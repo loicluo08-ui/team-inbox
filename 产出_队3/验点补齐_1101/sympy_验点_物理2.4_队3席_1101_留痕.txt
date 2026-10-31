@@ -1,0 +1,6 @@
+PASS h_1s_4_9
+PASS h_2s_19_6
+PASS v_2s_19_6
+PASS v_sqrt_2gh自洽
+PASS g10口径_h2s_20
+5/5 ALL PASS
