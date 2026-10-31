@@ -1,0 +1,9 @@
+[PASS] 查1 页数合理(4≤n≤30) pages=4
+[PASS] 查2 标题在文 
+[PASS] 查3 方程式/数值抽检(30.54·A—P~P~P) 
+[PASS] 查4 SVG结构在位(aria-label全配·weasyprint渲染4页) 
+[PASS] 查5 自编标注显式 
+[PASS] 查6 黑名单0 
+[PASS] 查7 页码锚在文(p86-p89) 
+pages=4 bytes=189914
+总判: PASS
