@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理2.3 匀变速直线运动的位移与时间的关系 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #1a2416; border-left: 3px solid #6cbf4a; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .try .q { color: #9fd481; font-weight: bold; }
+  .try .a { color: #8a949f; font-size: 15px; margin-top: 6px; }
+  .pit { background: #2a1a1a; border-left: 3px solid #e05252; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .pit .tag { color: #ff7b72; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #2b5277; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .key b { color: #4a9eff; }
+  .m { font-family: "Times New Roman", Georgia, serif; font-style: italic; color: #ffd48a; }
+  .big { font-size: 21px; text-align: center; margin: 18px 0; color: #fff; }
+  .detail { color: #7d8a99; font-size: 15px; border-top: 1px dashed #2a3140; margin-top: 10px; padding-top: 10px; }
+  .small { color: #8a949f; font-size: 14px; }
+  .wrong { color: #ff7b72; }
+  .fig { margin: 18px 0; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  .check { background: #16211a; border: 1px solid #2d5a3d; border-radius: 8px; padding: 16px 20px; margin: 18px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; font-size: 14px; }
+  .check p { margin: 8px 0; }
+  .alt { background: #1f1b24; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .ans { color: #58d68d; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; color: #eef2f7; font-size: 16px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a323e; padding: 9px 12px; text-align: left; }
+  th { background: #1b2029; color: #fff; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  b { color: #f0f3f7; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 14px; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    p, .talk, .key, .pit, .detail, .figcap { color: #222; }
+    .sub, .small, .foot { color: #444; }
+    .try .q { color: #1e5c1e; } .try .a { color: #333; }
+    .pit .tag { color: #c0392b; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong, .note-red { color: #c0392b; }
+    em { color: #1a5c99; }
+    mark.nb, .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { background: #f0f0f0; color: #111; }
+    th, td { border-color: #bbb; }
+    .box { color: #222; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>匀变速直线运动：不但问"变多快"，还要算"走多远"——x = v₀t + ½at²</h1>
+<div class="sub">物理2.3 · "匀变速直线运动的研究"模块第三件（第二章 第3节）· 前面已学：2.2 匀变速直线运动的速度与时间的关系（v = v₀ + at）、2.1 探究小车v-t图像实验、1.4 加速度、1.3 速度、1.2 位移与坐标系 · 零基础首学版 v1.0 · 前置：1.2＋1.3＋1.4＋2.1＋2.2＋会梯形面积 · 预计45分钟</div>
+
+<h2><span class="step-tag">开场</span>上节算清了"变多快"，这节算"走多远"</h2>
+<p>2.2节你已经有了一个能回答"任意时刻速度是多少"的公式（v = v₀ + at）。但坐车时你更常听到的问题是另一句："<b>这一脚油门踩下去，车冲出去了多远？</b>"——求位移。匀速运动好办：x = vt，而且教材p42问题框提醒过一件妙事：<b>匀速运动的位移x，正好对应v-t图像里着色矩形的面积</b>（底×高 = t×v）。教材接着问：<b>那么，做匀变速直线运动的物体，在时间t内的位移与时间会有怎样的关系？</b>——这一节就回答它：从"矩形面积"升级到"梯形面积"，长出两个新公式（x = v₀t + ½at² 和 v² − v₀² = 2ax），再亲眼看着第一个公式被"切矩形"切出来。</p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 说出<b>匀变速直线运动的位移 = v-t图像里梯形的面积</b>，并写出 x = ½(v₀ + v)t；<br>
+② 会用 <b>x = v₀t + ½at²</b> 求位移（v₀ = 0 时化简成 x = ½at²），知道每一项的几何含义；<br>
+③ 会推并会用"<b>不涉及时间</b>"的公式 <b>v² − v₀² = 2ax</b>；<br>
+④ 像教材例题一样<b>先建一维坐标系再动笔</b>，处理匀减速问题里的负号；<br>
+⑤ 说出教材"拓展学习"里<b>"分割—近似—求和"</b>的思路，明白 x = v₀t + ½at² 是怎么来的。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒立好地基（已会的跳过）</h2>
+<div class="talk">
+<p>本节只借四个旧工具：① 1.3的<b>v-t图像读图</b>——横轴t、纵轴v，"高度＝快慢，趋势＝加速减速"；② <b>匀速位移＝矩形面积</b>——x = vt，上节问题框已见过；③ 小学数学的<b>梯形面积</b>——（上底＋下底）×高÷2；④ 1.2的<b>正方向约定</b>＋2.2的<b>v = v₀ + at</b>（含"负号＝方向与正方向相反"）。够了。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>匀变速直线运动的位移——梯形面积里长出公式</h2>
+<p>教材p42原文开门见山：做匀速直线运动物体的位移可以通过它的v-t图像求解，这个方法对分析匀变速直线运动的位移问题有很好的启示。<b>图2.3-1是某物体做匀变速直线运动的v-t图像，初速度为v₀，加速度为a。做匀变速直线运动的物体，其位移大小可以用v-t图像中着色部分的梯形面积来表示（证明见本节"拓展学习"栏目）。</b></p>
+<div class="key">
+<b>先算梯形（教材p42）：</b>根据图中着色梯形各线段所代表的物理含义以及梯形的面积公式，可以求得位移
+<div class="big"><span class="m">x = ½(v₀ + v)t</span></div>
+<b>再把 v = v₀ + at 代入上式，有</b>
+<div class="big"><mark class="nb">x = v₀t + ½at²</mark></div>
+<span class="ul-blue">这就是匀变速直线运动的位移与时间的关系式。</span>如果初速度为0，这个公式可以简化为 <span class="m">x = ½at²</span>。
+<div class="detail">教材脚注①照录：开始时（0时刻）物体位于坐标原点，所以在t时刻位移的大小等于该时刻物体的位置坐标x。如果计时开始时物体位于坐标为x₀的位置，那么在t时刻位移的大小就是x − x₀，上面的公式就应该写为 x − x₀ = v₀t + ½at²。</div>
+</div>
+<div class="fig">
+<svg viewBox="0 0 700 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2.3-1重绘 梯形面积求位移并拆成矩形加三角形">
+  <defs><marker id="arA" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker></defs>
+  <polygon points="70,260 520,120 520,360 70,360" fill="#f0e0c0" opacity="0.9"/>
+  <polygon points="70,260 520,120 520,260" fill="#f7d9a8" opacity="0.9"/>
+  <line x1="70" y1="360" x2="630" y2="360" stroke="#555555" stroke-width="1.6" marker-end="url(#arA)"/>
+  <line x1="70" y1="360" x2="70" y2="55" stroke="#555555" stroke-width="1.6" marker-end="url(#arA)"/>
+  <line x1="70" y1="260" x2="520" y2="120" stroke="#c05a6a" stroke-width="2.4"/>
+  <line x1="520" y1="120" x2="520" y2="360" stroke="#777777" stroke-width="1.3" stroke-dasharray="6,5"/>
+  <line x1="70" y1="260" x2="520" y2="260" stroke="#777777" stroke-width="1.3" stroke-dasharray="6,5"/>
+  <text x="34" y="266" font-size="17" fill="#333">v₀</text>
+  <text x="530" y="122" font-size="17" fill="#333">v</text>
+  <text x="516" y="384" font-size="17" fill="#333">t</text>
+  <text x="46" y="382" font-size="15" fill="#555">O</text>
+  <text x="76" y="44" font-size="14" fill="#555">v/(m·s⁻¹)</text>
+  <text x="616" y="380" font-size="14" fill="#555">t/s</text>
+  <text x="180" y="322" font-size="15" fill="#7a5c22">矩形：假想匀速部分的位移 = v₀t</text>
+  <text x="200" y="196" font-size="15" fill="#8a5a10">三角形：加速"多跑"的位移 = ½·at²</text>
+</svg>
+<div class="figcap">图A（重绘自教材图2.3-1）｜这张图在说什么：位移＝着色梯形面积。沿虚线把它拆成两层——<b>下面的矩形</b>（v₀t：假设一直匀速）＋<b>上面的三角形</b>（½at²：因为匀加速多跑出来的部分）。两项相加，正是 x = v₀t + ½at²。</div>
+</div>
+<p>这样拆开看，公式就不再是五个字母的"咒语"：<b>v₀t 是"假如不加速"本来要走的位置</b>，<b>½at² 是"越走越快"多挣出来的位置</b>。初速度为0（从静止出发），矩形消失，只剩三角形，公式就退化成 x = ½at²。</p>
+<div class="try">
+<span class="q">验一验①（自编·读图）：</span><span class="a">一个物体做匀变速直线运动，v-t图像上初速度 v₀ = 4 m/s，3 s 末速度 v = 10 m/s。用两种方法求3 s内的位移——方法一：梯形面积 x = ½×(4＋10)×3 = 21 m；方法二：拆成矩形＋三角形，矩形 4×3 = 12 m，三角形 ½×(10−4)×3 = 9 m，合计 12＋9 = 21 m。两条路答案相同——<b>拆分不是巧合，是同一个梯形的两种切法</b>。</span>
+</div>
+
+<h2><span class="step-tag">第二步</span>例题1精读（教材p43原题）——先建坐标系，再谈正负号</h2>
+<div class="box"><b>【例题1】（教材p43原题）</b>　航空母舰的舰载机既要在航母上起飞，也要在航母上降落。<br>（1）某舰载机起飞时，采用弹射装置使飞机获得 10 m/s 的速度后，由机上发动机使飞机获得 25 m/s² 的加速度在航母跑道上匀加速前进，2.4 s 后离舰升空。飞机匀加速滑行的距离是多少？<br>（2）飞机在航母上降落时，需用阻拦索使飞机迅速停下来。若某次飞机着舰时的速度为 80 m/s，飞机钩住阻拦索后经过 2.5 s 停下来。将这段运动视为匀减速直线运动，此过程中飞机加速度的大小及滑行的距离各是多少？</div>
+<p><b>分析（教材原话）：</b>两个问题都是已知匀变速直线运动的时间来计算位移。第（1）问需要用匀变速直线运动的位移与时间的关系式计算。第（2）问中，飞机着舰做匀减速直线运动的加速度需要根据速度与时间的关系式计算。<span class="ul-blue">匀减速运动各矢量的方向较为复杂，因此需要建立一维坐标系来确定它们的正负。</span></p>
+<p><b>解（1）（教材）：</b>根据匀变速直线运动的位移与时间的关系式，有</p>
+<div class="big"><span class="m">x = v₀t + ½at² = 10 m/s × 2.4 s + ½ × 25 m/s² × (2.4 s)² = 96 m</span></div>
+<p><b>解（2）（教材）：</b>沿飞机滑行方向建立一维坐标系（图2.3-2），飞机初速度 v₀ = 80 m/s，末速度 v = 0，根据匀变速直线运动的速度与时间的关系式，有 <span class="m">a = (v − v₀)/t = −v₀/t = −80 m/s ÷ 2.5 s = −32 m/s²</span>。加速度为负值表示方向与x轴正方向相反。再根据匀变速直线运动的位移与时间的关系式，有</p>
+<div class="big"><span class="m">x = v₀t + ½at² = v₀t + ½ × (−v₀/t) × t² = ½v₀t = ½ × 80 m/s × 2.5 s = 100 m</span></div>
+<p><b>（教材答案）飞机起飞时滑行距离为 96 m。着舰过程中加速度的大小为 32 m/s²，滑行距离为 100 m。</b></p>
+<div class="fig">
+<svg viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2.3-2重绘 舰载机着舰一维坐标系">
+  <defs><marker id="arB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker><marker id="arBr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c0392b"/></marker></defs>
+  <line x1="30" y1="120" x2="670" y2="120" stroke="#555555" stroke-width="1.6" marker-end="url(#arB)"/>
+  <text x="96" y="142" font-size="15" fill="#555">O</text>
+  <text x="656" y="142" font-size="15" fill="#555">x</text>
+  <g transform="translate(150,96)"><path d="M0,0 L30,-2 L44,-10 L48,-10 L39,-2 L60,-1 L66,0 L60,1 L39,2 L48,10 L44,10 L30,2 Z" fill="#3a4a5c"/><line x1="70" y1="-4" x2="120" y2="-4" stroke="#c0392b" stroke-width="2.2" marker-end="url(#arBr)"/><text x="74" y="-14" font-size="15" fill="#c0392b">v₀ = 80 m/s</text></g>
+  <g transform="translate(470,112)"><path d="M0,0 L30,-2 L44,-10 L48,-10 L39,-2 L60,-1 L66,0 L60,1 L39,2 L48,10 L44,10 L30,2 Z" fill="#6a7a8c"/><text x="18" y="26" font-size="15" fill="#555">v = 0（2.5 s 后）</text></g>
+  <text x="210" y="40" font-size="14.5" fill="#666">正方向：沿滑行方向（x轴正方向）· a = −32 m/s² 即"与正方向相反"</text>
+</svg>
+<div class="figcap">图B（重绘自教材图2.3-2）｜这张图在说什么：匀减速问题先画一条带箭头的轴，把正方向定下来——v₀沿正方向取正，算出的a带负号，负号不是"错"，是<b>在告诉你方向</b>。</div>
+</div>
+<div class="pit">
+<span class="tag">坑点·为什么解(2)能写成 ½v₀t？</span>　把 a = −v₀/t 代回位移公式：x = v₀t + ½×(−v₀/t)×t² = v₀t − ½v₀t = <b>½v₀t</b>——两项恰好合并。<span class="note-red">这正是"匀减速到停下"的通用巧招：位移＝平均速度×时间＝½v₀×t</span>（初v₀末0，平均正好对半）。但要记住它的适用前提：<b>必须真的停了</b>，不能停了还继续套时间（本节练习第2题就埋了这个坑）。
+</div>
+<div class="try">
+<span class="q">验一验②（自编·同型换数）：</span><span class="a">把例题1(1)换个数自己走一遍：v₀ = 5 m/s，a = 2 m/s²，t = 6 s，求滑行距离。x = 5×6 ＋ ½×2×6² = 30 ＋ 36 = <b>66 m</b>；顺便用第三步的公式预演：末速 v = 5＋2×6 = 17 m/s，v² − v₀² = 289 − 25 = 264 = 2×2×66 ✓ 两条公式互相咬合。</span>
+</div>
+
+<h2><span class="step-tag">第三步</span>速度与位移的关系——不涉及时间，就别算时间（p44-45）</h2>
+<p>教材p44原文：这节我们学习了匀变速直线运动的位移与时间的关系式 x = v₀t + ½at²，上一节我们还学习了匀变速直线运动的速度与时间的关系式 v = v₀ + at。<b>将上述两个公式联立求解，消去时间t可得到</b></p>
+<div class="key">
+<div class="big"><mark class="nb">v² − v₀² = 2ax</mark></div>
+<span class="ul-blue">这就是匀变速直线运动的速度与位移的关系式。</span>如果在所研究的问题中，已知量和未知量都不涉及时间，利用这个公式求解，往往会更简便。（教材p44原话）
+</div>
+<div class="box"><b>【例题2】（教材p44-45原题）</b>　动车铁轨旁两相邻里程碑之间的距离是 1 km。某同学乘坐动车时，通过观察里程碑和车厢内电子屏上显示的动车速度来估算动车减速进站时的加速度大小。当他身边的窗户经过某一里程碑时，屏幕显示的动车速度是 126 km/h（图2.3-3）。动车又前进了 3 个里程碑时，速度变为 54 km/h。把动车进站过程视为匀减速直线运动，那么动车进站的加速度是多少？它还要行驶多远才能停下来？</div>
+<p><b>分析（教材）：</b>由于把动车进站过程视为匀减速直线运动，因此可以应用匀变速直线运动的速度与位移的关系式计算动车的加速度。本题加速度方向跟速度方向相反，因此需要建立一维坐标系来处理相关物理量的正负号。</p>
+<p><b>解（教材，两段走）：</b>沿动车运动方向为正方向建立一维坐标系。把动车通过 3 000 m 的运动称为<b>前一过程</b>，之后到停下来称为<b>后一过程</b>。设前一过程的末位置为M点。初速度 v₀ = 126 km/h = 35 m/s，末速度 v<sub>M</sub> = 54 km/h = 15 m/s，位移 x₁ = 3 000 m。</p>
+<p>对前一过程，根据匀变速直线运动的速度与位移的关系式，有 <span class="m">a = (v<sub>M</sub>² − v₀²)/(2x₁) = [(15 m/s)² − (35 m/s)²] ÷ (2 × 3 000 m) = −0.167 m/s²</span>。对后一过程，末速度 v = 0，初速度 v<sub>M</sub> = 15 m/s。由 v² = v<sub>M</sub>² + 2ax₂，有 <span class="m">x₂ = (v² − v<sub>M</sub>²)/(2a) = [0 − (15 m/s)²] ÷ [2 × (−0.167) m/s²] = 674 m</span>。</p>
+<p><b>（教材答案）动车进站的加速度大小为 0.167 m/s²，方向与动车运动方向相反；还要行驶 674 m 才能停下来。</b></p>
+<p class="small">细看一眼（不影响照录）：a 的精确值是 −1/6 ≈ −0.166 7 m/s²。教材用舍入后的 0.167 代回，得 674 m；若用未舍入值代回，x₂ = 15² ÷ (2/6) = 675 m。两个数都是"对的同一种近似"，差1 m纯粹来自中间舍入——<b>先列符号式、最后再代数</b>，能少受舍入差捣乱（想多走一步见alt③）。</p>
+<table>
+<tr><th>公式</th><th>不含哪个量</th><th>什么时候用它最省事</th></tr>
+<tr><td>v = v₀ + at（2.2）</td><td>不含 x</td><td>问"某时刻速度多快"</td></tr>
+<tr><td>x = v₀t + ½at²（本节）</td><td>不含 v</td><td>问"一段时间走多远"（给时间）</td></tr>
+<tr><td>v² − v₀² = 2ax（本节）</td><td>不含 t</td><td>给速度变化和距离、<b>题目里没有时间</b></td></tr>
+</table>
+<div class="try">
+<span class="q">验一验③（自编·易错变形）：</span><span class="a">汽车以 20 m/s 行驶，刹车后匀减速，加速度大小 5 m/s²，问刹车后<b>6 s 内</b>滑行多远？先算停止时间：0 = 20 − 5t → t = 4 s ＜ 6 s——<b>车在第4 s就停了，第5、6 s它没动</b>。所以位移 x = v²/(2|a|) = 20²/10 = <b>40 m</b>（或 ½×20×4 = 40 m）。若不看停止时间硬代 t = 6：x = 20×6 − ½×5×36 = 120 − 90 = 30 m——<span class="wrong">错在让停了的车"倒着开"</span>。公式没坏，是你喂给它一段并不存在的运动。节末第2题是它的正式版。</span>
+</div>
+
+<h2><span class="step-tag">第四步</span>拓展学习（教材p45-46栏目）——x = v₀t + ½at² 是被"切"出来的</h2>
+<p>第一步用梯形面积时教材留了个尾注"证明见本节拓展学习"。现在补上。教材p45原文节奏：<b>图2.3-4甲是某物体以初速度v₀做匀变速直线运动的v-t图像。如果我们像图2.3-4乙那样，把物体的运动分成几个小段，例如t/5算一个小段，每小段起始时刻物体的瞬时速度由相应的纵坐标表示。在每一小段内，可粗略认为物体以这个速度做匀速直线运动。</b>因此，我们以每小段起始时刻的速度乘时间t/5，近似地当作各小段中物体的位移——在v-t图像中，各段位移可以用一个又窄又高的小矩形的面积代表。5个小矩形的面积之和近似地代表物体在整个运动过程中的位移。</p>
+<p>教材继续：<b>如果以这5个小矩形的面积之和算出的位移代表物体在整个过程中的位移，显然位移就少算了。</b>为了精确一些，可以把运动过程划分为更多的小段（图2.3-4丙）。<b>小矩形越窄，多个小矩形的面积之和越接近物体的位移。</b>可以想象，如果把整个运动过程分割得非常非常细，很多很多小矩形的面积之和就能非常精确地代表物体的位移了。这时，很多很多小矩形顶端的"锯齿形"就看不出来了，这些小矩形合在一起成了一个梯形OABC（图2.3-4丁）。<b>这个梯形的面积就代表做匀变速直线运动的物体从开始（此时速度是v₀）到t时刻（此时速度是v）这段时间间隔的位移。</b></p>
+<div class="fig">
+<svg viewBox="0 0 700 245" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2.3-4重绘 乙丙丁 小矩形逼近梯形">
+  <g>
+    <line x1="30" y1="160" x2="230" y2="160" stroke="#555555" stroke-width="1.4"/><line x1="30" y1="160" x2="30" y2="40" stroke="#555555" stroke-width="1.4"/>
+    <rect x="30" y="120" width="36" height="40" fill="#f5e3c3" stroke="#b89858" stroke-width="1"/>
+    <rect x="66" y="106" width="36" height="54" fill="#f5e3c3" stroke="#b89858" stroke-width="1"/>
+    <rect x="102" y="92" width="36" height="68" fill="#f5e3c3" stroke="#b89858" stroke-width="1"/>
+    <rect x="138" y="78" width="36" height="82" fill="#f5e3c3" stroke="#b89858" stroke-width="1"/>
+    <rect x="174" y="64" width="36" height="96" fill="#f5e3c3" stroke="#b89858" stroke-width="1"/>
+    <line x1="30" y1="120" x2="210" y2="50" stroke="#c05a6a" stroke-width="2" stroke-dasharray="5,4"/>
+    <text x="112" y="185" font-size="15" fill="#555">乙：5段</text>
+  </g>
+  <g>
+    <line x1="260" y1="160" x2="460" y2="160" stroke="#555555" stroke-width="1.4"/><line x1="260" y1="160" x2="260" y2="40" stroke="#555555" stroke-width="1.4"/>
+    <rect x="260" y="120" width="15" height="40" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="275" y="113.6" width="15" height="46.4" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="290" y="107.3" width="15" height="52.7" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="305" y="100.9" width="15" height="59.1" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="320" y="94.5" width="15" height="65.5" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="335" y="88.2" width="15" height="71.8" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="350" y="81.8" width="15" height="78.2" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="365" y="75.5" width="15" height="84.5" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="380" y="69.1" width="15" height="90.9" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="395" y="62.7" width="15" height="97.3" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="410" y="56.4" width="15" height="103.6" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <rect x="425" y="50" width="15" height="110" fill="#f5e3c3" stroke="#b89858" stroke-width="0.8"/>
+    <text x="342" y="185" font-size="15" fill="#555">丙：更多段</text>
+  </g>
+  <g>
+    <line x1="490" y1="160" x2="690" y2="160" stroke="#555555" stroke-width="1.4"/><line x1="490" y1="160" x2="490" y2="40" stroke="#555555" stroke-width="1.4"/>
+    <polygon points="490,160 640,160 640,60 490,130" fill="#f0e0c0" stroke="#b89858" stroke-width="1"/>
+    <line x1="490" y1="130" x2="640" y2="60" stroke="#c05a6a" stroke-width="2.2"/>
+    <text x="478" y="178" font-size="14" fill="#333">O</text>
+    <text x="636" y="178" font-size="14" fill="#333">A</text>
+    <text x="648" y="64" font-size="14" fill="#333">B</text>
+    <text x="474" y="134" font-size="14" fill="#333">C</text>
+    <text x="540" y="185" font-size="15" fill="#555">丁：细到极限＝梯形OABC</text>
+  </g>
+</svg>
+<div class="figcap">图C（重绘自教材图2.3-4乙丙丁）｜这张图在说什么：每小段"当匀速算"→小矩形；段越切越窄，锯齿消失，矩形群合体成梯形——梯形面积＝位移，第一步的公式由此立住。</div>
+</div>
+<p>教材p46接着给这个方法"升格"：<b>上面这种分析问题的方法具有一般意义，原则上对于处理任意形状的v-t图像都适用。对于图2.3-5所示的运动物体的位移，可用其v-t图像着色部分图形的面积来表示。在处理较复杂的变化量问题时，常常先把整个区间化为若干个小区间，认为每一小区间内研究的量不变，再求和。这是物理学中常用的一种方法。</b></p>
+<div class="fig">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2.3-5重绘 任意曲线下面积即位移">
+  <defs><marker id="arD" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker></defs>
+  <path d="M80,100 C200,180 350,165 480,150 L480,260 L80,260 Z" fill="#f0e0c0" opacity="0.9"/>
+  <line x1="80" y1="260" x2="630" y2="260" stroke="#555555" stroke-width="1.6" marker-end="url(#arD)"/>
+  <line x1="80" y1="260" x2="80" y2="55" stroke="#555555" stroke-width="1.6" marker-end="url(#arD)"/>
+  <path d="M80,100 C200,180 350,165 480,150" fill="none" stroke="#c05a6a" stroke-width="2.4"/>
+  <line x1="480" y1="150" x2="480" y2="260" stroke="#777777" stroke-width="1.3" stroke-dasharray="6,5"/>
+  <text x="56" y="106" font-size="17" fill="#333">v₀</text>
+  <text x="474" y="284" font-size="15" fill="#333">t₀</text>
+  <text x="616" y="282" font-size="14" fill="#555">t/s</text>
+  <text x="60" y="50" font-size="14" fill="#555">v/(m·s⁻¹)</text>
+  <text x="46" y="284" font-size="15" fill="#555">O</text>
+</svg>
+<div class="figcap">图D（重绘自教材图2.3-5）｜这张图在说什么：方法不只服务斜线——<b>任意形状的v-t曲线，着色面积都等于位移</b>。"化整为零再求和"是物理处理变化量的通用思路（后面学变力做功还会再遇到它）。</div>
+</div>
+
+<h2><span class="step-tag">节末自测</span>先自己做，再对答案（教材p46练习与应用原题）</h2>
+<div class="try"><span class="q">第1题（教材p46原题）</span><span class="a" style="color:#c8d2dc">以 36 km/h 的速度行驶的列车开始下坡，在坡路上的加速度等于 0.2 m/s²，经过 30 s 到达坡底。求坡路的长度和列车到达坡底时的速度。</span></div>
+<p><span class="ans"><b>参考答案：</b>36 km/h = 10 m/s。坡长 x = 10×30 ＋ ½×0.2×30² = 300 ＋ 90 = <b>390 m</b>；到达坡底速度 v = 10 ＋ 0.2×30 = <b>16 m/s</b>。两问分别用的正是本节两个"含时间"公式。</span></p>
+<div class="try"><span class="q">第2题（教材p46原题·本节陷阱正式版）</span><span class="a" style="color:#c8d2dc">以 18 m/s 的速度行驶的汽车，制动后做匀减速直线运动，在 3 s 内前进 36 m。求汽车的加速度及制动后 5 s 内发生的位移。</span></div>
+<p><span class="ans"><b>参考答案：</b>由 x = v₀t ＋ ½at²：36 = 18×3 ＋ ½×a×9 → a = <b>−4 m/s²</b>（大小4 m/s²，负号＝与运动方向相反）。求5 s内位移前先看停止时间：t停 = 18÷4 = 4.5 s ＜ 5 s——<b>最后0.5 s车是停着的</b>。位移 = ½×18×4.5 = <b>40.5 m</b>（用 v²−v₀² = 2ax 验：0−324 = 2×(−4)×x → x = 40.5 m ✓）。硬代 t = 5 会得 40 m，是"让停车倒开"的错值。</span></p>
+<div class="try"><span class="q">第3题（教材p46原题·说理）</span><span class="a" style="color:#c8d2dc">速度、加速度的测量通常比位移的测量要复杂些，而有的时候我们只需比较两个物体运动的加速度大小，并不需要知道加速度的具体数值。例如，比较两辆汽车的加速性能就是这样。如果已知两个物体在相同时间内从静止开始匀加速直线运动的位移之比，怎样根据运动学的规律求出它们的加速度之比？</span></div>
+<p><span class="ans"><b>参考答案：</b>从静止匀加速：x = ½at²（v₀ = 0）。移项得 a = 2x/t²。两车时间 t 相同，所以 a₁/a₂ = x₁/x₂——<b>加速度之比就等于位移之比</b>。这也是"测加速度难、测位移易"时工程上的常用替代法。</span></p>
+<div class="try"><span class="q">第4题（教材p46原题·两段连续匀加速）</span><span class="a" style="color:#c8d2dc">滑跃式起飞是一种航母舰载机的起飞方式。飞机跑道的前一部分是水平的，跑道尾段略微向上翘起（图2.3-6）。飞机在尾段翘起跑道上的运动虽然会使加速度略有减小，但能使飞机具有斜向上的速度，有利于飞机的起飞。假设某飞机滑跃式起飞过程是两段连续的匀加速直线运动，前一段的加速度为 7.8 m/s²，位移为 180 m，后一段的加速度为 5.2 m/s²，位移为 15 m，求飞机离舰时的速度有多大？</span></div>
+<p><span class="ans"><b>参考答案：</b>两段都没给时间、都求速度——全程用 v²−v₀² = 2ax 接力。前段（从静止）：v₁² = 2×7.8×180 = 2 808。后段：v² = v₁² ＋ 2×5.2×15 = 2 808 ＋ 156 = 2 964，v = √2964 ≈ <b>54.4 m/s</b>。两段衔接处的 v₁ 既是前段末速又是后段初速——"接力棒"。</span></p>
+<div class="try"><span class="q">第5题（教材p46原题·航天情境）</span><span class="a" style="color:#c8d2dc">神舟五号载人飞船的返回舱距地面 10 km 时开始启动降落伞装置，速度减至 10 m/s，并以这个速度在大气中降落。在距地面 1.2 m 时，返回舱的四台缓冲发动机开始向下喷气，舱体再次减速。设最后减速过程中返回舱做匀减速直线运动，并且到达地面时恰好速度为 0，求最后减速阶段的加速度。</span></div>
+<p><span class="ans"><b>参考答案：</b>最后减速段：初速 10 m/s、末速 0、位移 1.2 m——没给时间，用 v²−v₀² = 2ax：0 − 100 = 2×a×1.2 → a = <b>−41.7 m/s²</b>（大小约41.7 m/s²，方向向上、与运动方向相反）。1.2 m里要把10 m/s"刹停"，加速度相当于4倍多重力加速度——缓冲发动机的活儿不轻。</span></p>
+<div class="try"><span class="q">第6题（教材p46原题·痕测速）</span><span class="a" style="color:#c8d2dc">一辆肇事汽车在紧急刹车后停了下来，路面上留下了一条车轮滑动的磨痕。警察为了判断汽车刹车时速度的大小，测出路面上车轮磨痕的长度为 22.5 m。根据对车轮和路面材料的分析可以知道，车轮在路面上滑动时汽车做匀减速直线运动的加速度大小是 5.0 m/s²。请你根据以上条件，计算汽车刚开始刹车时的速度是多少。</span></div>
+<p><span class="ans"><b>参考答案：</b>末速0、位移22.5 m、a大小5.0 m/s²：v₀² = 2×5.0×22.5 = 225 → v₀ = <b>15 m/s</b>。反过来用就是交警的"拖痕测速"：痕越长，刹车前越快。这套x、v₀、a凑一式的关系，正是 v²−v₀² = 2ax 的现场应用。</span></p>
+
+<h2><span class="step-tag">收口</span>合上书，三问自答</h2>
+<div class="check">
+<span class="tag">复述体三问</span>
+<p>① x = v₀t + ½at² 里，v₀t 和 ½at² 各对应图A里哪块面积？（答不上回<span style="color:#58d68d">第一步图A拆分</span>）<br>
+② 题目没给时间也没问时间，该请出哪个公式？它由哪两条联立消t而来？（答不上回<span style="color:#58d68d">第三步key块</span>）<br>
+③ 匀减速问题动笔前必须先做什么？a算出来是负号说明什么？（答不上回<span style="color:#58d68d">第二步例题1(2)分析/图B</span>）</p>
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 720 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图G：第二章五节串联">
+  <defs><marker id="arG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <rect x="15" y="55" width="118" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="74" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">1.4 加速度</text><text x="74" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">a = Δv/Δt</text>
+  <line x1="133" y1="87" x2="153" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="155" y="55" width="118" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="214" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">2.1 小车实验</text><text x="214" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">亲手画斜线</text>
+  <line x1="273" y1="87" x2="293" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="295" y="55" width="110" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="350" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">2.2 速度公式</text><text x="350" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">v = v₀ + at</text>
+  <line x1="405" y1="87" x2="425" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="427" y="48" width="150" height="78" rx="7" fill="#14202b" stroke="#4a9eff" stroke-width="2"/><text x="502" y="74" font-size="13.5" fill="#cfe4ff" text-anchor="middle" font-weight="bold">本节 2.3 位移公式</text><text x="502" y="95" font-size="12" fill="#9fc3e8" text-anchor="middle">x = v₀t + ½at²</text><text x="502" y="114" font-size="12" fill="#9fc3e8" text-anchor="middle">v² − v₀² = 2ax</text>
+  <line x1="577" y1="87" x2="597" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="599" y="55" width="106" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="652" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">2.4 自由落体</text><text x="652" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">本章收官</text>
+  <text x="360" y="30" font-size="14" fill="#7d8a99" text-anchor="middle">第二章 匀变速直线运动的研究：你已经会"变多快"，本节补上"走多远"——下一站 2.4 把两个公式用到"落体"上</text>
+</svg>
+<div class="figcap">图G（本节位置图）｜2.1实验→2.2速度公式→<b>2.3位移公式（本节）</b>→2.4自由落体：运动学三公式在本节配齐两件。</div>
+</div>
+
+<h3>考位锚（T11）·高考怎么考</h3>
+<p class="small">· 考什么：x = v₀t + ½at² 与 v²−v₀² = 2ax 的直接计算（三知求一、选对公式）、刹车"停了不再走"陷阱（先算停止时间）、v-t图像面积＝位移的读图题。<br>· 怎么考：运动学小题（航母/动车/航天情境给三个量求第四个量——教材这节六个练习全是同款情境）＋大题第一问铺垫，常与2.4自由落体、后续牛顿定律组合。<br>· 真题锚：候采——对证源卷源池（v2.8-v2.11）暂未录入 2.3 对口卷源，不代拟；候池内补录后回填。</p>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① <b>选公式口诀</b>：题目含t用前两条、不含t用 v²−v₀² = 2ax；给v₀、v、x求a也是它最快。② <b>平均速度视角</b>：匀变速任意一段时间内 x = ½(v₀+v)t ＝ 平均速度×时间（教材例题1(2)的 ½v₀t 就是它的特例）——有时比套两条公式都快。③ <b>675 vs 674 的舍入链</b>：例题2若先算 a ≈ −0.167 再代回，675被舍成674；先写符号式 x₂ = v<sub>M</sub>²·3x₁/(v₀²−v<sub>M</sub>²) 最后一步才代数，就绕开中间舍入。考试时保留中间量位数，是数值稳定的老习惯。④ <b>x₀ ≠ 0 的完整式</b>：x − x₀ = v₀t + ½at²（教材脚注①）——若题目说"从距O点x₀处出发"，用完整式最稳。
+</div>
+
+<div class="foot">
+<em>素材源溯源（foot区·豁免条款）：影印源＝国家中小学智慧教育平台教材电子版·普通高中教科书·物理必修 第一册（人教版）·contentId 708256b6-6f06-4d14-89c7-4df16dfe3b81·ts=1787023183495（1031午后详情API实时取·title核对人教正本）·图47-52→印刷页p42-47·偏移N-5·本节影印范围p42-46（2.4节名页p47=图52为节界边界锚）·影印对照逐页直读（p42页脚"42 高中物理必修第一册"/p43页脚"第二章 匀变速直线运动的研究 43"/p44页脚"44"/p45页脚"45"/p46页脚"46"/p47节名"4 自由落体运动"）·节界与本席2.2交付件（fc33ba6"2.3节名页p42=图47实锚"）互证一致·本件为自学辅导讲义·教材原文引用仅作教学讲解用途·原文以纸质教材为准。</em>
+</div>
+</div>
+</body>
+</html>
