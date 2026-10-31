@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理1.4 加速度 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: 2px; }
+  .talk { background: #1b2029; border: 1px solid #2a3342; border-radius: 10px; padding: 14px 18px; margin: 14px 0; }
+  .check { background: #16202b; border: 1px solid #274257; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .tag { display: inline-block; background: #2d4a63; color: #cfe6ff; font-size: 12.5px; padding: 1px 8px; border-radius: 4px; margin-right: 6px; }
+  .try { background: #20262f; border-left: 3px solid #f0b429; border-radius: 6px; padding: 10px 14px; margin: 14px 0; }
+  .try .q { color: #f0c85a; font-weight: bold; }
+  .try .a { color: #9fd0a0; display: block; margin-top: 6px; }
+  .detail { color: #9fd0a0; }
+  .pit { background: #2a1d20; border: 1px solid #5c3238; border-radius: 10px; padding: 12px 16px; margin: 14px 0; }
+  .pit b { color: #ff8f95; }
+  .note-red { background: #2a1d20; border-left: 3px solid #e05c66; border-radius: 6px; padding: 10px 14px; margin: 14px 0; font-size: 15.5px; }
+  .note-red b { color: #ff8f95; }
+  .key { background: #16242e; border: 1px solid #2c566e; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .alt { background: #1d2430; border: 1px dashed #3d5a7a; border-radius: 10px; padding: 12px 16px; margin: 16px 0; font-size: 15.5px; }
+  .box { background: #1f242e; border: 1px solid #3a4458; border-radius: 10px; padding: 12px 16px; margin: 16px 0; font-size: 15.5px; }
+  mark.nb { background: #35506b; color: #eaf6ff; padding: 0 5px; border-radius: 4px; }
+  .formula { background: #0f1319; border: 1px solid #34435c; border-radius: 8px; padding: 12px 16px; margin: 14px auto; text-align: center; font-size: 21px; color: #ffffff; font-family: Georgia, "Times New Roman", serif; }
+  .fig { margin: 18px 0; text-align: center; }
+  .figcap { font-size: 14px; color: #8fa0b3; margin-top: 8px; }
+  table.tb { border-collapse: collapse; margin: 14px auto; width: 100%; font-size: 15px; }
+  table.tb th, table.tb td { border: 1px solid #3a4458; padding: 6px 10px; text-align: center; }
+  table.tb th { background: #202a37; color: #dce8f5; }
+  .small { font-size: 14px; color: #8fa0b3; }
+  .m { font-family: Georgia, serif; color: #eaf2fb; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3 { color: #000; }
+    .talk, .check, .try, .pit, .key, .alt, .box, .note-red { background: #f6f8fa !important; border-color: #999 !important; color: #111; }
+    .formula { background: #fff; color: #000; }
+    mark.nb { background: #d9e8f5; color: #000; }
+    .try .q { color: #7a5c00; } .try .a, .detail { color: #1c5c20; }
+    .pit b, .note-red b { color: #a02025; }
+    .figcap, .small, .sub { color: #444; }
+    .step-tag { background: #e8f0fa; color: #000; border: 1px solid #789; }
+    .tag { background: #dde8f2; color: #000; }
+    table.tb th { background: #eef2f6; color: #000; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>加速度：描述"快慢的变化"——描述运动的最后一件工具</h1>
+<div class="sub">物理1.4 · "描述运动"模块第四件（第一章 运动的描述·本章最后一节）· 前面已学：1.1质点与参考系（先选参考系）、1.2时间与位移（Δx＝末减初）、1.3速度（v＝Δx/Δt）· 零基础首学版 v1.0 · 前置：会乘除法、认识正负号就够 · 预计40分钟</div>
+
+<div class="check">
+<span class="tag">读完这节你能</span><br>
+① 用一句话说出"加速度"量的是什么；② 会算 a＝Δv/Δt 并带对单位；③ 判断加速度的方向（加速同向／减速反向）；④ 从 v-t 图像的"陡缓"直接读出加速度大小；⑤ 不再被"速度大／速度变化大／速度变化快"这三句绕口令骗到。
+</div>
+
+<h2><span class="step-tag">开场</span>都是"从0到100"，凭什么汽车比火车神气？</h2>
+<div class="talk">
+<p>（教材p27问题框）一辆小汽车在 <b>10 s</b> 内速度从 0 达到 100 km/h；一列火车在 <b>300 s</b> 内速度也从 0 达到 100 km/h。两者的"速度变化"一模一样——都从0变成100 km/h。但你在坐车时的体感天差地别：小汽车一踩油门你就被贴上椅背，火车启动你几乎感觉不到。</p>
+<p>差别在哪？——<b>用的钱一样多，花的速度不一样</b>：汽车花10秒就凑齐了这100 km/h，火车花了300秒才凑齐。也就是说，<mark class="nb">"速度变化的快慢"才是两车的本质区别</mark>。可是教材p28"思考与讨论"说了一句大实话：<b>日常生活里，居然没有跟加速度对应的词</b>——中文里笼统的"快""慢"，有时说的是速度，有时模模糊糊说的其实是加速度（"这车提速快"说的就不是速度，是加速度）。所以高中要专门立一个新词，把这笔账算清楚。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒搬齐三块砖（1.2和1.3已学·这里是全用上）</h2>
+<div class="talk">
+<p>① 速度本身是<b>矢量</b>：有大小、有方向（1.3学的，负号就是方向）；② 速度<b>会变</b>：变完减变初，就有了"速度的变化量"，记作 <span class="m">Δv</span>＝<b>末速度−初速度</b>（规矩跟1.2的Δx＝末减初<b>一模一样</b>，只是把位置换成了速度）；③ 变化要花<b>时间</b>：记作 <span class="m">Δt</span>。三块砖齐了，开始砌墙。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>加速度——给"变快慢"立一个数</h2>
+<div class="talk">
+<p>教材p27定义（原话）：物理学中把<b>速度的变化量与发生这一变化所用时间之比</b>，叫作<b>加速度（acceleration）</b>。通常用 <span class="m">a</span> 表示。若用 Δv 表示速度在时间 Δt 内的变化量，则有：</p>
+<div class="formula">a ＝ Δv ／ Δt</div>
+<p><b>读法（最重要）</b>：加速度不是"速度有多快"，而是"<mark class="nb">速度每秒钟变多少</mark>"。国际单位制中，加速度的单位是<b>米每二次方秒</b>，符号 <span class="m">m/s²</span> 或 <span class="m">m·s⁻²</span>——分子是速度（m/s），分母是时间（s），除下来就是"（米每秒）每秒"。</p>
+<p><b>回到开场那辆车</b>：100 km/h＝100÷3.6≈27.8 m/s（sympy核验：100/3.6=250/9✓）。</p>
+<p>· 小汽车：a≈27.8÷10≈<b>2.8 m/s²</b>——每秒速度净增约2.8 m/s（sympy核验：(250/9)/10=25/9✓）；<br>
+· 火车：a≈27.8÷300≈<b>0.093 m/s²</b>——每秒速度净增不到0.1 m/s（sympy核验：(250/9)/300=5/54✓）。</p>
+<p>同样是"从0到100"，汽车的加速度约是火车的<b>30倍</b>（2.8÷0.093）——被贴椅背的就是这30倍。</p>
+</div>
+<div class="try"><span class="q">验一验（30秒·给教材p31练习3的数字对账）：</span>一辆自行车以3 m/s冲下坡，经过3 s到达坡底时速度变为12 m/s，它的加速度是多少？<div class="a">→ Δv＝12−3＝9 m/s，a＝9÷3＝<b>3 m/s²</b>（sympy核验：9/3=3✓）。每秒变快3 m/s，跟"车速12 m/s"是两码事——算加速度用的是<b>变化量</b>，不是<b>末速度</b>。</div></div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 720 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="汽车与火车同样从0到100km/h，加速度对比示意图">
+  <defs><marker id="aE1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#f0b429"/></marker></defs>
+  <rect x="20" y="30" width="300" height="52" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="170" y="52" fill="#cfe0f0" font-size="14.5" text-anchor="middle">小汽车：0→100 km/h 用时 10 s</text>
+  <text x="170" y="74" fill="#f0b429" font-size="14" text-anchor="middle">a≈2.8 m/s²（每秒涨约2.8 m/s）</text>
+  <rect x="20" y="104" width="300" height="52" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="170" y="126" fill="#cfe0f0" font-size="14.5" text-anchor="middle">火车：0→100 km/h 用时 300 s</text>
+  <text x="170" y="148" fill="#f0b429" font-size="14" text-anchor="middle">a≈0.093 m/s²（每秒涨不到0.1）</text>
+  <line x1="360" y1="93" x2="410" y2="93" stroke="#f0b429" stroke-width="2" marker-end="url(#aE1)"/>
+  <text x="445" y="60" fill="#e8eef5" font-size="14.5">同样的"速度变化量"</text>
+  <text x="445" y="82" fill="#8fa0b3" font-size="13">Δv 相同</text>
+  <text x="445" y="112" fill="#e8eef5" font-size="14.5">加速度比 ≈ 30 倍</text>
+  <text x="445" y="134" fill="#8fa0b3" font-size="13">Δt 越短，a 越大</text>
+  <text x="360" y="180" fill="#5a6a7a" font-size="11.5" text-anchor="middle">a＝Δv/Δt：同样的变化量，花的时间越短，"变快慢的本事"越大（自编排版·数值取教材p27问题框）</text>
+</svg>
+<p class="figcap" style="text-align:center">这张图在说什么：加速度比的是"凑齐同样的速度变化量谁更利索"。</p>
+</div>
+
+<h2><span class="step-tag">第二步</span>方向：加速时a朝前，减速时a朝后</h2>
+<div class="talk">
+<p>加速度是<b>矢量</b>（教材p28原话"加速度是矢量，它既有大小，又有方向"）。方向怎么定？教材p28给了两步：<b>Δv＝末速度−初速度</b>（1.2的老规矩），<mark class="nb">加速度a的方向与速度变化量Δv的方向相同</mark>——确定了Δv的方向，也就确定了a的方向。</p>
+<p>教材p28图1.4-1的两个画面（原话概括）：汽车在直线运动中，<b>如果速度增加（加速运动），加速度的方向与初速度的方向相同；如果速度减小（减速运动），加速度的方向与初速度的方向相反</b>。</p>
+<p>负号不是坏事，是<b>报方向</b>：取向东为正——汽车急刹车，速度从20 m/s变到0，Δv＝0−20＝−20 m/s，负号说明Δv朝<b>西</b>（跟初速度反向），a也朝西（sympy核验：0−20=−20✓）。"刹车时a与车头相反"——这就是伞兵着陆加速度记作−25 m/s²的缘故（教材p29表：−号＝方向向上，跟下降的速度反向）。</p>
+</div>
+<div class="pit"><b>大坑警报（本节最大考点）：</b>"加速度减小，速度就减小"？<b>错！</b>判断速度增减<b>只看a与v是否同向</b>，不看a变大变小。教材p29科学漫步原话（白话转述）：匀速飞行的高空侦察机，速度接近1000 m/s，<b>加速度为0</b>——速度大≠加速度大；枪筒里的子弹刚出发，速度接近0，<b>加速度可达5×10⁴ m/s²</b>（教材p29表）——速度小≠加速度小。反过来（教材p31练习2D）：后一阶段加速度比前一阶段小，但只要a还与v同向，速度<b>照样在增大</b>——只是"涨得慢了"，不是"变慢了"。<mark class="nb">a管"变快慢的快慢"，v管"跑得快慢"</mark>——两本账，别记串。</div>
+<div class="try"><span class="q">易错变形（自编·30秒）：</span>电梯从静止开始匀加速上升，a＝0.5 m/s²，上升2 s。①2 s末速度多大？②此过程中a的方向？<div class="a">→ ①每秒涨0.5 m/s（自编例·sympy核验：1/2=1/2✓），2 s末 v＝0＋0.5×2＝1 m/s；②电梯上升（v向上），a＝+0.5也向上——加速运动，a与v<b>同向</b>。若是下降后制动停下（v向下、越走越慢），a就与v反向（朝上）。</div></div>
+
+<h2><span class="step-tag">第三步</span>从v-t图像看加速度：越陡，a越大</h2>
+<div class="talk">
+<p>教材p28-29原话链（白话转述）：v-t图像反映速度随时间变化的情况。<b>图线的倾斜程度（斜率）就是加速度</b>——在图线上取一小段：横着的直角边代表时间间隔Δt，竖着的直角边代表速度变化量Δv，<mark class="nb">Δv与Δt之比＝这条直线的斜率＝加速度</mark>。教材p29结论：由v-t图像中图线的倾斜程度可以判断加速度的大小；图1.4-2中直线a比直线b陡，所以<b>物体A的加速度比物体B的大</b>。</p>
+<p>反过来也能画：知道a，v-t图就是一条斜率不变的直线（教材p32章小结的总结：v-t图像的斜率反映加速度的大小和方向）。</p>
+</div>
+<div class="try"><span class="q">验一验（60秒·自编例读图）：</span>自编v-t图线：t＝0时v＝1 m/s，t＝6 s时v＝4 m/s，中间是直线。①斜率（加速度）多大？②方向跟速度什么关系？<div class="a">→ ①a＝(4−1)÷6＝0.5 m/s²（sympy核验：3/6=1/2✓）；②v为正且在涨，a＝+0.5同为正——同向，加速。再练一个反向的：v从8 m/s经5 s降到3 m/s，a＝(3−8)÷5＝<b>−1 m/s²</b>（sympy核验：−5/5=−1✓），负号＝a与v反向，减速。</div></div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="v-t图像：陡线加速度大，缓线加速度小（同构重绘教材图1.4-2思想）">
+  <defs><marker id="aE2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <line x1="70" y1="200" x2="660" y2="200" stroke="#8fa0b3" stroke-width="1.6" marker-end="url(#aE2)"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#8fa0b3" stroke-width="1.6" marker-end="url(#aE2)"/>
+  <text x="668" y="216" fill="#8fa0b3" font-size="13">t/s</text>
+  <text x="40" y="34" fill="#8fa0b3" font-size="13">v/(m·s⁻¹)</text>
+  <line x1="70" y1="200" x2="330" y2="50" stroke="#f0b429" stroke-width="2.6"/>
+  <text x="300" y="44" fill="#f0b429" font-size="14">A线（陡）</text>
+  <line x1="70" y1="200" x2="620" y2="120" stroke="#6fc2ff" stroke-width="2.6"/>
+  <text x="600" y="106" fill="#6fc2ff" font-size="14">B线（缓）</text>
+  <text x="380" y="70" fill="#cfe0f0" font-size="14">同样的Δt（横边）</text>
+  <line x1="300" y1="178" x2="380" y2="178" stroke="#cfe0f0" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="386" y="183" fill="#8fa0b3" font-size="12.5">Δt</text>
+  <line x1="380" y1="178" x2="380" y2="112" stroke="#f0b429" stroke-width="2.2"/>
+  <text x="388" y="128" fill="#f0b429" font-size="12.5">A的Δv 大</text>
+  <line x1="380" y1="178" x2="380" y2="160" stroke="#6fc2ff" stroke-width="2.2"/>
+  <text x="388" y="166" fill="#6fc2ff" font-size="12.5">B的Δv 小</text>
+  <text x="380" y="226" fill="#5a6a7a" font-size="11.5" text-anchor="middle">Δv/Δt＝斜率＝加速度：横边一样长，竖边越高的线越陡、a越大（同构重绘教材p29图1.4-2思想·自编排版）</text>
+</svg>
+<p class="figcap" style="text-align:center">这张图在说什么：读v-t图先看"陡不陡"——陡＝加速度大，缓＝加速度小；平（水平线）＝a＝0。</p>
+</div>
+
+<h2><span class="step-tag">第四步</span>一口气对比六种运动+一个思想（变化率）</h2>
+<table class="tb">
+  <tr><th>运动物体（教材p29表·近似值照录）</th><th>a/(m·s⁻²)</th><th>一句话读法</th></tr>
+  <tr><td>子弹在枪筒中</td><td>5×10⁴</td><td>速度≈0起步，涨得惊天动地</td></tr>
+  <tr><td>伞兵着陆</td><td>−25</td><td>负号＝a向上，与下落速度反向（减速）</td></tr>
+  <tr><td>汽车急刹车</td><td>−5</td><td>负号＝a与行驶方向反向（减速）</td></tr>
+  <tr><td>赛车起步</td><td>4.5</td><td>民用上限级别</td></tr>
+  <tr><td>汽车起步</td><td>2</td><td>日常"提速快"的水准</td></tr>
+  <tr><td>高速列车起步</td><td>0.35</td><td>又稳又慢——乘客无感</td></tr>
+</table>
+<div class="talk">
+<p>教材p29"科学漫步·变化率"给这节收了个大思想（原话白话转述）：番茄成熟、树木长高、水位涨落、价格起伏……<b>描述"变化快慢"的量就是变化率</b>——变化量ΔD除以时间Δt。位移是位置的变化，速度＝<b>位置的变化率</b>；速度的变化就是Δv，加速度＝<b>速度的变化率</b>。"比"这个动作，你已经在1.3和1.4连用了两次——以后还会一直用。</p>
+</div>
+<div class="try"><span class="q">验一验（30秒·教材p33复习A组题7表照录代验）：</span>火车出站：初速度0，经100 s末速度20 m/s，a＝？飞机巡航：初200、经10 s仍200，a＝？<div class="a">→ 火车a＝(20−0)÷100＝<b>0.2 m/s²</b>（sympy核验：20/100=1/5✓）；飞机Δv＝200−200＝0，a＝<b>0</b>（sympy核验：0✓）——速度200 m/s很大，但"没在变"，加速度就是0。自行车下坡同表：(6−2)÷2＝2 m/s²。</div></div>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选）</span><br>
+<b>①台球一笔账（教材p33复习A组题6原数值）</b>：球以1.5 m/s垂直撞边框，0.08 s内以1.3 m/s反向弹回——取初方向为正：Δv＝−1.3−1.5＝<b>−2.8 m/s</b>（sympy核验：−13/10−15/10=−28/10✓），a＝−2.8÷0.08＝<b>−35 m/s²</b>（sympy核验：−35✓）——大小35，方向与初速度相反；接触那0.08秒里的加速度比赛车起步（4.5）猛约8倍，只是转瞬即逝。<br>
+<b>②交通工具与社会（教材p30 STSE）</b>：人类从公元前2000年的木轮车（图1.4-4）到500 km/h磁悬浮列车，速度提了几千倍；城市规模跟着车速走——马车5 km/h的年代，北京"内城"边长只有5 km。教材留的讨论题：交通工具的速度是不是越快越好？——速度越快，刹车需要的"减速度"也越大，安全账和时间账要一起算。<br>
+<b>③变化率无处不在</b>：体重每周涨0.2 kg、"变化率"≈0.2 kg/周；账户余额每天变100元，"变化率"≈100元/天——都是"Δ量/Δt"这一家子（自编举例）。
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走＋自测</h2>
+<div class="key">
+<b>三句话带走：</b><br>
+1. <mark class="nb">加速度 a＝Δv/Δt＝（末速度−初速度）÷所用时间</mark>，单位 m/s²（米每二次方秒），读作"速度每秒变多少"。<br>
+2. <mark class="nb">a的方向＝Δv的方向</mark>：加速时a与v同向，减速时a与v反向；负号报方向。<br>
+3. <mark class="nb">v-t图像的斜率＝a</mark>：越陡a越大，水平线a＝0；速度大≠加速度大（侦察机1000 m/s、a＝0），速度小≠加速度小（子弹起步5×10⁴ m/s²）。
+</div>
+<p class="small"><b>自测四连</b>（先自己算再看答案）：</p>
+<p>①（教材p31练习1原题改设问）三种轿车从静止加速到100 km/h（≈27.8 m/s）分别用11.3 s、13.2 s、15.5 s。谁的加速度最大？算出它的大小。</p>
+<p>②（教材p31练习3照录·D过程）动车离开车站，用100 s使速度由72 km/h增加到144 km/h。加速度多大？</p>
+<p>③（教材p31练习4原题）物体向东以20 m/s运动，开始减速，2 min后速度减为0。加速度的大小和方向？</p>
+<p>④（自编·考"三句话"）"这车提速快"和"这车跑得快"分别说的是哪个量？侦察机匀速巡航时两量各是多少？</p>
+<div class="detail">
+<p class="small"><b>答案：</b><span class="ans">① A车：a≈27.8÷11.3≈2.5 m/s²（B≈2.1、C≈1.8，A最大·sympy核验：250/9×10/113≈2.458✓）</span>　<span class="ans">② 72 km/h＝20 m/s、144 km/h＝40 m/s，a＝(40−20)÷100＝0.2 m/s²（sympy核验：20/100=1/5✓）</span>　<span class="ans">③ Δt＝2 min＝120 s，a＝(0−20)÷120≈−0.17 m/s²（sympy核验：−1/6✓）——大小约0.17 m/s²，负号＝方向向西（与初速度方向相反）</span>　<span class="ans">④"提速快"＝加速度大；"跑得快"＝速度大；侦察机匀速巡航：速度≈1000 m/s（大），加速度＝0（sympy核验：0✓）</span></p>
+</div>
+<div class="box"><b>高考怎么考（考位锚）：</b>①a＝Δv/Δt直接计算（常给km/h要换算·隐含单位坑）；②v-t图像斜率判加速度（多过程图像分段陡缓排序）；③"速度大/变化大/变化快"三句辨析（选择题四选项逐项过）；④方向判断（减速运动的a方向）。具体真题锚候采（卷源在库·宁缺毋编不代拟）。</div>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 800 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：1.1质点参考系→1.2时间位移→1.3速度→1.4加速度（你在·集齐）→第二章匀变速直线运动">
+  <defs><marker id="aE3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a9eff"/></marker></defs>
+  <rect x="30" y="38" width="130" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="95" y="58" fill="#cfe0f0" font-size="13.5" text-anchor="middle">1.1 质点 参考系</text><text x="95" y="76" fill="#5a6a7a" font-size="11" text-anchor="middle">立规矩</text>
+  <line x1="160" y1="61" x2="208" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#aE3)"/>
+  <rect x="210" y="38" width="130" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="275" y="58" fill="#cfe0f0" font-size="13.5" text-anchor="middle">1.2 时间 位移</text><text x="275" y="76" fill="#5a6a7a" font-size="11" text-anchor="middle">何时+挪多少</text>
+  <line x1="340" y1="61" x2="388" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#aE3)"/>
+  <rect x="390" y="38" width="130" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="455" y="58" fill="#cfe0f0" font-size="13.5" text-anchor="middle">1.3 速度</text><text x="455" y="76" fill="#5a6a7a" font-size="11" text-anchor="middle">挪多快</text>
+  <line x1="520" y1="61" x2="568" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#aE3)"/>
+  <rect x="570" y="30" width="150" height="62" rx="8" fill="#25384d" stroke="#4a9eff" stroke-width="2"/>
+  <text x="645" y="52" fill="#ffffff" font-size="13.5" text-anchor="middle" font-weight="bold">1.4 加速度（你在）</text><text x="645" y="72" fill="#f0b429" font-size="11" text-anchor="middle">快慢变得多快·第一章集齐</text>
+  <line x1="645" y1="92" x2="645" y2="112" stroke="#4a9eff" stroke-width="2" marker-end="url(#aE3)"/>
+  <text x="380" y="124" fill="#5a6a7a" font-size="11.5" text-anchor="middle">这张图在说什么：描述运动的工具箱四格已集齐（规矩→何时挪多少→多快→变得多快）——下一章开始往工具箱里装"规律"。</text>
+</svg>
+<p class="small" style="text-align:center">下一站：第二章 2.1 实验：探究小车速度随时间变化的规律——用1.2的打点计时器和1.3的纸带测速，实测一条真实的v-t图像。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2·标准v2.3条款落地：节首清单＋预备块＋四站推进＋加速度对比图/程序生成v-t斜率示意/第一章工具箱位置图＋考位锚块＋@media print打印层；正文"验一验"×4含易错变形×1，节末自测四连，答案直接可见；sympy代验26验点全过·留痕＝席位私有sympy_验点_物理1.4_1031午后.py（含台球题Δv初稿误设1.5→按教材原值1.3修正重跑留痕：Δv=−2.8·a=−35）：汽车(250/9)/10·火车(250/9)/300·轿车A/B/C≈2.46/2.10/1.79·题3B=3·C蜗=0.01·D=20/100=0.2·题4=(0−20)/120=−1/6·台球Δv=−1.3−1.5=−2.8/a=−35·A组题7自行车2/火车0.2/飞机0·自编电梯1/2·斜率3/6=1/2·减速−5/5=−1） · 事实层素材源：人教2019必修第一册p27-31官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=708256b6-6f06-4d14-89c7-4df16dfe3b81·印刷页27-31＝图32-36·ts=1787023183495·图N→印刷页N−5映射沿本册定标·影印图存席位私有目录p13_jc/·原件不入仓）· **节界实锚＝1.4全节p27-31**（p27节题页+a=Δv/Δt定义+米每二次方秒/p28加速度方向+图1.4-1+思考与讨论+从v-t图像看加速度起/p29斜率结论+图1.4-2+六物体加速度表+科学漫步变化率/p30 STSE交通工具与社会+图1.4-4/p31练习与应用1-5题·p32＝章小结示例（章末栏目）·p33-34＝复习与提高A/B组（章末栏目）——**第一章共4节·1.4为末节**，节界与队4席1.1附件1目录实锚一致）· 加速度定义/a=Δv/Δt/单位/方向两律/斜率结论/六物体表值/变化率表述/练习题面均影印逐字锚定 · 自编例全部显式标注"自编/自编例"，教材原题标注页码来源（p27问题框/p28思考与讨论与图1.4-1/p29表与科学漫步/p30 STSE/p31练习1-4/p33复习A组6-7）· 设计标准：零预设 · 一次一步 · 随读随验×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源
+</div>
+</div>
+</body>
+</html>
