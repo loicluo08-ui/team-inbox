@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物4.1 被动运输 · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #2a6f8a;padding-bottom:8px;color:#12333f}
+h2{font-size:1.32em;color:#2a6f8a;border-left:5px solid #4a96b3;padding-left:10px;margin-top:2.2em}
+h3{color:#3a7f9c;margin-top:1.6em}
+.station{background:#f2f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d5e7f0}
+.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#3a86ab,#5aa6c8);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.mark{background:#fff176;padding:0 4px;border-radius:3px;font-weight:bold}
+.uline{text-decoration:underline;text-decoration-color:#4a96b3;text-underline-offset:4px}
+.ans{color:#1a6b8a;background:#eaf4f8;border-radius:6px;padding:1px 6px}
+.note-red{background:#fff0f0;border-left:4px solid #d84a4a;border-radius:6px;padding:8px 14px;margin:12px 0;font-weight:bold}
+.try{background:#eefaf0;border:1px solid #b7dfc0;border-radius:8px;padding:10px 16px;margin:12px 0}
+.kaowei{background:#f4f0fb;border:1px solid #c9b8e8;border-radius:8px;padding:10px 16px;margin:12px 0}
+.figbox{background:#fff;border:1px solid #d5e7f0;border-radius:8px;padding:12px;margin:12px 0}
+.figcap{font-size:.88em;color:#5a6b7d;margin-top:6px}
+.walk{background:#f0f7ff;border:2px solid #7ab0d8;border-radius:10px;padding:14px 18px;margin:14px 0}
+.selftest{background:#fffdf5;border:1px solid #e0d5a8;border-radius:8px;padding:12px 16px;margin:12px 0}
+table.cmp{border-collapse:collapse;width:100%;margin:12px 0;font-size:.95em}
+.cmp th,.cmp td{border:1px solid #b8cdd9;padding:8px 10px;vertical-align:top}
+.cmp th{background:#e3f0f7;color:#12333f}
+.cmp tr:nth-child(even){background:#f7fbfd}
+.sub{color:#5a6b7d;font-size:.92em}
+@media print{
+ body{font-size:12.5px;padding:0;max-width:none}
+ .station{border:1px solid #99c;padding:8px 12px}
+ .mark{background:#ffe680}
+ .no-print{display:none}
+ h2{page-break-after:avoid}
+ .figbox,.selftest,.try{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div>
+<h1>生物 4.1 被动运输 · 零基础首学版</h1>
+<p class="sub">人教版 必修1·分子与细胞｜第4章 细胞的物质输入和输出 第1节｜节域 p62-68（影印实锚）｜2026-10-31｜并行搜索员B·队1席转援（承任务包v3三节大批量第2件）</p>
+<p><strong>开场一句话：</strong>第3章我们造好了完整的细胞——边界（3.1细胞膜）、车间（3.2细胞器）、控制中心（3.3细胞核）；第4章章题页开宗明义（p61）：<span class="mark">细胞是一个开放的系统，系统的边界——细胞膜不仅是将细胞内外隔开的屏障，也是控制物质进出细胞的门户</span>。这一节先看最省钱的过门方式：顺着浓度差滑过去，一滴能量都不用花——被动运输。</p>
+<div class="check"><strong>读完这节你能：</strong><ul>
+<li>配对两种"水通道"实验现象：渗透装置液面升降与红细胞三态，说出渗透作用的方向规则；</li>
+<li>复述原生质层三件套（细胞膜+液泡膜+两层膜之间的细胞质），判读质壁分离与复原的发生条件；</li>
+<li>区分自由扩散与协助扩散，并说清载体蛋白与通道蛋白的机制差别；</li>
+<li>用"顺浓度梯度+不耗能"两个判据，把陌生物质快速归入被动运输。</li>
+</ul></div>
+
+<div class="station">
+<p class="station-title">第 0 站 · 预备块：为什么先讲"水"</p>
+<p>水是活细胞中含量最多的物质（p62原文），它进出细胞最频繁；把水的过膜方式搞清楚，"被动运输"的地基就打好了。本章主线：<span class="uline">被动运输（4.1，不耗能）→主动运输与胞吞胞吐（4.2，要耗能）</span>——第4章章题页的章诗："掌控着道道闸门，驱动着各式舟车。输入输出中忙碌，被动主动间选择。"（p61）</p>
+</div>
+
+<div class="station">
+<p class="station-title">第 1 站 · 水进出细胞的原理：渗透作用与质壁分离</p>
+<h3>1. 半透膜上的"单向阀门"：渗透作用（p62）</h3>
+<p>问题探讨（p62）：长颈漏斗口密封一层玻璃纸（又叫赛璐玢，是一种<span class="mark">半透膜</span>），内注蔗糖溶液浸入清水——水分子可以自由透过它，蔗糖分子则不能。过一段时间，漏斗管内液面<span class="mark">升高</span>。讨论三问的关键判据：①液面升高=水净流入；②但液面<span class="mark">不会无限升高</span>（液柱自身的压强会顶回去）；③换成纱布（孔径大）就"关不住"蔗糖，现象消失。</p>
+<div class="note-red">渗透作用定义（p62原文）：水分子（或其他溶剂分子）通过半透膜的扩散，称为<span class="mark">渗透作用</span>。如果半透膜两侧存在浓度差，渗透的方向就是水分子从<span class="mark">水的相对含量高的一侧</span>向<span class="mark">相对含量低的一侧</span>渗透。</div>
+<p class="sub">口诀：水往"糖多"处流——看的是<em>水的相对含量</em>，不是蔗糖的多少。（教法口诀·自编）</p>
+<div class="figbox">
+<svg viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="渗透现象示意图复刻：长颈漏斗内蔗糖溶液，漏斗口半透膜，水分子透过半透膜进入漏斗使液面升高，蔗糖分子不能通过">
+<rect x="0" y="0" width="560" height="210" fill="#fbfdfe"/>
+<text x="16" y="22" font-size="13" font-weight="bold" fill="#12333f">渗透现象示意图（p62·复刻示意）</text>
+<rect x="60" y="90" width="150" height="90" fill="#dff0f8" stroke="#7fb3cf"/>
+<text x="135" y="196" font-size="11" fill="#5a6b7d" text-anchor="middle">烧杯：清水</text>
+<rect x="120" y="30" width="30" height="95" fill="#fdecec" stroke="#cf8f8f"/>
+<rect x="120" y="55" width="30" height="70" fill="#f7c9c9" opacity="0.85"/>
+<line x1="118" y1="125" x2="152" y2="125" stroke="#b06a6a" stroke-dasharray="3 2"/>
+<text x="200" y="60" font-size="11" fill="#8a6a2a">液面"一段时间后"↑</text>
+<line x1="196" y1="55" x2="156" y2="58" stroke="#8a6a2a" marker-end="url(#a)"/>
+<circle cx="98" cy="150" r="4" fill="#e57373"/><circle cx="108" cy="162" r="4" fill="#e57373"/>
+<text x="60" y="182" font-size="10" fill="#c05555">●蔗糖分子过不去</text>
+<circle cx="88" cy="132" r="2.5" fill="#6aa3d8"/><circle cx="176" cy="140" r="2.5" fill="#6aa3d8"/><circle cx="166" cy="120" r="2.5" fill="#6aa3d8"/>
+<text x="60" y="170" font-size="10" fill="#4a86b3">·水分子可自由过膜</text>
+<path d="M 290 60 C 310 40 330 40 350 60" fill="none" stroke="#9a86bd" stroke-width="2" marker-end="url(#a)"/>
+<path d="M 350 110 C 330 130 310 130 290 110" fill="none" stroke="#9a86bd" stroke-width="2" marker-end="url(#a)"/>
+<text x="262" y="95" font-size="12" fill="#5a6b7d">放大看半透膜</text>
+<circle cx="320" cy="86" r="10" fill="#b06a6a" opacity="0.75"/>
+<text x="338" y="90" font-size="10" fill="#c05555">蔗糖：卡在膜上</text>
+<circle cx="320" cy="55" r="3" fill="#6aa3d8"/><text x="330" y="58" font-size="10" fill="#4a86b3">水：钻过去</text>
+<rect x="420" y="80" width="110" height="60" fill="#fff8e8" stroke="#d8c48a" rx="6"/>
+<text x="430" y="100" font-size="11" fill="#8a6a2a">半透膜判据：</text>
+<text x="430" y="116" font-size="10.5" fill="#8a6a2a">水过·蔗糖不过</text>
+<text x="430" y="131" font-size="10.5" fill="#8a6a2a">纱布=关不住</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#8a6a2a"/></marker></defs>
+</svg>
+<p class="figcap">看图口诀：<span class="mark">"水多糖少走向糖"</span>——渗透方向永远从水的相对含量高处流向低处（p62原文改排·自编助记）。</p>
+</div>
+<h3>2. 红细胞三态：动物细胞的渗透表型（p63·图4-1）</h3>
+<table class="cmp">
+<tr><th>外界溶液浓度 vs 细胞质浓度</th><th>水分走向</th><th>红细胞表型</th></tr>
+<tr><td>外界 <span class="mark">低</span>于细胞质</td><td>水净进入</td><td><span class="mark">吸水膨胀</span>（涨破风险）</td></tr>
+<tr><td>外界 <span class="mark">高</span>于细胞质</td><td>水净流出</td><td><span class="mark">失水皱缩</span></td></tr>
+<tr><td>外界 <span class="mark">相同</span>于细胞质</td><td>进出动态平衡</td><td><span class="mark">形态不变</span></td></tr>
+</table>
+<p>思考·讨论（p63）五个追问里最值钱的两问：红细胞内的血红蛋白等有机物<span class="uline">不能</span>透过细胞膜（它们扮演了"蔗糖"的角色）；红细胞吸水或失水<span class="uline">取决于外界溶液浓度与细胞质浓度的差</span>。临床输液用<span class="mark">生理盐水</span>——就是给红细胞造一个"浓度相同"的外环境，防止输液变"涨破/皱缩现场"（p63讨论5问）。</p>
+<div class="try"><p><strong>验一验①（p63 讨论3问）：</strong>当外界溶液浓度低时，红细胞一定会由于吸水而涨破吗？<span class="ans">不一定——会先<span class="mark">吸水膨胀</span>，但红细胞膜有一定拉伸限度，且外液浓度只是"偏低"时水会达到进出平衡；只有在浓度差足够大（如纯水）时才易涨破。这正是输液要用<em>等渗</em>液的原因。</span></p></div>
+<h3>3. 植物细胞的水路线：原生质层与质壁分离（p63-65）</h3>
+<p>植物细胞外面多了一层<span class="mark">细胞壁</span>：对水分子来说细胞壁是<span class="mark">全透性</span>的，作用主要是<span class="mark">保护和支持</span>细胞，伸缩性比较小（p63原文）。成熟植物细胞的中央液泡占据大部分空间，把细胞质挤成薄层——细胞内的液体环境主要指液泡里面的<span class="mark">细胞液</span>。关键定义（p63原文）：<span class="mark">细胞膜和液泡膜以及两层膜之间的细胞质称为原生质层</span>；后文所说水进出细胞，主要指水经过<span class="mark">原生质层</span>进出液泡。</p>
+<div class="figbox">
+<svg viewBox="0 0 560 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="质壁分离与复原三态示意：正常态原生质层贴壁，质壁分离开态原生质层与细胞壁分离出现空隙，复原态恢复贴壁">
+<rect x="0" y="0" width="560" height="190" fill="#fbfdfe"/>
+<text x="16" y="22" font-size="13" font-weight="bold" fill="#12333f">质壁分离 ⇄ 复原 三态（p65·图4-3 口径示意·原图为显微照片）</text>
+<g>
+<path d="M 30 60 L 30 140 Q 30 152 42 152 L 130 152 Q 142 152 142 140 L 142 60 Q 142 48 130 48 L 42 48 Q 30 48 30 60 Z" fill="#eef7ee" stroke="#5a8a5a" stroke-width="2.5"/>
+<path d="M 40 70 L 40 138 Q 40 144 46 144 L 126 144 Q 132 144 132 138 L 132 70 Q 132 64 126 64 L 46 64 Q 40 64 40 70 Z" fill="#7ac48f"/>
+<circle cx="86" cy="100" r="24" fill="#8f6bb0" opacity="0.8"/>
+<text x="86" y="176" font-size="11" fill="#3a5a3a" text-anchor="middle">① 正常：原生质层贴壁</text>
+</g>
+<g>
+<path d="M 210 60 L 210 140 Q 210 152 222 152 L 310 152 Q 322 152 322 140 L 322 60 Q 322 48 310 48 L 222 48 Q 210 48 210 60 Z" fill="#eef7ee" stroke="#5a8a5a" stroke-width="2.5"/>
+<ellipse cx="266" cy="100" rx="34" ry="30" fill="#7ac48f"/>
+<circle cx="266" cy="100" r="16" fill="#8f6bb0" opacity="0.8"/>
+<text x="266" y="176" font-size="11" fill="#3a5a3a" text-anchor="middle">② 质壁分离：出现空隙</text>
+</g>
+<g>
+<path d="M 400 60 L 400 140 Q 400 152 412 152 L 500 152 Q 512 152 512 140 L 512 60 Q 512 48 500 48 L 412 48 Q 400 48 400 60 Z" fill="#eef7ee" stroke="#5a8a5a" stroke-width="2.5"/>
+<path d="M 410 68 L 410 140 Q 410 146 416 146 L 496 146 Q 502 146 502 140 L 502 68 Q 502 62 496 62 L 416 62 Q 410 62 410 68 Z" fill="#7ac48f"/>
+<circle cx="456" cy="102" r="26" fill="#8f6bb0" opacity="0.8"/>
+<text x="456" y="176" font-size="11" fill="#3a5a3a" text-anchor="middle">③ 复原：重新充盈</text>
+</g>
+<line x1="150" y1="100" x2="200" y2="100" stroke="#b06a6a" stroke-width="2" marker-end="url(#b)"/>
+<line x1="330" y1="100" x2="392" y2="100" stroke="#5a8a5a" stroke-width="2" marker-end="url(#c)"/>
+<text x="152" y="90" font-size="10.5" fill="#b05555">外界溶液更浓→失水</text>
+<text x="330" y="90" font-size="10.5" fill="#3a7a3a">细胞液更浓→吸水</text>
+<defs>
+<marker id="b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#b06a6a"/></marker>
+<marker id="c" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#3a7a3a"/></marker>
+</defs>
+</svg>
+<p class="figcap">三态判读：<span class="mark">细胞液浓度 &lt; 外界溶液浓度</span>→失水→原生质层与细胞壁分离（<span class="mark">质壁分离</span>）；<span class="mark">细胞液浓度 &gt; 外界溶液浓度</span>→吸水→恢复（<span class="mark">质壁分离复原</span>）。分离的力学根源：原生质层比细胞壁的<span class="mark">伸缩性大</span>（p65原文）。</p>
+</div>
+<div class="try"><p><strong>验一验②（p64-65 探究·实践）：</strong>整个探究的实验假说怎么写？材料为什么选<em>紫色</em>洋葱鳞片叶？<span class="ans">假说：<span class="mark">原生质层相当于一层半透膜，水经它进出细胞</span>（"作出假设不是凭空猜测，而是根据已有的知识和经验作出合理的推断"p64原文）。选紫色鳞片叶：<span class="mark">液泡自带紫色</span>，质壁分离时紫色区域缩小、空隙清晰可见，无需额外染色。</span></p></div>
+<div class="try"><p><strong>验一验③（p67 练习2 改编）：</strong>质壁分离实验能证明什么、<em>不能</em>证明什么？<span class="ans">能证明：成熟植物细胞的死活（死细胞不分离不复原）、原生质层比细胞壁伸缩性大、成熟植物细胞能渗透吸水。<span class="mark">不能证明：水分子通过通道蛋白进入细胞</span>——光学显微镜看不到蛋白质层面的机制（这正是本节选D的原因）。</span></p></div>
+</div>
+
+<div class="station">
+<p class="station-title">第 2 站 · 被动运输两兄弟：自由扩散 vs 协助扩散</p>
+<div class="note-red">被动运输定义（p65原文加粗）：像水分子这样，<span class="mark">物质以扩散方式进出细胞，不需要消耗细胞内化学反应所释放的能量</span>，这种物质跨膜运输方式称为<span class="mark">被动运输（passive transport）</span>。被动运输又分为自由扩散和协助扩散两类。</div>
+<p><strong>自由扩散（p66）：</strong><span class="mark">物质通过简单的扩散作用进出细胞的方式，叫作自由扩散（free diffusion），也叫简单扩散（simple diffusion）</span>。直接穿磷脂双分子层。教材实例三条：①<span class="mark">氧和二氧化碳</span>（肺泡内氧浓度＞细胞内→氧扩散进入；呼吸作用使胞内二氧化碳浓度升高→二氧化碳扩散排出）；②<span class="mark">甘油、乙醇、苯等脂溶性小分子有机物</span>较易通过（"相似相溶"于脂双层·旁栏设问的答案口径）；③水——过去认为水都是自由扩散。</p>
+<p><strong>协助扩散（p66）：</strong><span class="mark">这种借助膜上的转运蛋白进出细胞的物质扩散方式，叫作协助扩散（facilitated diffusion），也叫易化扩散</span>。离子和一些小分子有机物如<span class="mark">葡萄糖、氨基酸</span>等，不能自由地通过细胞膜，需要镶嵌在膜上的特殊蛋白质协助——这些蛋白质称为<span class="mark">转运蛋白</span>。</p>
+<div class="figbox">
+<svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图4-4自由扩散和协助扩散示意图复刻：磷脂双分子层上，紫色分子直接穿膜为自由扩散，蓝色分子经载体蛋白变构通过，橙色离子经通道蛋白通过">
+<rect x="0" y="0" width="560" height="240" fill="#fbfdfe"/>
+<text x="16" y="22" font-size="13" font-weight="bold" fill="#12333f">图4-4 自由扩散和协助扩散示意图（p66·复刻）</text>
+<text x="30" y="42" font-size="11" fill="#5a6b7d">细胞外</text>
+<rect x="20" y="95" width="520" height="42" fill="#cfe4f2" opacity="0.55" rx="8"/>
+<path d="M 20 95 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0" fill="none" stroke="#4a86b3" stroke-width="1.6"/>
+<path d="M 20 137 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0 q 10 -8 20 0 q 10 8 20 0" fill="none" stroke="#4a86b3" stroke-width="1.6"/>
+<g fill="#9a5fb5"><circle cx="60" cy="60" r="6"/><circle cx="76" cy="72" r="6"/><circle cx="62" cy="84" r="6"/><circle cx="78" cy="94" r="6"/><circle cx="60" cy="168" r="6"/><circle cx="76" cy="178" r="6"/><circle cx="62" cy="192" r="6"/></g>
+<line x1="69" y1="56" x2="69" y2="184" stroke="#9a5fb5" stroke-width="2.5" marker-end="url(#d)" opacity="0.8"/>
+<text x="36" y="214" font-size="11.5" fill="#7a4a92" font-weight="bold">自由扩散</text>
+<g fill="#5b8fd8"><circle cx="210" cy="56" r="6"/><circle cx="226" cy="68" r="6"/><circle cx="196" cy="70" r="6"/><circle cx="210" cy="178" r="6"/><circle cx="226" cy="190" r="6"/><circle cx="196" cy="186" r="6"/></g>
+<path d="M 186 116 Q 210 96 234 116 Q 234 128 222 130 Q 210 124 198 130 Q 186 128 186 116 Z" fill="#8fd0c8" stroke="#3a8a7a" stroke-width="2"/>
+<path d="M 208 74 L 208 76" stroke="#5b8fd8" stroke-width="3"/><path d="M 210 128 L 210 172" stroke="#5b8fd8" stroke-width="2.5" marker-end="url(#d)"/>
+<text x="186" y="214" font-size="11.5" fill="#3a6a9a" font-weight="bold">协助扩散</text>
+<text x="186" y="228" font-size="10" fill="#5a6b7d">载体蛋白：结合→构象改变</text>
+<g fill="#e58a3a"><circle cx="380" cy="56" r="6"/><circle cx="396" cy="66" r="6"/><circle cx="366" cy="68" r="6"/><circle cx="388" cy="44" r="6"/><circle cx="380" cy="182" r="6"/><circle cx="396" cy="192" r="6"/><circle cx="366" cy="188" r="6"/></g>
+<rect x="356" y="100" width="48" height="34" rx="14" fill="#a8d8e8" stroke="#3a8a9a" stroke-width="2"/>
+<rect x="374" y="88" width="12" height="60" rx="5" fill="#6ab8d8" opacity="0.85"/>
+<path d="M 380 74 L 380 176" stroke="#e58a3a" stroke-width="2.5" marker-end="url(#d)" opacity="0.9"/>
+<text x="356" y="214" font-size="11.5" fill="#b06a2a" font-weight="bold">协助扩散</text>
+<text x="356" y="228" font-size="10" fill="#5a6b7d">通道蛋白：不用结合直通</text>
+<line x1="280" y1="95" x2="290" y2="140" stroke="#7a95a8" stroke-width="1"/>
+<line x1="430" y1="100" x2="420" y2="140" stroke="#7a95a8" stroke-width="1"/>
+<text x="470" y="120" font-size="11" fill="#12333f">磷脂双分子层</text>
+<defs><marker id="d" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#556"/></marker></defs>
+</svg>
+<p class="figcap">对照三问：过膜要不要帮手？——自由扩散不用；协助扩散要<span class="mark">转运蛋白</span>。转运蛋白分两类（p66-67）：<span class="mark">载体蛋白</span>只容许与自身结合部位相适应的分子或离子通过，而且<span class="mark">每次转运时都会发生自身构象的改变</span>；<span class="mark">通道蛋白</span>只容许与自身通道的直径和形状相适配、大小和电荷相适宜的分子或离子通过，<span class="mark">不需要与通道蛋白结合</span>（图4-5钾离子通道模式图为通道实例）。</p>
+</div>
+<p><strong>水通道蛋白补刀（p67原文）：</strong>过去人们普遍认为，水分子都是通过自由扩散进出细胞的，但后来的研究表明，<span class="mark">水分子更多的是借助细胞膜上的水通道蛋白以协助扩散方式进出细胞的</span>。——这是"水=自由扩散"绝对化说法的标准反例。</p>
+<div class="note-red">速率因素（p67原文）：由于自由扩散与协助扩散都是<span class="mark">顺浓度梯度</span>进行跨膜运输的，<span class="mark">不需要消耗细胞内化学反应产生的能量</span>，因此膜内外物质<span class="mark">浓度梯度的大小会直接影响物质运输的速率</span>，但协助扩散需要转运蛋白，因而某些物质运输的速率还与<span class="mark">转运蛋白的数量</span>有关。</div>
+<div class="figbox">
+<svg viewBox="0 0 560 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="速率对比示意：自由扩散速率随浓度差直线上升，协助扩散随浓度差先升后达到由转运蛋白数量决定的上限">
+<rect x="0" y="0" width="560" height="180" fill="#fbfdfe"/>
+<text x="16" y="22" font-size="13" font-weight="bold" fill="#12333f">速率-浓度差 关系（教法拓展·自编示意·非教材原图）</text>
+<line x1="70" y1="150" x2="520" y2="150" stroke="#556" stroke-width="1.5" marker-end="url(#e)"/>
+<line x1="70" y1="150" x2="70" y2="35" stroke="#556" stroke-width="1.5" marker-end="url(#e)"/>
+<text x="470" y="168" font-size="11" fill="#556">浓度差→</text>
+<text x="40" y="45" font-size="11" fill="#556">速率</text>
+<line x1="70" y1="145" x2="490" y2="55" stroke="#9a5fb5" stroke-width="3"/>
+<text x="392" y="66" font-size="11.5" fill="#7a4a92" font-weight="bold">自由扩散：一路线性</text>
+<path d="M 70 145 C 160 105 220 75 260 68" fill="none" stroke="#e58a3a" stroke-width="3"/>
+<line x1="260" y1="68" x2="490" y2="68" stroke="#e58a3a" stroke-width="3" stroke-dasharray="6 4"/>
+<text x="300" y="52" font-size="11.5" fill="#b06a2a" font-weight="bold">协助扩散：饱和平台</text>
+<text x="296" y="86" font-size="10" fill="#b06a2a">上限=转运蛋白数量（蛋白占满即封顶）</text>
+<defs><marker id="e" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#556"/></marker></defs>
+</svg>
+<p class="figcap">判据链（自编教法小结）：顺不顺浓度梯度+耗不耗能→先定"被动/主动"；要不要转运蛋白→再定"自由/协助"；曲线有没有平台→最后反推"蛋白限速"。4.2的主动运输将把"逆浓度+耗能"补全。</p>
+</div>
+<div class="try"><p><strong>验一验④（p66 旁栏设问）：</strong>甘油、乙醇等分子为什么能以自由扩散的方式进出细胞？<span class="ans">因为它们是<span class="mark">脂溶性的小分子有机物</span>，与磷脂双分子层"相似相溶"，较易直接穿过（p66原文口径）。</span></p></div>
+</div>
+
+<div class="station">
+<p class="station-title">第 3 站 · 科学史话：通道蛋白的"寻宝图"（p68·整页选学在域）</p>
+<table class="cmp">
+<tr><th>时间</th><th>里程碑</th><th>人物/奖项</th></tr>
+<tr><td>1950年前后</td><td>氢同位素标记水实验：水过细胞膜的速率高于人工膜→推断细胞中存在特殊输送水分子的通道（未鉴定出构成物质）</td><td>—</td></tr>
+<tr><td>1988年</td><td>成功分离构成水通道的蛋白质，<span class="mark">证实水通道蛋白存在</span></td><td>美国科学家<span class="mark">阿格雷（P. Agre）</span></td></tr>
+<tr><td>1991年</td><td>发明研究单个离子通道电生理学特征的<span class="mark">膜片钳法</span></td><td>德国科学家内尔和萨克曼·<span class="mark">1991诺贝尔生理学或医学奖</span></td></tr>
+<tr><td>1998年</td><td>解析<span class="mark">钾离子通道蛋白的立体结构</span></td><td>美国科学家<span class="mark">麦金农（R. Mackinnon）</span></td></tr>
+<tr><td>2003年10月8日</td><td>水通道+离子通道两条线收官</td><td>阿格雷和麦金农<span class="mark">同获诺贝尔化学奖</span></td></tr>
+</table>
+<p class="sub">补充数据（p68原文）：人类细胞中已发现13种水通道蛋白（肾小球的滤过与肾小管的重吸收都与之直接相关）；拟南芥细胞中已发现35种。科学在继续：解析钙、钠等离子通道结构·探索调控通道蛋白的药物以治疗疾病。</p>
+</div>
+
+<div class="station">
+<p class="station-title">收口站 · 三句话带走 + 自测四连</p>
+<div class="walk"><strong>①</strong> 渗透作用=水等溶剂分子过半透膜的扩散，方向永远"从水的相对含量高处→低处"；植物细胞的<span class="mark">原生质层</span>（细胞膜+液泡膜+两层膜之间的细胞质）相当于半透膜——外界更浓则<span class="mark">质壁分离</span>，细胞液更浓则<span class="mark">复原</span>。<br>
+<strong>②</strong> <span class="mark">被动运输=顺浓度梯度+不耗能</span>：自由扩散（简单扩散·O₂/CO₂/甘油乙醇苯等脂溶性小分子直穿磷脂双分子层）vs 协助扩散（易化扩散·借<span class="mark">转运蛋白</span>：载体蛋白结合后<span class="mark">构象改变</span>，通道蛋白<span class="mark">不结合</span>直接通）；水主要走<span class="mark">水通道蛋白</span>。<br>
+<strong>③</strong> 速率两旋钮：浓度梯度大小（两兄弟共用）+转运蛋白数量（协助扩散专属·有饱和平台）。</div>
+<div class="selftest"><strong>自测四连（取自 p67 练习与应用原题）：</strong>
+<ul>
+<li>判断：细胞膜和液泡膜都相当于半透膜。<span class="ans">（√）</span></li>
+<li>判断：水分子进入细胞，是通过自由扩散方式进行的。<span class="ans">（×——更多的是借助水通道蛋白以协助扩散方式进出，p67原文）</span></li>
+<li>判断：载体蛋白和通道蛋白在转运分子和离子时，其作用机制是一样的。<span class="ans">（×——载体结合+构象改变，通道不结合）</span></li>
+<li>单选：基于对植物细胞质壁分离原理的理解判断，下列各项无法通过质壁分离实验证明的是（　）A.成熟植物细胞的死活 B.原生质层比细胞壁的伸缩性大 C.成熟的植物细胞能进行渗透吸水 D.水分子可以通过通道蛋白进入细胞——<span class="ans">D（显微镜看不到蛋白机制）</span></li>
+</ul></div>
+<div class="kaowei"><strong>高考考位锚（T11）：</strong>①渗透装置液面升降判断（问题探讨改形必考位·看"水相对含量"不看糖）；②质壁分离与复原条件+死活鉴别（探究·实践全流程是实验设计题母版）；③红细胞三态与等渗输液（生理盐水情境）；④自由扩散/协助扩散实例归类与曲线判读（O₂/CO₂/甘油/葡萄糖/水通道各归各位）；⑤载体vs通道机制辨析+水通道蛋白反例。<span class="sub">真题锚池未录"生物4.1"专行·候采不代拟（宁缺毋编·沿本席件同口径）。</span></div>
+<div class="figbox">
+<svg viewBox="0 0 560 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="位置图：第4章内4.1被动运输p62-68，右界p69起为4.2主动运输与胞吞胞吐">
+<rect x="0" y="0" width="560" height="100" fill="#fbfdfe"/>
+<rect x="40" y="34" width="200" height="34" rx="6" fill="#d5eaf5" stroke="#4a86b3" stroke-width="2"/>
+<text x="140" y="56" font-size="12" font-weight="bold" fill="#12333f" text-anchor="middle">4.1 被动运输 p62-68（本节）</text>
+<rect x="290" y="34" width="230" height="34" rx="6" fill="#f2f2f2" stroke="#9aa5ad" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="405" y="56" font-size="12" fill="#5a6b7d" text-anchor="middle">4.2 主动运输与胞吞、胞吐 p69起</text>
+<line x1="240" y1="51" x2="286" y2="51" stroke="#9a86bd" stroke-width="2" marker-end="url(#f)"/>
+<text x="40" y="24" font-size="11" fill="#5a6b7d">p61=第4章章题页（左界界标·"被动主动间选择"）</text>
+<text x="330" y="84" font-size="11" fill="#8a6a2a">p69=4.2节题页（右界界标·碘浓度20~25倍）</text>
+<defs><marker id="f" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#9a86bd"/></marker></defs>
+</svg>
+<p class="figcap">位置图：4.1 是第4章开节，"被动"半场收官后 4.2 接"主动+大分子"半场；节界 p62-68，p61=第4章章题页、p69=4.2节题页（影印实锚双界）。</p>
+</div>
+<p class="sub" style="text-align:center">—— 本件节界：4.1 全节 p62-68（p62 节题页·p68 生物科学史话整页收尾·p69=4.2 节题页边界），影印 12 拉全 200 全亲目检（m69-m78·核心 7 页 p62-68），ts=1787291655029 详情 API 实测复取（图 N→印刷页 N−9·m71=p62 节题页亲目检吻合）。</p>
+<div class="no-print" style="text-align:center;color:#8a9bb0;font-size:.85em;margin-top:18px">并行搜索员B · 队1席转援（承任务包v3队1行·三节大批量第2件·滚动1.5h/件）· 节界含 p67练习+p68科学史话整页沿 3.3 含 p58 练习整页先例口径 · 标准v2.3 · 产出走分支候并不直推main</div>
+</div>
+</div>
+</body>
+</html>
