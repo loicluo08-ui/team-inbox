@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>化学2.2 电解质的电离 离子反应 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  b { color: #ffd479; }
+  .key { background: #233043; border-left: 4px solid #4a9eff; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .nb { background: #3a2f1a; border-left: 4px solid #ffd479; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .try { background: #1c2b22; border-left: 4px solid #6fcf97; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .ans { color: #6fcf97; }
+  .pit { background: #2e1f22; border-left: 4px solid #eb5757; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .alt { background: #1f2733; border: 1px dashed #4a9eff; padding: 12px 16px; border-radius: 6px; margin: 18px 0; color: #a9c4e4; }
+  .box { background: #1d2b3a; border: 1px solid #3a5578; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .kao { background: #2b1f33; border-left: 4px solid #b98cff; padding: 12px 16px; border-radius: 6px; margin: 18px 0; }
+  .eq { text-align: center; font-size: 19px; letter-spacing: 1px; margin: 16px 0; color: #eaf2ff; background: #1a222e; border-radius: 8px; padding: 10px 8px; }
+  .fig { text-align: center; margin: 24px 0; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 8px; }
+  .small { font-size: 14px; color: #9aa7b8; }
+  .talk { color: #cfe0f5; background: #1a2433; padding: 14px 18px; border-radius: 8px; margin: 20px 0; }
+  .check { background: #1a2433; padding: 14px 18px; border-radius: 8px; margin: 20px 0; }
+  .check li { margin: 6px 0 6px 20px; }
+  .next { background: #14202e; border: 1px solid #2e4a6b; padding: 12px 16px; border-radius: 8px; margin: 30px 0 10px; color: #a9c4e4; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; }
+  th, td { border: 1px solid #3a4a5e; padding: 7px 10px; font-size: 15px; }
+  th { background: #1d2b3a; color: #cfe0f5; }
+  .foot { border-top: 1px solid #2e3a4a; margin-top: 50px; padding-top: 16px; color: #7d8a99; font-size: 12.5px; line-height: 1.7; }
+  .mark { background: #4a3a00; color: #ffe28a; padding: 0 4px; border-radius: 3px; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 0; }
+    h1,h2,h3 { color: #000; }
+    .key { background: #e8f0fe; color: #111; }
+    .nb { background: #fff7dd; color: #111; }
+    .try { background: #eafaf1; color: #111; }
+    .pit { background: #fdecec; color: #111; }
+    .alt { background: #eef4fb; color: #333; }
+    .box,.kao { background: #f2f4f8; color: #111; }
+    .talk,.check { background: #f2f6fb; color: #111; }
+    .eq { background: #eef2f8; color: #000; }
+    .figcap,.sub,.small,.foot { color: #555; }
+    b { color: #8a6d00; }
+    .ans { color: #1d7a46; }
+    .mark { background: #ffe9a8; color: #6b5200; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>电解质的电离 离子反应：盐水为什么导电、"酸碱相遇"到底发生了什么</h1>
+<div class="sub">化学 2.2 · 鲁科版《必修 第一册》第2章第2节 · 教材印刷页 p53–65 · 零基础首学版 v1.0（出品：并行搜索员C·队3席·1031）</div>
+
+<div class="talk">
+先看一个日常现象：泡腾片放进水里，"滋——"地冒出一大堆气泡，药水喝起来像汽水（教材 p53 图2-2-1）。可它明明是<b>干燥的固体</b>，平时不冒一个泡，为什么一进水就变了？答案藏在"水里到底发生了什么"——这正是本节要拍慢镜头的地方：物质溶进水以后，会<b>散架</b>吗？散成的碎片是什么？两杯"碎片水"倒在一起，又是谁在和谁反应？
+</div>
+
+<div class="check">
+<b>读完这节你能：</b>
+<li>判断一种化合物是不是<b>电解质</b>，并写出它的<b>电离方程式</b>；</li>
+<li>说清<b>离子反应</b>的定义和发生条件，认出"酸+碱"这类反应的真面目；</li>
+<li>按四步法写出并检查<b>离子方程式</b>，还能用它解释"检验 Cl⁻ / SO₄²⁻"和"粗盐水除杂"。</li>
+</div>
+
+<div class="nb">
+<b>开讲前的三件预备（都没有就先补这三件）：</b>
+<p>① <b>"纯净物"不是"干净"：</b>它是2.1节的概念——只由一种物质组成。盐酸是 HCl 气体溶在水里，是<b>混合物</b>，别把它当纯净物。</p>
+<p>② <b>离子符号怎么读：</b>右上角的小数字是<b>带的电荷</b>。Na⁺ 读"钠离子，带一个单位正电荷"；SO₄²⁻ 读"硫酸根离子，带两个单位负电荷"。电荷守恒配平时全靠它。</p>
+<p>③ <b>"电导率"：</b>仪器给溶液导电能力打的分，数值越大导电越强（p56 图2-2-6 的 pH 计是另一个仪器，测酸碱度）。</p>
+</div>
+
+<h2><span class="step-tag">第①站</span>三态导电实验：NaCl 在什么情况下"通电亮灯"</h2>
+
+<p>教材 p53–54 先做了一个三连实验（观察·思考：研究氯化钠的导电性），把干燥的氯化钠摆出三种形态，逐个接上直流电源和电灯泡：</p>
+
+<table>
+<tr><th>样品（p54 观察记录表）</th><th>能否导电</th><th>一句话解释</th></tr>
+<tr><td>固态氯化钠（干晶体）</td><td class="ans">不导电</td><td>Na⁺ 和 Cl⁻ 被静电作用"锁"在晶格里，<b>不能自由移动</b></td></tr>
+<tr><td>熔融状态的氯化钠（加热化开）</td><td class="ans">导电</td><td>受热破坏了离子间的相互作用，出现<b>能自由移动的离子</b></td></tr>
+<tr><td>NaCl 溶液（溶进水里）</td><td class="ans">导电</td><td>水分子把 Na⁺、Cl⁻ 拉离晶体表面进入溶液，同样自由了</td></tr>
+</table>
+
+<p>结论就一句话（p54 原文逻辑）：<b>晶体里的离子"动不了"所以不导电；一旦熔化或溶进水，离子自由了、能在电场里定向移动，就导电。</b>灯泡亮不亮，看的不是"有没有离子"，而是"离子能不能自由跑"。</p>
+
+<div class="key">像氯化钠这样，<span class="mark">溶于水或受热熔化时解离成能够自由移动的离子</span>的过程称为<b>电离</b>（ionization）（p54）。</div>
+
+<p>电离能写成一个式子，叫<b>电离方程式</b>（ionization equation）（p55）：</p>
+<div class="eq">NaCl ═══ Na<sup>+</sup> + Cl<sup>−</sup></div>
+
+<div class="try">
+<b>验一验①（30秒）：</b>KNO₃ 溶于水，溶液里该有哪些自由移动的离子？<br>
+<span class="ans">K⁺ 和 NO₃⁻——KNO₃ 电离成钾离子和硝酸根离子（K⁺、NO₃⁻ 电荷相加恰好抵消）。</span>
+</div>
+
+<h2><span class="step-tag">第②站</span>给化合物贴标签：电解质，以及"酸碱盐"的水中身份</h2>
+
+<p>实验表明（p55）：氯化氢气体、氢氧化钠固体等很多物质溶于水后都能电离导电；NaOH、K₂SO₄ 等在熔融状态下也能电离导电。据此教材给出定义：</p>
+
+<div class="key">在<span class="mark">水溶液中或熔融状态下能够导电</span>的<b>化合物</b>称为<b>电解质</b>（electrolyte）（p55）。</div>
+
+<div class="pit"><b>坑点1：电解质必须是化合物，而且判断看"能否导电"这个行为。</b>铜丝能导电但它是单质不是化合物，所以铜不是电解质（导电的金属单质不是电解质）；蔗糖溶于水不电离也不导电，是<b>非电解质</b>（p56 首段预告了溶液性质只属于电解质溶液）。<b>坑点2："溶液导电"是必要条件之一：</b>"水溶液中<b>或</b>熔融状态下"——两个条件占一个就行，但都要落在"化合物"身上。</div>
+
+<p>酸、碱、盐都是电解质。溶进水里电离之后，看生成的离子"长相"就能分类（p55）：</p>
+<table>
+<tr><th>类别</th><th>电离时的标志（p55 原文口径）</th><th>例子与电离方程式（p55）</th></tr>
+<tr><td><b>酸</b>（acid）</td><td>生成的<b>阳离子全部是 H⁺</b> 的化合物</td><td>HCl ═══ H⁺ + Cl⁻</td></tr>
+<tr><td><b>碱</b>（base）</td><td>生成的<b>阴离子全部是 OH⁻</b> 的化合物</td><td>NaOH ═══ Na⁺ + OH⁻</td></tr>
+<tr><td><b>盐</b>（salt）</td><td>能生成<b>金属阳离子（或铵离子）和酸根离子</b>的化合物</td><td>K₂SO₄ ═══ 2K⁺ + SO₄²⁻</td></tr>
+</table>
+
+<div class="nb"><b>注意"全部"两个字（p55 原文着重口径）：</b>NaHSO₄ 电离也会出 H⁺，但同时还有 Na⁺，阳离子不是"全部"是 H⁺——按教材口径它不按"酸"论，分类看<b>电离产物的全集</b>，不是看有没有某种离子。</div>
+
+<div class="box"><b>拓展视野（p55）：强电解质和弱电解质。</b>相同温度、相同浓度下，盐酸比醋酸导电强——因为 HCl 在水中<b>完全电离</b>，醋酸只<b>部分电离</b>。完全电离的叫<b>强电解质</b>：强酸（H₂SO₄、HNO₃、HCl）、强碱〔NaOH、KOH、Ba(OH)₂〕、大部分盐（NaCl、KNO₃、CuSO₄）；部分电离的叫<b>弱电解质</b>：弱酸（H₂CO₃、CH₃COOH）、弱碱（NH₃·H₂O）等。<b>水是一种极弱的电解质。</b></div>
+
+<p>电解质溶液里既然有自由移动的离子，溶液就会表现出颜色、酸碱性、导电性等性质（p56）：离子浓度越大颜色越深，可以用<b>比色计</b>测离子浓度；H⁺ 或 OH⁻ 让溶液显酸性或碱性，可以用酸碱指示剂检验、用 <b>pH 计</b>测浓度。教材还给了两个真实落点：<b>水培营养液</b>按 K⁺、NH₄⁺、NO₃⁻、PO₄³⁻ 的浓度要求选盐配制（p56 迁移·应用）；人体大量出汗或腹泻时 Na⁺、K⁺、Cl⁻ 随汗液流失，会恶心、呕吐、肌肉痉挛，所以要补水分和盐分——电解质饮料里 Na⁺ 约 21 mmol/L、K⁺ 约 5.4 mmol/L（p56–57 身边的化学+图2-2-7），自制时 1 L 水加 2 g 左右食盐即可（p57）。</p>
+
+<div class="try">
+<b>验一验②（30秒）：</b>Ba(OH)₂ 是酸、碱还是盐？写出电离方程式。<br>
+<span class="ans">碱——它电离出的阴离子全部是 OH⁻。Ba(OH)₂ ═══ Ba²⁺ + 2OH⁻（p59 方法导引原式）。</span>
+</div>
+
+<h2><span class="step-tag">第③站</span>离子反应：两杯"碎片水"相遇，谁动了谁的浓度</h2>
+
+<p>电解质溶于水电离出自由离子，所以它们在水溶液中的反应一定与这些离子有关（p57）。教材做了一支"慢镜头"实验（观察·思考，p57–58）：向滴有酚酞的 Ba(OH)₂ 溶液中匀速滴加稀硫酸，用电导率传感器全程记录——</p>
+
+<div class="fig">
+<svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="640" height="190" fill="none"/>
+  <line x1="60" y1="150" x2="600" y2="150" stroke="#5a6a7a" stroke-width="1.5"/>
+  <line x1="60" y1="150" x2="60" y2="20" stroke="#5a6a7a" stroke-width="1.5"/>
+  <path d="M60,45 C120,50 150,110 220,138 C260,145 300,143 330,140 C380,132 460,90 560,55" fill="none" stroke="#e05c5c" stroke-width="2.5"/>
+  <text x="620" y="158" fill="#9aa7b8" font-size="12">时间/s</text>
+  <text x="24" y="26" fill="#9aa7b8" font-size="12">电导率</text>
+  <text x="90" y="36" fill="#7d8a99" font-size="11">离子多·导电强</text>
+  <text x="292" y="128" fill="#e05c5c" font-size="11">约80s·低谷</text>
+  <text x="430" y="70" fill="#7d8a99" font-size="11">硫酸过量·离子回升</text>
+</svg>
+<p class="figcap">这张图在说什么：电导率先跌到谷底再回升（图2-2-8 p58 实验曲线示意）。谷底=溶液里几乎没有自由离子了——H⁺、OH⁻、Ba²⁺、SO₄²⁻ 四种离子刚好"两两配对跑光"。</p>
+</div>
+
+<p>为什么？看溶液里原本有什么（p58 原文逻辑）：硫酸电离出 H⁺ 和 SO₄²⁻，Ba(OH)₂ 电离出 Ba²⁺ 和 OH⁻。混合后：</p>
+<div class="eq">H<sup>+</sup> + OH<sup>−</sup> → 难电离的 H<sub>2</sub>O　　Ba<sup>2+</sup> + SO<sub>4</sub><sup>2−</sup> → BaSO<sub>4</sub> 沉淀</div>
+
+<p>四种离子两两"抱团"变成<b>水</b>（难电离）和<b>硫酸钡</b>（沉淀），溶液里自由离子急剧减少——电导率跌到谷底。这就是反应的<b>实质</b>。类似地，盐酸与 NaOH 溶液反应的实质就是 H⁺ 与 OH⁻ 结合生成水，Na⁺ 和 Cl⁻ 根本不参与（p58）。</p>
+
+<div class="key">在溶液中<span class="mark">有离子参加</span>的化学反应称为<b>离子反应</b>（ionic reaction）（p58）。溶液中的某种或某些离子的<b>浓度发生改变</b>时，离子反应才能发生。</div>
+
+<p>酸、碱、盐在溶液里的复分解反应，生成<b>难溶的物质（沉淀）、难电离的物质（如 H₂O）或挥发性物质（气体）</b>，都会让某些离子浓度降低——所以<b>复分解反应都属于离子反应</b>（p58）。</p>
+
+<div class="try">
+<b>验一验③（30秒）：</b>NaCl 溶液和 KNO₃ 溶液倒在一起，有离子反应吗？<br>
+<span class="ans">没有。混合后四种离子（Na⁺、Cl⁻、K⁺、NO₃⁻）依然全部自由游离，没有任何离子浓度降低——不生成沉淀、难电离物或气体，离子反应不发生（p58 条件反推）。</span>
+</div>
+
+<h2><span class="step-tag">第④站</span>离子方程式：把"一类反应"写成一行</h2>
+
+<p>离子反应用<b>离子方程式</b>（ionic equation）表示（p59）。NaOH 溶液与稀盐酸的反应，化学方程式有千千万万个，但它们的离子方程式都是同一行：</p>
+<div class="eq">OH<sup>−</sup> + H<sup>+</sup> ═══ H<sub>2</sub>O</div>
+
+<p><b>离子方程式表示的不仅仅是一个反应，而是一类反应，并且揭示了这类反应的实质</b>（p60）——这就是它比化学方程式"值钱"的地方。</p>
+
+<h3>写法A：教材方法导引三步（p59–60，以稀硫酸+Ba(OH)₂为例）</h3>
+<p><b>第1步 定存在形式和数量关系：</b>易溶于水且易电离的反应物（强酸、强碱、可溶性盐）按电离方程式写成离子符号，其他写化学式。H₂SO₄ ═══ 2H⁺ + SO₄²⁻（离子比 2:1）；Ba(OH)₂ ═══ Ba²⁺ + 2OH⁻（离子比 1:2）。</p>
+<p><b>第2步 确定真正反应的微粒、产物和数量关系：</b>H⁺ 配 OH⁻ 生成水，Ba²⁺ 配 SO₄²⁻ 生成沉淀；生成的水是硫酸钡的 2 倍（p60 交叉配对图）。</p>
+<p><b>第3步 写出并配平：</b>按<b>电荷守恒+原子种类和数量守恒</b>配平：</p>
+<div class="eq">2H<sup>+</sup> + 2OH<sup>−</sup> + Ba<sup>2+</sup> + SO<sub>4</sub><sup>2−</sup> ═══ 2H<sub>2</sub>O + BaSO<sub>4</sub>↓</div>
+
+<h3>写法B：资料在线"改写法"四步（p61）</h3>
+<table>
+<tr><th>步</th><th>操作（p61 原文口径）</th><th>以盐酸+NaOH为例</th></tr>
+<tr><td>1</td><td>写出化学方程式</td><td>HCl + NaOH ═══ NaCl + H₂O</td></tr>
+<tr><td>2</td><td>改写：易溶易电离的拆成离子符号；难溶物、挥发物和水保留化学式</td><td>H⁺+Cl⁻+Na⁺+OH⁻ ═══ H₂O+Na⁺+Cl⁻</td></tr>
+<tr><td>3</td><td>删去未参与反应的离子</td><td>删 Cl⁻、Na⁺</td></tr>
+<tr><td>4</td><td>检查：电荷守恒+原子守恒</td><td>H⁺ + OH⁻ ═══ H₂O ✓</td></tr>
+</table>
+
+<div class="pit"><b>坑点2："拆不拆"只认三条——易溶、易电离、在溶液里。</b>p64 练习4(1)是教材埋的正题：向<b>碳酸钙</b>（难溶固体）里加盐酸，CaCO₃ 必须整体写化学式，不能拆成 Ca²⁺+CO₃²⁻；同理氢氧化铜悬浊液也不拆。写成"CO₃²⁻+2H⁺=H₂O+CO₂↑"就是错的——错在把不在溶液里的东西当成自由离子了。</div>
+
+<div class="alt">
+<b>卡住了？三步急救包：</b><br>
+① 忘了"谁拆谁不拆"→ 只背一句：<b>强酸、强碱、可溶性盐拆；沉淀、气体、水、氧化物、弱电解质、难溶物不拆</b>（写法B第2步原文口径）。<br>
+② 配平配不动 → 先配<b>电荷</b>（左右两边电荷代数和必须相等），再配<b>原子个数</b>；两个都平才算平。<br>
+③ 分不清"离子方程式对不对"→ 回到定义自查：它有没有让<b>某些离子浓度降低</b>？拆掉的微粒在操作条件下真的自由存在吗（p64 练习4 的判断标准）。
+</div>
+
+<h3>离子反应的三个"实战应用"（p61）</h3>
+<table>
+<tr><th>用途</th><th>操作（p61 原文口径）</th><th>离子方程式</th></tr>
+<tr><td>检验 SO₄²⁻</td><td>先滴稀盐酸无明显现象，再滴 BaCl₂ 溶液出白色沉淀</td><td>Ba²⁺ + SO₄²⁻ ═══ BaSO₄↓</td></tr>
+<tr><td>检验 Cl⁻</td><td>滴 AgNO₃ 出白色沉淀，再滴稀硝酸沉淀不溶解</td><td>Ag⁺ + Cl⁻ ═══ AgCl↓</td></tr>
+<tr><td>除杂分离</td><td>用 CO₃²⁻ 除去溶液中的 Ca²⁺</td><td>Ca²⁺ + CO₃²⁻ ═══ CaCO₃↓</td></tr>
+</table>
+
+<p>教材还安排了学生必做实验<b>「食盐的精制」</b>（p62–63）：氯碱工业用的粗食盐水中含 Ca²⁺、Mg²⁺、SO₄²⁻ 三种杂质离子，用 BaCl₂、NaOH、Na₂CO₃ 等把它们分别转化为沉淀，再定<b>试剂添加顺序</b>（后加的试剂要能顺便收走前面过量试剂引入的新杂质）并检验是否除净——这是"除杂五步法"（p62 方法导引）的完整落地。</p>
+
+<div class="try">
+<b>验一验④（挑战，1分钟）：</b>K₂CO₃ 溶液与足量稀硫酸反应，写出离子方程式。<br>
+<span class="ans">K₂CO₃ 拆成 2K⁺+CO₃²⁻，H₂SO₄ 拆成 2H⁺+SO₄²⁻；真正反应的是 CO₃²⁻ 与 H⁺：CO₃²⁻ + 2H⁺ ═══ H₂O + CO₂↑（p64 练习2(3)同型·K⁺、SO₄²⁻ 旁观删去）。</span>
+</div>
+
+<h2>收口：把这一节带走</h2>
+
+<p><b>三句话（能默写才算读完）：</b></p>
+<p>① 溶于水或熔化时解离出自由离子=电离；能这么干的化合物=电解质（酸：阳离子全是 H⁺；碱：阴离子全是 OH⁻；盐：金属阳离子或铵离子+酸根）。</p>
+<p>② 溶液里有离子参加、且某些离子浓度因此降低的反应=离子反应；复分解生成沉淀、水、气体，全都属于离子反应。</p>
+<p>③ 离子方程式拆"强酸强碱可溶盐"、留"沉淀气体水"，按电荷守恒+原子守恒配平——它表示的是<b>一类</b>反应的实质。</p>
+
+<div class="box">
+<b>自测四连（自编，素材改编自教材 p64–65 练习与活动，答案侧自编并标注）：</b><br>
+1．（改编自 p64 练习1(2)）KCl 溶液里大量存在的微粒是？——<span class="ans">K⁺、Cl⁻（还有 H₂O；几乎无 KCl"分子"，因为它是可溶盐、在水中完全电离）</span><br>
+2．（改编自 p64 练习3）H⁺ + OH⁻ ═══ H₂O 可以表示哪些反应？举两个。——<span class="ans">盐酸+NaOH、稀硫酸+KOH 等强酸与强碱的中和（生成物只有难电离的水·Na⁺/K⁺ 与 Cl⁻/SO₄²⁻ 旁观）</span><br>
+3．（改编自 p65 练习5）只取 E（0.1 mol·L⁻¹ Ba(OH)₂ 溶液），溶液里的离子及浓度是？——<span class="ans">Ba²⁺ 0.1 mol·L⁻¹、OH⁻ 0.2 mol·L⁻¹（电离比 1:2，且电荷平衡 0.1×2=0.2×1）</span><br>
+4．（改编自 p65 练习7(1)）显酸性的废水（含大量 Na⁺、Cu²⁺、Cl⁻、SO₄²⁻、NO₃⁻）中，Ag⁺ 和 CO₃²⁻ 能大量共存吗？——<span class="ans">都不能：Ag⁺ 遇 Cl⁻ 生成 AgCl 沉淀（p61 检验反应）；CO₃²⁻ 遇 H⁺ 生成水和 CO₂（p64 练习3(4)）——离子浓度都会降低，离子反应发生</span>
+</div>
+
+<div class="kao">
+<b>高考怎么考（考位锚）：</b>本节是全册"水中反应观"的地基。<b>①离子共存</b>判断（题面给酸性/碱性/某离子，问不能大量共存——实质=会不会发生离子反应）；<b>②离子方程式正误判断与书写</b>（拆留、守恒、按量反应）；<b>③离子检验与除杂流程</b>（Cl⁻/SO₄²⁻ 的"先酸化"防干扰逻辑、粗盐水除杂试剂顺序）。考法示意，真题锚候采如实申报、不代拟。
+</div>
+
+<div class="next"><b>下一站（2.3 氧化还原反应，p66 起）：</b>水里的"换离子"看完了，还有一类反应在"换电子"——铁把 CuSO₄ 里的铜置换出来时，电流表指针都动了（p67 图2-3-2）。化合价升降背后的电子转移，下节拆开看。</div>
+
+<div class="fig">
+<svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" aria-label="本节位置图">
+  <rect x="20" y="50" width="150" height="52" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="95" y="72" fill="#9aa7b8" font-size="13" text-anchor="middle">2.1 物质分类</text>
+  <text x="95" y="90" fill="#6b7686" font-size="11" text-anchor="middle">电解质是化合物里的一类</text>
+  <rect x="285" y="44" width="170" height="64" rx="8" fill="#1d2b3a" stroke="#4a9eff" stroke-width="2"/>
+  <text x="370" y="70" fill="#cfe4ff" font-size="13.5" text-anchor="middle" font-weight="bold">2.2 电离·离子反应</text>
+  <text x="370" y="90" fill="#9ecbff" font-size="11" text-anchor="middle">本节：水中视角</text>
+  <rect x="570" y="50" width="130" height="52" rx="8" fill="#1a222e" stroke="#3a5578"/>
+  <text x="635" y="72" fill="#9aa7b8" font-size="13" text-anchor="middle">2.3 氧化还原</text>
+  <text x="635" y="90" fill="#6b7686" font-size="11" text-anchor="middle">电子视角</text>
+  <line x1="170" y1="76" x2="285" y2="76" stroke="#4a9eff" marker-end="url(#arr2)"/>
+  <line x1="455" y1="76" x2="570" y2="76" stroke="#4a9eff" marker-end="url(#arr2)"/>
+  <defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#4a9eff"/></marker></defs>
+  <text x="370" y="132" fill="#5a6a7a" font-size="11" text-anchor="middle">p47预告的两刀"分类"在本章兑现：电解质/非电解质（本节）→ 氧化剂/还原剂（下节）</text>
+</svg>
+<p class="figcap">这张图在说什么：2.1 的"多种分类角度"在本节落了第一刀（按能否导电分出电解质），下一刀（按化合价变没变分出氧化还原）在 2.3。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0 · 事实层素材源：鲁科版《普通高中教科书·化学 必修 第一册》（山东科学技术出版社）p53–65 影印逐页对照（智慧平台 contentId=88874a47-cd9b-4dbc-bd48-bb2ea5d63115 · ts=1754905612635 · 图N→正文页N−6 · 影印图存席位私有目录 p35_jc_chem21/；泡腾片引言、三态导电观察记录、电离/电解质/酸碱盐电离定义、NaCl与HCl/NaOH/K₂SO₄电离方程式、强弱电解质名单、比色计pH计、营养液与电解质饮料数据、Ba(OH)₂与稀硫酸电导率曲线与反应实质、离子反应定义与发生条件、离子方程式三步法与改写法四步、SO₄²⁻/Cl⁻检验与CO₃²⁻除杂三式、食盐精制除杂、p64–65练习与活动题面均逐字/逐项锚定）<br>
+设计标准（黄金样本1.1/3.2定版延续）：零预设 · 一次一步 · 随读随验 ×4 · 卡住有出路 · 收口能复述 · 自编内容全部显式标注 · 教材原文标注页码 · <b>图示必配且坐标脚本生成</b>
+</div>
+
+</div>
+</body>
+</html>
