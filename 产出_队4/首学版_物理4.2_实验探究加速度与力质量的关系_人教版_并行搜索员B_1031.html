@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理4.2 实验：探究加速度与力、质量的关系 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 25px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; color: #cdd6e0; font-size: 15.5px; }
+  .talk .tag { color: #6fb3f2; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #29506e; border-radius: 6px; padding: 13px 17px; margin: 13px 0; color: #d7e5f2; }
+  .key .tag { color: #4a9eff; font-weight: bold; }
+  .big { display: block; text-align: center; font-size: 21px; color: #f5d76e; margin: 10px 0; font-weight: bold; }
+  .pit { background: #231720; border: 1px solid #4e3247; border-radius: 6px; padding: 13px 17px; margin: 13px 0; color: #e3c9d8; font-size: 15.5px; }
+  .pit .tag { color: #e57ba0; font-weight: bold; }
+  .try { background: #17231b; border: 1px solid #2c4a35; border-radius: 6px; padding: 13px 17px; margin: 13px 0; color: #cde3d4; font-size: 15.5px; }
+  .try .q { color: #7ed49a; font-weight: bold; }
+  .try .a { color: #b9d9c4; }
+  .check { background: #1d2420; border: 1px solid #35503f; border-radius: 6px; padding: 13px 17px; margin: 14px 0; color: #cfe0d3; font-size: 15.5px; }
+  .check .tag { color: #58d68d; font-weight: bold; }
+  .wrong { color: #e57373; text-decoration: line-through; }
+  .m { color: #f5d76e; }
+  .small { font-size: 14px; color: #93a1b0; }
+  .detail { font-size: 15px; color: #aebccb; }
+  .fig { margin: 18px 0; text-align: center; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15px; }
+  th, td { border: 1px solid #2a323e; padding: 8px 10px; text-align: center; }
+  th { background: #1b2029; color: #fff; }
+  td.hl { background: #22303f; color: #ffd98a; font-weight: bold; }
+  .alt { background: #1d1a24; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .ans { color: #58d68d; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; color: #eef2f7; font-size: 16px; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  b { color: #f0f3f7; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 16px; line-height: 1.7; }
+  em { color: #1a5c99; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    p, .talk, .key, .pit, .detail, .figcap { color: #222; }
+    .sub, .small, .foot { color: #444; }
+    .try .q { color: #1e5c1e; } .try .a { color: #333; }
+    .pit .tag { color: #c0392b; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    em { color: #1a5c99; }
+    mark.nb, .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { background: #f0f0f0; color: #111; }
+    th, td { border-color: #bbb; }
+    td.hl { background: #f5ecd7; color: #7a5b00; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>先当侦探再当会计：a 与 F、m 的定量"审讯"——本节只搭法庭，判决下节宣读</h1>
+<div class="sub">物理4.2 · "运动和力的关系"模块第二件（第四章 第2节·实验节）· 前面已学：4.1 牛顿第一定律（力改变运动状态）· 前置：4.1＋2.3匀变速位移公式＋1.4加速度＋2.1纸带处理 · 预计45分钟</div>
+
+<h2><span class="step-tag">开场</span>4.1说"力改变运动状态"，那到底改变得多快？</h2>
+<p>4.1节你拿到一句定性判词：<b>力是改变物体运动状态的原因</b>。"改变得快慢"就是加速度a——于是天然的问题来了（教材p88问题框照录）：<b>物体的加速度a，与它所受的作用力F、以及自身的质量m，之间存在什么样的定量关系？</b>本节不背结论，全程干一件事：<b>像侦探一样设计实验，像会计一样处理数据</b>。判决书（a与F、m的定量关系式）要等4.3节"牛顿第二定律"才正式宣读——<span class="m">本节只搭法庭、只呈证据</span>。</p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 用<b>控制变量法</b>设计实验方案：m不变探a-F、F不变探a-m；<br>
+② 说出a的三种测量方法（a=2x/t²·纸带·<b>比值法x₁/x₂=a₁/a₂</b>）与"合力当F"的口径；<br>
+③ 复述参考案例1（垫高平衡阻力+槽码成倍改拉力）与参考案例2（黑板擦同起同停+位移比代加速度比）；<br>
+④ 掌握<b>化曲为直</b>：a-m双曲线难判断→改作a-1/m图，过原点直线定反比；<br>
+⑤ 用教材练习的混合数据表反推模糊值，并独立完成纸带求a与a-1/m作图结论。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒备齐旧工具</h2>
+<div class="talk"><span class="tag">talk</span>　① <b>x = ½at²</b>（2.3节，初速度为0的匀加速位移公式）——本节a=2x/t²就是它的变形。② <b>纸带处理</b>（2.1节）：计数点、逐差法求a。③ <b>1.4加速度</b>：a=Δv/Δt，"运动状态改变的快慢"。④ <b>4.1牛一</b>：力改变运动状态；"仅受一个力的物体几乎不存在"→实验里F按<b>合力</b>口径。⑤ <b>3.4等效替代</b>：单独力与合力效果相同，才敢这样换。</div>
+
+<h2><span class="step-tag">第一步</span>实验思路：三个量、两条控制线（p88-89原文照录）</h2>
+<div class="box">三个变量如何研究？教材页边给出总纲：<b>控制变量法</b>——保持一个量不变，研究另外两个量的关系：①保持小车质量m不变，探a与F；②保持拉力F不变，探a与m。</div>
+<p><b>物理量的测量（p89照录）</b>——本实验需要测量的物理量有三个：</p>
+<p><b>质量的测量</b>：可以用天平测量质量。为了改变小车的质量，可以在小车中增减钩码的数量。</p>
+<p><b>加速度的测量</b>——三种方法：</p>
+<div class="key"><span class="tag">方法1</span>　小车做初速度为0的匀加速直线运动，用刻度尺测量位移x，用秒表测量时间t，由　<span class="big">a = 2x / t²</span>　（式(1)）计算出a。——它是 x = ½at² 的变形（回链2.3）。</div>
+<div class="key"><span class="tag">方法2</span>　把打点计时器的纸带连在小车上，根据纸带上打出的点来测量加速度（参考第一章的实验方法）。</div>
+<div class="key"><span class="tag">方法3·比值法</span>　甚至不必测a的具体数值——因为探究的是<b>比例关系</b>，只需测不同情况下a的<b>比值</b>。若让两个初速度为0的匀加速物体运动时间t相等，由式(1)可知位移之比等于加速度之比：　<span class="big">x₁ / x₂ = a₁ / a₂</span>　（式(2)）——测量加速度就转换成测量位移了。</div>
+<p><b>力的测量</b>（p89照录）：现实中，仅受一个力作用的物体几乎不存在。然而，一个单独力的作用效果与跟它大小、方向都相同的合力的作用效果是相同的（回链3.4）。因此，实验中作用力F的含义<b>可以是物体所受的合力</b>。如何为运动的物体提供一个恒定的合力、如何测出这个合力，是本实验的关键。教材页边还留了一问：<b>通过测力计用手直接给小车施加一个恒力是否可行？</b>——手会抖、力会漂，试试就知道为什么教材改用"槽码重力"这条稳妥路（近似条件页边注已给，推导候4.3工具，本节先照录）。</p>
+<div class="try"><span class="q">验一验①（自编·辨口径）：</span><span class="a">甲同学说"实验中要测的F就是细绳拉力"；乙同学说"是槽码的重力"；丙同学说"是小车受的合力"。谁对？——<b>丙对（口径）</b>：小车还受摩擦力/支持力，a由<b>合力</b>决定；实验用"垫高平衡阻力"把摩擦抵消、用"槽码重力近似拉力"提供已知恒力，于是合力≈拉力≈槽码重力，三句话在垫高+近似成立时才统一。这正是为什么要"先垫高再实验"。</span></div>
+
+<h2><span class="step-tag">第二步</span>两个参考案例（p90原文照录·装置图直读）</h2>
+<div class="box"><b>【参考案例1·探究加速度与力、质量的关系】</b>　实验装置如图4.2-2所示。把木板的一侧垫高，以平衡小车受到的阻力。调节木板的倾斜度，使小车在<b>不受牵引时能拖动纸带沿木板匀速运动</b>。将槽码、小车、打点计时器、纸带安装好。通过改变槽码的个数可以<b>成倍地改变</b>小车所受的拉力，与此相对应，处理纸带上打出的点来测量加速度。保持小车受的拉力不变，通过增减小车中的重物改变小车的质量。</div>
+<div class="fig">
+<svg viewBox="0 0 720 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图A（重绘自教材图4.2-2）实验装置示意">
+  <defs><marker id="arA" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c05a6a"/></marker></defs>
+  <polygon points="40,170 640,170 600,200 20,200" fill="#e8d8b8" stroke="#8a7455" stroke-width="1.5"/>
+  <rect x="600" y="128" width="22" height="44" fill="#8a6a50" stroke="#5a4433"/><text x="611" y="122" font-size="12.5" fill="#8a6a50" text-anchor="middle">垫高</text>
+  <rect x="470" y="136" width="88" height="34" rx="5" fill="#d9a441" stroke="#8a6a2a" stroke-width="1.5"/><text x="514" y="157" font-size="13.5" fill="#4a3210" text-anchor="middle">小车</text>
+  <rect x="600" y="96" width="34" height="32" fill="#3a4048" stroke="#22262c"/><text x="617" y="88" font-size="12.5" fill="#93a1b0" text-anchor="middle">打点计时器</text>
+  <line x1="558" y1="150" x2="600" y2="112" stroke="#8899aa" stroke-width="2"/>
+  <circle cx="90" cy="150" r="7" fill="none" stroke="#667" stroke-width="2.5"/><text x="90" y="176" font-size="12.5" fill="#93a1b0" text-anchor="middle">定滑轮</text>
+  <line x1="96" y1="152" x2="470" y2="152" stroke="#8899aa" stroke-width="2"/>
+  <line x1="90" y1="157" x2="90" y2="192" stroke="#8899aa" stroke-width="2"/>
+  <rect x="76" y="192" width="28" height="14" fill="#99a" stroke="#667"/><text x="90" y="220" font-size="12.5" fill="#93a1b0" text-anchor="middle">槽码×n</text>
+  <line x1="430" y1="150" x2="360" y2="150" stroke="#c05a6a" stroke-width="2.5" marker-end="url(#arA)"/><text x="398" y="140" font-size="14" fill="#c05a6a" font-weight="bold">F</text>
+  <text x="250" y="120" font-size="13" fill="#7d8a99">细绳（拉力≈槽码重力·近似条件见页边注）</text>
+  <text x="120" y="192" font-size="12.5" fill="#a86a2a">垫高一端 → 不受牵引时拖纸带匀速＝阻力已平衡</text>
+</svg>
+<div class="figcap">图A（重绘自教材图4.2-2）｜垫高平衡阻力＋槽码成倍改拉力＋纸带测a（照片重绘示意·以原影印为准）</div>
+</div>
+<div class="box"><b>【参考案例2·通过位移之比测量加速度之比】</b>　将两辆相同的小车放在水平木板上，前端各系一条细线，线的另一端跨过定滑轮各挂一个小盘，盘中可以放不同的重物。把木板一端垫高，采用参考案例1的方法平衡阻力。两辆小车后端各系一条细线，用一个物体（例如黑板擦），把两条细线同时按压在木板上（图4.2-3）。<b>抬起黑板擦，两辆小车同时开始运动；按下黑板擦，两辆小车同时停下来</b>。用刻度尺测出两辆小车移动的位移x₁、x₂。由于两辆小车运动时间t相同，从它们的位移之比就可以得出加速度之比。在盘中重物相同的情况下，通过增减小车中的重物改变小车的质量。</div>
+<div class="pit"><span class="tag">坑点·"同时"二字是案例2的命根</span>　x₁/x₂=a₁/a₂ 的前提是<b>两车运动时间t严格相同</b>——黑板擦一抬一按就是"同起同停"的土办法计时。<span class="note-red">若两车先后起动，位移比就不再是加速度比</span>。教材用一块黑板擦解决计时同步，这就是实验设计的巧劲。</div>
+
+<h2><span class="step-tag">第三步</span>进行实验与数据分析：先描点，再"化曲为直"（p91-92照录）</h2>
+<p><b>进行实验（p91照录）</b>：设计表格记录——表1（小车质量一定）：拉力F/加速度a；表2（小车所受的拉力一定）：质量m/加速度a。（表格样式直读照录，数据由实验者填。）</p>
+<p><b>数据分析·a与F</b>（p91照录）：以a为纵坐标、F为横坐标建立直角坐标系，根据各组实验数据描点。<b>如果这些点在一条过原点的直线附近，说明a与F成正比</b>；如果不是这样，则需进一步分析。</p>
+<p><b>数据分析·a与m</b>（p91照录）：经验告诉我们，相同拉力下m越大a越小。这可能是"a与m成反比"，但也可能是"a与m²成反比"，甚至是更复杂的关系。<b>我们从最简单的情况入手</b>，检验是否"a与m成反比"。实验结果如图4.2-4——<b>很难直观看出图线是否为双曲线</b>，如何解决？</p>
+<p><b>化曲为直（p92照录）</b>：如果a-m图像是双曲线，即a与m成反比，也就是<b>a与1/m成正比</b>。作a-(1/m)图像进行检验（图4.2-5）——如果得到<b>过原点的直线</b>，就可以判断a与m成反比。教材页边再追一问：如果当初假设a与m²成反比，最好作哪两个量之间关系的图像？（答：<b>a-(1/m²)</b>——同一招反复用。）</p>
+<div class="fig">
+<svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图C（重绘自教材图4.2-5思路）a-1/m过原点直线·表6数据">
+  <defs><marker id="arC" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <line x1="90" y1="250" x2="600" y2="250" stroke="#2266aa" stroke-width="2" marker-end="url(#arC)"/>
+  <line x1="90" y1="250" x2="90" y2="30" stroke="#2266aa" stroke-width="2" marker-end="url(#arC)"/>
+  <text x="608" y="255" font-size="14" fill="#9fb2c8">1/m</text><text x="70" y="34" font-size="14" fill="#9fb2c8">a</text><text x="76" y="266" font-size="13" fill="#7d8a99">O</text>
+  <line x1="90" y1="250" x2="560" y2="50" stroke="#d1748c" stroke-width="2.5"/>
+  <g fill="#1a1a1a">
+    <circle cx="152.7" cy="225.4" r="3.5"/><circle cx="194.4" cy="206.6" r="3.5"/><circle cx="237.3" cy="182.9" r="3.5"/><circle cx="298.9" cy="159.4" r="3.5"/><circle cx="351.1" cy="134.9" r="3.5"/><circle cx="406.5" cy="112.3" r="3.5"/><circle cx="450.3" cy="90.9" r="3.5"/><circle cx="507.8" cy="73.4" r="3.5"/>
+  </g>
+  <text x="470" y="120" font-size="13" fill="#8a6a72">过原点直线 ⇒ a ∝ 1/m</text>
+  <text x="120" y="240" font-size="12.5" fill="#7d8a99">数据点：表6八次实验（教材练习2(2)·作图见本节自测）</text>
+</svg>
+<div class="figcap">图C（重绘自教材图4.2-5思路）｜a-(1/m)图像：点在过原点直线附近 ⇒ a与m成反比（"化曲为直"）</div>
+</div>
+<div class="pit"><span class="tag">坑点·"很难直观看出双曲线"不是话术，是方法论</span>　弯曲的图线可能来自 y∝1/x、y∝1/x²、甚至更复杂的函数——<b>弯着看永远猜不完</b>。<span class="note-red">把猜想线性化（换坐标轴），是处理实验数据的第一把刀</span>：猜反比就作a-(1/m)，猜平方反比就作a-(1/m²)，"过不过原点"一眼可判。这套"化曲为直"在4.2之后整个实验物理里反复用。</div>
+
+<h2><span class="step-tag">第四步</span>科学方法卡片＋教材练习数据"会计实战"（p92-93照录）</h2>
+<div class="box"><b>【科学方法·控制变量（p92照录）】</b>　控制变量的方法是指在研究和解决问题的过程中，对影响事物变化规律的独立因素加以人为控制，使其中只有一个因素按照特定的要求发生变化，而其他因素保持不变，以利于寻找事物发展变化规律的方法。例如研究y与x₁、x₂的关系：先固定x₂不变，研究y与x₁；然后再固定x₁不变，研究y与x₂。本节探究a与F、m就采用了控制变量法；以后研究多变量规律还会反复用到——它是科学研究中的常用方法。</div>
+<p>教材把"会计实战"直接编进了练习（p92-93原题，表3-表6全部直读照录）——本节自测逐题全答，这里先给两条"读表侦探术"：</p>
+<div class="try"><span class="q">验一验②（自编·读表三步）：</span><span class="a">拿到练习1的表3（两个实验数据混录、按a大小排列、还有两个空格）：第一步<b>按m挑行</b>——m=0.36kg的五行走"表4探a-F"；第二步<b>按F挑行</b>——F=0.29N的五行走"表5探a-m"；第三步<b>用比例回读空格</b>——表4内a/F≈2.78恒定→F=0.24行a≈0.67；表5内a·m≈0.292恒定→m=0.31行a≈0.94。<b>模糊数据自己"招供"</b>，这就是比例关系的威力。</span></div>
+<div class="try"><span class="q">验一验③（自编·纸带快算）：</span><span class="a">练习2(1)的纸带：每两个计数点间有四个点未画出→计数点间隔T=0.02×5=0.1s；相邻段距6.19/6.70/7.21/7.72cm——相邻差恒为0.51cm（匀加速实锤）；a=Δs/T²=0.51cm/(0.1s)²=0.51m/s²。用逐差法复核：a=[(7.72+7.21)−(6.70+6.19)]cm/(4T²)=2.04cm/0.04s²=0.51m/s²——两条路一个数，数据自洽。</span></div>
+
+<h2>节末自测（教材p92-93练习与应用·原题全答）</h2>
+<div class="try"><span class="q">1.（p92-93原题·表3混录数据拆分与空格反推）</span><span class="a">表3（F/N·m/kg·a/(m·s⁻²)）：0.29/0.86/0.34；0.14/0.36/0.39；0.29/0.61/0.48；0.19/0.36/0.53；0.24/0.36/（空）；0.29/0.41/0.71；0.29/0.36/0.81；0.29/0.31/（空）；0.34/0.36/0.94。<br><b>表4（探a-F·条件m=0.36kg）</b>：F=0.14→a=0.39；F=0.19→a=0.53；F=0.24→a=<span class="ans">0.67</span>（回填）；F=0.29→a=0.81；F=0.34→a=0.94。<br><b>表5（探a-m·条件F=0.29N）</b>：m=0.86→a=0.34；m=0.61→a=0.48；m=0.41→a=0.71；m=0.36→a=0.81；m=0.31→a=<span class="ans">0.94</span>（回填）。<br>反推依据：表4内a/F≈2.78恒定（五点最大偏差&lt;1%）；表5内a·m≈0.292恒定（四点偏差&lt;1%）——模糊的两个a分别按比例插值"自供"为0.67与0.94，且回填后全表仍自洽。</span></div>
+<div class="try"><span class="q">2.（p93原题·纸带与a-(1/m)图像）</span><span class="a">(1) 交变电流频率50Hz→打点周期0.02s；每两个计数点间四个点未画出→T=0.1s。相邻计数点段距6.19/6.70/7.21/7.72cm，相邻差恒为0.51cm→<span class="ans">a=0.51m/s²</span>（a=Δs/T²与逐差法[(s₄+s₃)−(s₂+s₁)]/(4T²)两口径同值）。<br>(2) 表6直读（m/kg：0.25/0.29/0.33/0.40/0.50/0.71/1.00/1.67；a/(m·s⁻²)：0.618/0.557/0.482/0.403/0.317/0.235/0.152/0.086；1/m/kg⁻¹：4.00/3.45/3.03/2.50/2.00/1.41/1.00/0.60）。在图4.2-7坐标纸作a-(1/m)图（本讲义图C即按此八点重绘）：各点在<b>过原点的直线附近</b>（a·m≈0.157kg·m/s²·偏差≲8%·实验误差范围内）→<span class="ans">实验结论：拉力一定时，小车的加速度与质量成反比</span>。结合表4结论（m一定时a∝F），4.3节将把两条线合成一张"判决书"。</span></div>
+
+<h2>收口</h2>
+<div class="check">
+<span class="tag">复述体·三问（先自答，再看回收锚）</span>
+<p>① 本实验为什么按"合力"口径报F，又为什么敢用槽码重力近似它？（回收锚：第一步力的测量+验①——合力口径是原则，垫高平衡阻力+近似条件是让它可操作的两步）<br>② a-m双曲线为什么"很难直观看出"，出路是什么？（回收锚：第三步化曲为直——猜反比就作a-(1/m)，看过不过原点）<br>③ 参考案例2连打点计时器都不用，凭什么能"测出"加速度之比？（回收锚：第二步坑点——黑板擦同起同停锁死t相同，式(2)把加速度比兑换成位移比）</p>
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图G：第四章第二节·实验节">
+  <defs><marker id="arG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <rect x="10" y="55" width="128" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="74" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">4.1 牛顿第一定律</text><text x="74" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">力改变运动状态</text>
+  <line x1="138" y1="87" x2="158" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="160" y="48" width="150" height="78" rx="7" fill="#14202b" stroke="#4a9eff" stroke-width="2"/><text x="235" y="74" font-size="13.5" fill="#cfe4ff" text-anchor="middle" font-weight="bold">本节 4.2 实验</text><text x="235" y="96" font-size="12" fill="#9fc3e8" text-anchor="middle">a-F：正比（图线过原点）</text><text x="235" y="116" font-size="12" fill="#9fc3e8" text-anchor="middle">a-m：化曲为直→反比</text>
+  <line x1="310" y1="87" x2="330" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="332" y="55" width="140" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="402" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">4.3 牛顿第二定律</text><text x="402" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">宣读判决书（p94实锚）</text>
+  <line x1="472" y1="87" x2="492" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="494" y="55" width="118" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="553" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">4.4 力学单位制</text><text x="553" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">候实锚</text>
+  <line x1="612" y1="87" x2="632" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="634" y="55" width="118" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="693" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">4.5 牛顿定律应用</text><text x="693" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">候实锚</text>
+</svg>
+<div class="figcap">图G（本节位置图）｜4.1牛一→<b>4.2实验（本节）</b>→4.3牛顿第二定律（p94节名页实锚）→4.4/4.5候实锚（宁缺毋编）</div>
+</div>
+
+<h3>考位锚（T11）·高考怎么考</h3>
+<p class="small">· 考什么：实验原理（控制变量/化曲为直/合力口径）、纸带求a（逐差法）、a-F与a-(1/m)图像判读、误差来源（未平衡摩擦→图线不过原点/槽码未远小于小车→图线弯曲）。<br>· 怎么考：实验大题固定席（装置图/数据处理/图像分析/结论表述四连问）、图像"截距与弯曲"诊断题、用比例关系反推缺失数据（教材练习1同款）。<br>· 真题锚：候采——对证源卷源池暂未录入4.2对口卷源，不代拟；候池内补录后回填。</p>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① <b>"成倍改变"的巧劲</b>：槽码逐个加挂→F按1:2:3成倍变化，若a也按同倍数变，正比当场成立——找比例关系优先"成倍"取样，人眼判直线比判曲线容易得多。② <b>图线"不听话"诊断表</b>：a-F图在F轴上有截距→没平衡摩擦或不足；a-F图上部弯曲→槽码质量不再远小于小车（近似条件被破坏）——这两张"病历"是实验题高频坑。③ <b>为什么垫高能"消"摩擦</b>：重力沿斜面分量恰好抵消滑动摩擦力（3.2的F_f=μF_压+3.4的分解都在场）——严丝合缝的标准是"轻推小车，纸带上点距均匀"。④ <b>比值法的下游</b>：参考案例2的"同起同停"思想，在平抛/自由落体对比实验里还会以"等时位移比"重现——把t锁死，是把动态问题变静态问题的通法。
+</div>
+
+<div class="foot">
+<em>素材源溯源（foot区·豁免条款）：影印源＝国家中小学智慧教育平台教材电子版·普通高中教科书·物理必修 第一册（人教版·2024印次）·contentId 708256b6-6f06-4d14-89c7-4df16dfe3b81·ts=1787023183495（1031午后ndrv2/resources详情API实时取·title核对人教正本·与速查表物理行同值批次稳定）·图93-99→印刷页p88-94·偏移N-5·本节影印范围p88-93（4.1节名页p83=图88链式前锚·4.2节名页p88=图93左界·4.3节名页p94=图99右界）·影印对照逐页直读（p88节名"2 实验：探究加速度与力、质量的关系"/p89页脚"第四章 运动和力的关系 89"/p90页脚"90 高中物理必修第一册"/p91页脚"第四章 运动和力的关系 91"/p92页脚"92 高中物理必修第一册"/p93页脚"第四章 运动和力的关系 93"/p94节名"3 牛顿第二定律"）·表1-表6全部直读照录（表3九行/表6八行含1/m行）·节界互证：左界p88=本席4.1交付行（6034cdb）右界实锚双源一致·右界p94=4.3节名页本席图99目检·本件为自学辅导讲义·教材原文引用仅作教学讲解用途·原文以纸质教材为准。</em>
+</div>
+</div>
+</body>
+</html>
