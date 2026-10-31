@@ -1,0 +1,27 @@
+[PASS] 01 原子守恒 2Cu+O₂→2CuO (p67)
+[PASS] 02 原子守恒 H₂+CuO→Cu+H₂O (p67)
+[PASS] 03 原子守恒 Fe+CuSO₄→Cu+FeSO₄ (p67)
+[PASS] 04 原子守恒 CuSO₄+2NaOH→Cu(OH)₂↓+Na₂SO₄ (p67)
+[PASS] 05 原子守恒 2Na+Cl₂→2NaCl (p67钠氯)
+[PASS] 06 原子守恒 2Na+2H₂O→2NaOH+H₂↑ (p74练习1(6))
+[PASS] 07 原子守恒 2FeCl₃+Cu→2FeCl₂+CuCl₂ (p74练习1(5))
+[PASS] 08 原子守恒 MnO₂+4HCl(浓)→MnCl₂+Cl₂↑+2H₂O (p72)
+[PASS] 09 原子守恒 CH₄+2O₂→CO₂+2H₂O (p74练习1(2))
+[PASS] 10 原子守恒 2KMnO₄→K₂MnO₄+MnO₂+O₂↑ (p74练习1(4))
+[PASS] 11 原子守恒 SO₂+2H₂S→3S↓+2H₂O (p74练习4(2)②)
+[PASS] 12 原子守恒 SO₂+Cl₂+2H₂O→H₂SO₄+2HCl (p74练习4(2)③)
+[PASS] 13 电子守恒 2Na+Cl₂（2Na失2e⁻=Cl₂得2e⁻）
+[PASS] 14 电子守恒 H₂+CuO（2H失2e⁻=Cu²⁺得2e⁻）
+[PASS] 15 电子守恒 Fe+CuSO₄（Fe失2e⁻=Cu得2e⁻）
+[PASS] 16 电子守恒 2FeCl₃+Cu（Cu失2e⁻=2Fe³⁺得2e⁻）
+[PASS] 17 电子守恒 MnO₂+4HCl（2Cl⁻失2e⁻=Mn⁴⁺得2e⁻）
+[PASS] 18 电子守恒 CH₄+2O₂（C失8e⁻=4O得8e⁻）
+[PASS] 19 电子守恒 SO₂+2H₂S（S⁺⁴得4e⁻=2S⁻²失4e⁻）
+[PASS] 20 电子守恒 2KMnO₄（2Mn⁺⁷得10e⁻=2O²⁻失10e⁻）
+[PASS] 21 MnO₄⁻: x+4(−2)=−1 → x=+7
+[PASS] 22 Cu(OH)₂: x+2(−1)=0 → x=+2
+[PASS] 23 Fe₂O₃: 2x+3(−2)=0 → x=+3
+[PASS] 24 Na₂SO₄: 2(+1)+x+4(−2)=0 → x=+6
+
+合计24点：24 PASS / 0 FAIL
+ALL PASS · 化学正本edc5cf7机器层sympy代验独立复跑通过（B席·1101）

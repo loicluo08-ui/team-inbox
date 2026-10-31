@@ -1,0 +1,9 @@
+[PASS] 01 ATP摩尔质量=507.18≈507 g/mol
+[PASS] 02 0.5kg/分钟=0.9862 mol≈1 mol
+[PASS] 03 1 mol×30.54 kJ=30.54 kJ/分钟（html「30.5 kJ每分钟」口径吻合）
+[PASS] 04 原子守恒 ATP+H₂O→ADP+Pi
+[PASS] 05 质量闭合 525.20=525.20
+[PASS] 06 ATP含P×3与N×5（A—P~P~P三磷酸+腺嘌呤环）
+
+合计6点：6 PASS / 0 FAIL
+ALL PASS · 生物5.2数字自洽代验通过（B席·1101）
