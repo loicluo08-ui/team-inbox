@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理4.1 牛顿第一定律 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 14px 0; color: #c8d3e0; font-size: 16px; }
+  .talk .tag { color: #7fb0e8; font-weight: bold; }
+  .check { background: #10261a; border: 1px solid #1f5c38; border-radius: 6px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; }
+  .check .tag { color: #58d68d; font-weight: bold; }
+  .key { background: #1a2433; border: 1px solid #33507a; border-radius: 6px; padding: 14px 18px; margin: 14px 0; }
+  .key .big { display: block; text-align: center; font-size: 20px; color: #fff; margin: 10px 0; font-weight: bold; }
+  .pit { background: #2a171c; border: 1px solid #7a3a45; border-radius: 6px; padding: 14px 18px; margin: 14px 0; font-size: 16px; }
+  .pit .tag { color: #e4808f; font-weight: bold; }
+  .try { background: #14211a; border: 1px solid #2a4a38; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 15.5px; }
+  .try .q { color: #7fd6a0; font-weight: bold; }
+  .try .a { color: #c8d8ce; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; color: #eef2f7; font-size: 16px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a323e; padding: 9px 12px; text-align: left; }
+  th { background: #1b2029; color: #fff; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  .fig { margin: 18px 0; text-align: center; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  .small { font-size: 14px; color: #9aa7b5; }
+  .detail { font-size: 15px; color: #aeb9c6; }
+  .wrong { color: #e07b7b; text-decoration: line-through; }
+  .m { color: #6fc3ff; }
+  .alt { background: #1f1a2a; border: 1px solid #4a3a5a; border-radius: 6px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .ans { color: #58d68d; }
+  b { color: #f0f3f7; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 16px; line-height: 1.7; }
+  em { color: #1a5c99; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    p, .talk, .key, .pit, .detail, .figcap { color: #222; }
+    .sub, .small, .foot { color: #444; }
+    .try .q { color: #1e5c1e; } .try .a { color: #333; }
+    .pit .tag { color: #c0392b; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong, .note-red { color: #c0392b; }
+    em { color: #1a5c99; }
+    mark.nb, .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { background: #f0f0f0; color: #111; }
+    th, td { border-color: #bbb; }
+    .box { color: #222; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>牛顿第一定律：不推真的会一直走吗？——一桩四百年的"错案"与它的平反</h1>
+<div class="sub">物理4.1 · "运动和力的关系"模块开篇件（第四章 第1节·含章首导引）· 前面已学：第三章全部（重力弹力／摩擦力／牛顿第三定律／力的合成和分解／共点力的平衡）· 零基础首学版 v1.0 · 前置：初中牛一印象＋2.3匀速直线运动＋2.4自由落体＋1.4加速度 · 预计45分钟</div>
+
+<h2><span class="step-tag">开场</span>第二章回答"怎样运动"，这章回答"为什么这样运动"</h2>
+<p>教材p82章首语先把路线图给你：<b>只研究物体怎样运动而不涉及运动和力关系的分支，叫作<span class="ul-blue">运动学</span>（kinematics）；研究运动和力关系的分支，叫作<span class="ul-blue">动力学</span>（dynamics）。</b>第一、二章是运动学（怎么描述、怎么算），第三章攒齐了"力的户口本"（三种力＋合成和分解），这一章两线合流——动力学开张。p83问题框先泼一盆"生活冷水"：<b>初中我们学习了牛顿第一定律的基本内容，你能说说它揭示了物体运动遵循怎样的规律吗？滑冰运动员如果不用力，他会慢慢停下来。这是否与牛顿第一定律矛盾呢？</b>——别急着答，这盆水泼了将近两千年：从亚里士多德到伽利略，人类在同一个坑里摔了很久。</p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 讲清亚里士多德的"错案"错在哪、伽利略用什么方法翻了案；<br>
+② 一字不差复述<span class="ul-blue">牛顿第一定律</span>，并拆出它的两层含义（不受力→保持；受力→改变运动状态）；<br>
+③ 用<b>惯性</b>解释三个生活现象（飞机投弹／原地起跳／安全带）；<br>
+④ 判定"惯性大小"类说法对错——它的唯一量度是<b>质量</b>；<br>
+⑤ 知道什么是"理想实验"方法与惯性参考系（拓展学习栏目）。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒备齐旧工具</h2>
+<div class="talk"><span class="tag">talk</span>　① <b>2.3匀速直线运动</b>：v不变→x = vt——"一直匀速走下去"在运动学里早就合法。② <b>1.4加速度</b>：a描述速度变化快慢——"运动状态改变"在物理里就叫"有加速度"。③ <b>第三章的力</b>：重力、弹力、摩擦力都会"迫使"物体改变运动状态——这是下一节实验的铺垫。④ <b>初中牛一印象</b>：物体不受力时保持静止或匀速直线运动——本节要给它补上"思想史+严格表述+适用范围"三块拼图。</div>
+
+<h2><span class="step-tag">第一步</span>四百年的"错案"：直觉哪里骗了我们（p83原文照录）</h2>
+<div class="box"><b>【教材p83·侦探比喻】</b>　爱因斯坦曾把一代代科学家探索自然奥秘的努力，比作侦探小说中警员破案的过程。在侦探小说中，有时候明显可见的线索却把人们引到错误的判断上去。</div>
+<p><b>【教材p83·错案经过】</b>　长期以来，在研究物体运动原因的过程中，人们的经验是：要使一个物体运动，必须推它或拉它。因此，人们直觉地认为，物体的运动是与推、拉等行为相联系的，如果不再推、拉，原来运动的物体便会停止下来。根据这类经验，<b>亚里士多德得出结论：必须有力作用在物体上，物体才能运动；没有力的作用，物体就要静止在某个地方。</b>然而，在探究运动原因的"侦探小说"里，这正是由明显的线索引出错误判断的案例，而且这个"错案"维持了很久。直至近四百年前，<b>伽利略才创造了有效的"侦察"方法</b>，发现了正确的线索，揭示了事物现象的本质，成为物理学中的"神探"。</p>
+<div class="pit"><span class="tag">坑点·错案错在"没做减法"</span>　亚氏的观察其实没大错——<b>推一下，动；不推，慢慢停</b>。错在漏了一个隐形嫌疑人：<span class="note-red">摩擦力</span>。"不推就停"的真实剧情是"摩擦力把它拽停的"，不是"没有力它懒得动"。教材页边还提醒：亚里士多德、伽利略、笛卡尔都没有提出"力"的概念——是牛顿把复杂多样的相互作用抽象为"力"，本书陈述前人思想时借用了力的概念。</div>
+
+<h2><span class="step-tag">第二步</span>伽利略的理想实验：把摩擦"想象掉"（p84原文照录）</h2>
+<div class="box"><b>【教材p84·理想实验的魅力】</b>　伽利略认为，将人们引入歧途的是摩擦，而物体在通常情况下运动时，摩擦又是难以避免的。伽利略注意到，当一个球沿斜面向下滚动时，它的速度增大；向上滚动时，速度减小。他由此猜想：当球沿水平面滚动时，它的速度应该不增不减。然而，实际情况却是，即使沿水平面滚动，球也会越滚越慢，最后停了下来。伽利略认为这是摩擦作用的结果。若没有摩擦，球将永远运动下去。</div>
+<p><b>【教材p84·实验设计】</b>　为了阐明自己的观点，伽利略设计了如图4.1-1所示的实验：让一个小球沿斜面从静止状态开始运动，小球将"冲"上另一个斜面。如果没有摩擦，小球将到达原来的高度。如果第二个斜面倾角减小，小球仍将到达原来的高度，但是运动的距离更长。由此可以推断，<b>当斜面最终变为水平面时，小球要到达原有高度将永远运动下去。这说明，<mark class="nb">力不是维持物体运动的原因</mark>。</b></p>
+<div class="fig">
+<svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图A：伽利略理想斜面三态外推示意（重绘自教材图4.1-1思路）">
+  <defs><marker id="arA" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c05a6a"/></marker><marker id="arA2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#5a8fb8"/></marker></defs>
+  <line x1="40" y1="60" x2="240" y2="185" stroke="#8a6a4a" stroke-width="7"/>
+  <line x1="240" y1="185" x2="430" y2="185" stroke="#8a6a4a" stroke-width="7"/>
+  <line x1="240" y1="185" x2="400" y2="95" stroke="#8a6a4a" stroke-width="7"/>
+  <line x1="240" y1="185" x2="380" y2="140" stroke="#8a6a4a" stroke-width="7" opacity="0.55"/>
+  <line x1="240" y1="185" x2="680" y2="185" stroke="#8a6a4a" stroke-width="7" opacity="0.9"/>
+  <circle cx="90" cy="85" r="13" fill="#d8a44a" stroke="#a97c2e" stroke-width="2"/>
+  <line x1="90" y1="42" x2="410" y2="42" stroke="#5a8fb8" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arA2)"/>
+  <text x="118" y="34" font-size="13" fill="#6f9cc4">无摩擦：回到原来高度</text>
+  <line x1="240" y1="185" x2="640" y2="185" stroke="#c05a6a" stroke-width="2.5" marker-end="url(#arA)"/>
+  <text x="330" y="212" font-size="13.5" fill="#a06a75">倾角减到0°：为"够到原高度"永远运动下去（匀速）</text>
+  <text x="52" y="52" font-size="13" fill="#a58a68">释放</text>
+  <text x="415" y="88" font-size="12.5" fill="#7d8a99">倾角减小·距离更长</text>
+</svg>
+<div class="figcap">图A（重绘自教材图4.1-1思路）｜现代人频闪照片（原书为组合图）：左斜面释放→右侧斜面"够回原高度"→倾角一路减小→水平面上永远匀速滚下去</div>
+</div>
+<div class="key"><b>【教材p84·方法升华】</b>　我们知道，阻力不可能完全消除，第二个斜面也不可能做得无限长，所以，伽利略的实验是一个<span class="ul-blue">"理想实验"</span>。虽然这个实验无法实现，但是，伽利略在实验基础上进一步推理的方法，帮助我们在找到了解决运动和力关系问题的方法。<span class="detail">页边注：伽利略理想实验的本质是想象着把实际中存在、影响物体运动的摩擦力去掉，抓住事物的本质。这种依据逻辑推理把实际实验理想化的思想也是研究物理问题的重要方法之一。</span></div>
+<div class="try"><span class="q">验一验①（自编·方法迁移）：</span><span class="a">2.1节"探究小车v-t图像"时把槽码质量取得很小、把木板一端垫高抵消摩擦——你在不经意间已经用过"往理想化逼近"的同款思路：先承认摩擦去不掉，再想办法把它的影响压到可忽略。理想实验＝<b>可靠实验事实＋逻辑推理外推</b>，两样缺一不可。</span></div>
+
+<h2><span class="step-tag">第三步</span>牛顿第一定律：四百年的案子这样结（p85原文照录）</h2>
+<div class="box"><b>【教材p85·笛卡尔的贡献】</b>　伽利略同时代的法国科学家笛卡尔也研究了这个问题。他认为，如果运动中的物体没有受到力的作用，它将继续以同一速度沿同一直线运动，既不会停下来，也不会偏离原来的方向。他还认为，这应该成为一个原理，是人类整个自然观的基石。</div>
+<div class="key">
+<b>【教材p85·定律原文（红字照录）】</b>　在伽利略和笛卡尔工作的基础上，在隔了一代人以后，英国科学家牛顿提出了动力学的一条基本定律：
+<span class="big"><mark class="nb">一切物体总保持匀速直线运动状态或静止状态，除非作用在它上面的力迫使它改变这种状态。</mark></span>
+这就是<b>牛顿第一定律</b>（Newton's first law）。物体这种保持原来匀速直线运动状态或静止状态的性质叫作<b>惯性</b>（inertia）。牛顿第一定律也叫作惯性定律。</div>
+<p><b>【教材p85·两层含义（页边展开）】</b>　如果一个物体由静止变为运动或由运动变为静止，我们说它的运动状态发生了改变；如果一个物体的速度大小或方向改变了，我们也说它的运动状态发生了改变。牛顿第一定律揭示了运动和力的关系：<b><mark class="nb">力不是维持物体运动状态的原因，而是改变物体运动状态的原因。</mark></b>保持静止或匀速直线运动状态是物体的固有属性，这一属性称为惯性。惯性不是外界强加给它的，是物体固有的，一切物体都具有惯性。牛顿第一定律为力学的发展奠定了坚实的基础①。<span class="detail">（脚注①：牛顿在1687年出版的《自然哲学的数学原理》中提出了三条运动定律，它们是整个动力学的核心。）</span></p>
+<div class="fig">
+<svg viewBox="0 0 720 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图B：从亚里士多德到牛顿的思想演进四步图">
+  <defs><marker id="arB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <rect x="12" y="52" width="150" height="70" rx="7" fill="#2a1d20" stroke="#6a3a45"/><text x="87" y="80" font-size="13.5" fill="#d9a0ab" text-anchor="middle" font-weight="bold">亚里士多德</text><text x="87" y="103" font-size="12" fill="#b58790" text-anchor="middle">有力才动·无力即停</text>
+  <line x1="162" y1="87" x2="186" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arB)"/>
+  <rect x="190" y="52" width="160" height="70" rx="7" fill="#1b2a20" stroke="#3a6a4a"/><text x="270" y="80" font-size="13.5" fill="#a8d9b8" text-anchor="middle" font-weight="bold">伽利略</text><text x="270" y="103" font-size="12" fill="#8ab898" text-anchor="middle">理想实验·力非维持原因</text>
+  <line x1="350" y1="87" x2="374" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arB)"/>
+  <rect x="378" y="52" width="150" height="70" rx="7" fill="#1b2433" stroke="#3a5a8a"/><text x="453" y="80" font-size="13.5" fill="#a8c8e8" text-anchor="middle" font-weight="bold">笛卡尔</text><text x="453" y="103" font-size="12" fill="#88a8c8" text-anchor="middle">无力则同速同向·基石原理</text>
+  <line x1="528" y1="87" x2="552" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arB)"/>
+  <rect x="556" y="44" width="152" height="86" rx="7" fill="#14202b" stroke="#4a9eff" stroke-width="2"/><text x="632" y="72" font-size="13.5" fill="#cfe4ff" text-anchor="middle" font-weight="bold">牛顿（1687）</text><text x="632" y="94" font-size="12" fill="#9fc3e8" text-anchor="middle">第一定律＋惯性</text><text x="632" y="114" font-size="12" fill="#9fc3e8" text-anchor="middle">力＝改变运动状态的原因</text>
+  <text x="360" y="26" font-size="14" fill="#9aa7b5" text-anchor="middle">"错案"四百年 → 理想实验翻案 → 原理化 → 定律化（第三章攒的"力"在此上岗）</text>
+</svg>
+<div class="figcap">图B（本节思想演进图·据p83-85原文梳理）｜1687年出自教材脚注①《自然哲学的数学原理》·其余阶段不给年份（影印未载·宁缺毋编）</div>
+</div>
+<div class="pit"><span class="tag">坑点·"保持"不需要力，"改变"才需要</span>　这句定律最容易被读反：<span class="note-red">"物体运动需要力来维持"是亚氏残留直觉</span>。牛一说的是：维持运动<b>零成本</b>（惯性自带），力出场只在<b>改变</b>运动状态的时刻。滑冰运动员慢慢停下来，恰恰是因为有摩擦力在"改变"他的运动状态——问题框的矛盾就此化解：<b>不矛盾，是摩擦在干活</b>。</div>
+<div class="try"><span class="q">验一验②（自编·概念快判）：</span><span class="a">光滑水平冰面上某滑块获初速5 m/s后一切摩擦可忽略——按牛一它做什么运动？2 s内滑多远？（<span class="ans">匀速直线运动；x = vt = 5×2 = 10 m——回链2.3匀速位移公式。"永远运动下去"在数学上就是这条式子不许停。</span>）</span></div>
+
+<h2><span class="step-tag">第四步</span>惯性与质量：惯性有多大，谁说了算（p85-86原文照录）</h2>
+<p><b>【教材p85-86·惯性与质量】</b>　牛顿第一定律涉及两个重要的物理概念：力和惯性。我们在改变物体运动状态时，会体验到物体惯性大小的不同。例如，以相同的方式抛掷质量不同的两个石块，让它们获得同样的速度，需要的力就不同。质量大的石块需要的力大。再比如，让摆动的大沙袋停下来就让摆动的小球停下来费力得多。大量事例说明，不同质量的物体，惯性的大小是不一样的。也就是说，不同物体维持其原有运动状态的"能力"不同，质量大的物体惯性大。<b><mark class="nb">描述物体惯性大小的物理量是它的质量（mass）。</mark></b>质量只有大小，没有方向，是标量。在国际单位制中，质量的单位是千克，符号为kg。<span class="detail">页边注：在初中，我们把质量理解为物体所含物质的多少；现在，又从物体惯性的角度认识质量。我们对于科学概念的认识就是这样一步一步深入的。</span></p>
+<div class="fig">
+<svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图D：运动状态改变的两种情形">
+  <defs><marker id="arD" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c05a6a"/></marker></defs>
+  <rect x="30" y="38" width="200" height="76" rx="7" fill="#1b202a" stroke="#2a323e"/><text x="130" y="66" font-size="13.5" fill="#c8d3e0" text-anchor="middle">静止 ⇌ 运动</text><text x="130" y="92" font-size="12" fill="#8a97a5" text-anchor="middle">由静变动／由动变静</text>
+  <rect x="270" y="38" width="220" height="76" rx="7" fill="#1b202a" stroke="#2a323e"/><text x="380" y="66" font-size="13.5" fill="#c8d3e0" text-anchor="middle">速度大小改变 ⇌ 方向改变</text><text x="380" y="92" font-size="12" fill="#8a97a5" text-anchor="middle">任一变，运动状态即变</text>
+  <rect x="530" y="38" width="160" height="76" rx="7" fill="#2a171c" stroke="#7a3a45"/><text x="610" y="66" font-size="13.5" fill="#e4808f" text-anchor="middle" font-weight="bold">只要有改变</text><text x="610" y="92" font-size="12" fill="#b58790" text-anchor="middle">背后必有"力"在干活</text>
+  <line x1="232" y1="76" x2="264" y2="76" stroke="#c05a6a" stroke-width="2" marker-end="url(#arD)"/><line x1="492" y1="76" x2="524" y2="76" stroke="#c05a6a" stroke-width="2" marker-end="url(#arD)"/>
+</svg>
+<div class="figcap">图D（据p85页边梳理）｜"运动状态"就是速度（大小＋方向）：四种改变情形里没有一种需要"维持力"，全是"改变的力"登场</div>
+</div>
+
+<h2><span class="step-tag">第五步（拓展学习·照录）</span>惯性参考系：定律也有"营业范围"（p86-87原文照录）</h2>
+<div class="box"><b>【教材p86·拓展学习·惯性参考系】</b>　在桌面上放置一张纸和一个小钢球，小钢球静止在纸面上（图4.1-2）。如果突然迅速拉动纸的一边，虽然小钢球相对于桌面的位置几乎不变，但是如果只关注纸面及其上的小钢球时，你会发现小钢球相对于纸面向相反的方向运动。当纸相对于桌面加速运动时，如果以这张纸为参考系来观察，小钢球相对于纸面的运动状态在改变。按照牛顿第一定律，小钢球的运动状态发生改变，说明小钢球在水平方向上应该受到力的作用。但实际上，小钢球只受到竖直方向的重力和支持力，水平方向几乎不受力，这不是和牛顿第一定律相矛盾吗？</div>
+<div class="box"><b>【教材p87·解答与定义】</b>　若以地面为参考系，上述矛盾则不会存在。因为，在纸加速运动的过程中，尽管小钢球相对于纸面的运动状态在改变，但它相对于地面的位置并没有变化，因而仍然保持静止状态。这与用牛顿第一定律分析得到的结论是一致的。对于同一个物体的运动，为何会得到两种不同的分析结果呢？这是由于我们观察物体的运动时所选择的参考系不同。牛顿第一定律是否成立与选择什么参考系有关。如果在一个参考系中，一个不受力的物体会保持匀速直线运动状态或静止状态，这样的参考系叫作<span class="ul-blue">惯性参考系</span>，简称<span class="ul-blue">惯性系</span>。以加速运动的纸为参考系，牛顿第一定律并不成立，这样的参考系叫作非惯性系。</div>
+<div class="fig">
+<svg viewBox="0 0 720 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图C：纸球实验双参考系两种结论（重绘自教材图4.1-2思路）">
+  <defs><marker id="arC" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <rect x="40" y="120" width="400" height="26" rx="4" fill="#d8d8d4" stroke="#aaa"/>
+  <rect x="90" y="96" width="260" height="24" rx="3" fill="#f2f0ea" stroke="#c8c4ba"/><circle cx="200" cy="90" r="9" fill="#5a6570"/>
+  <line x1="360" y1="108" x2="470" y2="108" stroke="#2266aa" stroke-width="2.5" marker-end="url(#arC)"/><text x="392" y="94" font-size="13" fill="#5a8fb8">纸被突然向右拉动</text>
+  <text x="200" y="168" font-size="13" fill="#9aa7b5" text-anchor="middle">以地面看：球几乎不动（惯性"留守"·牛一成立·地面≈惯性系）</text>
+  <text x="588" y="90" font-size="13" fill="#a88" text-anchor="middle">以加速的纸看：</text>
+  <text x="588" y="112" font-size="13" fill="#a88" text-anchor="middle">球向"反方向"跑</text>
+  <text x="588" y="134" font-size="13" fill="#a88" text-anchor="middle">＝非惯性系·牛一不成立</text>
+</svg>
+<div class="figcap">图C（重绘自教材图4.1-2思路）｜同一件事，换参考系结论变：牛一只在惯性系里"营业"</div>
+</div>
+
+<h2><span class="step-tag">节末自测</span>教材p87「练习与应用」3题·原题全答</h2>
+<div class="try"><span class="q">1. 回答下列问题。（p87原题）</span><br>
+<span class="a">(1) 飞机投弹时，如果当目标在飞机的正下方时投下炸弹，能击中目标吗？为什么？——<span class="ans">不能。炸弹离开飞机的瞬间具有与飞机相同的水平速度，由于惯性，它在水平方向保持这个速度继续前进（水平方向几乎不受力）；要击中目标必须在到达目标正上方之前提前投弹。<b>自编示意</b>：v=100 m/s的飞机投弹，4 s后炸弹水平方向已前进x=vt=400 m（竖直方向按2.4自由落体h=½gt²=80 m下落）。</span><br>
+(2) 地球由西向东自转，你向上跳起来以后，为什么还落在原地，而不落到原地的西边？——<span class="ans">你起跳前随地面一起由西向东运动，具有与地面相同的水平速度；起跳后由于惯性，水平方向仍保持这个速度，所以仍落回原地。</span><br>
+(3) 我国道路交通安全法规规定，在各种小型车辆里乘坐的人必须系好安全带。为什么要有这样的规定？——<span class="ans">急刹车（或碰撞）时，车被迫停下，人却由于惯性要保持原来向前的运动状态，会向前冲撞到车内物体而受伤；安全带对人施加约束力，"替人"改变运动状态，并延长了人减速的时间、分散了压力。<b>自编示意</b>：54 km/h=15 m/s减速到0，安全带约束下约0.1 s完成，a=Δv/Δt=150 m/s²；若无约束撞上硬物约0.005 s内停下，a≈3000 m/s²——加速度差20倍，伤害量级完全不同（1.4加速度定义的活用）。</span><br>
+(4) 一位同学说，向上抛出的物体，在空中向上运动时，肯定受到了向上的作用力，否则它不可能向上运动。这个结论错在哪里？——<span class="ans">错在把"运动需要力维持"的亚氏直觉当成了依据。物体离手后向上运动是靠惯性（离手瞬间的初速度），不需要向上的力维持；它在空中受重力和空气阻力（都向下或与运动相反），恰恰是这些力在改变它的运动状态，使它减速。</span></span></div>
+<div class="try"><span class="q">2. 伽利略理想斜面推论题（p87原题）：</span><span class="a">"如果另一个斜面的倾角减小至0°，小球为达到原来的高度，将永远运动下去。"请说明他得到这个结论的理由。——<span class="ans">理由链＝实验事实＋逻辑外推：①无摩擦时小球在对接斜面上总能到达原来的高度（能量"够得着"的实验事实）；②倾角越小，到达同一高度要走的距离越长；③倾角减到0°的极限情形下，"原来的高度"永远够不到，小球只能沿水平面以恒定速度永远运动下去。这是把实际实验理想化后的逻辑推理——伽利略理想实验方法的完整示范。</span></span></div>
+<div class="try"><span class="q">3. 惯性说法四判断（p87原题）：</span><span class="a">(1)"汽车速度越大，刹车后越难停下来，表明物体的速度越大，其惯性越大。"——<span class="ans">错误。刹车难停是速度大（要"改变"的量更大、刹车后动能多）的表现，不是惯性大；惯性只由质量决定，与速度无关。</span>(2)"汽车转弯后前进方向发生了改变，表明物体速度方向改变，其惯性也随之改变。"——<span class="ans">错误。惯性只与质量有关，速度方向改变，惯性不变。</span>(3)"被抛出的小球，尽管速度的大小和方向都改变了，但惯性不变。"——<span class="ans">正确。质量不变，惯性就不变。</span>(4)"要使速度相同的沙袋在相同时间内停下来，对大沙袋用力比对小沙袋用力大，表明质量大的物体惯性大。"——<span class="ans">正确。相同时间内改变同样的速度，质量大的需要的力大——运动状态难改变，正是惯性大的体现。总结：惯性大小唯一由质量量度，与速度大小、方向、是否受力均无关。</span></span></div>
+
+<h2><span class="step-tag">收口</span>合上书，三问自检</h2>
+<div class="box">
+<p><b>问1</b>：牛顿第一定律里最容易被"读反"的是哪句话？——<span class="ans">"力是<b>改变</b>运动状态的原因"，不是"维持运动的原因"（回收锚：第三步pit·滑冰矛盾）。</span></p>
+<p><b>问2</b>：惯性和速度大小、速度方向有没有关系？——<span class="ans">没有。惯性唯一由质量量度（回收锚：第四步·练习3）。</span></p>
+<p><b>问3</b>：为什么说牛顿第一定律描述的是"理想状态"、不能用实验直接验证？——<span class="ans">因为"不受力的物体"不存在（任何物体都与周围有相互作用）；它是在可靠实验（伽利略斜面）基础上逻辑推理的产物——但这不妨碍它成为动力学的地基（回收锚：p85原文·理想实验方法）。</span></p>
+</div>
+
+<h3>本节位置图</h3>
+<div class="fig">
+<svg viewBox="0 0 780 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图G：第四章开篇与前后锚">
+  <defs><marker id="arG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <rect x="10" y="55" width="120" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="70" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">第三章末</text><text x="70" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">复习与提高p80-81</text>
+  <line x1="130" y1="87" x2="152" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="156" y="55" width="118" height="64" rx="7" fill="#1b202a" stroke="#8a6a4a"/><text x="215" y="82" font-size="12.5" fill="#c8b48a" text-anchor="middle">第四章章首页</text><text x="215" y="103" font-size="11.5" fill="#a08a60" text-anchor="middle">p82·域外界标</text>
+  <line x1="274" y1="87" x2="296" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="300" y="44" width="140" height="86" rx="7" fill="#14202b" stroke="#4a9eff" stroke-width="2"/><text x="370" y="72" font-size="13.5" fill="#cfe4ff" text-anchor="middle" font-weight="bold">本节 4.1</text><text x="370" y="94" font-size="12" fill="#9fc3e8" text-anchor="middle">牛顿第一定律</text><text x="370" y="114" font-size="12" fill="#9fc3e8" text-anchor="middle">惯性·惯性参考系</text>
+  <line x1="440" y1="87" x2="462" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="466" y="55" width="150" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="541" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">4.2 实验节名页</text><text x="541" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">p88右界实锚·探究a与F、m</text>
+  <line x1="616" y1="87" x2="638" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="642" y="55" width="128" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="706" y="82" font-size="12.5" fill="#6a7580" text-anchor="middle">第四章后续节</text><text x="706" y="103" font-size="11.5" fill="#5a6570" text-anchor="middle">候实锚·宁缺毋编</text>
+</svg>
+<div class="figcap">图G（本节位置图）｜第三章收官→第四章开篇（p82章首页域外界标）→<b>本节4.1牛顿第一定律（p83-87）</b>→4.2节名页p88实锚：动力学大幕拉开</div>
+</div>
+
+<h3>考位锚（T11）·高考怎么考</h3>
+<p class="small">· 考什么：惯性概念的<b>辨析判断</b>（"速度大＝惯性大"类陷阱——练习3同款）、用牛一与惯性<b>解释生活现象</b>（安全带/投弹/跳起落原地）、理想实验的<b>思想方法</b>（实验事实＋逻辑外推）、惯性与质量的唯一对应关系。<br>· 怎么考：选择题概念判断（练习3四判断直改）、生活情境解释题（练习1四小问同款）、与后续牛顿第二定律组合前的"概念地基"题。<br>· 真题锚：候采——对证源卷源池暂未录入 4.1 对口卷源，不代拟；候池内补录后回填。</p>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① <b>"运动状态"的现代译法</b>：教材说"速度大小或方向改变＝运动状态改变"——翻译成一句话：运动状态就是<b>速度矢量</b>（回链1.3/3.4矢量观）。② <b>牛一为什么"无法验证"还叫定律</b>：它的正确性由"以它为地基的全部动力学推论与实验吻合"整体背书——像数学里"公理"，靠体系赢。③ <b>惯性应用清单</b>：安全带/头枕（追尾时头突然"留"在原地）、拍衣服灰尘、泼水、跳远助跑——全是"让物体按惯性多走/少走一步"的安排。④ <b>非惯性系的代价</b>：在加速参考系里分析问题会"凭空多出力"（如急刹车时车内的人"被向后推"的错觉）——高中主要站在地面（近似惯性系）说话，别被车内视角绕进去。
+</div>
+
+<div class="foot">
+<em>素材源溯源（foot区·豁免条款）：影印源＝国家中小学智慧教育平台教材电子版·普通高中教科书·物理必修 第一册（人教版·2024印次）·contentId 708256b6-6f06-4d14-89c7-4df16dfe3b81·ts=1787023183495（1031午后ndrv2/resources详情API实时取·title核对人教正本·与速查表物理行同值批次稳定）·图82-94→印刷页p77-89·偏移N-5·本节影印范围p82-87（第四章章首页p82=图87为域外界标·4.1节名页p83=图88·4.2节名页p88=图93为节界边界锚）·影印对照逐页直读（p81页脚"第三章 相互作用——力 81"/p82章首"第四章 运动和力的关系"+运动学动力学章首语/p83页脚"第四章 运动和力的关系 83"·节名"1 牛顿第一定律"/p84页脚"84 高中物理必修第一册"/p85页脚"第四章 运动和力的关系 85"/p86页脚"86 高中物理必修第一册"/p87页脚"第四章 运动和力的关系 87"/p88节名"2 实验：探究加速度与力、质量的关系"）·节界双端亲验定谳（遵管理员席20:49:40令②）：左端=第三章末页p81直读+4.1节名页p83目检·右端=图93=p88=4.2节名页目检·节域p82-87六页闭合·节界与本席3.4交付行（633b37f"右界p76=3.5节名页"）链式互证·本件为自学辅导讲义·教材原文引用仅作教学讲解用途·原文以纸质教材为准。</em>
+</div>
+</div>
+</body>
+</html>
