@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物5.4 光合作用与能量转化 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b2029; border: 1px solid #2a323e; border-radius: 8px; padding: 18px 20px; margin: 16px 0; }
+  .talk .q { color: #ffc94d; font-weight: bold; }
+  .check { background: #16211a; border: 1px solid #2d5a3d; border-radius: 8px; padding: 16px 20px; margin: 18px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; font-size: 14px; }
+  .check p { margin: 8px 0; }
+  .pit { background: #2a1d14; border: 1px solid #7a4a1a; border-radius: 8px; padding: 12px 16px; margin: 14px 0; font-size: 15.5px; color: #e8c9a0; }
+  @media screen { .pit b { color: #ffb84d; } }
+  .alt { background: #1f1b24; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .key { background: #241f14; border-left: 4px solid #ffc94d; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+  .key b { color: #ffc94d; }
+  .m { font-family: "Times New Roman", serif; font-style: italic; color: #fff; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; font-family: "Times New Roman", serif; color: #eef2f7; font-size: 16.5px; }
+  .small { font-size: 14px; color: #8a96a5; }
+  .ans { color: #58d68d; }
+  .wrong { color: #ff7b72; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a323e; padding: 9px 12px; text-align: left; }
+  th { background: #1b2029; color: #fff; }
+  .fig { margin: 18px 0; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .foot { margin-top: 50px; padding-top: 20px; border-top: 1px solid #2a323e; color: #7d8a99; font-size: 14px; }
+  em { color: #4a9eff; font-style: normal; font-weight: bold; }
+  b { color: #f0f3f7; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    .sub, .small, .foot, .figcap { color: #444; }
+    .talk .q, .key b { color: #7a5c00; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong { color: #c0392b; }
+    em { color: #1a5c99; }
+    mark.nb { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>光合作用：叶子把阳光变成饭的完整流水线</h1>
+<div class="sub">生物必修1 分子与细胞 · 5.4 光合作用与能量转化 · 零基础首学版 v1.0 · 预计用时 45 分钟 · 对照课本第97—106页 · 全程不需要看视频</div>
+
+<h2><span class="step-tag">开场</span>植物工厂的灯光，为什么没有绿色的？</h2>
+<p>有一种农场叫<b>植物工厂</b>：没有阳光，没有土壤。蔬菜一层层架在架子上，喝的是配好的营养液，照的是灯——全是<b>人工光源</b>，常见的是红色、蓝色和白色的光。</p>
+<p>奇怪了：太阳光明明是"七彩"的，为什么植物工厂偏偏不用<b>绿色</b>的灯？</p>
+<p>这道题课本开场就问你（p97"问题探讨"）。学完这节你自己就能答出来。现在先记住这个问题，我们往下走。</p>
+
+<div class="check"><span class="tag">读完这节你能：</span>
+<p>① 说出绿叶里有哪 <b>4 种色素</b>，以及实验室怎么把它们<b>分开</b>；<br>
+② 指认<b>叶绿体</b>的结构（外膜、内膜、基质、基粒、类囊体），并说出色素到底"住"在哪；<br>
+③ 用一个<b>总反应式</b>概括光合作用，并把"光反应"和"暗反应"两阶段的<b>场所、条件、产物</b>分得清清楚楚；<br>
+④ 说出光合作用原理在农业生产上怎么用，以及另一条造糖的路——<b>化能合成作用</b>。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>白化苗：没有色素，直接饿死</h2>
+<p>玉米地里偶尔能见到几株<b>白色的苗</b>——叶片不含绿色色素，所以不长"绿色"那套装备（图5-10）。它们能活多久？<b>等种子里存的养分烧完，就死去</b>。</p>
+<p>为什么？因为它<b>自己造不出有机物</b>了。你上一节刚学完：细胞呼吸烧的是有机物，可有机物从哪来？动物直接吃，植物——靠自己造。造厂的主要装备就是叶子里那些<b>绿色的色素</b>。</p>
+<p>课本这一步的推理很朴素：<mark class="nb">叶片中的色素，可能与光能的捕获有关</mark>（p97）。没色素→捕不到光→造不出饭→饿死。白化苗就是"色素=饭碗"这条逻辑的活证据。</p>
+<p>那问题来了：绿叶里到底有哪些色素？怎么做实验把它们找出来？</p>
+
+<h2><span class="step-tag">第二步</span>把色素抓出来再分开：色素的提取和分离</h2>
+<p>这是课本的"探究·实践"实验（p98—99），高考实验题的常客。整件事就两步：<b>提取</b>（把色素弄到溶液里）＋<b>分离</b>（让几种色素自己排队走开）。</p>
+<h3>原理（两条，都来自课本原话）</h3>
+<p>① <b>提取</b>：色素能溶解在有机溶剂无水乙醇中——所以用无水乙醇把色素从叶子里"泡"出来。</p>
+<p>② <b>分离</b>：各种色素都能溶进层析液，但<b>溶解度不同</b>。溶解度高的随层析液在滤纸上扩散得快，低的慢——于是几条色素带自动分开。</p>
+<h3>方法步骤（照录p98—99，人话翻译跟在后面）</h3>
+<p><b>1. 提取绿叶中的色素：</b>称取 5 g 绿叶，剪去主叶脉，剪碎，放研钵；加少许<b>二氧化硅</b>（帮助研磨得更碎）和<b>碳酸钙</b>（防止研磨中色素被破坏）；再加 5～10 mL 无水乙醇迅速充分研磨；把研磨液倒入垫了单层尼龙布的玻璃漏斗过滤，滤液收集到试管里，及时用棉塞塞严。</p>
+<p class="small">人话：剪碎→加两样"助磨剂"→酒精泡出色素→滤掉渣→塞紧防酒精挥发。</p>
+<p><b>2. 制备滤纸条：</b>把干燥的定性滤纸剪成宽度略小于试管直径、长度略小于试管长度的纸条；一端剪去两角，并在距这一端底部 1 cm 处用铅笔画一条细横线。</p>
+<p><b>3. 画滤液细线：</b>用毛细吸管吸少量滤液，沿铅笔线均匀地画一条细线（也可将滤液倒入培养皿，用盖玻片蘸滤液在横线处按压出均匀细线）。<b>待滤液干后再重画一到两次</b>。</p>
+<p class="small">人话：线要细、要浓。干了再画一两遍=攒多点色素，后面分离出的带才清楚。</p>
+<p><b>4. 分离绿叶中的色素：</b>将适量层析液倒入试管，把滤纸条（<b>有滤液细线的一端朝下</b>）轻轻插入层析液中，用棉塞塞紧试管口。<b>注意：不能让滤液细线触及层析液</b>——否则线上的色素会被层析液溶解掉，根本扩不上滤纸。</p>
+<p><b>5. 观察与记录：</b>观察试管内滤纸条上出现了几条色素带，以及每条色素带的颜色和宽窄，记录下来。</p>
+<div class="pit"><b>警示（p99橙框照录）：</b>层析液中的挥发性物质有毒性——分离色素这步要<b>通风好</b>的条件下做，实验结束尽快用<b>肥皂洗手</b>。</div>
+<div class="fig">
+<svg viewBox="0 0 620 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="分离绿叶中色素的实验装置示意图：烧杯内层析液液面与滤液细线的位置关系">
+  <rect x="0" y="0" width="620" height="150" fill="#10141b" rx="8"/>
+  <path d="M230 30 L230 120 Q230 132 242 132 L378 132 Q390 132 390 120 L390 30" fill="none" stroke="#7d8a99" stroke-width="3"/>
+  <path d="M246 26 L246 34 L374 34 L374 26" fill="none" stroke="#7d8a99" stroke-width="3"/>
+  <rect x="246" y="92" width="128" height="38" fill="#1c3a4c"/>
+  <text x="310" y="116" fill="#9fd481" font-size="13" text-anchor="middle">层析液</text>
+  <rect x="296" y="34" width="24" height="92" fill="#e8ecf2" opacity="0.92"/>
+  <rect x="296" y="58" width="24" height="5" fill="#3fae6a"/>
+  <text x="335" y="63" fill="#d8dee6" font-size="12">2 滤液细线（不能碰液面！）</text>
+  <line x1="246" y1="92" x2="374" y2="92" stroke="#9fd481" stroke-dasharray="4,3"/>
+  <text x="400" y="98" fill="#d8dee6" font-size="12">1 层析液液面</text>
+  <text x="310" y="145" fill="#7d8a99" font-size="11" text-anchor="middle">分离绿叶中色素的实验装置（照p99：1层析液液面 2滤液细线·细线朝下插入·不能触及层析液）</text>
+</svg>
+<p class="figcap">图A 分离装置·两张要害：细线朝下插入，但绝不能泡进层析液里</p>
+</div>
+
+<h3>结果：四条色素带，两大类</h3>
+<div class="fig">
+<svg viewBox="0 0 620 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="滤纸条上四条色素带：从上到下胡萝卜素、叶黄素、叶绿素a、叶绿素b">
+  <rect x="0" y="0" width="620" height="170" fill="#10141b" rx="8"/>
+  <rect x="230" y="18" width="40" height="130" fill="#e8ecf2" opacity="0.92"/>
+  <rect x="230" y="30" width="40" height="14" fill="#ff9a3d"/>
+  <rect x="230" y="52" width="40" height="14" fill="#ffd23d"/>
+  <rect x="230" y="76" width="40" height="22" fill="#4fae72"/>
+  <rect x="230" y="106" width="40" height="20" fill="#2e7d4f"/>
+  <text x="285" y="41" fill="#ff9a3d" font-size="13" font-weight="bold">胡萝卜素（橙黄色）· 走得最快</text>
+  <text x="285" y="63" fill="#ffd23d" font-size="13" font-weight="bold">叶黄素（黄色）</text>
+  <text x="285" y="91" fill="#4fae72" font-size="13" font-weight="bold">叶绿素 a（蓝绿色）· 通常最宽</text>
+  <text x="285" y="120" fill="#2e7d4f" font-size="13" font-weight="bold">叶绿素 b（黄绿色）· 走得最慢</text>
+  <text x="90" y="30" fill="#7d8a99" font-size="11" text-anchor="middle">↑扩散快</text>
+  <text x="90" y="135" fill="#7d8a99" font-size="11" text-anchor="middle">↑扩散慢</text>
+  <text x="310" y="162" fill="#7d8a99" font-size="11" text-anchor="middle">自绘示意（排带次序=溶解度次序·带宽≈含量：叶绿素约占3/4·类胡萝卜素约占1/4，照p98）</text>
+</svg>
+<p class="figcap">图B 四条色素带·从上到下：胡萝卜素→叶黄素→叶绿素a→叶绿素b</p>
+</div>
+<div class="key"><b>四大类记账（p98树状图照录）：</b>绿叶中的色素 4 种、两大类——
+<b>叶绿素类（含量约占 3/4）</b>：叶绿素 a（蓝绿色）、叶绿素 b（黄绿色）；
+<b>类胡萝卜素类（含量约占 1/4）</b>：胡萝卜素（橙黄色）、叶黄素（黄色）。</div>
+
+<div class="check"><span class="tag">验一验（做完实验的同学自查）：</span>
+<p>滤纸条上有几条色素带？<b>按扩散快慢</b>从上到下报顺序。</p>
+<p class="ans">答：4条。从上到下=溶解度从大到小：胡萝卜素→叶黄素→叶绿素a→叶绿素b。窄带=含量少（类胡萝卜素约占1/4），宽带=含量多（叶绿素约占3/4）。</p></div>
+
+<h2><span class="step-tag">第三步</span>光不是一种光：光谱与"谁吸什么光"</h2>
+<p>阳光看起来是白光，其实是<b>复合光</b>——由不同波长的光组合而成。让它穿过三棱镜，不同波长的光分散开，形成不同颜色的光带（图5-11），这就叫<b>光谱</b>（光是一种电磁波；可见光的波长是 400～760 nm；波长小于 400 nm 的是紫外光，大于 760 nm 的是红外光——一般情况下光合作用利用的光都是<b>可见光</b>，p99"学科交叉"照录）。</p>
+<p>4种色素分别吸哪种光？把各种颜色的光分别照色素溶液，测出<b>吸收光谱</b>，得到结论（p99照录）：</p>
+<div class="key"><b>结论：</b><mark class="nb">叶绿素 a 和叶绿素 b 主要吸收蓝紫光和红光</mark>；<mark class="nb">胡萝卜素和叶黄素主要吸收蓝紫光</mark>（图5-12）。4种色素吸收的光波长有差别，但是都可以用于光合作用。</div>
+<p>现在回收开场那道题：<b>植物工厂里为什么不用发绿光的光源？</b></p>
+<div class="box">因为色素对绿光吸收最少——绿光基本被反射回去，叶片才显绿色。用绿光灯等于把最没用的那部分光发给植物，能量白花。（答法要点：色素几乎不吸收绿光。）</div>
+
+<h2><span class="step-tag">第四步</span>色素住在哪：叶绿体的完整地图</h2>
+<p>19世纪早期，科学家就从植物细胞里分离出了叶绿素。但当时不清楚色素在细胞里的分布。后来才弄清楚：<mark class="nb">叶绿素并非遍布整个植物细胞，而是集中在一个更小的结构里——叶绿体</mark>（p100照录）。</p>
+<p>把水稻、苹果等被子植物的叶肉细胞放在光学显微镜下，可以看到叶绿体一般呈<b>扁平的椭球形或球形</b>。更精细的结构要用<b>电子显微镜</b>才看得清（图5-13，电镜照片放大 44 000 倍）。</p>
+<div class="fig">
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="叶绿体结构模式图：外膜、内膜、基质、基粒、类囊体">
+  <rect x="0" y="0" width="640" height="300" fill="#10141b" rx="8"/>
+  <ellipse cx="320" cy="150" rx="230" ry="110" fill="#1f3d2a" stroke="#4fae72" stroke-width="4"/>
+  <ellipse cx="320" cy="150" rx="214" ry="96" fill="#2a4a33" stroke="#9fd481" stroke-width="3"/>
+  <g stroke="#7fc96b" stroke-width="9" stroke-linecap="round">
+    <g transform="translate(250,120)"><rect x="-16" y="0" width="70" height="10" rx="5"/><rect x="-20" y="14" width="78" height="10" rx="5"/><rect x="-16" y="28" width="70" height="10" rx="5"/><rect x="-20" y="42" width="78" height="10" rx="5"/></g>
+    <g transform="translate(370,105)"><rect x="-16" y="0" width="70" height="10" rx="5"/><rect x="-20" y="14" width="78" height="10" rx="5"/><rect x="-16" y="28" width="70" height="10" rx="5"/></g>
+    <g transform="translate(390,175)"><rect x="-16" y="0" width="70" height="10" rx="5"/><rect x="-20" y="14" width="78" height="10" rx="5"/><rect x="-16" y="28" width="70" height="10" rx="5"/><rect x="-20" y="42" width="78" height="10" rx="5"/></g>
+  </g>
+  <rect x="248" y="115" width="54" height="52" fill="none" stroke="#ffc94d" stroke-dasharray="5,4"/>
+  <text x="275" y="110" fill="#ffc94d" font-size="13" text-anchor="middle" font-weight="bold">基粒（一摞类囊体）</text>
+  <text x="120" y="70" fill="#d8dee6" font-size="13">外膜</text>
+  <line x1="132" y1="74" x2="175" y2="98" stroke="#8a96a5" stroke-width="1.5"/>
+  <text x="130" y="120" fill="#d8dee6" font-size="13">内膜</text>
+  <line x1="140" y1="124" x2="185" y2="128" stroke="#8a96a5" stroke-width="1.5"/>
+  <text x="170" y="230" fill="#d8dee6" font-size="13">基质</text>
+  <line x1="185" y1="226" x2="240" y2="196" stroke="#8a96a5" stroke-width="1.5"/>
+  <text x="480" y="120" fill="#d8dee6" font-size="13">类囊体（圆饼状囊状结构）</text>
+  <line x1="476" y1="124" x2="432" y2="118" stroke="#8a96a5" stroke-width="1.5"/>
+  <text x="320" y="288" fill="#7d8a99" font-size="11" text-anchor="middle">自绘示意（照p100图5-13模式图：双层膜包被·基粒间充满基质·4种色素分布在类囊体的薄膜上）</text>
+</svg>
+<p class="figcap">图C 叶绿体地图·五件套：外膜/内膜/基质/基粒/类囊体</p>
+</div>
+<div class="key"><b>结构要点（p100照录·逐条都是考点）：</b>叶绿体由<b>双层膜包被</b>；内部有许多<b>基粒</b>；每个基粒都由一个个圆饼状的囊状结构堆叠而成，这些囊状结构称为<b>类囊体</b>；<mark class="nb">吸收光能的4种色素就分布在类囊体的薄膜上</mark>；基粒与基粒之间充满了<b>基质</b>。</div>
+<p><b>为什么这结构能"接住"光？</b>每个基粒都含有两个以上的类囊体，多的可达 100 个以上。叶绿体内有如此众多的基粒和类囊体，<b>极大地扩展了受光面积</b>。据计算，<b>1 g 菠菜叶片中的类囊体的总面积竟有 60 m² 左右</b>（p100照录）——差不多一间卧室铺满受光膜，就装在一克菜叶里。</p>
+<h3>恩格尔曼实验：叶绿体确实是"光合车间"</h3>
+<div class="talk"><span class="q">课本思考·讨论（p100—101）资料1：</span>1881年，德国科学家恩格尔曼（T. Engelmann, 1843—1909）做了这样的实验：把载有水绵（叶绿体呈螺旋带状分布）和需氧细菌的临时装片，放在没有空气的小室内，在黑暗中用极细的光束照射水绵。发现：<b>细菌只向叶绿体被光束照射到的部位集中</b>；如果把装置放在光下，细菌则分布在叶绿体<b>所有受光的部位</b>。</div>
+<p><b>实验怎么读：</b>需氧细菌=活的"氧气探测器"，哪里氧气多就往哪聚。氧气多=那里在放氧=那里在做光合作用。所以——</p>
+<p>① 黑暗中只照一小块→细菌只聚在被照的叶绿体上→<b>放氧的部位就是叶绿体（被光照射的部位）</b>；</p>
+<p>② 第二个实验：用<b>透过三棱镜的光</b>照射水绵装片，发现大量需氧细菌聚集在<b>红光和蓝紫光</b>区域（p101）→和第三步"色素主要吸收蓝紫光和红光"完全对上——细菌聚得多，说明那里放氧多，说明那里光合作用强。</p>
+<p>课本结论（p101照录）：恩格尔曼的实验直接证明了<mark class="nb">叶绿体能吸收光能用于光合作用放氧</mark>。结合其他的实验证据，科学家们得出<mark class="nb">叶绿体是光合作用的场所</mark>这一结论。</p>
+<p><b>还差最后一块拼图——酶在哪？</b>资料3（p101）：在类囊体膜上<b>和</b>叶绿体基质中，含有多种进行光合作用所必需的酶。课本总结：在叶绿体内部巨大的膜表面上，分布着许多吸收光能的色素分子；在类囊体膜上和叶绿体基质中，还有许多进行光合作用所必需的酶。<b>这是叶绿体捕获光能、进行光合作用的结构基础。</b></p>
+<div class="check"><span class="tag">验一验：</span>
+<p>① 4种色素具体贴在哪层膜上？② 叶绿体里"基质"和"类囊体膜"上各有什么干活的"工人"？</p>
+<p class="ans">答：①分布在类囊体的薄膜上（不是外膜内膜，不是基质里悬浮）。②类囊体膜上=色素+酶；基质中=酶（不含色素）。记住分工：膜上捕光，基质里装酶——这直接预告第五、六步的两阶段分工。</p></div>
+
+<h2><span class="step-tag">练习①</span>课本 p101 练习与应用（小节一末·全题照录+讲透）</h2>
+<div class="box"><b>一、概念检测</b><br>
+1. 基于对叶绿体的结构和功能的理解，判断下列相关表述是否正确。<br>
+（1）叶绿体中只有叶绿素吸收的光能才能用于光合作用。（　）<br>
+（2）叶绿体的类囊体上有巨大的膜面积，有利于充分吸收光能。（　）<br>
+（3）植物叶片之所以呈现绿色，是因为叶片中的叶绿体吸收了绿光。（　）<br>
+2. 下列关于高等植物细胞内色素的叙述，错误的是（　）<br>
+A. 所有植物细胞中都含有 4 种色素　B. 有些植物细胞的液泡中也含有色素　C. 叶绿素和类胡萝卜素都可以吸收光能　D. 植物细胞内的光合色素主要包括叶绿素和类胡萝卜素两大类</div>
+<p class="ans"><b>全解：</b>1.（1）<span class="wrong">×——4种色素都可以吸收光能用于光合作用</span>，课本p99原文"这4种色素吸收的光波长有差别，但是都可以用于光合作用"；（2）√——这就是图C说过的"面积账"，无数基粒类囊体把受光面积铺到极大；（3）<span class="wrong">×——恰恰相反：色素<b>几乎不吸收</b>绿光，绿光被反射，叶片才呈绿色</span>。2. 选 <span class="wrong">A</span>——不是所有植物细胞都有光合色素：根细胞没有叶绿体，白化苗的叶肉细胞也造不出叶绿素；B对（花和果实的颜色很多来自液泡里的色素）、C对、D对。</p>
+<div class="box"><b>二、拓展应用</b><br>
+1. 海洋中的藻类，习惯上依其颜色分为绿藻、褐藻和红藻，它们在海水中的垂直分布大致依次是浅、中、深。这种现象与光能的捕获有关吗？（p101配图：海带褐藻/石莼绿藻/石花菜红藻）<br>
+2. 与传统的生产方式相比，植物工厂生产蔬菜等食物有哪些优势？又面临哪些困难？你对植物工厂的发展前景持什么观点？请搜集资料，结合自己的思考写一篇综述性短文。</div>
+<p class="ans"><b>思路：</b>1. <b>有关</b>。海水对光"分层过滤"：红光等长波在浅层就被吸走，蓝紫光能扎到深层；不同藻类的色素组合不同，各自在能接住自己"对口波段"的水层里站住了位置——浅层绿藻、中层褐藻、深层红藻，正是"哪种色素能捕获哪层剩下的光"的活例子。2. 开放题，给框架：优势（不受气候季节限制·单位面积产量高·少虫害·可精准调控光质）＋困难（灯和控温的能耗高·初期投入大·品种有限）；观点自拟，有依据即可。</p>
+
+<h2><span class="step-tag">第五步</span>光合作用的身份证：一句定义 + 一个反应式</h2>
+<p>课本p102给的定义，逐词读：</p>
+<div class="key"><b>定义（照录）：</b>一般来说，<mark class="nb">光合作用是指绿色植物通过叶绿体，利用光能，将二氧化碳和水转化成储存着能量的有机物，并且释放出氧气的过程</mark>。</div>
+<div class="fig">
+<svg viewBox="0 0 620 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="光合作用总反应式"><defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a9eff"/></marker></defs>
+  <rect x="0" y="0" width="620" height="130" fill="#10141b" rx="8"/>
+  <text x="240" y="66" fill="#f0f3f7" font-size="26" text-anchor="middle" font-family="Times New Roman, serif">CO₂ + H₂O</text>
+  <line x1="322" y1="58" x2="408" y2="58" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="365" y="30" fill="#ffc94d" font-size="15" text-anchor="middle" font-weight="bold">光能</text>
+  <text x="365" y="86" fill="#9fd481" font-size="15" text-anchor="middle" font-weight="bold">叶绿体</text>
+  <text x="482" y="66" fill="#f0f3f7" font-size="26" text-anchor="middle" font-family="Times New Roman, serif">(CH₂O) + O₂</text>
+  <text x="310" y="118" fill="#7d8a99" font-size="12" text-anchor="middle">（CH₂O）表示糖类·照p102反应式——箭头上方"光能"下方"叶绿体"是两个必写条件</text>
+</svg>
+<p class="figcap">图D 总反应式·原料：CO₂和水；条件：光能+叶绿体；产物：储存能量的有机物（糖类）+氧气</p>
+</div>
+<p>读式的三个提醒：① <b>(CH₂O)</b> 不是某个具体分子的分子式，是"糖类"的统称写法（碳氢比1:2:1的骨架写法）；② 箭头上的<b>光能</b>、箭头下的<b>叶绿体</b>都是"必写件"，漏一个就是错式；③ 产物里的能量不是凭空来的——是<b>光能转化来</b>的，这正是本节标题"能量转化"四个字的落点。</p>
+
+<h2><span class="step-tag">第六步</span>氧气到底从哪来：一场拆穿"甲醛旧说"的连环实验</h2>
+<p>反应式写出来容易，但"O₂ 是从 H₂O 来的还是从 CO₂ 来的""糖是怎么一步步造出来的"，课本整整铺了两页科学史（p102—103）。这条线索也是高考实验题的题库老家。一段一段过：</p>
+<p><b>① 19世纪末的旧认识（后来被推翻）：</b>CO₂ 分子的 C 和 O 被分开，O₂ 释放，C 与 H₂O 结合成甲醛，然后甲醛分子缩合成糖。<b>1928年</b>，科学家发现甲醛对植物有毒害作用，而且甲醛不能通过光合作用转化成糖——旧说法破产（p102照录）。</p>
+<p><b>② 1937年·希尔（R. Hill）：</b>在<b>离体叶绿体</b>的悬浮液中加入铁盐或其他氧化剂（悬浮液中有 H₂O，<b>没有 CO₂</b>），光照下可以释放出氧气。像这样，离体叶绿体在适当条件下发生<b>水的光解</b>、产生氧气的化学反应称作<b>希尔反应</b>（p102照录）。——没有CO₂照样放氧，说明放氧这一步跟"造糖"不是同一步。</p>
+<p><b>③ 1941年·鲁宾（S. Ruben）和卡门（M. Kamen）：</b>用<b>同位素示踪</b>法，用 ¹⁸O 分别标记 H₂O 和 CO₂（变成 H₂¹⁸O 和 C¹⁸O₂）。第一组：植物提供 H₂O + C¹⁸O₂ → 释放的氧气是 O₂；第二组：提供 H₂¹⁸O + CO₂ → 释放的都是 ¹⁸O₂。结论：<mark class="nb">光合作用释放的氧气来自水</mark>（p102—103照录）。</p>
+<p><b>④ 1954年·阿尔农（D. Arnon）：</b>发现在光照下，叶绿体可合成 ATP。1957年，他发现这一过程<b>总是与水的光解相伴随</b>（p102照录）——水的光解不但放氧，还顺手发了"能量支票"ATP，这为第七步的光反应埋好伏笔。</p>
+<div class="key"><b>课本结论（p103照录）：</b>上述实验表明，<mark class="nb">光合作用释放的氧气中的氧元素来自水</mark>，氧气的产生和糖类的合成<mark class="nb">不是同一个化学反应</mark>，而是分阶段进行的。实际上，光合作用的过程十分复杂，它包括一系列化学反应。根据是否需要光能，这些化学反应可以概括地分为<b>光反应（light reaction）</b>和<b>暗反应（dark reaction，现在也称为碳反应，carbon reaction）</b>两个阶段。</div>
+<div class="check"><span class="tag">验一验（承希尔实验的讨论题）：</span>
+<p>希尔的实验说明水的光解产生氧气，是否说明植物光合作用产生的氧气中的氧元素全部都来自水？（p103讨论1原题）</p>
+<p class="ans">答：不能"全部"这么说——希尔体系里没有CO₂，只证明"水能光解放氧"这一步；"氧气中的氧元素（全部）来自水"是1941年鲁宾和卡门用同位素示踪在<b>完整光合作用</b>里证实的。两场实验各管一段，别越界引用——这正是实验结论"适用范围"意识。</p></div>
+
+<h2><span class="step-tag">第七步</span>光反应：在类囊体薄膜上，光变成两件"能量装备"</h2>
+<p><b>场所</b>：类囊体的薄膜上（对上第四步：色素和一部分酶都贴在这层膜上）。<b>条件</b>：必须有光才能进行（p103：光合作用第一个阶段的化学反应，必须有光才能进行，这个阶段叫作光反应阶段）。</p>
+<p>叶绿体中光合色素吸收的光能，有<b>两方面用途</b>（p103照录）：一是<mark class="nb">将水分解为氧和H⁺</mark>，氧直接以氧分子的形式释放出去，H⁺ 与<b>氧化型辅酶Ⅱ（NADP⁺）</b>结合，形成<b>还原型辅酶Ⅱ（NADPH）</b>——NADPH 作为活泼的还原剂，参与暗反应阶段的化学反应，同时也储存部分能量供暗反应阶段利用；二是在有关酶的催化作用下，提供能量促使 <b>ADP 与 Pi 反应形成 ATP</b>。这样，<mark class="nb">光能就转化为储存在ATP中的化学能</mark>。这些 ATP 将参与第二个阶段合成有机物的化学反应。</p>
+<p class="small">相关信息（p103旁栏照录）：水分解为氧和 H⁺ 的同时，被叶绿素夺去两个电子。电子经传递，可用于 NADP⁺ 与 H⁺ 结合形成 NADPH。</p>
+<div class="key"><b>光反应记账（三进三出）：</b>进：水、光能、ADP+Pi、NADP⁺；出：<b>O₂（氧气）、ATP、NADPH</b>。一句话：<b>水上场，氧气和两件能量装备（ATP、NADPH）下场</b>。这两件装备不留给光反应自己用——全部<mark class="nb">运去暗反应"发货"</mark>（图5-14里两支箭头都指向暗反应）。</div>
+
+<h2><span class="step-tag">第八步</span>暗反应：在基质里，CO₂ 变糖的"循环流水线"</h2>
+<p><b>场所</b>：叶绿体的基质中（对上第四步：基质里装的是酶）。<b>条件</b>：不直接依赖光（p104照录——注意措辞是"不<b>直接</b>依赖"，它吃的能量饭是光反应发的 ATP 和 NADPH）。在这一阶段，CO₂ 被利用，经过一系列的反应后生成糖类。</p>
+<p>CO₂ 怎么变成糖？课本用一场同位素实验给出路径：20世纪40年代，美国科学家<b>卡尔文（M. Calvin, 1911—1997）</b>等用<b>小球藻</b>（一种单细胞的绿藻）做了这样的实验：用经过 ¹⁴C 标记的 <b>¹⁴CO₂</b>，供小球藻进行光合作用，然后追踪放射性 ¹⁴C 的去向，最终探明了 CO₂ 中的碳是如何转化为有机物中的碳的（p104照录）。</p>
+<p>路径读下来就三站（p104照录·相关信息的"身份证"跟在后面）：</p>
+<p><b>第一站·CO₂ 的固定：</b>绿叶通过气孔从外界吸收的 CO₂，在<b>特定酶</b>的作用下，与 <b>C₅</b>（一种五碳化合物）结合——一分子 CO₂ 被固定后，很快形成<b>两个 C₃ 分子</b>。</p>
+<p><b>第二站·C₃ 的还原：</b>在有关酶的催化作用下，C₃ <b>接受 ATP 和 NADPH 释放的能量</b>，并且被 NADPH 还原。随后，一些接受能量并被还原的 C₃，在酶的作用下经过一系列的反应<b>转化为糖类</b>。</p>
+<p><b>第三站·C₅ 再生：</b>另一些接受能量并被还原的 C₃，经过一系列变化，<b>又形成 C₅</b>。这些 C₅ 又可以参与 CO₂ 的固定。</p>
+<div class="key"><b>循环闭合：</b>暗反应阶段就形成从 C₅ 到 C₃ 再到 C₅ 的循环，可以源源不断地进行下去，因此暗反应过程也称作<b>卡尔文循环</b>（p104照录）。相关信息（旁栏照录）：C₃ 是指三碳化合物——3-磷酸甘油酸；C₅ 是指五碳化合物——核酮糖-1,5-二磷酸（RuBP）。<b>课堂速记口诀：固定—还原—再生，C₅是"接单员"，ATP和NADPH是"能量快递"。</b></div>
+<div class="fig">
+<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="光合作用过程示意图：光反应与暗反应的衔接">
+  <rect x="0" y="0" width="640" height="340" fill="#10141b" rx="8"/>
+  <ellipse cx="320" cy="170" rx="255" ry="140" fill="#1f3d2a" stroke="#4fae72" stroke-width="3.5"/>
+  <ellipse cx="200" cy="170" rx="86" ry="112" fill="#17251c" stroke="#7fc96b" stroke-dasharray="6,4"/>
+  <text x="200" y="52" fill="#7fc96b" font-size="15" text-anchor="middle" font-weight="bold">光反应（类囊体薄膜）</text>
+  <text x="452" y="52" fill="#c9b8dd" font-size="15" text-anchor="middle" font-weight="bold">暗反应（基质）</text>
+  <text x="80" y="150" fill="#9fd481" font-size="16" font-family="Times New Roman, serif">H₂O ↓</text>
+  <text x="80" y="196" fill="#ff9a3d" font-size="15">O₂ ↑</text>
+  <text x="150" y="128" fill="#ffc94d" font-size="13">光能</text>
+  <rect x="286" y="118" width="52" height="22" rx="4" fill="#3a2f14" stroke="#ffc94d"/><text x="312" y="133" fill="#ffc94d" font-size="13" text-anchor="middle">ATP</text>
+  <rect x="286" y="162" width="60" height="22" rx="4" fill="#3a2f14" stroke="#ffc94d"/><text x="316" y="177" fill="#ffc94d" font-size="13" text-anchor="middle">NADPH</text>
+  <rect x="286" y="208" width="60" height="20" rx="4" fill="#1a2230" stroke="#8a96a5"/><text x="316" y="222" fill="#8a96a5" font-size="12" text-anchor="middle">ADP+Pi</text>
+  <rect x="286" y="238" width="64" height="20" rx="4" fill="#1a2230" stroke="#8a96a5"/><text x="318" y="252" fill="#8a96a5" font-size="12" text-anchor="middle">NADP⁺</text>
+  <line x1="286" y1="129" x2="256" y2="129" stroke="#8a96a5" stroke-dasharray="4,3"/>
+  <line x1="286" y1="173" x2="256" y2="173" stroke="#8a96a5" stroke-dasharray="4,3"/>
+  <text x="452" y="112" fill="#c9b8dd" font-size="15" font-family="Times New Roman, serif">CO₂ ↓（气孔进）</text>
+  <text x="452" y="150" fill="#f0f3f7" font-size="14" text-anchor="middle">C₅ + CO₂ → 2 C₃（固定）</text>
+  <text x="452" y="188" fill="#f0f3f7" font-size="14" text-anchor="middle">C₃ →（吃 ATP/NADPH）糖类</text>
+  <text x="452" y="226" fill="#f0f3f7" font-size="14" text-anchor="middle">部分 C₃ → 再生 C₅</text>
+  <text x="452" y="272" fill="#9fd481" font-size="16" font-family="Times New Roman, serif">(CH₂O) ↓</text>
+  <text x="320" y="326" fill="#7d8a99" font-size="11" text-anchor="middle">自绘示意（照p103图5-14：光反应产物ATP/NADPH右移供货暗反应·ADP+Pi/NADP⁺回流光反应循环再充）</text>
+</svg>
+<p class="figcap">图E 光反应—暗反应接力图·中间四件小方块=两件"装备"送去、两件"空箱"运回</p>
+</div>
+
+<h3>光反应 vs 暗反应：一张表分清</h3>
+<table>
+<tr><th>维度</th><th>光反应</th><th>暗反应（碳反应）</th></tr>
+<tr><td>场所</td><td>类囊体的薄膜上</td><td>叶绿体的基质中</td></tr>
+<tr><td>条件</td><td>必须有光、色素、酶</td><td>不直接依赖光（需要光反应供ATP、NADPH）；需要多种酶</td></tr>
+<tr><td>物质变化</td><td>水光解为氧和H⁺；ADP+Pi→ATP；NADP⁺→NADPH</td><td>CO₂固定（C₅+CO₂→2C₃）；C₃被还原生成糖类并再生C₅</td></tr>
+<tr><td>能量变化</td><td>光能→储存在ATP和NADPH中的化学能</td><td>ATP和NADPH中的化学能→储存在糖类等有机物中的化学能</td></tr>
+<tr><td>相互联系</td><td colspan="2">光反应为暗反应供ATP和NADPH；暗反应为光反应送回ADP、Pi和NADP⁺——<b>谁也离不开谁</b></td></tr>
+</table>
+<p class="ans"><b>讨论回收（p104"思考·讨论"两问）：</b>区别见上表四行；联系一句话：<mark class="nb">光反应为暗反应提供能量（ATP）和还原剂（NADPH），暗反应为光反应提供ADP、Pi和NADP⁺</mark>——能量转化与物质变化密不可分。</p>
+<div class="check"><span class="tag">验一验（两阶段自查）：</span>
+<p>① 把一盆植物突然移到黑暗中，光反应立即停——暗反应还能转多久？靠什么转？</p>
+<p>② 同一株植物，白天把 CO₂ 进口突然掐断（气孔关闭），光反应本身还在跑吗？</p>
+<p class="ans">答：①短时间内还能转——它不直接需要光，吃的是光反应攒下的ATP和NADPH"存货"，存货烧完就得停（所以两阶段是接力不是并列）。②光反应这一步本身不受CO₂影响（它只管水分解和造装备），照常进行；但ADP、Pi、NADP⁺运不回来循环使用，光反应迟早也被"卡住"——课本那句"谁也离不开谁"的完整含义。</p></div>
+
+<h2><span class="step-tag">第九步</span>光合作用原理的应用：让庄稼多造糖</h2>
+<p><b>光合作用强度</b>（p105照录）：简单地说，就是指植物在<b>单位时间内通过光合作用制造糖类的数量</b>——它直接关系农作物的产量，所以研究影响光合作用强度的环境因素很有现实意义。</p>
+<p>影响它的因素就是反应式的"三进件"往外推（p105结论照录）：根据光合作用的反应式可以知道，光合作用的原料——水、CO₂，动力——光能，都是影响光合作用强度的因素。只要影响到原料、能量的供应，都可能是影响因素。例如<b>环境中CO₂浓度</b>、<b>叶片气孔开闭情况</b>（气孔是CO₂的进口，开多大直接影响进口量）、<b>叶绿体的形成和结构</b>（如无机营养、病虫害会影响它）、<b>影响酶活性的因素（如温度）</b>，也是影响因素。</p>
+<h3>探究·实践：探究环境因素对光合作用强度的影响（p105照录）</h3>
+<p><b>参考案例：探究光照强度对光合作用强度的影响。</b>材料用具：打孔器、注射器、5 W LED台灯、米尺、烧杯、绿叶（如菠菜、吊兰等）；有条件的学校可以用化学传感器来测量O₂的浓度。</p>
+<p><b>方法步骤（六步·每步人话在括号里）：</b></p>
+<p><b>1.</b> 取生长旺盛的绿叶，用直径为 0.6 cm 的打孔器打出圆形小叶片 30 片（避开大的叶脉）。<span class="small">（打孔=做出大小一样的"实验件"，控制变量；避开叶脉=防止叶脉里没多少叶肉细胞干扰。）</span></p>
+<p><b>2.</b> 将圆形小叶片置于注射器内，吸入清水，待排出注射器内残留的空气后，用手指堵住注射器前端的小孔并缓慢地拉动活塞，使圆形小叶片内的气体逸出。这一步骤可能需要重复 2～3 次。处理过的小叶片因为细胞间隙充满了水，所以<b>全部沉到水底</b>。<span class="small">（抽气=给叶片"放掉空气浮力"，让所有叶片统一起跑线：沉底。）</span></p>
+<p><b>3.</b> 将处理过的圆形小叶片，放入黑暗处盛有清水的烧杯中待用。</p>
+<p><b>4.</b> 取 3 只小烧杯，分别倒入富含 CO₂ 的清水（可以事先通过吹气的方法补充 CO₂，也可以用质量分数为 1%～2% 的 NaHCO₃ 溶液来提供 CO₂）。<span class="small">（三杯同量CO₂水=CO₂这一变量锁死。）</span></p>
+<p><b>5.</b> 向 3 只小烧杯中各放入 10 片圆形小叶片，然后分别置于<b>强、中、弱三种光照</b>下。实验中，可用 5 W 的 LED 灯作为光源，<b>利用小烧杯与光源的距离来调节光照强度</b>。<span class="small">（距离=光照强度的"旋钮"；每杯10片=重复量足够看趋势。）</span></p>
+<p><b>6.</b> 观察并记录<b>同一时间段内</b>各实验装置中圆形小叶片<b>浮起的数量</b>。<span class="small">（因变量=浮起的叶片数：光合作用放氧，氧气把细胞间隙"重新充气"，叶片变轻上浮——浮得越多越快=光合越强。这个"沉底再浮起"的设计叫真空渗水法，是高考实验大题的常客。）</span></p>
+<div class="alt"><span class="tag">想多走一步？（可选）：</span>为什么自变量只动"光照强度"？因为探究某一种因素时必须<b>控制其余因素不变</b>（单一变量原则）——CO₂浓度、温度、水量、叶片数量全都锁死，只留光照强度这一项动。这是整册书探究实验通用的骨架，后面第六章的探究也一样用。</div>
+
+<h2><span class="step-tag">第十步</span>另一条造糖路：化能合成作用</h2>
+<p>课本p106收尾给了个"彩蛋"：自然界中，除了光合作用，还有另外一种制造有机物的方式。少数种类的细菌，<b>细胞内没有叶绿素，不能进行光合作用</b>，但是却能利用体外环境中的<b>某些无机物氧化时释放的能量</b>来制造有机物。</p>
+<div class="key"><b>例：硝化细菌（照录）：</b>生活在土壤中的硝化细菌，能将土壤中的<b>氨（NH₃）氧化成亚硝酸（HNO₂）</b>，进而将亚硝酸<b>氧化成硝酸（HNO₃）</b>。这两个化学反应中释放的化学能，就被硝化细菌用来将 CO₂ 和 H₂O <b>合成糖类</b>。这些糖类就可以供硝化细菌维持自身的生命活动。</div>
+<p><b>和光合作用对照着记：</b>两路的目标一样（把CO₂和水变成糖），差别只在"动力"——光合作用用<b>光能</b>，化能合成作用用<b>化学能（无机物氧化放能）</b>。考题爱把"硝化细菌能不能进行光合作用""它的能量来自哪"拿来考：它<b>不能</b>光合（没叶绿素），但它<b>能自己造糖</b>（自养），靠的是化能合成。</p>
+
+<h2><span class="step-tag">练习②</span>课本 p106 练习与应用（节末·全题照录+讲透）</h2>
+<div class="box"><b>一、概念检测</b><br>
+1. 依据光合作用的基本原理，判断下列相关表述是否正确。<br>
+（1）光合作用释放的氧气中的氧元素来自水。（　）<br>
+（2）光反应只能在光照条件下进行，暗反应只能在黑暗条件下进行。（　）<br>
+（3）影响光反应的因素不会影响暗反应。（　）<br>
+2. 如果用含有 ¹⁴C 的 CO₂ 来追踪光合作用中碳原子的转移途径，则是（　）<br>
+A. CO₂ → 叶绿素 → ADP　B. CO₂ → 叶绿体 → ATP　C. CO₂ → 乙醇 → 糖类　D. CO₂ → 三碳化合物 → 糖类<br>
+3. 根据光合作用的基本过程填充下图。</div>
+<div class="fig">
+<svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="练习第3题填充示意图：光反应阶段与暗反应阶段的衔接框图">
+  <rect x="0" y="0" width="640" height="240" fill="#10141b" rx="8"/>
+  <circle cx="200" cy="120" r="62" fill="#2a4a33" stroke="#4fae72" stroke-width="2.5"/>
+  <text x="200" y="115" fill="#d8dee6" font-size="14" text-anchor="middle">类囊体薄膜</text>
+  <text x="200" y="136" fill="#9fd481" font-size="13" text-anchor="middle">光反应</text>
+  <text x="52" y="60" fill="#9fd481" font-size="15" font-family="Times New Roman, serif">H₂O</text>
+  <text x="60" y="86" fill="#7d8a99" font-size="11">水在光下的分解</text>
+  <text x="58" y="196" fill="#ffc94d" font-size="14">光能</text>
+  <rect x="312" y="58" width="62" height="24" rx="4" fill="#1a2230" stroke="#58d68d" stroke-dasharray="4,3"/><text x="343" y="74" fill="#58d68d" font-size="12" text-anchor="middle">O₂+H⁺（待填）</text>
+  <rect x="312" y="100" width="62" height="24" rx="4" fill="#1a2230" stroke="#58d68d" stroke-dasharray="4,3"/><text x="343" y="116" fill="#58d68d" font-size="12" text-anchor="middle">ATP（待填）</text>
+  <rect x="312" y="132" width="62" height="24" rx="4" fill="#1a2230" stroke="#58d68d" stroke-dasharray="4,3"/><text x="343" y="148" fill="#58d68d" font-size="12" text-anchor="middle">NADPH（待填）</text>
+  <text x="472" y="62" fill="#c9b8dd" font-size="14" font-family="Times New Roman, serif">CO₂ ↓ 固定</text>
+  <circle cx="500" cy="130" r="48" fill="#2d2440" stroke="#c9b8dd" stroke-width="2.5"/>
+  <text x="500" y="126" fill="#d8dee6" font-size="13" text-anchor="middle">多种酶参加催化</text>
+  <text x="500" y="146" fill="#c9b8dd" font-size="12" text-anchor="middle">暗反应（基质）</text>
+  <rect x="560" y="164" width="62" height="24" rx="4" fill="#1a2230" stroke="#58d68d" stroke-dasharray="4,3"/><text x="591" y="180" fill="#58d68d" font-size="12" text-anchor="middle">C₃/C₅（待填）</text>
+  <text x="560" y="212" fill="#9fd481" font-size="15" font-family="Times New Roman, serif">(CH₂O) ↓</text>
+  <text x="320" y="232" fill="#7d8a99" font-size="11" text-anchor="middle">自绘示意（p106第3题图解结构·虚线框=待填空位·答案见下方全解）</text>
+</svg>
+<p class="figcap">图F 第3题填空图解·照p106原题结构自绘</p>
+</div>
+<p class="ans"><b>全解：</b>1.（1）√——第六步鲁宾卡门实验的结论；（2）<span class="wrong">×——"不直接依赖光"≠"只能在黑暗"</span>：叶肉细胞在光下两阶段同时进行，暗反应白天照样开足马力；（3）<span class="wrong">×——两阶段互相供货</span>：光反应停→ATP/NADPH断供→暗反应停；暗反应停→ADP/Pi/NADP⁺不回流→光反应也停。2. 选 <span class="ans">D</span>——碳的路径：CO₂→（固定）三碳化合物C₃→（还原）糖类；A/B把"叶绿素、ADP"当成中转站是张冠李戴，C的乙醇路径教材从未出现。3. 填空：光反应产物（从上到下）<b>O₂（和H⁺）、ATP、NADPH</b>；暗反应环上待填处是 <b>C₃（三碳化合物）和 C₅（五碳化合物）</b>——固定生成C₃，再生出C₅。</p>
+<div class="box"><b>二、拓展应用</b><br>
+1. 下图是在夏季晴朗的白天，某种绿色植物叶片光合作用强度的曲线图。分析曲线图并回答问题。（曲线：6—18时，A起升→B上午峰→C中午凹谷→D下午峰→E傍晚落）<br>
+（1）7—10时的光合作用强度不断增强的原因是＿＿＿＿。（2）10—12时左右的光合作用强度明显减弱的原因是＿＿＿＿。（3）14—17时的光合作用强度不断下降的原因是＿＿＿＿。（4）从图中可以看出，限制光合作用的因素有＿＿＿＿。（5）依据本题提供的信息，提出提高绿色植物光合作用强度的一些措施。<br>
+2. 在玻璃瓶底部铺一层潮湿的土壤，播下一粒种子，将玻璃瓶密封，放在靠近窗户能照到阳光的地方，室内温度保持在 30 ℃左右。不久，这粒种子萌发长成幼苗。你能预测这株植物幼苗能够生存多长时间吗？如果能，请说明理由。如果不能，请说明你还需要哪些关于植物及其环境因素的信息。</div>
+<p class="ans"><b>全解：</b>1.(1)光照不断增强，气温回升、气孔开放，CO₂供应足，光合原料和动力都加码；(2)中午温度过高，<b>气孔部分关闭</b>，CO₂进不来（原料断供）——这就是"光合午休"，注意是CO₂这条腿瘸了，不是光不够；(3)光照强度不断减弱（动力撤场）；(4)光照强度、温度（通过气孔和酶起作用）、CO₂浓度；(5)开放题给方向：增施CO₂（通风/施气肥）、合理灌溉（保气孔开放）、适度遮阴防午休、延长有效光照等，写2—3条带理由即可。2. 开放预测题：瓶内有水循环（蒸腾凝结回流）、光和CO₂来自外界（瓶是密封但气体没密封？其实密封瓶CO₂有限），关键变量=瓶内CO₂和矿质营养的存量、瓶的密封程度；能答"给条件就能预测生存期=存量除以消耗速率"即可，答不唯一，重在把"还缺什么信息"列全。</p>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<div class="key"><b>三句话：</b><br>
+1. 4种色素两大类（叶绿素a/b·类胡萝卜素/叶黄素），住在<b>类囊体薄膜</b>上；滤纸条从上到下：胡萝卜素→叶黄素→叶绿素a→叶绿素b。<br>
+2. 光反应（类囊体薄膜·需光）：水上场→放<b>O₂</b>＋发<b>ATP、NADPH</b>两件装备；暗反应（基质·不直接依赖光）：CO₂被C₅固定成C₃→吃装备变糖→再生C₅循环。<br>
+3. 氧气来自<b>水</b>（鲁宾卡门¹⁸O）；两阶段谁也离不开谁：装备送出去，空箱（ADP、Pi、NADP⁺）运回来。</div>
+<p><b>自测四连</b>（先做再看答案）：</p>
+<p>① 用¹⁸O分别标记H₂O和CO₂做两组实验，哪一组释放¹⁸O₂？</p>
+<p>② 光反应的"三进三出"是什么？（进什么·出什么）</p>
+<p>③ 暗反应三站的名字+每站一句话。</p>
+<p>④ 滤纸条上最宽的色素带是哪条？最"快"的呢？</p>
+<p class="small">答案：①给植物提供H₂¹⁸O的那组（第二组）——氧元素来自水；②进水/光能/ADP+Pi+NADP⁺，出O₂/ATP/NADPH；③固定（CO₂+C₅→2C₃）→还原（C₃吃ATP和NADPH变糖）→再生（部分C₃变回C₅）；④最宽=叶绿素a（含量最多·约占叶绿素类大头）；最快=胡萝卜素（溶解度最高·扩散最快）。</p>
+<p><b>练什么题：</b>课本p101练习与应用1＋p106练习与应用2（本件第五步前后的"练习①②"已全解）＋p108第5章"复习与提高"选择题1、5（ATP与叶绿体综合）。做完这三组，本节就闭环了。</p>
+
+<div class="box"><b>高考怎么考（考位锚）：</b>本节是必修一<b>产能大户</b>。①过程图解补空/判断（光暗两阶段的场所条件产物——对应图E那张接力图）；②科学史实验题（希尔反应/同位素¹⁸O示踪/¹⁴C追踪的结论适用范围——对应第六步"别越界引用"那条线）；③实验设计题（真空渗水法"沉底再浮起"的自变量因变量——对应第九步六步人话）；④曲线题（"光合午休"成因——对应练习②拓展1）。具体真题锚候采（卷源在库·宁缺毋编不代拟）。</div>
+
+<p><b>下一站：</b>第5章到这收尾——细胞怎么吃（酶）、怎么存（ATP）、怎么烧（细胞呼吸）、怎么造（光合作用）全部打通。第6章《细胞的生命历程》换个视角：细胞自己的生老病死——从6.1细胞的增殖开始，先看一个细胞怎么变成两个。</p>
+
+<div class="fig">
+<svg viewBox="0 0 620 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第5章能量线上的5.4"><defs><marker id="a1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a9eff"/></marker></defs>
+  <rect x="0" y="0" width="620" height="120" fill="#0f1218" rx="8"/>
+  <rect x="30" y="42" width="110" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="85" y="66" fill="#d8dee6" font-size="13" text-anchor="middle">5.1 酶 ✓</text>
+  <rect x="150" y="42" width="110" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="205" y="66" fill="#d8dee6" font-size="13" text-anchor="middle">5.2 ATP ✓</text>
+  <rect x="270" y="42" width="120" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="330" y="66" fill="#d8dee6" font-size="13" text-anchor="middle">5.3 细胞呼吸 ✓</text>
+  <rect x="400" y="36" width="120" height="52" rx="6" fill="#243447" stroke="#4a9eff" stroke-width="2.5"/>
+  <text x="460" y="58" fill="#fff" font-size="13.5" text-anchor="middle" font-weight="bold">5.4 光合作用</text>
+  <text x="460" y="78" fill="#8fa3b8" font-size="11" text-anchor="middle">（本件·能量进口）</text>
+  <rect x="530" y="42" width="70" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c" stroke-dasharray="5,3"/>
+  <text x="565" y="66" fill="#8fa3b8" font-size="12" text-anchor="middle">第6章</text>
+  <line x1="140" y1="62" x2="150" y2="62" stroke="#4a9eff" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="260" y1="62" x2="270" y2="62" stroke="#4a9eff" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="390" y1="62" x2="400" y2="62" stroke="#4a9eff" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="520" y1="62" x2="530" y2="62" stroke="#8fa3b8" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="310" y="106" fill="#5a6a7a" font-size="11" text-anchor="middle">呼吸=有机物烧成CO₂放能 ↔ 光合=CO₂和水造回有机物存能——两条管道首尾相接</text>
+</svg>
+<p class="figcap">本节位置图：第5章能量线的收口一站，与5.3细胞呼吸正好互为逆账</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（1031立·标准v2.3全条款落地：节首目标清单/随读随验×3/自测四连/考位锚/位置图五件齐备·双练习与应用系教材原生版式p101中置p106节末） · 事实层素材源：人教版生物学必修1《分子与细胞》p97—106影印逐页对照（问题探讨植物工厂/图5-10至5-14/探究实践两例/思考·讨论三例/相关信息三则/学科交叉/警示框/旁栏两问均逐字锚定·影印图存本件工作目录b54_jcm105-m119）· 教学设计层：本件独立设计<br>
+设计标准：零预设 · 一次一步 · 随读随验 ×3 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源
+</div>
+
+</div>
+</body>
+</html>
