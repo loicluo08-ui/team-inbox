@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学1.5 全称量词与存在量词 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #1a2416; border-left: 3px solid #6cbf4a; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .try .q { color: #9fd481; font-weight: bold; }
+  .try .a { color: #8a949f; font-size: 15px; margin-top: 6px; }
+  .pit { background: #2a1a1a; border-left: 3px solid #e05252; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .pit .tag { color: #ff7b72; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #2b5277; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .check { background: #14202b; border: 1px solid #2b5277; border-radius: 8px; padding: 14px 20px; margin: 18px 0; }
+  .check .tag { color: #4a9eff; font-weight: bold; }
+  .box { background: #231a2b; border: 1px solid #6a4a8c; border-radius: 8px; padding: 14px 18px; margin: 20px 0; }
+  .m { font-family: "Times New Roman", Georgia, serif; font-style: italic; color: #ffd48a; }
+  .big { font-size: 21px; text-align: center; margin: 18px 0; color: #fff; }
+  .detail { color: #7d8a99; font-size: 15px; border-top: 1px dashed #2a3140; margin-top: 10px; padding-top: 10px; }
+  .small { color: #8a949f; font-size: 14px; }
+  .wrong { color: #ff7b72; }
+  .fig { margin: 18px 0; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  .nb-margin { position: relative; }
+  .nb-margin::after { content: attr(data-note); position: absolute; right: -6px; top: -18px; color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 14px; white-space: nowrap; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .check, .box, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h2 { color: #111; }
+    p, .talk, .key, .pit, .small, .figcap { color: #222; }
+    mark.nb { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    b, h1, h3, .m, .big, .detail, .try .q, .try .a, .check .tag { color: #111; }
+    .sub { color: #444; }
+    em { color: #1a5c99; }
+    .wrong, .note-red { color: #c0392b; }
+  }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 14px; }
+  b { color: #f0f3f7; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>1.5 全称量词与存在量词</h1>
+<p class="sub">第一章 集合与常用逻辑用语 · 零基础首学版（教材形态·人教A版必修第一册 p26-32）｜前置：1.4 学过"若 p，则 q"与充分必要条件（1.4 学过；模糊了？不影响——本节只借"命题"两个字，往下 30 秒补齐）</p>
+
+<div class="check"><span class="tag">读完这节你能</span>
+<p>① 看见一句话，认出它是不是"全称量词命题"或"存在量词命题"，并用 ∀、∃ 符号写出来；② 会判断这两类命题的真假——全称假只需<b>一个反例</b>，存在真只需<b>一个例子</b>；③ 会正确写出"含一个量词的命题"的否定——量词翻转、结论反号；④ 避开最大坑：否定时<span class="wrong">只否结论不翻量词</span>。</p></div>
+
+<div class="talk"><b>预备 · 30 秒补齐两个词。</b>
+<p><b>命题</b>：能<span class="ul-blue">判断真假</span>的陈述句（初中已学）。"3 是偶数"是命题（假命题）；"<span class="m">x</span>+1=3"含变量，不知道 <span class="m">x</span> 是谁，没法判断真假——它<b>不是</b>命题。</p>
+<p><b>给变量"圈范围"的短语</b>：给 "<span class="m">x</span>+1=3" 加上"存在一个 <span class="m">x</span>∈R"，它就能判断真假了（<span class="m">x</span>=2 时成立，所以是真命题）。这种短语叫<b>量词</b>——本节的主角。</p>
+<p><b>符号长相</b>：<b>∀</b> 是字母 A（<b>A</b>ll，所有）倒着写；<b>∃</b> 是字母 E（<b>E</b>xist，存在）反着写。见形知义，先混个脸熟。</p></div>
+
+<div class="fig">
+<svg viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="量词开关对比图：全称量词逐个检查，存在量词找一个即可">
+  <rect x="0" y="0" width="640" height="150" fill="#10141b" rx="8"/>
+  <rect x="30" y="26" width="270" height="98" rx="8" fill="#16202c" stroke="#2b5277"/>
+  <text x="165" y="52" fill="#4a9eff" font-size="20" font-weight="bold" text-anchor="middle">∀ 全称量词</text>
+  <text x="165" y="80" fill="#c8d4e0" font-size="14" text-anchor="middle">"所有的""任意一个"</text>
+  <text x="165" y="104" fill="#8fa3b8" font-size="13" text-anchor="middle">像安检仪：逐个检查，一个都不能放过</text>
+  <rect x="340" y="26" width="270" height="98" rx="8" fill="#16202c" stroke="#2b5277"/>
+  <text x="475" y="52" fill="#4a9eff" font-size="20" font-weight="bold" text-anchor="middle">∃ 存在量词</text>
+  <text x="475" y="80" fill="#c8d4e0" font-size="14" text-anchor="middle">"存在一个""至少有一个"</text>
+  <text x="475" y="104" fill="#8fa3b8" font-size="13" text-anchor="middle">像抽奖：找到一个，即可收工</text>
+</svg>
+<p class="figcap">图1 · 两类量词的"工作方式"对比（这张图在说什么：判断真假时，∀要管全部，∃只要找到一个）</p>
+</div>
+
+<h2><span class="step-tag">第一站</span>全称量词命题："所有……都……"</h2>
+
+<div class="talk"><b>思考（教材 p26 原题）：</b>下列语句是命题吗？比较（1）和（3），（2）和（4），它们之间有什么关系？
+<p>（1）<span class="m">x</span>&gt;3；　（2）2<span class="m">x</span>+1 是整数；<br>（3）对所有的 <span class="m">x</span>∈<b>R</b>，<span class="m">x</span>&gt;3；　（4）对任意一个 <span class="m">x</span>∈<b>Z</b>，2<span class="m">x</span>+1 是整数。</p>
+<p class="detail">（1）（2）含变量，真假未知，不是命题；（3）在（1）上加"所有的"，（4）在（2）上加"任意一个"，就变成能判断真假的话了——（3）假（<span class="m">x</span>=4 就不满足），（4）真（整数加 1 还是整数？2<span class="m">x</span> 是偶数，2<span class="m">x</span>+1 是奇数，当然是整数）。</p></div>
+
+<p>短语"<mark class="nb">所有的</mark>""<mark class="nb">任意一个</mark>"在逻辑中通常叫做<span class="ul-blue"><b>全称量词</b></span>（universal quantifier），并用符号"<b>∀</b>"表示。含有全称量词的命题，叫做<b>全称量词命题</b>。例如，命题"对任意的 <span class="m">n</span>∈<b>Z</b>，2<span class="m">n</span>+1 是奇数""所有的正方形都是矩形"都是全称量词命题（教材 p26）。</p>
+<p class="small">边注（教材 p26）：常见的全称量词还有"一切""每一个""任给"等。</p>
+
+<div class="key"><b>全称量词命题的符号写法（教材 p26）</b>
+<p>通常，将含有变量 <span class="m">x</span> 的语句用 <span class="m">p</span>(<span class="m">x</span>)，<span class="m">q</span>(<span class="m">x</span>)，<span class="m">r</span>(<span class="m">x</span>)，… 表示，变量 <span class="m">x</span> 的取值范围用 <span class="m">M</span> 表示。那么，全称量词命题"对 <span class="m">M</span> 中任意一个 <span class="m">x</span>，<span class="m">p</span>(<span class="m">x</span>) 成立"可用符号简记为</p>
+<p class="big">∀<span class="m">x</span>∈<span class="m">M</span>，<span class="m">p</span>(<span class="m">x</span>)．</p>
+<p class="detail">逐符号拆解卡：∀ 读"对任意（每一个）"；<span class="m">x</span>∈<span class="m">M</span> 说的是"在哪个圈里找"（取值范围）；<span class="m">p</span>(<span class="m">x</span>) 是"关于 <span class="m">x</span> 的那句话"。整句读作：对 <span class="m">M</span> 中任意一个 <span class="m">x</span>，<span class="m">p</span>(<span class="m">x</span>) 成立。卡住了？就按这三截停顿读。</p></div>
+
+<h3>例1（教材 p27 原题）判断下列全称量词命题的真假：</h3>
+<p>（1）所有的素数①都是奇数；　（2）∀<span class="m">x</span>∈<b>R</b>，|<span class="m">x</span>|+1≥1；　（3）对任意一个无理数 <span class="m">x</span>，<span class="m">x</span><sup>2</sup> 也是无理数。</p>
+<p><span class="step-tag">分析</span>要判定全称量词命题"∀<span class="m">x</span>∈<span class="m">M</span>，<span class="m">p</span>(<span class="m">x</span>)"是真命题，需要对集合 <span class="m">M</span> 中<b>每个</b>元素 <span class="m">x</span>，证明 <span class="m">p</span>(<span class="m">x</span>) 成立；如果在 <span class="m">M</span> 中找到<b>一个</b>元素 <span class="m">x</span><sub>0</sub>，使 <span class="m">p</span>(<span class="m">x</span><sub>0</sub>) 不成立，那么这个全称量词命题就是假命题②。</p>
+<p class="small">① 如果一个大于 1 的整数，除 1 和自身外无其他正因数，则称这个正整数为素数。② 这个方法就是"<b>举反例</b>"。</p>
+<p><span class="step-tag">解</span>（1）2 是素数，但 2 不是奇数。所以，全称量词命题"所有的素数是奇数"是<b>假命题</b>。<br>（2）∀<span class="m">x</span>∈<b>R</b>，总有 |<span class="m">x</span>|≥0，因而 |<span class="m">x</span>|+1≥1。所以，全称量词命题"∀<span class="m">x</span>∈<b>R</b>，|<span class="m">x</span>|+1≥1"是<b>真命题</b>。<br>（3）√2 是无理数，但 (√2)<sup>2</sup>=2 是有理数。所以，全称量词命题"对每一个无理数 <span class="m">x</span>，<span class="m">x</span><sup>2</sup> 也是无理数"是<b>假命题</b>。</p>
+<p class="note-red" class="nb-margin" data-note="一个反例就够！">手筋：判<b>假</b>最快——找反例；判<b>真</b>才需要说理。别把力气用反了。</p>
+
+<div class="try"><p class="q">验一验（自编题）：判断真假并说理由。</p>
+<p>① ∀<span class="m">x</span>∈{1, 2, 3}，<span class="m">x</span><sup>2</sup>≥<span class="m">x</span>；　② 每一个矩形都是正方形；　③ ∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>+1&gt;0。</p>
+<p class="a">答案：① 真（1、4、9 逐个代，全部≥自身）；② 假（2×3 的矩形是反例）；③ 真（<span class="m">x</span><sup>2</sup>≥0，再加 1 只会更大——|<span class="m">x</span>|+1≥1 的同款套路）。</p></div>
+
+<h2><span class="step-tag">第二站</span>存在量词命题："有一个……"</h2>
+
+<div class="talk"><b>思考（教材 p27 原题）：</b>下列语句是命题吗？比较（1）和（3），（2）和（4），它们之间有什么关系？
+<p>（1）2<span class="m">x</span>+1=3；　（2）<span class="m">x</span> 能被 2 和 3 整除；<br>（3）存在一个 <span class="m">x</span>∈<b>R</b>，使 2<span class="m">x</span>+1=3；　（4）至少有一个 <span class="m">x</span>∈<b>Z</b>，<span class="m">x</span> 能被 2 和 3 整除。</p>
+<p class="detail">（1）（2）不是命题；（3）在（1）上加"存在一个"，（4）在（2）上加"至少有一个"，就变成了命题——（3）真（<span class="m">x</span>=1 时 2<span class="m">x</span>+1=3），（4）真（<span class="m">x</span>=6 就能被 2 和 3 整除）。</p></div>
+
+<p>短语"<mark class="nb">存在一个</mark>""<mark class="nb">至少有一个</mark>"在逻辑中通常叫做<span class="ul-blue"><b>存在量词</b></span>（existential quantifier），并用符号"<b>∃</b>"表示。含有存在量词的命题，叫做<b>存在量词命题</b>（教材 p27）。例如，命题"有的平行四边形是菱形""有一个素数不是奇数"都是存在量词命题。</p>
+<p class="small">边注（教材 p27）：常见的存在量词还有"有些""有一个""对某些""有的"等。</p>
+
+<div class="key"><b>存在量词命题的符号写法（教材 p27）</b>
+<p>存在量词命题"存在 <span class="m">M</span> 中的元素 <span class="m">x</span>，<span class="m">p</span>(<span class="m">x</span>) 成立"可用符号简记为</p>
+<p class="big">∃<span class="m">x</span>∈<span class="m">M</span>，<span class="m">p</span>(<span class="m">x</span>)．</p>
+<p class="detail">读法卡：∃ 读"存在（有一个）"。整句读作：在 <span class="m">M</span> 里能找到一个 <span class="m">x</span>，让 <span class="m">p</span>(<span class="m">x</span>) 成立。</p></div>
+
+<p><b>真假手筋（与第一站恰好相反）</b>：判定"∃<span class="m">x</span>∈<span class="m">M</span>，<span class="m">p</span>(<span class="m">x</span>)"是<b>真</b>命题——在 <span class="m">M</span> 中找到<b>一个</b>让 <span class="m">p</span>(<span class="m">x</span>) 成立的 <span class="m">x</span> 即可（教材 p28 分析）；要判<b>假</b>，得说明 <span class="m">M</span> 中<b>所有</b>的 <span class="m">x</span> 都让 <span class="m">p</span>(<span class="m">x</span>) 不成立——这一步往往要靠配方、判别式这类"全体体检"的硬功夫（见例2（1））。</p>
+
+<div class="talk"><b>例2（教材 p28 原题）判断下列存在量词命题的真假：</b>
+<p>（1）有一个实数 <span class="m">x</span>，使 <span class="m">x</span><sup>2</sup>+2<span class="m">x</span>+3=0；　（2）平面内存在两条相交直线垂直于同一条直线；　（3）有些平行四边形是菱形。</p>
+<p><span class="step-tag">分析</span>要判定一个存在量词命题"∃<span class="m">x</span>∈<span class="m">M</span>，<span class="m">p</span>(<span class="m">x</span>)"是真命题，只需在集合 <span class="m">M</span> 中找到一个元素 <span class="m">x</span>，使 <span class="m">p</span>(<span class="m">x</span>) 成立即可；如果在集合 <span class="m">M</span> 中，使 <span class="m">p</span>(<span class="m">x</span>) 成立的元素 <span class="m">x</span> 不存在，那么这个存在量词命题是假命题。</p>
+<p><span class="step-tag">解</span>（1）由于 Δ=2<sup>2</sup>−4×3=−8&lt;0，因此一元二次方程 <span class="m">x</span><sup>2</sup>+2<span class="m">x</span>+3=0 无实根。所以，存在量词命题"有一个实数 <span class="m">x</span>，使 <span class="m">x</span><sup>2</sup>+2<span class="m">x</span>+3=0"是<b>假命题</b>。<br>（2）由于平面内垂直于同一条直线的两条直线互相平行，因此平面内不可能存在两条相交直线垂直于同一条直线。所以，存在量词命题"平面内存在两条相交直线垂直于同一条直线"是<b>假命题</b>。<br>（3）由于正方形既是平行四边形又是菱形，所以存在量词命题"有些平行四边形是菱形"是<b>真命题</b>。</p></div>
+
+<div class="try"><p class="q">验一验（自编题）：判断真假并说理由。</p>
+<p>① ∃<span class="m">x</span>∈{1, 2, 3}，<span class="m">x</span>&gt;2；　② 有的梯形是平行四边形；　③ ∃<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>=−1。</p>
+<p class="a">答案：① 真（<span class="m">x</span>=3 一个就够）；② 假（梯形一组对边平行、另一组对边不平行，平行四边形两组对边都平行——不合定义）；③ 假（实数的平方非负，全体体检无一过关）。</p></div>
+
+<div class="check"><span class="tag">中场练习（教材 p28 练习·原题全录）</span>
+<p><b>1. 判断下列全称量词命题的真假：</b>（1）每个四边形的内角和都是 360°；<b>【真——内角和定理对每个四边形成立】</b>（2）任何实数都有算术平方根；<b>【假——负数没有算术平方根，−1 是反例】</b>（3）∀<span class="m">x</span>∈{<span class="m">y</span>|<span class="m">y</span> 是无理数}，<span class="m">x</span><sup>3</sup> 是无理数。<b>【假——<span class="m">x</span>=∛2 是无理数，但 (∛2)<sup>3</sup>=2 是有理数】</b></p>
+<p><b>2. 判断下列存在量词命题的真假：</b>（1）存在一个四边形，它的两条对角线互相垂直；<b>【真——菱形】</b>（2）至少有一个整数 <span class="m">n</span>，使得 <span class="m">n</span><sup>2</sup>+<span class="m">n</span> 为奇数；<b>【假——<span class="m">n</span> 与 <span class="m">n</span><sup>2</sup> 奇偶相同，<span class="m">n</span><sup>2</sup>+<span class="m">n</span>=<span class="m">n</span>(<span class="m">n</span>+1) 必含偶因数，必为偶数】</b>（3）∃<span class="m">x</span>∈{<span class="m">y</span>|<span class="m">y</span> 是无理数}，<span class="m">x</span><sup>2</sup> 是无理数。<b>【真——<span class="m">x</span>=π，<span class="m">x</span><sup>2</sup>=π<sup>2</sup> 仍是无理数（若 π<sup>2</sup> 是有理数，π 是方程 <span class="m">t</span><sup>2</sup>−π<sup>2</sup>=0 的有理根，与 π 无理矛盾——本小题答案取出品席判定：找到无理数如 π 即真）】</b></p></div>
+
+<h2><span class="step-tag">第三站</span>命题的否定："量词翻转 + 结论反号"</h2>
+
+<p>一般地，对一个命题进行否定，就可以得到一个新的命题，这一新命题称为原命题的<b>否定</b>。例如，"56 是 7 的倍数"的否定为"56 不是 7 的倍数"，"空集是集合 <span class="m">A</span>={1, 2, 3} 的真子集"的否定为"空集不是集合 <span class="m">A</span>={1, 2, 3} 的真子集"（教材 p28）。下面，我们学习利用存在量词对全称量词命题进行否定，以及利用全称量词对存在量词命题进行否定。</p>
+<p class="small">边注（教材 p28）：一个命题和它的否定不能同时为真命题，也不能同时为假命题，只能一真一假。</p>
+
+<div class="talk"><b>探究（教材 p29 原题）：</b>写出下列命题的否定：（1）所有的矩形都是平行四边形；（2）每一个素数都是奇数；（3）∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+|<span class="m">x</span>|≥0。它们与原命题在形式上有什么变化？</div>
+<p>上面三个命题都是全称量词命题，即具有"∀<span class="m">x</span>∈<span class="m">M</span>，<span class="m">p</span>(<span class="m">x</span>)"的形式。其中命题（1）的否定是"并非所有的矩形都是平行四边形"，也就是说，<b>存在一个矩形不是平行四边形</b>；命题（2）的否定是"并非每一个素数都是奇数"，也就是说，<b>存在一个素数不是奇数</b>；命题（3）的否定是"并非所有的 <span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+|<span class="m">x</span>|≥0"，也就是说，<b>∃<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+|<span class="m">x</span>|&lt;0</b>。从命题形式看，这三个全称量词命题的否定都变成了存在量词命题。</p>
+<div class="key"><b>结论一（教材 p29）：全称量词命题的否定是存在量词命题</b>
+<p class="big">∀<span class="m">x</span>∈<span class="m">M</span>，<span class="m">p</span>(<span class="m">x</span>) 的否定：∃<span class="m">x</span>∈<span class="m">M</span>，¬<span class="m">p</span>(<span class="m">x</span>)．</p>
+<p class="detail">¬<span class="m">p</span>(<span class="m">x</span>) 表示"<span class="m">p</span>(<span class="m">x</span>) 不成立"。两步动作：①量词 ∀ 翻成 ∃；②结论 <span class="m">p</span>(<span class="m">x</span>) 反号。缺一不可。</p></div>
+<p><b>例3（教材 p29 原题）写出下列全称量词命题的否定：</b>（1）所有能被 3 整除的整数都是奇数；<span class="step-tag">解</span>该命题的否定：存在一个能被 3 整除的整数不是奇数。（2）每一个四边形的四个顶点在同一个圆上；<span class="step-tag">解</span>该命题的否定：存在一个四边形，它的四个顶点不在同一个圆上。（3）对任意 <span class="m">x</span>∈<b>Z</b>，<span class="m">x</span><sup>2</sup> 的个位数字不等于 3。<span class="step-tag">解</span>该命题的否定：∃<span class="m">x</span>∈<b>Z</b>，<span class="m">x</span><sup>2</sup> 的个位数字等于 3。</p>
+
+<div class="talk"><b>探究（教材 p30 原题）：</b>写出下列命题的否定：（1）存在一个实数的绝对值是正数；（2）有些平行四边形是菱形；（3）∃<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>−2<span class="m">x</span>+3=0。它们与原命题在形式上有什么变化？</div>
+<p>这三个命题都是存在量词命题。其中命题（1）的否定是"不存在一个实数，它的绝对值是正数"，也就是说，<b>所有实数的绝对值都不是正数</b>；命题（2）的否定是"没有一个平行四边形是菱形"，也就是说，<b>每一个平行四边形都不是菱形</b>；命题（3）的否定是"不存在 <span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>−2<span class="m">x</span>+3=0"，也就是说，<b>∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>−2<span class="m">x</span>+3≠0</b>。从命题形式看，这三个存在量词命题的否定都变成了全称量词命题。</p>
+<div class="key"><b>结论二（教材 p30）：存在量词命题的否定是全称量词命题</b>
+<p class="big">∃<span class="m">x</span>∈<span class="m">M</span>，<span class="m">p</span>(<span class="m">x</span>) 的否定：∀<span class="m">x</span>∈<span class="m">M</span>，¬<span class="m">p</span>(<span class="m">x</span>)．</p></div>
+<p><b>例4（教材 p30 原题）写出下列存在量词命题的否定：</b>（1）∃<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+2≤0；<span class="step-tag">解</span>该命题的否定：∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+2&gt;0。（2）有的三角形是等边三角形；<span class="step-tag">解</span>该命题的否定：所有的三角形都不是等边三角形。（3）有一个偶数是素数；<span class="step-tag">解</span>该命题的否定：任意一个偶数都不是素数。</p>
+<p><b>例5（教材 p31 原题）写出下列命题的否定，并判断真假：</b>（1）任意两个等边三角形都相似；（2）∃<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>−<span class="m">x</span>+1=0。</p>
+<p><span class="step-tag">解</span>（1）该命题的否定：存在两个等边三角形，它们不相似。因为任意两个等边三角形的三边成比例，所以任意两个等边三角形都相似。因此这是一个<b>假命题</b>。<br>（2）该命题的否定：∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>−<span class="m">x</span>+1≠0。因为对任意 <span class="m">x</span>∈<b>R</b>，</p>
+<p class="big"><span class="m">x</span><sup>2</sup>−<span class="m">x</span>+1=(<span class="m">x</span>−<span class="m">1</span>⁄<span class="m">2</span>)<sup>2</sup>+<span class="m">3</span>⁄<span class="m">4</span>&gt;0，</p>
+<p>所以这是一个<b>真命题</b>。</p>
+
+<div class="pit"><span class="tag">大坑 · 本节最易错</span>
+<p>写否定时<span class="wrong">只反结论、不翻量词</span>——等于只否了一半。例："∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+|<span class="m">x</span>|≥0"的否定<span class="wrong">不是</span>"∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+|<span class="m">x</span>|&lt;0"（量词没翻，这句话自己就自相矛盾），正确的是"∃<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+|<span class="m">x</span>|&lt;0"。<span class="note-red">口诀：量词翻转，结论反号——两个动作一起做。</span></p></div>
+
+<div class="fig">
+<svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="否定转换桥：全称与存在互换，结论反号">
+  <rect x="0" y="0" width="640" height="170" fill="#10141b" rx="8"/>
+  <rect x="26" y="22" width="250" height="56" rx="8" fill="#16202c" stroke="#2b5277"/>
+  <text x="151" y="46" fill="#e8ecf2" font-size="15" text-anchor="middle">∀x∈M，p(x)</text>
+  <text x="151" y="66" fill="#7d8a99" font-size="12" text-anchor="middle">全称量词命题</text>
+  <rect x="364" y="22" width="250" height="56" rx="8" fill="#16202c" stroke="#6a4a8c"/>
+  <text x="489" y="46" fill="#e8ecf2" font-size="15" text-anchor="middle">∃x∈M，¬p(x)</text>
+  <text x="489" y="66" fill="#7d8a99" font-size="12" text-anchor="middle">它的否定</text>
+  <line x1="278" y1="50" x2="362" y2="50" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="26" y="96" width="250" height="56" rx="8" fill="#16202c" stroke="#6a4a8c"/>
+  <text x="151" y="120" fill="#e8ecf2" font-size="15" text-anchor="middle">∃x∈M，p(x)</text>
+  <text x="151" y="140" fill="#7d8a99" font-size="12" text-anchor="middle">存在量词命题</text>
+  <rect x="364" y="96" width="250" height="56" rx="8" fill="#16202c" stroke="#2b5277"/>
+  <text x="489" y="120" fill="#e8ecf2" font-size="15" text-anchor="middle">∀x∈M，¬p(x)</text>
+  <text x="489" y="140" fill="#7d8a99" font-size="12" text-anchor="middle">它的否定</text>
+  <line x1="362" y1="124" x2="278" y2="124" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="320" y="42" fill="#4a9eff" font-size="12" text-anchor="middle">翻转+反号</text>
+  <text x="320" y="114" fill="#4a9eff" font-size="12" text-anchor="middle">翻转+反号</text>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a9eff"/></marker></defs>
+</svg>
+<p class="figcap">图2 · 否定转换桥（这张图在说什么：∀⇄∃ 互换着翻，结论同时挂上"不成立"）</p>
+</div>
+
+<div class="try"><p class="q">验一验（自编题）：写出否定并判真假。</p>
+<p>① "∀<span class="m">x</span>∈{1, 2, 3, 4, 5}，<span class="m">x</span> 是整数"；　② "∃<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>&lt;0"；　③ 小亮说："∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+|<span class="m">x</span>|≥0 的否定是 ∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+|<span class="m">x</span>|&lt;0。"他做对了吗？</p>
+<p class="a">答案：① ∃<span class="m">x</span>∈{1, 2, 3, 4, 5}，<span class="m">x</span> 不是整数（假命题——圈里全是整数）；② ∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>≥0（真命题）；③ 错——量词没翻，正确为 ∃<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+|<span class="m">x</span>|&lt;0（假命题，原命题真）。</p></div>
+
+<div class="check"><span class="tag">中场练习（教材 p31 练习·原题全录）</span>
+<p><b>1. 写出下列命题的否定：</b>（1）∀<span class="m">n</span>∈<b>Z</b>，<span class="m">n</span>∈<b>Q</b>；<b>【∃<span class="m">n</span>∈<b>Z</b>，<span class="m">n</span>∉<b>Q</b>】</b>（2）任意奇数的平方还是奇数；<b>【存在一个奇数，它的平方不是奇数】</b>（3）每个平行四边形都是中心对称图形。<b>【存在一个平行四边形，它不是中心对称图形】</b></p>
+<p><b>2. 写出下列命题的否定：</b>（1）有些三角形是直角三角形；<b>【每一个三角形都不是直角三角形】</b>（2）有些梯形是等腰梯形；<b>【每一个梯形都不是等腰梯形】</b>（3）存在一个实数，它的绝对值不是正数。<b>【任意一个实数，它的绝对值都是正数】</b></p></div>
+
+<h2><span class="step-tag">第四站</span>收口 · 课本习题 · 自测</h2>
+
+<div class="key"><b>收口三句话</b>
+<p>① <b>全称 ∀</b>："每一个都成立"——判假找反例，判真要说理；② <b>存在 ∃</b>："有一个就行"——判真找例子，判假要"全体体检"；③ <b>否定</b>：量词翻转＋结论反号，命题与否定一真一假。</p></div>
+
+<div class="check"><span class="tag">课本习题 · 习题 1.5（教材 p31-32·题面全录·答案为出品席参考答案，教材无答案页，全部经 python 机器验证）</span>
+<p><b>复习巩固</b><br><b>1. 判断下列全称量词命题的真假：</b>（1）每一个末位是 0 的整数都是 5 的倍数；<b>【真——末位 0 即 10 的倍数，10=2×5】</b>（2）线段垂直平分线上的点到这条线段两个端点的距离相等；<b>【真——垂直平分线性质定理】</b>（3）对任意负数 <span class="m">x</span>，<span class="m">x</span><sup>2</sup> 是正数；<b>【真——负数的平方为正】</b>（4）梯形的对角线相等。<b>【假——不等腰梯形是反例】</b></p>
+<p><b>2. 判断下列存在量词命题的真假：</b>（1）有些实数是无限不循环小数；<b>【真——π】</b>（2）存在一个三角形不是等腰三角形；<b>【真——不等边三角形】</b>（3）有些菱形是正方形；<b>【真——内角 90° 的菱形】</b>（4）至少有一个整数 <span class="m">n</span>，<span class="m">n</span><sup>2</sup>+1 是 4 的倍数。<b>【假——<span class="m">n</span><sup>2</sup> 除以 4 余 0 或 1，<span class="m">n</span><sup>2</sup>+1 余 1 或 2，永远不余 0（机器枚举 n=0…999 复核）】</b></p>
+<p><b>3. 写出下列命题的否定：</b>（1）∀<span class="m">x</span>∈<b>Z</b>，|<span class="m">x</span>|∈<b>N</b>；<b>【∃<span class="m">x</span>∈<b>Z</b>，|<span class="m">x</span>|∉<b>N</b>（原命题真——整数绝对值≥0 且为整数，都是自然数；否定为假）】</b>（2）所有可以被 5 整除的整数，末位数字都是 0；<b>【存在可以被 5 整除的整数，末位数字不是 0（真——5 自己就是反例）】</b>（3）∃<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+1≥0；<b>【∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span>+1&lt;0（原命题真——x=0；否定为假）】</b>（4）存在一个四边形，它的对角线互相垂直。<b>【任意一个四边形，它的对角线都不互相垂直（假——菱形反例）】</b></p>
+<p><b>综合运用</b><br><b>4. 判断下列命题的真假，并写出这些命题的否定：</b>（1）平面直角坐标系下每条直线都与 <span class="m">x</span> 轴相交；<b>【假——y 轴与 x 轴平行不相交；否定：存在一条直线与 x 轴不相交（真）】</b>（2）每个二次函数的图象都是轴对称图形；<b>【真——对称轴 x=−b/2a；否定：存在二次函数的图象不是轴对称图形（假）】</b>（3）存在一个三角形，它的内角和小于 180°；<b>【假——内角和定理；否定：每一个三角形的内角和都不小于 180°（真）】</b>（4）存在一个四边形，它的四个顶点不在同一个圆上；<b>【真——四点共圆需对角互补，一般四边形不满足；否定：任意一个四边形，它的四个顶点都在同一个圆上（假）】</b></p>
+<p><b>5. 将下列命题改写成含有一个量词的全称量词命题或存在量词命题的形式，并写出它们的否定：</b>（1）平行四边形的对角线互相平分；<b>【改写：∀（若四边形是平行四边形，则对角线互相平分）·真；否定：存在平行四边形，对角线不互相平分（假）】</b>（2）三个连续整数的乘积是 6 的倍数；<b>【改写：∀（任意三个连续整数的乘积是 6 的倍数）·真——连三整数必含 3 的倍数与偶数（机器枚举复核）；否定：存在三个连续整数，其乘积不是 6 的倍数（假）】</b>（3）三角形不都是中心对称图形；<b>【改写：∃（存在三角形不是中心对称图形）·真——三角形旋转 180° 不能与自身重合；否定：所有的三角形都是中心对称图形（假）】</b>（4）一元二次方程不总有实数根。<b>【改写：∃（存在一元二次方程没有实数根）·真——x²+1=0；否定：所有的一元二次方程都有实数根（假）】</b></p>
+<p><b>拓广探索</b><br><b>6. 在本节，我们介绍了命题的否定的概念……例如：① 若 <span class="m">x</span>&gt;1，则 2<span class="m">x</span>+1&gt;5；（假命题）② 若四边形为等腰梯形，则这个四边形的对角线相等。（真命题）这里，命题①②都是省略了量词的全称量词命题。（1）有人认为，①的否定是"若 <span class="m">x</span>&gt;1，则 2<span class="m">x</span>+1≤5"，②的否定是"若四边形为等腰梯形，则这个四边形的对角线不相等"。你认为对吗？如果不对，请你正确地写出命题①②的否定。　（2）请你列举几个"若 <span class="m">p</span>，则 <span class="m">q</span>"形式的省略了量词的全称量词命题，分别写出它们的否定，并判断真假。</b></p>
+<p class="small"><b>参考答案（出品席）：</b>（1）不对。"若 p，则 q"省略的是全称量词，它的否定要把"全部都"翻成"存在一个（满足 p 却不满足 q）"：①的否定＝存在 x＞1，使 2x+1≤5（真——x=1.5：2×1.5+1=4≤5）；②的否定＝存在四边形为等腰梯形，其对角线不相等（假——等腰梯形对角线相等定理）。"若 p 则非 q"的错误：量词没翻，等于说"所有满足 p 的都不满足 q"，与原命题"都满足"只是结论互换、射程没变——判真假的性质完全错了。（2）例："偶数都能被 2 整除"（∀·真）→否定：存在偶数不能被 2 整除（假）；"末位是 0 的整数是 5 的倍数"（∀·真）→否定：存在末位是 0 的整数不是 5 的倍数（假）；"对任意实数 x，x²≥0"（∀·真）→否定：存在实数 x，x²＜0（假）。【自编举例·答案不唯一】</p></div>
+
+<div class="check"><span class="tag">节末自测五连（先做后对·答案直接可见）</span>
+<p>① 写出"每一个素数都是奇数"的否定并判真假。<b>【否定：存在一个素数不是奇数（真命题——2；原命题假）】</b></p>
+<p>②（自编）"∃<span class="m">x</span>∈<b>Z</b>，<span class="m">x</span><sup>2</sup>=1"的否定，并判真假。<b>【∀<span class="m">x</span>∈<b>Z</b>，<span class="m">x</span><sup>2</sup>≠1（假——x=1 时 x²=1，原命题真）】</b></p>
+<p>③ 用 ∀ 或 ∃ 改写"有些一次函数的图象过原点"并判真假。<b>【∃（存在一次函数 y=kx+b，其图象过原点）——真（y=x，k=1、b=0）】</b></p>
+<p>④（自编）判真假：∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>−2<span class="m">x</span>+3&gt;0。<b>【真——(x−1)²+2＞0，全体体检过关】</b></p>
+<p>⑤ 写出"∃<span class="m">x</span>∈<b>N</b>，<span class="m">x</span><sup>2</sup>=<span class="m">x</span>"的否定并判真假。<b>【∀<span class="m">x</span>∈<b>N</b>，<span class="m">x</span><sup>2</sup>≠<span class="m">x</span>（假——0 和 1 都满足 x²=x，原命题真）】</b></p></div>
+
+<div class="box"><b>高考怎么考（考位锚）：</b>量词命题的"否定"与"真假判断"是选择题、填空题的常客——常与不等式、函数零点结合出题，核心考点就两个：会翻量词、会反结论；近年考法还常把"含参不等式恒成立（∀）/有解（∃）"翻译成本节语言。<br>
+<b>真题锚（出处登记制）：</b>对证源清单 v2.10 批3池数学行未见数学 1.5 单列卷源——按"池外一律候采、宁缺毋编不代拟"纪律，本件<b>不照录任何真题题面</b>，真题锚候池扩容后由 QC 线协助采录。<br>
+<b>母版同构（自编·教材例5 直接推）：</b>判真假＋写否定一气呵成是卷面标准动作——"∀<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>−<span class="m">x</span>+1&gt;0"（真——配方 (x−1/2)²+3/4＞0）的否定是"∃<span class="m">x</span>∈<b>R</b>，<span class="m">x</span><sup>2</sup>−<span class="m">x</span>+1≤0"（假）——教材例5 换个不等号，就是一道成品题，<b>教科书例题=真题母版</b>。</div>
+
+<p><b>下一站：</b>第一章《集合与常用逻辑用语》到这就全部学完了——小结与复习参考题 1（教材 p33-35）做一次全章回望。下一章《一元二次函数、方程和不等式》2.1《等式性质与不等式性质》接棒："比大小"这件事，将从小学口诀升级成一条条严谨的"性质"。</p>
+
+<div class="fig">
+<svg viewBox="0 0 560 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第一章集合与常用逻辑用语，1.5收官">
+  <rect x="0" y="0" width="560" height="130" fill="#10141b" rx="8"/>
+  <text x="280" y="24" fill="#7d8a99" font-size="13" text-anchor="middle">第一章 集合与常用逻辑用语——你在这里的位置</text>
+  <rect x="14" y="42" width="92" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="60" y="60" fill="#8fa3b8" font-size="12.5" text-anchor="middle">1.1 集合的概念</text>
+  <text x="60" y="76" fill="#5a6570" font-size="10.5" text-anchor="middle">含义与表示</text>
+  <rect x="116" y="42" width="92" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="162" y="60" fill="#8fa3b8" font-size="12.5" text-anchor="middle">1.2 基本关系</text>
+  <text x="162" y="76" fill="#5a6570" font-size="10.5" text-anchor="middle">包含与相等</text>
+  <rect x="218" y="42" width="92" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="264" y="60" fill="#8fa3b8" font-size="12.5" text-anchor="middle">1.3 基本运算</text>
+  <text x="264" y="76" fill="#5a6570" font-size="10.5" text-anchor="middle">交并补</text>
+  <rect x="320" y="42" width="100" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="370" y="60" fill="#8fa3b8" font-size="12.5" text-anchor="middle">1.4 充要条件</text>
+  <text x="370" y="76" fill="#5a6570" font-size="10.5" text-anchor="middle">若p则q</text>
+  <rect x="430" y="38" width="116" height="48" rx="6" fill="#1d3050" stroke="#4a9eff" stroke-width="2"/>
+  <text x="488" y="58" fill="#fff" font-size="13" font-weight="bold" text-anchor="middle">1.5 量词（你在这）</text>
+  <text x="488" y="76" fill="#7d8a99" font-size="10.5" text-anchor="middle">∀ · ∃ · 否定</text>
+  <text x="280" y="112" fill="#7d8a99" font-size="12" text-anchor="middle">第一章收官 → 小结与复习参考题1 → 第二章 一元二次函数、方程和不等式</text>
+</svg>
+<p class="figcap">图3 · 第一章五节地图：1.5 是第一章最后一节，逻辑语言到此配齐（这张图在说什么：集合（1.1-1.3）+逻辑（1.4-1.5）=全章两翼）</p>
+</div>
+
+<p class="foot">首学版_数学1.5_全称量词与存在量词_队2席_1031 · 教材形态首学主层（与旧形态 1.5 首发校准件/升格重制件/切片卡分层）· 对证源：国家中小学智慧教育平台 人教A版必修第一册 contentId=6e764703-6e5e-4ea3-9462-34652c2678ef · ts=1787023173400（10-31 详情API实时复取）· 影印锚 图33-43→印刷页 p26-36（图N→页N-7）· 节域 p26-32（p33 本章小结起为章级件界标 · p36 第二章章名页右界）· 工序五步＋四附件＋QC单随件 · 候读者层终读（并行搜索员A·队2席·2026-10-31）</p>
+
+</div>
+</body>
+</html>
