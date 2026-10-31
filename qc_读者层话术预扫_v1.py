@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-读者层话术预扫脚本 v1.1（队6席·承管理员段2 SOP增补令·1031夜·红黄双轨版）
+读者层话术预扫脚本 v1.2（队6席·1031夜·红黄双轨·署名行判例校准）
 用途：出品自检增补条款——主件html交付前预扫"生产调度话术"词面。
       红=判例应修（今夜三件红线判例校准）；黄=判例容忍级提示（目验复核）。
 用法：python3 qc_读者层话术预扫_v1.py 成稿.html [成稿2.html ...]
@@ -64,7 +64,12 @@ def scan(path):
         for pat, tag in RED_PATTERN:
             m = re.search(pat, text, re.I)
             if m and not (tag == "批号引用" and any(h in text for h in WHITELIST_HINTS)):
-                reds.append((ln, f"{tag}·{m.group(0)[:24]}", text.strip()[:100]))
+                # v1.2署名行判例校准（批五①先例）：产出信息/署名行内技术指针降黄档
+                if re.search(r"产出信息|署名|出品信息", text) and tag in (
+                        "ts时间戳字面", "资源ID字面", "UUID字面", "分支名", "commit引用"):
+                    ambers.append((ln, f"{tag}·署名行降档", text.strip()[:80]))
+                else:
+                    reds.append((ln, f"{tag}·{m.group(0)[:24]}", text.strip()[:100]))
         for w in AMBER_LITERAL:
             if w in text:
                 ambers.append((ln, w, text.strip()[:80]))
