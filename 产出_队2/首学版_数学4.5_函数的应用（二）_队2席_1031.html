@@ -9,7 +9,6 @@ h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#162
 h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
 h3{color:#2c5f8f;margin-top:1.6em}
 .station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
-.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
 .check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
 .check li{margin:4px 0}
 .formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
@@ -31,6 +30,9 @@ h3{color:#2c5f8f;margin-top:1.6em}
 figure{margin:14px 0;text-align:center}
 .figcap{color:#6b7a89;font-size:.9em;margin-top:4px}
 @media print{body{max-width:100%;padding:0;font-size:13px}.station{break-inside:avoid}svg{max-width:100%}.kaowei{border-color:#999}.walk,.try,.selftest,.alt,.note-red{break-inside:avoid}}
+<!-- v15.3第一波重排·黄金样板step-tag落位(并行搜索员B) -->
+.step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle}
+@media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}.mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -46,7 +48,7 @@ figure{margin:14px 0;text-align:center}
 <li>按"三种增长差异"选模型（例5三方案·例6奖金模型），画出<b>建模流程</b>：实际问题→化归→函数模型→运算推理→模型的解→解释说明。</li>
 </ul></div>
 
-<div class="station"><span class="station-title">第一站 · 零点：方程的解"长"在图象上（4.5.1·p142-144）</span>
+<div class="station"><h2><span class="step-tag">第一步</span>零点：方程的解"长"在图象上（4.5.1·p142-144）</h2>
 <p><b>零点定义（p142照录）：</b>对于函数y=f(x)，把使f(x)=0的<b>实数x</b>叫做函数y=f(x)的<span class="mark">零点</span>（zero point）。</p>
 <div class="note-red"><b>零点是"数"，不是"点"！</b>零点是使f(x)=0的那个实数x₀，不是坐标(x₀,0)——初学最易混的三字坑，先钉死。<i>（易错话术化·自编显式标注）</i></div>
 <p><b>等价关系（p142照录）：</b>方程f(x)=0有实数解x₀ ⇔ 函数y=f(x)有零点x₀ ⇔ 函数y=f(x)的图象与x轴有公共点(x₀,0)。</p>
@@ -56,7 +58,7 @@ figure{margin:14px 0;text-align:center}
 <p><b>例1（p143照录）求方程lnx+2x-6=0的实数解的个数：</b>设f(x)=lnx+2x-6，借助计算工具列表（表4.5-1：x=1→-4，2→-1.3069，3→1.0986，4→3.3863，5→5.6094，6→7.7918，7→9.9459，8→12.0794，9→14.1972）并画图（图4.5-2）。由表知f(2)&lt;0，f(3)&gt;0，f(2)f(3)&lt;0，由零点存在定理，f(x)在(2,3)内<b>至少有一个零点</b>；又容易证明f(x)在(0,+∞)上是增函数，所以它<b>只有一个零点</b>，即原方程只有一个实数解。</p>
 </div>
 
-<div class="station"><span class="station-title">第二站 · 二分法：把零点"关进"越来越小的笼子（4.5.2·p144-146）</span>
+<div class="station"><h2><span class="step-tag">第二步</span>二分法：把零点"关进"越来越小的笼子（4.5.2·p144-146）</h2>
 <p><b>逼近演示（p144-145照录）：</b>取(2,3)中点2.5，f(2.5)≈-0.084，f(2.5)f(3)&lt;0⇒零点在(2.5,3)；再取中点2.75，f(2.75)≈0.512⇒零点在(2.5,2.75)……由于(2,3)⊃(2.5,3)⊃(2.5,2.75)⊃…，零点所在范围越来越小。</p>
 <table class="cmp">
 <tr><th>零点所在区间</th><th>中点的值</th><th>中点函数近似值</th></tr>
@@ -102,7 +104,7 @@ figure{margin:14px 0;text-align:center}
 <div class="try"><span class="tag">try·即时练</span>习题4.5第1题（p155·照录）：下列函数图象与x轴均有交点，其中<b>不能用二分法</b>求其零点的是——①相切零点（f不变号）与④有跳跃间断点（图象不连续）<span class="ans">不能</span>；②③连续且变号，可以用。（判断依据：连续+异号两前提，缺一不可）</div>
 </div>
 
-<div class="station"><span class="station-title">第三站 · 模型解反问题：人口13亿与良渚水坝（4.5.3·p148-150）</span>
+<div class="station"><h2><span class="step-tag">第三步</span>模型解反问题：人口13亿与良渚水坝（4.5.3·p148-150）</h2>
 <p><b>马尔萨斯人口模型（例3·p148照录）：</b>1798年英国经济学家马尔萨斯（T.R.Malthus，1766-1834）提出自然状态下人口增长模型 <b>y=y₀e<sup>rt</sup></b>（t为经过时间·y₀为t=0时人口数·r为增长率常数）。(1)我国1950年末、1959年末人口总数分别为55196万和67207万：设1950年为t=0，则y₀=55196，67 207=55 196·e<sup>9r</sup>⇒<b>r≈0.021876</b>，模型y=55196e<sup>0.021876t</sup>（t∈[0,9]）；(2)计算1951~1958各年并与国家统计局实际数据检验（表4.5-4：计算56417/57665/58940/60243/61576/62938/64330/65753 vs 实际56300/57482/58796/60266/61465/62828/64563/65994·逐行吻合留痕③）——模型与实际数据基本吻合（图4.5-6散点图）；(3)将y=130000代入⇒t≈39.16⇒<b>大约1950年后第40年（1990年）我国人口达到13亿</b>。</p>
 <div class="note-red"><b>教材思考框（p149照录）：</b>事实上，我国1990年的人口数为11.43亿，直到2005年才突破13亿——因为人口基数大、增长过快与经济发展产生矛盾，我国从20世纪70年代逐步实施计划生育，这一阶段的增长条件<b>不符合马尔萨斯模型的条件</b>。教材边框：<span class="mark">在用已知的函数模型刻画实际问题时，应注意模型的适用条件</span>。</div>
 <p><b>例4（p149-150照录）碳14断代·良渚水坝：</b>2010年考古学家对良渚古城水利系统中一条水坝建筑材料（草裹泥）上的草茎遗存做碳14年代学检测，碳14残留量约为初始量的55.2%，能否推断水坝大概是什么年代建成的？——指数衰减选y=ka<sup>x</sup>：设初始量k、衰减率p，y=k(1-p)<sup>x</sup>；由半衰期5730年得k(1-p)<sup>5730</sup>=k/2⇒1-p=<sup>5730</sup>√(1/2)⇒y=k(<sup>5730</sup>√(1/2))<sup>x</sup>；令(<sup>5730</sup>√(1/2))<sup>x</sup>=0.552⇒x=log<sub><sup>5730</sup>√(1/2)</sub>0.552≈<b>4912</b>年——2010年之前4912年是公元前2903年，<b>推断此水坝大概是公元前2903年建成的</b>。</p>
@@ -123,7 +125,7 @@ figure{margin:14px 0;text-align:center}
 <p><b>归纳（p154照录）：</b>这一过程包括分析和理解实际问题的增长情况（是"对数增长""直线上升"还是"指数爆炸"）；根据增长情况选择函数类型构建数学模型，将实际问题化归为数学问题；通过运算、推理求解函数模型；用得到的函数模型描述实际问题的变化规律，解决有关问题。在这一过程中，往往需要利用信息技术帮助画图、运算等。</p>
 </div>
 
-<div class="station"><span class="station-title">第四站 · 选模型：三种回报与奖金封顶（例5·例6·p150-154）</span>
+<div class="station"><h2><span class="step-tag">第四步</span>选模型：三种回报与奖金封顶（例5·例6·p150-154）</h2>
 <p><b>例5（p150-152照录）三种投资方案：</b>方案一每天回报40元（y=40，x∈N*）；方案二第一天回报10元、以后每天比前一天多回报10元（y=10x）；方案三第一天回报0.4元、以后每天翻一番（y=0.4×2<sup>x-1</sup>）。表4.5-5：第1~10天方案三依次0.4/0.8/1.6/3.2/6.4/12.8/25.6/51.2/102.4/204.8元，第30天<b>214 748 364.8元</b>（留痕⑨）。从每天所得看：第1~3天方案一最多，第4天方案一与二一样多，第5~8天方案二最多，第9天起方案三遥遥领先；再看<b>累计回报</b>（表4.5-6）：投资1~6天选方案一，投资7天选一或二，投资8~10天选方案二，<b>投资11天（含）以上选方案三</b>。假想情形说明：<b>不同的函数增长模型，增长变化存在很大差异</b>。教材边框：函数图象是分析问题的好帮手，为了便于观察，用虚线连接离散的点。</p>
 <p><b>例6（p152-154照录）奖金模型封顶：</b>公司利润目标1000万元，销售利润达到10万元时按利润发奖金：奖金y（万元）随销售利润x（万元）增加而增加，但<b>奖金总数不超过5万元</b>，同时<b>奖金不超过利润的25%</b>。三个模型y=0.25x、y=log₇x+1、y=1.002<sup>x</sup>哪个符合？——在区间[10,1000]上验证两条要求：①封顶：y=0.25x当x=20时y=5，x&gt;20即超；y=1.002ˣ在(805,806)内有x₀使1.002<sup>x₀</sup>=5，x&gt;x₀即超；y=log₇x+1当x=1000时y≈<b>4.55&lt;5</b>✓；②≤25%：令f(x)=log₇x+1-0.25x，图4.5-9显示f在[10,1000]单调递减，f(x)≤f(10)≈<b>-0.3167&lt;0</b>✓。综上<b>模型y=log₇x+1能符合公司要求</b>。</p>
 <div class="walk"><b>下一站预告（walk·必修一收官）：</b>4.5之后进入<b>第四章小结</b>（p158章名页预告亲读在案）与复习参考题4——本章沿"实际问题→函数概念→图象与性质→应用"的路径走完指数函数与对数函数全程，零点存在定理与二分法正是"应用"段的收官武器；下一份必修一图纸见！</div>
