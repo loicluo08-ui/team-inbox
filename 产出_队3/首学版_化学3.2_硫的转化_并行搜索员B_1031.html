@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化学3.2 硫的转化 · 零基础首学版 v1.0（队3席B线）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  b { color: #f0f3f7; }
+  .talk { background: #1c2230; border: 1px solid #2c3a4e; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .q { color: #4a9eff; font-weight: bold; }
+  .check { background: #182430; border-left: 4px solid #4a9eff; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .check .tag, .try .tag, .pit .tag, .alt .tag { display: inline-block; background: #324358; color: #cfe4ff; font-size: 13px; font-weight: bold; padding: 2px 10px; border-radius: 4px; margin-bottom: 6px; }
+  .box { background: #1a222e; border: 1px solid #33445a; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
+  .key { background: #223047; border-left: 4px solid #ffc94d; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .try { background: #1b242f; border: 1px dashed #3d5573; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit { background: #2a1f22; border-left: 4px solid #ff7a6e; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit .tag { background: #5a3038; color: #ffd6d0; }
+  .wrong { color: #ff8f84; font-weight: bold; }
+  .ans { color: #7ee2a8; font-weight: bold; }
+  .alt { background: #20283a; border: 1px solid #354764; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .m { font-family: "SF Mono", Consolas, monospace; background: #0f1420; color: #9ecbff; padding: 1px 6px; border-radius: 4px; font-size: 0.95em; }
+  .big { font-size: 19px; color: #fff; }
+  .detail { color: #9aa7b8; font-size: 15px; }
+  .small { color: #8a97a8; font-size: 14px; }
+  .fig { text-align: center; margin: 18px 0; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 6px; }
+  mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.35) 55%); color: #eaf2ff; padding: 0 2px; }
+  .note-red { color: #ff9a90; font-size: 14px; }
+  ul.blue { padding-left: 22px; } ul.blue li { margin: 6px 0; }
+  .foot { border-top: 1px solid #2c3644; margin-top: 48px; padding-top: 16px; color: #67737f; font-size: 13px; line-height: 1.7; }
+  .box.kao { border-left: 4px solid #ffc94d; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 10mm 8mm; }
+    .page b, .page h1, .page h3, .page .m, .page .big, .page .detail, .page .try .q, .page .ans, .page .wrong, .page .q { color: #111; }
+    .page .talk, .page .box, .page .try, .page .check, .page .key, .page .pit, .page .alt { background: #f5f5f5 !important; border-color: #999 !important; }
+    .page .key { background: #fff8e0 !important; }
+    .page .pit { background: #fdeeee !important; }
+    .page .step-tag { background: #d8e8ff !important; color: #111 !important; }
+    .page .tag { background: #e8ecf2 !important; color: #111 !important; }
+    .page mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.30) 55%) !important; color: #111 !important; }
+    .page .foot { color: #444; }
+    .page .small, .page .figcap { color: #333 !important; }
+    .page h2 { color: #111; border-left-color: #2b6cb0; }
+    .page .fig rect { fill: #f2f4f8 !important; stroke: #666 !important; }
+    .page .fig text { fill: #111 !important; }
+    .page .fig line { stroke: #666 !important; }
+    .page .fig circle { fill: #7aa5d8 !important; }
+    .page .fig path { fill: none !important; }
+    .page .fig polygon { fill: #7aa5d8 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>硫的转化：一条"−2→0→+4→+6"价态阶梯上的变身链</h1>
+<div class="sub">化学 3.2 · 第3章 物质的性质与转化（鲁科版《普通高中教科书·化学 必修 第一册》·山东科学技术出版社·正文 p97–109 · 影印图103–115）</div>
+
+<p class="small" style="color:#7d8a99">📍 本件属于<b>第3章"物质的性质与转化"第二节</b>，前面已学：3.1铁的多样性（价-类二维图·双角度预测法·KSCN显色）。本节把3.1练熟的<b>"类别+价态"双把尺子</b>原样搬到硫身上——套路同款，元素换人。</p>
+
+<div class="talk">
+  <p>看教材p97：<b>硫是重要的非金属元素，也是人类最早认识的化学元素之一</b>。古代炼丹家常拿它炼丹，它还是我国古代四大发明之一——<b>黑火药的主要成分</b>。火山喷发时熔岩喷涌、浓烟滚滚，火山口甚至能直接捡到<b>黄色的硫单质</b>（图3-2-1）——这是自然界中硫单质及含硫化合物的来源之一。</p>
+  <p>本节干一件事：跟着硫元素的<b>四种价态（−2、0、+4、+6）</b>走一遍它的"变身链"——从火山口的硫黄，到刺鼻的二氧化硫，到工业命脉硫酸，再到让森林枯死的酸雨。教材p98一句总纲：<mark class="nb">硫及其化合物之间可以相互转化</mark>——转化靠什么？<b>同价态走复分解，不同价态走氧化还原</b>（3.1的老规矩）。</p>
+</div>
+
+<div class="check">
+  <span class="tag">读完这节你能</span>
+  <p>① 用<b>价-类二维图</b>盘清硫家族：−2价氢化物、0价单质、+4价氧化物与亚硫酸（盐）、+6价三氧化硫与硫酸（盐）；</p>
+  <p>② 说清<b>硫单质</b>的物理性质与两条化学性质（对铁显氧化性、对氧气显还原性），认识<b>同素异形体</b>；</p>
+  <p>③ 掌握<b>SO₂</b>三张面孔（酸性氧化物通性／氧化还原两性／漂白性）与<b>浓硫酸</b>三大特性（强氧化性、脱水性、吸水性），并知道"可逆反应"新记号⇌；</p>
+  <p>④ 讲出<b>硫酸型酸雨</b>的成因链条与"源头减污—过程脱硫—法律标准"三层防治思路（教材p106概括·整合）。</p>
+</div>
+
+<h2>先拆掉三个旧印象</h2>
+<p><b>误会一：<span class="wrong">"硫溶于水"</span>。</b>p100原句：硫单质<b>不溶于水</b>，微溶于酒精，<b>易溶于二硫化碳（CS₂）</b>——所以课本实验刷试管里的硫，用CS₂不用水。</p>
+<p><b>误会二：<span class="wrong">"SO₂漂白＝氯水漂白，褪了就回不来"</span>。</b>两者机理不同：SO₂的漂白是<b>与非色物质化合生成不稳定无色物</b>，加热会<b>恢复原色</b>（图3-2-9品红三联实验：褪色→加热→复红）；而氯水/HClO的漂白是氧化破坏、<b>不可逆</b>。</p>
+<p><b>误会三：<span class="wrong">"浓硫酸什么气体都能干燥"</span>。</b>浓硫酸吸水性只对<b>不与它反应</b>的气体成立（p103原句）——氨气（碱性气体）会跟酸反应，不能用它干燥。</p>
+
+<div class="box"><span class="tag">名词补齐</span> <b>同素异形体（allotrope）</b>：由同一种元素组成的性质不同的几种单质（p100定义）——正交硫（熔点112.8℃）与单斜硫（熔点119.3℃）就是硫的两种常见同素异形体（图3-2-7）。<b>可逆反应</b>：相同条件下能同时向正、逆两个方向进行的反应，方程式用<b>⇌</b>代替"="（p102蓝框）——SO₂与O₂的反应、前面学的氯气与水的反应都属于它。<b>黄铁矿FeS₂</b>：含硫矿物"家族成员"之一（另有雄黄As₄S₄、雌黄As₂S₃、辰砂HgS，图3-2-2）。</div>
+
+<h2><span class="step-tag">第1步</span> 先给硫画"价-类二维地图"（p98）</h2>
+<p>3.1的双角度尺子直接抄：<b>横轴物质类别（氢化物／单质／氧化物／酸／盐），纵轴硫元素化合价（−2／0／+4／+6）</b>。教材图3-2-3标的代表物质：</p>
+<ul class="blue">
+  <li><b>−2价</b>：H₂S（氢化物）——最低价，只能升，<b>只具还原性</b>；</li>
+  <li><b>0价</b>：S（单质）——中间价，可升可降，<b>两性都有</b>；</li>
+  <li><b>+4价</b>：SO₂、H₂SO₃、Na₂SO₃——中间价，<b>两性都有</b>；</li>
+  <li><b>+6价</b>：SO₃、H₂SO₄、Na₂SO₄——最高价，只能降，<b>只具氧化性</b>（浓硫酸）。</li>
+</ul>
+<p>p101给这条规律的标准表述：<mark class="nb">当硫元素处于中间价态时，含有这种价态硫元素的物质（如硫黄、二氧化硫、亚硫酸钠），既具有氧化性又具有还原性；处于最高价态（如三氧化硫、浓硫酸），只具有氧化性；处于最低价态（如硫化氢、硫化钠），只具有还原性</mark>。这就是全节的"方向盘"。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 300" width="740" height="300">
+<rect width="740" height="300" fill="#0f1420"/>
+<line x1="120" y1="30" x2="120" y2="250" stroke="#7d8a99" stroke-width="1.5"/>
+<line x1="120" y1="250" x2="700" y2="250" stroke="#7d8a99" stroke-width="1.5"/>
+<text x="118" y="22" fill="#d8dee6" font-size="13" text-anchor="end">硫元素化合价</text>
+<text x="698" y="270" fill="#d8dee6" font-size="13" text-anchor="end">物质类别</text>
+<text x="112" y="66" fill="#7d8a99" font-size="12" text-anchor="end">+6</text><line x1="116" y1="62" x2="124" y2="62" stroke="#7d8a99"/>
+<text x="112" y="126" fill="#7d8a99" font-size="12" text-anchor="end">+4</text><line x1="116" y1="122" x2="124" y2="122" stroke="#7d8a99"/>
+<text x="112" y="186" fill="#7d8a99" font-size="12" text-anchor="end">0</text><line x1="116" y1="182" x2="124" y2="182" stroke="#7d8a99"/>
+<text x="112" y="246" fill="#7d8a99" font-size="12" text-anchor="end">−2</text><line x1="116" y1="242" x2="124" y2="242" stroke="#7d8a99"/>
+<text x="165" y="270" fill="#7d8a99" font-size="12">氢化物</text><text x="275" y="270" fill="#7d8a99" font-size="12">单质</text><text x="365" y="270" fill="#7d8a99" font-size="12">氧化物</text><text x="485" y="270" fill="#7d8a99" font-size="12">酸</text><text x="585" y="270" fill="#7d8a99" font-size="12">盐</text>
+<circle cx="165" cy="242" r="26" fill="#1a222e" stroke="#ff9a90" stroke-width="2"/><text x="165" y="247" fill="#ff9a90" font-size="14" text-anchor="middle" font-weight="bold">H₂S</text>
+<circle cx="275" cy="182" r="26" fill="#1a222e" stroke="#e8ecf2" stroke-width="2"/><text x="275" y="187" fill="#e8ecf2" font-size="14" text-anchor="middle" font-weight="bold">S</text>
+<circle cx="395" cy="122" r="26" fill="#1a222e" stroke="#ffc94d" stroke-width="2"/><text x="395" y="127" fill="#ffc94d" font-size="14" text-anchor="middle" font-weight="bold">SO₂</text>
+<circle cx="505" cy="122" r="30" fill="#1a222e" stroke="#ffc94d" stroke-width="2"/><text x="505" y="127" fill="#ffc94d" font-size="13" text-anchor="middle" font-weight="bold">H₂SO₃</text>
+<circle cx="615" cy="122" r="30" fill="#1a222e" stroke="#ffc94d" stroke-width="2"/><text x="615" y="127" fill="#ffc94d" font-size="12" text-anchor="middle" font-weight="bold">Na₂SO₃</text>
+<circle cx="395" cy="62" r="26" fill="#1a222e" stroke="#7ee2a8" stroke-width="2"/><text x="395" y="67" fill="#7ee2a8" font-size="14" text-anchor="middle" font-weight="bold">SO₃</text>
+<circle cx="505" cy="62" r="30" fill="#1a222e" stroke="#7ee2a8" stroke-width="2"/><text x="505" y="67" fill="#7ee2a8" font-size="13" text-anchor="middle" font-weight="bold">H₂SO₄</text>
+<circle cx="615" cy="62" r="30" fill="#1a222e" stroke="#7ee2a8" stroke-width="2"/><text x="615" y="67" fill="#7ee2a8" font-size="12" text-anchor="middle" font-weight="bold">Na₂SO₄</text>
+<line x1="190" y1="232" x2="253" y2="196" stroke="#ff9a90" stroke-width="1.6" marker-end="url(#ar1)"/>
+<line x1="296" y1="176" x2="365" y2="132" stroke="#c9a227" stroke-width="1.6" marker-end="url(#ar1)"/>
+<line x1="365" y1="118" x2="300" y2="174" stroke="#7ee2a8" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#ar2)"/>
+<text x="60" y="292" fill="#7d8a99" font-size="11">图A 硫及其化合物"价—类"二维图（教材图3-2-3要义复刻）</text>
+<defs><marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c9a227"/></marker><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7ee2a8"/></marker></defs>
+</svg><div class="figcap">纵轴价态、横轴类别；金色箭头=升价（被氧化），绿色虚线=降价（被还原）。图A（aria-label：硫价类二维图，负二价硫化氢、零价硫单质、正四价二氧化硫亚硫酸亚硫酸钠、正六价三氧化硫硫酸硫酸钠）</div></div>
+<div class="box"><span class="tag">自然界账本</span> p98图3-2-2把这条链放进地球：火山喷发（地下）→含硫物质与铁、砷、汞等元素化合成矿物（黄铁矿FeS₂、雄黄As₄S₄、雌黄As₂S₃、辰砂HgS）→暴露地表受空气氧气和水蒸气作用→石膏（CaSO₄·2H₂O）、芒硝（Na₂SO₄·10H₂O）等新物质；火山喷发（地表）→H₂S、SO₂、SO₃入大气→溶于水生成H₂SO₃、H₂SO₄→部分被微生物转化回S或H₂S——<b>硫的地球版"变身循环"</b>。</div>
+
+<h2><span class="step-tag">第2步</span> 硫单质：黄色固体的一氧化一还原（p99–100）</h2>
+<p>观察·思考（p99）三个实验：<b>实验1</b>硫粉在试管中加热——观察颜色状态与熔化（淡黄色固体、受热熔化，图3-2-4）；<b>实验2</b>硫粉与铁粉按比例混合堆在石棉网上，灼热玻璃棒触及一端，红热后移开——<b>反应自行持续</b>（图3-2-5）；<b>实验3</b>燃烧匙中硫粉加热至熔化燃烧，迅速伸入盛O₂的集气瓶（底部少量水）——<b>明亮的蓝紫色火焰</b>（图3-2-6）。</p>
+<p>两条化学性质（p100原句）：</p>
+<p>① <b>氧化性</b>：硫单质能与金属铁反应生成<b>硫化亚铁（FeS）</b>——S：0→−2，得电子，做氧化剂；</p>
+<p class="m">Fe + S <u>Δ</u> FeS</p>
+<p>② <b>还原性</b>：硫单质能与氧气反应生成二氧化硫——S：0→+4，失电子，做还原剂；</p>
+<p class="m">S + O₂ <u>点燃</u> SO₂</p>
+<div class="alt"><span class="tag">卡住了？换个说法</span> 把0价硫想成"住中间楼层"：遇上不嫌弃电子的金属铁，硫把手里的"电子空位"租出去收电子（降价·氧化性）；遇上更凶的氧气，硫把电子交出去（升价·还原性）。<b>上下楼都行=中间价态两性</b>——和3.1的Fe²⁺一个道理。</div>
+<div class="box"><span class="tag">用途锚点</span> p100：硫黄主要用于制造<b>硫酸、化肥、火柴及杀虫剂</b>等。结合p97：黑火药的主要成分（我国古代四大发明之一）。</div>
+
+<h2><span class="step-tag">第3步</span> SO₂：一张脸三副表情（p102）</h2>
+<p><b>物理性质</b>（p102原句）：二氧化硫（SO₂，sulfur dioxide）是一种<b>无色、有刺激性气味的有毒气体，易溶于水</b>。</p>
+<p><b>表情一·酸性氧化物通性</b>：与水反应生成亚硫酸、与NaOH溶液反应生成亚硫酸钠和水——</p>
+<p class="m">SO₂ + H₂O <u>⇌</u> H₂SO₃　　SO₂ + 2OH⁻ = SO₃²⁻ + H₂O</p>
+<p><b>表情二·氧化还原两性</b>：在催化剂和加热条件下能被氧气氧化（+4→+6·还原性）；能与硫化氢（或硫化钠）反应（+4→0·氧化性）——</p>
+<p class="m">2SO₂ + O₂ <u>催化剂·Δ·⇌</u> 2SO₃　　SO₂ + 2H₂S = 3S↓ + 2H₂O</p>
+<p>第二个式子（图3-2-8：H₂S溶液通入SO₂变淡黄浑浊）里，SO₂中+4价硫降到0价，H₂S中−2价硫升到0价——<b>归中反应</b>，硫"劫富济贫"两头拉到0价。</p>
+<p><b>表情三·漂白性</b>：SO₂能使<b>品红等有色物质褪色</b>，但漂白过的有色物质<b>在一定条件下会恢复原来的颜色</b>（图3-2-9：品红溶液→通入SO₂→无色→加热→恢复红色）。这与氯水的氧化漂白（不可逆）本质不同。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 160" width="740" height="160">
+<defs><marker id="ar2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" fill="#c9a227"/></marker></defs>
+<rect width="740" height="160" fill="#0f1420"/>
+<text x="370" y="28" fill="#e8ecf2" font-size="15" text-anchor="middle" font-weight="bold">硫家族变身链：一路升价，风景各异</text>
+<g font-size="13" text-anchor="middle">
+<rect x="30" y="55" width="96" height="44" rx="8" fill="#1a222e" stroke="#7fd4a8" stroke-width="2"/><text x="78" y="74" fill="#7fd4a8" font-weight="bold">H₂S</text><text x="78" y="91" fill="#7d8a99" font-size="11">-2 最低价</text>
+<rect x="182" y="55" width="86" height="44" rx="8" fill="#1a222e" stroke="#e8ecf2" stroke-width="2"/><text x="225" y="74" fill="#e8ecf2" font-weight="bold">S</text><text x="225" y="91" fill="#7d8a99" font-size="11">0 中间价</text>
+<rect x="324" y="55" width="96" height="44" rx="8" fill="#1a222e" stroke="#c9a227" stroke-width="2"/><text x="372" y="74" fill="#c9a227" font-weight="bold">SO₂</text><text x="372" y="91" fill="#7d8a99" font-size="11">+4 中间价</text>
+<rect x="476" y="55" width="96" height="44" rx="8" fill="#1a222e" stroke="#c9a227" stroke-width="2"/><text x="524" y="74" fill="#c9a227" font-weight="bold">SO₃</text><text x="524" y="91" fill="#7d8a99" font-size="11">+6 最高价</text>
+<rect x="628" y="55" width="96" height="44" rx="8" fill="#1a222e" stroke="#ff9a90" stroke-width="2"/><text x="676" y="74" fill="#ff9a90" font-weight="bold">H₂SO₄</text><text x="676" y="91" fill="#7d8a99" font-size="11">+6 最高价</text>
+<line x1="126" y1="77" x2="180" y2="77" stroke="#c9a227" stroke-width="2" marker-end="url(#ar2)"/>
+<line x1="268" y1="77" x2="322" y2="77" stroke="#c9a227" stroke-width="2" marker-end="url(#ar2)"/>
+<line x1="420" y1="77" x2="474" y2="77" stroke="#c9a227" stroke-width="2" marker-end="url(#ar2)"/>
+<line x1="572" y1="77" x2="626" y2="77" stroke="#c9a227" stroke-width="2" marker-end="url(#ar2)"/>
+</g>
+<text x="225" y="128" fill="#7fd4a8" font-size="12" text-anchor="middle">O₂点燃↑价（还原性）·H₂/Fe夺它电子↓价</text>
+<text x="372" y="128" fill="#7fd4a8" font-size="12" text-anchor="middle">与H₂S归中↓价（氧化性）·被O₂氧化↑价（还原性）</text>
+<text x="610" y="128" fill="#ff9a90" font-size="12" text-anchor="middle">浓硫酸：只氧化别人，自己只降不升（钝化例外防护）</text>
+</svg><div class="figcap">图A2（aria-label：硫家族变身链——硫化氢负二价最低，硫单质零价，二氧化硫正四价，三氧化硫与硫酸正六价最高；金色箭头表示升价转化）</div></div>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 220" width="740" height="220">
+<rect width="740" height="220" fill="#0f1420"/>
+<rect x="60" y="60" width="90" height="120" rx="8" fill="#b03060"/><text x="105" y="205" fill="#d8dee6" font-size="12" text-anchor="middle">品红溶液（红）</text>
+<line x1="160" y1="120" x2="250" y2="120" stroke="#c9a227" stroke-width="2" marker-end="url(#ar1)"/><text x="205" y="110" fill="#c9a227" font-size="12" text-anchor="middle">通入SO₂</text>
+<rect x="260" y="60" width="90" height="120" rx="8" fill="#e8ecf2"/><text x="305" y="205" fill="#d8dee6" font-size="12" text-anchor="middle">无色（化合漂白）</text>
+<line x1="360" y1="120" x2="450" y2="120" stroke="#ff9a90" stroke-width="2" marker-end="url(#ar1)"/><text x="405" y="110" fill="#ff9a90" font-size="12" text-anchor="middle">加热</text>
+<rect x="460" y="60" width="90" height="120" rx="8" fill="#b03060"/><text x="505" y="205" fill="#d8dee6" font-size="12" text-anchor="middle">恢复红色</text>
+<text x="610" y="100" fill="#ff9a90" font-size="13" font-weight="bold">可逆！</text>
+<text x="610" y="124" fill="#7d8a99" font-size="12">氯水漂白：</text>
+<text x="610" y="144" fill="#7d8a99" font-size="12">氧化破坏·不可逆</text>
+<text x="60" y="30" fill="#7d8a99" font-size="11">图B SO₂使品红溶液褪色及其可逆性（教材图3-2-9要义复刻）</text>
+</svg><div class="figcap">图B（aria-label：品红溶液通入二氧化硫褪色，加热后恢复红色的可逆漂白三联示意）</div></div>
+<div class="key"><span class="tag">本步钥匙</span> SO₂三副表情的"根"全在<b>+4价中间态</b>：对上（+6）能升、对下（0/−2）能降→两性；与有色物化合→漂白（可逆）；与水/碱→酸性氧化物通性。做题先问一句：<b>这一步硫是升了还是降了？</b></div>
+<div class="box"><span class="tag">生活锚点</span> p102：二氧化硫是一种<b>食品添加剂</b>——我国《食品安全国家标准 食品添加剂使用标准》规定了它作为<b>漂白剂、防腐剂、抗氧化剂</b>的使用范围、使用限量和残留量。"又毒又上餐桌"不矛盾：限量即安全边界。</div>
+
+<h2><span class="step-tag">第4步</span> 浓硫酸：最高价态的三件套（p103）</h2>
+<p>硫酸（H₂SO₄，sulfuric acid）中的硫元素处于<b>最高价态（+6）</b>。浓硫酸能与许多物质发生氧化还原反应，是<b>常见的氧化剂</b>。加热时浓硫酸可与铜、木炭等单质反应：</p>
+<p class="m">2H₂SO₄（浓）+ Cu <u>Δ</u> CuSO₄ + SO₂↑ + 2H₂O</p>
+<p class="m">2H₂SO₄（浓）+ C <u>Δ</u> 2SO₂↑ + CO₂↑ + 2H₂O</p>
+<p>配平自检（sympy验点同款）：Cu式——Cu失2e（0→+2），S得2e（+6→+4）×1，电子守恒；C式——C失4e（0→+4），S得2e×2，电子守恒。两个式子里的浓硫酸都只"降了一部分"：2分子浓硫酸只有1个硫降价、另1个硫价态不变只起酸的作用——<b>浓硫酸既当氧化剂又当酸</b>。图3-2-10的实验里，品红溶液褪色就是SO₂生成的铁证。</p>
+<p><b>特性一·脱水性</b>：能按水的元素组成质量比脱去纸屑、棉花所含有机化合物中的氢、氧元素，使这些有机化合物<b>炭化</b>（图3-2-11蔗糖变"黑面包"）。</p>
+<p><b>特性二·吸水性</b>：能吸收气体中的水分，实验室常用于<b>干燥不与它发生反应的气体</b>。</p>
+<p><b>特性三·钝化</b>：常温下，浓硫酸与<b>铁、铝</b>接触时，会使金属表面生成一层<b>致密的氧化物薄膜</b>而钝化，阻止内部金属继续反应——因此<b>冷的浓硫酸可以用铁质或铝质容器储存</b>（p103原句）。</p>
+<div class="pit"><span class="tag">易错点</span> ①"钝化"不是"不反应"，是<b>反应生成了保护膜后停止</b>——加热条件下铁铝照样与浓硫酸持续反应；②脱水性≠吸水性：<b>脱水是把有机物里的H、O"按水的比例抽走"（化学变化·炭化）</b>，吸水是吸收现成的水分子（物理过程为主·做干燥剂）；③浓硫酸与铜反应<b>不生成氢气</b>（p107题5A就是考这个），生成的是SO₂。</div>
+
+<h2><span class="step-tag">第5步</span> 实验室怎么研究转化＋工业怎么规模化（p100–104）</h2>
+<h3>活动·探究（学生必做实验）：不同价态硫元素之间的转化（p100–101）</h3>
+<p>实验目的：选取含有硫元素的物质，通过实验探究<b>0、+4、+6三种价态硫元素之间的相互转化</b>。实验用品（p100原单）：SO₂水溶液、Na₂SO₃溶液、浓硫酸、Na₂S溶液、稀硫酸、NaOH溶液、酸性KMnO₄溶液、氯水、KI溶液、淀粉溶液、品红溶液、铜片；酒精灯、玻璃管、橡胶塞、导气管、试管夹、试管、胶头滴管、铁架台等。安全提示三条：氯水、酸性KMnO₄溶液、浓硫酸等具有腐蚀性，取用避免沾到皮肤或衣服；<b>SO₂气体有毒，应避免将其释放到空气中</b>；涉及浓硫酸的实验由教师辅助学生完成。</p>
+<p>方法导引（p101蓝框·三步法）：<mark class="nb">①选择含不同价态硫元素的物质（如+4价硫可选二氧化硫或亚硫酸钠）②实现不同价态硫元素之间的相互转化，依据的是氧化还原理论，需要寻找合适的氧化剂或还原剂 ③提供表明相应转化实际发生的证据</mark>。</p>
+<div class="alt"><span class="tag">卡住了？换个说法</span> 这套"三步法"=点菜（选原料）→配对（氧化剂降它／还原剂升它）→验货（现象当证据）。例如"+4→+6"：给Na₂SO₃配氧化剂氯水，"验货"看品红或褪色速率变化；"+4→0"：给SO₂配H₂S，验货看淡黄沉淀。</div>
+<h3>化学与技术：接触法制硫酸（p104）</h3>
+<p>工业上常以氧气为氧化剂把硫单质或含硫矿物中的硫转化为二氧化硫，再将二氧化硫转化为三氧化硫，最后制得硫酸——三步链条的工业化版本就是<b>接触法</b>（图3-2-12）：硫黄或黄铁矿矿石＋空气→生成二氧化硫→气体混合物通过<b>静电除尘净化</b>→混合气体发生反应 <span class="m">2SO₂ + O₂ <u>⇌</u> 2SO₃</span>（条件：<b>400～500℃、常压、V₂O₅做催化剂</b>）→用<b>98.3%的浓硫酸</b>吸收三氧化硫（SO₃+H₂O=H₂SO₄，直接用水吸收易成酸雾，故用浓硫酸）。</p>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 150" width="740" height="150">
+<rect width="740" height="150" fill="#0f1420"/>
+<rect x="20" y="50" width="110" height="50" rx="8" fill="#1a222e" stroke="#7d8a99"/><text x="75" y="70" fill="#e8ecf2" font-size="12" text-anchor="middle">硫黄/黄铁矿</text><text x="75" y="88" fill="#e8ecf2" font-size="12" text-anchor="middle">＋空气</text>
+<line x1="132" y1="75" x2="180" y2="75" stroke="#c9a227" stroke-width="2" marker-end="url(#ar1)"/>
+<rect x="182" y="50" width="110" height="50" rx="8" fill="#1a222e" stroke="#7d8a99"/><text x="237" y="80" fill="#e8ecf2" font-size="12" text-anchor="middle">生成SO₂</text>
+<line x1="294" y1="75" x2="342" y2="75" stroke="#c9a227" stroke-width="2" marker-end="url(#ar1)"/>
+<rect x="344" y="50" width="120" height="50" rx="8" fill="#1a222e" stroke="#7d8a99"/><text x="404" y="70" fill="#e8ecf2" font-size="12" text-anchor="middle">静电除尘</text><text x="404" y="88" fill="#e8ecf2" font-size="12" text-anchor="middle">净化</text>
+<line x1="466" y1="75" x2="514" y2="75" stroke="#c9a227" stroke-width="2" marker-end="url(#ar1)"/>
+<rect x="516" y="38" width="130" height="74" rx="8" fill="#1a222e" stroke="#ffc94d"/><text x="581" y="58" fill="#ffc94d" font-size="11" text-anchor="middle">2SO₂+O₂⇌2SO₃</text><text x="581" y="76" fill="#e8ecf2" font-size="11" text-anchor="middle">400~500℃·常压</text><text x="581" y="94" fill="#e8ecf2" font-size="11" text-anchor="middle">V₂O₅做催化剂</text>
+<line x1="648" y1="75" x2="696" y2="75" stroke="#c9a227" stroke-width="2" marker-end="url(#ar1)"/>
+<rect x="620" y="118" width="116" height="28" rx="6" fill="#1a222e" stroke="#7ee2a8"/><text x="678" y="137" fill="#7ee2a8" font-size="11" text-anchor="middle">98.3%浓硫酸吸收</text>
+<text x="20" y="26" fill="#7d8a99" font-size="11">图C 接触法制硫酸生产流程（教材图3-2-12要义复刻）</text>
+</svg><div class="figcap">图C（aria-label：接触法制硫酸流程——硫黄或黄铁矿与空气生成二氧化硫，静电除尘净化，四百至五百摄氏度常压五氧化二钒催化生成三氧化硫，用百分之九十八点三浓硫酸吸收）</div></div>
+<div class="box"><span class="tag">史账本</span> p104"化学与技术·硫酸工业生产的演变"：我国制造硫酸的历史可追溯到<b>7世纪</b>，炼丹家曾利用胆矾（CuSO₄·5H₂O）制备硫酸；国外早期炼金士曾用绿矾（FeSO₄·7H₂O）；1740年英国人瓦尔特（J.Ward）建立人类历史上第一座生产硫酸的工厂；1831年英国人菲利浦（P.Philips）用铂催化剂瓷管创<b>接触法雏形</b>，后以<b>钒代替铂</b>、用氧气代替空气使效率极大提高。</div>
+
+<h2><span class="step-tag">第6步</span> 酸雨及其防治：变身链的"事故现场"（p105–106）</h2>
+<p><b>成因链</b>（p105原思路）：工业生产和日常生活中大量使用煤和石油等化石燃料→煤和石油中含有硫元素，燃烧时除了产生二氧化碳外还产生<b>二氧化硫</b>→硫的氧化物是形成酸雨的主要物质。排放到空气中的二氧化硫在<b>氧气和水蒸气的共同作用</b>下形成酸雾，随雨水降落就成为酸雨——这样形成的酸雨常称<b>硫酸型酸雨</b>。</p>
+<p class="m">2SO₂ + O₂ <u>催化剂·⇌</u> 2SO₃　　SO₃ + H₂O = H₂SO₄</p>
+<p class="m">SO₂ + H₂O <u>⇌</u> H₂SO₃　　2H₂SO₃ + O₂ = 2H₂SO₄</p>
+<p>（p105蓝底原式·四式——两条路径殊途同归：都产出H₂SO₄。）</p>
+<p><b>危害</b>（p105）：酸雨会使湖泊的水质变酸，导致水生生物死亡；酸雨浸渍土壤，会使土壤变得贫瘠；长期的酸雨侵蚀会造成森林大面积死亡；酸雨腐蚀建筑，会使建筑变得面目全非；酸雨对人体健康也有直接影响，如酸雨渗入地下会导致地下水中的重金属元素含量增加（图3-2-13被酸雨侵蚀的树木和雕像）。</p>
+<p><b>防治三层</b>（p106原思路）：①<b>源头</b>——消除污染源，改变能源结构，开发利用氢能、风能、太阳能等清洁能源，从根本上解决问题；②<b>过程</b>——对酸性物质的排放加以控制，利用物理方法和化学方法对含硫燃料<b>预先进行脱硫</b>，对废气中的二氧化硫进行回收处理（p109第11题图的脱硫流程：浆状CaCO₃+H₂O吸收废气中SO₂→CaSO₃→氧化成CaSO₄石膏）；③<b>制度</b>——健全法律法规，严格规定污染物的排放标准，提高人们的环境保护意识。</p>
+<div class="box kao"><span class="tag">考位锚</span> <b>高考考向一①SO₂性质综合题</b>——三副表情连考：使酸性KMnO₄溶液褪色考的是<b>还原性</b>（不是漂白性）、使品红褪色考<b>漂白性</b>（可逆）、使澄清石灰水变浑浊考<b>酸性氧化物</b>；题8族"SO₂与Cl₂共同作用"考<b>归中反应</b>（SO₂+Cl₂+2H₂O=H₂SO₄+2HCl，两者同时失效·漂白不增强）。<b>高考考向二②工业与环保流程题</b>——接触法三条件（400～500℃/常压/V₂O₅）、98.3%浓硫酸吸收、钙基脱硫（CaCO₃浆液→CaSO₃→CaSO₄石膏资源化）与黄铁矿计算（p109第12题：4FeS₂+11O₂<u>高温</u>2Fe₂O₃+8SO₂·硫损失为零时1吨含杂质25%的矿石可制98%浓硫酸<b>1.25吨</b>）。</div>
+
+<h2><span class="step-tag">收口</span> 概括·整合（p106）：一张图收拢全节</h2>
+<p>教材p106概括·整合要求：①归纳总结硫单质、二氧化硫、浓硫酸的性质；②构建硫及其化合物之间的转化关系；③提炼实现转化的思路和方法；④总结硫及其化合物的应用及其对生态环境的影响，概括解决酸雨问题的思路和方法。转化总图（教材示例图要义）：<b>H₂S → S ⇌ SO₂ ⇌ H₂SO₃ → Na₂SO₃；SO₂ → SO₃ → H₂SO₄ → Na₂SO₄；H₂SO₄ → SO₂</b>（浓硫酸氧化性反向打通）——同价态横着走（复分解），异价态竖着走（氧化还原）。</p>
+<div class="try"><span class="tag">试一试</span> 不翻教材，写出并配平：①S在氧气中燃烧；②SO₂与H₂S归中；③浓硫酸与铜加热。三个式子分别让硫元素：0→+4（还原性）、+4→0与−2→0（氧化性+还原性同台）、+6→+4（氧化性）——写完对照p100/p102/p103蓝底原式。</div>
+<div class="box"><span class="tag">练习要点（p107–109）</span> 题2答案= <span class="ans">B</span>（SO₂<b>有毒</b>，"无毒"错）；题3= <span class="ans">B</span>（硫与氧气：0→+4升价·还原剂）；题4= <span class="ans">C</span>（工业上大量含硫燃料的使用）；题5= <span class="ans">A</span>（浓硫酸与铜不产氢气，产SO₂）；题7= <span class="ans">A/B均可鉴别</span>（SO₂使酸性KMnO₄、品红均褪色而CO₂不能·单选题面候QC裁定）；题8= <span class="ans">不同意</span>——SO₂+Cl₂+2H₂O=H₂SO₄+2HCl，两种漂白成分互相"抵消"，漂白作用反而丧失；题9= <span class="ans">A/B/C</span>三判断均成立、D错（加足量稀硫酸仍留白色沉淀⇒沉淀含BaSO₄⇒原液已含SO₄²⁻⇒Na₂SO₃已被空气部分氧化·题面单选口径候QC）；题10= <span class="ans">D</span>不合理——反应后①中剩余浓硫酸，直接加水危险且无法确认CuSO₄，应冷却后将反应液缓缓倒入水中观察蓝色；题11(2)：SO₂+H₂O⇌H₂SO₃、2H₂SO₃+O₂=2H₂SO₄（或2SO₂+O₂⇌2SO₃、SO₃+H₂O=H₂SO₄）；题12：0.75吨FeS₂含硫0.4吨→纯H₂SO₄ 1.225吨→98%浓硫酸<b>1.25吨</b>。<span class="note-red">注：题1影印面A（"能溶于水"）与B（"仅以化合态存在"）两项均与教材事实（p100不溶于水／p97火山口存在硫单质）冲突，单选题面存疑，本件不代拟唯一答案，候QC裁定（如实申报）。</span></div>
+<div class="key"><span class="tag">本节金句</span> <b>价态定性质：最低价只还原，最高价只氧化，中间价两头通吃；SO₂漂白可逆，浓硫酸三件套（氧化·脱水·吸水），酸雨治理三层楼。</b></div>
+<p class="small" style="margin-top:26px">➡ 下一站 3.3《氮的循环》（p110起）：同样的"价-类地图+双角度预测"套路，搬到大气的主角氮元素上——雷电固氮、根瘤菌与合成氨都已在p110大图候场。</p>
+
+<div class="foot">
+  <p>本件为教材（鲁科版《化学 必修 第一册》第3章第2节·p97–109）零基础首学版学习笔记。节界实锚：3.2节名页=印刷页97（影印图103亲读实锚）·右界=3.3节名页=印刷页110（影印图116亲读实锚）·节域p97–109共13页闭合；影印偏移=图N=印刷页N+6（ts=1754905612635·19:35实测200）。事实点均影印直读并附来源页码；四附件（影印对照13页/事实点自验/条款自检T1-T12/通读卡点）+三条差距+QC单+print七查PDF+sympy验点py/log随commit同链。队3席B线·任务包v3承办·硬闸21:41·候验禁直推main。</p>
+</div>
+</div>
+</body>
+</html>
