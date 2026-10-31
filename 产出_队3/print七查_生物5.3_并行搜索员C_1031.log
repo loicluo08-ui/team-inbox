@@ -1,0 +1,9 @@
+[PASS] 查1 页数合理(4≤n≤30) pages=7
+[PASS] 查2 标题在文(原生节名《细胞呼吸的原理和应用》) 
+[PASS] 查3 数值/检测抽检(2870·977.28·196.65·重铬酸钾灰绿) 
+[PASS] 查4 SVG三图在位(svg=3·aria-label=3·weasyprint渲染6页·图A装置/图B三阶段/图C对比表) 
+[PASS] 查5 自编标注显式 
+[PASS] 查6 黑名单0 
+[PASS] 查7 页码锚在文(p90-p96) 
+pages=7 bytes≈285K
+总判: PASS
