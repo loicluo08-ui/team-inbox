@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理3.2 摩擦力 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #1a2416; border-left: 3px solid #6cbf4a; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .try .q { color: #9fd481; font-weight: bold; }
+  .try .a { color: #8a949f; font-size: 15px; margin-top: 6px; }
+  .pit { background: #2a1a1a; border-left: 3px solid #e05252; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .pit .tag { color: #ff7b72; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #2b5277; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .key b { color: #4a9eff; }
+  .m { font-family: "Times New Roman", Georgia, serif; font-style: italic; color: #ffd48a; }
+  .big { font-size: 21px; text-align: center; margin: 18px 0; color: #fff; }
+  .detail { color: #7d8a99; font-size: 15px; border-top: 1px dashed #2a3140; margin-top: 10px; padding-top: 10px; }
+  .small { color: #8a949f; font-size: 14px; }
+  .wrong { color: #ff7b72; }
+  .fig { margin: 18px 0; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  .check { background: #16211a; border: 1px solid #2d5a3d; border-radius: 8px; padding: 16px 20px; margin: 18px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; font-size: 14px; }
+  .check p { margin: 8px 0; }
+  .alt { background: #1f1b24; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .ans { color: #58d68d; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; color: #eef2f7; font-size: 16px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a323e; padding: 9px 12px; text-align: left; }
+  th { background: #1b2029; color: #fff; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  b { color: #f0f3f7; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 16px; line-height: 1.7; }
+  em { color: #1a5c99; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    p, .talk, .key, .pit, .detail, .figcap { color: #222; }
+    .sub, .small, .foot { color: #444; }
+    .try .q { color: #1e5c1e; } .try .a { color: #333; }
+    .pit .tag { color: #c0392b; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong, .note-red { color: #c0392b; }
+    em { color: #1a5c99; }
+    mark.nb, .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { background: #f0f0f0; color: #111; }
+    th, td { border-color: #bbb; }
+    .box { color: #222; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>摩擦力：拖后腿的力，也能帮你站稳——F<sub>f</sub> = μF<sub>压</sub> 与"不动的力"</h1>
+<div class="sub">物理3.2 · "相互作用——力"模块第二件（第三章 第2节）· 前面已学：3.1 重力与弹力（G = mg、弹力垂直于接触面）· 零基础首学版 v1.0 · 前置：3.1＋初中的二力平衡＋小学的"正比例" · 预计45分钟</div>
+
+<h2><span class="step-tag">开场</span>越重的箱子越难推——这股"拖后腿"的力有公式吗？</h2>
+<p>推箱子你有体感：箱子越沉，越难推动；地面越糙，越费劲。这股拖后腿的力叫摩擦力。教材p63问题框把体感变成了可测量的实验：<b>用弹簧测力计拖动水平固定木板上的木块，使它做匀速运动，测力计的示数等于木块所受摩擦力的大小。改变木块和木板之间的压力，摩擦力的大小也随之改变。</b>然后它提了一个"定量化"的问题：<b>如果摩擦力的大小跟压力的大小存在某种定量关系的话，它们可能是怎样的关系呢？</b>——这一节就回答它：滑动摩擦力有明明白白的公式（F<sub>f</sub> = μF<sub>压</sub>），静摩擦力则是一条"看外力脸色"的变色龙（0 ＜ F ≤ F<sub>max</sub>）。</p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 说出<b>滑动摩擦力</b>与<b>静摩擦力</b>的定义，并会用"相对运动（趋势）方向相反"判方向——盯住"相对"两个字；<br>
+② 会用 <b>F<sub>f</sub> = μF<sub>压</sub></b> 计算滑动摩擦力，会用 <b>μ = F<sub>f</sub>/F<sub>N</sub></b> 结合教材动摩擦因数表查表；<br>
+③ 像教材例题一样，用<b>二力平衡</b>求"匀速拉动"时马/人的水平拉力（980 N 这类）；<br>
+④ 理解<b>静摩擦力是"被动力"</b>：它随外力变化、大小与推力保持相等，有上限 <b>0 ＜ F ≤ F<sub>max</sub></b>；<br>
+⑤ 看懂力传感器 F-t 图像上那个"尖峰"：最大静摩擦力略大于滑动摩擦力；顺带认识"流体的阻力"。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒立好地基（已会的跳过）</h2>
+<div class="talk">
+<p>本节只借四个旧工具：① 3.1的<b>重力</b>——G = mg（例题里雪橇的"分量"就靠它）；② 3.1的<b>弹力方向</b>——支持力F<sub>N</sub>垂直于接触面（μ = F<sub>f</sub>/F<sub>N</sub>要用它）；③ 初中的<b>二力平衡</b>——匀速直线运动＝合力为零；④ 小学数学的<b>正比例</b>——y = kx，F<sub>f</sub> = μF<sub>压</sub>就是它的物理版。另带一个"先借后还"的结论：水平面上，木块对木板的压力大小等于支持力、也等于重力——教材脚注①明说"<b>下节会学到这一知识</b>"（3.3牛顿第三定律补证明），本节先放心用。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>滑动摩擦力——方向盯死"相对"两个字（p63）</h2>
+<p>教材p63原文：<b>两个相互接触的物体，当它们相对滑动时，在接触面上会产生一种阻碍相对运动的力，这种力叫作滑动摩擦力（sliding frictional force）。滑动摩擦力的方向总是沿着接触面，并且跟物体相对运动的方向相反。</b></p>
+<div class="key">
+<b>两个要点（教材p63）：</b>① 方向<b>沿着接触面</b>（不是随便反着指）；② 参照物是"<span class="ul-blue">相对运动</span>"——阻碍的是甲<b>相对乙</b>的滑动，不是甲相对地面的运动。<br>
+<b>大小先定性（教材p63）：</b>滑动摩擦力的大小跟接触面上压力的大小有关，对同一接触面来说，压力越大，滑动摩擦力越大；滑动摩擦力的大小还跟接触面的粗糙程度、材质等有关，在相同压力下，不同接触面间的滑动摩擦力的大小一般不同。
+</div>
+<div class="fig">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图3.2-1重绘 弹簧测力计拖木块匀速滑动示意">
+  <defs><marker id="arA" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker></defs>
+  <polygon points="60,210 640,210 600,260 20,260" fill="#e8d9b8" stroke="#b89858" stroke-width="1.2"/>
+  <polygon points="60,210 640,210 660,196 80,196" fill="#f2e7cc" stroke="#b89858" stroke-width="1.2"/>
+  <rect x="300" y="130" width="150" height="70" fill="#d9a866" stroke="#8a5a10" stroke-width="1.4"/>
+  <line x1="330" y1="165" x2="330" y2="115" stroke="#c0392b" stroke-width="2" marker-end="url(#arA)"/>
+  <text x="336" y="108" font-size="16" fill="#c0392b">F&#8202;N</text>
+  <rect x="450" y="150" width="130" height="22" rx="8" fill="#cfe0ee" stroke="#3a6a8c" stroke-width="1.3"/>
+  <line x1="450" y1="161" x2="580" y2="161" stroke="#3a6a8c" stroke-width="0"/>
+  <line x1="580" y1="161" x2="640" y2="161" stroke="#3a6a8c" stroke-width="2.4"/>
+  <circle cx="648" cy="161" r="9" fill="none" stroke="#3a6a8c" stroke-width="2"/>
+  <line x1="410" y1="245" x2="330" y2="245" stroke="#7a4a8c" stroke-width="2" marker-end="url(#arA)"/>
+  <text x="238" y="238" font-size="15" fill="#7a4a8c">f（沿接触面·阻碍相对滑动）</text>
+  <text x="240" y="120" font-size="14.5" fill="#555">测力计示数 = 摩擦力大小（匀速时）</text>
+  <text x="470" y="290" font-size="14" fill="#555">图3.2-1重绘｜木块在水平木板上滑动·支持力F&#8202;N竖直向上</text>
+</svg>
+<div class="figcap">图A（重绘自教材图3.2-1）｜这张图在说什么：测力计拖着木块<b>匀速</b>滑——示数才等于摩擦力（平衡了才相等）；F<sub>N</sub>垂直于接触面向上，摩擦力沿接触面、跟木块<b>相对木板</b>滑动的方向相反。</div>
+</div>
+<div class="pit">
+<span class="tag">坑点·"相对运动"≠"运动"</span>　超市传送带把行李箱往前送：箱子<b>相对地面</b>在往前运动，但它<b>相对传送带</b>没动（静摩擦）；启动瞬间行李箱相对传送带向后蹭，传送带给它向前的摩擦力带着它走——<span class="note-red">摩擦力的参照物是"接触的另一个物体"，不是地面</span>。判方向三步走：①谁跟谁接触？②谁相对谁往哪蹭？③摩擦力就把"蹭"反着顶回去。
+</div>
+<div class="try">
+<span class="q">验一验①（自编·判方向）：</span><span class="a">黑板擦在黑板上向左擦动：黑板擦相对黑板向左滑 → 黑板给擦子的滑动摩擦力向<b>右</b>（沿黑板面）；同时擦子给黑板的摩擦力向<b>左</b>——摩擦力成对出现、方向相反（分别作用在两个物体上），"拖后腿"从来都是双向的。</span>
+</div>
+
+<h2><span class="step-tag">第二步</span>F<sub>f</sub> = μF<sub>压</sub>——比例常数μ登场（p63-64）</h2>
+<p>教材p63接着定量：<b>通过进一步的定量实验，测量同一接触面不同压力下的滑动摩擦力大小，结果表明：滑动摩擦力的大小跟压力的大小成正比。如果用F<sub>f</sub>表示滑动摩擦力的大小，用F<sub>压</sub>表示压力的大小，则有</b></p>
+<div class="key">
+<div class="big"><mark class="nb">F<sub>f</sub> = μF<sub>压</sub></mark></div>
+<b>其中，μ是比例常数，叫作动摩擦因数（dynamic friction factor）。它的值跟接触面有关，接触面材料不同、粗糙程度不同，动摩擦因数也不同。</b>（教材p63原话）
+</div>
+<p>教材p64把F<sub>压</sub>落到实处：<b>在图3.2-1中，以木块在水平木板上滑动为例，木块所受的支持力为F<sub>N</sub>。由于木块对木板的压力大小等于F<sub>N</sub>，<sup>①</sup>所以动摩擦因数μ也可以表示为</b></p>
+<div class="key">
+<div class="big"><span class="m">μ = F<sub>f</sub> / F<sub>N</sub></span></div>
+<span class="detail">教材脚注①照录：<b>下节会学到这一知识。</b>——"压力大小等于支持力"要到3.3牛顿第三定律才正式证明，本节按教材节奏先直接使用。F<sub>f</sub>和F<sub>N</sub>是接触面上木块所受的两个力，F<sub>f</sub>在接触面内且与相对运动方向相反，F<sub>N</sub>与接触面垂直。</span>
+</div>
+<p><b>教材p64表·几种材料间的动摩擦因数</b>（查表口算全靠它）：</p>
+<table>
+<tr><th>材料</th><th>动摩擦因数</th><th>材料</th><th>动摩擦因数</th></tr>
+<tr><td>钢—钢</td><td>0.25</td><td>钢—冰</td><td>0.02</td></tr>
+<tr><td>木—木</td><td>0.30</td><td>木—冰</td><td>0.03</td></tr>
+<tr><td>木—金属</td><td>0.20</td><td>橡胶轮胎—路面（干）</td><td>0.71</td></tr>
+<tr><td>皮革—铸铁</td><td>0.28</td><td>木—皮带</td><td>0.40</td></tr>
+</table>
+<div class="pit">
+<span class="tag">坑点·μ是"接触面的性格"，不是算出来的数</span>　μ由<b>接触面的材料与粗糙程度</b>决定——钢对冰0.02（滑！），橡胶轮胎对干路面0.71（抓地！）。式子 μ = F<sub>f</sub>/F<sub>N</sub> 只是<b>测μ的尺子</b>（测出摩擦力和压力一除就得到μ），<span class="note-red">不能反过来说"μ跟F<sub>f</sub>成正比、跟F<sub>N</sub>成反比"</span>——换了压力，F<sub>f</sub>跟着变，比值μ纹丝不动。
+</div>
+<div class="try">
+<span class="q">验一验②（自编·查表计算）：</span><span class="a">木块在水平木面上滑动，木块重50 N（压力＝重力＝50 N）。查表木—木 μ = 0.30 → F<sub>f</sub> = 0.30×50 = <b>15 N</b>。若把它压到冰面上（木—冰 μ = 0.03），同样压力下 F<sub>f</sub> = 0.03×50 = <b>1.5 N</b>——差10倍，这就是冰道省力的账。</span>
+</div>
+
+<h2><span class="step-tag">第三步</span>例题精读（教材p64-65原题）——四个力、一次平衡、查一张表</h2>
+<div class="box"><b>【例题】（教材p64原题）</b>　在我国东北寒冷的冬季，有些地方用雪橇作为运输工具。一个有钢制滑板的雪橇，连同车上木料的总质量为 4.9×10³ kg。在水平的冰道上，马要在水平方向用多大的力，才能够拉着雪橇匀速前进？g 取 10 N/kg。</div>
+<p><b>分析（教材原话）：</b>将雪橇抽象为一个物体，如图3.2-2，雪橇在重力mg、支持力F<sub>N</sub>、马的拉力F和滑动摩擦力F<sub>f</sub>四个力的作用下，沿水平面匀速前进。根据二力平衡条件，拉力F与滑动摩擦力F<sub>f</sub>的大小相等，而F<sub>f</sub>与F<sub>N</sub>有关，F<sub>N</sub>的大小又等于mg，故可以求得拉力F。</p>
+<p><b>解（教材p64）：</b>雪橇所受重力 mg = 4.9×10⁴ N，查表得 μ = 0.02。雪橇匀速运动，拉力F与滑动摩擦力F<sub>f</sub>大小相等，即</p>
+<p><b>（教材p65续）</b>由于</p>
+<div class="big"><span class="m">F<sub>N</sub> = mg，　F<sub>f</sub> = μF<sub>N</sub> = μmg</span></div>
+<p>故</p>
+<div class="big"><mark class="nb">F = μmg = 0.02 × 4.9×10³ × 10 N = 980 N</mark></div>
+<p><b>（教材答案）马要在水平方向用 980 N 的力，才能够拉着雪橇匀速前进。</b></p>
+<div class="fig">
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图3.2-2重绘 雪橇四力受力图">
+  <defs><marker id="arB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c0392b"/></marker><marker id="arBg" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker></defs>
+  <line x1="80" y1="180" x2="640" y2="180" stroke="#555555" stroke-width="2"/>
+  <rect x="280" y="120" width="140" height="60" fill="#d9a866" stroke="#8a5a10" stroke-width="1.4"/>
+  <line x1="350" y1="120" x2="350" y2="55" stroke="#c0392b" stroke-width="2.2" marker-end="url(#arB)"/>
+  <text x="358" y="66" font-size="16" fill="#c0392b">F&#8202;N</text>
+  <line x1="350" y1="180" x2="350" y2="215" stroke="#c0392b" stroke-width="2.2" marker-end="url(#arB)"/>
+  <text x="358" y="228" font-size="16" fill="#c0392b">mg</text>
+  <line x1="420" y1="150" x2="520" y2="150" stroke="#c0392b" stroke-width="2.2" marker-end="url(#arB)"/>
+  <text x="526" y="142" font-size="16" fill="#c0392b">F</text>
+  <line x1="280" y1="150" x2="180" y2="150" stroke="#555555" stroke-width="2.2" marker-end="url(#arBg)"/>
+  <text x="120" y="142" font-size="16" fill="#555">F&#8202;f</text>
+  <text x="150" y="60" font-size="14.5" fill="#666">匀速 → 水平：F = F&#8202;f　·　竖直：F&#8202;N = mg</text>
+  <text x="360" y="170" font-size="13" fill="#777">（钢滑板—冰道：μ=0.02）</text>
+</svg>
+<div class="figcap">图B（重绘自教材图3.2-2）｜这张图在说什么：把雪橇看成一个点，四个力摆到位——<b>水平方向一对</b>（拉力F ↔ 摩擦F<sub>f</sub>，匀速所以相等），<b>竖直方向一对</b>（支持F<sub>N</sub> ↔ 重力mg，所以相等）。链条：F = F<sub>f</sub> = μF<sub>N</sub> = μmg。</div>
+</div>
+<div class="try">
+<span class="q">验一验③（自编·同题换面）：</span><span class="a">同一个雪橇（总重4.9×10⁴ N）换到木—皮带滑道上（查表μ = 0.40）匀速拖动：F = μmg = 0.40×4.9×10⁴ = <b>1.96×10⁴ N</b>——是冰道980 N的20倍。视角换成"已知拉力反查μ"也行：匀速时 μ = F/mg，测出F和重一除即得。</span>
+</div>
+
+<h2><span class="step-tag">第四步</span>静摩擦力——不动的力，是个"变色龙"（p65-66）</h2>
+<p>教材p65先抛问题：<b>相互接触的物体处于相对静止时，是不是也可能存在摩擦力？</b>接着给场景：<b>如图3.2-3，人用平行于地面的力推沙发，沙发有相对地面运动的趋势，但它没有被推动，沙发与地面仍然保持相对静止。根据二力平衡的知识可知，这时一定有一个力与推力平衡。这个力与人对沙发的推力大小相等、方向相反。这个力就是沙发与地面之间的摩擦力。</b></p>
+<div class="key">
+<b>定义与方向（教材p65）：</b>由于这时相互接触的两个物体之间只有相对运动的<b>趋势</b>，而没有相对运动，所以这时的摩擦力叫作<span class="ul-blue">静摩擦力（static frictional force）</span>。静摩擦力的方向总是跟物体<b>相对运动趋势的方向相反</b>。只要沙发与地面间没有产生相对运动，静摩擦力的大小就<b>随着推力的增大而增大，并与推力保持大小相等</b>。
+</div>
+<p>教材p65-66"演示"栏目把这条变色龙请进实验室：<b>把木块放在水平长木板上，用弹簧测力计沿水平方向拉木块。在拉力F增大到一定值之前，木块不会运动，此种情况下静摩擦力的大小等于拉力的大小。在弹簧测力计的指针下轻塞一个小纸团，它可以随指针移动，并作为指针到达最大位置的标记（图3.2-4）。继续用力，当拉力达到某一数值时木块开始移动，此时拉力会突然变小。</b>教材还给了"进阶版"：<b>如果用力传感器代替弹簧测力计做这个实验，能够在计算机屏幕上直接得到拉力随时间变化的F-t图像（图3.2-5）。</b></p>
+<div class="fig">
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图3.2-5重绘 力传感器F-t图像 静摩擦峰值后回落">
+  <defs><marker id="arC" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker></defs>
+  <line x1="70" y1="250" x2="615" y2="250" stroke="#555555" stroke-width="1.6" marker-end="url(#arC)"/>
+  <line x1="70" y1="250" x2="70" y2="40" stroke="#555555" stroke-width="1.6" marker-end="url(#arC)"/>
+  <line x1="66" y1="166" x2="74" y2="166" stroke="#555555" stroke-width="1.4"/>
+  <line x1="66" y1="82" x2="74" y2="82" stroke="#555555" stroke-width="1.4"/>
+  <text x="40" y="170" font-size="14" fill="#555">2</text>
+  <text x="40" y="86" font-size="14" fill="#555">4</text>
+  <line x1="479.7" y1="250" x2="479.7" y2="245" stroke="#555555" stroke-width="1.2"/>
+  <line x1="516.9" y1="250" x2="516.9" y2="245" stroke="#555555" stroke-width="1.2"/>
+  <line x1="554.1" y1="250" x2="554.1" y2="245" stroke="#555555" stroke-width="1.2"/>
+  <line x1="591.4" y1="250" x2="591.4" y2="245" stroke="#555555" stroke-width="1.2"/>
+  <text x="475" y="272" font-size="13" fill="#555">11</text>
+  <text x="512" y="272" font-size="13" fill="#555">12</text>
+  <text x="549" y="272" font-size="13" fill="#555">13</text>
+  <text x="586" y="272" font-size="13" fill="#555">14</text>
+  <path d="M70,250 L472.2,250 L494.6,100.9 L500.1,134.5 L606.3,134.5" fill="none" stroke="#c05a6a" stroke-width="2.4" stroke-linejoin="round"/>
+  <text x="497" y="90" font-size="15" fill="#c0392b">F&#8202;max</text>
+  <text x="560" y="122" font-size="13.5" fill="#8a6a72">滑动摩擦（平稳段）</text>
+  <text x="120" y="230" font-size="13.5" fill="#8a6a72">静止段：静摩擦＝拉力，同步增大</text>
+  <text x="52" y="36" font-size="14" fill="#555">F/N</text>
+  <text x="608" y="272" font-size="14" fill="#555">t/s</text>
+</svg>
+<div class="figcap">图C（重绘自教材图3.2-5·原照片读数为目测近似：峰值略低于4 N、平稳段约2.7-2.8 N，以原影印为准）｜这张图在说什么：拉力慢慢加，静摩擦力<b>跟着长</b>（0→F<sub>max</sub>）；一超过F<sub>max</sub>木块"嗖"地动了，曲线<b>突然跳水</b>落到平稳段——那段平稳值才是滑动摩擦力。<b>尖峰＞平台</b>＝最大静摩擦力略大于滑动摩擦力。</div>
+</div>
+<div class="key">
+<b>限度（教材p66）：</b>静摩擦力的增大有一个限度。图3.2-5中木块所受静摩擦力的最大值F<sub>max</sub>在数值上等于物体即将开始运动时的拉力。两物体之间实际产生的静摩擦力F在0与最大静摩擦力F<sub>max</sub>之间，即
+<div class="big"><mark class="nb">0 ＜ F ≤ F<sub>max</sub></mark></div>
+<b>（教材p66）</b>瓶子可以拿在手中，靠的是静摩擦力的作用。皮带运输机能把货物送往高处，也是静摩擦力作用的结果。
+</div>
+<div class="pit">
+<span class="tag">坑点·静摩擦力不是"定值"，是"看外力脸色的被动力"</span>　水平推箱子：推10 N没推动 → 静摩擦10 N；推15 N没推动 → 静摩擦15 N——<b>它始终跟外力打平</b>，上限才是F<sub>max</sub>。<span class="note-red">上来就写 f = μF<sub>N</sub> 是这类题的第一大错</span>——那条公式是<b>滑动</b>摩擦力的；物体没动，先问"外力多大"，静摩擦力就多大。反之，一旦滑动起来，摩擦力反而<b>锁死</b>在μF<sub>N</sub>不再随推力变。
+</div>
+<div class="try">
+<span class="q">验一验④（自编·三段状态）：</span><span class="a">木箱重100 N、地板间F<sub>max</sub>=35 N、滑动摩擦30 N（本节练习第3题数据先借用）：①推20 N→没动，静摩擦=<b>20 N</b>（不是30也不是35）；②推40 N→动了，摩擦=<b>30 N</b>（锁死在μF<sub>N</sub>）；③匀速拖动→拉力必为<b>30 N</b>（平衡）。三个数对应三条规则：随外力、被锁死、平衡相等。</span>
+</div>
+
+<h2><span class="step-tag">栏目</span>科学漫步（教材p66-67照录）·流体的阻力</h2>
+<p>教材p66-67"科学漫步"：<b>气体和液体都具有流动性，统称为流体。物体在流体中运动时，要受到流体的阻力，阻力的方向与物体相对于流体运动的方向相反。</b>汽车、火车和飞机等在空气中运动，要受到空气的阻力。轮船、潜艇在水面或水下航行，要受到水的阻力。<b>流体的阻力跟物体相对于流体的速度有关，速度越大，阻力越大。</b>雨滴在空气中下落，速度越来越大，所受空气阻力也越来越大。<b>当阻力增加到跟雨滴所受的重力相等时，二力平衡，雨滴匀速下落。</b>流体的阻力还跟物体的横截面积有关，横截面积越大，阻力越大。跳伞运动员、飞船返回舱在空中张开降落伞，凭借降落伞较大的横截面积获得较大的空气阻力，安全落地。流体的阻力还跟物体的形状有关系。<b>头圆尾尖的物体所受的流体阻力较小，这种形状通常叫作流线型。</b>为了减小阻力，轮船的水下部分采用了流线型（图3.2-6）。一般来说，空气阻力比液体阻力、固体间的摩擦力都要小。气垫船靠船下喷出的气体，浮在水面航行，受到的阻力小。磁浮列车靠电磁力使列车悬浮在轨道上，速度可达500 km/h。</p>
+<div class="try">
+<span class="q">验一验⑤（自编·回链2.2）：</span><span class="a">雨滴匀速下落 = 平衡态（阻力 f ＝ 重力 mg）——正是2.2"匀速直线运动＝合力为零"的实战版。先加速（f＜mg）、f随速度变大、f＝mg起匀速：这条"加速→平衡"曲线，等学到4.2牛顿第二定律还能再算一遍。</span>
+</div>
+
+<h2><span class="step-tag">节末自测</span>先自己做，再对答案（教材p67练习与应用原题）</h2>
+<div class="try"><span class="q">第1题（教材p67原题）</span><span class="a" style="color:#c8d2dc">手压着桌面向前移动，会明显地感觉到有阻力阻碍手的移动。手对桌面的压力越大，阻力越大。试一试，并说明道理。</span></div>
+<p><span class="ans"><b>参考答案：</b>手与桌面发生相对滑动 → 手受到<b>滑动摩擦力</b>，方向沿桌面、与手相对桌面运动的方向相反（向后）。道理：滑动摩擦力与压力成正比（F<sub>f</sub> = μF<sub>压</sub>）——手压得越重，压力越大，F<sub>f</sub>越大，阻力感越明显。</span></p>
+<div class="try"><span class="q">第2题（教材p67原题·四连判）</span><span class="a" style="color:#c8d2dc">一只玻璃瓶，在下列情况下是否受到摩擦力？如果受到摩擦力，摩擦力朝什么方向？（1）瓶子静止在粗糙水平桌面上。（2）瓶子静止在倾斜的桌面上。（3）瓶子被瓶口朝上握在手中静止。（4）瓶子压着一张纸条，扶住瓶子把纸条抽出。</span></div>
+<p><span class="ans"><b>参考答案：</b>（1）<b>不受</b>——水平方向既没运动也没趋势，没有摩擦力"登场"的理由（若有，瓶子就没法平衡了）。（2）<b>受静摩擦力</b>，沿斜面向上——瓶子有沿斜面下滑的趋势，静摩擦力与趋势方向相反。（3）<b>受静摩擦力</b>，竖直向上——瓶子有下落的趋势（重力），手给的静摩擦力与重力平衡。（4）<b>受滑动摩擦力</b>，方向与纸条被抽出的方向<b>相同</b>——纸条相对瓶向前滑，瓶相对纸条向后蹭，纸条给瓶的摩擦力阻碍"后蹭"、指向抽出方向（抽得快时瓶子会跟着挪一点，就是这个力）。</span></p>
+<div class="try"><span class="q">第3题（教材p67原题·填空四连）</span><span class="a" style="color:#c8d2dc">所受重力为 100 N 的木箱放在水平地板上，至少要用 35 N 的水平推力，才能使它从原地开始运动。木箱从原地移动以后，用 30 N 的水平推力，就可以使木箱继续做匀速直线运动。由此可知：木箱与地板之间的最大静摩擦力 F<sub>max</sub> = ______；木箱所受的滑动摩擦力 F<sub>f</sub> = ______，木箱与地板之间的动摩擦因数 μ = ______；如果用 20 N 的水平推力推这个静止的木箱，木箱所受的摩擦力大小为 ______。</span></div>
+<p><span class="ans"><b>参考答案：</b>"至少35 N才能动" → <b>F<sub>max</sub> = 35 N</b>；"匀速30 N" → 滑动摩擦 <b>F<sub>f</sub> = 30 N</b>；μ = F<sub>f</sub>/F<sub>N</sub> = 30/100 = <b>0.30</b>；20 N ＜ F<sub>max</sub> = 35 N → 推不动 → 静摩擦与推力打平 = <b>20 N</b>（千万别填30或35——它根本没滑动）。顺带一读：35 ＞ 30，教材数据再次印证"最大静摩擦略大于滑动摩擦"。</span></p>
+<div class="try"><span class="q">第4题（教材p67原题）</span><span class="a" style="color:#c8d2dc">所受重力为 500 N 的雪橇，在平坦的雪地上用 10 N 的水平拉力恰好可以拉着空雪橇做匀速直线运动。如果雪橇再载重 500 N 的货物，那么，雪橇在该雪地上滑行时受到的摩擦力是多少？</span></div>
+<p><span class="ans"><b>参考答案：</b>空载匀速 → 摩擦＝拉力：F<sub>f</sub> = 10 N = μ×500 → <b>μ = 0.02</b>（雪橇—雪地，跟例题钢—冰同量级）。载货后总压力 F<sub>N</sub> = 500＋500 = 1000 N，滑行时 F<sub>f</sub>′ = μF<sub>N</sub> = 0.02×1000 = <b>20 N</b>。μ不变、压力翻倍 → 摩擦翻倍——"正比"关系的直接演练。</span></p>
+
+<h2><span class="step-tag">收口</span>合上书，三问自答</h2>
+<div class="check">
+<span class="tag">复述体三问</span>
+<p>① 滑动摩擦力的方向跟"运动方向"相反，对吗？错在哪两个字上？（答不上回<span style="color:#58d68d">第一步坑点"相对运动≠运动"</span>）<br>
+② F<sub>f</sub> = μF<sub>N</sub> 里，μ 谁说了算？能不能说"μ与F<sub>f</sub>成正比"？（答不上回<span style="color:#58d68d">第二步坑点"μ是接触面的性格"</span>）<br>
+③ 推箱子没推动，摩擦力多大？怎么算？（答不上回<span style="color:#58d68d">第四步坑点"被动力"+验一验④</span>）</p>
+</div>
+
+<div class="fig">
+<svg viewBox="0 0 720 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图G：第三章五节串联">
+  <defs><marker id="arG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <rect x="15" y="55" width="118" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="74" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">3.1 重力与弹力</text><text x="74" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">G=mg·F⊥接触面</text>
+  <line x1="133" y1="87" x2="153" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="295" y="48" width="130" height="78" rx="7" fill="#14202b" stroke="#4a9eff" stroke-width="2"/><text x="360" y="74" font-size="13.5" fill="#cfe4ff" text-anchor="middle" font-weight="bold">本节 3.2 摩擦力</text><text x="360" y="96" font-size="12" fill="#9fc3e8" text-anchor="middle">F&#8202;f = μF&#8202;N</text><text x="360" y="114" font-size="12" fill="#9fc3e8" text-anchor="middle">0 ＜ F ≤ F&#8202;max</text>
+  <line x1="273" y1="87" x2="293" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <line x1="427" y1="87" x2="447" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="449" y="55" width="118" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="508" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">3.3 牛顿第三定律</text><text x="508" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">压力=支持力待证</text>
+  <line x1="567" y1="87" x2="587" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="589" y="55" width="118" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="648" y="82" font-size="13" fill="#9fb2c8" text-anchor="middle">3.4/3.5 合成·分解</text><text x="648" y="103" font-size="12" fill="#7d8a99" text-anchor="middle">多力登场</text>
+  <text x="360" y="30" font-size="14" fill="#7d8a99" text-anchor="middle">第三章 相互作用——力：3.1认识了重力弹力，本节补上摩擦力——下一站3.3把"压力=支持力"的欠条兑现</text>
+</svg>
+<div class="figcap">图G（本节位置图）｜3.1重力与弹力→<b>3.2摩擦力（本节）</b>→3.3牛顿第三定律→3.4力的合成→3.5力的分解：相互作用"三兄弟"（重力/弹力/摩擦力）在本节集齐。</div>
+</div>
+
+<h3>考位锚（T11）·高考怎么考</h3>
+<p class="small">· 考什么：滑动/静摩擦力的<b>有无与方向判断</b>（"相对"两个字是命题眼）、F<sub>f</sub> = μF<sub>N</sub> 计算、静摩擦力的被动力属性（0＜F≤F<sub>max</sub>）、最大静摩擦与滑动摩擦的大小关系、摩擦力与二力平衡/牛顿定律的组合。<br>· 怎么考：选择题判断摩擦力方向与大小（传送带/斜面/手握瓶情境——教材练习第2、3题同款）、实验题（探究静摩擦/滑动摩擦、力传感器F-t图像——教材"演示"栏目的直改）、大题第一问受力分析打底，后续与牛顿第二定律深度组合。<br>· 真题锚：候采——对证源卷源池（v2.8-v2.11）暂未录入 3.2 对口卷源，不代拟；候池内补录后回填。</p>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① <b>"被动力"这个词</b>：静摩擦力与支持力都属"被动力"——它们不主动定值，随外力/形变"应变"（静摩擦随外力，支持力随压紧程度）；而重力这种"主动性"的力不看谁的脸色。② <b>F<sub>max</sub> ≈ μF<sub>N</sub> 的近似</b>：很多题目把最大静摩擦力近似取成滑动摩擦力（图C尖峰→平台落差很小），但教材第3题特意给了 35 vs 30 让你看出差别——审题时看清给的是哪个数。③ <b>测μ的实验思想</b>：匀速拉动时拉力=摩擦力（二力平衡），读出拉力、称出重力，μ = F/mg 一把出——"平衡法测摩擦"是后续实验题的常客。④ <b>增大与减小摩擦</b>：鞋底花纹/轮胎纹（增大粗糙程度）、刹车捏闸（增大压力）都是增大有益摩擦；滚动轴承（滚动代滑动）、加润滑油（润滑）、气垫船磁浮列车（接触面分离——回链科学漫步500 km/h）都是减小有害摩擦。
+</div>
+
+<div class="foot">
+<em>素材源溯源（foot区·豁免条款）：影印源＝国家中小学智慧教育平台教材电子版·普通高中教科书·物理必修 第一册（人教版）·contentId 708256b6-6f06-4d14-89c7-4df16dfe3b81·ts=1787023183495（1031午后ndrv2/resources详情API实时取·title核对人教正本·与速查表物理行同值批次稳定）·图68-73→印刷页p63-68·偏移N-5·本节影印范围p63-67（3.3节名页p68=图73为节界边界锚）·影印对照逐页直读（p63页脚"第三章 相互作用——力 63"/p64页脚"64 高中物理必修第一册"/p65页脚"第三章 相互作用——力 65"/p66页脚"66 高中物理必修第一册"/p67页脚"第三章 相互作用——力 67"/p68节名"3 牛顿第三定律"）·节界互证：左界p63=3.1交付行右界实锚（f793238"图68=p63《摩擦力》节名页下界硬锚"）·右界p68=3.3节名页本席图73目检实锚·本件为自学辅导讲义·教材原文引用仅作教学讲解用途·原文以纸质教材为准。</em>
+</div>
+</div>
+</body>
+</html>
