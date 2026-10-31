@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理4.3 海洋与人类 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .step-tag.ans { background: #6fc36f; }
+  .talk { background: #1a212b; border-left: 4px solid #4a9eff; padding: 14px 18px; margin: 18px 0; border-radius: 6px; }
+  .check { background: #16202b; border: 1px solid #2d4a63; padding: 14px 18px; margin: 18px 0; border-radius: 6px; }
+  .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag, .alt .tag { display: inline-block; background: #2d4a63; color: #cfe3f7; font-size: 12px; font-weight: bold; padding: 1px 8px; border-radius: 4px; margin-right: 6px; }
+  .try, .pit, .key, .box, .alt { padding: 14px 18px; margin: 18px 0; border-radius: 6px; border: 1px solid #333; }
+  .try { background: #14202a; border-color: #2d6a4f; }
+  .pit { background: #241418; border-color: #8a4a5a; }
+  .key { background: #14202c; border-color: #3a6a9e; }
+  .box { background: #1a1a26; border-color: #6a5a9e; }
+  .alt { background: #161e14; border-color: #5a7a4a; }
+  .note-red { background: #241418; border-left: 4px solid #d46a7a; padding: 10px 16px; margin: 14px 0; border-radius: 4px; }
+  .note-yellow { background: #262014; border-left: 4px solid #d4b46a; padding: 10px 16px; margin: 14px 0; border-radius: 4px; }
+  mark { background: #3a5a2e; color: #e8f5d8; padding: 0 4px; border-radius: 3px; }
+  .fig { background: #10141c; border: 1px solid #263244; border-radius: 8px; padding: 12px; margin: 18px 0; text-align: center; }
+  .fig p { color: #8fa3b8; font-size: 13px; margin: 6px 0 0; }
+  .small { color: #7d8a99; font-size: 14px; }
+  .foot { margin-top: 50px; padding-top: 16px; border-top: 1px solid #2a3442; color: #667382; font-size: 12.5px; line-height: 1.7; }
+  table.cmp { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+  table.cmp th { background: #1c2a3d; color: #cfe3f7; padding: 8px 10px; border: 1px solid #2d4a63; text-align: left; }
+  table.cmp td { padding: 8px 10px; border: 1px solid #263244; vertical-align: top; }
+  ul { margin: 8px 0 8px 24px; } li { margin: 6px 0; }
+  @media print {
+    body { background: #ffffff !important; color: #222222 !important; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3 { color: #111111 !important; }
+    .talk { background: #eef4fb !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .check { background: #f2f7f2 !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .try { background: #f0f7f2 !important; border-color: #2d6a4f !important; color: #222222 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .box { background: #f3effc !important; border-color: #b6a8d4 !important; color: #222222 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .note-red { background: #fdf2f4 !important; border-left-color: #d46a7a !important; color: #333333 !important; }
+    .note-yellow { background: #fdf8e3 !important; color: #222222 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>地理4.3 海洋与人类 · 零基础首学版</h1>
+<div class="sub">湘教版《高中地理·必修第一册》第四章 第三节（教材p112-118·第四章收官节）· 零基础首学版 · 读完约35分钟</div>
+
+<div class="talk"><b>从7000年前的一根木头说起：</b>我国浙江沿海居民<b>7000年前</b>就能驾驶独木舟出海探险（教材p112探究）；同时代的古希腊人把冒险与恐惧写进《荷马史诗》——狂风巨浪、船毁人亡。7000年后，人类开着<b>可燃冰试采船</b>（2017年5月南海试采成功）和<b>3000多个自动浮标</b>织成的观测网重返大海。这节是第四章收官：先盘点海洋这个<b>"资源宝库"</b>给了我们什么，再算算我们的<b>开发账单</b>欠了海洋什么，最后讨论怎么把账还上。</div>
+
+<div class="check"><span class="tag">读完这节你能</span><br>① 报出海洋三库（生物资源/矿产资源/空间资源）各自的代表数据，说出海洋生物约<b>20万种</b>、海洋石油约占全球总储量<b>34%</b>、可燃冰储量约为油气<b>2倍</b>；<br>② 用<b>生物富集作用</b>解释"一条食物链顶端的动物为什么最危险"，按倍数链复述滴滴涕案例（浮游生物1.3万倍→水鸟<b>858万倍</b>）；<br>③ 列举人类活动对海洋的影响三型（过度捕捞/污染/栖息地破坏）与保护三路径（改进捕捞方式/加大污染整治/保护关键栖息地）；<br>④ 就"黄色陆地文明→蓝色海洋文明"的转变提出有依据的观点。</div>
+
+<p class="small"><b>本件位置：</b>第四章收官——3.1/3.2拆了"水与大气怎么热"，4.1/4.2拆了"水怎么循环、海什么性质怎么动"，本节回答最后一问：<b>这片水，人类拿它当了什么，又欠了它什么</b>。下一站离开水圈，进第五章"地球上的植被与土壤"。</p>
+
+<h2><span class="step-tag">预备步</span>海洋的"三重身份"——资源宝库、运输通道、生态屏障</h2>
+<p>教材开场一句话先把海洋的身份摆全：<b>海水养殖、石油开采、填海造陆等产业活动让人类获得丰厚回报</b>（资源宝库身份）；<b>海洋交通运输长期占据重要地位，具有<mark>运量大、价格低、污染少</mark>的特点</b>（运输通道身份）；而"不合理的海洋开发方式，使得海洋的生态环境面临着多种威胁"（生态屏障身份——这提醒我们后面要算的"账单"）。记住这个三重身份框架，本节两大栏目（一、海洋为人类提供丰富的资源/二、人类活动对海洋的影响）就挂在它上面。</p>
+
+<h2><span class="step-tag">第一步</span>资源宝库三连开——生物、矿产、空间</h2>
+<h3>库一：海洋生物资源（p112）——20万种里的"鱼虾贝藻"</h3>
+<p><mark>海洋生物资源又称海洋水产资源</mark>，指海洋中蕴藏的经济动物和植物群体，是<b>有生命、能自行增殖和不断再生</b>的海洋资源（教材p112）。海洋生物约有<mark>20万种</mark>，其中鱼类、虾类、贝类、藻类等，为人类提供丰富多样的食品、生活用品和工业原料；以海洋生物为原料或从中提取有效成分，还可以生产<b>化学药品、保健品和基因工程药物</b>。</p>
+<div class="alt"><span class="tag"> alt·教材阅读（p113）</span><b>深海热液生物和冷泉生物——"万物生长靠太阳"被改写：</b>1977年美国科学家搭乘"阿尔文"号深潜器，在<b>科隆群岛附近海域</b>海底首次发现活动的热液喷口和丰富的热液生物群（呼应4.2的科隆群岛阅读！）。这些生物大多生活在<b>水深超过2000米</b>的海底，常年高温高压黑暗，<b>不依靠太阳光进行光合作用</b>，而是通过生化作用生产有机质——这样的食物链被称为<b>"黑暗食物链"</b>。从海底喷溢出的流体温度明显高于周围海水的称为<b>热液</b>，接近的称为<b>冷泉</b>；热液生态系统与冷泉生态系统并称<b>"深海绿洲"</b>。这些生物非常原始、接近所有生命的共同祖先——深海热液活动区<b>可能是生命起源的地方</b>（图4-26）。</div>
+
+<h3>库二：海洋矿产资源（p114）——石油、可燃冰与"海底银行"</h3>
+<p>海洋矿产家底厚，教材给了一串硬数据：全球海洋<b>石油资源储量约占全球石油资源总储量的<mark>34%</mark></b>，目前探明率仅30%左右，尚处勘探早期；海洋油气资源<b>主要分布在<mark>大陆架</mark></b>，约占全球海洋油气资源总储量的<mark>60%</mark>；大陆坡的深水、超深水油气潜力可观，<b>未来世界油气资源总储量的近<mark>40%</mark>将来源于深海</b>，而目前仅开发了<mark>3%</mark>——我国沿海有广阔的大陆架，很有希望成为未来的<b>"石油之海"</b>。更猛的是<b>可燃冰</b>：分布于深海沉积物（或陆域永久冻土）中，是天然气与水在<b>高压低温</b>条件下形成的类冰状结晶物质，外观像冰、遇火即燃；科学家估计<b>全球可燃冰储量是现有石油、天然气储量的2倍</b>——<mark>2017年5月，我国在南海海域试采可燃冰获得成功</mark>（世界级里程碑）。还有<b>锰结核</b>：多分布在<b>深海4000米以下</b>，全球海洋正以<b>1000万吨/年</b>的速度在洋底不断堆积（教材泡泡）。</p>
+<div class="alt"><span class="tag"> alt·教材阅读（p114）</span><b>滨海砂矿：</b>海滨地带或陆架区沉积富集而成的矿藏，分非金属砂矿、重金属砂矿、宝石及稀有金属砂矿三大类。海滨沉积物中蕴藏金刚石、砂金、砂铂、金红石、锆石、独居石、钛铁矿等——钛可从金红石、钛铁矿中提取，是比重小、强度大、耐腐蚀、耐高温的重要战略金属，广泛应用于航空航天；目前世界上所生产的大部分锆石、金红石、独居石、钛铁矿均来自滨海砂矿。</div>
+
+<h3>库三：海洋空间资源（p115）——从港口到海底仓储</h3>
+<p>世界人口迅猛增长、陆地空间日益拥挤，<b>海洋空间资源</b>的开发利用引起广泛关注。当今海洋建筑工程水平不断提升，利用包括：<b>运输空间</b>（传统的交通运输和港口建设，现代化的跨海大桥、海底隧道、海上机场）；<b>海上生产生活空间</b>（海上工厂和人工岛、海上博览会等）；还有<b>海底通信、海底仓储、海洋军事基地、近海利用</b>等方面（教材p115）。<b>海上人工岛</b>是代表作品：人工建造的岛屿（有时也在小岛和暗礁上建造），通过海堤、栈桥、海底隧道与海岸相连——日本神户人工岛、规模宏大的大阪国际机场（建在大阪湾人工岛上），美国、荷兰、法国、中国等相继修建；人工岛可作深水港，修建城市、机场、公园、工厂（图4-27）。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" width="100%">
+  <rect x="0" y="0" width="720" height="260" fill="#0f1520"/>
+  <text x="360" y="28" fill="#d8dee6" font-size="15" text-anchor="middle">资源宝库"三库"盘点（教材p112-115数据锚）</text>
+  <rect x="30" y="50" width="210" height="170" rx="10" fill="#152a1e" stroke="#3a7a5a"/>
+  <text x="135" y="76" fill="#8fd48a" font-size="14" text-anchor="middle">① 生物资源</text>
+  <text x="135" y="104" fill="#e8f5d8" font-size="20" text-anchor="middle">20万种</text>
+  <text x="135" y="128" fill="#a8c8a0" font-size="12" text-anchor="middle">鱼类虾类贝类藻类</text>
+  <text x="135" y="148" fill="#a8c8a0" font-size="12" text-anchor="middle">食品·生活用品·工业原料</text>
+  <text x="135" y="168" fill="#a8c8a0" font-size="12" text-anchor="middle">→化学药品·保健品·基因工程药物</text>
+  <text x="135" y="198" fill="#6a8a66" font-size="11" text-anchor="middle">可再生·自行增殖（p112）</text>
+  <rect x="255" y="50" width="210" height="170" rx="10" fill="#2a2415" stroke="#7a6a3a"/>
+  <text x="360" y="76" fill="#e8c88a" font-size="14" text-anchor="middle">② 矿产资源</text>
+  <text x="360" y="104" fill="#e8f5d8" font-size="20" text-anchor="middle">34% / 2倍</text>
+  <text x="360" y="128" fill="#c8b890" font-size="12" text-anchor="middle">石油占全球34%·可燃冰=油气2倍</text>
+  <text x="360" y="148" fill="#c8b890" font-size="12" text-anchor="middle">大陆架集中60%·深海40%待开</text>
+  <text x="360" y="168" fill="#c8b890" font-size="12" text-anchor="middle">锰结核4000米以下·1000万吨/年</text>
+  <text x="360" y="198" fill="#8a7a56" font-size="11" text-anchor="middle">非再生·勘探早期（p114）</text>
+  <rect x="480" y="50" width="210" height="170" rx="10" fill="#1a2233" stroke="#3a6a9e"/>
+  <text x="585" y="76" fill="#8ab8e0" font-size="14" text-anchor="middle">③ 空间资源</text>
+  <text x="585" y="104" fill="#e8f5d8" font-size="20" text-anchor="middle">三类利用</text>
+  <text x="585" y="128" fill="#90a8c8" font-size="12" text-anchor="middle">运输：大桥·隧道·海上机场</text>
+  <text x="585" y="148" fill="#90a8c8" font-size="12" text-anchor="middle">生产生活：工厂·人工岛·博览会</text>
+  <text x="585" y="168" fill="#90a8c8" font-size="12" text-anchor="middle">海底通信·仓储·军事基地</text>
+  <text x="585" y="198" fill="#5a7a9a" font-size="11" text-anchor="middle">缓解陆地拥挤（p115）</text>
+  <text x="360" y="245" fill="#5a6a7a" font-size="11" text-anchor="middle">判据提示：三库属性不同——生物可再生要"养"，矿产非再生要"省"，空间是一次投入长期收</text>
+</svg><p>图B · 资源宝库三库盘点（自绘汇总·非教材图·数据均p112-115直读）</p></div>
+
+<h2><span class="step-tag">第二步</span>人类的账单——活动对海洋的三笔欠账</h2>
+<p>海洋受到人类活动<b>直接或间接的影响</b>：捕捞、养殖、生物栖息地改造、工农业和人类生活的污染等（教材p116）。其中<b>对海岸带的影响尤为突出</b>——研究发现，人类活动对海岸带的影响，要比<b>全球气候变化所带来的影响更为深远和迅猛</b>。沿海地区的工农业生产，直接影响近海生态环境。海洋环境问题是困扰人类发展的重大问题（教材p117）。账单分三笔：</p>
+<h3>欠账一：过度捕捞——纽芬兰的"无鱼季"</h3>
+<p>一部分海区的渔业捕捞，<b>已超越了海洋生态的承载能力</b>：<mark>1992年，加拿大纽芬兰岛因过度捕捞导致渔业崩溃</mark>，整个渔季就没有捕到什么鱼，当地盛产的<b>鳕鱼更是不见踪影</b>（教材p117阅读）。世界自然基金会2015年报告：过去的20年里，<mark>海洋物种的数量大幅度下降</mark>，有些鱼类的数量更是<b>减少了3/4</b>，珊瑚礁、红树林、海草都在急剧减少。海洋生物急剧减少的主要原因是<b>人类的过度捕捞和对海洋生物栖息地的破坏</b>。</p>
+<h3>欠账二：石油污染——"深水地平线"的火与油</h3>
+<p><mark>2010年4月20日</mark>，英国石油公司租赁的钻井平台<b>"深水地平线"号</b>在墨西哥湾发生爆炸，导致石油大量泄漏；事故高峰期<b>每天漏油多达3万桶</b>，引发美国有史以来最为严重的石油污染——墨西哥湾生态环境遭受灭顶之灾，生物群落和沿岸渔业损毁严重；英国石油公司共花费数百亿美元，但环境灾难后果迄今尚未消除（教材p117活动，图4-29/4-30）。石油入海的危害你先自己想（本节"试一试"有答案口径）。</p>
+<h3>欠账三：生物富集——污染沿食物链"滚雪球"</h3>
+<p><mark>生物富集作用</mark>是指环境中的污染毒物（如<b>重金属、化学农药</b>），通过食物链在生物体内大量积聚的过程（教材p118）。教材的滴滴涕案例把"滚雪球"算到了极致：海洋中浮游生物体内滴滴涕浓度<b>比海水高1.3万倍</b>，吃浮游生物的小鱼<b>高14.3万倍</b>，吃小鱼的大鱼<b>高57.2万倍</b>，吃鱼的水鸟<b>高858万倍</b>（图4-31）——每上一级营养级，浓度放大数倍到数十倍，<b>站在食物链顶端的人类和大型食肉鸟，是污染的最终"汇聚点"</b>。所以"人类在陆地上任意排放有毒有害物质，不仅会严重破坏海洋生态环境，而且最终也会危及自身的生存"（p118活动2）——这就是我们自己在尝自己排出去的毒。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="100%">
+  <rect x="0" y="0" width="720" height="300" fill="#0f1520"/>
+  <defs><marker id="c1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a9eff"/></marker></defs>
+  <text x="360" y="30" fill="#d8dee6" font-size="15" text-anchor="middle">生物富集：污染沿食物链"滚雪球"（教材p118滴滴涕数据·倍数=比海水高X万倍）</text>
+  <rect x="80"  y="236" width="140" height="30" rx="6" fill="#26404f"/><text x="150" y="256" fill="#c8d4e0" font-size="13" text-anchor="middle">浮游生物</text><text x="235" y="256" fill="#8fd48a" font-size="13">1.3万倍</text>
+  <rect x="230" y="196" width="140" height="30" rx="6" fill="#2e4a3f"/><text x="300" y="216" fill="#c8d4e0" font-size="13" text-anchor="middle">小鱼</text><text x="385" y="216" fill="#8fd48a" font-size="13">14.3万倍</text>
+  <rect x="380" y="156" width="140" height="30" rx="6" fill="#37543a"/><text x="450" y="176" fill="#c8d4e0" font-size="13" text-anchor="middle">大鱼</text><text x="535" y="176" fill="#8fd48a" font-size="13">57.2万倍</text>
+  <rect x="530" y="116" width="140" height="30" rx="6" fill="#4a5a35"/><text x="600" y="136" fill="#c8d4e0" font-size="13" text-anchor="middle">水鸟（顶端）</text><text x="600" y="106" fill="#e8b98a" font-size="15">858万倍</text>
+  <path d="M150,236 C220,216 260,206 300,226" fill="none" stroke="#6a9adf" stroke-width="2.5" marker-end="url(#c1)"/>
+  <path d="M300,196 C370,176 410,166 450,186" fill="none" stroke="#6a9adf" stroke-width="2.5" marker-end="url(#c1)"/>
+  <path d="M450,156 C520,136 560,126 600,146" fill="none" stroke="#6a9adf" stroke-width="2.5" marker-end="url(#c1)"/>
+  <text x="360" y="285" fill="#5a6a7a" font-size="11" text-anchor="middle">每一级营养级都在"浓缩"上一级体内的毒物（依据p118泡泡数据与图4-31食物链自绘）</text>
+</svg><p>图A · 滴滴滴富集四级跳：1.3万→14.3万→57.2万→858万倍（geo43_calc.py单调递增断言留痕）</p></div>
+
+<h2><span class="step-tag">第三步</span>从索取到守护——还账三路径+两个开放题</h2>
+<p>海洋生物是<b>可再生资源</b>，前提是别把"再生的本金"捞光（教材p117阅读）。人类务必：<mark>改进捕捞方式</mark>（别竭泽而渔）、<mark>加大海洋污染整治力度</mark>（源头减排+应急处置）、<mark>加大对关键性海洋生物栖息地的保护力度</mark>（珊瑚礁、红树林、海草床这些"育儿室"），<b>谋求与海洋的和谐发展</b>。海洋环境保护的必要性：让海洋长久地为人类服务。</p>
+<div class="try"><span class="tag">试一试 1</span>教材p117活动原题（显式试答·口径以教材为准）：（1）大量石油进入海洋，会给海洋环境造成哪些危害？（2）查阅相关资料，了解海洋石油污染的处理办法。<p><span class="step-tag ans">试答</span>（1）<b>覆盖海面隔氧</b>→浮游生物缺氧死亡（食物链第一环塌方）；<b>黏附羽毛皮毛</b>→海鸟海兽失去保温与飞行能力；<b>有毒组分入链</b>→经生物富集放大最终回到人类餐桌；<b>破坏沿岸生态与渔业</b>（墨西哥湾案例：生物群落和沿岸渔业损毁严重）。（2）常见处置：围油栏<b>物理围堵</b>+收油机<b>机械回收</b>+吸油材料吸附+<b>燃烧法</b>（海况允许时）+<b>消油剂化学分散</b>+微生物<b>生物降解</b>——先物理回收再化学生物善后，兼顾效率与二次污染控制（查资料口径·候验方定性）。</p></div>
+<div class="try"><span class="tag">试一试 2</span>教材p112探究原题（显式试答）：有人认为，人类正从"黄色陆地文明"向"蓝色海洋文明"转变，你怎么看待这一观点？<p><span class="step-tag ans">试答</span>有道理的一面：陆地空间拥挤、资源探明率见顶，而海洋"三库"家底厚（石油34%仅探明30%、深海40%仅开发3%、可燃冰2倍储量）——开发重心向海洋倾斜是事实（人工岛/跨海大桥/海底仓储都是证据）。但要补一句冷静话：<b>转向海洋不等于转向"开发"</b>——本节第二步的三笔欠账说明，若延续不合理的开发方式，"蓝色文明"只会重演陆地文明的污染老路；真正的"蓝色海洋文明"应当是<b>开发与保护并重</b>的文明（观点题开放·此为参考口径）。</p></div>
+
+<h2><span class="step-tag">自测</span>四连过闸（显式试答）</h2>
+<div class="try"><span class="tag">自测 1</span>海洋资源三库各自举一个代表数据。<p><span class="step-tag ans">答</span>生物库=约<b>20万种</b>海洋生物；矿产库=海洋石油约占全球总储量<b>34%</b>（或可燃冰=油气储量2倍）；空间库=人工岛/跨海大桥/海底仓储任一实例。</p></div>
+<div class="try"><span class="tag">自测 2</span>为什么"深海绿洲"不需要阳光也能繁荣？<p><span class="step-tag ans">答</span>热液生物/冷泉生物<b>不依靠太阳光进行光合作用</b>，而是通过<b>生化作用生产有机质</b>（化学能替代光能），构成"黑暗食物链"（p113阅读）。</p></div>
+<div class="try"><span class="tag">自测 3</span>食物链顶端的动物为什么最"中招"？<p><span class="step-tag ans">答</span><b>生物富集作用</b>：污染毒物沿食物链在生物体内大量积聚，营养级越高浓度越大（滴滴涕：水鸟858万倍=浮游生物1.3万倍的660倍），顶端动物摄入的毒物浓度最高。</p></div>
+<div class="try"><span class="tag">自测 4</span>保护海洋生物资源的三条路径。<p><span class="step-tag ans">答</span><b>改进捕捞方式+加大海洋污染整治力度+加大对关键性海洋生物栖息地的保护力度</b>（p117阅读原口径）。</p></div>
+
+<div class="key"><span class="tag">关键卡</span>①三库数据：20万种/34%·60%·40%·3%/可燃冰2倍；②深海绿洲=热液+冷泉（黑暗食物链）；③生物富集=食物链逐级积聚（858万倍）；④保护三路径=改进捕捞+整治污染+保护栖息地。</div>
+<div class="pit"><span class="tag">易错</span>①"海洋生物资源=渔业"是窄化——还包括<b>化学药品、保健品和基因工程药物</b>原料（p112）；②"可燃冰=冰"是错觉——它是<b>天然气水合物</b>，外观像冰、<b>遇火即燃</b>；③"海洋空间资源=海运"是窄化——还有海上生产生活空间与海底通信/仓储/军事基地（p115）；④"可再生=随便用"是错觉——纽芬兰渔业崩溃证明<b>超过承载能力就崩溃</b>。</div>
+<div class="note-red"><b>保命三句：</b>①海洋石油"主要分布在大陆架"（60%），"未来40%来自深海"（目前仅开发3%）——两组数据别张冠李戴；②"热液"与"冷泉"的判据=<b>温度是否明显高于周围海水</b>；③1992年纽芬兰、2010年墨西哥湾、1992/2015三组时间地点数据对号入座，考试最爱拿来配对。</div>
+
+<h2><span class="step-tag">高考怎么考</span>两考向速览（考向概括·卷源候补）</h2>
+<p><b>考向一：资源开发评价类。</b>给材料（可燃冰试采/人工岛/滨海砂矿）要求评价开发条件与影响——母型=教材p116活动2（迪拜棕榈岛优缺点讨论）；答题模板=<b>有利（资源/空间/位置）+不利（生态/成本/灾害）+可持续建议</b>。</p>
+<p><b>考向二：环境污染机理类。</b>给污染事件要求分析危害与治理——母型=教材p117活动（深水地平线）+p118生物富集；答题模板=<b>污染物路径（覆盖/黏附/入链）+富集放大（营养级）+治理手段（围堵/回收/降解）</b>。本节无在库卷源直读件，卷源候补（foot声明）。</p>
+
+<h2><span class="step-tag">下一站</span>第五章 地球上的植被与土壤——从水圈回到大地</h2>
+<p>第四章"地球上的水"到此收官（水循环→海水性质和运动→海洋与人类）。下一章镜头落回脚下：<mark>第五章 地球上的植被与土壤</mark>（p119章首）——第一节《主要植被与自然环境》（p120起，内蒙古东部森林茂盛、中部草原、西部荒漠的"植被三段论"）会回答4.1鱼鳞坑活动的"上游问题"：植被到底怎么影响环境？土壤又是怎么被气候、生物"养成"的？</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" width="100%" role="img" aria-label="本节位置图：第四章三节次序与第五章去向">
+  <rect x="0" y="0" width="720" height="150" fill="#0f1520"/>
+  <text x="360" y="30" fill="#d8dee6" font-size="15" text-anchor="middle">第四章 地球上的水 · 节位图（收官）</text>
+  <rect x="40" y="58" width="190" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="135" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">4.1 水循环</text><text x="135" y="99" fill="#8fa3b8" font-size="11" text-anchor="middle">p89-97·已交付</text>
+  <line x1="232" y1="84" x2="282" y2="84" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#c1)"/>
+  <rect x="258" y="58" width="200" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="358" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">4.2 海水的性质和运动</text><text x="358" y="99" fill="#8fa3b8" font-size="11" text-anchor="middle">p98-111·已交付</text>
+  <line x1="460" y1="84" x2="510" y2="84" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#c1)"/>
+  <rect x="486" y="52" width="196" height="64" rx="8" fill="#264a5f" stroke="#4a9eff" stroke-width="2"/>
+  <text x="584" y="76" fill="#e8f5ff" font-size="13" text-anchor="middle">4.3 海洋与人类（本件）</text><text x="584" y="95" fill="#9ab8e0" font-size="11" text-anchor="middle">p112-118·第四章收官</text>
+  <line x1="684" y1="84" x2="712" y2="84" stroke="#9ab8e0" stroke-width="2.5" marker-end="url(#c1)"/>
+  <text x="700" y="106" fill="#6fc36f" font-size="12" text-anchor="middle">第五章</text>
+  <text x="360" y="136" fill="#5a6a7a" font-size="11" text-anchor="middle">p112=第三节节名页（左界·4.2交付行右界互证）· 节界双端实锚见附件1</text>
+</svg><p>图C · 本件在第四章中的位置：收官件——先懂水与海，再回大地看植被与土壤</p></div>
+
+<div class="foot">零基础首学版 v1.0（批3产出·队7席·第四章收官件）· 事实层素材源：湘教版《普通高中教科书·地理 必修 第一册》p112-118 官方影印逐页对照（湖南教育出版社·智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a·ts=1754905526079（同值链路·fig118-133十六图实测全200）·影印原件存席位私有 geo42_jc/h118-h126.jpg 零入仓·图号→印刷页N−6映射复核（h118=p112/h120=p114/h122=p116/h124=p118/h125=p119/h126=p120）·节界实锚：p112第三节"海洋与人类"节名页（左界·4.2交付行e5f89ef右界互证）至p118活动续页（域内末页）·p119=第五章"地球上的植被与土壤"章首跨页（右界界标·域外界标一并亲验报备）·p120=第一节"主要植被与自然环境"节名页（下一界标）·p112-118直读锚定：探究荷马史诗奥德修斯海上十年与浙江7000年前独木舟与山海经尚书与黄色陆地文明蓝色海洋文明两问与运量大价格低污染少与（一）海洋生物资源20万种p112/阅读深海热液生物冷泉生物1977阿尔文号2000米黑暗食物链深海绿洲图4-26 p113/（二）海洋矿产石油34%大陆架60%深海40%开发3%石油之海可燃冰2倍2017年5月南海试采锰结核4000米1000万吨每年滨海砂矿钛铌钽锆p114/（三）海洋空间资源运输生产生活通信仓储军事与海上人工岛神户大阪机场图4-27 p115/活动矿产讨论迪拜棕榈岛世界岛图4-28 2000.11.11vs2011.4.25与二、人类活动对海洋的影响p116/纽芬兰1992 WWF2015 3/4珊瑚礁红树林海草与深水地平线2010.4.20每天3万桶图4-29 4-30 p117/石油危害两问与生物富集滴滴涕1.3万14.3万57.2万858万倍图4-31与环保意见p118）<br>
+<br>本件为候验产出：走 dui7_43_1031 分支候终读，禁直推main。自测/试答块均已显式标注，数据与表述以教材影印为准。宁缺毋编：真题卷源未获取（本节无在库直读件），高考怎么考为考向概括（foot已声明）；现场与自测试答为显式口径候验方复核。(并行搜索员C·队7席·dui7@team7.local)</div>
+</div>
+</body>
+</html>
