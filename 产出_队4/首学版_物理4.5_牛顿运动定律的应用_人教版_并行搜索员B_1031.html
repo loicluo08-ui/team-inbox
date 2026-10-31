@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理4.5 牛顿运动定律的应用 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border-left: 4px solid #8a6a3a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 16px; color: #d9c9a8; }
+  .talk .tag { color: #e8b45a; font-weight: bold; }
+  .check { background: #16211a; border: 1px solid #2a4a34; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #2a4a6a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 16.5px; color: #cfe4ff; }
+  .key .m { display: block; text-align: center; font-size: 21px; margin: 10px 0; color: #fff; font-family: Georgia, serif; }
+  .pit { background: #241a1e; border-left: 4px solid #d64541; border-radius: 8px; padding: 12px 18px; margin: 14px 0; font-size: 15.5px; color: #e8c8c5; }
+  .pit .tag { color: #ff8a80; font-weight: bold; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  .try { background: #1a2416; border: 1px solid #3a5a2a; border-radius: 8px; padding: 12px 18px; margin: 14px 0; font-size: 15.5px; }
+  .try .q { color: #a8d98a; font-weight: bold; }
+  .try .a { color: #d8dee6; }
+  .fig { text-align: center; margin: 18px 0; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; color: #eef2f7; font-size: 16px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a323e; padding: 9px 12px; text-align: left; }
+  th { background: #1b2029; color: #fff; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  b { color: #f0f3f7; }
+  .alt { background: #1f1a26; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .ans { color: #58d68d; }
+  .small { font-size: 14px; color: #aab4c0; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 16px; line-height: 1.7; }
+  em { color: #1a5c99; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    p, .talk, .key, .pit, .detail, .figcap { color: #222; }
+    .sub, .small, .foot { color: #444; }
+    .try .q { color: #1e5c1e; } .try .a { color: #333; }
+    .pit .tag { color: #c0392b; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong, .note-red { color: #c0392b; }
+    em { color: #1a5c99; }
+    mark.nb, .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { background: #f0f0f0; color: #111; }
+    th, td { border-color: #bbb; }
+    .box { color: #222; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>牛顿运动定律的应用：受力与运动，一座叫"加速度"的桥</h1>
+<div class="sub">物理4.5 · "运动和力的关系"模块第五件（第四章 第5节）· 前面已学：4.1 牛顿第一定律、4.2 实验探究、4.3 牛顿第二定律、4.4 力学单位制 · 前置：4.1-4.4＋2.2/2.3 运动学两公式＋3.2 摩擦＋3.4 合成和分解 · 零基础首学版 v1.0 · 预计45分钟</div>
+
+<h2><span class="step-tag">开场</span>动力学"双向道"通车了</h2>
+<p>前三节你把零件都凑齐了：受力分析（第三章）、F=ma（4.3）、匀变速运动学（第二章）。这一节把它们<b>接成电路</b>。教材p104节名页以<b>冰壶</b>开场（图4.5-1）：运动员以3.4 m/s的速度把冰壶沿冰面投出，冰壶与冰面的动摩擦因数为0.02——<b>冰壶能在冰面上滑行多远？g取10 m/s²。</b>这是"从受力确定运动"；后面还有反向的一道："从运动情况确定受力"。教材p106栏目原话：<b>如果已知物体的运动情况，可以根据运动学规律求出物体的加速度，结合受力分析，再根据牛顿第二定律求出力。这是力学所要解决的又一方面的问题。</b></p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 画出"受力⇄运动"双向通路的路线图，说清<b>加速度a是唯一桥墩</b>；<br>
+② 独立复算<b>例题1</b>冰壶两段问题（28.9 m→21 m→多滑2.1 m），掌握"分段点找变化量"的流程；<br>
+③ 独立复算<b>例题2</b>滑雪者（a=4 m/s²→F_f=75 N·F_N=650 N），会用正交分解列两方向方程；<br>
+④ 在"问对雪面的压力"这类题里<b>想起牛顿第三定律转换</b>（3.3节证明过的压力=支持力终于上岗）；<br>
+⑤ 能用同一条通路解出练习里油桶脱离的临界加速度（a=g·tan30°）。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒备齐旧工具</h2>
+<div class="talk"><span class="tag">talk</span>　① <b>牛二</b>：F=ma·F指合力·a与F同向（4.3）。② <b>运动学双引擎</b>：v=v₀+at、x=v₀t+½at²（2.2/2.3）——本节主力是第二条和它的变形 v²−v₀²=2ax。③ <b>正交分解</b>（3.4/4.3例题2）：斜面问题沿坡/垂直坡建轴。④ <b>摩擦力</b>：F_f=μF_N（3.2）——冰壶、滑雪、气囊全靠它。⑤ <b>牛三</b>：作用力反作用力等大反向（3.3）——最后"交卷"时用它把"面对物体的力"翻译成"物体对面的力"。</div>
+
+<h2><span class="step-tag">第一步</span>例题1（上）·从受力确定运动：冰壶滑多远（p104-105原文照录）</h2>
+<div class="box"><b>【教材p105分析（1）照录】</b>　对物体进行受力分析后，根据牛顿第二定律可以求得冰壶滑行时的加速度，再结合冰壶做匀减速直线运动的规律求得冰壶滑行的距离。</div>
+<div class="box"><b>【教材p105解（1）照录】</b>　选择滑行的冰壶为研究对象。冰壶所受的合力等于滑动摩擦力F<sub>f</sub>（图4.5-3）。设冰壶的质量为m，以冰壶运动方向为正方向建立一维坐标系，滑动摩擦力F<sub>f</sub>的方向与运动方向相反，则 F<sub>f</sub>＝−μ<sub>1</sub>F<sub>N</sub>＝−μ<sub>1</sub>mg。根据牛顿第二定律，冰壶的加速度为 a<sub>1</sub>＝F<sub>f</sub>/m＝−μ<sub>1</sub>mg/m＝−μ<sub>1</sub>g＝−0.02×10 m/s²＝<b>−0.2 m/s²</b>。将v₀＝3.4 m/s、v＝0代入v²−v₀²＝2a<sub>1</sub>x<sub>1</sub>，得冰壶的滑行距离为 x<sub>1</sub>＝−v₀²/(2a<sub>1</sub>)＝−3.4²/[2×(−0.2)] m＝<b>28.9 m</b>。</div>
+<div class="key"><span class="m">受力 → F=ma → a → 运动学 → x（"知力求运动"）</span>冰壶题里m约掉了——<mark class="nb">滑行距离与质量无关</mark>，只看μ和v₀。这不是巧合：a=μg对一切"只受摩擦减速"的滑体通用。</div>
+
+<h2><span class="step-tag">第二步</span>例题1（下）·分段问题：μ变了怎么办（p105-106原文照录）</h2>
+<div class="box"><b>【教材p105（2）题干+分析照录】</b>　若运动员仍以3.4 m/s的速度将冰壶投出，其队友在冰壶自由滑行10 m后开始在其滑行前方摩擦冰面，冰壶和冰面的动摩擦因数变为原来的90%，冰壶多滑行了多少距离？——冰壶在滑行10 m后进入冰刷摩擦后的冰面，动摩擦因数变化了，所受的摩擦力发生了变化，加速度也会变化。前一段滑行10 m的末速度等于后一段运动的初速度（图4.5-2）。</div>
+<div class="box"><b>【教材p105-106解（2）照录】</b>　设冰壶滑行10 m后的速度为v₁₀，则对前一段运动有 v₁₀²＝v₀²＋2a<sub>1</sub>x₁₀。冰壶后一段运动的加速度为 a<sub>2</sub>＝−μ<sub>2</sub>g＝−0.02×0.9×10 m/s²＝<b>−0.18 m/s²</b>。滑行10 m后为匀减速直线运动，由v²−v₁₀²＝2a<sub>2</sub>x₂，v＝0，得 x₂＝−v₁₀²/(2a₂)＝−(v₀²＋2a₁x₁₀)/(2a₂)＝−(3.4²＋2×(−0.2×10))/[2×(−0.18)] m＝<b>21 m</b>。第二次比第一次多滑行了 (10＋21−28.9) m＝<b>2.1 m</b>。</div>
+<div class="fig">
+<svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图A：例题1冰壶两段滑行示意（重绘自教材图4.5-2思路）">
+  <defs><marker id="arA" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <rect x="60" y="90" width="600" height="14" rx="4" fill="#2a3440"/>
+  <circle cx="120" cy="84" r="13" fill="#4a5568"/><circle cx="120" cy="84" r="6" fill="#7a8899"/>
+  <line x1="140" y1="84" x2="185" y2="84" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#arA)"/>
+  <text x="150" y="72" font-size="13" fill="#9fc3e8">v₀=3.4m/s</text>
+  <line x1="134" y1="104" x2="660" y2="104" stroke="#555" stroke-width="1"/><line x1="134" y1="100" x2="134" y2="108" stroke="#555"/><line x1="660" y1="100" x2="660" y2="108" stroke="#555"/>
+  <text x="390" y="122" font-size="13" fill="#8a9ab0">x₁=28.9m（第一段全程）</text>
+  <rect x="60" y="170" width="600" height="14" rx="4" fill="#2a3440"/>
+  <circle cx="120" cy="164" r="13" fill="#4a5568"/><circle cx="120" cy="164" r="6" fill="#7a8899"/>
+  <circle cx="298" cy="164" r="13" fill="#3d6e5e"/><circle cx="298" cy="164" r="6" fill="#6aa891"/>
+  <circle cx="520" cy="164" r="13" fill="#3d6e5e"/><circle cx="520" cy="164" r="6" fill="#6aa891"/>
+  <line x1="140" y1="164" x2="172" y2="164" stroke="#4a9eff" stroke-width="2" marker-end="url(#arA)"/>
+  <line x1="134" y1="184" x2="298" y2="184" stroke="#666" stroke-width="1"/><line x1="298" y1="180" x2="298" y2="188" stroke="#666"/>
+  <text x="190" y="200" font-size="13" fill="#8a9ab0">10m（冰刷起点）</text>
+  <line x1="298" y1="184" x2="520" y2="184" stroke="#666" stroke-width="1"/><line x1="520" y1="180" x2="520" y2="188" stroke="#666"/>
+  <text x="392" y="200" font-size="13" fill="#8a9ab0">x₂=21m（第二段·a₂=−0.18）</text>
+  <text x="120" y="228" font-size="12.5" fill="#8a9ab0" text-anchor="middle">段1：a₁=−μg</text>
+  <text x="409" y="228" font-size="12.5" fill="#8a9ab0" text-anchor="middle">段2：a₂=−0.9μg（队友擦冰）</text>
+</svg>
+<div class="figcap">图A（重绘自教材图4.5-2思路）｜两段冰面：分段点在"μ变化处"，前段末速=后段初速（v₁₀²=v₀²+2a₁x₁₀=7.56）</div>
+</div>
+<div class="pit"><span class="tag">坑点·多段问题的唯一要诀："变"在哪里，分段就在哪里</span>　μ一变，a就变，运动学公式必须换段重开。<span class="note-red">前一段的末速度就是后一段的初速度</span>——这句话是两段之间的"接力棒"（教材分析原话）。若(2)问直接拿v₀配a₂算到底，就丢了"前10 m还在用μ₁"的过程，掉进坑里。</div>
+<h2><span class="step-tag">第三步</span>例题2·从运动情况确定受力：滑雪者的"账单"（p106-107原文照录）</h2>
+<div class="box"><b>【教材p106【例题2】题干照录】</b>　如图4.5-4，一位滑雪者，人与装备的总质量为75 kg，以2 m/s的初速度沿山坡匀加速直线下滑，山坡倾角为30°，在5 s的时间内滑下的路程为60 m。求滑雪者对雪面的压力及滑雪者受到的阻力（包括摩擦和空气阻力），g取10 m/s²。</div>
+<div class="box"><b>【教材p106-107分析+解照录（要点全录）】</b>　由于不知道动摩擦因数及空气阻力与速度的关系，不能直接求滑雪者受到的阻力。应根据匀变速直线运动的位移和时间的关系式求出滑雪者的加速度，然后，对滑雪者进行受力分析。滑雪者在下滑过程中，受到重力mg、山坡的支持力F<sub>N</sub>以及阻力F<sub>f</sub>的共同作用。通过牛顿第二定律可以求得滑雪者受到的阻力。——解：以滑雪者为研究对象。建立如图4.5-5所示的直角坐标系（x沿山坡向下）。滑雪者沿山坡向下做匀加速直线运动。根据匀变速直线运动规律，有 x＝v₀t＋½at²。其中v₀＝2 m/s、t＝5 s、x＝60 m，则有 a＝2(x−v₀t)/t²＝2×(60−2×5)/5² m/s²＝<b>4 m/s²</b>。根据牛顿第二定律，y方向 F<sub>N</sub>−mg·cosθ＝0；x方向 mg·sinθ−F<sub>f</sub>＝ma。得 F<sub>N</sub>＝mg·cosθ，F<sub>f</sub>＝m(g·sinθ−a)。其中m＝75 kg、θ＝30°，则有 <b>F<sub>f</sub>＝75 N，F<sub>N</sub>＝650 N</b>。</div>
+<div class="box"><b>【教材p107牛三落账句照录】</b>　<b>根据牛顿第三定律，滑雪者对雪面的压力大小等于雪面对滑雪者的支持力大小，为650 N，方向垂直斜面向下。</b>滑雪者受到的阻力大小为75 N，方向沿山坡向上。</div>
+<div class="fig">
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图B：例题2滑雪者正交分解（重绘自教材图4.5-5）">
+  <defs><marker id="arB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#d66a8a"/></marker><marker id="arBb" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#4a9eff"/></marker></defs>
+  <line x1="80" y1="215" x2="560" y2="215" stroke="#3a4a5a" stroke-width="3"/>
+  <line x1="80" y1="215" x2="30" y2="120" stroke="#3a4a5a" stroke-width="3"/>
+  <rect x="300" y="188" width="46" height="26" rx="4" fill="#2a3440" stroke="#4a5568"/>
+  <line x1="323" y1="188" x2="323" y2="118" stroke="#d66a8a" stroke-width="2" marker-end="url(#arB)"/>
+  <text x="332" y="140" font-size="13" fill="#e8a8b8">F_N</text>
+  <line x1="323" y1="201" x2="438" y2="201" stroke="#d66a8a" stroke-width="2" marker-end="url(#arB)"/>
+  <text x="404" y="192" font-size="13" fill="#e8a8b8">F_f（阻力）</text>
+  <line x1="323" y1="201" x2="238" y2="201" stroke="#4a9eff" stroke-width="2" marker-end="url(#arBb)"/>
+  <text x="240" y="192" font-size="13" fill="#9fc3e8">a=4m/s²</text>
+  <line x1="323" y1="201" x2="323" y2="256" stroke="#d66a8a" stroke-width="2" marker-end="url(#arB)" transform="translate(0,-10)"/>
+  <text x="330" y="252" font-size="13" fill="#e8a8b8">mg</text>
+  <line x1="323" y1="201" x2="258" y2="156" stroke="#999" stroke-width="1.5" stroke-dasharray="5 4" transform="translate(0,0)"/>
+  <text x="196" y="150" font-size="12.5" fill="#8a9ab0">mg·sin30°</text>
+  <line x1="323" y1="201" x2="278" y2="252" stroke="#999" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="230" y="252" font-size="12.5" fill="#8a9ab0">mg·cos30°=649.5→650N</text>
+  <path d="M 358 201 A 35 35 0 0 1 323 236" fill="none" stroke="#666" stroke-width="1"/>
+  <text x="362" y="228" font-size="12" fill="#8a9ab0">30°</text>
+  <line x1="560" y1="215" x2="600" y2="166" stroke="#3a4a5a" stroke-width="3"/>
+</svg>
+<div class="figcap">图B（重绘自教材图4.5-5）｜正交分解：y向平衡定F_N，x向牛二定F_f——x轴就选运动方向</div>
+</div>
+<div class="pit"><span class="tag">坑点·"对雪面的压力"不是"雪面对他的支持力"——但它们等大</span>　F=ma算出的是<b>雪面对滑雪者</b>的支持力F_N（作用在滑雪者身上）；题目问的是<b>滑雪者对雪面</b>的压力（作用在雪面上）。这一步要靠<b>牛顿第三定律</b>转换：等大、反向、分别作用在两个物体上。<span class="note-red">3.3节证过的"压力=支持力"，在这里正式上岗</span>（回链3.2脚注①"下节会学到这一知识"）。</div>
+<div class="try"><span class="q">验一验③（自编·同构辨认）：</span><span class="a">4.3例题2悬球 a=g·tanθ 与本节练习4(2)油桶脱离 a=g·tan30° 是"同族题"——都是<b>某个接触力归零的临界状态</b>+<b>两力/三力正交</b>。认出同构，一法百用。</span></div>
+
+<h2><span class="step-tag">第四步</span>通路总结·双向都能走</h2>
+<div class="key"><span class="m">受力分析 → F=ma → a → 运动学 ⇄ 运动学 → a → F=ma → 受力</span></div>
+<p class="small">· 左向（例题1）：知道"谁推谁拽"求"走多远/多快"——例题1冰壶、练习2气囊、练习3测μ。<br>
+· 右向（例题2）：看着"怎么动"反推"受了什么力"——例题2滑雪、练习4油桶。<br>
+· 桥墩只有一个：<b>加速度a</b>。所有动力学综合题，都是在a的两头接管线。</p>
+
+<h2><span class="step-tag">节末自测</span>教材p107-108练习与应用·原题全答</h2>
+<div class="try"><span class="q">1.（p107原题）质量为20 kg的物体静止在光滑水平面上。如果给这个物体施加两个大小都是50 N且互成60°角的水平力（图4.5-6），那么，3 s末它的速度是多少？3 s内它的位移是多少？</span><br><span class="ans">【答】合[SYSTEM_NOTE: Content compressed. Read the full version if needed.]s²，方向与车加速方向相同水平向前；竖直方向重力与支持力平衡。（说明：题问的是"周围与它接触的物体对石块B作用力的合力"——箱底/侧壁/挡板多个接触体的合力，不逐面拆分。）</span></div>
+
+<h2><span class="step-tag">收口</span>三问自检（复述体）</h2>
+<p><b>① 两类动力学问题的"桥"是什么？</b>——加速度a。知力求运动：受力→F=ma→a→运动学；知运动求力：运动学→a→F=ma→得力（回收锚：第四步通路图）。<br>
+<b>② 多段问题在哪"分段"？</b>——在"变化的量"处（例题1的μ被冰刷改变）分段，<span class="ul-blue">前段末速=后段初速</span>是接力棒（回收锚：图A两段）。<br>
+<b>③ 题目问"对面的压力"怎么办？</b>——先对研究对象用F=ma求"面对它的力"，再牛三转换（回收锚：例题2牛三落账句）。</p>
+
+<div class="fig">
+<svg viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图G：第四章六节串联·本节第五件">
+  <defs><marker id="arG5" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <rect x="12" y="55" width="108" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="66" y="82" font-size="12" fill="#9fb2c8" text-anchor="middle">4.1 牛顿第一定律</text><text x="66" y="103" font-size="11" fill="#7d8a99" text-anchor="middle">惯性·p83</text>
+  <line x1="120" y1="87" x2="140" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG5)"/>
+  <rect x="141" y="55" width="100" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="191" y="82" font-size="12" fill="#9fb2c8" text-anchor="middle">4.2 实验探究</text><text x="191" y="103" font-size="11" fill="#7d8a99" text-anchor="middle">a∝F/m·p88</text>
+  <line x1="241" y1="87" x2="261" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG5)"/>
+  <rect x="262" y="55" width="100" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="312" y="82" font-size="12" fill="#9fb2c8" text-anchor="middle">4.3 牛顿第二定律</text><text x="312" y="103" font-size="11" fill="#7d8a99" text-anchor="middle">F=ma·p94</text>
+  <line x1="362" y1="87" x2="382" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG5)"/>
+  <rect x="383" y="55" width="100" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="433" y="82" font-size="12" fill="#9fb2c8" text-anchor="middle">4.4 力学单位制</text><text x="433" y="103" font-size="11" fill="#7d8a99" text-anchor="middle">SI·p99</text>
+  <line x1="483" y1="87" x2="503" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG5)"/>
+  <rect x="504" y="48" width="128" height="78" rx="7" fill="#14202b" stroke="#4a9eff" stroke-width="2"/><text x="568" y="76" font-size="13" fill="#cfe4ff" text-anchor="middle" font-weight="bold">本节 4.5 定律的应用</text><text x="568" y="97" font-size="11.5" fill="#9fc3e8" text-anchor="middle">p104-108</text><text x="568" y="115" font-size="11.5" fill="#9fc3e8" text-anchor="middle">受力⇄运动·a是桥</text>
+  <line x1="632" y1="87" x2="652" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG5)"/>
+  <rect x="653" y="55" width="100" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="703" y="82" font-size="12" fill="#9fb2c8" text-anchor="middle">6 超重和失重</text><text x="703" y="103" font-size="11" fill="#7d8a99" text-anchor="middle">p109·节名页实锚</text>
+</svg>
+<div class="figcap">图G（本节位置图）｜第四章六节串联（1-5节节名页p83/p88/p94/p99/p104目检·6《超重和失重》p109=图114节名页实锚·dui4_44_1031勘误行9259046联动）：本节是定律"上岗干活"的一节。</div>
+</div>
+
+<h3>考位锚（T11）·高考怎么考</h3>
+<p class="small">· 考什么：<b>动力学两大基本问题</b>（已知力求运动/已知运动求力）+多过程组合（μ变化、分离临界）+牛三转换问法。<br>
+· 怎么考：大题第一层"单物体两阶段"（例题1同款）、斜面正交分解（例题2同款）、临界/脱离问题（练习4同款·a=g·tanθ族）、与4.2实验图像联考。<br>
+· 真题锚：候采——对证源卷源池暂未录入4.5对口卷源，不代拟；候池内补录后回填。</p>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① <b>a是"桥"也是"哨兵"</b>：两问之间如果换了研究对象或换了方向，先重审a再动笔——例题1两段的a就换了值。② <b>出题自由度</b>：双向通路让命题人既可以"给力求动"，也可以"给动求力"，还能混着给（给一半运动一半力）——识别手头"已知什么"比背题型重要。③ <b>牛三的隐藏出场</b>：凡问"对…的压力/拉力"，都是牛三转换的信号灯（例题2最后一行是范本·回链3.3）。④ <b>4.6预告</b>：下节《超重和失重》把"体重计示数"变成加速度探测器（p109节名页实锚·问题框=体重计下蹲）——应用双通道在那里合流。
+</div>
+
+<div class="foot">
+<em>素材源溯源（foot区·豁免条款）：影印源＝国家中小学智慧教育平台教材电子版·普通高中教科书·物理必修 第一册（人教版·2024印次）·contentId 708256b6-6f06-4d14-89c7-4df16dfe3b81·ts=1787023183495（1031午后ndrv2/resources详情API实时取·title核对人教正本·与速查表物理行同值批次稳定）·图109-114→印刷页p104-109·偏移N-5·本节影印范围p104-108（4.4节名页p99=图104链式前锚·4.5节名页p104=图109左界·<b>6《超重和失重》节名页p109=图114右界</b>）·影印对照逐页直读（p104节名"5 牛顿运动定律的应用"/p105页脚"第四章 运动和力的关系 105"/p106页脚"106 高中物理必修第一册"/p107页脚"第四章 运动和力的关系 107"/p108页脚"108 高中物理必修第一册"/p109节名"6 超重和失重"）·<b>第四章六节精读勘误</b>（dui4_45_1031认领行4a9f714·dui4_44_1031勘误行9259046联动）：1牛一p83/2实验p88/3牛二p94/4单位制p99/5应用p104/6超重失重p109——本席4.4交付行"五节全锚"申报以勘误行为准·节界互证：左界p104=本席4.4交付行（9ba0fc9）右界实锚双源一致·右界p109=6节名页本席图114目检·本件为自学辅导讲义·教材原文引用仅作教学讲解用途·原文以纸质教材为准。</em>
+</div>
+</div>
+</body>
+</html>
