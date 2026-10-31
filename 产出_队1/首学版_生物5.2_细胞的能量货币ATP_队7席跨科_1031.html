@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物5.2 细胞的能量"货币"ATP · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .step-tag.ans { background: #6fc36f; }
+  .talk { background: #1a212b; border-left: 4px solid #4a9eff; padding: 14px 18px; margin: 18px 0; border-radius: 6px; }
+  .check { background: #16202b; border: 1px solid #2d4a63; padding: 14px 18px; margin: 18px 0; border-radius: 6px; }
+  .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag, .alt .tag { display: inline-block; background: #2d4a63; color: #cfe3f7; font-size: 12px; font-weight: bold; padding: 1px 8px; border-radius: 4px; margin-right: 6px; }
+  .try, .pit, .key, .box, .alt { padding: 14px 18px; margin: 18px 0; border-radius: 6px; border: 1px solid #333; }
+  .try { background: #14202a; border-color: #2d6a4f; }
+  .pit { background: #241418; border-color: #8a4a5a; }
+  .key { background: #14202c; border-color: #3a6a9e; }
+  .box { background: #1a1a26; border-color: #6a5a9e; }
+  .alt { background: #161e14; border-color: #5a7a4a; }
+  .note-red { background: #241418; border-left: 4px solid #d46a7a; padding: 10px 16px; margin: 14px 0; border-radius: 4px; }
+  mark { background: #3a5a2e; color: #e8f5d8; padding: 0 4px; border-radius: 3px; }
+  .fig { background: #10141c; border: 1px solid #263244; border-radius: 8px; padding: 12px; margin: 18px 0; text-align: center; }
+  .fig p { color: #8fa3b8; font-size: 13px; margin: 6px 0 0; }
+  .small { color: #7d8a99; font-size: 14px; }
+  .foot { margin-top: 50px; padding-top: 16px; border-top: 1px solid #2a3442; color: #667382; font-size: 12.5px; line-height: 1.7; }
+  table.cmp { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+  table.cmp th { background: #1c2a3d; color: #cfe3f7; padding: 8px 10px; border: 1px solid #2d4a63; text-align: left; }
+  table.cmp td { padding: 8px 10px; border: 1px solid #263244; vertical-align: top; }
+  ul { margin: 8px 0 8px 24px; } li { margin: 6px 0; }
+  @media print {
+    body { background: #ffffff !important; color: #222222 !important; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3 { color: #111111 !important; }
+    .talk { background: #eef4fb !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .check { background: #f2f7f2 !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .try { background: #f0f7f2 !important; border-color: #2d6a4f !important; color: #222222 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .box { background: #f3effc !important; border-color: #b6a8d4 !important; color: #222222 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .note-red { background: #fdf2f4 !important; border-left-color: #d46a7a !important; color: #333333 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>生物5.2 细胞的能量"货币"ATP · 零基础首学版</h1>
+<div class="sub">人教版《高中生物学·必修1 分子与细胞》第五章 第二节（教材p86-89）· 零基础首学版 · 读完约30分钟</div>
+
+<div class="talk"><b>从杜牧的一首诗说起：</b>"银烛秋光冷画屏，轻罗小扇扑流萤。天阶夜色凉如水，卧看牵牛织女星。"（教材p86问题探讨原文）萤火虫的点点流萤，是<b>活生生的能量转化现场</b>——荧光的背后是ATP在掏钱。上一节（5.1）你学会了"酶降低反应活化能"；这一节回答一个更根本的问题：<b>细胞里的能量以什么形式"流通"？</b>答案只有三个字母：ATP——细胞的能量"货币"。</div>
+
+<div class="check"><span class="tag">读完这节你能</span><br>① 写出ATP的结构简式<b>A—P~P~P</b>，说出A、P、~各代表什么，解释"高能磷酸化合物"的由来（1 mol水解释放<b>30.54 kJ</b>）；<br>② 描述ATP与ADP相互转化的双循环（合成⇌水解），说出各反应需要的条件（酶/Pi/能量）与能量来源（光合作用/呼吸作用）；<br>③ 用<b>生物富集式思维</b>盘点ATP的利用五例证（大脑思考/电鳗发电/主动运输/物质合成/肌肉收缩），复述图5-7磷酸化三步；<br>④ 记住两组数据（0.5 kg/分钟·30.54 kJ/mol）和"货币"比喻的准确含义。</div>
+
+<p class="small"><b>本件位置：</b>第五章"细胞的能量供应和利用"第二节——5.1讲了"反应怎么加速"（酶），本节讲"能量怎么流通"（ATP），之后5.3细胞呼吸、5.4光合作用讲"能量怎么来"。本节是全章的"货币枢纽"。</p>
+
+<h2><span class="step-tag">预备步</span>先分清"存折"和"现金"——直接能源物质</h2>
+<p>萤火虫发光需要细胞提供能量。同样，在细胞内，<b>物质的主动运输需要能量，物质的合成需要能量，肌纤维的收缩也需要能量</b>——这些能量从哪里来？我们知道，细胞中的<b>糖类、脂肪等有机物都储存着化学能</b>，但是<mark>直接给细胞生命活动提供能量的却是另一种有机物——ATP</mark>。<mark>ATP是驱动细胞生命活动的直接能源物质</mark>（教材p86）。</p>
+<div class="talk"><b>比喻卡（自编·显式标注）：</b>糖类和脂肪像<b>"存折"</b>——钱多，但不能直接花；ATP像<b>"现金"</b>——随时掏出来就能用。把存折的钱变成现金需要"跑银行"（消化、氧化分解、能量转移），而细胞里每一秒都在"花钱"（思考、心跳、泵离子），所以必须常备"现金"。这就是为什么生物"明知道"ATP存量极少也要用它——<b>花得快，补得更快</b>（第一步见分晓）。</div>
+
+<h2><span class="step-tag">第一步</span>认识"货币"本身——A—P~P~P与高能磷酸化合物</h2>
+<p>ATP是<b>腺苷三磷酸</b>的英文名称缩写（adenosine triphosphate：adenosine是腺苷，由腺嘌呤和核糖结合而成；tri是"三"；phosphate是磷酸盐）。ATP分子的结构可以简写成<mark>A—P~P~P</mark>：其中<b>A代表腺苷，P代表磷酸基团，~代表一种特殊的化学键</b>（教材p86）。</p>
+<p>为什么~键"一碰就放钱"？教材给了漂亮的微观解释：由于<b>两个相邻的磷酸基团都带负电荷而相互排斥</b>等原因，使得这种化学键不稳定，<b>末端磷酸基团有一种离开ATP而与其他分子结合的趋势</b>——也就是具有较高的转移势能。当ATP在酶的作用下水解时，脱离下来的末端磷酸基团<b>挟能量</b>与其他分子结合，从而使后者发生变化。可见<b>ATP水解的过程就是释放能量的过程</b>——<mark>1 mol ATP水解释放的能量高达30.54 kJ</mark>，所以说ATP是一种<b>高能磷酸化合物</b>（教材p86）。</p>
+<div class="pit"><span class="tag">易错</span>结构简式考点三连：①<b>A—P~P~P</b>是对的——腺苷（A）与第一个磷酸之间是<b>普通键"—"</b>，两个特殊键"~"在磷酸基团<b>之间</b>；②"P~P—P""A~P—P~P"等乱序写法全是干扰项（教材p89概念检测1）；③"~"不是"高能键里藏着能量"这种旧说法——教材口径是<b>负电互斥→不稳定→末位易离→转移势能高</b>，能量在水解<b>整个反应过程</b>中释放，别答"键断了放出键能"。</div>
+
+<h2><span class="step-tag">第二步</span>货币的流通——ATP⇌ADP双循环</h2>
+<p>ATP水解后转化为比ATP稳定的化合物——<b>ADP（腺苷二磷酸）</b>，与其他分子结合的磷酸基团再脱离下来，就成为游离的磷酸（以<b>Pi</b>表示）。在有关酶的作用下，ADP可以接受能量，同时与Pi结合，重新形成ATP（教材p86-87，图5-4）。</p>
+<p>对细胞的正常生活来说，ATP与ADP的这种相互转化，是<b>时刻不停地发生并且处于动态平衡之中</b>的。据测算，<mark>一个人在剧烈运动的状态下，每分钟约有0.5 kg的ATP转化成ADP</mark>，释放能量供运动之需；生成的ADP又可在一定条件下转化成ATP。<mark>ATP与ADP相互转化的能量供应机制，在所有生物的细胞内都是一样的，这体现了生物界的统一性</mark>（教材p87）。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="100%">
+  <rect x="0" y="0" width="720" height="300" fill="#0f1520"/>
+  <defs><marker id="e1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6aa8e0"/></marker></defs>
+  <text x="360" y="28" fill="#d8dee6" font-size="15" text-anchor="middle">ATP ⇌ ADP 双循环（教材图5-4要义复刻）</text>
+  <rect x="180" y="60" width="360" height="60" rx="10" fill="#2a4a2e" stroke="#5a9e6a"/>
+  <text x="360" y="86" fill="#e8f5d8" font-size="16" text-anchor="middle">ATP　A—P~P~P</text>
+  <text x="360" y="108" fill="#a8c8a0" font-size="11" text-anchor="middle">腺苷三磷酸（不稳定·末端磷酸基团易离）</text>
+  <rect x="180" y="190" width="360" height="60" rx="10" fill="#3d2a4a" stroke="#8a6a9e"/>
+  <text x="360" y="216" fill="#e8f5d8" font-size="16" text-anchor="middle">ADP　A—P~P</text>
+  <text x="360" y="238" fill="#b8a8c8" font-size="11" text-anchor="middle">腺苷二磷酸（更稳定）+ Pi（游离磷酸）</text>
+  <path d="M200,124 C160,150 160,176 200,190" fill="none" stroke="#6aa8e0" stroke-width="3" marker-end="url(#e1)"/>
+  <text x="96" y="150" fill="#9ab8e0" font-size="13">水解</text>
+  <text x="52" y="170" fill="#6a8aa0" font-size="11">酶＋水</text>
+  <text x="52" y="186" fill="#6a8aa0" font-size="11">释放能量</text>
+  <path d="M520,190 C560,176 560,150 520,124" fill="none" stroke="#6aa8e0" stroke-width="3" marker-end="url(#e1)"/>
+  <text x="578" y="150" fill="#9ab8e0" font-size="13">合成</text>
+  <text x="612" y="170" fill="#6a8aa0" font-size="11">酶＋Pi</text>
+  <text x="612" y="186" fill="#6a8aa0" font-size="11">＋能量</text>
+  <text x="360" y="272" fill="#e8b98a" font-size="12" text-anchor="middle">合成能量来源：绿色植物=光能（光合作用）+呼吸作用 · 动物/人/真菌/大多数细菌=呼吸作用（p87图5-5口径）</text>
+  <text x="360" y="292" fill="#5a6a7a" font-size="11" text-anchor="middle">动态平衡：时刻不停地发生（据测算剧烈运动每分钟约0.5 kg ATP转化成ADP）</text>
+</svg><p>图A · ATP⇌ADP流通双循环（依据教材图5-4与p86-87文字自绘复刻·非教材原图）</p></div>
+
+<p>那么，ADP转化成ATP所需的能量从哪里来？<b>对于绿色植物来说，既可以来自光能，也可以来自呼吸作用所释放的能量</b>；<b>对于动物、人、真菌和大多数细菌来说，均来自细胞进行呼吸作用时有机物分解所释放的能量</b>（教材p87，图5-5）。——记住这条分工，它就是5.3细胞呼吸和5.4光合作用两节的"预告片"。</p>
+<div class="box"><span class="tag">数据彩蛋（程序代验·显式标注）</span>0.5 kg的ATP有多少？ATP摩尔质量约507 g/mol，0.5 kg≈<b>1 mol</b>——恰好对应"1 mol水解释放30.54 kJ"：也就是说<b>剧烈运动时你的身体每分钟要"烧掉"整整1 mol（约30.5 kJ≈7.3千卡）的ATP</b>（bio52_calc.py断言留痕）。更震撼的是：<b>体内ATP总量其实只有零点几摩尔量级</b>——全靠ADP⇌ATP的高速循环"边花边挣"，这正是"货币流通"而非"货币储藏"的含义。</div>
+
+<h2><span class="step-tag">第三步</span>货币花在哪——ATP的利用五例证与磷酸化三步</h2>
+<p><b>细胞中绝大多数需要能量的生命活动都是由ATP直接提供能量的</b>——如<b>大脑思考、电鳗发电和物质的主动运输</b>都需要消耗ATP（教材p88）。教材举的例证：</p>
+<ul>
+<li><b>用于物质合成</b>（图5-6上）：反应物A+B在ATP供能下合成C；</li>
+<li><b>用于肌肉收缩</b>（图5-6下）：ATP让运动蛋白发生移动；</li>
+<li><b>用于主动运输</b>（图5-7，三步连环）：①参与Ca²⁺主动运输的<b>载体蛋白是一种能催化ATP水解的酶</b>——当膜内侧的Ca²⁺与其相应位点结合时，酶活性被激活；②在载体蛋白这种酶的作用下，<b>ATP分子的末端磷酸基团脱落下来与载体蛋白结合</b>，这一过程伴随着能量的转移——这就是<b>载体蛋白的磷酸化</b>；③载体蛋白<b>磷酸化导致其空间结构发生变化</b>，使Ca²⁺的结合位点转向膜外侧，将Ca²⁺释放到膜外。</li>
+</ul>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" width="100%">
+  <rect x="0" y="0" width="720" height="240" fill="#0f1520"/>
+  <defs><marker id="e2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8fb8e0"/></marker></defs>
+  <text x="360" y="26" fill="#d8dee6" font-size="15" text-anchor="middle">ATP为主动运输供能·磷酸化三步（教材图5-7要义复刻）</text>
+  <rect x="30" y="50" width="210" height="150" rx="10" fill="#141c2a" stroke="#2d4a63"/>
+  <text x="135" y="74" fill="#9ab8e0" font-size="13" text-anchor="middle">① 酶活性激活</text>
+  <text x="135" y="98" fill="#c8d4e0" font-size="11" text-anchor="middle">Ca²⁺载体蛋白=催化ATP</text>
+  <text x="135" y="116" fill="#c8d4e0" font-size="11" text-anchor="middle">水解的酶</text>
+  <text x="135" y="138" fill="#a8b8c8" font-size="11" text-anchor="middle">膜内侧Ca²⁺与相应位点</text>
+  <text x="135" y="156" fill="#a8b8c8" font-size="11" text-anchor="middle">结合→酶活性被激活</text>
+  <line x1="244" y1="125" x2="270" y2="125" stroke="#8fb8e0" stroke-width="2.5" marker-end="url(#e2)"/>
+  <rect x="256" y="50" width="210" height="150" rx="10" fill="#141c2a" stroke="#2d4a63"/>
+  <text x="361" y="74" fill="#9ab8e0" font-size="13" text-anchor="middle">② 磷酸化</text>
+  <text x="361" y="98" fill="#c8d4e0" font-size="11" text-anchor="middle">ATP末端磷酸基团脱落</text>
+  <text x="361" y="116" fill="#c8d4e0" font-size="11" text-anchor="middle">与载体蛋白结合</text>
+  <text x="361" y="138" fill="#a8b8c8" font-size="11" text-anchor="middle">伴随能量的转移</text>
+  <text x="361" y="160" fill="#e8b98a" font-size="11" text-anchor="middle">（ATP→ADP）</text>
+  <line x1="470" y1="125" x2="496" y2="125" stroke="#8fb8e0" stroke-width="2.5" marker-end="url(#e2)"/>
+  <rect x="482" y="50" width="210" height="150" rx="10" fill="#141c2a" stroke="#2d4a63"/>
+  <text x="587" y="74" fill="#9ab8e0" font-size="13" text-anchor="middle">③ 变构释放</text>
+  <text x="587" y="98" fill="#c8d4e0" font-size="11" text-anchor="middle">磷酸化导致载体蛋白</text>
+  <text x="587" y="116" fill="#c8d4e0" font-size="11" text-anchor="middle">空间结构发生变化</text>
+  <text x="587" y="138" fill="#a8b8c8" font-size="11" text-anchor="middle">Ca²⁺结合位点转向膜外</text>
+  <text x="587" y="160" fill="#a8b8c8" font-size="11" text-anchor="middle">→Ca²⁺释放到膜外</text>
+  <text x="360" y="222" fill="#5a6a7a" font-size="11" text-anchor="middle">磷酸化=末端磷酸基团"挟能量"转移（非ATP整分子贴附）——分子变构·活性改变·参与特定化学反应（p88）</text>
+</svg><p>图B · 磷酸化三步连环（依据教材图5-7三段注记自绘复刻·非教材原图）</p></div>
+
+<p>ATP水解释放的<b>磷酸基团使蛋白质等分子磷酸化</b>，这在细胞中是常见的——分子被磷酸化后，<b>空间结构发生变化、活性也被改变</b>，因而可以参与特定的化学反应（教材p88）。</p>
+<div class="alt"><span class="tag"> alt·教材相关信息（p88）</span><b>电鳗有多猛：</b>电鳗一次放电电压可达<b>300~500 V</b>，足以把附近的鱼电死；据计算，<b>1万条电鳗的电能聚集在一起，能够使1列电力机车运行几分钟</b>——这些都是ATP直接供能的"自然工程学"。</div>
+<div class="box"><span class="tag">教材知识链接（p87）</span>有关<b>光合作用吸收光能用于ADP转化为ATP</b>的内容，请参见<b>本章第4节</b>（5.4光合作用与能量转化）——教材自己埋了跨节预告，学习时回扣。</div>
+
+<h2><span class="step-tag">试一试</span>2连（显式试答·口径以教材为准）</h2>
+<div class="try"><span class="tag">试一试 1</span>教材p89拓展应用3（显式试答）：在植物、动物、细菌和真菌的细胞内，都是以ATP作为能量"货币"的，这是否也说明生物界的统一性？这对你理解生物的进化有什么启示？<p><span class="step-tag ans">试答</span>是——ATP与ADP相互转化的能量供应机制<b>在所有生物的细胞内都是一样的</b>（p87），这是生物界统一性的又一实证。启示：统一性暗示<b>共同祖先</b>——最原始的生命可能就已"选中"了ATP这套货币系统并世代相传；整套机制在演化中被保留下来，说明其高效且不可替代（开放题参考口径·候定性）。</p></div>
+<div class="try"><span class="tag">试一试 2</span>教材p86问题探讨三问串答（显式试答）：萤火虫发光的生物学意义？体内有特殊发光物质吗？发光过程有能量转化吗？<p><span class="step-tag ans">试答</span>①生物学意义：求偶信号/警戒天敌/诱捕猎物（种间信息传递）；②有——尾部发光细胞含<b>荧光素和荧光素酶</b>（p89：荧光素接受ATP提供的能量后被激活，在荧光素酶催化下与氧发生化学反应，形成氧化荧光素并发出荧光）；③有——<b>ATP中的化学能→光能</b>（还有部分热能），能量转化需能部位正是"货币"支付现场。</p></div>
+
+<h2><span class="step-tag">自测</span>四连过闸（显式试答）</h2>
+<div class="try"><span class="tag">自测 1</span>能准确表示ATP中三个磷酸基团之间、以及磷酸基团和腺苷之间关系的结构简式是（　）A. A—P—P~P　B. A—P~P~P　C. A~P~P—P　D. A~P~P~P<p><span class="step-tag ans">答</span><b>B</b>（A—P~P~P·腺苷后接普通键，两个特殊键在磷酸之间——p86原简式）。</p></div>
+<div class="try"><span class="tag">自测 2</span>下列物质中，能够直接给细胞生命活动提供能量的是（　）A.脂肪酸　B.氨基酸　C.腺苷二磷酸　D.腺苷三磷酸<p><span class="step-tag ans">答</span><b>D</b>（腺苷三磷酸=ATP·<mark>驱动细胞生命活动的直接能源物质</mark>——p86）。</p></div>
+<div class="try"><span class="tag">自测 3</span>关于ATP的叙述，错误的是（　）A.细胞质和细胞核中都有ATP的分布　B.ATP合成所需的能量由磷酸提供　C.ATP可以水解为ADP和磷酸　D.正常细胞中ATP与ADP的比值相对稳定<p><span class="step-tag ans">答</span><b>B</b>——ATP合成的能量<b>来自光合作用（光能）或呼吸作用（有机物氧化分解）</b>，不是"由磷酸提供"（磷酸只是原料Pi·p87图5-5口径）。A对（细胞质细胞核均需ATP）；C对（水解为ADP+Pi）；D对（动态平衡→比值相对稳定）。</p></div>
+<div class="try"><span class="tag">自测 4</span>离子泵是一种具有ATP水解酶活性的载体蛋白。下列叙述正确的是（　）A.离子通过离子泵的跨膜运输属于协助扩散　B.是顺浓度梯度进行的　C.动物一氧化碳中毒会降低离子泵跨膜运输离子的速率　D.加入蛋白质变性剂会提高离子泵跨膜运输离子的速率<p><span class="step-tag ans">答</span><b>C</b>——离子泵耗ATP=主动运输（A错：不是协助扩散；B错：逆浓度梯度）；CO中毒使供氧受阻→呼吸作用产ATP减少→泵速下降（C对）；变性剂破坏载体蛋白→泵速下降（D错）。（显式试答·候验方对答案页复核）</p></div>
+
+<div class="key"><span class="tag">关键卡</span>①A—P~P~P（A=腺苷/P=磷酸基/~=特殊化学键）·1 mol水解30.54 kJ；②ATP⇌ADP动态平衡（酶+Pi+能量⇌酶+水+能量）·能量来源=光能（光合）+有机物氧化分解（呼吸）；③剧烈运动0.5 kg/分钟≈1 mol；④五例证=思考/发电/主动运输/合成/收缩；⑤磷酸化=末端磷酸基团转移使蛋白变构。</div>
+<div class="pit"><span class="tag">易错</span>①"ATP=储能物质"错——它是<b>直接能源物质</b>，储能靠糖类脂肪（存量极少·转化极快）；②"~键断裂放出能量"表述不规范——教材口径=水解<b>反应过程</b>释放能量（负电互斥→末位易离→转移势能）；③"ADP转化ATP的能量可来自光能"只对绿色植物成立——<b>动物、人、真菌和大多数细菌只能来自呼吸作用</b>；④磷酸化是"<b>基团转移</b>"不是"ATP整个分子贴上去"（图5-7末端磷酸基团脱落）。</div>
+<div class="note-red"><b>保命三句：</b>①直接给细胞生命活动提供能量的是<b>ATP</b>，不是葡萄糖；②能量通过ATP分子在<b>吸能反应和放能反应</b>之间流通——ATP是细胞内流通的能量"货币"（p89原比喻）；③30.54 kJ/mol和0.5 kg/分钟两组数字配套记（≈1 mol/分钟·剧烈运动）。</div>
+
+<h2><span class="step-tag">高考怎么考</span>两考向速览（考向概括·卷源候补）</h2>
+<p><b>考向一：结构与简式辨析类。</b>A—P~P~P写法判断+高能磷酸化合物概念+ATP/ADP/腺苷关系——母型=教材p89概念检测1、2（本件自测1/2）。</p>
+<p><b>考向二：供能机制与实验分析类。</b>ATP与ADP转化条件+能量来源判别（光能/呼吸）+磷酸化载体蛋白机理+萤火虫发光综合题——母型=教材p89拓展应用1-3+问题探讨三问（本件试一试）。本节无在库卷源直读件，卷源候补（foot声明）。</p>
+
+<h2><span class="step-tag">下一站</span>5.3 细胞呼吸的原理和应用——货币的"印钞机"</h2>
+<p>本节回答了"能量怎么流通"；但ATP这枚"货币"是<b>印</b>出来的——印钞的能量来自有机物氧化分解（p87已预告）。下一节（教材p90起·第三节《细胞呼吸的原理和应用》）从酵母菌说起（<b>发酵生产葡萄酒的车间</b>·探究酵母菌细胞呼吸的方式），把"有机物里的钱怎么一步步转到ATP账上"拆给你看——有氧呼吸与无氧呼吸两条流水线即将开工。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" width="100%" role="img" aria-label="本节位置图：第五章四节次序与本节所在">
+  <rect x="0" y="0" width="720" height="150" fill="#0f1520"/>
+  <defs><marker id="d1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a9eff"/></marker></defs>
+  <text x="360" y="30" fill="#d8dee6" font-size="15" text-anchor="middle">第五章 细胞的能量供应和利用 · 节位图</text>
+  <rect x="30" y="58" width="160" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="110" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">5.1 降低化学反应</text><text x="110" y="99" fill="#8fa3b8" font-size="11" text-anchor="middle">活化能的酶·队2席交付</text>
+  <line x1="192" y1="84" x2="228" y2="84" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#d1)"/>
+  <rect x="204" y="52" width="160" height="64" rx="8" fill="#264a5f" stroke="#4a9eff" stroke-width="2"/>
+  <text x="284" y="76" fill="#e8f5ff" font-size="13" text-anchor="middle">5.2 ATP（本件）</text><text x="284" y="95" fill="#9ab8e0" font-size="11" text-anchor="middle">p86-89·货币枢纽</text>
+  <line x1="366" y1="84" x2="402" y2="84" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#d1)"/>
+  <rect x="378" y="58" width="160" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="458" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">5.3 细胞呼吸</text><text x="458" y="99" fill="#8fa3b8" font-size="11" text-anchor="middle">p90起·印钞机</text>
+  <line x1="540" y1="84" x2="576" y2="84" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#d1)"/>
+  <rect x="552" y="58" width="150" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="627" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">5.4 光合作用</text><text x="627" y="99" fill="#8fa3b8" font-size="11" text-anchor="middle">与能量转化</text>
+  <text x="360" y="136" fill="#5a6a7a" font-size="11" text-anchor="middle">p86=第二节节名页（左界·队2席5.1交付行05a715e右界互证）· 节界双端实锚见附件1</text>
+</svg><p>图D · 本件在第五章中的位置：酶→<b>货币</b>→印钞机→太阳能电站，能量四章曲</p></div>
+
+<div class="foot">零基础首学版 v1.0（队7席跨科转援件）· 事实层素材源：人教版《普通高中教科书·生物学 必修1 分子与细胞》p86-89 官方影印逐页对照（人民教育出版社·智慧教育平台 contentId=9d522562-b529-446c-9b5b-084812beee6e·ts=1787291655029（实时复核同值·fig95-106十二图实测全200）·影印原件存席位私有 bio52_jc/ 零入仓·图号→印刷页N−9映射复核（b95=p86/b97=p88/b99=p90）·节界实锚：p86第2节"细胞的能量'货币'ATP"节名页（左界·队2席5.1交付行05a715e右界止锚互证）至p89练习与应用页（域内末页）·p90=第3节"细胞呼吸的原理和应用"节名页（右界界标亲验）·p86-89直读锚定：问题探讨杜牧秋夕萤火虫三问与本节聚焦三问与ATP结构式与A—P~P~P与30.54 kJ与ADP Pi p86/图5-4互转化与0.5 kg每分钟与动态平衡与生物界统一性与图5-5能量来源与知识链接指向5.4 p87/相关信息电鳗300~500V 1万条电力机车与ATP的利用大脑思考电鳗发电主动运输与图5-6物质合成肌肉收缩与图5-7磷酸化三步Ca2+载体蛋白与磷酸基团使蛋白质磷酸化p88/吸能反应放能反应两大类与能量经ATP分子在吸能放能反应间流通的"货币"比喻与萤光树荧光素荧光素酶与练习与应用概念检测4题拓展应用3题p89）<br>
+<br>接手形态说明：本件系队7席跨科转援产出（管理员20:25:41令·跨科支援不转署名只记工时·工时记生物线），认领行575aaee在案。候验产出走 dui1_52_1031 分支候终读，禁直推main。硬闸22:27。<br>
+<br>自测/试答块均已显式标注，数据与表述以教材影印为准。宁缺毋编：真题卷源未获取（本节无在库直读件），高考怎么考为考向概括（foot已声明）；试答与自测答案为显式口径候验方复核（p89练习题教材附册后答案·影印不含）。(并行搜索员C·队7席·dui7@team7.local)</div>
+</div>
+</body>
+</html>
