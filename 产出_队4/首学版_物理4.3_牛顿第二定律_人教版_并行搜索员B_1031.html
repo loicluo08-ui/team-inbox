@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理4.3 牛顿第二定律 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; }
+  .talk .tag { color: #4a9eff; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #22405c; border-radius: 6px; padding: 14px 18px; margin: 14px 0; }
+  .key .tag { color: #7fc4ff; font-weight: bold; }
+  .pit { background: #241318; border: 1px solid #5a2a33; border-radius: 6px; padding: 12px 16px; margin: 14px 0; }
+  .pit .tag { color: #e05666; font-weight: bold; }
+  .try { background: #142014; border: 1px solid #2a402a; border-radius: 6px; padding: 12px 16px; margin: 14px 0; }
+  .try .q { color: #58d68d; font-weight: bold; }
+  .try .a { color: #b8d8b8; }
+  .check { background: #1b202a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 14px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; }
+  .m { color: #ffe66b; font-weight: bold; }
+  .big { text-align: center; font-size: 24px; color: #ffe66b; margin: 16px 0; font-family: "Times New Roman", serif; }
+  .wrong { color: #d64541; }
+  .detail { color: #9aa7b5; font-size: 15px; }
+  .small { font-size: 14.5px; color: #9aa7b5; }
+  .fig { margin: 16px 0; text-align: center; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  ul { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  b { color: #f0f3f7; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 16px; line-height: 1.7; }
+  em { color: #1a5c99; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    p, .talk, .key, .pit, .detail, .figcap { color: #222; }
+    .sub, .small, .foot { color: #444; }
+    .try .q { color: #1e5c1e; } .try .a { color: #333; }
+    .pit .tag { color: #c0392b; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong, .note-red { color: #c0392b; }
+    em { color: #1a5c99; }
+    mark.nb, .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { background: #f0f0f0; color: #111; }
+    th, td { border-color: #bbb; }
+    .box { color: #222; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>牛顿第二定律：把"为什么变"写成一行算式——F = ma</h1>
+<div class="sub">物理4.3 · "运动和力的关系"模块第三件（第四章 第3节）· 前面已学：4.2 实验（a∝F·a∝1/m·控制变量）、4.1 牛顿第一定律（力改变运动状态）· 前置：4.1＋4.2＋第三章全（受力分析/合成和分解）＋2.2 匀变速速度式 · 零基础首学版 v1.0 · 预计45分钟</div>
+
+<h2><span class="step-tag">开场</span>上节实验的两个"∝"，就差一步合成定律</h2>
+<p>4.2节你亲手"探"出了两个正比关系：质量一定时 a∝F，力一定时 a∝1/m。教材p94问题框用赛车再点一次题：动力大、车身轻，加速就猛——<b>a与F、m之间的定量关系，正是这行实验结论要升级成的定律</b>。本节三件事：<b>把两个"∝"缝合成牛顿第二定律</b>；<b>给力定一个"户口单位"（1N的出生证）</b>；<b>用F=ma解两道教材例题</b>（刹车测试+车厢悬球）。另外还带一件"还账"：4.2节页边那句"拉力≈槽码重力的近似条件"，这节课末用F=ma当场兑现。</p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① <b>复述牛顿第二定律</b>三要素：大小（a∝F、a∝1/m）、方向（a与F同向）、对象（F指<b>合力</b>）；<br>
+② 说清 <b>1牛顿（N）</b> 的定义与 k=1 的由来——单位选对了，F=kma才写成F=ma；<br>
+③ 用 <b>F=ma</b> 解两道教材例题：已知运动求力（汽车刹车测试）、已知力求运动（车厢悬球测加速度）；<br>
+④ 对两力问题会<b>两种解法</b>：力的合成法（平行四边形）与正交分解法，并知道它们同源；<br>
+⑤ 理解"质量是惯性大小的量度"在F=ma里的位置＋知道太空里怎么"称"质量。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒备齐旧工具</h2>
+<div class="talk"><span class="tag">talk</span>　① <b>4.2实验结论</b>：a∝F（m一定）、a∝1/m（F一定）——本节就是把它们"合成"一条定律。② <b>2.2速度式</b>：v = v₀ + at（例题1由运动求加速度要用）。③ <b>3.4合成和分解</b>：平行四边形定则/正交分解（例题2两法的工具箱）。④ <b>3.2摩擦力</b>：F_f=μF_压与"匀速⇒合力零"（练习5要先算出阻力）。⑤ <b>单位意识</b>：物理量=数值×单位（1.1的老朋友，这节要"生产"一个新单位）。</div>
+
+<h2><span class="step-tag">第一步</span>从两条实验结论到一条定律（p95原文照录）</h2>
+<div class="box"><b>【教材p95原文】</b>　由此看来，科学前辈们在根据有限的实验事实宣布某个定律时，既需要谨慎，也需要勇气。大量的实验和观察到的事实都可以得出与上节课实验同样的结论，由此可以总结出一般性的规律：<mark class="nb"><b>物体加速度的大小跟它受到的作用力成正比，跟它的质量成反比，加速度的方向跟作用力的方向相同。</b>这就是牛顿第二定律（Newton's second law）</mark>。</div>
+<p>教材接着写成比例式与等式：<span class="m">a ∝ F/m</span>，也可以写成等式 <span class="m">F = kma</span>，其中k是比例系数。<b>页边注照录</b>：实际物体所受的力往往不止一个，<b>式中F指的是物体所受的合力</b>。教材强调：牛顿第二定律不仅阐述了力、质量和加速度三者数量间的关系，<b>还明确了加速度的方向与力的方向一致</b>。</p>
+
+<div class="fig">
+<svg viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="牛二三要素卡：数量关系/方向关系/合力对象">
+  <defs><marker id="arC" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#4a9eff"/></marker></defs>
+  <rect x="15" y="20" width="220" height="105" rx="8" fill="#14202b" stroke="#2a323e"/>
+  <text x="125" y="48" text-anchor="middle" font-size="14.5" fill="#7fc4ff" font-weight="bold">数量关系</text>
+  <text x="125" y="78" text-anchor="middle" font-size="15" fill="#e8ecf2">a ∝ F/m</text>
+  <text x="125" y="104" text-anchor="middle" font-size="12.5" fill="#9aa7b5">力大a大·质量大a小</text>
+  <rect x="250" y="20" width="220" height="105" rx="8" fill="#14202b" stroke="#2a323e"/>
+  <text x="360" y="48" text-anchor="middle" font-size="14.5" fill="#7fc4ff" font-weight="bold">方向关系</text>
+  <text x="360" y="78" text-anchor="middle" font-size="15" fill="#e8ecf2">a 与 F 同向</text>
+  <text x="360" y="104" text-anchor="middle" font-size="12.5" fill="#9aa7b5">合力的方向=加速度方向</text>
+  <rect x="485" y="20" width="220" height="105" rx="8" fill="#14202b" stroke="#2a323e"/>
+  <text x="595" y="48" text-anchor="middle" font-size="14.5" fill="#7fc4ff" font-weight="bold">对象（页边注）</text>
+  <text x="595" y="78" text-anchor="middle" font-size="15" fill="#e8ecf2">F 指 合力</text>
+  <text x="595" y="104" text-anchor="middle" font-size="12.5" fill="#9aa7b5">多力作用先求合力再代入</text>
+</svg>
+<div class="figcap">图C（牛二三要素卡）｜定律一句话装三件事：多大（a∝F/m）、朝哪（a∥F）、代入谁（合力）</div>
+</div>
+<div class="try"><span class="q">验一验①（自编·翻译定律）：</span><span class="a">"合力恒定的物体做匀加速直线运动"对吗？——<b>对</b>。F合恒定→a=F合/m恒定（大小方向都不变）→匀变速；若F合还与v同向就是匀加速。<span class="note-red">反例提醒</span>：F合大小不变但方向变（如匀速圆周运动，候选修一必修二）→a方向也变，就不是匀变速了——"方向关系"这一条别丢。</span></div>
+
+<h2><span class="step-tag">第二步</span>1牛顿的出生证——k是怎么被"约定"掉的（p95照录）</h2>
+<div class="key"><span class="tag">教材"思考与讨论"</span>　取质量的单位是千克（kg），加速度的单位是米每二次方秒（m/s²），根据上述牛顿第二定律中加速度与力、质量的关系，我们应该怎样确定力的单位？</div>
+<p><b>教材"力的单位"节照录</b>：F=kma中k的数值取决于F、m、a的单位的选取。<b>当k=1时</b>，质量为1kg的物体在某力的作用下获得1m/s²的加速度，则这个力 F=ma=1kg·m/s²。如果我们把这个力叫作"一个单位"的力，力F的单位就是千克米每二次方秒。<b>后人为了纪念牛顿，把它称作"牛顿"，用符号N表示</b>。在质量的单位取千克（kg）、加速度的单位取米每二次方秒（m/s²）、力的单位取牛顿（N）时，牛顿第二定律可以表述为——</p>
+<div class="big">F = ma</div>
+<p class="small">页边注照录：初中就学过国际单位制中力的单位是牛顿（N），但当时并不知道这个单位是怎样定义的——<mark class="nb">学过牛顿第二定律之后，这个问题就清楚了</mark>。</p>
+<div class="pit"><span class="tag">坑点·k不是"算出来的"，是"单位选对了"</span>　k的数值本来随单位乱变（比如力用"千克力"、质量用"斤"，k就是个奇怪的数）；<b>1N的定义本身就是"让k=1的那套单位约定"</b>——先有牛二的比例关系，再有单位约定，才有干干净净的F=ma。<span class="note-red">做题时F、m、a必须一律用国际单位制代入</span>，否则k≠1、答案全错。下节《力学单位制》把这件事讲透。</div>
+
+<h2><span class="step-tag">第三步</span>例题1精读（教材p96原题）——已知运动求力</h2>
+<div class="box"><b>【例题1】（教材p96原题）</b>　在平直路面上，质量为1100kg的汽车在进行研发的测试，当速度达到100km/h时取消动力，经过70s停了下来。汽车受到的阻力是多少？重新起步加速时牵引力为2000N，产生的加速度是多少？假定试车过程中汽车受到的阻力不变。</div>
+<p><b>分析（照录）</b>：取消动力后汽车只受阻力的作用，由于阻力不变，根据牛顿第二定律，汽车运动的加速度将保持不变——由加速度可以求出阻力。重新起步后受牵引力和阻力，二者大小都不变，加速度恒定，可由牛顿第二定律求出。</p>
+<p><b>解（照录+逐行核）</b>：设汽车运动方向为x轴正方向。取消动力后汽车做匀减速直线运动，初速度v₀=100km/h=<b>27.8m/s</b>，末速度为0，滑行时间t=70s。由2.2速度式：<span class="m">a₁ = (0−v₀)/t = −v₀/t</span>。汽车受到的阻力：<span class="m">F阻 = ma₁ = −mv₀/t = −1100kg×27.8m/s / 70s = −437N</span>——<b>阻力437N，方向与运动方向相反</b>。重新起步后，汽车所受合力 F合=2000N−437N=<b>1563N</b>；由牛顿第二定律 a₂=F合/m=1563N/1100kg=<b>1.42m/s²</b>，方向与运动方向相同。</p>
+
+<div class="fig">
+<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="例题1两阶段受力图：取消动力滑行/重新起步加速">
+  <defs>
+    <marker id="arA1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#e05666"/></marker>
+    <marker id="arA2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#4a9eff"/></marker>
+  </defs>
+  <text x="170" y="24" text-anchor="middle" font-size="14" fill="#9aa7b5">阶段1 取消动力（图4.3-2）</text>
+  <rect x="80" y="55" width="150" height="46" rx="12" fill="#1b202a" stroke="#3a4656"/><circle cx="112" cy="106" r="9" fill="#2a323e" stroke="#555"/><circle cx="198" cy="106" r="9" fill="#2a323e" stroke="#555"/>
+  <line x1="86" y1="78" x2="34" y2="78" stroke="#e05666" stroke-width="2.5" marker-end="url(#arA1)"/><text x="36" y="66" font-size="13.5" fill="#e05666">F阻</text>
+  <line x1="240" y1="78" x2="300" y2="78" stroke="#4a9eff" stroke-width="2" marker-end="url(#arA2)"/><text x="262" y="66" font-size="13" fill="#4a9eff">v</text>
+  <line x1="60" y1="118" x2="330" y2="118" stroke="#556" stroke-width="1.5"/><text x="62" y="134" font-size="12" fill="#889">O</text><text x="318" y="134" font-size="12" fill="#889">x</text>
+  <text x="170" y="156" text-anchor="middle" font-size="12" fill="#9aa7b5">a₁=−0.397m/s²·匀减速</text>
+  <text x="510" y="24" text-anchor="middle" font-size="14" fill="#9aa7b5">阶段2 重新起步（图4.3-3）</text>
+  <rect x="420" y="55" width="150" height="46" rx="12" fill="#1b202a" stroke="#3a4656"/><circle cx="452" cy="106" r="9" fill="#2a323e" stroke="#555"/><circle cx="538" cy="106" r="9" fill="#2a323e" stroke="#555"/>
+  <line x1="426" y1="78" x2="374" y2="78" stroke="#e05666" stroke-width="2.5" marker-end="url(#arA1)"/><text x="376" y="66" font-size="13.5" fill="#e05666">F阻</text>
+  <line x1="564" y1="70" x2="634" y2="70" stroke="#58d68d" stroke-width="2.5" marker-end="url(#arA2)"/><text x="586" y="58" font-size="13.5" fill="#58d68d">F牵</text>
+  <line x1="400" y1="118" x2="670" y2="118" stroke="#556" stroke-width="1.5"/><text x="402" y="134" font-size="12" fill="#889">O</text><text x="658" y="134" font-size="12" fill="#889">x</text>
+  <text x="510" y="156" text-anchor="middle" font-size="12" fill="#9aa7b5">a₂=+1.42m/s²·匀加速</text>
+  <text x="340" y="196" text-anchor="middle" font-size="13" fill="#c9b8dd">桥梁=「阻力不变」假设：阶段1测出的437N，阶段2照用</text>
+  <text x="340" y="218" text-anchor="middle" font-size="12.5" fill="#889">（两阶段两个合力方程：F合₁=−F阻→求F阻·F合₂=F牵−F阻→求a₂）</text>
+</svg>
+<div class="figcap">图A（重绘自教材图4.3-2/4.3-3）｜一道题两个阶段、两次F=ma——「阻力不变」是把两幕缝起来的线</div>
+</div>
+<div class="pit"><span class="tag">坑点·这类题的三处暗礁</span>　① <b>单位</b>：100km/h必须先换成27.8m/s（教材口径；精确27.78——代入哪个数，437N就带哪个数的舍入，两口径并存不判错）。② <b>负号</b>：取运动方向为正，阻力算出−437N，负号的物理含义就是"与运动方向相反"，答题要写方向。③ <b>F指合力</b>：阶段2不能拿2000N直接除以质量——2000N只是牵引力，得先减阻力凑出合力1563N。</div>
+<div class="try"><span class="q">验一验②（自编·同题换数）：</span><span class="a">同一辆车（阻力仍437N），重新起步时牵引力为2200N：F合=2200−437=1763N，a₂=1763/1100=<b>1.60m/s²</b>（1.603）。牵引力只加200N，加速度只加0.18m/s²——<b>a的变化量=ΔF/m</b>，牛二是"线性"的。</span></div>
+
+<h2><span class="step-tag">第四步</span>例题2精读（教材p97原题）——已知力求运动·一题两法</h2>
+<div class="box"><b>【例题2】（教材p97原题）</b>　某同学在列车车厢的顶部用细线悬挂一个小球，在列车以某一加速度渐渐启动的过程中，细线就会偏过一定角度并相对车厢保持静止，通过测定偏角的大小就能确定列车的加速度（图4.3-4）。在某次测定中，悬线与竖直方向的夹角为θ，求列车的加速度。</div>
+<p><b>分析（照录）</b>：列车加速行驶的过程中，小球始终与列车保持相对静止，所以，小球的加速度与列车的加速度相同。对小球进行受力分析，根据力的合成法则求解合力，再根据牛顿第二定律求出小球的加速度，从而获得列车的加速度。</p>
+<p><b>解·方法1（合成法·照录）</b>：设小球质量为m，受重力G与绳的拉力F_T（图4.3-5）。这两个力作用下小球产生水平方向的加速度a——这表明F_T与G的<b>合力方向水平</b>，且 <span class="m">F = G·tanθ = mg·tanθ</span>；由牛顿第二定律 <span class="m">a = F/m = g·tanθ</span>。</p>
+<p><b>解·方法2（正交分解法·照录）</b>：小球在水平方向做匀加速直线运动，在竖直方向处于平衡状态。建立直角坐标系（图4.3-6），将F_T分解为水平F_x与竖直F_y：竖直方向 F_y−mg=0，F_y=F_T·cosθ，即 <span class="m">F_T·cosθ = mg　(1)</span>；水平方向 F_x=F_T·sinθ，<span class="m">F_T·sinθ = ma　(2)</span>。(1)(2)联立，同样得 <span class="m">a = g·tanθ</span>。列车的加速度与小球相同，大小为g·tanθ，方向水平向右。</p>
+
+<div class="fig">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="例题2方法1合成图与方法2正交分解图">
+  <defs>
+    <marker id="arB1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#e05666"/></marker>
+    <marker id="arB2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#4a9eff"/></marker>
+  </defs>
+  <text x="150" y="26" text-anchor="middle" font-size="14" fill="#9aa7b5">方法1 合成（图4.3-5）</text>
+  <line x1="120" y1="230" x2="120" y2="120" stroke="#e05666" stroke-width="2.5" marker-end="url(#arB1)"/><text x="108" y="250" font-size="14" fill="#e05666">G=mg</text>
+  <line x1="120" y1="230" x2="255" y2="105" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#arB2)"/><text x="256" y="94" font-size="14" fill="#4a9eff">F&#8202;T</text>
+  <line x1="120" y1="230" x2="255" y2="230" stroke="#58d68d" stroke-width="2.5" marker-end="url(#arB2)"/><text x="248" y="250" font-size="14" fill="#58d68d">F合=mg·tanθ</text>
+  <line x1="255" y1="105" x2="255" y2="230" stroke="#556" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="150" y="180" font-size="13" fill="#9aa7b5">θ</text>
+  <text x="150" y="282" text-anchor="middle" font-size="12.5" fill="#889">平行四边形：G与F_T为邻边·合力F水平</text>
+  <text x="510" y="26" text-anchor="middle" font-size="14" fill="#9aa7b5">方法2 正交分解（图4.3-6）</text>
+  <line x1="440" y1="260" x2="640" y2="260" stroke="#556" stroke-width="1.5"/><line x1="440" y1="260" x2="440" y2="60" stroke="#556" stroke-width="1.5"/>
+  <text x="646" y="264" font-size="12" fill="#889">x</text><text x="436" y="54" font-size="12" fill="#889">y</text>
+  <line x1="440" y1="260" x2="560" y2="140" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#arB2)"/><text x="566" y="132" font-size="14" fill="#4a9eff">F&#8202;T</text>
+  <line x1="440" y1="260" x2="560" y2="260" stroke="#58d68d" stroke-width="2" stroke-dasharray="4,3"/><text x="548" y="278" font-size="13" fill="#58d68d">F&#8202;x</text>
+  <line x1="440" y1="260" x2="440" y2="140" stroke="#c9b8dd" stroke-width="2" stroke-dasharray="4,3"/><text x="398" y="140" font-size="13" fill="#c9b8dd">F&#8202;y</text>
+  <line x1="440" y1="260" x2="440" y2="292" stroke="#e05666" stroke-width="2.5" marker-end="url(#arB1)"/><text x="448" y="296" font-size="13.5" fill="#e05666">G</text>
+  <text x="510" y="176" font-size="13" fill="#9aa7b5">θ</text>
+  <text x="510" y="296" text-anchor="middle" font-size="12.5" fill="#889">竖直：F&#8202;T·cosθ=mg　水平：F&#8202;T·sinθ=ma</text>
+</svg>
+<div class="figcap">图B（重绘自教材图4.3-5/4.3-6）｜同一道题的两把钥匙：合成法一把出F合，正交分解法把矢量方程拆成两个标量方程</div>
+</div>
+<div class="pit"><span class="tag">坑点·两法同源，各有主场</span>　方法1用"合力方向水平"这个几何事实一步出F=G·tanθ——<b>两力问题</b>它最快；方法2不依赖几何巧劲，<b>受力一多（三力及以上）</b>正交分解更稳。它们最后都回到同一句话：<mark class="nb">a = F合/m，a与F合同向</mark>。另注意：θ是<b>悬线与竖直方向</b>的夹角，tanθ里的θ别读成与水平方向的夹角。</div>
+<div class="try"><span class="q">验一验③（自编·数字代θ）：</span><span class="a">若测得θ=30°（标自编）：a=g·tan30°=10×0.577=<b>5.77m/s²</b>。妙处：a只含g和θ——<b>不用知道小球质量</b>就能测列车的加速度，θ就是"加速度的仪表盘"。</span></div>
+
+<h2><span class="step-tag">第五步</span>科学漫步（p98照录）——太空里怎么"称"质量＋惯性回头看</h2>
+<p>教材p96开头先把4.1的惯性"落账"：<b>有了牛顿第二定律，我们就能够更进一步理解：描述物体惯性的物理量是质量的含义，即在确定的作用力下，决定物体运动状态变化难易程度的因素是物体的质量。</b></p>
+<p><b>科学漫步"用动力学方法测质量"（照录要点）</b>：质量可以用天平测量，但在太空，物体完全失重，用天平无法测量质量，应该怎么办？由牛顿第二定律F=ma可知，<b>给物体施加一个已知的力，测得物体在这个力作用下的加速度，就可以求出物体的质量</b>——这就是动力学测量质量的方法。北京时间2013年6月20日上午10时，我国航天员在天宫一号目标飞行器进行了太空授课，演示了包括质量的测量在内的一系列实验：测量通过舱壁上打开的支架形状的质量测量仪完成，航天员把自己固定在支架一端，另一名航天员将支架拉开到指定位置，松手后支架拉着航天员从静止返回舱壁（图4.3-7）。支架能产生一个<b>恒定的拉力F</b>，用<b>光栅测速装置</b>测出支架复位的速度v和时间t，从而计算出加速度a，这样就能计算出航天员的质量m。教材留问：<b>你能设计出一种在太空中测量质量的方法吗？</b></p>
+<div class="key"><span class="tag">坑点兑现·自编（4.2页边账，本节工具到货）</span>　4.2节页边注"拉力≈槽码重力的近似条件"当时只记账没推导——现在用F=ma当场兑现：<b>设小车质量M、槽码质量m、绳拉力T</b>。整体看（M+m）：加速度 a=mg/(M+m)；隔离小车看：T=Ma=mg·<b>M/(M+m)</b>。代入比值：M/m=2→T/mg=0.667；M/m=5→0.833；M/m=10→0.909；M/m=20→0.952——<b>M/m≥20时T与mg差距小于5%</b>，这就是"槽码质量远小于小车质量"时才敢用T≈mg的账本。4.2实验里"点落在过原点直线附近"的少许偏离，一部分正是这条近似条件的"手续费"。</div>
+
+<h2><span class="step-tag">节末自测</span>教材p98练习与应用原题全答（第3遍通读收口）</h2>
+<div class="try"><span class="q">1.（p98原题）无论怎样小的力都可以使物体产生加速度，可是用力提很重的箱子却提不动——矛盾吗？</span><span class="a">不矛盾。牛二里的F指<b>合力</b>：箱子"提不动"=保持静止=加速度为零=<b>合力为零</b>——提力、重力、地面支持力（及摩擦）恰好抵消，合力仍是零。小的力也能产生加速度，前提是它<b>是（或改变成）合力</b>。</span></div>
+<div class="try"><span class="q">2.（p98原题）相同拉力下甲车a=1.5m/s²、乙车a=4.5m/s²，甲车质量是乙车几倍？（不计阻力）</span><span class="a">拉力相同：m=F/a→m甲/m乙=a乙/a甲=4.5/1.5=<b>3倍</b>（a与m成反比的直接应用）。</span></div>
+<div class="try"><span class="q">3.（p98原题）合力4N时a=2m/s²；若a=6m/s²，合力多大？</span><span class="a">先求质量m=F/a=4/2=<b>2kg</b>；再F=ma=2×6=<b>12N</b>。</span></div>
+<div class="try"><span class="q">4.（p98原题）光滑水平面上质量2kg的物体受互成90°的两力（均14N），加速度多大？沿什么方向？</span><span class="a">合力F合=√2×14≈<b>19.8N</b>（3.4垂直合成），a=F合/m=7√2≈<b>9.9m/s²</b>；方向沿两力夹角的<b>平分线</b>（与每个力成45°）。</span></div>
+<div class="try"><span class="q">5.（p98原题）30kg手推车受60N水平推力时a=1.5m/s²；撤去推力后加速度多大？方向？</span><span class="a">加速时F合=ma=30×1.5=45N→阻力f=60−45=<b>15N</b>。撤去推力后只剩阻力：a=f/m=15/30=<b>0.5m/s²</b>，方向<b>与运动方向相反</b>（做匀减速）。</span></div>
+<div class="try"><span class="q">6.（p98原题·图4.3-8）货车以加速度a加速，货箱中石块B质量m，求周围与它接触的物体对B作用力的合力。</span><span class="a">B随车一起以a加速，其加速度由<b>周围物体对它的作用力的合力</b>提供：F合=<b>ma</b>，方向<b>水平向前</b>（竖直方向重力与支持力平衡）。这就是"车辆加速时货物被挤紧"的动力学账。</span></div>
+
+<h2><span class="step-tag">收口</span>合上书回答三问（回收锚）</h2>
+<div class="check"><p><b>①F=ma里F指谁？</b>——合力（页边注·第一步卡图C右栏；练习1就是考这个）。<b>②a与F什么关系？</b>——大小a∝F/m、方向a与F合同向、"瞬时"同步（第三步图A两阶段就是两次瞬时装配）。<b>③1N是怎么定义的？</b>——k=1的约定：使1kg物体产生1m/s²加速度的力=1kg·m/s²，纪念牛顿记作N（第二步"出生证"）。</p></div>
+
+<div class="fig">
+<svg viewBox="0 0 780 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图G：第四章前四节串联">
+  <defs><marker id="arG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#2266aa"/></marker></defs>
+  <rect x="12" y="55" width="126" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="75" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">4.1 牛顿第一定律</text><text x="75" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">惯性·力改变运动</text>
+  <line x1="138" y1="87" x2="158" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="158" y="55" width="128" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="222" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">4.2 实验探究</text><text x="222" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">a∝F·a∝1/m</text>
+  <line x1="286" y1="87" x2="306" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="306" y="46" width="140" height="82" rx="7" fill="#14202b" stroke="#4a9eff" stroke-width="2"/>
+  <text x="376" y="76" font-size="13.5" fill="#cfe4ff" text-anchor="middle" font-weight="bold">本节 4.3 牛顿第二定律</text>
+  <text x="376" y="98" font-size="12" fill="#9fc3e8" text-anchor="middle">F = ma（合力）</text>
+  <text x="376" y="118" font-size="11.5" fill="#9fc3e8" text-anchor="middle">a∥F·1N=1kg·m/s²</text>
+  <line x1="446" y1="87" x2="466" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="466" y="55" width="136" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="534" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">4.4 力学单位制</text><text x="534" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">p99节名页实锚·候产</text>
+  <line x1="602" y1="87" x2="622" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
+  <rect x="622" y="55" width="140" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="692" y="82" font-size="12.5" fill="#7d8a99" text-anchor="middle">4.5（候实锚）</text><text x="692" y="103" font-size="11.5" fill="#5a6570" text-anchor="middle">宁缺毋编</text>
+</svg>
+<div class="figcap">图G（本节位置图）｜4.1"为什么动"→4.2"量出规律"→<b>4.3"写成算式"（本节）</b>→4.4"管好单位"：动力学主干逐级合龙</div>
+</div>
+
+<h3>考位锚（T11）·高考怎么考</h3>
+<p class="small">· 考什么：F=ma两向应用（已知运动求力/已知力求运动）、<b>合外力方向=加速度方向</b>的方向判断（连接体/斜面/悬球）、1N定义与单位制意识、牛一牛二组合的概念辨析（练习1同款）。<br>· 怎么考：选择题考概念（合力为零≠不受力·a与v方向无必然关系）、计算题第一层"单物体两阶段"（例题1同款：刹车/加速双幕）、实验题与4.2联合（a-F图像斜率=m的倒数·截距=没平衡摩擦）。<br>· 真题锚：候采——对证源卷源池暂未录入4.3对口卷源，不代拟；候池内补录后回填。</p>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① <b>牛二是"瞬时"关系</b>：F变，a立刻同变，没有"过程延迟"——图A两阶段各算各的账，就是瞬时性的体现。② <b>a=g·tanθ的妙用</b>：与m无关、与g取值也只差个系数——车厢里挂个量角器就是加速度计（方法2的(1)(2)联立是它的"证明书"）。③ <b>两法择优口诀</b>：两力合成快、多力正交稳；正交时"把a的方向当一根轴"通常最省事。④ <b>回看4.2</b>：本节坑点兑现块给出的T/mg比值表，正好解释实验图线上点的"小脾气"——M/m取大些，图更直。
+</div>
+
+<div class="foot">
+<em>素材源溯源（foot区·豁免条款）：影印源＝国家中小学智慧教育平台教材电子版·普通高中教科书·物理必修 第一册（人教版·2024印次）·contentId 708256b6-6f06-4d14-89c7-4df16dfe3b81·ts=1787023183495（1031午后ndrv2/resources详情API实时取·title核对人教正本·与速查表物理行同值批次稳定）·图99-104→印刷页p94-99·偏移N-5·本节影印范围p94-98（4.2节名页p88=图93链式前锚·4.3节名页p94=图99左界·4.4节名页p99=图104右界）·影印对照逐页直读（p94节名"3 牛顿第二定律"/p95页脚"第四章 运动和力的关系 95"/p96页脚"96 高中物理必修第一册"/p97页脚"第四章 运动和力的关系 97"/p98页脚"98 高中物理必修第一册"/p99节名"4 力学单位制"）·节界互证：左界p94=本席4.2交付行（9a3e651）右界实锚双源一致·右界p99=4.4节名页本席图104目检·本件为自学辅导讲义·教材原文引用仅作教学讲解用途·原文以纸质教材为准。</em>
+</div>
+</div>
+</body>
+</html>
