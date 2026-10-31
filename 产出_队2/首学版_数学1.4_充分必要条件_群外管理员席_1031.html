@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学1.4 充分条件与必要条件 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  .detail { color: #a8b4c4; font-size: 15px; }
+  .big { font-size: 21px; }
+  .small { font-size: 14px; color: #8a949f; }
+  b, strong { color: #f0f3f7; }
+  mark.nb { background: #ffd94a; color: #14171c; padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .ul-blue { color: #6cc3ff; border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { background: #2a1a1a; border-left: 3px solid #e07050; color: #ffb0a0; padding: 6px 12px; font-size: 14px; margin: 8px 0; }
+  .talk, .key, .box, .check, .try, .alt { border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .talk { background: #1a2230; border: 1px solid #2a3a55; }
+  .key { background: #26221a; border: 1px dashed #d4a017; }
+  .box { background: #20242c; border: 1px dashed #4a5a70; }
+  .check { background: #1a2a20; border: 1px solid #2a5a3a; }
+  .try { background: #22201a; border: 1px solid #6a5a20; }
+  .try .t, .box .t { color: #ffd94a; font-weight: bold; }
+  .alt { background: #1a2226; border: 1px solid #2a4a55; }
+  .alt .tag, .box .tag, .try .tag { color: #6cc3ff; font-weight: bold; font-size: 14px; }
+  .fig { margin: 20px 0; }
+  .figcap { text-align: center; font-size: 13px; color: #7d8a99; margin-top: 6px; }
+  .foot { border-top: 1px solid #2a3140; margin-top: 40px; padding-top: 14px; font-size: 12.5px; color: #5a6a7a; line-height: 1.7; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .key { background: #fff3b8; border-left: 4px solid #d4a017; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    .sub, .small, .foot { color: #444; }
+    .talk .q, .key b { color: #7a5c00; }
+    mark.nb { background: #ffe680; color: #111; }
+    .detail { color: #333; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>数学1.4 充分条件与必要条件</h1>
+<div class="sub">零基础首学版 v1.0 · 人教A版必修第一册 p17-23 · 第一收官节：集合工具+逻辑用语在此会师 · 出品：群外管理员席 · 1031</div>
+
+<div class="talk">
+<p class="q"><b>先看一件小事。</b>妈妈说："如果你考试进了班级前十，我就带你去游乐园。"</p>
+<p>这话你可以放心——<b>只要"进前十"（记它叫 p）发生，"去游乐园"（记它叫 q）就一定发生</b>。但反过来，你去了游乐园，却不一定是"进前十"换来的（过生日也可能去）。一件事情可以"保证"另一件，反过来未必——这种<b>方向性</b>，就是本节要研究的全部内容。数学里每条定理、每道证明，都在说这种"谁保证谁"。</p>
+<p>学完这节你不但能听懂"充分条件、必要条件"这两个词，还能一眼看出高考题里那句"p 是 q 的什么条件"该答四个答案中的哪一个。</p>
+</div>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 给一个"若 p，则 q"的命题，判断真假，并说出 p 是 q 的充分条件还是 q 是 p 的必要条件；</p>
+<p>② 对假命题<b>举出反例</b>（这是判假的标准动作）；</p>
+<p>③ 判断 p 是 q 的"充分不必要 / 必要不充分 / 充要 / 既不充分也不必要"四种情况之一；</p>
+<p>④ 用集合的包含关系（1.2 的工具）解释条件关系——两个章节在这里会师。</p>
+</div>
+
+<div class="key">
+<span class="tag">30秒立好地基</span>
+<p><b>命题</b>：可以判断真假的陈述句（教材p17："用语言、符号或式子表达的，可以判断真假的陈述句叫做命题"）。"3是奇数"是真命题；"x²=1则x=1"是假命题（x=−1也行）。初中都打过交道，本节只是给它装上仪表。</p>
+<p>把命题写成<b>"若 p，则 q"</b>：p 叫<b>条件</b>，q 叫<b>结论</b>（教材p17原话）。整个1.4节就研究一件事：<mark class="nb">p 和 q 之间，箭头朝哪边、几条箭头</mark>。</p>
+</div>
+
+<h2><span class="step-tag">第①站</span>充分条件——"p 是 q 的入场券"</h2>
+
+<p>教材p17思考框给了四个命题，先自己判一遍真假：</p>
+<p>（1）若平行四边形的对角线互相垂直，则它是菱形；（2）若两个三角形周长相等，则它们全等；（3）若 x²−4x+3=0，则 x=1；（4）若平面内两条直线 a、b 均垂直于直线 l，则 a∥b。</p>
+
+<div class="try"><span class="t">验一验①（先答，再看答案）</span><br>
+<p>四个命题，哪些真、哪些假？假的能举出反例吗？</p>
+<p><b>答案：</b>（1）真——这是菱形的一条判定（初中定理）。（4）真——"垂直于同一条直线的两直线平行"。（2）假——周长相等形状可以完全不同，反例：边长3,3,3的三角形与边长2,3,4的三角形，周长都是9，但三边不对应相等（SSS判全等失败），不全等。（3）假——解方程：x²−4x+3=0 即 (x−1)(x−3)=0，x=1 <b>或</b> x=3，所以"x=3"就是反例（sympy解集={1,3}·代验留痕）。</p>
+</div>
+
+<p>教材p17给（1）（4）这种"由 p 推理能得出 q"的真命题起了正式名字：由 p 可以推出 q，记作 <b>p⇒q</b>，这时说——</p>
+<p class="big" style="text-align:center">p 是 q 的<span class="ul-blue">充分条件</span>（sufficient condition），q 是 p 的<span class="ul-blue">必要条件</span>（necessary condition）</p>
+
+<div class="note-red">方向锁死（本节第一坑）："p 是 q 的<b>充分</b>条件"和"q 是 p 的<b>必要</b>条件"是<b>同一句真命题的两种说法</b>，说的都是 p⇒q 这一个箭头。谁充分谁必要，看箭头：箭头尾=充分，箭头头=必要。</div>
+
+<p>为什么叫"充分"？有 p 这张<b>入场券</b>，进 q 这扇门就<b>够了</b>（p 一出现 q 必出现）。为什么 q 叫"必要"？教材p17脚注①原话："此时，如果 q 不成立，则 p 一定不成立"——<b>没有 q，p 根本没戏</b>，q 是 p 成立绕不开的<b>底线</b>。教材脚注还留了一问"请举例说明"，第②站接住它。</p>
+
+<p>再接教材p18例1（六连问·哪些 p 是 q 的充分条件），挑三道有 representative 的看判断手法：</p>
+<p>（1）若四边形的两组对角分别相等，则是平行四边形——判定定理，p⇒q，<b>是</b>。（4）若 x²=1，则 x=1——<b>反例 x=−1</b>：p⇏q，不是。（6）若 x, y 为无理数，则 xy 为无理数——<b>反例 √2×√2=2</b>（两个无理数乘出有理数），p⇏q，不是。</p>
+<p>教材p18侧栏把判断手法点破：<mark class="nb">举反例是判断一个命题是假命题的重要方法</mark>。真命题找定理撑腰，假命题找反例定罪——两手都要有。</p>
+<p>教材p18-19还有一层要紧话：这样的充分条件<b>不止一个</b>。"两组对边分别相等""一组对边平行且相等""两条对角线互相平分"都是"是平行四边形"的充分条件——每条判定定理都是一张不同的入场券，都通向同一个门。</p>
+
+<h2><span class="step-tag">第②站</span>必要条件——"q 是 p 的底线"</h2>
+
+<p>把箭头反过来问：q 是 p 的必要条件，怎么判？教材p19例2给六问，看三道：</p>
+<p>（1）若四边形是平行四边形，则两组对角分别相等——性质定理，p⇒q，所以 <b>q 是 p 的必要条件</b>。（3）若四边形对角线互相垂直，则是菱形——教材画了个风筝形反例（图1.4-1：对角线垂直但不是菱形），p⇏q，q 不是 p 的必要条件。（5）若 ac=bc，则 a=b——反例 c=0：−1×0=1×0 但 −1≠1，不是。</p>
+<p>教材p19把判断动作说透了：<mark class="nb">判 q 是不是 p 的必要条件，只需判"若 p，则 q"是不是真命题</mark>——还是那一个箭头，只是站的位置换了。</p>
+<p>教材p20把定理分了工：<b>判定定理=充分条件的来源</b>（p19："数学中的每一条判定定理都给出了相应数学结论成立的一个充分条件"），<b>性质定理=必要条件的来源</b>（p20："数学中的每一条性质定理都给出了相应数学结论成立的一个必要条件"）。</p>
+
+<div class="try"><span class="t">验一验②（先答，再看答案·承接教材p17脚注"请举例说明"）</span><br>
+<p>脚注说"q 不成立，则 p 一定不成立。请举例说明。"你来举一个。</p>
+<p><b>答案（自编·示例）：</b>取 p："四边形是正方形"，q："四边形四个角都是直角"。q 不成立的四边形（比如有个角是60°的），p 一定不成立——因为正方形四角必是90°。一句话：<b>底线破了，入场券自动作废</b>。</p>
+<p><b>易错变形（自编）：</b>"小明及格了，所以小明及格是'小明考了60分以上'的什么条件？"——及格（通常≥60分）⇒60分以上？如果及格线就是60，那么"及格"⇒"≥60分"是真命题，所以"及格"是"≥60分"的<b>充分条件</b>，而"≥60分"是"及格"的必要条件。别被"必要"两个字骗去选"必要"——问的是谁是谁的什么。</p>
+</div>
+
+<h2><span class="step-tag">第③站</span>充要条件——"双向通行证"</h2>
+
+<p>教材p20思考框问：哪些命题和它的<b>逆命题</b>（条件结论互换：若 q 则 p）都是真命题？四个里（1）（4）双向都真，（2）单向，（3）反向单向。双向都真的，教材p21正式命名：</p>
+<p class="big" style="text-align:center">既有 p⇒q，又有 q⇒p，记作 <span class="ul-blue">p⇔q</span>，p 是 q 的<span class="ul-blue">充要条件</span>（充分必要条件）</p>
+
+<p>教材p21例3四问，看两道：（2）p：两三角形相似，q：三边成比例——"若p则q"是相似的性质定理、"若q则p"是相似的判定定理，双向都真，<b>充要</b>。（3）p：xy>0，q：x>0 且 y>0——p⇒q 是假的（x=−1, y=−3：xy=3>0 但都不正），非充要。</p>
+<p>教材p21-22探究框往深走了一步："两组对边分别相等""一组对边平行且相等""对角线互相平分"……既充分又必要，全是"平行四边形"的<b>充要条件</b>——所以它们个个都能当<b>定义</b>用（"对角线互相平分的四边形叫做平行四边形"完全合法）。<b>充要条件=等价刻画</b>：一个概念可以有很多句长得不一样的定义，句句等价。</p>
+<p>教材p22例4示范了"证充要"的标准动作：证"d=r 是直线 l 与⊙O 相切的充要条件"，分两步——<b>充分性</b>（p⇒q：d=r 时垂足在圆上，其余点都在圆外，l 与⊙O 只有一个公共点，相切）+<b>必要性</b>（q⇒p：相切则切点连线垂直于 l，d=r）。<mark class="nb">证充要=证两次，方向各一次</mark>，一步都省不得。</p>
+
+<div class="try"><span class="t">验一验③（先答，再看答案）</span><br>
+<p>（自编）"x²=1"是"x=1"的什么条件？"x=1"是"x²=1"的什么条件？两句一起答。</p>
+<p><b>答案：</b>x²=1⇒x=1 是假命题（x=−1 反例），所以 x²=1 不是 x=1 的充分条件；反过来 x=1⇒x²=1 是真命题。所以：<b>x²=1 是 x=1 的必要不充分条件；x=1 是 x²=1 的充分不必要条件</b>。同一对命题，两问答案相反——全看箭头方向（sympy：solve(x²−1)={−1,1}⊇{1}·代验留痕）。</p>
+<p><b>易错变形（自编）：</b>"a+b+c=0"是"方程 ax²+bx+c=0 有根 x=1"的什么条件？（教材p21例3(4)）——把 x=1 代回去：a+b+c=0，充要！这正是"因式定理"的雏形，高二用得上。</p>
+</div>
+
+<h2><span class="step-tag">第④站</span>四分类判断+集合会师</h2>
+
+<p>习题1.4（教材p22-23）要求用四种话回答：<b>充分不必要 / 必要不充分 / 充要 / 既不充分也不必要</b>。判断动作固定两步：</p>
+<p>①验 p⇒q 真假；②验 q⇒p 真假；两个答案一拼，四选一：</p>
+<p class="big" style="text-align:center">⇒真⇒假=充分不必要 ｜ ⇒假⇒真=必要不充分 ｜ 双真=充要 ｜ 双假=既不充分也不必要</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="集合包含关系与条件关系对应图">
+  <rect x="0" y="0" width="720" height="300" fill="#10141b" rx="8"/>
+  <ellipse cx="230" cy="140" rx="105" ry="95" fill="none" stroke="#4a9eff" stroke-width="2.5"/>
+  <ellipse cx="330" cy="150" rx="150" ry="120" fill="none" stroke="#6cbf4a" stroke-width="2.5"/>
+  <text x="205" y="130" fill="#6cc3ff" font-size="15">A</text>
+  <text x="395" y="230" fill="#9fd48a" font-size="15">B</text>
+  <text x="70" y="35" fill="#8fc6ff" font-size="13.5">A={x|x满足p}（小圈）</text>
+  <text x="430" y="45" fill="#9fd48a" font-size="13.5">B={x|x满足q}（大圈）</text>
+  <line x1="250" y1="120" x2="300" y2="140" stroke="#ffd94a" stroke-width="2.5" marker-end="url(#aE4)"/>
+  <text x="255" y="110" fill="#ffd94a" font-size="13">p⇒q</text>
+  <text x="55" y="265" fill="#d8dee6" font-size="14">A⊆B（小圈套进大圈）时：</text>
+  <text x="55" y="288" fill="#8fc6ff" font-size="14">"x∈A"是"x∈B"的充分条件——小圈里必在大圈里</text>
+  <text x="420" y="288" fill="#9fd48a" font-size="13">（教材p23习题4·集合同构）</text>
+  <defs><marker id="aE4" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#ffd94a"/></marker></defs>
+</svg>
+<p class="figcap">这张图在说什么：把条件和集合接上（习题1.4第4题）——条件越"苛刻"，圈越小；小圈是大圈的充分条件。<b>特征越强越充分，特征越弱越必要</b>。</p>
+</div>
+
+<div class="try"><span class="t">验一验④（先答，再看答案·教材p23习题1.4第4题改述）</span><br>
+<p>A={x|x 满足条件 p}，B={x|x 满足条件 q}。①若 A⊆B，p 是 q 的什么条件？②若 B⊆A 呢？③若 A=B 呢？</p>
+<p><b>答案：</b>①A⊆B：满足 p 的都满足 q，p⇒q 真——p 是 q 的<b>充分条件</b>（若只此一箭，答"充分不必要"）。②B⊆A：q⇒p 真，q 是 p 的充分条件，即 p 是 q 的<b>必要条件</b>。③A=B：双箭头，<b>充要条件</b>。</p>
+<p><b>易错变形（自编·教材p23习题2同族）：</b>"x>y"是"x²>y²"的什么条件？——x=1, y=−2：x>y 真而 x²>y² 假（1>4 不成立），⇒假；x=−2, y=1：x²>y² 真而 x>y 假，⇐假。双假——<b>既不充分也不必要条件</b>。负数一进场，"平方保序"就失效。</p>
+</div>
+
+<div class="alt">
+<span class="tag">卡住了？（三个最容易卡的地方，就地给出路）</span>
+<p>· <b>"必要"两个字总觉得别扭？</b>——别用中文语感猜，就记一个画面：<b>箭头图</b>。p⇒q 里，p 是入场券（充分），q 是底线（必要）。读题时先把命题改写成"若p则q"，画出箭头，再对号入座。</p>
+<p>· <b>"p 是 q 的充分条件"和"q 的充分条件是 p"绕不清？</b>——主语永远跟在"是"前面：谁是"……的充分条件"，谁就是箭头的<b>尾巴</b>。把句子还原成"p⇒q 成立"再判断。</p>
+<p>· <b>四分类总答错？</b>——先别背表。固定动作：两次真假判断写下来（p⇒q：□  q⇒p：□），按"⇒真⇒假=充分不必要｜⇒假⇒真=必要不充分｜双真=充要｜双假=都不"对号。动作固定就不会错。</p>
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<div class="key">
+<p><span class="big">1.</span> p⇒q 为真时：p 是 q 的<mark class="nb">充分条件</mark>（有p就够），q 是 p 的<mark class="nb">必要条件</mark>（没q就没p）——一个箭头两个名字，方向锁死。</p>
+<p><span class="big">2.</span> 真命题找<mark class="nb">定理</mark>撑腰，假命题找<mark class="nb">反例</mark>定罪；判定定理发入场券（充分），性质定理画底线（必要）。</p>
+<p><span class="big">3.</span> p⇔q=充要=等价定义；四分类判断=两次真假+对号；条件接集合：A⊆B 时"∈A"是"∈B"的充分条件（小圈充分，大圈必要）。</p>
+</div>
+
+<p><b>自测四连（先自己答，再对答案；答案直接给你）：</b></p>
+<p>①（教材p17思考(3)改述）"x²−4x+3=0"是"x=1"的什么条件？<br><span class="detail"><b>答案：</b>解集{1,3}，x=3 时前真后假，⇒假；x=1⇒方程成立真。必要不充分条件。</span></p>
+<p>②（自编）"两个三角形全等"是"两个三角形面积相等"的什么条件？<br><span class="detail"><b>答案：</b>全等⇒面积相等（性质），真；面积相等⇏全等（形状可不同，如3,3,3与2,3,4周长不等但可构造等积），假。充分不必要条件。</span></p>
+<p>③（自编）"b²−4ac≥0"是"ax²+bx+c=0（a≠0）有实数根"的什么条件？（教材p23习题2(2)同族）<br><span class="detail"><b>答案：</b>判别式双向都真（有实根⇔判别式≥0）——充要条件。这是九年级判别式的"逻辑用语版身份证"。</span></p>
+<p>④（自编）"a∈P∩Q"是"a∈P"的什么条件？"a∈P∪Q"是"a∈P"的什么条件？（教材p23习题2(3)(4)）<br><span class="detail"><b>答案：</b>交集：a∈P∩Q⇒a∈P 真，反向假——充分不必要（交集是小圈）。并集：a∈P∪Q⇏a∈P（可能在Q不在P），a∈P⇒a∈P∪Q 真——必要不充分（并集是大圈）。1.3的两个运算在这里各领一个方向。</span></p>
+
+<p><b>练什么题：</b>教材p20练习1-3（判充分/判必要/a∥b的角条件开放题——∠1=∠2等既是充分又走必要需分情况，开放题练"说理"）；p22练习1-3（充要判定+等腰梯形证明题练"两步证"）；p23习题1.4（四分类主战场：复习巩固2的5小题+判断4小题+综合运用4的集合会师题+拓广探索6的勾股逆定理）。时间紧就先做：习题2(1)(5)+习题3(3)(4)+综合运用4——四分类和集合会师是高考主考位。</p>
+
+<div class="box"><span class="tag">高考怎么考（三行以内·真题锚候采）</span><br>
+· 四分类判断几乎每年必考一道（选择/填空首位常客），常与不等式性质、函数、数列前提组合成"xx是xx的什么条件"；<br>
+· 集合会师型（A⊆B 与条件关系互译）是中档题骨架——本章集合、逻辑两条线在此并成一条；<br>
+· 真题锚：候采——本件暂未采到带卷源的1.4专题题，不代拟；后续件随卷源补锚（沿标准v2.3纪律）。
+</div>
+
+<p class="small">下一站：第2章 等式与不等式性质（2.1）——第一章把"对象"（集合）和"话术"（逻辑用语）备齐，第二章开始在这套话术里研究不等式。"若a>b，则a+c>b+c"——你现在已经能一眼看出这是真命题，a>b 是 a+c>b+c 的充要条件了。</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：1.1认集合→1.2比集合→1.3算集合→1.4说条件（你在）→第二章研究不等式">
+  <rect x="0" y="0" width="800" height="150" fill="#10141b" rx="8"/>
+  <rect x="45" y="35" width="140" height="52" rx="8" fill="#1a2230" stroke="#2a3a55"/>
+  <text x="115" y="58" fill="#8fa3b8" font-size="14" text-anchor="middle">1.1 认集合</text>
+  <text x="115" y="78" fill="#5a6a7a" font-size="11" text-anchor="middle">描述/表示</text>
+  <line x1="188" y1="61" x2="222" y2="61" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE4)"/>
+  <rect x="225" y="35" width="140" height="52" rx="8" fill="#1a2230" stroke="#2a3a55"/>
+  <text x="295" y="58" fill="#8fa3b8" font-size="14" text-anchor="middle">1.2 比集合</text>
+  <text x="295" y="78" fill="#5a6a7a" font-size="11" text-anchor="middle">⊆ 包含</text>
+  <line x1="368" y1="61" x2="402" y2="61" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE4)"/>
+  <rect x="405" y="35" width="140" height="52" rx="8" fill="#1a2230" stroke="#2a3a55"/>
+  <text x="475" y="58" fill="#8fa3b8" font-size="14" text-anchor="middle">1.3 算集合</text>
+  <text x="475" y="78" fill="#5a6a7a" font-size="11" text-anchor="middle">∪ ∩ ∁</text>
+  <line x1="548" y1="61" x2="582" y2="61" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE4)"/>
+  <rect x="585" y="30" width="170" height="62" rx="8" fill="#26221a" stroke="#ffd94a" stroke-width="2"/>
+  <text x="670" y="54" fill="#ffd94a" font-size="14" text-anchor="middle" font-weight="bold">1.4 说条件（你在）</text>
+  <text x="670" y="76" fill="#d4a017" font-size="11" text-anchor="middle">⇒ ⇔ 四分类</text>
+  <text x="400" y="128" fill="#5a6a7a" font-size="11.5" text-anchor="middle">这张图在说什么：第一章"集合与常用逻辑用语"今天收官——下一章起，数学从"研究对象"进入"研究关系"。</text>
+  <defs><marker id="aE4" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#5a6a80"/></marker></defs>
+</svg>
+<p class="figcap">这张图在说什么：第一章四节一条线（认→比→算→说），本节是第一章收官——工具箱全部备齐，第二章进不等式。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2·标准v2.3条款落地：节首清单＋预备块＋四站推进＋集合会师图/位置图＋考位锚块＋@media print打印层；正文"验一验"×4含易错变形×4，节末自测四连，答案直接可见；sympy代验3验点全过·留痕=席位私有sympy留痕脚本1031：solve(x²−4x+3)={1,3}/solve(x²−1)={−1,1}/expand((a−b)²+(b−c)²+(c−a)²−2(a²+b²+c²−ab−bc−ca))=0恒等式核验a=b=c充要性） · 事实层素材源：人教A版必修第一册p17-23官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=6e764703-6e5e-4ea3-9462-34652c2678ef·印刷页17-23=图24-30·ts=1787023173400·图N→印刷页N−7映射沿本册定标·影印图存席位私有目录p14_jc/·原件不入仓）· 节界实锚=1.4全节p17-23（p15-16系1.3节"阅读与思考"容斥原理栏非1.4域·p17节题页+1.4.1/p20练习+1.4.2起/p22练习+习题1.4起/p23习题续至拓广探索）· 思考四命题/例1例2例3例4/判定性质定理概括/充要定义与等价定义/习题题面均影印逐字锚定 · 自编题全部显式标注"自编"，教材原题标注页码来源（p17思考/p18例1/p19例2/p21例3/p22例4/p23习题）· 设计标准：零预设 · 一次一步 · 随读随验×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源
+</div>
+
+</div>
+</body>
+</html>
