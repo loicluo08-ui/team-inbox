@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学2.3 二次函数与一元二次方程、不等式 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  .detail { color: #a8b4c4; font-size: 15px; }
+  .big { font-size: 21px; }
+  .small { font-size: 14px; color: #8a949f; }
+  b, strong { color: #f0f3f7; }
+  mark.nb { background: #ffd94a; color: #14171c; padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .ul-blue { color: #6cc3ff; border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { background: #2a1a1a; border-left: 3px solid #e07050; color: #ffb0a0; padding: 6px 12px; font-size: 14px; margin: 8px 0; }
+  .talk, .key, .box, .check, .try, .alt { border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .talk { background: #1a2230; border: 1px solid #2a3a55; }
+  .key { background: #26221a; border: 1px dashed #d4a017; }
+  .box { background: #20242c; border: 1px dashed #4a5a70; }
+  .check { background: #1a2a20; border: 1px solid #2a5a3a; }
+  .try { background: #22201a; border: 1px solid #6a5a20; }
+  .try .t, .box .t { color: #ffd94a; font-weight: bold; }
+  .alt { background: #1a2226; border: 1px solid #2a4a55; }
+  .alt .tag, .box .tag, .try .tag { color: #6cc3ff; font-weight: bold; font-size: 14px; }
+  .check .tag { color: #9fd48a; font-weight: bold; font-size: 14px; }
+  .fig { margin: 20px 0; }
+  .figcap { text-align: center; font-size: 13px; color: #7d8a99; margin-top: 6px; }
+  table.tb { border-collapse: collapse; margin: 14px auto; width: 100%; font-size: 15px; }
+  table.tb th, table.tb td { border: 1px solid #3a4a60; padding: 7px 9px; text-align: center; }
+  table.tb th { background: #1a2230; color: #6cc3ff; }
+  table.tb td.hl { background: #26221a; }
+  .foot { border-top: 1px solid #2a3140; margin-top: 40px; padding-top: 14px; font-size: 12.5px; color: #5a6a7a; line-height: 1.7; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .box, .check, .alt, .try, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .try { background: #fffbe8; border-color: #d4a017; }
+    .key { background: #fff3b8; border-left: 4px solid #d4a017; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .big, .step-tag { color: #111; }
+    .sub, .small, .foot, .figcap { color: #444; }
+    .talk .q, .key b, .try .t, .box .t, .alt .tag, .check .tag, .try .tag, .box .tag { color: #7a5c00; }
+    .note-red { background: #fdf0ec; border-left: 3px solid #c05030; color: #7a3018; }
+    mark.nb { background: #fff8d0; color: #111; }
+    .detail, .ul-blue { color: #333; }
+    .step-tag { background: #e8eef5; }
+    table.tb th { background: #eef2f7; color: #333; }
+    table.tb td.hl { background: #faf3d8; }
+    /* print七查合规：SVG深底块全量转浅线稿（防深色占比红闸·荧光黄清除） */
+    .fig svg rect[fill="#10141b"], .fig svg rect[fill="#14171c"] { fill: #fafafa !important; }
+    .fig svg rect[fill="#1a2230"], .fig svg rect[fill="#26221a"] { fill: #f2f2f2 !important; stroke: #999 !important; }
+    .fig svg polygon[fill="#7a3b2e"], .fig svg rect[fill="#7a3b2e"] { fill: #f0e0d8 !important; stroke: #a05a40 !important; }
+    .fig svg polygon[fill="#c8a838"] { fill: #faf0c8 !important; }
+    .fig svg circle[fill="#4a9eff"], .fig svg circle[fill="#6cbf4a"] { fill: #555 !important; }
+    .fig svg line[stroke="#5a6a80"] { stroke: #888 !important; }
+    .fig svg line[stroke="#e07050"], .fig svg polyline[stroke="#e07050"] { stroke: #a05a40 !important; }
+    .fig svg text[fill="#d8dee6"], .fig svg text[fill="#6cc3ff"], .fig svg text[fill="#9fd48a"],
+    .fig svg text[fill="#ffd94a"], .fig svg text[fill="#8fa3b8"], .fig svg text[fill="#5a6a7a"],
+    .fig svg text[fill="#d4a017"], .fig svg text[fill="#e07050"], .fig svg text[fill="#b8c4d4"] { fill: #333 !important; }
+    .fig svg text[fill="#fff"] { fill: #333 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>数学2.3 二次函数与一元二次方程、不等式</h1>
+<div class="sub">零基础首学版 v1.0 · 人教A版必修第一册 p50-55 · 第二章收官节：三个"亲戚"今天合并成一张图 · 出品：搜索规划师·队2席 · 1031</div>
+
+<div class="talk"><p><b>开场白：</b>2.1那道杂志定价题（式①整理出来是 2x²−13x+20≤0），当时我们说"这是二次的，暂时解不动，先记账"。今天，本章收官，连本带利一起清。这节课只干一件事：<b>把二次函数、一元二次方程、一元二次不等式三兄弟焊在同一张图象上</b>——焊好之后，任何一元二次不等式你都是"看图说话"，不再硬解。</p></div>
+
+<div class="check"><p><span class="tag">读完这节你能做到（对照教材p50-55）：</span></p>
+<p>① 认出什么是一元二次不等式，写出它的一般形式（并说清为什么 a≠0）；</p>
+<p>② 说清<b>零点</b>是什么，用"零点+图象"三步解出 x²−12x+20&lt;0 这类题；</p>
+<p>③ 背出并会画<b>表2.3-1</b>：Δ&gt;0、Δ=0、Δ&lt;0 三种情况下，方程的根与两个不等式的解集；</p>
+<p>④ 处理两个常见变装：a&lt;0（先化正）和根号包装（如 √(x²−4x+9) 有意义）；</p>
+<p>⑤ 用三步法解应用题（摩托车创收、刹车车速这类"列式→整理→三步走→答"）。</p></div>
+
+<div class="key"><p><b>30秒立好地基（全是初中存货+1.1的话术，本节新概念只有一个）</b></p>
+<p class="detail">· 二次函数 y=ax²+bx+c：图象是抛物线，a&gt;0 开口向上（两头上翘），a&lt;0 开口向下；</p>
+<p class="detail">· 一元二次方程 ax²+bx+c=0：判别式 Δ=b²−4ac。Δ&gt;0 两个不等实根，Δ=0 两个相等实根 x₁=x₂=−b/(2a)，Δ&lt;0 没有实数根——初中"根的判别式"换了个花名；</p>
+<p class="detail">· 解集记号 {x|…}：1.1 学过，如 {x|2&lt;x&lt;10} 读作"使 2&lt;x&lt;10 成立的所有 x 组成的集合"；</p>
+<p class="detail">· <mark class="nb">本节新词只有"零点"</mark>：第②站登场，其实就是方程的根换了件马甲。</p></div>
+
+<h2><span class="step-tag">第①站</span>园艺师的问题——从不等式①到"一元二次不等式"</h2>
+
+<p>教材p50问题1（原题）：<b>园艺师打算在绿地上用栅栏围一个矩形区域种植花卉。若栅栏的长度是24 m，围成的矩形区域的面积要大于20 m²，则这个矩形的边长为多少米？</b></p>
+
+<div class="fig">
+<svg width="720" height="230" viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="问题1示意图：长24米的栅栏围成矩形，一边长x米另一边长12减x米，面积大于20平方米">
+  <rect x="60" y="40" width="480" height="130" fill="#10141b" stroke="#5a6a80" stroke-width="2"/>
+  <rect x="84" y="62" width="432" height="86" fill="#26221a" stroke="#5a6a80" stroke-dasharray="6 4"/>
+  <text x="300" y="26" fill="#d8dee6" font-size="15">栅栏总长 24 m = 2×(x + (12−x))</text>
+  <text x="270" y="110" fill="#ffd94a" font-size="16">面积 = x(12−x) &gt; 20 m²</text>
+  <text x="270" y="196" fill="#6cc3ff" font-size="15">边长 x m</text>
+  <text x="556" y="110" fill="#6cc3ff" font-size="15">边长 (12−x) m</text>
+  <text x="60" y="222" fill="#8fa3b8" font-size="13">外框=花卉带里的矩形区域边界（栅栏），内框=种植区</text>
+</svg>
+<div class="figcap">图A · 问题1矩形示意（按教材p50题面绘制）</div>
+</div>
+
+<p>设这个矩形的一条边长为 x m，则另一条边长为 (12−x) m（总长24的一半是12）。由题意，得</p>
+<p class="big" style="text-align:center;">(12−x)x &gt; 20，</p>
+<p>其中 x∈{x|0&lt;x&lt;12}（边长必须为正）。<b>整理</b>（去括号、移项）得</p>
+<p class="big" style="text-align:center;">x² − 12x + 20 &lt; 0，x∈{x|0&lt;x&lt;12}。　　①</p>
+<p>教材p50接着说：<b>"求得不等式①的解集，就得到了问题的答案。"</b></p>
+
+<p>于是教材给出定义（p50原话）：<b>一般地，我们把只含有一个未知数，并且未知数的最高次数是2的不等式，称为</b><span class="ul-blue">一元二次不等式</span>（quadratic inequality with one unknown）。一元二次不等式的一般形式是</p>
+<p class="big" style="text-align:center;">ax² + bx + c &gt; 0 或 ax² + bx + c &lt; 0，</p>
+<p>其中 a，b，c 均为常数，<mark class="nb">a≠0</mark>。</p>
+<div class="note-red">红批（为什么必须a≠0）：若a=0，式子退化成 bx+c&gt;0——那是一元一次不等式，"二次"二字就落空了。定义里的a≠0不是挑刺，是保住"二次"的身份。</div>
+<p>教材p50思考框（原话）：<b>"在初中，我们学习了从一次函数的观点看一元一次方程、一元一次不等式的思想方法。类似地，能否从二次函数的观点看一元二次不等式，进而得到一元二次不等式的求解方法呢？"</b>——这个"能否"，就是全节的发动机。</p>
+
+<div class="try"><p><span class="tag">验一验①（判型，答案就在冒号后）</span></p>
+<p>· "x²−12x+20&lt;0 是一元二次不等式吗？"——是：一个未知数x，最高次数2。</p>
+<p>· "那 (12−x)x&gt;20 呢？"——整理前带着积的形式不好认，<b>整理成①后就是</b>。判断前先整理成一般式，这是好习惯。</p>
+<p>· <b>易错变形</b>（自编）："ax²+bx+c&gt;0 中把a取成0行不行？"——不行，退化成一元一次；同理 2x²−13x+20≤0（2.1欠的账）里 a=2≠0，是货真价实的二次。</p></div>
+
+<h2><span class="step-tag">第②站</span>零点登场——一张图把三兄弟焊在一起</h2>
+
+<p>教材p50说：先考察 x²−12x+20&lt;0 与 y=x²−12x+20 之间的关系。如图2.3-1画出抛物线，图象与x轴有两个交点，横坐标正是方程 x²−12x+20=0 的两个实数根 x₁=2，x₂=10，交点即 (2,0) 和 (10,0)。</p>
+<p>然后是本节唯一的新定义（p51原话）：<b>一般地，对于二次函数 y=ax²+bx+c，我们把使 ax²+bx+c=0 的实数x叫做二次函数 y=ax²+bx+c 的</b><span class="ul-blue">零点</span>。于是 y=x²−12x+20 的两个零点就是 x₁=2，x₂=10。</p>
+
+<div class="fig">
+<svg width="760" height="430" viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2.3-1重绘：抛物线y=x平方减12x加20，零点x1=2与x2=10，两零点之间图象在x轴下方，两侧在x轴上方">
+  <rect x="0" y="0" width="760" height="430" fill="#10141b"/>
+  <rect x="193" y="60" width="394" height="340" fill="#7a3b2e" opacity="0.30"/>
+  <line x1="70" y1="250" x2="730" y2="250" stroke="#5a6a80" stroke-width="1.5"/>
+  <polygon points="730,245 742,250 730,255" fill="#5a6a80"/>
+  <line x1="94.6" y1="420" x2="94.6" y2="30" stroke="#5a6a80" stroke-width="1.5"/>
+  <polygon points="89.6,30 94.6,18 99.6,30" fill="#5a6a80"/>
+  <text x="736" y="268" fill="#8fa3b8" font-size="14">x</text>
+  <text x="80" y="28" fill="#8fa3b8" font-size="14">y</text>
+  <text x="80" y="266" fill="#8fa3b8" font-size="13">O</text>
+  <text x="60" y="176" fill="#5a6a7a" font-size="12">10</text><line x1="88" y1="175" x2="101" y2="175" stroke="#5a6a80"/>
+  <text x="55" y="326" fill="#5a6a7a" font-size="12">−10</text><line x1="88" y1="325" x2="101" y2="325" stroke="#5a6a80"/>
+  <text x="185" y="270" fill="#5a6a7a" font-size="12">2</text>
+  <text x="333" y="270" fill="#5a6a7a" font-size="12">5</text>
+  <text x="580" y="270" fill="#5a6a7a" font-size="12">10</text>
+  <text x="678" y="270" fill="#5a6a7a" font-size="12">12</text>
+  <polyline points="70.0,53.1 79.8,72.3 89.7,90.9 99.5,108.9 109.4,126.3 119.2,143.1 129.1,159.3 138.9,174.9 148.8,189.9 158.6,204.3 168.5,218.1 178.3,231.3 188.2,243.9 198.0,255.9 207.8,267.3 217.7,278.1 227.5,288.3 237.4,297.9 247.2,306.9 257.1,315.3 266.9,323.1 276.8,330.3 286.6,336.9 296.5,342.9 306.3,348.3 316.2,353.1 326.0,357.3 335.8,360.9 345.7,363.9 355.5,366.3 365.4,368.1 375.2,369.3 385.1,369.9 394.9,369.9 404.8,369.3 414.6,368.1 424.5,366.3 434.3,363.9 444.2,360.9 454.0,357.3 463.8,353.1 473.7,348.3 483.5,342.9 493.4,336.9 503.2,330.3 513.1,323.1 522.9,315.3 532.8,306.9 542.6,297.9 552.5,288.3 562.3,278.1 572.2,267.3 582.0,255.9 591.8,243.9 601.7,231.3 611.5,218.1 621.4,204.3 631.2,189.9 641.1,174.9 650.9,159.3 660.8,143.1 670.6,126.3 680.5,108.9 690.3,90.9 700.2,72.3 710.0,53.1" fill="none" stroke="#e07050" stroke-width="2.5"/>
+  <circle cx="193.1" cy="250" r="5" fill="#4a9eff"/>
+  <circle cx="586.9" cy="250" r="5" fill="#4a9eff"/>
+  <text x="150" y="238" fill="#6cc3ff" font-size="15">x₁=2</text>
+  <text x="560" y="238" fill="#6cc3ff" font-size="15">x₂=10</text>
+  <text x="404" y="392" fill="#9fd48a" font-size="14">顶点(6,−16)</text>
+  <text x="470" y="80" fill="#d8dee6" font-size="15">y = x²−12x+20</text>
+  <text x="96" y="140" fill="#8fa3b8" font-size="13">x&lt;2：图象在x轴上方 → y&gt;0</text>
+  <text x="262" y="120" fill="#ffd94a" font-size="14">2&lt;x&lt;10：图象在x轴下方 → y&lt;0</text>
+  <text x="600" y="140" fill="#8fa3b8" font-size="13">x&gt;10：上方 → y&gt;0</text>
+  <text x="240" y="415" fill="#d8dee6" font-size="13">红色竖条带 = 不等式①的解集所在范围 {x|2&lt;x&lt;10}</text>
+</svg>
+<div class="figcap">图B · 图2.3-1精确重绘（Python逐点计算：零点(2,0)(10,0)，顶点(6,−16)）</div>
+</div>
+
+<p><b>三段分析</b>（p51原话的逻辑，一步不跳）：两个零点 x₁=2，x₂=10 把x轴分成三段。</p>
+<p>· 当 <b>x&lt;2 或 x&gt;10</b> 时，图象位于x轴<b>上方</b>，此时 y&gt;0，即 x²−12x+20&gt;0；</p>
+<p>· 当 <b>2&lt;x&lt;10</b> 时，图象位于x轴<b>下方</b>，此时 y&lt;0，即 x²−12x+20&lt;0。</p>
+<p>所以一元二次不等式①的解集是</p>
+<p class="big" style="text-align:center;">{x | 2 &lt; x &lt; 10}。</p>
+<p>回看问题1：因为 {x|2&lt;x&lt;10} ⊆ {x|0&lt;x&lt;12}，所以当边长x满足 2&lt;x&lt;10 时，面积大于20 m²——园艺师的问题答完。</p>
+
+<div class="try"><p><span class="tag">验一验②（代值实验：让图象说话）</span></p>
+<p>· x=6（两零点正中间）：36−72+20=<b>−16&lt;0</b> ✓ 中段确实小于0；</p>
+<p>· x=0（区间外）：0−0+20=<b>20&gt;0</b> ✓ 外段确实大于0；</p>
+<p>· <b>易错变形</b>：x=2呢？4−24+20=<b>0</b>。0不小于0，所以<b>x=2不在解集里</b>！零点是"分界牌"，不是"解员"——①里的"&lt;"不带等号，解集就是开区间(2,10)。（自编提醒）</p>
+<p>· <b>变式1</b>（自编，只改不等号方向）：x²−12x+20&gt;0 的解集？——同一张图反着读：图象在x轴<b>上方</b>的部分，即 {x|x&lt;2 或 x&gt;10}。</p></div>
+
+<h2><span class="step-tag">第③站</span>表2.3-1——三情况全表，背图不背死表</h2>
+
+<p>教材p51把这套"看图说话"一般化（原话逻辑）：<b>上述方法可以推广到求一般的一元二次不等式 ax²+bx+c&gt;0(a&gt;0) 和 ax²+bx+c&lt;0(a&gt;0) 的解集。因为一元二次方程的根是相应一元二次函数的零点，所以先求出一元二次方程的根，再根据二次函数图象与x轴的相关位置确定一元二次不等式的解集。</b></p>
+<p>设 Δ=b²−4ac，方程的根按 Δ&gt;0、Δ=0、Δ&lt;0 分三种情况，图象与x轴的位置关系也随之三种，于是解集分三种情况讨论（表2.3-1）。</p>
+
+<div class="fig">
+<svg width="760" height="235" viewBox="0 0 760 235" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="判别式三情况小图：Δ大于0抛物线与x轴两交点，Δ等于0相切一点，Δ小于0整体悬在x轴上方">
+  <rect x="0" y="0" width="760" height="235" fill="#10141b"/>
+  <line x1="15" y1="140" x2="225" y2="140" stroke="#5a6a80"/><line x1="275" y1="140" x2="485" y2="140" stroke="#5a6a80"/><line x1="535" y1="140" x2="745" y2="140" stroke="#5a6a80"/>
+  <polyline points="13.8,-29.0 18.4,-10.0 23.0,8.0 27.6,25.2 32.2,41.4 36.8,56.8 41.4,71.4 46.0,85.0 50.6,97.8 55.2,109.6 59.8,120.6 64.4,130.8 69.0,140.0 73.6,148.4 78.2,155.8 82.8,162.4 87.4,168.2 92.0,173.0 96.6,177.0 101.2,180.0 105.8,182.2 110.4,183.6 115.0,184.0 119.6,183.6 124.2,182.2 128.8,180.0 133.4,177.0 138.0,173.0 142.6,168.2 147.2,162.4 151.8,155.8 156.4,148.4 161.0,140.0 165.6,130.8 170.2,120.6 174.8,109.6 179.4,97.8 184.0,85.0 188.6,71.4 193.2,56.8 197.8,41.4 202.4,25.2 207.0,8.0 211.6,-10.0 216.2,-29.0" fill="none" stroke="#e07050" stroke-width="2.2" transform="translate(0,0)"/>
+  <polyline points="273.8,-73.0 278.4,-54.0 283.0,-36.0 287.6,-18.8 292.2,-2.6 296.8,12.8 301.4,27.4 306.0,41.0 310.6,53.8 315.2,65.6 319.8,76.6 324.4,86.8 329.0,96.0 333.6,104.4 338.2,111.8 342.8,118.4 347.4,124.2 352.0,129.0 356.6,133.0 361.2,136.0 365.8,138.2 370.4,139.6 375.0,140.0 379.6,139.6 384.2,138.2 388.8,136.0 393.4,133.0 398.0,129.0 402.6,124.2 407.2,118.4 411.8,111.8 416.4,104.4 421.0,96.0 425.6,86.8 430.2,76.6 434.8,65.6 439.4,53.8 444.0,41.0 448.6,27.4 453.2,12.8 457.8,-2.6 462.4,-18.8 467.0,-36.0 471.6,-54.0 476.2,-73.0" fill="none" stroke="#e07050" stroke-width="2.2"/>
+  <polyline points="533.8,-108.2 538.4,-89.2 543.0,-71.2 547.6,-54.0 552.2,-37.8 556.8,-22.4 561.4,-7.8 566.0,5.8 570.6,18.6 575.2,30.4 579.8,41.4 584.4,51.6 589.0,60.8 593.6,69.2 598.2,76.6 602.8,83.2 607.4,89.0 612.0,93.8 616.6,97.8 621.2,100.8 625.8,103.0 630.4,104.4 635.0,104.8 639.6,104.4 644.2,103.0 648.8,100.8 653.4,97.8 658.0,93.8 662.6,89.0 667.2,83.2 671.8,76.6 676.4,69.2 681.0,60.8 685.6,51.6 690.2,41.4 694.8,30.4 699.4,18.6 704.0,5.8 708.6,-7.8 713.2,-22.4 717.8,-37.8 722.4,-54.0 727.0,-71.2 731.6,-89.2 736.2,-108.2" fill="none" stroke="#e07050" stroke-width="2.2"/>
+  <circle cx="69" cy="140" r="4.5" fill="#4a9eff"/><circle cx="161" cy="140" r="4.5" fill="#4a9eff"/>
+  <circle cx="375" cy="140" r="4.5" fill="#4a9eff"/>
+  <text x="98" y="26" fill="#6cc3ff" font-size="15">Δ&gt;0：两个交点</text>
+  <text x="352" y="26" fill="#ffd94a" font-size="15">Δ=0：相切一点</text>
+  <text x="600" y="26" fill="#9fd48a" font-size="15">Δ&lt;0：悬空无交点</text>
+  <text x="30" y="165" fill="#b8c4d4" font-size="13">&gt;0解集：{x|x&lt;x₁ 或 x&gt;x₂}</text>
+  <text x="30" y="188" fill="#b8c4d4" font-size="13">&lt;0解集：{x|x₁&lt;x&lt;x₂}</text>
+  <text x="300" y="165" fill="#b8c4d4" font-size="13">&gt;0解集：{x|x≠−b/(2a)}</text>
+  <text x="300" y="188" fill="#b8c4d4" font-size="13">&lt;0解集：∅</text>
+  <text x="560" y="165" fill="#b8c4d4" font-size="13">&gt;0解集：R（全体实数）</text>
+  <text x="560" y="188" fill="#b8c4d4" font-size="13">&lt;0解集：∅</text>
+  <text x="42" y="215" fill="#8fa3b8" font-size="13">条件均为 a&gt;0（开口向上）；∅=空集，R=实数集</text>
+</svg>
+<div class="figcap">图C · 三情况一图流（自绘图，曲线按Python坐标重绘）——配表2.3-1使用</div>
+</div>
+
+<p><b>表2.3-1　二次函数与一元二次方程、不等式的解的对应关系</b>（教材p51原表复刻）：</p>
+<table class="tb">
+  <tr><th>项目</th><th>Δ&gt;0</th><th>Δ=0</th><th>Δ&lt;0</th></tr>
+  <tr><td class="hl">y=ax²+bx+c (a&gt;0) 的图象</td><td>与x轴两交点</td><td>与x轴相切一点</td><td>悬在x轴上方</td></tr>
+  <tr><td class="hl">ax²+bx+c=0 (a&gt;0) 的根</td><td>两个不相等的实数根 x₁，x₂（x₁&lt;x₂）</td><td>两个相等的实数根 x₁=x₂=−b/(2a)</td><td>没有实数根</td></tr>
+  <tr><td class="hl">ax²+bx+c&gt;0 (a&gt;0) 的解集</td><td>{x | x&lt;x₁，或 x&gt;x₂}</td><td>{x | x≠−b/(2a)}</td><td><b>R</b></td></tr>
+  <tr><td class="hl">ax²+bx+c&lt;0 (a&gt;0) 的解集</td><td>{x | x₁&lt;x&lt;x₂}</td><td>∅</td><td>∅</td></tr>
+</table>
+<p class="small">（原表中"图象"一栏是三幅小图，这里用图C替代表格内的图，含义一致。）</p>
+
+<div class="note-red">红批（自编口诀·标注自编）：开口向上（a&gt;0）前提下，"<mark class="nb">大于0取两边，小于0取中间</mark>"——两边就是{x|x&lt;x₁或x&gt;x₂}，中间就是{x|x₁&lt;x&lt;x₂}。Δ=0时"中间"缩成一个点，解不了"x=它"这件事，所以&lt;0变∅、&gt;0变成"挖掉一个点"。Δ&lt;0时整条抛物线悬在上方，&gt;0全体实数都行（R），&lt;0谁也不行（∅）。</div>
+
+<div class="try"><p><span class="tag">验一验③（表格活用·双向踩坑，答案在冒号后）</span></p>
+<p>· "x²−3x+4&gt;0 的解集？"——Δ=9−16=−7&lt;0，开口向上悬空 → <b>R</b>。<b>易错点</b>：别看见Δ&lt;0就写∅！Δ&lt;0只说"方程没根"，"&gt;0"的解集恰恰是全体实数。</p>
+<p>· "(x−1)²&gt;0 的解集？"——Δ=0型，唯一零点x=1被"挖掉" → {x|x≠1}。既不是R（x=1使式子=0）也不是∅。</p>
+<p>· <b>易错变形</b>（自编）："∅ 什么时候出现？"——开口向上时，只有"&lt;0"配上"Δ≤0"：Δ=0给∅（如(x−1)²&lt;0），Δ&lt;0也给∅（如x²−x+1/4&lt;0，(x−1/2)²&lt;0）。<mark class="nb">"方程无实数根"和"不等式解集为空"是两句话，别混写。</mark></p></div>
+
+<h2><span class="step-tag">第④站</span>例题实战——三条路线+流程图+两道应用</h2>
+
+<h3>例1（Δ&gt;0路线·教材p52）求不等式 x²−5x+6&gt;0 的解集</h3>
+<p><b>分析（教材原话逻辑）</b>：方程x²−5x+6=0的根是函数y=x²−5x+6的零点，所以先求根，再结合图象写解集。</p>
+<p><b>解</b>：对于方程 x²−5x+6=0，因为 Δ&gt;0，它有两个实数根，解得 x₁=2，x₂=3（因式分解(x−2)(x−3)=0，或求根公式）。画出 y=x²−5x+6 的图象（图2.3-2），结合图象得解集为</p>
+<p class="big" style="text-align:center;">{x | x&lt;2，或 x&gt;3}。</p>
+<p class="detail">· <b>变式2</b>（自编）：只把"&gt;0"改成"&lt;0"：x²−5x+6&lt;0 → {x|2&lt;x&lt;3}。同一根、同张图，方向一翻，答案从"两边"变"中间"。</p>
+
+<h3>例2（Δ=0路线·教材p52）求不等式 9x²−6x+1&gt;0 的解集</h3>
+<p><b>解</b>：对于方程 9x²−6x+1=0，因为 Δ=0，它有两个相等的实数根，解得 x₁=x₂=1/3（9x²−6x+1=(3x−1)²）。画出 y=9x²−6x+1 的图象（图2.3-3），结合图象得解集为</p>
+<p class="big" style="text-align:center;">{x | x≠1/3}。</p>
+<p class="detail">图象只在x=1/3处碰一下x轴，其余全部悬在上方——所以除1/3外处处大于0。</p>
+
+<h3>例3（a&lt;0先化正·教材p52）求不等式 −x²+2x−3&gt;0 的解集</h3>
+<p><b>解（教材原样）</b>：不等式可化为 x²−2x+3&lt;0（两边同乘−1，不等号方向改变——2.1性质4在岗）。因为 Δ=(−2)²−4×1×3=−8&lt;0，所以方程 x²−2x+3=0 无实数根。画出 y=x²−2x+3 的图象（图2.3-4），结合图象得 x²−2x+3&lt;0 的解集为∅。因此，原不等式的解集为∅。</p>
+<div class="note-red">教材侧栏红批（p52原话）：<b>"对于二次项系数是负数（即a&lt;0）的不等式，可以先把二次项系数化成正数，再求解。"</b>——乘负要变向，这是2.1不等式性质4的直接应用。</div>
+<p class="detail">· <b>变式3</b>（自编）：把例3的"&gt;0"改成"&lt;0"：−x²+2x−3&lt;0 ⇔ x²−2x+3&gt;0，Δ=−8&lt;0悬空 → R。同一式子，方向一翻，∅变R——做题前先看清不等号！</p>
+
+<h3>流程图（图2.3-5·教材p53）——三步法一图装下</h3>
+<div class="fig">
+<svg width="760" height="330" viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="求解一元二次不等式流程图：化成a大于0形式，计算判别式，按三种情况分别写解集">
+  <rect x="0" y="0" width="760" height="330" fill="#10141b"/>
+  <rect x="200" y="14" width="360" height="40" fill="#1a2230" stroke="#4a5a70" rx="6"/>
+  <text x="380" y="39" fill="#d8dee6" font-size="15" text-anchor="middle">第1步：将原不等式化成 ax²+bx+c&gt;0（a&gt;0）的形式</text>
+  <line x1="380" y1="54" x2="380" y2="80" stroke="#5a6a80" stroke-width="1.5"/><polygon points="375,80 380,90 385,80" fill="#5a6a80"/>
+  <rect x="230" y="90" width="300" height="40" fill="#1a2230" stroke="#4a5a70" rx="6"/>
+  <text x="380" y="115" fill="#d8dee6" font-size="15" text-anchor="middle">第2步：计算 Δ=b²−4ac 的值</text>
+  <line x1="380" y1="130" x2="380" y2="150" stroke="#5a6a80" stroke-width="1.5"/>
+  <line x1="140" y1="150" x2="620" y2="150" stroke="#5a6a80" stroke-width="1.5"/>
+  <line x1="140" y1="150" x2="140" y2="172" stroke="#5a6a80" stroke-width="1.5"/><polygon points="135,172 140,182 145,172" fill="#5a6a80"/>
+  <line x1="380" y1="150" x2="380" y2="172" stroke="#5a6a80" stroke-width="1.5"/><polygon points="375,172 380,182 385,172" fill="#5a6a80"/>
+  <line x1="620" y1="150" x2="620" y2="172" stroke="#5a6a80" stroke-width="1.5"/><polygon points="615,172 620,182 625,172" fill="#5a6a80"/>
+  <text x="100" y="146" fill="#6cc3ff" font-size="14">Δ&gt;0</text>
+  <text x="360" y="146" fill="#ffd94a" font-size="14">Δ=0</text>
+  <text x="636" y="146" fill="#9fd48a" font-size="14">Δ&lt;0</text>
+  <rect x="30" y="184" width="220" height="58" fill="#1a2230" stroke="#4a5a70" rx="6"/>
+  <text x="140" y="206" fill="#d8dee6" font-size="13.5" text-anchor="middle">方程有两个不相等实根 x₁,x₂（x₁&lt;x₂）</text>
+  <text x="140" y="228" fill="#6cc3ff" font-size="13.5" text-anchor="middle">第3步：解集 {x|x&lt;x₁ 或 x&gt;x₂}</text>
+  <rect x="270" y="184" width="220" height="58" fill="#1a2230" stroke="#4a5a70" rx="6"/>
+  <text x="380" y="206" fill="#d8dee6" font-size="13.5" text-anchor="middle">方程有两个相等实根 x₁=x₂=−b/(2a)</text>
+  <text x="380" y="228" fill="#ffd94a" font-size="13.5" text-anchor="middle">第3步：解集 {x|x≠−b/(2a)}</text>
+  <rect x="510" y="184" width="220" height="58" fill="#1a2230" stroke="#4a5a70" rx="6"/>
+  <text x="620" y="206" fill="#d8dee6" font-size="13.5" text-anchor="middle">方程没有实数根</text>
+  <text x="620" y="228" fill="#9fd48a" font-size="13.5" text-anchor="middle">第3步：解集 R</text>
+  <text x="380" y="286" fill="#8fa3b8" font-size="13.5" text-anchor="middle">若原式是"ax²+bx+c&lt;0"，第3步改取表中&lt;0行：两边→中间→∅</text>
+  <text x="380" y="312" fill="#8fa3b8" font-size="13.5" text-anchor="middle">（图2.3-5文字化重绘·教材p53原框图逻辑一致）</text>
+</svg>
+<div class="figcap">图D · 图2.3-5重绘：一元二次不等式求解流程图（教材p53）</div>
+</div>
+<p class="detail">教材p52原话提问：<b>"现在，你能解决第2.1节的'问题2'了吗？"</b>——先把工具练熟，答案在第④站末尾。</p>
+
+<h3>例4（应用·摩托车创收·教材p53-54）</h3>
+<p><b>题面（教材原文）</b>：一家车辆制造厂引进了一条摩托车整车装配流水线，这条流水线生产的摩托车数量x（单位：辆）与创造的价值y（单位：元）之间有如下关系：<b>y=−20x²+2200x</b>。若这家工厂希望在一个星期内利用这条流水线创收60000元以上，则在一个星期内大约应该生产多少辆摩托车？</p>
+<p><b>解（教材路线）</b>：设一周生产x辆，根据题意得 −20x²+2200x&gt;60000。<b>移项整理</b>（两边减60000）：x²−110x+3000&lt;0。对于方程 x²−110x+3000=0，Δ=100&gt;0，两个实数根 x₁=50，x₂=60。画出 y=x²−110x+3000 的图象（图2.3-6），结合图象得解集 {x|50&lt;x&lt;60}。</p>
+<p><b>回到实际</b>（教材原话逻辑）：因为x只能取整数值，所以当这条流水线在一周内生产的摩托车数量在<b>51~59辆</b>时，这家工厂能够获得60000元以上的收益。</p>
+
+<h3>例5（应用·刹车距离·教材p54）</h3>
+<p><b>题面（教材原文）</b>：某种汽车在水泥路面上的刹车距离s（单位：m）和汽车刹车前的车速v（单位：km/h）之间有如下关系：<b>s=(1/20)v+(1/180)v²</b>。在一次交通事故中，测得这种车的刹车距离大于39.5 m，那么这辆汽车刹车前的车速至少为多少（精确到1 km/h）？</p>
+<p><b>解（教材路线）</b>：根据题意 (1/20)v+(1/180)v²&gt;39.5。两边乘180（正数，方向不变）：9v+v²&gt;7110，即 <b>v²+9v−7110&gt;0</b>。对于方程 v²+9v−7110=0，Δ&gt;0，两个实数根 v₁=(−9−√28521)/2，v₂=(−9+√28521)/2。结合图象（图2.3-7），解集为 {v|v&lt;v₁，或 v&gt;v₂}。</p>
+<p>因为车速v&gt;0，所以取 v&gt;v₂。教材估计：79.9&lt;v₂&lt;80（自验算：80代入 v²+9v−7110 得 6400+720−7110=10&gt;0，79代入得 −158&lt;0，根夹在79和80之间且靠近80），所以刹车前的车速<b>至少为80 km/h</b>。</p>
+<div class="note-red">教材侧栏（p54）：<b>"刹车距离是指汽车刹车后由于惯性往前滑行的距离。"</b>——物理直觉：越快越刹不住，所以"距离超限"推出"车速偏高"（v&gt;v₂），而不是偏低。</div>
+
+<h3>回环——2.1欠的账，今天结清（教材p54原话）</h3>
+<p>教材p54：<b>"类似地，第2.1节的不等式①经移项整理，得 2x²−13x+20≤0。用上述方法解这个不等式，得 {x|2.5≤x≤4}。所以，当每本杂志的定价不低于2.5元且不超过4元时，提价后的销售总收入不低于20万元。"</b></p>
+<p class="detail">自验算：2x²−13x+20=0 的根 x=(13±√(169−160))/4=(13±3)/4，即 x=2.5 或 x=4；开口向上，"≤0"取中间（含等号），所以 {x|2.5≤x≤4} ✓。注意这里带等号——"&lt;"变"≤"，边界零点就收进解集（验一验②的易错点在此兑现）。</p>
+
+<div class="try"><p><span class="tag">验一验④（a&lt;0化正+根号伪装，答案在冒号后）</span></p>
+<p>· "13−4x²&gt;0 的解集？"（习题2.3第1(1)提前试）——a=−4&lt;0，两边乘−1/4变向：x²−13/4&lt;0 → {x|−√13/2&lt;x&lt;√13/2}（约−1.80&lt;x&lt;1.80）。化正、取中间、一步到位。</p>
+<p>· <b>易错变形</b>（习题2.3第2(1)）："x是什么实数时，√(x²−4x+9) 有意义？"——根号里需 x²−4x+9≥0。配方：(x−2)²+5≥5&gt;0恒成立 → <b>一切实数（R）</b>。Δ=16−36=−20&lt;0披了件根号外衣，本质还是"Δ&lt;0时&gt;0解集是R"。别被根号吓住，先配方或算Δ。</p></div>
+
+<h2>收口·60秒复述（读完合上件，这三句话能背出来就算通）</h2>
+<p><b>第一句</b>：零点是焊接点——方程ax²+bx+c=0的根 = 函数y=ax²+bx+c的零点 = 图象与x轴交点的横坐标，三者一个东西。</p>
+<p><b>第二句</b>：三步走——化成a&gt;0（负系数乘−1变向）→ 算Δ求根 → 开口向上看图：<mark class="nb">大于0取两边，小于0取中间</mark>；Δ=0挖点，Δ&lt;0悬空。</p>
+<p><b>第三句</b>：坑在边界与方向——a&lt;0先化正；"&lt;"不带等号零点不进解集，"≤"才带；Δ&lt;0时"&gt;0"解集是R不是∅；应用题最后回实际（取整、单位、范围）。</p>
+
+<div class="check"><p><span class="tag">节末自测·四连（教材原题·答案直接写在下方，先做后看）</span></p>
+<p>① （p53练习1(1)）(x+2)(x−3)&gt;0；　② （p53练习1(3)）−x²+4x−4&lt;0；</p>
+<p>③ （p53练习1(4)）x²−x+1/4&lt;0；　④ （p55习题2.3·综合运用3）已知 M={x|4x²−4x−15&gt;0}，N={x|x²−5x−6&gt;0}，求 M∩N，M∪N。</p>
+<p class="detail"><b>答案</b>：① 零点−2和3，取两边：{x|x&lt;−2 或 x&gt;3}。② 化正：x²−4x+4&gt;0，(x−2)²&gt;0，Δ=0型挖点：{x|x≠2}。③ (x−1/2)²&lt;0，平方不小于0（开口向上最小值0在x=1/2处取到，仍不&lt;0）：∅。④ M：4x²−4x−15=(2x−5)(2x+3)&gt;0 → {x|x&lt;−3/2 或 x&gt;5/2}；N：x²−5x−6=(x−6)(x+1)&gt;0 → {x|x&lt;−1 或 x&gt;6}；M∩N={x|x&lt;−3/2 或 x&gt;6}，M∪N={x|x&lt;−1 或 x&gt;5/2}（并集左边取更宽的N臂：x&lt;−3/2被x&lt;−1整段吸收）。</p></div>
+
+<div class="box"><p><span class="tag">练什么题（时间紧的顺序）</span></p>
+<p class="detail">· 第一轮必做：p53练习1(2) 3x²−7x≤10；练习1(6) x²−3x+4&gt;0；p55习题2.3复习巩固1(3) x²−3x−10&gt;0；习题3（上面自测④）。</p>
+<p class="detail">· 第二轮：p53练习2四小题——"x为何值时函数值等于0/大于0/小于0"三问连答，就是表2.3-1的活用（如 y=25−x²：等于0在x=±5，大于0在−5&lt;x&lt;5，小于0在x&lt;−5或x&gt;5）。</p>
+<p class="detail">· 第三轮（应用与综合）：p54练习1 √(x²+x−12) 有意义（(x+4)(x−3)≥0 → x≤−4 或 x≥3）；p55练习2花卉带（花卉带宽w：(8−2w)(6−2w)≤24 且 0&lt;w&lt;3 → 1≤w&lt;3，带至少1米且必须小于3米）；p55练习3削笔器（每提价x元收入(15+x)(30−2x)=450−2x²&gt;400 → x²&lt;25 → 0≤x&lt;5，售价15~20元不含20）；p55习题4排球（12t−5t²&gt;2 → (6−√26)/5&lt;t&lt;(6+√26)/5，停留约2.04 s）；习题5 A∪B（A={x|−4&lt;x&lt;4}，B={x|x&lt;1或x&gt;3}，并起来恰是R）；习题6热带风暴（南偏东45°600 km即横纵坐标各300√2≈424.3 km，中心正北移20t后距码头平方=180000+(20t−424.3)²&lt;202500 → 13.7&lt;t&lt;28.7，约13.7 h后受影响、持续约15.0 h）。</p></div>
+
+<div class="box"><p><span class="tag">高考怎么考（T11考位锚·候采）</span></p>
+<p class="detail">解一元二次不等式是全卷<b>底座工具</b>：集合交并并（如自测④）、函数定义域值域、基本不等式取值范围、后面导数求单调性时的"导数&gt;0/&lt;0"，处处是它。<b>恒成立求参数</b>是选填高频原型——复习参考题2第6题（p58）"当k取什么值时，一元二次不等式 2kx²+kx−3/8&lt;0 对一切实数x都成立"就是教材内嵌的雏形：开口向下(2k&lt;0)+Δ&lt;0双条件联立。真题锚候采：v2.9卷源池暂无2.3对口卷源，如实不代拟，候补充登记。</p></div>
+
+<div class="box"><p><span class="tag">下一站</span></p>
+<p class="detail">第二章到此<b>收官</b>：1.1~1.5给了"集合与逻辑"话术，2.1给了不等式性质，2.2给了基本不等式，本节给了"看图解二次不等式"。教材p59翻页即第三章章首页《函数的概念与性质》，p60=3.1节名页——下一章将用集合语言正式定义 y=f(x)。你今天焊好的"三兄弟图"，就是下一章研究函数的入场券。</p></div>
+
+<div class="fig">
+<svg width="760" height="150" viewBox="0 0 760 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第一章集合与常用逻辑用语，第二章一元二次函数方程和不等式三节，第三章函数的概念与性质，当前在2.3">
+  <rect x="0" y="0" width="760" height="150" fill="#10141b"/>
+  <rect x="18" y="42" width="150" height="52" fill="#1a2230" stroke="#4a5a70" rx="8"/>
+  <text x="93" y="64" fill="#d8dee6" font-size="13" text-anchor="middle">第一章</text>
+  <text x="93" y="84" fill="#8fa3b8" font-size="12" text-anchor="middle">集合与常用逻辑用语</text>
+  <line x1="168" y1="68" x2="200" y2="68" stroke="#5a6a80" stroke-width="1.5"/><polygon points="200,63 210,68 200,73" fill="#5a6a80"/>
+  <rect x="210" y="42" width="150" height="52" fill="#1a2230" stroke="#4a5a70" rx="8"/>
+  <text x="285" y="64" fill="#d8dee6" font-size="13" text-anchor="middle">第二章</text>
+  <text x="285" y="84" fill="#8fa3b8" font-size="12" text-anchor="middle">一元二次函数、方程和不等式</text>
+  <line x1="360" y1="68" x2="392" y2="68" stroke="#5a6a80" stroke-width="1.5"/><polygon points="392,63 402,68 392,73" fill="#5a6a80"/>
+  <rect x="402" y="30" width="180" height="76" fill="#7a3b2e" stroke="#e07050" rx="8"/>
+  <text x="492" y="52" fill="#ffd94a" font-size="13" text-anchor="middle">2.3 二次函数与方程、不等式</text>
+  <text x="492" y="72" fill="#fff" font-size="12.5" text-anchor="middle">你在这里 · 第二章收官</text>
+  <text x="492" y="92" fill="#d8dee6" font-size="11.5" text-anchor="middle">三兄弟并一图 · 欠账结清</text>
+  <line x1="582" y1="68" x2="614" y2="68" stroke="#5a6a80" stroke-width="1.5"/><polygon points="614,63 624,68 614,73" fill="#5a6a80"/>
+  <rect x="624" y="42" width="120" height="52" fill="#1a2230" stroke="#4a5a70" rx="8"/>
+  <text x="684" y="64" fill="#d8dee6" font-size="13" text-anchor="middle">第三章</text>
+  <text x="684" y="84" fill="#8fa3b8" font-size="12" text-anchor="middle">函数的概念与性质</text>
+  <text x="380" y="136" fill="#5a6a7a" font-size="12" text-anchor="middle">第二章内部：2.1性质 → 2.2基本不等式 → 2.3本节（p44节名页已由2.2件锚定）</text>
+</svg>
+<div class="figcap">图E · 本节在全书的位置</div>
+</div>
+
+<div class="alt"><p><span class="tag">卡住了？四条出路（可选块——时间紧可跳过，不损失主干）</span></p>
+<p>· 出路①"零点"听着玄？——它就是"让函数值等于0的x"，和方程的根是同一个人换了件马甲。默念：根=零点=交点横坐标。</p>
+<p>· 出路②表2.3-1背不住？——别背表，画图：开口向上的抛物线+两根，"&gt;0"图象在水上（取两边），"&lt;0"图象在水下（取中间）。一图抵一表。</p>
+<p>· 出路③a&lt;0发慌？——两边同乘−1（不等号反向，2.1性质4），化成开口向上再走三步。例3和验一验④都是这么做的。</p>
+<p>· 出路④应用题列不出式？——照问题1的四步模板：设未知数 → 按题意列不等关系 → 整理成一般式 → 三步走+回实际答（取整/单位/范围限制）。例4例5全是这四步。</p></div>
+
+<div class="foot">
+零基础首学版 v1.0（批2末件·标准v2.3条款落地：节首清单＋预备块＋四站推进＋图2.3-1精确重绘/三情况一图流/流程图2.3-5文字化/位置图＋考位锚块＋@media print打印层；正文"验一验"×4含易错变形×4，节末自测四连，答案直接可见；sympy代验14验点全过·留痕=席位私有sympy代验脚本1031：例1根2,3与因式展开核/例2(3x−1)²核/例3Δ=−8与顶点值2&gt;0核/例4根50,60与整数解51-59核/例5端点代值79负80正核v₂∈(79.9,80)/回环2x²−13x+20根2.5,4核/习题1(1)√13/2核/习题1(4)Δ=−23空集核/习题2(1)(x−2)²+5恒正核/习题2(2)−2(x−3)²仅x=3核/习题3 M,N根与交并核/习题4根(6±√26)/5停留2.04s核/习题5 A∪B=R核/习题6 t∈(13.7,28.7)持续15.0h核/练习1(2)(3x−10)(x+1)核/表2.3-1逻辑对200组随机系数(a&gt;0)与sympy解集逐组比对一致） · 事实层素材源：人教A版必修第一册p50-55官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=6e764703-6e5e-4ea3-9462-34652c2678ef·印刷页50-55=图57-62·ts=1787023173400详情API实时复取同值·图N→印刷页N−7映射沿本册定标·影印图存席位私有目录p02_math/·原件不入仓） · 节界实锚=2.3全节p50-55（图57=p50节名页+问题1+定义+思考/图58=p51零点+三段+表2.3-1/图59=p52例1例2例3/图60=p53图2.3-5+练习+例4开题/图61=p54例4收尾+例5+2.1回环+练习1/图62=p55练习2练习3+习题2.3全·尾锚=图63=p56章级小结页（小结/复习参考题2属章级材料不入本节件·p57-58复习参考题2）·章界锚=图66=p59第三章章首页·下节界锚=图67=p60=3.1节名页——节界闭合） · 问题1园艺师/一元二次不等式定义/零点定义/三段分析/表2.3-1/例1例2例3/图2.3-5/例4例5/2.1问题2回环/练习与习题2.3题面均影印逐字锚定 · 自编题全部显式标注"自编"，教材原题标注页码来源（p50问题1/p50定义/p51零点与表2.3-1/p52例1-3/p53练习/p53-54例4/p54例5/p54回环/p53-55练习与习题2.3） · 设计标准：零预设 · 一次一步 · 随读随验×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源
+</div>
+
+</div>
+</body>
+</html>
