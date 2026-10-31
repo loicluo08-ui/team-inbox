@@ -1,0 +1,19 @@
+验点清单(17):
+  PASS V1_FeO_Fe=+2
+  PASS V2_Fe2O3_Fe=+3
+  PASS V3_FeSO4_Fe=+2
+  PASS V4_FeCl3_Fe=+3
+  PASS V5_Fe(OH)2_Fe=+2
+  PASS V6_Fe3O4_混合价2x3+1x2成立
+  PASS E1_2Fe3+Fe=3Fe2+_失2得2
+  PASS E2_2Fe3+Cu_失2得2
+  PASS E3_2Fe3+2I-_失2得2
+  PASS E4_Fe2+Zn_失2得2
+  PASS E5_2Fe2+Cl2_失2得2
+  PASS E6_3Fe+4H2O_失8得8
+  PASS E7_4FeOH2+O2_失4得4
+  PASS P1_3Fe+4H2O守恒
+  PASS P2_2Al+Fe2O3守恒
+  PASS P3_4FeOH2+O2+2H2O守恒
+  PASS X1_Fe3+一律降为Fe2+
+ALL PASS
