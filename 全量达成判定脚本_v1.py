@@ -17,7 +17,7 @@ import glob, os, re, json
 }
 # v1.2目录=教材原生实况（1031晚23:1x修正·批三实锤：物理第三章5节3.4/3.5+第四章6节4.6·生物6章3节✓·队4席19节收官申报为实锚）
 # 地理=湘教必修一推测口径候队7清单实锚·数学3.2拆件口径（3.2.1/3.2.2·黄金转正覆盖3.2.2·3.2.1候产）
-# v1.3=23:1x三次修正：3.2拆件+物理3.4真空缺实锚（队4清单漏报·切片卡B线有旧件首学版无主）
+# v1.5=11/1 00:5x五修:形态字段入账(step-tag/station/h2式三态·21节非标实锚)·v1.3=23:1x三次修正：3.2拆件+物理3.4真空缺实锚（队4清单漏报·切片卡B线有旧件首学版无主）
 转正 = {'数学3.2.2':'教材线_首学版/黄金样本_数学3.2奇偶性_零基础首学_v1.4.html','数学1.1':'教材线_首学版/黄金样本_数学1.1集合_零基础首学_v1.2.html'}  # 黄金样本转正本登记×2
 
 def main():
@@ -35,6 +35,17 @@ def main():
         已并.setdefault(科, set()).add(节)
     缺全部 = []
     print('=== 五科对账 ===')
+    # v1.5形态字段：step-tag式(黄金样板标准)/station式/h2式/其他
+    from collections import Counter
+    形态账 = Counter()
+    for f in glob.glob('产出_队*/首学版_*.html'):
+        t = open(f, encoding='utf-8', errors='ignore').read()
+        sp, st_, h2 = t.count('step-tag'), t.count('div class="station'), t.count('<h2')
+        form = 'step-tag' if sp>0 else ('station' if st_>0 else ('h2式' if h2>2 else '其他'))
+        形态账[form] += 1
+    print('=== 主件形态账（样板符合票对账基础）===')
+    for k,v in 形态账.most_common(): print(f'  {k}: {v}件')
+    print()
     for 科 in sorted(目录):
         目录集 = set(目录[科])
         已集 = 已并.get(科, set())
