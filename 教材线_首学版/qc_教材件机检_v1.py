@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-教材件专用机检 v1.4（首学版_*.html 出库闸机器层·v1.4=1031晚SOP采纳：红黄并列报出——发现红不再短路结构检查·v1.3=判例㈠落地T11考位锚/节末位置图判定串对齐文字形态·v1.2=假阴性修复·v1.1=扩结构项——标准v2.3配套）
+教材件专用机检 v1.1（首学版_*.html 出库闸机器层·v1.1=1030晚扩结构检查项：T12节首清单/T11考位锚/节末导图在场+alt块外课外内容检查——标准v2.3配套）
 口径（标准模板v2.2验收节）：
   - 生产语域词 出现在【正文】（foot区豁免）= 红（真泄漏·退回）
   - 投资/金融内容词 出现在【正文】= 黄（候管理员席人工裁·不自动退回，输出上下文）
@@ -48,8 +48,8 @@ def main():
     # v1.1 结构检查项（标准v2.3 T11/T12/节末导图/alt纪律）
     struct_missing = []
     if '读完这节你能' not in body: struct_missing.append('T12节首清单缺失')
-    if ('高考怎么考' not in body) and ('考位锚' not in body): struct_missing.append('T11考位锚块缺失')  # v1.3判例㈠：文字形态'考位锚'块=功能等价
-    if ('aria-label="本节位置图' not in body) and ('位置图' not in body): struct_missing.append('节末位置图缺失')  # v1.3判例㈠：文字导览'位置图'=功能等价
+    if '高考怎么考' not in body: struct_missing.append('T11考位锚块缺失')
+    if 'aria-label="本节位置图' not in body: struct_missing.append('节末位置图缺失')
     # alt纪律：课外拓展类标题不得出现在alt可选块之外
     alt_zone = re.search(r'<div class="alt">.*?</div>', text, re.S)
     alt_text = alt_zone.group(0) if alt_zone else ''
@@ -57,14 +57,8 @@ def main():
     for kw in ['课外拓展', '知识拓展', '延伸阅读']:
         if kw in body_no_alt: reds.append((kw, '课外内容出现在alt可选块之外（#17/#30红线）'))
     if reds:
-        extra=[]
-        if struct_missing: extra.append(f"{len(struct_missing)}处结构缺项")
-        if yellows: extra.append(f"{len(yellows)}处投资词候裁")
-        tail=("（并列："+ "·".join(extra)+"）") if extra else ""
-        print(f"❌{name}: {len(reds)}处生产语域/结构红线（红·退回）{tail}")
+        print(f"❌{name}: {len(reds)}处生产语域/结构红线（红·退回）")
         for w, c in reds: print(f"    [生产/结构] {w}: …{c}…")
-        for s in struct_missing: print(f"    [结构] {s}")
-        for w, c in yellows: print(f"    [投资] {w}: …{c}…")
         sys.exit(2)
     if struct_missing:
         print(f"🟡{name}: 结构缺项{len(struct_missing)}处（黄·候管理员席裁——历史版本/特殊节型可豁免）")
