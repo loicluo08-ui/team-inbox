@@ -22,13 +22,15 @@ def scan_html(path):
         for ln in body.split('\n'):
             if w in ln and not re.search(r'换血声明|自检|对照', ln):
                 word_hits.append(w); break
-    m = 占位符模式.search(re.sub(r'<[^>]+>', '', body))
+    # 占位符检测在原文上直接搜（v1.2修复：剥标签会把<!--注释-->里的TODO一起剥掉=假阴性盲区）
+    m = 占位符模式.search(body)
     if m: issues.append(('占位符', m.group(0)))
     d1, d2 = txt.count('<div'), txt.count('</div>')
     t1, t2 = txt.count('<table'), txt.count('</table>')
     if d1 != d2: issues.append(('div配平', f'{d1}/{d2}'))
     if t1 != t2: issues.append(('table配平', f'{t1}/{t2}'))
-    if 'print' not in txt and '@media print' not in txt: issues.append(('print层', '缺失'))
+    # print层检测改精确串（v1.2修复：'print'子串匹配会被类名/文案误满足=假阴性）
+    if not re.search(r'@media\s+print', txt): issues.append(('print层', '缺失@media print'))
     if 'aria-label' not in txt and '<svg' in txt: issues.append(('svg无aria', '位置图机检口径'))
     return word_hits, issues
 
