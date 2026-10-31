@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>产能估算定标报告 v1.0 · 队6席 · 1031夜</title>
+<style>
+  :root{--ink:#1a2332;--sub:#5a6a7e;--line:#e3e9f1;--bg:#f6f8fb;--card:#ffffff;--blue:#2f6fed;--green:#0e9f6e;--amber:#d97706;--red:#dc2626;--violet:#7c3aed;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;padding:32px 16px;}
+  .wrap{max-width:1080px;margin:0 auto;}
+  header.hero{background:linear-gradient(135deg,#1e3a8a 0%,#2f6fed 60%,#5b8def 100%);border-radius:16px;padding:36px 40px;color:#fff;margin-bottom:28px;box-shadow:0 10px 30px rgba(47,111,237,.25);}
+  header.hero h1{font-size:26px;letter-spacing:.5px;margin-bottom:8px;}
+  header.hero .meta{font-size:13px;opacity:.85;}
+  header.hero .tagline{margin-top:14px;font-size:14px;background:rgba(255,255,255,.14);display:inline-block;padding:6px 14px;border-radius:999px;}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px;}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 2px 10px rgba(26,35,50,.05);}
+  .kpi .num{font-size:30px;font-weight:700;line-height:1.15;}
+  .kpi .lab{font-size:12.5px;color:var(--sub);margin-top:4px;}
+  .kpi.b .num{color:var(--blue);} .kpi.g .num{color:var(--green);} .kpi.a .num{color:var(--amber);} .kpi.v .num{color:var(--violet);}
+  section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-bottom:24px;box-shadow:0 2px 10px rgba(26,35,50,.05);}
+  h2{font-size:18px;padding-left:12px;border-left:4px solid var(--blue);margin-bottom:16px;letter-spacing:.3px;}
+  h3{font-size:15px;margin:16px 0 10px;color:#25406e;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0 6px;}
+  th{background:#eef3fb;color:#25406e;font-weight:600;text-align:left;padding:9px 12px;border-bottom:2px solid #d7e2f5;white-space:nowrap;}
+  td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr:nth-child(even) td{background:#fafcfe;}
+  .pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 10px;border-radius:999px;white-space:nowrap;}
+  .pill.g{background:#e7f7f0;color:#0b7a55;} .pill.a{background:#fdf3e3;color:#a35a00;} .pill.r{background:#fdeaea;color:#b91c1c;} .pill.b{background:#e9f0fe;color:#1d4ed8;} .pill.v{background:#f3ecfe;color:#6d28d9;}
+  .barrow{display:flex;align-items:center;gap:10px;margin:9px 0;font-size:13px;}
+  .barrow .name{width:210px;flex-shrink:0;text-align:right;color:var(--sub);}
+  .barrow .track{flex:1;background:#eef2f8;border-radius:8px;height:22px;position:relative;overflow:hidden;}
+  .barrow .fill{height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:11.5px;font-weight:600;min-width:38px;}
+  .f-blue{background:linear-gradient(90deg,#93b4f7,#2f6fed);} .f-red{background:linear-gradient(90deg,#f3a6a6,#dc2626);} .f-amber{background:linear-gradient(90deg,#f5cd8a,#d97706);} .f-green{background:linear-gradient(90deg,#8fdcbf,#0e9f6e);} .f-violet{background:linear-gradient(90deg,#c4a8f7,#7c3aed);}
+  blockquote{background:#f2f7ff;border-left:4px solid var(--blue);padding:12px 16px;border-radius:0 10px 10px 0;font-size:13.5px;color:#274a80;margin:12px 0;}
+  .callout{background:#fffbee;border:1px solid #f5e2a9;border-radius:12px;padding:14px 18px;font-size:13.5px;margin:14px 0;}
+  .callout b{color:#a35a00;}
+  ul.tight{padding-left:20px;font-size:13.5px;} ul.tight li{margin:5px 0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  footer{color:var(--sub);font-size:12px;text-align:center;margin-top:8px;}
+  .small{font-size:12px;color:var(--sub);}
+  code{background:#f0f3f8;padding:1px 6px;border-radius:5px;font-size:12.5px;color:#334155;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>两级产能估算定标报告 <span style="font-weight:400;font-size:18px;opacity:.9">v1.0（候裁）</span></h1>
+  <div class="meta">承总令v11.1第③项 · 队6席（报告汇总员）· 2026-10-31 22:4x · 数据窗 22:08–22:45 · 落 du i6_qc_1031 分支禁直推 main</div>
+  <div class="tagline">先清单后量产 · 错节号清零 · 心跳硬闸计入各段</div>
+</header>
+
+<div class="kpis">
+  <div class="kpi b"><div class="num">5/5</div><div class="lab">五线实锚清单核验毕（节号·节名·contentId 零硬伤）</div></div>
+  <div class="kpi g"><div class="num">23.7<span style="font-size:15px">min/节</span></div><div class="lab">顺畅产线实测中位（13节 308min 样本）</div></div>
+  <div class="kpi a"><div class="num">5+2</div><div class="lab">实际剩余节件（5节在产/在途 + 数学拆件2子件）</div></div>
+  <div class="kpi v"><div class="num">1.5<span style="font-size:15px">轮/节</span></div><div class="lab">建议定标基准（30min心跳轮制）</div></div>
+</div>
+
+<section>
+  <h2>一、产能实测数据池（令③首30分钟窗）</h2>
+  <table>
+    <tr><th>产线</th><th>样本口径</th><th>min/节</th><th>轮/节（30min轮）</th><th>状态</th></tr>
+    <tr><td><b>地理线</b>（队7席C）</td><td>17:10→20:06 · 6节 / 176min（3.1→4.3）</td><td><b>29.3</b></td><td>≈1.02</td><td><span class="pill g">已实测·已收讫</span></td></tr>
+    <tr><td><b>物理线B线</b>（队4席B）</td><td>19:53→22:05 · 7节 / 132min（3.2→4.6）</td><td><b>18.9</b></td><td>≈1.59</td><td><span class="pill g">已实测·已收讫</span></td></tr>
+    <tr><td><b>化学线</b>（队3席C）</td><td>3件净历时≈190min（2.3/3.1/3.2·含图源受阻等待段如实注）</td><td>≈63</td><td>≈0.48</td><td><span class="pill a">已实测·受阻注记</span></td></tr>
+    <tr><td>化学3.3（队3席B线）</td><td>21:15:27起在产 64min+（硬闸23:00）</td><td>&gt;64（上限≈105）</td><td>≤0.57</td><td><span class="pill a">在产·段末补录</span></td></tr>
+    <tr><td>生物线 / 数学线</td><td>30min窗内未群发报数（git可考：生物6.1队2席转援已交付·数学今日无新产段）</td><td>—</td><td>—</td><td><span class="pill r">缺报·补录窗至23:00</span></td></tr>
+  </table>
+  <div class="small">注1：轮折算口径＝1轮/30min心跳轮。注2：A席申报「1.6–2轮/节」与本席折算（0.98–1.59轮/节）方向互倒，建议定标统一以 <b>min/节</b> 为准绳（已如实并录候裁）。</div>
+</section>
+
+<section>
+  <h2>二、两级估算 vs 实测：估算双线均大幅偏保守</h2>
+  <div class="barrow"><div class="name">v11.1 保守估算 10轮/节</div><div class="track"><div class="fill f-red" style="width:100%">10.0 轮/节（300min/节）</div></div></div>
+  <div class="barrow"><div class="name">v11.1 激进估算 6.5轮/节</div><div class="track"><div class="fill f-amber" style="width:65%">6.5 轮/节（195min/节）</div></div></div>
+  <div class="barrow"><div class="name">物理B线实测（最快线）</div><div class="track"><div class="fill f-green" style="width:16%">1.59 轮/节</div></div></div>
+  <div class="barrow"><div class="name">地理线实测</div><div class="track"><div class="fill f-green" style="width:10.2%">1.02 轮/节</div></div></div>
+  <div class="barrow"><div class="name">全池中位（建议定标）</div><div class="track"><div class="fill f-violet" style="width:15%">1.3–1.5 轮/节</div></div></div>
+  <div class="barrow"><div class="name">受阻线实测（化学·含等待）</div><div class="track"><div class="fill f-blue" style="width:4.8%">0.48 轮/节</div></div></div>
+  <blockquote><b>结论：</b>实测节件速度（18.9–63min/节）较两级估算快 <b>3–16 倍</b>。保守线（10轮/节）与激进线（6.5轮/节）均系静态外推，未计入「候并池已吸收绝大部产量」与「B线影印预拉+跨科转援」两项实况增益。定标应锚定实测：<b>顺畅线 1.6轮/节 · 受阻线 0.5轮/节 · 中位 1.3–1.5轮/节</b>。</blockquote>
+</section>
+
+<section>
+  <h2>三、剩余工作量重算（37节分母已被候并池吸收）</h2>
+  <table>
+    <tr><th>口径</th><th>剩余节件分母</th><th>折算工作量（@定标1.5轮/节）</th></tr>
+    <tr><td>v11.1原口径（总账前静态）</td><td>37节 → 400轮/9段 或 240轮/7段</td><td>8–9个段</td></tr>
+    <tr><td><b>实勘口径（总账33件候并+五线清单核验后）</b></td><td><b>节件5节</b>（地理5.1/5.2·化学3.3·生物6.2/6.3，均已认领在产）<b>＋数学拆件净增2子件</b>（3.1.1/3.1.2/3.2.1/3.2.2段2候裁·增量子件而非重产）</td><td>≈7件 × 20min ≈ <b>2.3小时 ≈ 1–2段</b></td></tr>
+    <tr><td>非节件收尾项</td><td>物理剩余域四项（章末复习×4+课题研究+索引）· 地理附录 · 归一批候裁案6宗 · 双卷尾记回填</td><td>≈1–2段（裁决为主·非产能瓶颈）</td></tr>
+  </table>
+  <div class="callout"><b>⚠️ 关键对账发现：</b>v11.1「剩37节」系总账（33件PASS候并·22:10落池）可见前的静态口径。五线清单实勘后，真剩余节件仅 <b>5节+2子件</b>，且已全部被认领在产。产能风险已从「量」（还有多少节要产）转为「裁」（归一批6宗候裁案与拆件制实施口径）——建议段2排产以本报告实勘分母为准。</div>
+</section>
+
+<section>
+  <h2>四、定标建议（候管理员裁定）</h2>
+  <div class="grid2">
+    <div>
+      <h3>▸ 定标值</h3>
+      <ul class="tight">
+        <li>节件产线基准：<b>1.5轮/节</b>（30min心跳轮制·≈20min/节）</li>
+        <li>顺畅线（B线模式）：1.6轮/节；受阻线（图源等待）：0.5轮/节，受阻申报照SLA</li>
+        <li>段容量：心跳制照旧；每段产出预期 = 段内活跃产线数 × 1.5轮 × 段时长/30min</li>
+      </ul>
+    </div>
+    <div>
+      <h3>▸ 排产与治理</h3>
+      <ul class="tight">
+        <li><b>B线模式固化</b>：影印预拉+跨科转援是实测最快产能放大器（物理B线1.59轮/节·地理5.x续用）</li>
+        <li><b>卡点主因</b>：图源403/受阻等待（化学线0.48轮/节 vs 顺畅线1.59）——解法包SLA照旧优先级最高</li>
+        <li><b>补录窗</b>：生物/数学两线23:00前补报实测数，本报告升v1.1；逾期按缺样注记定稿</li>
+        <li>37节静态分母停用，改按第三节省实勘分母排产</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>报告汇总员·队6席 · 承总令v11.1第③项 · 数据源：五线实锚清单核验单（09bf514/660cb55）+ 候验池并池就绪总账（402dd1c）+ 各席群发报数 + git可考commit时戳 · 本报告落dui6_qc_1031候裁，不径行改派工基准</footer>
+</div>
+</body>
+</html>
