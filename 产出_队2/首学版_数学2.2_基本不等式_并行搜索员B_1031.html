@@ -10,7 +10,6 @@ h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#162
 h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
 h3{color:#2c5f8f;margin-top:1.6em}
 .station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
-.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
 .check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
 .check li{margin:4px 0}
 .formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0;font-family:"Cambria Math",Georgia,serif}
@@ -39,13 +38,15 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 @media print{
  body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
  .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
- .station-title{background:#333!important;color:#fff!important}
  h1{font-size:1.35em}h2{font-size:1.15em}
  .formula{background:#f2f2f2!important}
  a{color:#000;text-decoration:none}
  .no-print{display:none}
 }
 @media screen and (prefers-color-scheme:dark){/*no-op 保持浅色两态统一*/}
+<!-- v15.3第一波重排·黄金样板step-tag落位(并行搜索员B) -->
+.step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle}
+@media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}.mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -61,12 +62,12 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 </ul>
 </div>
 <div class="station">
-<p class="station-title">第 0 站 · 预备块：你初中就有两件旧工具</p>
+<h2><span class="step-tag">预备</span>预备块：你初中就有两件旧工具</h2>
 <p><strong>旧工具一（完全平方公式）</strong>：(a±b)² = a² ± 2ab + b²，展开永远不错位。</p>
 <p><strong>旧工具二（平方非负）</strong>：任何实数的平方不小于 0，即 <span class="formula" style="display:inline-block;padding:2px 10px">x² ≥ 0</span>，等号当且仅当 x=0。就这两件，本节全靠它们起家。</p>
 </div>
 <div class="station">
-<p class="station-title">第 1 站 · 重要不等式：从 (a−b)² 里长出来的不等号</p>
+<h2><span class="step-tag">第一步</span>重要不等式：从 (a−b)² 里长出来的不等号</h2>
 <p>把平方非负用在 (a−b) 上：(a−b)² ≥ 0。展开：</p>
 <div class="formula">a² − 2ab + b² ≥ 0&nbsp;&nbsp;⟹&nbsp;&nbsp;<span class="mark">a² + b² ≥ 2ab</span></div>
 <p>当且仅当 a=b 时（此时 (a−b)²=0），等号成立。教材称它为<span class="uline">重要不等式</span>（p44，∀a，b∈R）。</p>
@@ -77,7 +78,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <p>教材 p44：通常称不等式(1)为<span class="uline">基本不等式</span>（basic inequality）。</p>
 </div>
 <div class="station">
-<p class="station-title">第 2 站 · 两个平均数：算 ≥ 几，外加一张半圆图</p>
+<h2><span class="step-tag">第二步</span>两个平均数：算 ≥ 几，外加一张半圆图</h2>
 <p>基本不等式里的两个"主角"（p44 原文定义）：</p>
 <table class="cmp">
 <tr><th>名字</th><th>式子</th><th>一句话</th></tr>
@@ -110,7 +111,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <p><strong>分析法证明（教材 p44 五步链，倒着读就是"显然成立"）：</strong>要证 √ab ≤ (a+b)/2（①），只要证 2√ab ≤ a+b（②），只要证 2√ab − a − b ≤ 0（③），只要证 −(√a−√b)² ≤ 0（④），只要证 (√a−√b)² ≥ 0（⑤）。⑤显然成立，当且仅当 a=b 时⑤中的等号成立。<span class="detail">每一步"只要证"都是可逆的等价变形，所以链条成立。</span></p>
 </div>
 <div class="station">
-<p class="station-title">第 3 站 · 最值双引擎：积定和最小，和定积最大</p>
+<h2><span class="step-tag">第三步</span>最值双引擎：积定和最小，和定积最大</h2>
 <p>教材例2（p45-46）给出一对"发动机"，考试九成最值题由它们变形而来：</p>
 <table class="cmp">
 <tr><th>发动机</th><th>条件</th><th>结论（当 x=y 时等号成立）</th></tr>
@@ -128,14 +129,14 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <div class="alt"><span class="tag">（拓展 · 可跳过）</span>拓广探索7（p49）天平称黄金：不等臂天平两次各称得 a g、b g，顾客实得 √ab g，由 √ab ≤ (a+b)/2 = 5 g 知总重 <strong>小于</strong> 10 g——几何平均数严格小于算术平均数（a≠b 时），顾客吃亏。</div>
 </div>
 <div class="station">
-<p class="station-title">第 4 站 · 实战两例：把引擎装到应用题上</p>
+<h2><span class="step-tag">第四步</span>实战两例：把引擎装到应用题上</h2>
 <p><strong>教材例3（p46-47）矩形菜园。</strong>（1）用篱笆围一个面积为 100 m² 的矩形菜园，边长多少时篱笆最短？设两边 x，y（m），xy=100，篱笆长 2(x+y) ≥ 2×2√(xy) = 40，当且仅当 x=y=10 时等号成立——<span class="mark">边长 10 m 的正方形，最短篱笆 40 m</span>。这里是"积定和最小"。</p>
 <p>（2）用一段长为 36 m 的篱笆围矩形菜园，边长多少时面积最大？2(x+y)=36，xy ≤ ((x+y)/2)² = 81，当且仅当 x=y=9 等号成立——<span class="mark">边长 9 m 的正方形，最大面积 81 m²</span>。"和定积最大"。（教材 p47 解答逐句锚定）</p>
 <p><strong>教材例4（p47-48）无盖贮水池。</strong>容积 4800 m³、深 3 m，池底造价 150 元/m²，池壁 120 元/m²。设底面两边 x，y（m），总造价 z = 150×(4800/3) + 120(2×3x+2×3y) = 240000 + 720(x+y)；由 3xy=4800 得 xy=1600，所以 z ≥ 240000 + 720×2×40 = 297600，当且仅当 x=y=40 时等号成立——<span class="mark">池底设计成边长 40 m 的正方形，最低总造价 297600 元</span>（p48 解答逐句锚定）。</p>
 <div class="try"><p><strong>验一验⑤（教材 p48 练习1）：</strong>用 20 cm 铁丝折面积最大的矩形：周长定 20，和定积最大，x=y=5，最大面积 25 cm²。<span class="ans">两问同构：一边靠墙（练习2）时 "30−2x ≤ 18" 的墙长限制要单独检查，x=7.5 合法，最大面积 112.5 m²。</span></p></div>
 </div>
 <div class="station">
-<p class="station-title">收口站 · 三句话带走 + 自测四连</p>
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
 <p><strong>三句话带走：</strong></p>
 <ul class="walk">
 <li>① (a−b)²≥0 ⇒ <span class="mark">a²+b²≥2ab</span>；换元得 <span class="mark">√ab ≤ (a+b)/2</span>（a,b＞0，当且仅当 a=b 等号成立）；</li>
@@ -157,6 +158,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 · 多以"分式代数式最值、实际应用（篱笆/造价/材料）"形态出现；<br>
 · <span class="sub">真题锚申报：v2.9 池内未录"2.2 基本不等式"专行，候采不代拟（宁缺毋编）。</span></p>
 </div>
+<p><b>下一站：</b>2.3 二次函数与一元二次方程、不等式——本节磨好的最值引擎，下一站装到二次函数身上（p50 起）。</p>
 <div class="figure">
 <svg viewBox="0 0 640 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="位置图：第二章五节谱系，当前在2.2基本不等式">
 <rect x="8" y="20" width="110" height="44" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>

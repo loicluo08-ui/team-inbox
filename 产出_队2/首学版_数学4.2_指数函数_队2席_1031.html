@@ -9,7 +9,6 @@ h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#162
 h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
 h3{color:#2c5f8f;margin-top:1.6em}
 .station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
-.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
 .check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
 .check li{margin:4px 0}
 .formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
@@ -37,12 +36,14 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 @media print{
  body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
  .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
- .station-title{background:#333!important;color:#fff!important}
  h1{font-size:1.35em}h2{font-size:1.15em}
  .formula{background:#f2f2f2!important}
  a{color:#000;text-decoration:none}
  .no-print{display:none}
 }
+<!-- v15.3第一波重排·黄金样板step-tag落位(并行搜索员B) -->
+.step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle}
+@media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}.mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -60,7 +61,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 </div>
 
 <div class="station">
-<span class="station-title">出发前清点行囊</span>
+<h2><span class="step-tag">预备</span>出发前清点行囊</h2>
 <ul class="walk">
 <li><b>实数指数幂</b>（4.1）：aˣ 里的 x 已经从整数扩到实数，a＞0 时 aˣ 对每个实数 x 都有意义；</li>
 <li><b>函数单调性</b>（3.2）：x₁＜x₂ 时 f(x₁)＜f(x₂) 叫增函数——本节要用它比较大小；</li>
@@ -68,7 +69,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 </ul>
 </div>
 
-<h2>第一站 · 两个真实变化：一个疯长，一个慢衰</h2>
+<h2><span class="step-tag">第一步</span>两个真实变化：一个疯长，一个慢衰</h2>
 
 <p><b>问题1（景区游客）</b>：A、B 两地景区自 2001 年起采取不同应对措施——A 地提高门票价格，B 地取消门票。教材表 4.2-1 记录了 2001-2015 年两地游客人次：<b>A 地</b>从 600 万次涨到 743 万次，每年增加量大致相等（9、11、10、11…万次，约 10 万次）；<b>B 地</b>从 278 万次涨到 1 244 万次，每年增加量从 31 万一路涨到 126 万，越涨越快。</p>
 <div class="figure">
@@ -101,7 +102,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <span class="ans">答：y=1.0625³⁰≈6.2（倍）。sympy 复算 6.1641，与"约6.2倍"吻合。</span>
 </div>
 
-<h2>第二站 · 抽出共同骨架：指数函数登场</h2>
+<h2><span class="step-tag">第二步</span>抽出共同骨架：指数函数登场</h2>
 <p>把①②两式放在一起看：y=1.11ˣ 与 y=((1/2)^(1/5730))ˣ——都是"<b>常数ˣ</b>"的形状。用字母 a 代替底数，教材给出定义：</p>
 <div class="formula"><b>一般地，函数 y=aˣ（a＞0，且 a≠1）叫做<span class="mark">指数函数</span>（exponential function），其中指数 x 是自变量，定义域是 R。</b></div>
 <p><b>为什么要 a＞0 且 a≠1？（零基础也要讲透的限制条款）</b></p>
@@ -115,7 +116,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <span class="ans">答：a³=π → a=π^(1/3)，f(x)=π^(x/3)。f(0)=π⁰=1，f(1)=π^(1/3)=³√π，f(−3)=π⁻¹=1/π。</span>
 </div>
 
-<h2>第三站 · 画图象、找性质：底数把家族分成两队</h2>
+<h2><span class="step-tag">第三步</span>画图象、找性质：底数把家族分成两队</h2>
 <p><b>描点画 y=2ˣ</b>（教材表4.2-2）：x=−2,−1.5,−1,−0.5,0,0.5,1,1.5,2 对应 y=0.25, 0.35, 0.5, 0.71, 1, 1.41, 2, 2.83, 4（教材给出 0.35/0.71/1.41/2.83 四个值，其余留白自填——sympy 复算九点全对，见附件2）。</p>
 <div class="figure">
 <svg width="640" height="250" viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图4.2-4与图4.2-5复刻：y=2^x上升曲线；y=2^x与y=(1/2)^x关于y轴对称">
@@ -156,7 +157,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <span class="ans">答：(1) 同指数不同底——借幂函数 y=x^√2 在 (0,+∞) 上递增（3.3方法），6^√2＜7^√2；(2) 底0.3∈(0,1)递减，−3.5＜−2.3，故 0.3^(−3.5)＞0.3^(−2.3)；(3) 垫1法：1.2^0.5＞1＞0.5^1.2。</span>
 </div>
 
-<h2>第四站 · 模型落地：谁先反超，多久翻番</h2>
+<h2><span class="step-tag">第四步</span>模型落地：谁先反超，多久翻番</h2>
 <p><b>例2（教材p114原题·指数模型的正面交锋）</b>：</p>
 <ul class="walk">
 <li><b>(1)</b> 问题1中，平均每位游客出游一次给当地带来 1 000 元收入（不含门票），A 地门票 150 元。设经过 x 年，A、B 两地收入 f(x)=1 150×(10x+600)，g(x)=1 000×278×1.11ˣ。计算工具得：x=0 时 f(0)−g(0)=412 000（A 领先 41.2 亿元）；<b>x≈10.22 时 f≈g</b>（sympy 精确交点 x₀=10.2178，教材取两位小数）；结合图4.2-3：x＜10.22 时 f(x)＞g(x)，x＞10.22 时 f(x)＜g(x)；x=14 时 g(14)−f(14)≈347 303（万元）。<b>结论照教材</b>：2001 年 A 比 B 多 412 000 万元；约 2011 年 3 月某个时刻两者持平；此后 B 反超，2015 年 B 已比 A 多约 347 303 万元——线性在前面领跑，指数在后面反超，<span class="mark">这就是"指数增长 eventually 赢"的第一次正面目击</span>。</li>
