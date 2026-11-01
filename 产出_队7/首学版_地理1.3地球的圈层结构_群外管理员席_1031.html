@@ -44,6 +44,9 @@ footer{margin-top:40px;padding-top:14px;border-top:2px solid var(--accent);font-
  .station,.drill{border:1px solid #ccc;page-break-inside:avoid}
  h2{page-break-after:avoid}
 }
+
+.step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle;}
+@media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
 </style>
 </head>
 <body>
@@ -60,7 +63,7 @@ footer{margin-top:40px;padding-top:14px;border-top:2px solid var(--accent);font-
 </section>
 
 <section>
-<h2>第一站 地震和地震波——先造好"CT机"</h2>
+<h2><span class="step-tag">第一站</span>地震和地震波——先造好"CT机"</h2>
 <div class="station">
 <span class="tag">站1 · 概念先行</span>
 <h3>地震的五个构件（图1-17 原图结构）</h3>
@@ -91,7 +94,7 @@ footer{margin-top:40px;padding-top:14px;border-top:2px solid var(--accent);font-
 </section>
 
 <section>
-<h2>第二站 地球的内部圈层——三张同心层+两个名字</h2>
+<h2><span class="step-tag">第二站</span>地球的内部圈层——三张同心层+两个名字</h2>
 <div class="station">
 <span class="tag">站2 · 读速度曲线</span>
 <h3>两个界面怎么"看"出来的（图1-18）</h3>
@@ -117,7 +120,7 @@ footer{margin-top:40px;padding-top:14px;border-top:2px solid var(--accent);font-
 </section>
 
 <section>
-<h2>第三站 地球的外部圈层——地表以上的世界</h2>
+<h2><span class="step-tag">第三站</span>地球的外部圈层——地表以上的世界</h2>
 <div class="station">
 <span class="tag">站3 · 三圈各一句</span>
 <p>地壳表层以外、由大气/水体/生物组成的自然界，分三个圈层（图1-21）：</p>
@@ -132,7 +135,7 @@ footer{margin-top:40px;padding-top:14px;border-top:2px solid var(--accent);font-
 </section>
 
 <section>
-<h2>第四站 一张图收全节</h2>
+<h2><span class="step-tag">第四站</span>一张图收全节</h2>
 <div class="station">
 <span class="tag">站4 · 结构收拢</span>
 <svg viewBox="0 0 720 330" width="100%" role="img" aria-label="地理1.3在教材第一章的位置图：1.1地球的宇宙环境、1.2太阳对地球的影响、1.3地球的圈层结构高亮、第二章地球表面形态">
@@ -166,7 +169,7 @@ footer{margin-top:40px;padding-top:14px;border-top:2px solid var(--accent);font-
 </section>
 
 <section>
-<h2>验一验（四连）</h2>
+<h2><span class="step-tag">验一验</span>（四连）</h2>
 <div class="drill"><div class="q">验1（数值勘验·教材p23"1/516"）</div><div class="q">地球平均半径6 371千米，人类最深钻井不足13千米、已达部分"只占地球平均半径的1/516"。用p23两个深度数（科拉12 262米、俄罗斯油井12 345米）验算：这个1/516对应哪个数？</div>
 <div class="a">6 371 000÷12 345≈516.0 → 1/516对应<b>俄罗斯油井12 345米</b>（教材行文时的最深纪录）；科拉12 262米对应1/519.6。教材说"该纪录先后被……打破"，所以"已达部分"按最新纪录12345米算——两数都对得上原文逻辑。<span class="src">sympy验点：6371000/12345=516.07…≈516 ✓；12262×516=6 327 192≠6 371 000（科拉不对应1/516，留痕）</span></div></div>
 <div class="drill"><div class="q">验2（九寨沟预警题·教材p29活动1改编）</div><div class="q">预警系统为什么能"抢"出19秒和71秒？两个时间差为什么不同？</div>
@@ -178,7 +181,7 @@ footer{margin-top:40px;padding-top:14px;border-top:2px solid var(--accent);font-
 </section>
 
 <section>
-<h2>自测四连（合上教材做）</h2>
+<h2><span class="step-tag">自测</span>四连（合上教材做）</h2>
 <div class="drill"><div class="q">自1（判断）横波速度比纵波快，且能在固、液、气三态中传播。（　）</div><div class="a">错。说反了：<b>纵波快、三态皆可</b>；<b>横波慢、只能走固体</b>。口诀"纵快三态跑，横慢只走固"。</div></div>
 <div class="drill"><div class="q">自2（选择方向）在某次地震中，轮船上的船员只感到上下颠簸，几乎感觉不到摇晃，为什么？</div><div class="a">横波只能穿固体、不能穿液体——船在水面（液体）上，只有纵波能传到，纵波造成上下颠簸；陆地上的摇晃感主要来自横波。<span class="src">考位：纵波三态/横波固体的最经典应用情境</span></div></div>
 <div class="drill"><div class="q">自3（填空）岩石圈=＿＿＿＿+＿＿＿＿（软流层以上）。生物圈渗透于＿＿＿＿底部、＿＿＿＿全部和＿＿＿＿上部。</div><div class="a">岩石圈=<b>地壳</b>+<b>上地幔顶部</b>；生物圈渗透于<b>大气圈</b>底部、<b>水圈</b>全部、<b>岩石圈</b>上部。两空都在大坑警报与收束句里。</div></div>
@@ -186,12 +189,12 @@ footer{margin-top:40px;padding-top:14px;border-top:2px solid var(--accent);font-
 </section>
 
 <section>
-<h2>考位锚</h2>
+<h2><span class="step-tag">考位锚</span></h2>
 <div class="exam"><b>考位一</b>　地震波判层（速度曲线图判莫霍面/古登堡面+横波消失判液态）——高考选择题常客，核心动作就是"读跳变"。<b>考位二</b>　岩石圈与地壳的关系（四选项辨析"岩石圈=地壳+上地幔顶部"，全国卷与各省卷反复考）。<b>考位三</b>　纵波横波应用情境（轮船只颠不晃、预警窗口、井中感知）。<b>考位四</b>　外部圈层渗透关系（生物圈渗透三圈+"相互联系、相互渗透"构成人类生存环境，常以判断/组合选择出现）。</div>
 </section>
 
 <section>
-<h2>工具箱 · 位置图</h2>
+<h2><span class="step-tag">工具箱</span>位置图</h2>
 <ul class="toolbox">
 <li><b>口诀入箱：</b>"纵快三态跑，横慢只走固"（波性）｜"横波消失处，液态圈层出"（判层）｜"岩石圈=地壳+上地幔顶"（大坑）</li>
 <li><b>类比入箱：</b>炸弹类比（震级-烈度）｜鸡蛋类比（三圈层次）｜CT机类比（地震波透视）</li>

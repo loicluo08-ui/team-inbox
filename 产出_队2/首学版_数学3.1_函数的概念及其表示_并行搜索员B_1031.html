@@ -10,7 +10,6 @@ h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#162
 h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
 h3{color:#2c5f8f;margin-top:1.6em}
 .station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
-.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
 .check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
 .check li{margin:4px 0}
 .formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
@@ -37,12 +36,14 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 @media print{
  body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
  .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
- .station-title{background:#333!important;color:#fff!important}
  h1{font-size:1.35em}h2{font-size:1.15em}
  .formula{background:#f2f2f2!important}
  a{color:#000;text-decoration:none}
  .no-print{display:none}
 }
+<!-- v15.3第一波重排·黄金样板step-tag落位(并行搜索员B) -->
+.step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle}
+@media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}.mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -58,11 +59,11 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 </ul>
 </div>
 <div class="station">
-<p class="station-title">第 0 站 · 预备块：初中的变量说 + 第一章的集合语言</p>
+<h2><span class="step-tag">预备</span>预备块：初中的变量说 + 第一章的集合语言</h2>
 <p><strong>旧工具一（初中函数）：</strong>正比例、一次、二次、反比例函数都见过，知道"对于每一个确定的 x 都有唯一的 l 与之对应"（p60 原句）。<strong>旧工具二（第一章）：</strong>集合表示 {x|0≤x≤0.5}、子集、交并——本节把它们拼成函数定义。</p>
 </div>
 <div class="station">
-<p class="station-title">第 1 站 · 四个问题，一个共同特征</p>
+<h2><span class="step-tag">第一步</span>四个问题，一个共同特征</h2>
 <p>教材用四个真实情境把"对应"摆上台面（p60-62）：</p>
 <table class="cmp">
 <tr><th>问题</th><th>对应关系</th><th>A（自变量范围）</th><th>B（因变量范围）</th></tr>
@@ -76,7 +77,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <p><strong>易错变形（p60 设问）：</strong>y=x 与 y=x²/x 相同吗？<span class="ans">不同——后者的 x≠0，定义域缩水了，"对应关系相同但定义域不同＝不同函数"。</span></p></div>
 </div>
 <div class="station">
-<p class="station-title">第 2 站 · 函数定义（背诵级）+ 区间：给定义域换上专业写法</p>
+<h2><span class="step-tag">第二步</span>函数定义（背诵级）+ 区间：给定义域换上专业写法</h2>
 <div class="formula" style="font-family:inherit;font-size:1em;text-align:left">一般地，设 <strong>A，B 是非空的实数集</strong>，如果对于集合 A 中的<strong>任意一个数 x</strong>，按照某种确定的对应关系 f，在集合 B 中都有<strong>唯一确定的数 y</strong> 和它对应，那么就称 <strong>f：A→B</strong> 为从集合 A 到集合 B 的一个<strong>函数</strong>（function），记作 <strong>y=f(x)，x∈A</strong>。（p62 原文）</div>
 <p>其中，x 叫做<span class="uline">自变量</span>，x 的取值范围 A 叫做函数的<span class="mark">定义域</span>（domain）；与 x 的值相对应的 y 值叫做<span class="mark">函数值</span>，函数值的集合 {f(x)|x∈A} 叫做函数的<span class="mark">值域</span>（range）。（p62）</p>
 <div class="note-red"><strong>三条红线（考试判分点）：</strong>① 值域是集合 B 的<span class="mark">子集</span>（问题④中值域 C₄={0.32,0.301,0.3,0.297,0.293,0.286,0.277,0.276,0.292} 是 B₄={r|0&lt;r≤1} 的真子集——2017 与 2021 年都是 28.6，集合去重只剩 9 个值）；② f(x) 表示"x 对应的函数值"，<span class="mark">不是 f 乘 x</span>（p65 边注）；③ 定义域和对应关系<span class="mark">双相同</span>才是同一函数。</div>
@@ -84,7 +85,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <div class="try"><p><strong>验一验②（p63 例1）：</strong>试构建一个问题情境，使变量关系可用 y=x(10−x) 描述。——<span class="ans">把 y=x(10−x) 看成二次函数：定义域 R，值域 {y|y≤25}（顶点 x=5 时 y=25）。若限制 x∈{x|0&lt;x&lt;10}，构建"长方形周长 20，设一边长 x，面积 y"，则 A={x|0&lt;x&lt;10}，B={y|0&lt;y≤25}——同一解析式，<span class="mark">定义域变了就是不同的函数</span>，这正是例1 的教学点。</span></p></div>
 </div>
 <div class="station">
-<p class="station-title">第 3 站 · 定义域双查法（例2）+ 函数值代换</p>
+<h2><span class="step-tag">第三步</span>定义域双查法（例2）+ 函数值代换</h2>
 <p><strong>教材例2（p65）：</strong>已知函数 f(x)=√(x+3) + 1/(x+2)。(1) 求定义域；<br>
 <span class="detail"><strong>解：</strong>只给解析式没指明定义域时，定义域＝使式子<span class="mark">有意义</span>的实数集合。使 √(x+3) 有意义：{x|x≥−3}；使 1/(x+2) 有意义：{x|x≠−2}。取交集：</span></p>
 <div class="formula">{x|x≥−3 且 x≠−2} = [−3,−2) ∪ (−2,+∞)</div>
@@ -94,7 +95,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <p><strong>验一验④（p67 练习2，奇偶伏笔）：</strong>f(x)=3x³+2x，求 f(2)+f(−2) 与 f(a)+f(−a)。——<span class="ans">f(−x)=3(−x)³+2(−x)=−f(x)，所以 f(2)+f(−2)=0，f(a)+f(−a)=0——"代入相加互相抵消"，这是第三章 3.2.2 奇函数的引子。</span></p></div>
 </div>
 <div class="station">
-<p class="station-title">第 4 站 · 三种表示法 + 分段函数（3.1.2）</p>
+<h2><span class="step-tag">第四步</span>三种表示法 + 分段函数（3.1.2）</h2>
 <p><strong>三种表示法（p67）：</strong><span class="uline">解析法</span>（用解析式，如问题①②）、<span class="uline">列表法</span>（列表格，如问题④）、<span class="uline">图象法</span>（用图象，如问题③）。</p>
 <p><strong>教材例4（p67）：</strong>笔记本单价 5 元，买 x（x∈{1,2,3,4,5}）本需要 y 元。解析法：y=5x，x∈{1,2,3,4,5}；列表法：x=1..5 对应 y=5,10,15,20,25；图象法：五个离散点（图3.1-2）。教材边栏追问：<span class="uline">函数图象既可以是光滑曲线，也可以是直线、折线、离散的点等</span>——判断一个图形是不是函数图象，依据是"任意一条垂直于 x 轴的直线与图象至多一个交点"（唯一性）。</p>
 <p><strong>教材例5（p68）：分段函数登场。</strong>画 y=|x| 的图象：由绝对值概念 y={−x, x&lt;0；x, x≥0}，图象是 V 形折线（图3.1-3）。像这样的函数称为<span class="mark">分段函数</span>。出租车计费、个人所得税纳税额都是分段函数的现实原型（p68 原句）。</p>
@@ -126,7 +127,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <div class="alt"><span class="tag">（拓展 · 可跳过）</span>习题18（p74）：圆周率 π 小数点后第 n 位数字 y 是 n 的函数吗？——是：定义域 {1,2,…,200}，值域 {0,1,…,9}，对应关系由 π 的展开确定——"对应关系"不必写成公式，规则本身就算数。</div>
 </div>
 <div class="station">
-<p class="station-title">收口站 · 三句话带走 + 自测四连</p>
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
 <ul class="walk">
 <li>① 函数=f：A→B，<span class="mark">A 中任意 x → B 中唯一确定的 y</span>；三要素=定义域、对应关系、（值域是 B 的子集）；</li>
 <li>② <span class="mark">定义域或对应关系不同＝不同函数</span>（s=350t 与 w=350d 不是同一个；y=x 与 y=x²/x 不是同一个）；求定义域双查：根式≥0、分式≠0；</li>
@@ -147,6 +148,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 · 分段函数多以"个税/出租车/取整"为情境出中档解答题，重点查<span class="mark">段界取值与衔接</span>；<br>
 · <span class="sub">真题锚申报：真题锚池内未录"数学3.1"专行，候采不代拟（宁缺毋编·沿 2.2 件同口径）。</span></p>
 </div>
+<p><b>下一站：</b>3.2.1 单调性与最大小值——"机器"概念备齐了，下一站给输出装升降判据（3.2 节题页 p76 起）。</p>
 <div class="figure">
 <svg viewBox="0 0 640 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="位置图：第三章函数的概念与性质三节谱系，当前在3.1函数的概念及其表示">
 <rect x="8" y="20" width="118" height="44" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>

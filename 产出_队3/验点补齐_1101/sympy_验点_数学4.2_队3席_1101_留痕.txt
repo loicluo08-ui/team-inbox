@@ -1,0 +1,6 @@
+PASS ratio_1_11
+PASS p115_growth
+PASS f0_minus_g0_412000
+PASS a0_eq_1
+PASS 2pow_half_eq_sqrt2
+5/5 ALL PASS

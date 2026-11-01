@@ -1,0 +1,6 @@
+PASS ineq_3_4
+PASS 等号取a_eq_b
+PASS ineq_1_5
+PASS AM_GM_1_5
+PASS symbolic_ineq
+5/5 ALL PASS
