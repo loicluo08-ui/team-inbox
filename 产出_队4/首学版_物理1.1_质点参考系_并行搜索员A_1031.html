@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理1.1 质点 参考系 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #1a2416; border-left: 3px solid #6cbf4a; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .try .q { color: #9fd481; font-weight: bold; }
+  .try .a { color: #8a949f; font-size: 15px; margin-top: 6px; }
+  .pit { background: #2a1a1a; border-left: 3px solid #e05252; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .pit .tag { color: #ff7b72; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #2b5277; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .key b { color: #4a9eff; }
+  .m { font-family: "Times New Roman", Georgia, serif; font-style: italic; color: #ffd48a; }
+  .big { font-size: 21px; text-align: center; margin: 18px 0; color: #fff; }
+  .detail { color: #7d8a99; font-size: 15px; border-top: 1px dashed #2a3140; margin-top: 10px; padding-top: 10px; }
+  .small { color: #8a949f; font-size: 14px; }
+  .wrong { color: #ff7b72; }
+  .fig { margin: 18px 0; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  .check { background: #16211a; border: 1px solid #2d5a3d; border-radius: 8px; padding: 16px 20px; margin: 18px 0; }
+  .check .tag { color: #58d68d; font-weight: bold; font-size: 14px; }
+  .check p { margin: 8px 0; }
+  .alt { background: #1f1b24; border: 1px solid #4a3a5a; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15.5px; color: #c9b8dd; }
+  .alt .tag { color: #c39bd3; font-weight: bold; }
+  .ans { color: #58d68d; }
+  .box { background: #10131a; border: 1px solid #2a323e; border-radius: 6px; padding: 14px 18px; margin: 12px 0; color: #eef2f7; font-size: 16px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a323e; padding: 9px 12px; text-align: left; }
+  th { background: #1b2029; color: #fff; }
+
+  /* ===== 笔记视觉层（打印态友好） ===== */
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
+  .nb-margin { position: relative; }
+  .nb-margin::after { content: attr(data-note); position: absolute; right: -6px; top: -18px; color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 14px; white-space: nowrap; }
+  b { color: #f0f3f7; }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 14px; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    p, .talk, .key, .pit, .detail, .figcap { color: #222; }
+    .sub, .small, .foot { color: #444; }
+    .try .q { color: #1e5c1e; } .try .a { color: #333; }
+    .pit .tag { color: #c0392b; }
+    .check .tag, .ans { color: #1e7a4f; }
+    .alt { color: #5b4a6e; } .alt .tag { color: #6b4a8a; }
+    .wrong, .note-red { color: #c0392b; }
+    em { color: #1a5c99; }
+    mark.nb, .step-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th { background: #f0f0f0; color: #111; }
+    th, td { border-color: #bbb; }
+    .box { color: #222; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>质点与参考系：学会"忽略"，才能开口描述运动</h1>
+<div class="sub">物理1.1 · "描述运动"模块第一件（第一章 运动的描述）· 前面已学：无——这就是整套物理的起点 · 零基础首学版 v1.0 · 前置：会乘除法、认识"万"和"亿"就够 · 预计40分钟</div>
+
+<h2><span class="step-tag">开场</span>"它在动"这三个字，比你想的难说清楚</h2>
+<p>窗外驶过一辆汽车，你说"车在动"；雄鹰掠过头顶，你说"鹰在飞"。这些话你从小说到大，从没出过错——但物理这门课要较真一次：<b>"它在动"这句话，到底说全了吗？</b>教材p11的问题框也是这么开场的：生活中随处可见运动的物体——玩耍的儿童、行驶的汽车、翱翔的雄鹰——<b>我们如何准确地描述它们的运动呢？</b></p>
+<p>这一节你会看到，要把"运动"说清楚，缺两样东西：一是<b>把复杂物体简化的办法</b>（不然每个零件都得单独记账，第一页就写不下去）；二是<b>一个"相对谁"的交代</b>（不然"动还是静"根本说不清）。它们分别叫<b>质点</b>和<b>参考系</b>。</p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 判断一个物体<b>在这道题里</b>能不能当成"一个带质量的点"来处理（质点）；<br>
+② 说清"运动"为什么必须补一句<b>"相对谁"</b>（参考系），并且知道默认答案是"地面"；<br>
+③ 避开新手必踩的坑：<b>不是"小才是质点"</b>。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒立好地基（已会的跳过）</h2>
+<div class="talk">
+<p>本节<b>零公式、零新记号</b>，只需要一个思想准备：物理里"描述一个物体的运动"，就是回答<b>"它的位置怎么随时间变化"</b>。教材p10给这类运动起了个正式名字——<b>物体的空间位置随时间的变化，叫作机械运动（mechanical motion）</b>；研究它的分支叫<b>力学（mechanics）</b>。</p>
+<p>麻烦在于：物体不是一个点。雄鹰的翅膀在上下拍，车轮在转，车厢在晃——<b>它的每一部分都可以有自己的运动</b>。所以开口描述之前，先得解决一件事：<b>看整体，还是看零件？</b>这是本节要下的第一刀。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>麻烦在哪——一个物体身上住着许多"运动员"</h2>
+<p>教材p11拿雄鹰开刀：雄鹰拍打着翅膀在空中翱翔时，<b>身体在向前飞，翅膀却在上下拍</b>；足球在绿茵场上滚动时，<b>它在向前滚，同时还在转</b>……可见，要准确地描述物体的运动，并不是一件容易的事。麻烦出在哪？稍加分析就明白：<b>任何物体都有一定的大小和形状，各部分的运动情况一般并不一样</b>（教材p11）。</p>
+<div class="try"><span class="q">验一验（10秒）：</span>从教室门口走到座位，你的鼻子走过的路线，和你的右手小指走过的路线，一模一样吗？<div class="a">→ 不一样（走路摆臂，手比头动得多）。"各部分运动不同"不是书上的套话，是你自己身上正在发生的事。</div></div>
+<div class="fig">
+<svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图A 雄鹰两重运动示意">
+  <defs>
+    <marker id="aA" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#4a9eff"/></marker>
+    <marker id="aA1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#6cbf4a"/></marker>
+    <marker id="aA2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#6cbf4a"/></marker>
+  </defs>
+  <polygon points="300,105 230,45 205,60 285,115" fill="none" stroke="#5a6a80" stroke-width="2" stroke-dasharray="5,4"/>
+  <polygon points="300,118 225,95 210,115 288,135" fill="#4a9eff22" stroke="#4a9eff" stroke-width="2"/>
+  <ellipse cx="300" cy="125" rx="22" ry="30" fill="#1c2530" stroke="#8fa3b8" stroke-width="2"/>
+  <circle cx="300" cy="88" r="12" fill="#1c2530" stroke="#8fa3b8" stroke-width="2"/>
+  <polygon points="312,84 328,90 312,96" fill="#8fa3b8"/>
+  <polygon points="290,152 310,152 320,178 280,178" fill="#1c2530" stroke="#8fa3b8" stroke-width="1.5"/>
+  <line x1="150" y1="62" x2="150" y2="148" stroke="#6cbf4a" stroke-width="2.5" marker-start="url(#aA2)" marker-end="url(#aA1)"/>
+  <text x="150" y="42" fill="#6cbf4a" font-size="14" text-anchor="middle">翅膀还在上下拍</text>
+  <line x1="355" y1="120" x2="600" y2="120" stroke="#4a9eff" stroke-width="3" marker-end="url(#aA)"/>
+  <text x="478" y="100" fill="#8fa3b8" font-size="14" text-anchor="middle">整体在向前飞</text>
+  <text x="478" y="205" fill="#5a6a7a" font-size="12" text-anchor="middle">同一只雄鹰身上，同时发生着两种运动——虚线翅膀＝上一个时刻的位置</text>
+</svg>
+<div class="figcap">图A 雄鹰：整体向前飞（蓝箭头），翅膀同时上下拍（绿箭头）。要"准确描述"，两笔账都得记——这就是麻烦所在。</div>
+</div>
+<p>那怎么办？教材p11给了钥匙：<b>要看你关心的问题是什么</b>。研究雄鹰<b>怎么扇翅膀</b>，翅膀的动法就重要；只关心雄鹰<b>从哪飞到了哪</b>，就可以不太在意它的形状，把它看成一个点来描述——立刻容易了。</p>
+
+<h2><span class="step-tag">第二步</span>质点——把物体缩成一个"带质量的点"</h2>
+<h3>通道一：大小和形状不影响答案</h3>
+<p>教材p12的第一个实例是地球。地球一边绕太阳公转、一边自转，各部分离太阳的距离其实一直在变。但是——地球直径约<b>1.3×10⁴ km</b>（1.3万公里），地日距离约<b>1.5×10⁸ km</b>（1.5亿公里），<b>直径还不到地日距离的万分之一</b>。研究"地球公转引起的位置变化"时，由大小引起的那点差异小到可以忽略——<b>把它当成一个点，结论照样成立</b>（教材p12）。</p>
+<div class="try"><span class="q">验一验（30秒·给教材的数字对账）：</span>1.3万 ÷ 1.5亿，真的不到万分之一吗？<div class="a">→ 1.3×10⁴ ÷ 1.5×10⁸ ≈ 0.87×10⁻⁴，而万分之一 = 1×10⁻⁴。0.87×10⁻⁴ &lt; 1×10⁻⁴ ✓（"还不到万分之一"这句经得起算——本件全部数值均已用计算机程序逐项核算过，核算记录随件存档）。</div></div>
+<div class="fig">
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图B 地球公转示意：直径在地日距离面前可忽略">
+  <polyline points="262.1,262.8 278.4,261.0 294.5,259.1 310.2,256.9 325.7,254.6 340.7,252.1 355.5,249.5 369.8,246.7 383.7,243.7 397.1,240.6 410.1,237.3 422.6,233.9 434.6,230.3 446.0,226.6 456.9,222.8 467.2,218.8 477.0,214.8 486.1,210.6 494.7,206.3 502.6,202.0 509.8,197.5 516.4,193.0 522.4,188.4 527.6,183.7 532.2,179.0 536.1,174.3 539.3,169.5 541.8,164.6 543.6,159.8 544.6,154.9 545.0,150.0 544.6,145.1 543.6,140.2 541.8,135.4 539.3,130.5 536.1,125.7 532.2,121.0 527.6,116.3 522.4,111.6 516.4,107.0 509.8,102.5 502.6,98.0 494.7,93.7 486.1,89.4 477.0,85.2 467.2,81.2 456.9,77.2 446.0,73.4 434.6,69.7 422.6,66.1 410.1,62.7 397.1,59.4 383.7,56.3 369.8,53.3 355.5,50.5 340.7,47.9 325.7,45.4 310.2,43.1 294.5,40.9 278.4,39.0 262.1,37.2" fill="none" stroke="#3a4a5c" stroke-width="2" stroke-dasharray="5,4"/>
+  <circle cx="115" cy="150" r="22" fill="#f0c040"/>
+  <text x="115" y="196" fill="#8fa3b8" font-size="14" text-anchor="middle">太阳</text>
+  <line x1="141" y1="150" x2="529" y2="150" stroke="#8fa3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <text x="330" y="138" fill="#8fa3b8" font-size="13.5" text-anchor="middle">地日距离 约1.5×10⁸ km</text>
+  <circle cx="545" cy="150" r="12" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <text x="545" y="126" fill="#4a9eff" font-size="13.5" text-anchor="middle">地球</text>
+  <line x1="545" y1="164" x2="545" y2="187" stroke="#5a6a80" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <rect x="462" y="188" width="212" height="66" fill="none" stroke="#5a6a80" stroke-width="1.5" stroke-dasharray="5,4" rx="5"/>
+  <text x="568" y="214" fill="#d8dee6" font-size="12.5" text-anchor="middle">放大看：地球直径≈1.3万km</text>
+  <text x="568" y="240" fill="#8fa3b8" font-size="12" text-anchor="middle">÷ 地日距离1.5亿km ≈ 万分之一</text>
+  <text x="330" y="258" fill="#5a6a7a" font-size="12" text-anchor="middle">公转轨道（示意·不按比例）</text>
+</svg>
+<div class="figcap">图B 研究公转时：地球的大小在地日距离面前不到万分之一——忽略它，结论不动摇（教材p12地球例·数据已代验）。</div>
+</div>
+<h3>通道二：各点运动完全相同</h3>
+<p>教材p12的第二种情况更妙：有的物体<b>各点的运动差异并不小</b>，但如果我们<b>不研究各点的差异、只关注整体</b>，照样可以把它看成一个点。例如列车在<b>平直轨道</b>上行驶（教材p12图1.1-1）：车轮怎么转、传动机构怎么动，很复杂——可当我们只关心"列车整体从哪到哪"时，这些差异一概不用管，<b>用一个点的运动代替整列车的运动</b>。</p>
+<div class="talk">
+<p><b>质点（mass point）（教材p12定义）：在某些情况下，确实可以<span class="ul-blue">忽略物体的大小和形状，把它简化为一个具有质量的点</span>，这样的点叫作质点。</b>还有一种情况：虽然不能忽略大小和形状，但物体上<span class="ul-blue">各点的运动情况完全相同</span>——从描述运动的角度看，任意一点的运动完全能反映整个物体，于是整个物体的运动也可以简化为一个点的运动，把物体的质量赋予这个点，它也就成了质点。</p>
+<p class="small">两个通道殊途同归：物体的运动由"一个带质量的点"接手。为什么非要"带质量"？因为点可以没有大小，但<b>不能没有质量</b>——质量是物体"惯性"的存货（后面力学章全靠它），简化掉的是大小和形状，<b>不简化质量</b>。教材p12脚注还交代：高中阶段主要研究能简化为质点的物体的运动，所以常常不区分"物体"和"质点"两个词。</p>
+</div>
+<p><span class="note-red">（教材p12旁批：突出问题的主要因素，忽略次要因素，建立理想化的物理模型——质点是你遇到的第一个"理想化模型"，这套方法后面会一用再用。）</span></p>
+<div class="fig">
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图C 列车与质点等价替换">
+  <defs><marker id="aC" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#4a9eff"/></marker></defs>
+  <text x="210" y="42" fill="#8fa3b8" font-size="13.5" text-anchor="middle">整列车：车轮在转·机构在动——各部分运动不同</text>
+  <rect x="90" y="60" width="120" height="45" fill="#1c2530" stroke="#8fa3b8" stroke-width="2" rx="6"/>
+  <rect x="225" y="66" width="105" height="39" fill="#1c2530" stroke="#5a6a80" stroke-width="1.5" rx="4"/>
+  <rect x="345" y="66" width="105" height="39" fill="#1c2530" stroke="#5a6a80" stroke-width="1.5" rx="4"/>
+  <circle cx="120" cy="112" r="9" fill="#14171c" stroke="#5a6a80" stroke-width="2"/>
+  <circle cx="180" cy="112" r="9" fill="#14171c" stroke="#5a6a80" stroke-width="2"/>
+  <circle cx="255" cy="112" r="9" fill="#14171c" stroke="#5a6a80" stroke-width="2"/>
+  <circle cx="300" cy="112" r="9" fill="#14171c" stroke="#5a6a80" stroke-width="2"/>
+  <circle cx="375" cy="112" r="9" fill="#14171c" stroke="#5a6a80" stroke-width="2"/>
+  <circle cx="420" cy="112" r="9" fill="#14171c" stroke="#5a6a80" stroke-width="2"/>
+  <line x1="70" y1="122" x2="470" y2="122" stroke="#3a4a5c" stroke-width="3"/>
+  <text x="360" y="162" fill="#d8dee6" font-size="14" text-anchor="middle">当只关心"从哪到哪"——</text>
+  <text x="322" y="202" fill="#8fa3b8" font-size="24" text-anchor="middle">=</text>
+  <circle cx="360" cy="196" r="14" fill="#1c2530" stroke="#4a9eff" stroke-width="2.5"/>
+  <text x="360" y="240" fill="#5a6a7a" font-size="12" text-anchor="middle">一个带质量的点（质点）</text>
+  <line x1="382" y1="196" x2="600" y2="196" stroke="#4a9eff" stroke-width="3" marker-end="url(#aC)"/>
+  <text x="492" y="180" fill="#8fa3b8" font-size="13" text-anchor="middle">从甲地到乙地</text>
+</svg>
+<div class="figcap">图C 大小形状不影响答案时：整列车 ≈ 一个质点（教材p12列车例·示意不按比例）。</div>
+</div>
+<div class="alt">
+<span class="tag">卡住了？换个说法</span><br>
+打开手机地图看北京——地图上北京是<b>一个点</b>。你问"北京到上海多远"，把它当点完全够用；你问"在天安门里怎么走到午门"，北京就绝不能是一个点。<b>地图的缩放级别＝你的研究问题</b>：级别越粗（问题越大），越能把整座城市当一个点。质点，就是"把物体缩放到当前问题需要的级别"。
+</div>
+
+<h2><span class="step-tag">第三步</span>判断标准——"能不能"由问题说了算，不由"大小"说了算</h2>
+<p>教材p13把规则挑明：<b>一个物体能否看成质点，是由所要研究的问题决定的。同一个物体，由于所要研究的问题不同，有时可以看成质点，有时不能。</b></p>
+<table>
+<tr><th>同一物体</th><th>能当质点的问法（✓）</th><th>不能当质点的问法（✗）</th></tr>
+<tr><td>地球</td><td>研究公转轨道（p12原文）</td><td>研究昼夜更替——自转必须把地球还原成球</td></tr>
+<tr><td>列车</td><td>从北京到上海历时多久（p12整体例）</td><td>过一座800米的桥要多久——车长几百米，略不得（<b>自编例</b>）</td></tr>
+<tr><td>足球</td><td>飞出后落在球场哪个位置（自编情境）</td><td>"香蕉球"怎么旋转出弧线——转的就是各个部位（p13思考与讨论·图1.1-2）</td></tr>
+<tr><td>乒乓球</td><td>出手后落在对方台面哪里（自编情境）</td><td>研究它怎么旋转出弧线——转的就是胶皮触球的部位（自编情境·对应教材p14练习1）</td></tr>
+</table>
+<div class="pit">
+<p><span class="tag">坑：</span>"物体足够小，就是质点"——这是本节最流行的错误记法。乒乓球够小了吧？研究它怎么旋转出弧线，照样<b>不能</b>当质点（教材p13用足球"香蕉球"问的就是同款问题）；原子更小，研究电子结构时更谈不上"整体运动"。</p>
+<p><span class="tag">判：</span>反过来，地球直径一万多公里，照样能当质点。裁判从来不是"它有多小"，而是——<mark class="nb">它的大小和形状，对"这个问题"有没有影响</mark>。有影响就不能简，没影响就能简。</p>
+</div>
+<div class="try"><span class="q">验一验（30秒·易错变形）：</span>同一句式填两个空：研究地球<b>公转</b>，地球____看成质点；研究地球<b>自转（昼夜更替）</b>，地球____看成质点。<div class="a">→ <b>能</b>；<b>不能</b>。两空答案不同的原因只有一个：问题换了。同一物体，问题一换，身份就换——这是本节最想让你记住的"灵活性"。</div></div>
+
+<h2><span class="step-tag">第四步</span>参考系——说"动"，先说"相对谁"</h2>
+<div class="talk">
+<p>简化好了对象，还有一半工作：描述运动本身。教材p13连环问——我们说房屋、树木是静止的，这大概不会错；<b>但房屋、树木正随着地球一起运动，这也是事实</b>。再比如：行驶的列车里，乘务员与旅客在交谈，车外的人看他们在随列车飞奔，可他们<b>彼此看对方却是静止的</b>。谁错了？都没错。<b>为什么大家的说法会不一样？</b></p>
+</div>
+<div class="key">
+<b>教材p13的两层答案（每层都值一道题）：</b><br>
+1. <b>运动是绝对的</b>——自然界的一切物体都处于永恒的运动中，绝对静止的物体不存在。<br>
+2. <b>描述是相对的</b>——说某个物体位置怎么变，总是相对于其他物体而言的（运动的相对性）。
+</div>
+<p>所以要描述运动，得先<b>选定某个其他物体作为参考</b>，观察研究对象相对于它的位置是否随时间变化、怎样变化。教材p14原文：<b>这种用来作为参考的物体，叫作<span class="ul-blue">参考系（reference frame）</span>。</b></p>
+<div class="fig">
+<svg viewBox="0 0 720 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图D 同一车厢两个参考系">
+  <defs><marker id="aD" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#4a9eff"/></marker></defs>
+  <rect x="30" y="30" width="300" height="185" fill="none" stroke="#5a6a80" stroke-width="1.5" stroke-dasharray="6,4" rx="6"/>
+  <text x="180" y="55" fill="#8fa3b8" font-size="13.5" text-anchor="middle">车内看（参考系＝车厢）</text>
+  <rect x="60" y="78" width="240" height="70" fill="#1c2530" stroke="#3a4a5c" stroke-width="1.5" rx="4"/>
+  <circle cx="130" cy="100" r="8" fill="#8fa3b8"/><line x1="130" y1="108" x2="130" y2="134" stroke="#8fa3b8" stroke-width="2.5"/>
+  <circle cx="190" cy="100" r="8" fill="#8fa3b8"/><line x1="190" y1="108" x2="190" y2="134" stroke="#8fa3b8" stroke-width="2.5"/>
+  <text x="160" y="172" fill="#58d68d" font-size="13.5" text-anchor="middle">两人互看：没动</text>
+  <rect x="390" y="30" width="300" height="185" fill="none" stroke="#5a6a80" stroke-width="1.5" stroke-dasharray="6,4" rx="6"/>
+  <text x="540" y="55" fill="#8fa3b8" font-size="13.5" text-anchor="middle">地面看（参考系＝地面）</text>
+  <rect x="420" y="78" width="240" height="70" fill="#1c2530" stroke="#3a4a5c" stroke-width="1.5" rx="4"/>
+  <circle cx="490" cy="100" r="8" fill="#8fa3b8"/><line x1="490" y1="108" x2="490" y2="134" stroke="#8fa3b8" stroke-width="2.5"/>
+  <circle cx="550" cy="100" r="8" fill="#8fa3b8"/><line x1="550" y1="108" x2="550" y2="134" stroke="#8fa3b8" stroke-width="2.5"/>
+  <line x1="440" y1="165" x2="640" y2="165" stroke="#4a9eff" stroke-width="3" marker-end="url(#aD)"/>
+  <text x="540" y="150" fill="#4a9eff" font-size="13" text-anchor="middle">随车飞奔</text>
+  <text x="360" y="248" fill="#d8dee6" font-size="14" text-anchor="middle">同样两个人——"动不动"取决于你站在哪个参考系</text>
+</svg>
+<div class="figcap">图D 同一节车厢，两个参考系，两种"动静"（教材p13乘务员例：车内互看没动／地面看随车飞奔）。</div>
+</div>
+<div class="try"><span class="q">验一验（30秒·自编例）：</span>甲、乙两车同向（向东）匀速行驶，甲 20 m/s，乙 15 m/s。问：以地面为参考系，乙向哪边动？以甲车为参考系，乙向哪边动、多快？<div class="a">→ 地面系：乙向东动（15 m/s）。甲车系：乙比甲慢，会被甲越甩越远——在甲看来，乙相当于以 20−15＝<b>5 m/s 向西"倒退"</b>。两句话都对——参考系一换，答案就换，谁也不矛盾。（自编例·数值已用计算机程序核算）</div></div>
+<h3>三条使用守则（教材p14口径）</h3>
+<div class="key">
+<b>① 凡提运动，先问相对谁</b>——教材原话：凡是提到运动，都应该弄清楚是相对于哪个参考系而言的。不交代参考系的"运动"，是半句话。<br>
+<b>② 参考系可以任意选</b>——但选择不同，观察结果会有所不同；选取得当，会使问题的研究变得<b>简洁、方便</b>（p14）。<br>
+<b>③ 通常默认地面</b>——讨论地面上物体的运动时，都以地面为参考系（p14）。所以题目不说，就是地面系。
+</div>
+<div class="try"><span class="q">验一验（10秒）：</span>手机导航提示"你已超速"时，它默认拿谁当参考系？<div class="a">→ 地面（守则③：题目不说，就是地面系）。</div></div>
+<div class="pit">
+<p><span class="tag">坑：</span>"静止"这个词没有绝对版。你说"车站是静止的"，心里其实默认了地面参考系；换到太阳参考系，车站正带着整个地球绕圈跑。</p>
+<p><span class="tag">判：</span>说"某物体静止"不提参考系＝半句话——要么补"相对某参考系"，要么按惯例补"相对地面"。<mark class="nb">先选参考系，再谈动静</mark>。</p>
+</div>
+<div class="alt">
+<span class="tag">想多走一步？（可选）</span><br>
+质点属于"理想化模型"家族。物理为了把问题算得动，会造一整族"现实中不存在、但规律好研究"的对象：没有质量的绳（轻绳）、不变形且无摩擦的面（光滑面）、只有电荷没有大小的点（点电荷）……都是质点的亲戚。你以后会一次次遇到它们——能认出"这是个理想化模型"，本身就是物理素养。跳过本块不损失任何主干。
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走＋自测</h2>
+<div class="key">
+<b>三句话：</b><br>
+1. <mark class="nb">质点＝忽略大小和形状、简化出来的"带质量的点"</mark>；能不能简化，<mark class="nb">由研究的问题决定，不由物体大小决定</mark>。<br>
+2. <mark class="nb">参考系＝描述运动时选作参考的物体</mark>；凡说运动必先问"相对谁"，通常默认地面。<br>
+3. <mark class="nb">运动是绝对的，描述是相对的</mark>——参考系一换，"动/静"的答案就换。
+</div>
+<p><b>自测四连</b>（先做再看答案）：</p>
+<p>① 教材p14练习1情境·设问自拟：被球拍击出的乒乓球——问"它落在对方台面哪里"，能当质点吗？问"它怎么旋转出弧线"，能吗？</p>
+<p>② 教材p14练习1情境·设问自拟：正在飞行的歼-20隐形战斗机——问"从北京飞到上海要多久"，能当质点吗？问"翻滚时机翼怎么动"，能吗？</p>
+<p>③ 教材p14练习2（选一例）："太阳东升西落"，说的是谁相对谁在动？默认参考系是什么？</p>
+<p>④ 教材p14练习3原诗·设问节选：宋代陈与义乘船春游作诗——"飞花两岸照船红，百里榆堤半日风。卧看满天云不动，不知云与我俱东。"其中"云不动"用的是哪个参考系？</p>
+<p class="small">答案：<span class="ans">①能／不能</span>　<span class="ans">②能／不能</span>　<span class="ans">③太阳相对地球（地面）在动——站到太阳那头看，其实是地球在自转（同一场运动，参考系一换，说法就翻过来）</span>　<span class="ans">④船（船上的人）——以岸（地面）为参考系，云和"我"都在向东走，所以"俱东"</span></p>
+<p><b>练什么题：</b>教材p14练习与应用1-3——三题全带真实情境，正好把"质点判断＋参考系"各练一遍。</p>
+<div class="box"><b>高考怎么考（考位锚）：</b>本节不单独出计算题，但"下列哪些物体可视为质点"是选择题里的常客——四个选项四种情境，逐项判断，错一项全题丢分；参考系则常以隐含条件出现（题面不写＝地面系），相对运动类题里"换个参考系"更是解题快捷方式。具体真题锚候采（卷源在库·宁缺毋编不代拟）。</div>
+<p><b>下一站：</b>描述运动的规矩立好了——对象简化成质点、交代清参考系。但"位置变化"本身还没被精确记账：从北京到重庆，坐飞机直飞和坐高铁绕行，"走过的路"和"位置挪了多少"是一回事吗？下一件 1.2《时间 位移》就处理它。</p>
+
+<div class="fig">
+<svg viewBox="0 0 720 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图">
+  <defs><marker id="aE" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#4a9eff"/></marker><marker id="aE1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#5a6a80"/></marker></defs>
+  <rect x="28" y="35" width="168" height="44" rx="6" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <text x="112" y="62" fill="#4a9eff" font-size="13" text-anchor="middle">你在这：1.1 质点·参考系</text>
+  <rect x="246" y="35" width="140" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="316" y="62" fill="#8fa3b8" font-size="13" text-anchor="middle">1.2 时间·位移</text>
+  <rect x="436" y="35" width="110" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="491" y="62" fill="#8fa3b8" font-size="13" text-anchor="middle">1.3 速度</text>
+  <rect x="596" y="35" width="110" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="651" y="62" fill="#8fa3b8" font-size="13" text-anchor="middle">1.4 加速度</text>
+  <line x1="196" y1="57" x2="242" y2="57" stroke="#4a9eff" stroke-width="2" marker-end="url(#aE)"/>
+  <line x1="386" y1="57" x2="432" y2="57" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE1)"/>
+  <line x1="546" y1="57" x2="592" y2="57" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE1)"/>
+  <text x="360" y="112" fill="#5a6a7a" font-size="11.5" text-anchor="middle">先立规矩（简化对象·选参考系），再装"量"（位移→速度→加速度）</text>
+</svg>
+<p class="small" style="text-align:center">这张图在说什么：本件是"描述运动"工具箱的第一格——规矩先于测量，后面三件都是往这套规矩里装"量"。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（首版即全层：标准v2.3条款T1-T12落地＋打印笔记视觉层与@media print＋自编例数值sympy代验·新增块候使用反馈） · 事实层素材源：人教2019版物理必修第一册p10-14官方影印逐页对照（国家中小学智慧教育平台transcode直链·contentId=708256b6-6f06-4d14-89c7-4df16dfe3b81·ts=1787023183495·图N→印刷页N−5·1.1节=p11-14=图16-19·章首p10=图15·影印原件存席位私有目录不入仓）+ v18原册_物理.html 簇01（照录已验真·讲法层独立设计不采其文） · 层次对齐：本件为物理1.1首学主层正本，旧形态切片卡_物理1.1质点参考系_首件_1024.html降复习/导航参考层（对齐注记详随件自检表）<br>
+设计标准（标准v2.3条款落地）：零预设 · 一次一步 · 随读随验 ×5 · 卡住有出路 · 收口能复述 · 自编例全部显式标注（过桥例/两车例）· 教材原题标注来源 · 图示讲解必配 · 打印笔记视觉层 · 出品：并行搜索员A（队4席）· 1031
+</div>
+</div>
+</body>
+</html>

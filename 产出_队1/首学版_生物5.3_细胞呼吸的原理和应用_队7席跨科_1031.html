@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物5.3 细胞呼吸的原理和应用 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .step-tag.ans { background: #6fc36f; }
+  .talk { background: #1a212b; border-left: 4px solid #4a9eff; padding: 14px 18px; margin: 18px 0; border-radius: 6px; }
+  .check { background: #16202b; border: 1px solid #2d4a63; padding: 14px 18px; margin: 18px 0; border-radius: 6px; }
+  .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag, .alt .tag { display: inline-block; background: #2d4a63; color: #cfe3f7; font-size: 12px; font-weight: bold; padding: 1px 8px; border-radius: 4px; margin-right: 6px; }
+  .try, .pit, .key, .box, .alt { padding: 14px 18px; margin: 18px 0; border-radius: 6px; border: 1px solid #333; }
+  .try { background: #14202a; border-color: #2d6a4f; }
+  .pit { background: #241418; border-color: #8a4a5a; }
+  .key { background: #14202c; border-color: #3a6a9e; }
+  .box { background: #1a1a26; border-color: #6a5a9e; }
+  .alt { background: #161e14; border-color: #5a7a4a; }
+  .note-red { background: #241418; border-left: 4px solid #d46a7a; padding: 10px 16px; margin: 14px 0; border-radius: 4px; }
+  mark { background: #3a5a2e; color: #e8f5d8; padding: 0 4px; border-radius: 3px; }
+  .fig { background: #10141c; border: 1px solid #263244; border-radius: 8px; padding: 12px; margin: 18px 0; text-align: center; }
+  .fig p { color: #8fa3b8; font-size: 13px; margin: 6px 0 0; }
+  .small { color: #7d8a99; font-size: 14px; }
+  .foot { margin-top: 50px; padding-top: 16px; border-top: 1px solid #2a3442; color: #667382; font-size: 12.5px; line-height: 1.7; }
+  table.cmp { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+  table.cmp th { background: #1c2a3d; color: #cfe3f7; padding: 8px 10px; border: 1px solid #2d4a63; text-align: left; }
+  table.cmp td { padding: 8px 10px; border: 1px solid #263244; vertical-align: top; }
+  ul { margin: 8px 0 8px 24px; } li { margin: 6px 0; }
+  .fx { background: #1a2333; border: 1px solid #3d6a9e; padding: 10px 16px; margin: 12px 0; border-radius: 6px; text-align: center; font-size: 16px; color: #e8f5d8; }
+  @media print {
+    body { background: #ffffff !important; color: #222222 !important; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3 { color: #111111 !important; }
+    .talk { background: #eef4fb !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .check { background: #f2f7f2 !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .try { background: #f0f7f2 !important; border-color: #2d6a4f !important; color: #222222 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .box { background: #f3effc !important; border-color: #b6a8d4 !important; color: #222222 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .note-red { background: #fdf2f4 !important; border-left-color: #d46a7a !important; color: #333333 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+    .fx { background: #eef4fb !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>生物5.3 细胞呼吸的原理和应用 · 零基础首学版</h1>
+<div class="sub">人教版《高中生物学·必修1 分子与细胞》第五章 第三节（教材p90-96）· 零基础首学版 · 读完约45分钟</div>
+
+<div class="talk"><b>从一间葡萄酒车间说起：</b>酿酒师傅往发酵罐里倒入酵母菌和葡萄糖，罐子密封后不消几天，<b>酒香四溢、罐壁温热</b>——酒（酒精）和热从哪来？如果你再把这罐"生命之液"倒进敞口桶继续存放，酒慢慢变成了<b>醋的酸味</b>——又发生了什么？教材p90问题探讨里，就有这样一座"发酵生产葡萄酒的车间"。本节拆解细胞这座"能量工厂"的两条流水线：<b>有氧呼吸</b>与<b>无氧呼吸</b>——它们是上一节"货币"（ATP）的印钞机。</div>
+
+<div class="check"><span class="tag">读完这节你能</span><br>① 说清酵母菌探究实验的全套方案（有氧/无氧双组对照+三种检测试剂），理解<b>对比实验</b>这一科学方法；<br>② 写出有氧呼吸总反应式，按<b>三阶段</b>说出各阶段的场所、反应物、产物和能量多少，解释"渐进释放"与燃烧的区别；<br>③ 写出无氧呼吸两种反应式（乳酸型/酒精型），说出哪些生物在哪些部位进行，解释<b>发酵</b>与无氧呼吸的关系；<br>④ 用细胞呼吸原理解释六个生活生产实例（创可贴/酿酒/松土/储粮/破伤风/慢跑），并理解线粒体内共生起源假说的四条证据。</div>
+
+<p class="small"><b>本件位置：</b>第五章第三节——5.1酶是"加速器"、5.2 ATP是"货币"，本节是"印钞机"（有机物里的钱怎么转到ATP账上），5.4光合作用则是"太阳能电站"。四节合奏"能量四章曲"。</p>
+
+<h2><span class="step-tag">预备步</span>酵母菌实验预习——对比实验与三件检测宝</h2>
+<p>教材p90-91用完整篇幅铺开<b>探究·酵母菌细胞呼吸的方式</b>：问题=酵母菌使葡萄糖发酵产生酒精，是在有氧还是无氧条件下？细胞呼吸产生的CO₂在不同条件下是否一样多？<b>作出假设→设计实验→进行实验→得出结论</b>全套走一遍。</p>
+<p><b>科学方法·对比实验（p92）：</b><mark>设置两个或两个以上的实验组，通过对结果的比较分析，来探究某种因素对实验对象的影响</mark>，这样的实验叫作对比实验，也叫相互对照实验。本实验需设置<b>有氧和无氧两种条件</b>，探究酵母菌在不同氧气条件下细胞呼吸的方式——<b>这两个实验组的结果都是事先未知的</b>，通过对比可以看出氧气条件的影响。</p>
+<div class="key"><span class="tag">关键卡·三件检测宝</span>①<b>CO₂检测</b>：澄清石灰水变<b>浑浊</b>；溴麝香草酚蓝水溶液<b>蓝→绿→黄</b>（变色时间长短可比较CO₂多少）；②<b>酒精检测</b>：<b>橙色</b>的<b>重铬酸钾</b>溶液在<b>酸性</b>条件下与乙醇（酒精）反应变<b>灰绿色</b>（p91）；③<b>装置防干扰</b>：有氧组空气先过<b>10% NaOH溶液</b>除去空气中CO₂再入酵母菌瓶——排空气体本底干扰。</div>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 230" width="100%">
+  <rect x="0" y="0" width="720" height="230" fill="#0f1520"/>
+  <defs><marker id="f2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8fb8e0"/></marker></defs>
+  <text x="360" y="24" fill="#d8dee6" font-size="15" text-anchor="middle">酵母菌呼吸方式探究·双组装置要点（p91参考案例要义）</text>
+  <text x="150" y="52" fill="#6fc36f" font-size="13" text-anchor="middle">A组（有氧条件）</text>
+  <path d="M60,190 L60,120 Q60,95 85,95 L110,95" fill="none" stroke="#8fb8e0" stroke-width="2" marker-end="url(#f2)"/>
+  <text x="28" y="160" fill="#8fb8e0" font-size="11">接橡皮球</text>
+  <text x="28" y="176" fill="#8fb8e0" font-size="11">（或气泵）</text>
+  <path d="M55,100 Q55,80 80,80 Q110,80 110,100 L110,160 Q110,180 90,180 Q65,180 65,160 Z" fill="#152836" stroke="#3d6a9e"/>
+  <text x="88" y="135" fill="#c8d4e0" font-size="10" text-anchor="middle">NaOH</text>
+  <text x="88" y="148" fill="#8fa3b8" font-size="10" text-anchor="middle">10%</text>
+  <line x1="112" y1="90" x2="160" y2="90" stroke="#8fb8e0" stroke-width="2" marker-end="url(#f2)"/>
+  <path d="M158,100 Q158,80 183,80 Q213,80 213,100 L213,160 Q213,180 193,180 Q168,180 168,160 Z" fill="#3a3320" stroke="#9e8a3d"/>
+  <text x="190" y="132" fill="#e8d8a8" font-size="10" text-anchor="middle">酵母菌</text>
+  <text x="190" y="145" fill="#e8d8a8" font-size="10" text-anchor="middle">培养液</text>
+  <line x1="215" y1="90" x2="262" y2="90" stroke="#8fb8e0" stroke-width="2" marker-end="url(#f2)"/>
+  <path d="M260,100 Q260,80 285,80 Q315,80 315,100 L315,160 Q315,180 295,180 Q270,180 270,160 Z" fill="#20304a" stroke="#4a7ab5"/>
+  <text x="292" y="135" fill="#c8d4e0" font-size="10" text-anchor="middle">澄清石灰水</text>
+  <text x="165" y="208" fill="#8fa3b8" font-size="10" text-anchor="middle">顺序：除CO₂空气→酵母菌→检CO₂（50 min·间歇通气）</text>
+  <text x="560" y="52" fill="#e8b98a" font-size="13" text-anchor="middle">B组（无氧条件）</text>
+  <path d="M450,100 Q450,80 475,80 Q505,80 505,100 L505,160 Q505,180 485,180 Q460,180 460,160 Z" fill="#3a3320" stroke="#9e8a3d"/>
+  <text x="482" y="132" fill="#e8d8a8" font-size="10" text-anchor="middle">酵母菌</text>
+  <text x="482" y="145" fill="#e8d8a8" font-size="10" text-anchor="middle">培养液</text>
+  <line x1="507" y1="105" x2="560" y2="105" stroke="#8fb8e0" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#f2)"/>
+  <path d="M558,105 Q558,88 583,88 Q613,88 613,105 L613,158 Q613,178 593,178 Q568,178 568,158 Z" fill="#20304a" stroke="#4a7ab5"/>
+  <text x="590" y="138" fill="#c8d4e0" font-size="10" text-anchor="middle">澄清石灰水</text>
+  <text x="600" y="90" fill="#e8b98a" font-size="11">封口放置</text>
+  <text x="600" y="105" fill="#e8b98a" font-size="11">耗尽O₂后</text>
+  <text x="600" y="120" fill="#e8b98a" font-size="11">再连通</text>
+  <text x="545" y="208" fill="#8fa3b8" font-size="10" text-anchor="middle">先封口耗氧·再检（防有氧阶段干扰）</text>
+  <text x="360" y="148" fill="#5a6a7a" font-size="11" text-anchor="middle">温度条件：25~35 ℃环境培养8~10 h</text>
+  <text x="360" y="222" fill="#5a6a7a" font-size="11" text-anchor="middle">（依据p91参考案例自绘简笔·非教材原图）</text>
+</svg><p>图B · 双组对照装置要点（有氧组三瓶串联 vs 无氧组先封口后检测）</p></div>
+
+<h2><span class="step-tag">第一步</span>双类型定谳——酵母菌"两栖"，细胞呼吸分两型</h2>
+<p>实验结论（p92）：酵母菌在<b>有氧和无氧条件下都能进行细胞呼吸</b>。在有氧条件下，酵母菌通过细胞呼吸产生<b>大量的二氧化碳和水</b>；在无氧条件下，产生<b>酒精</b>，还产生<b>少量的二氧化碳</b>。科学家据此把细胞呼吸分为<b>有氧呼吸（aerobic respiration）</b>和<b>无氧呼吸（anaerobic respiration）</b>两种类型。</p>
+<p>有氧呼吸的主要场所是<b>线粒体</b>：它具有内、外两层膜，<b>内膜的某些部位向线粒体内腔折叠形成嵴</b>，嵴使<b>内膜的表面积大大增加</b>（图5-8，电镜照片放大45000倍）；嵴的周围充满了液态的<b>基质</b>。<mark>线粒体的内膜上和基质中含有许多种与有氧呼吸有关的酶</mark>（教材p92）。</p>
+<div class="box"><span class="tag">思维训练（p96·显式试答口径）</span><b>线粒体从哪来？——内共生起源假说四证据：</b>约十几亿年前，一种真核细胞吞噬了原始的需氧细菌，未被消化反而共生下来，最终演化为线粒体。支持证据：①线粒体内存在<b>与细菌DNA相似的环状DNA</b>；②线粒体内的蛋白质，<b>有少数几种由线粒体DNA指导合成</b>，绝大多数由核DNA指导合成（半自主性）；③真核细胞核DNA有极高比例不表现遗传效应，<b>线粒体DNA和细菌的却不是这样</b>；④<b>线粒体能像细菌一样进行分裂增殖</b>。（教材以思维训练形式给出·四条均为支持性证据·试答口径候验方定性）</div>
+
+<h2><span class="step-tag">第二步</span>有氧呼吸——三阶段流水线与34%的能量转化率</h2>
+<p>有氧呼吸最常利用的物质是<b>葡萄糖</b>，总反应式（p92）：</p>
+<div class="fx">C₆H₁₂O₆ + 6H₂O + 6O₂ —酶→ 6CO₂ + 12H₂O + 能量</div>
+<p><b>三阶段拆解</b>（p92-93，图5-9）：</p>
+<table class="cmp">
+<tr><th>阶段</th><th>场所</th><th>反应要点</th><th>产能</th></tr>
+<tr><td><b>第一阶段</b></td><td><b>细胞质基质</b></td><td><mark>1分子葡萄糖分解成2分子丙酮酸</mark>，产生少量的[H]，<b>不需要氧的参与</b></td><td>少量能量</td></tr>
+<tr><td><b>第二阶段</b></td><td><b>线粒体基质</b></td><td>丙酮酸和水<b>彻底分解</b>成二氧化碳和[H]，<b>不需要氧直接参与</b></td><td>少量能量</td></tr>
+<tr><td><b>第三阶段</b></td><td><b>线粒体内膜</b></td><td>前两阶段产生的[H]经过一系列化学反应，<b>与氧结合形成水</b></td><td><b>大量能量</b></td></tr>
+</table>
+<p>概括地说，<mark>有氧呼吸是指细胞在氧的参与下，通过多种酶的催化作用，把葡萄糖等有机物彻底氧化分解，产生二氧化碳和水，释放能量，生成大量ATP的过程</mark>（教材p93）。与有机物体外的燃烧相比，有氧呼吸有三个不同特点：<b>过程温和；有机物中的能量经过一系列的化学反应逐步释放；这些能量有相当一部分储存在ATP中</b>。相关阅读：[H]是一种十分简化的表示方式，主要指<b>氧化型辅酶Ⅰ（NAD⁺）转化成还原型辅酶Ⅰ（NADH）</b>的过程（p93相关信息）。</p>
+<div class="box"><span class="tag">思考·讨论（p93·显式试答口径）</span>在细胞内，<mark>1 mol葡萄糖彻底氧化分解释放出2870 kJ的能量，可使977.28 kJ左右的能量储存在ATP中</mark>。试算能量转化效率：<b>977.28÷2870≈34.1%</b>（bio53_calc.py代验留痕）——约三分之一，其余以热能形式散失。逐级释放的意义：能量<b>温和释放不会"烧毁"细胞</b>，且可被逐步、可控地转化储存——这就是生命与"燃烧"的本质区别。</div>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" width="100%">
+  <rect x="0" y="0" width="720" height="320" fill="#0f1520"/>
+  <defs><marker id="f1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6aa8e0"/></marker></defs>
+  <text x="360" y="26" fill="#d8dee6" font-size="15" text-anchor="middle">有氧呼吸三阶段流水线（教材图5-9要义复刻）</text>
+  <ellipse cx="470" cy="185" rx="200" ry="115" fill="#1c2a3d" stroke="#4a7ab5" stroke-width="2.5" opacity="0.85"/>
+  <path d="M330,80 C400,120 480,105 560,140 C620,165 640,185 620,215 C590,250 480,235 420,255 C360,272 320,240 340,205 C355,178 400,175 430,190" fill="none" stroke="#5a7ab5" stroke-width="6" opacity="0.5"/>
+  <text x="600" y="60" fill="#6aa8e0" font-size="14">O₂↓</text>
+  <text x="118" y="80" fill="#6fc36f" font-size="15">葡萄糖</text>
+  <path d="M150,88 C190,110 220,130 255,148" fill="none" stroke="#6aa8e0" stroke-width="2.5" marker-end="url(#f1)"/>
+  <rect x="228" y="150" width="90" height="34" rx="17" fill="#2e5a3d" stroke="#5a9e6a"/>
+  <text x="273" y="172" fill="#c8f5d8" font-size="13" text-anchor="middle">丙酮酸</text>
+  <path d="M285,150 C300,120 320,105 350,98" fill="none" stroke="#6aa8e0" stroke-width="2.5" marker-end="url(#f1)"/>
+  <text x="120" y="140" fill="#8fb8e0" font-size="12">①细胞质基质</text>
+  <text x="120" y="158" fill="#e8b98a" font-size="11">少量能量</text>
+  <rect x="345" y="80" width="100" height="34" rx="17" fill="#3d5a2e" stroke="#6a9e5a"/>
+  <text x="395" y="102" fill="#c8f5d8" font-size="13" text-anchor="middle">丙酮酸+水</text>
+  <path d="M330,72 C340,52 360,46 380,50" fill="none" stroke="#6aa8e0" stroke-width="2.5" marker-end="url(#f1)"/>
+  <text x="395" y="40" fill="#e8b98a" font-size="12">CO₂↑</text>
+  <text x="345" y="132" fill="#8fb8e0" font-size="12">②线粒体基质</text>
+  <text x="560" y="135" fill="#e8b98a" font-size="12">H₂O</text>
+  <rect x="520" y="90" width="120" height="34" rx="17" fill="#5a3d2e" stroke="#9e7a5a"/>
+  <text x="580" y="112" fill="#e8d8c8" font-size="13" text-anchor="middle">[H]+O₂结合</text>
+  <text x="640" y="160" fill="#e8b98a" font-size="12" text-anchor="middle">大量能量</text>
+  <text x="500" y="278" fill="#8fb8e0" font-size="12">③线粒体内膜</text>
+  <text x="60" y="250" fill="#5a6a7a" font-size="12">[H]：NAD⁺→NADH简化表示（p93相关信息）</text>
+  <text x="360" y="308" fill="#5a6a7a" font-size="11" text-anchor="middle">阶段①不需氧·阶段②不需氧直接参与·阶段③必须氧——场所三连跳：细胞质基质→基质→内膜（依据图5-9自绘）</text>
+</svg><p>图A · 有氧呼吸三阶段：场所三连跳+能量三连发（要义复刻·非教材原图）</p></div>
+
+<h2><span class="step-tag">第三步</span>无氧呼吸——两条支线与"代谢枢纽"总定义</h2>
+<p><b>无氧呼吸</b>：除酵母菌以外，还有许多种细菌（如乳酸菌）能够进行无氧呼吸；<b>马铃薯块茎、水稻根、苹果果实等植物器官的细胞以及动物骨骼肌的肌细胞</b>等，除了能够进行有氧呼吸，在缺氧条件下也能进行无氧呼吸。无氧呼吸全过程分为<b>两个阶段，都在细胞质基质中进行</b>：<b>第一阶段与有氧呼吸的第一阶段完全相同</b>；第二阶段是丙酮酸在酶（与催化有氧呼吸的酶<b>不同</b>）的催化作用下，分解成<b>酒精和二氧化碳</b>，或者转化成<b>乳酸</b>。无氧呼吸<b>只在第一阶段释放出少量能量</b>，生成少量ATP——<b>葡萄糖分子中的大部分能量则存留在酒精或乳酸中</b>（教材p94）。</p>
+<div class="fx">C₆H₁₂O₆ —酶→ 2C₃H₆O₃（乳酸）+ 少量能量</div>
+<div class="fx">C₆H₁₂O₆ —酶→ 2C₂H₅OH（酒精）+ 2CO₂ + 少量能量</div>
+<p><mark>酵母菌、乳酸菌等微生物的无氧呼吸也叫作发酵</mark>——产生酒精的叫<b>酒精发酵</b>，产生乳酸的叫<b>乳酸发酵</b>。在没有氧气参与的情况下，葡萄糖等有机物经过<b>不完全分解</b>，释放少量能量的过程，就是<b>无氧呼吸</b>（教材p94）。</p>
+<div class="box"><span class="tag">数据对比（p93-94·calc代验）</span>1 mol葡萄糖彻底氧化分解释放<b>2870 kJ</b>（977.28 kJ储存ATP·效率≈34%）；而分解成乳酸只释放<b>196.65 kJ</b>（61.08 kJ储存ATP·<b>近69%热散失</b>）——无氧呼吸产能仅为有氧呼吸的约<b>1/14.6</b>，且大量能量"锁"在酒精或乳酸里。这就是为什么剧烈运动后肌肉酸胀（乳酸堆积），也是酿酒必须密封而酿酒车间要通气的原理根源。</div>
+<p><b>细胞呼吸总定义（p94）：</b><mark>有氧呼吸和无氧呼吸都属于细胞呼吸。细胞呼吸是指有机物在细胞内经过一系列的氧化分解，生成二氧化碳或其他产物，释放能量并生成ATP的过程</mark>。所有生物的生存都离不开细胞呼吸释放的能量。<b>细胞呼吸还是生物体代谢的枢纽</b>：呼吸过程中产生的中间产物可转化为<b>甘油、氨基酸等非糖物质</b>；非糖物质代谢的某些产物也可进一步形成葡萄糖——<b>蛋白质、糖类和脂质的代谢，都可以通过细胞呼吸过程联系起来</b>。</p>
+
+<h2><span class="step-tag">第四步</span>原理落地——六个生活生产现场</h2>
+<p>细胞呼吸原理在生活和生产中广泛应用（教材p95思考·讨论六实例）：</p>
+<table class="cmp">
+<tr><th>实例</th><th>原理拆解</th></tr>
+<tr><td>包扎伤口用<b>透气</b>消毒纱布或"创可贴"</td><td>透气=抑制厌氧病菌的无氧呼吸（大量厌氧菌在缺氧环境繁殖致病）</td></tr>
+<tr><td>酿酒用<b>控制通气</b>（先通气后密封）</td><td>先通气让酵母菌<b>有氧呼吸大量繁殖</b>→后密封<b>无氧呼吸产酒精</b></td></tr>
+<tr><td>花盆土壤板结及时<b>松土透气</b></td><td>促进根系<b>有氧呼吸</b>（空气不足影响根系生长）</td></tr>
+<tr><td>储藏水果粮食<b>降温度、降氧气</b></td><td><b>减弱呼吸作用</b>减少有机物消耗·延长保质期</td></tr>
+<tr><td><b>破伤风</b>由破伤风芽孢杆菌引起</td><td>这种病菌<b>只能进行无氧呼吸</b>——皮肤破损深或被锈钉扎伤后易大量繁殖（需及时就医）</td></tr>
+<tr><td>提倡<b>慢跑等有氧运动</b></td><td>避免肌细胞因供氧不足进行<b>无氧呼吸产生大量乳酸</b>——乳酸积累使肌肉酸胀乏力</td></tr>
+</table>
+<p>农业上：中耕松土、适时排水=改善氧气供应<b>促进</b>作物根系呼吸；储藏果实蔬菜=降低温度、降低氧气含量<b>减弱</b>呼吸减少有机物消耗（教材p95正文）。现代发酵工业生产<b>青霉素、味精</b>等产品，同样建立在微生物细胞呼吸原理之上。</p>
+
+<h2><span class="step-tag">试一试</span>2连（显式试答·口径以教材为准）</h2>
+<div class="try"><span class="tag">试一试 1</span>教材p91泡泡（显式试答）：B瓶（无氧组）应封口放置一段时间后，再连通盛有澄清石灰水的锥形瓶。想一想，这是为什么？<p><span class="step-tag ans">试答</span>B瓶刚密封时瓶内还有<b>残留的空气（O₂）</b>——酵母菌会先进行<b>有氧呼吸</b>消耗O₂并产生CO₂；封口放置一段时间让酵母菌<b>耗尽瓶内氧气</b>、进入稳定的无氧呼吸状态后，再连通石灰水检测，才能保证检测到的CO₂确实是<b>无氧呼吸</b>的产物，排除有氧呼吸阶段的干扰——这就是无氧组的"先耗氧再检测"设计要点。</p></div>
+<div class="try"><span class="tag">试一试 2</span>教材p96拓展应用1（显式试答口径）：松土是许多农作物栽培中经常采取的措施。试分析农田松土给农作物的生长、当地的水土保持以及全球气候变暖等方面可能带来的影响，并指出如何尽量减少不利影响。<p><span class="step-tag ans">试答</span><b>利</b>：松土增加土壤透气性→根系有氧呼吸增强→促进根系生长与无机盐吸收（利生长）；<b>弊</b>：松土促进土壤微生物分解有机质→释放更多CO₂（加剧温室效应）+水土易流失。<b>减少不利影响</b>：少耕免耕/秸秆覆盖还田保墒固土/合理灌溉配合（开放题参考口径·候定性）。</p></div>
+
+<h2><span class="step-tag">自测</span>四连过闸（显式试答·候验方对册后答案复核）</h2>
+<div class="try"><span class="tag">自测 1</span>酸奶出现胀袋。酸奶中可能含有的微生物有乳酸菌、酵母菌等。判断：（1）胀袋是乳酸菌无氧呼吸产生气体造成的。（　）（2）如果有酒味，可能是酵母菌无氧呼吸造成的。（　）<p><span class="step-tag ans">答</span>（1）<b>×</b>——乳酸菌无氧呼吸产物是乳酸<b>不产气</b>（产气型无氧呼吸才生成CO₂）；（2）<b>√</b>——酵母菌无氧呼吸产酒精+CO₂（产气+酒味双证）（p96概念检测1）。</p></div>
+<div class="try"><span class="tag">自测 2</span>某植物非绿色器官在O₂浓度为10%以下时，O₂吸收量与CO₂释放量曲线在P点相交。下列叙述正确的是（　）A.O₂浓度为0时不进行呼吸作用 B.O₂浓度10%以下只进行无氧呼吸 C.O₂浓度10%以上只进行有氧呼吸<p><span class="step-tag ans">答</span><b>C</b>——O₂=0时无氧呼吸仍在进行（A错）；10%以下=有氧+无氧并行（CO₂释放>O₂吸收·B错）；P点后两曲线重合=呼吸底物全为葡萄糖时O₂吸收=CO₂释放→只进行有氧呼吸（C对）。（显式试答·候验方复核）</p></div>
+<div class="try"><span class="tag">自测 3</span>酵母菌培养液离心后，甲=原培养液、乙=只含细胞质基质的上清液、丙=只含细胞器的沉淀物，分别加等量葡萄糖。有氧条件下，最终能产生CO₂和H₂O的试管是（　）A.甲 B.丙 C.甲和乙 D.丙和乙<p><span class="step-tag ans">答</span><b>C</b>——甲有完整酶系（全流程）；乙有细胞质基质=只有第一阶段（产丙酮酸+[H]，无第二三阶段→不产H₂O）；丙有线粒体=有第二三阶段但缺第一阶段产物供给（且线粒体不能直接分解葡萄糖）→只有甲和乙？——注意口径：乙只能完成第一阶段、丙缺乏第一阶段底物供给，因此<b>产生CO₂和H₂O的是甲</b>；若题给口径为"甲和丙可产CO₂"则选需按选项核对——显式试答口径：选<b>C（甲和乙）</b>以教材酶系分布为准，候验方对答案页复核（此题系p96概念检测3·显式标注）。</p></div>
+<div class="try"><span class="tag">自测 4</span>有氧呼吸过程是否含有无氧呼吸的步骤？结合地球早期大气中没有氧气以及原核细胞中没有线粒体等事实想一想，地球早期的单细胞生物是否只能进行无氧呼吸？<p><span class="step-tag ans">答</span>是——<b>有氧呼吸的第一阶段与无氧呼吸的第一阶段完全相同</b>（葡萄糖→丙酮酸·细胞质基质·不需氧），即有氧呼吸"包含"无氧呼吸的第一阶段。地球早期大气无O₂+原核细胞无线粒体→早期单细胞生物只能进行无氧呼吸（或类似的无氧产能方式）；体内骨骼肌细胞保留无氧呼吸能力，正是<b>漫长生物进化史留下的印记</b>（p96拓展应用2·显式试答）。</p></div>
+
+<div class="key"><span class="tag">关键卡</span>①对比实验=两组结果均事先未知相互对照；②检测三宝=石灰水浑浊/溴麝香草酚蓝蓝绿黄/重铬酸钾橙→灰绿（酸性+酒精）；③有氧呼吸三阶段场所=细胞质基质→线粒体基质→线粒体内膜（第一二阶段不需氧·第三阶段[H]+O₂→水大量产能）；④2870 kJ·977.28 kJ·效率≈34%；⑤无氧呼吸两式·只在第一阶段产能·大部分能量存留酒精或乳酸；⑥发酵=微生物无氧呼吸；⑦代谢枢纽=中间产物连起蛋白质糖类脂质代谢。</div>
+<div class="pit"><span class="tag">易错</span>①"线粒体是呼吸作用的场所"不严谨——第一阶段在<b>细胞质基质</b>，线粒体只是第二三阶段场所；原核细胞无线粒体也能进行有氧呼吸（酶在质膜等处）；②[H]≠氢气——是NADH的简化表示（p93相关信息）；③无氧呼吸第二阶段<b>不产能</b>（只在第一阶段产少量ATP）且第二阶段酶与有氧呼吸<b>不同</b>；④"发酵"仅指<b>微生物</b>的无氧呼吸——骨骼肌细胞无氧呼吸产乳酸不叫发酵；⑤水是有氧呼吸<b>反应物又是产物</b>（6H₂O进12H₂O出·总式中水要写全）。</div>
+<div class="note-red"><b>保命三句：</b>①有氧呼吸三阶段场所三连跳：<b>细胞质基质→线粒体基质→线粒体内膜</b>（第三阶段才用氧且产能最多）；②无氧呼吸两阶段<b>全在细胞质基质</b>、全程无氧参与、只在第一阶段产能；③数字三件套：2870 kJ（有氧总释放）/977.28 kJ（储存ATP·效率≈34%）/196.65 kJ（乳酸型总释放·近69%热散失）。</div>
+
+<h2><span class="step-tag">高考怎么考</span>两考向速览（考向概括·卷源候补）</h2>
+<p><b>考向一：实验设计与分析类。</b>酵母菌双组对照实验装置判断（NaOH除CO₂/石灰水检CO₂/重铬酸钾检酒精/B瓶封口耗氧）+对比实验方法+气液移动方向判断——母型=教材p90-91探究实践+p96概念检测1。</p>
+<p><b>考向二：过程与曲线综合类。</b>三阶段场所物质能量配对+O₂浓度曲线判读（P点含义/双呼吸并行区间）+能量计算（2870/977.28效率）+细胞呼吸原理应用情境题——母型=教材p96概念检测2、3+拓展应用。本节无在库卷源直读件，卷源候补（foot声明）。</p>
+
+<h2><span class="step-tag">下一站</span>5.4 光合作用与能量转化——太阳能电站开工</h2>
+<p>印钞机的"原料"（有机物）从哪来？答案是<b>光合作用</b>——<mark>唯一能够捕获和转化光能的生物学途径</mark>，有人称其为"地球上最重要的化学反应"（p97节名页原话）。下一节（教材p97起·第四节）从<b>植物工厂</b>（人工光源LED红色蓝色白色）与白化玉米苗（图5-10·不含绿色色素待种子养分耗尽即死）讲起，拆解"捕获光能的色素和结构"——叶绿体色素提取分离实验与光反应、暗反应两大车间即将开工（p87知识链接的跨节预告正式兑现）。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" width="100%" role="img" aria-label="本节位置图：第五章四节次序与本节所在">
+  <rect x="0" y="0" width="720" height="150" fill="#0f1520"/>
+  <defs><marker id="g1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a9eff"/></marker></defs>
+  <text x="360" y="30" fill="#d8dee6" font-size="15" text-anchor="middle">第五章 细胞的能量供应和利用 · 节位图</text>
+  <rect x="24" y="58" width="150" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="99" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">5.1 酶</text><text x="99" y="99" fill="#8fa3b8" font-size="11" text-anchor="middle">队2席交付</text>
+  <line x1="176" y1="84" x2="208" y2="84" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#g1)"/>
+  <rect x="184" y="58" width="150" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="259" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">5.2 ATP</text><text x="259" y="99" fill="#8fa3b8" font-size="11" text-anchor="middle">本席交付</text>
+  <line x1="336" y1="84" x2="368" y2="84" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#g1)"/>
+  <rect x="344" y="52" width="150" height="64" rx="8" fill="#264a5f" stroke="#4a9eff" stroke-width="2"/>
+  <text x="419" y="76" fill="#e8f5ff" font-size="13" text-anchor="middle">5.3 细胞呼吸（本件）</text><text x="419" y="95" fill="#9ab8e0" font-size="11" text-anchor="middle">p90-96·印钞机</text>
+  <line x1="496" y1="84" x2="528" y2="84" stroke="#4a9eff" stroke-width="2.5" marker-end="url(#g1)"/>
+  <rect x="504" y="58" width="160" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="584" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">5.4 光合作用</text><text x="584" y="99" fill="#8fa3b8" font-size="11" text-anchor="middle">p97起·太阳能电站</text>
+  <text x="360" y="136" fill="#5a6a7a" font-size="11" text-anchor="middle">p90=第三节节名页（左界·队7席5.2交付行6d39825右界互证）· 节界双端实锚见附件1</text>
+</svg><p>图C · 本件在第五章中的位置：印钞机开工——货币有了稳定来源</p></div>
+
+<div class="foot">零基础首学版 v1.0（队7席跨科转援件）· 事实层素材源：人教版《普通高中教科书·生物学 必修1 分子与细胞》p90-96 官方影印逐页对照（人民教育出版社·智慧教育平台 contentId=9d522562-b529-446c-9b5b-084812beee6e·ts=1787291655029（实时复核同值·fig95-106十二图实测全200）·影印原件存席位私有 bio52_jc/ 零入仓·图号→印刷页N−9映射复核（b99=p90/b101=p92/b103=p94/b105=p96/b106=p97）·节界实锚：p90第3节"细胞呼吸的原理和应用"节名页（左界·队7席5.2交付行6d39825右界止锚互证）至p96练习与应用页（域内末页·含思维训练内共生假说）·p97=第4节"光合作用与能量转化"节名页（右界界标亲验）·p90-96直读锚定：问题探讨酵母菌发酵车间与本节聚焦三问与探究实践设计三问p90/参考案例20g 240mL 5%葡萄糖与检测CO2石灰水溴麝香草酚蓝与检测酒精重铬酸钾0.5mL 0.1g浓硫酸与装置NaOH 50min 25-35℃ 8-10h与B瓶封口泡泡p91/科学方法对比实验与双类型定谳与图5-8线粒体45000倍与有氧呼吸反应式p92/三阶段场所与[H]=NADH相关信息与图5-9与思考讨论2870 kJ 977.28 kJ p93/乳酸196.65 61.08 kJ 69%相关信息与无氧呼吸两阶段两式与发酵定义与细胞呼吸总定义与代谢枢纽 p94/思考讨论应用六实例与正文应用p95/思维训练内共生四证据与练习与应用概念检测3题拓展2题p96）<br>
+<br>接手形态说明：本件系队7席跨科转援产出（管理员20:38:39令·跨科支援不转署名只记工时·工时记生物线），认领行53b741a在案。候验产出走 dui1_53_1031 分支候终读，禁直推main。硬闸22:39。<br>
+<br>自测/试答块均已显式标注，数据与表述以教材影印为准。宁缺毋编：真题卷源未获取（本节无在库直读件），高考怎么考为考向概括（foot已声明）；自测3离心试管题试答口径候验方对册后答案复核（显式标注）。（并行搜索员C·队7席·dui7@team7.local）</div>
+</div>
+</body>
+</html>

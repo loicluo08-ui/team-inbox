@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜指数｜真题锚×易错收口（双段版）</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .ans{font-weight:700; color:var(--accent-deep); white-space:nowrap;}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第四章 指数函数与对数函数</span>
+    </div>
+<p style="margin:6px 0;font-weight:700">口令：指数不是除法，偶次根出绝对值</p>
+
+    <h1>4.1 指数</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 4.1 节重制件正本同名在案 · 第4章簇-节对位表）</div>
+  </div>
+
+  <div class="body">
+
+    <section><h2>讲法锚</h2><div class="slice"><p><b>本节讲法锚：未取得（如实标注）</b>——先按教材正文与串联图推进，不受影响。</p></div></section>
+    <section><h2>讲法锚点 · 缺料豁免注记</h2><div class="slice"><p>本节讲法锚：未取得（如实标注）。</p></div></section>
+
+    <section><h2>高考真题锚</h2><div class="slice"><p><b>本节真题锚：待采（如实标注）</b>——真题槽位已留装，卷源采到即入；先按教材正文与串联图推进，不受影响。</p></div></section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 指数m/n里的斜杠不是除号——2^(1/2)≈1.414，不是1</span>
+        <p><b class="punch">a^(1/2)读"乘半次"＝√a——把分数指数当成除法，从第一笔就错了。</b>症状：把a^(1/2)算成a/2（2^(1/2)写成1）、2^(3/2)算成2³÷2=4（先乘后除）。错因：把分数指数当成除法——指数m/n里的"/n"触发了分数除法语感；分数指数幂整体是一层记号，不是"幂再除法"两层动作。</p>
+        <p><b>钉死动作</b>：指数语义自检——a^(1/2)是"乘半次"=√a，2^(1/2)≈1.414，若算出1立即报警；a^(m/n)=(ⁿ√a)^m整体读，自检2^(3/2)=√8≈2.83≠4。维持机制："1/2"这个记号在分数世界太熟悉，抄起来就除；"指数=乘几分之几次"的语义从未立住。本节另有高频条目同源正本在案（⁴√(a⁴)直接写a漏绝对值／0⁰与0的负分数指数幂混淆／(−1)^(2/2)负底数未先转正讨论），考前一并过。</p>
+        <p class="src">源：在库 4.1 节重制件正本易错卡表首行（本节6条之首·照录）。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 4.1 节重制件正本"运算纪律：三查与考试规范"节，把三查（查指数奇偶／查底的正负约定／负指数先倒数）与结果规范三件套（正指数、最简分式、底数不含根号）写在草稿顶端——阅卷场上"算对了"和"写规范了"是两件事。</li>
+        <li>互化自测：ⁿ√(ᵐ√a)=a^(1/(mn))一步到底（条件a&gt;0下优先指数记号）；负指数=倒数、0次幂=1是规律递推的结果不是硬规定——正本深读区"0次幂=1的推理链"过一遍。</li>
+        <li>偶次根符号讨论过堂：√((3−π)⁴)=π−3（3−π&lt;0取绝对值——考题专挑"正负看情况"的里层给你）；负底数混算第一步先声明字母为正，(−1)^(2/2)两种读法两个值，纪律就是不让它发生。</li>
+        <li>回 4.2/4.3 节件：指数函数与对数的所有计算都踩在本节的互化与法则上——底座不过关，后面每道计算题都在替这节补课；无理指数幂的不足近似逼近是指数铺满实数轴的最后一块砖。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">源注：本卡内容依据B站公开课程视频与教材整理；部分切片与真题锚待采（如实标注），先学已采内容不受影响。</div>
+</div>
+</body>
+</html>

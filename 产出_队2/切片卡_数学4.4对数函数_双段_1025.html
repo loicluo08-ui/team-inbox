@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜对数函数｜真题锚×易错收口（双段版）</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .ans{font-weight:700; color:var(--accent-deep); white-space:nowrap;}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第四章 指数函数与对数函数</span>
+    </div>
+<p style="margin:6px 0;font-weight:700">口令：恒过(1,0)不过(0,0)，去对数先查底定向</p>
+
+    <h1>4.4 对数函数</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 4.4 节重制件正本同名在案 · 第4章簇-节对位表）</div>
+  </div>
+
+  <div class="body">
+
+    <section><h2>讲法锚</h2><div class="slice"><p><b>本节讲法锚：未取得（如实标注）</b>——先按教材正文与串联图推进，不受影响。</p></div></section>
+    <section><h2>讲法锚点 · 缺料豁免注记</h2><div class="slice"><p>本节讲法锚：未取得（如实标注）。</p></div></section>
+
+    <section><h2>高考真题锚</h2><div class="slice"><p><b>本节真题锚：待采（如实标注）</b>——真题槽位已留装，卷源采到即入；先按教材正文与串联图推进，不受影响。</p></div></section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 对数函数不过原点——恒过(1,0)，原点根本不在定义域</span>
+        <p><b class="punch">画完图自问一句"真数能取0吗"——原点不在场，恒过的是(1,0)。</b>症状：认为对数函数图像过原点(0,0)。错因：定义域意识缺失——x=0根本不在场；指数函数图像"贴着x轴"的视觉残留迁移过来；画草图不标渐近线。</p>
+        <p><b>钉死动作</b>：恒过(1,0)（log_a 1=0），原点不在定义域；自检动作=画完问"真数能取0吗"。本节另有高频条目同源正本在案（log₁/₂x&lt;2去对数得x&lt;1/4——底&lt;1反向应x&gt;1/4，四步法第③步查底定向永不跳／解log_a(x−2)型题不写x&gt;2——定义域是"入场券"／对数增长是最慢的常见增长——log₂x从3到4，x从8到16），考前一并过。</p>
+        <p class="src">源：在库 4.4 节重制件正本易错卡表首行（本节6条之首·照录）。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 4.4 节重制件正本"两族图像：恒过(1,0)与y轴渐近线"节——对数题第一笔永远写定义域（真数&gt;0逐条列全，解集最后取交）；约束是"入场券"不是"检票口"，代回会伪装通过。</li>
+        <li>四步法查底定向永不跳：log₁/₂x&lt;2底1/2&lt;1反向⟹x&gt;1/4（且定义域x&gt;0）；含参对数不等式底数分a&gt;1与0&lt;a&lt;1双讨论——正本例4"平移分解+定点追踪与代回验证"过堂。</li>
+        <li>比大小三策略过堂：同底看单调／同真数看图象高低（底大图低）／换底统一——log₂3与log₃2同真不同底，图像法一眼定。</li>
+        <li>回 4.3/3.2 节件：互逆保单调方向——y=log_a x与y=aˣ同底同增减（a&gt;1都增、0&lt;a&lt;1都减），图像关于y=x对折不改变上下坡走向；复合函数单调性定义域永远第一笔（正本例3"真数含系数整理+平移分解+定点追踪"四段式自测）。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">源注：本卡内容依据B站公开课程视频与教材整理；部分切片与真题锚待采（如实标注），先学已采内容不受影响。</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理1.4 地球的演化 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1a212b; border: 1px solid #2c3644; border-radius: 8px; padding: 14px 16px; margin: 16px 0; color: #c3ceda; }
+  .check { background: #16211a; border: 1px solid #2e5c3a; border-radius: 8px; padding: 14px 16px; margin: 16px 0; }
+  .check .tag { display: inline-block; background: #3fbf6f; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .check li { margin: 6px 0 6px 22px; }
+  .try { background: #1c2433; border: 1px dashed #4a9eff; border-radius: 8px; padding: 14px 16px; margin: 18px 0; }
+  .try .tag { display: inline-block; background: #ffd54a; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .try p { margin: 8px 0; }
+  .ans { color: #8fd4ff; }
+  .pit { background: #2a1a1d; border: 1px solid #7a3b44; border-radius: 8px; padding: 14px 16px; margin: 18px 0; }
+  .pit .tag { display: inline-block; background: #ff6b6b; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .key { background: #1c2433; border: 1px solid #4a9eff; border-left: 6px solid #4a9eff; border-radius: 8px; padding: 16px 18px; margin: 22px 0; }
+  .key .tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .alt { background: #232a1c; border: 1px solid #5a6b3a; border-radius: 8px; padding: 12px 16px; margin: 16px 0; color: #b9c4a8; font-size: 15px; }
+  .box { background: #1e1a2a; border: 1px solid #6b5aa0; border-radius: 8px; padding: 14px 16px; margin: 22px 0; }
+  .box .tag { display: inline-block; background: #9d7fe8; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .note-red { border-left: 4px solid #ff6b6b; background: #2a1a1d; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; font-family: "Kaiti SC", "KaiTi", "STKaiti", serif; }
+  .note-yellow { border-left: 4px solid #ffd54a; background: #2a2515; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; }
+  .note-green { border-left: 4px solid #3fbf6f; background: #16211a; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; }
+  mark { background: #ffd54a; color: #0b0e13; padding: 0 4px; border-radius: 3px; }
+  .uline { border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  .m { color: #8fd4ff; }
+  .big { font-size: 19px; color: #fff; font-weight: bold; }
+  .fig { background: #10141a; border: 1px solid #232c38; border-radius: 8px; padding: 14px; margin: 18px 0; text-align: center; }
+  .fig p { color: #7d8a99; font-size: 13px; margin-top: 8px; text-align: center; }
+  .fig svg { max-width: 100%; height: auto; }
+  .small { color: #7d8a99; font-size: 14px; }
+  table.geo { border-collapse: collapse; margin: 14px auto; font-size: 13.5px; width: 100%; }
+  table.geo th, table.geo td { border: 1px solid #2c3644; padding: 5px 8px; text-align: center; }
+  table.geo th { background: #1a212b; color: #e8ecf2; }
+  table.geo td.hl { background: #1c2433; color: #8fd4ff; font-weight: bold; }
+  table.geo tr.cap th { background: #16211a; color: #3fbf6f; }
+  .foot { margin-top: 60px; padding-top: 18px; border-top: 1px solid #232c38; color: #5a6a7a; font-size: 13px; line-height: 1.7; }
+  b { color: #f0f3f7; }
+  @media print {
+    body { background: #ffffff !important; color: #1a1a1a !important; }
+    .page { padding: 10mm 8mm; }
+    h1, h2, h3, b { color: #111111 !important; }
+    h2 { border-left-color: #1a5fb4 !important; }
+    .m, .ans { color: #0b5394 !important; }
+    .big { color: #111111 !important; }
+    .talk { background: #f2f4f7 !important; border-color: #c9d1d9 !important; color: #333333 !important; }
+    .check { background: #eef7f0 !important; border-color: #9fd4ae !important; color: #222222 !important; }
+    .try { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .box { background: #f3effc !important; border-color: #b3a3d9 !important; color: #222222 !important; }
+    .note-red { background: #fdf0f0 !important; color: #222222 !important; }
+    .note-yellow { background: #fdf8e3 !important; color: #222222 !important; }
+    .note-green { background: #eef7f0 !important; color: #222222 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    table.geo th { background: #e8edf2 !important; color: #111111 !important; }
+    table.geo td.hl { background: #eaf3fc !important; color: #0b5394 !important; }
+    table.geo tr.cap th { background: #eef7f0 !important; color: #1a5c30 !important; }
+    table.geo th, table.geo td { border-color: #9aa5b1 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+    .uline { border-bottom-color: #1a5fb4 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>地球的演化</h1>
+<div class="sub">高中地理 必修 第一册（湘教版）第一章 第四节 · 教材 p30-39 · 零基础首学版 v1.0</div>
+
+<div class="talk">山上、脚下的岩石，很多是几十万年、几千万年前一层层"沉积"出来的——而有些岩石里，居然<b>封着几亿年前海里生物的硬壳</b>。问题来了：地球约46亿年是怎么过来的？没人拿摄像机拍过，我们凭什么知道？答案：地球自己留了档案——<b>地层</b>是"书页"，<b>化石</b>是书页里的插图。这一节就教你读这套档案：先学会翻书（地层和化石），再看全书目录（地质年代），最后把46亿年的大故事一口气读完。</div>
+
+<div class="check"><span class="tag">读完这节你能</span>
+<ul>
+<li>说清<b>地层</b>和<b>化石</b>各是什么，并用"先形成的在下"判断地层新老顺序</li>
+<li>用<b>化石</b>给地层"定年代、定环境"（如含三叶虫→古生代）</li>
+<li>把<b>地质年代</b>按"宙→代→纪"排出来，说出前寒武纪、古生代、中生代、新生代各自的主角</li>
+<li>记住两次<b>生物大灭绝</b>的数据，并避开"60%和50%张冠李戴"这个坑</li>
+</ul>
+</div>
+
+<p class="small">本件属于"宇宙中的地球"模块（必修第一册第一章·全章最后一节）·前面已学：1.1地球的宇宙环境→1.2太阳对地球的影响→1.3地球的圈层结构。（没读过1.3？看这句就够：地球内部大致分地壳、地幔、地核三大圈层，外面套着水圈和大气圈——知道了这个，就能往下走。）</p>
+
+<div class="talk"><span class="step-tag">预备</span>先花30秒确认两个词，教材 p30-31 都有原话，这里先给"人话版"：<b>地层</b>——地壳里一层一层、像千层饼一样叠着的岩石（或堆积物），每一层是某个时代"攒"下来的。<b>化石</b>——保存在地层里的古代生物的遗体（贝壳、骨骼）或活动的痕迹（足印、粪便），多数已经变成石头或石头里的印模。先记住这两个词，下面马上用。</div>
+
+<h2><span class="step-tag">第一步</span>地层——地球历史的"书页"</h2>
+
+<p>想知道地球的过去，去哪找记录？教材 p30 开门见山给出定义：<span class="uline"><mark>地层是地壳上部呈带状展布的层状岩石或堆积物</mark></span>。地球在发展过程中形成了各个时代的地层，地层里留下了历史事件的痕迹、保存有不同时代的生物遗体或遗迹、遗留下环境变化的物质凭证——所以教材说：<mark>可以说地层是记录地球历史的"书页"</mark>。</p>
+
+<p>那这本书怎么"翻"？关键就一句：<b>在正常情况下，地层是按顺序排列的——先形成的在下，后形成的在上</b>（教材p31对话原话）。道理很朴素：新的沉积物只能落在旧地层<b>上面</b>，就像书页只能往上摞。看到一套层状岩石，下面那层老、上面那层新，这就是给地层排"辈分"的基本规矩。</p>
+
+<p>但教材 p31 的对话紧接着泼了一盆冷水：<b>自然界中的地层往往错综复杂——有的层序颠倒（被地壳运动掀翻了），有的地层缺失（那个时代的记录根本没留下或被剥蚀掉了）</b>。那怎么办？靠"书页里的插图"来对答案——这就是化石的用武之地（第二步讲）。先做个小自验把"层序"这步踩实：</p>
+
+<div class="try"><span class="tag">试试看 ①</span>（自编·练层序规矩）某处采石场有四层水平岩层，从上到下记为甲、乙、丙、丁。哪层最老？哪层最新？
+<p><span class="step-tag">答</span>正常层序下，先形成的在下：<b>丁最老、甲最新</b>——记住"下老上新"，和摞书的顺序一样。要是有人告诉你丙层里挖出的贝壳化石比乙层的"新得多"，那你该警觉：这套岩层多半被<b>断层或褶皱弄颠倒了</b>，不能直接套"下老上新"。</p></div>
+
+<div class="fig">
+<svg viewBox="0 0 740 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="地层书页：正常层序与颠倒缺失示意图">
+  <text x="150" y="26" fill="#b0bcc8" font-size="14" font-weight="bold" text-anchor="middle">正常层序：下老上新</text>
+  <rect x="60" y="40" width="180" height="38" fill="#2a5f8a" opacity="0.75"/>
+  <text x="150" y="64" fill="#dcecfb" font-size="13" text-anchor="middle">第4层 · 最新</text>
+  <rect x="60" y="82" width="180" height="38" fill="#3a7a5f" opacity="0.75"/>
+  <text x="150" y="106" fill="#d8f0e4" font-size="13" text-anchor="middle">第3层</text>
+  <rect x="60" y="124" width="180" height="38" fill="#8a6a2a" opacity="0.75"/>
+  <text x="150" y="148" fill="#f5ecd4" font-size="13" text-anchor="middle">第2层</text>
+  <rect x="60" y="166" width="180" height="38" fill="#6a3a3a" opacity="0.8"/>
+  <text x="150" y="190" fill="#f5dcdc" font-size="13" text-anchor="middle">第1层 · 最老</text>
+  <path d="M255,59 L285,59" stroke="#4a9eff" stroke-width="1.5" fill="none"/>
+  <text x="300" y="120" fill="#7d8a99" font-size="12">像摞书一样，</text>
+  <text x="300" y="138" fill="#7d8a99" font-size="12">新的只能落在上面</text>
+  <text x="560" y="26" fill="#b0bcc8" font-size="14" font-weight="bold" text-anchor="middle">现实：颠倒与缺失都常见</text>
+  <rect x="470" y="40" width="180" height="30" fill="#3a7a5f" opacity="0.75"/>
+  <text x="560" y="60" fill="#d8f0e4" font-size="12" text-anchor="middle">应有层位 · 缺失!</text>
+  <rect x="470" y="80" width="180" height="30" fill="#6a3a3a" opacity="0.8"/>
+  <text x="560" y="100" fill="#f5dcdc" font-size="12" text-anchor="middle">老地层 · 被掀到上面</text>
+  <rect x="470" y="120" width="180" height="30" fill="#2a5f8a" opacity="0.75"/>
+  <text x="560" y="140" fill="#dcecfb" font-size="12" text-anchor="middle">新地层 · 被压到下面</text>
+  <path d="M465,35 L465,195 L655,195" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+  <text x="560" y="216" fill="#ff6b6b" font-size="12" text-anchor="middle">层序颠倒 → 不能直接套"下老上新"，要请化石来对答案</text>
+  <text x="370" y="243" fill="#7d8a99" font-size="12" text-anchor="middle">这张图在说什么：左边是理想情况，右边提醒你自然界的"书"常被撕页、倒装——这正是需要化石的原因。</text>
+</svg>
+</div>
+
+<h2><span class="step-tag">第二步</span>化石——书页里的插图，定年代又定环境</h2>
+
+<p>为什么化石能当地球历史的"插图"？教材 p31 给了两条根据。第一条关于<b>进化方向</b>：<mark>生物是从简单向复杂、从低级向高级不断地进化的</mark>——所以不同时代活着的生物不一样。第二条顺理成章：<mark>不同时代的地层一般含有不同的化石，而相同时代的地层往往保存着相同或近似的化石</mark>。于是反过来用：<b>看到地层里的化石，就能确定这套地层的时代和顺序</b>。</p>
+
+<p>教材 p31 给了两句"口诀级"的例子，考试常考原文：</p>
+
+<div class="note-yellow">① 含<b>三叶虫、大羽羊齿</b>化石的地层 → <b>古生代</b>地层；<br>② 含<b>恐龙</b>化石的地层 → <b>中生代</b>地层。<br>（三叶虫是海里的节肢动物，大羽羊齿是蕨类植物——第二步结尾和第四步还会见到它们。）</div>
+
+<div class="try"><span class="tag">试试看 ②</span>（教材p31原句改造·练口诀）某采石场的一套岩层里挖出了恐龙化石，另一套岩层里挖出了三叶虫化石。哪套老、哪套新？
+<p><span class="step-tag">答</span>含三叶虫的=古生代地层，含恐龙的=中生代地层；古生代在前、中生代在后，所以<b>三叶虫那套更老，恐龙那套更新</b>。这就是"用化石定时代"的典型用法——两套地层中间隔了约2亿年（第四步的简表里能查到）。</p></div>
+
+<p>化石除了"报年龄"，还能"报环境"。教材 p32 原话：<b>根据地层组成物质的性质和化石特征，可以追溯地层沉积时的环境特征</b>。四个对应关系，直接背：</p>
+
+<div class="key"><span class="tag">地层=环境记录仪（教材p32）</span>
+<p><b>红色岩层</b> → 指示<b>氧化</b>环境；<b>黑色页岩并含黄铁矿</b> → 指示<b>还原</b>环境；<b>珊瑚化石</b> → 指示<b>清澈温暖的浅海</b>环境；<b>破碎的贝壳</b> → 指示<b>滨海</b>环境（海边浪大，贝壳被搅碎了才埋下）。</p>
+</div>
+
+<div class="try"><span class="tag">试试看 ③</span>（自编·易错变形）红色岩层指示的是氧化环境还是还原环境？说一个你自己的理由。
+<p><span class="step-tag">答</span><b>氧化环境</b>。理由（自编版）：铁生锈就是氧化——红色正像铁锈的颜色，说明沉积时环境里氧气充足，铁被氧化成红色氧化物埋进了岩层；而还原环境缺氧，才轮到黑色的含黄铁矿页岩出场。<b>易错点：红=氧化、黑=还原，别背反了。</b></p></div>
+
+<p>那化石本身是怎么形成的？教材 p31"阅读"栏给了三个条件，缺一不可：</p>
+
+<div class="note-green"><b>古生物化石的形成（教材p31阅读·三条件）：</b>①生物本身要有<b>不易毁坏的硬体部分</b>（硬壳、骨骼等）才容易保存——只有在特殊条件下硬体软体才能一齐保存：密封在琥珀里的昆虫栩栩如生，西伯利亚和阿拉斯加冻土里的猛犸象连皮毛血肉都还在（图1-24就是琥珀昆虫）；②生物死亡后必须<b>尽快被沉积物掩埋</b>，避免腐烂或被其他动物吃掉；③掩埋的遗体还要经过<b>石化作用</b>（矿物质充填、交代，或植物的炭化）才能真正变成化石。</div>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材 p32"活动"给了一个不含"骨头"的证据——<b>孢粉</b>（孢子+花粉的总称）。植物繁殖时把孢粉撒出去，如一棵山毛榉树一年能撒出4亿粒花粉；它们与空气隔绝后被一层层掩埋，能长期存留。由于<b>可根据孢粉形态判别母体植物的种属</b>，它成了推测地质时期植被和气候的依据。活动第1问就是实例：辽宁南部距今10000~8000年的泥炭层里桦属花粉占优势，而如今桦木林已退缩到大小兴安岭和长白山区，又知桦树喜冷耐旱——可推知辽宁南部这8000~10000年来气候<b>由冷变暖</b>（冷期桦树能一路长到辽宁，暖期就退缩回东北山区了）。跳过本块不影响主干。</div>
+
+<div class="pit"><span class="tag">坑</span>两个最常踩的：<br>① <b>化石≠只有遗体</b>。教材p31：多数化石是古生物的<b>遗体</b>（贝壳、骨骼等），少数是<b>活动遗迹</b>（足印、粪便等）——考试问"粪便算不算化石证据"，算，它是遗迹。<br>② <b>环境指示别背反</b>：红=氧化、黑（含黄铁矿）=还原；珊瑚=清澈温暖浅海、<b>破碎</b>贝壳=滨海（"破碎"二字是题眼，完整的贝壳未必是滨海）。</div>
+
+<h2><span class="step-tag">第三步</span>地质年代——给46亿年编目录</h2>
+
+<p>书页会翻了、插图会读了，现在给整套书<b>编目录</b>。教材 p32 原话：科学家根据<b>地层顺序、生物演化阶段、地壳运动和岩石年龄</b>等，把地球历史划分为<b>冥古宙、太古宙、元古宙和显生宙</b>；在宙之下又分出<b>代</b>，代之下再分出<b>纪</b>。<mark>地壳中不同地质时代地层的具体形成时间和顺序，称为地质年代</mark>。</p>
+
+<p>这三级怎么记？拿你熟悉的"世纪—年—月"套一下：<b>宙</b>最大（相当于"千年级的大块头"），<b>代</b>次之，<b>纪</b>最小、分得最细。卡在这里的记这句出路："宙"是书架、"代"是一摞书、"纪"是每本书——先记住书架的名字，书慢慢认。</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="46亿年比例条：前寒武纪占近九成">
+  <text x="370" y="22" fill="#b0bcc8" font-size="14" font-weight="bold" text-anchor="middle">46亿年的真实比例（x坐标由python按年龄线性换算·精确到0.1px）</text>
+  <rect x="30" y="40" width="600.0" height="46" fill="#5a3a6a" opacity="0.85"/>
+  <rect x="630.0" y="40" width="80.0" height="46" fill="#4a9eff" opacity="0.85"/>
+  <text x="330" y="68" fill="#e6d9f2" font-size="14" text-anchor="middle">前寒武纪 4600→541百万年（约40.6亿年·占88.2%）</text>
+  <text x="670" y="34" fill="#8fd4ff" font-size="11" text-anchor="middle">显生宙</text>
+  <text x="670" y="104" fill="#8fd4ff" font-size="11" text-anchor="middle">5.41亿年</text>
+  <line x1="30" y1="92" x2="30" y2="98" stroke="#7d8a99"/><line x1="118.7" y1="92" x2="118.7" y2="98" stroke="#7d8a99"/><line x1="340.4" y1="92" x2="340.4" y2="98" stroke="#7d8a99"/><line x1="630.0" y1="92" x2="630.0" y2="98" stroke="#7d8a99"/><line x1="710" y1="92" x2="710" y2="98" stroke="#7d8a99"/>
+  <text x="30" y="116" fill="#9d8ab0" font-size="11" text-anchor="middle">4600</text>
+  <text x="118.7" y="116" fill="#9d8ab0" font-size="11" text-anchor="middle">4000</text>
+  <text x="340.4" y="116" fill="#9d8ab0" font-size="11" text-anchor="middle">2500</text>
+  <text x="630.0" y="116" fill="#7d8a99" font-size="11" text-anchor="middle">541</text>
+  <text x="710" y="116" fill="#7d8a99" font-size="11" text-anchor="middle">0（距今/百万年）</text>
+  <rect x="30" y="132" width="88.7" height="30" fill="#4a3a55" opacity="0.6"/>
+  <rect x="118.7" y="132" width="221.7" height="30" fill="#5a3a6a" opacity="0.55"/>
+  <rect x="340.4" y="132" width="289.6" height="30" fill="#7a5a8a" opacity="0.55"/>
+  <text x="74" y="152" fill="#e6d9f2" font-size="11" text-anchor="middle">冥古宙</text>
+  <text x="230" y="152" fill="#e6d9f2" font-size="11" text-anchor="middle">太古宙（4000起）</text>
+  <text x="485" y="152" fill="#e6d9f2" font-size="11" text-anchor="middle">元古宙（2500起）</text>
+  <text x="370" y="180" fill="#7d8a99" font-size="12" text-anchor="middle">这张图在说什么：地球历史的近九成是"前寒武纪"，里面只分冥、太、元三个宙；我们熟悉的恐龙、哺乳动物全都挤在最右边那一小条里。</text>
+</svg>
+</div>
+
+<p>先算一笔账（本件已用程序代验）：教材说前寒武纪"大约经历了40亿年"——从简表数据 4600−541=4059（百万年）≈40.6亿年，吻合；4059÷4600≈<b>88.2%</b>，也就是说<b>地球历史近九成属于前寒武纪</b>。所以读地球史，先读这段最长的"序幕"：</p>
+
+<div class="note-yellow">教材p32原话：<mark>前寒武纪指古生代寒武纪以前的时期，大约经历了40亿年。按照早晚顺序，前寒武纪依次划分为冥古宙、太古宙、元古宙</mark>。其中<b>冥古宙为初生地球阶段</b>，地球经历了复杂而有序的发育与变化。</div>
+
+<h3>太古宙：海洋、铁矿和"第一次生命"</h3>
+<p>教材 p32 描绘的太古宙：地球上一片<b>深浅多变的广阔海洋，没有宽广的大陆</b>；<b>岩浆活动剧烈，火山喷发频繁</b>，经常烟雾满天。<b>太古宙是形成铁矿的重要时代</b>——今天开采的铁矿，很多是那时候攒下的。太古宙<b>早期</b>还没有生命现象，到处荒凉死寂；地球经过十几亿年的演化，有了水和空气之后，<b>太古宙中期才出现最原始的生物</b>。教材给的评语要记：<mark>从无生命到有生命，这是生物演化史上的一次飞跃</mark>。</p>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材p34"阅读"栏·<b>叠层石</b>：一种纵剖面呈向上凸起的弧形或锥形叠层状岩石，像扣放的一摞碗。澳大利亚发现了含古老化石的叠层石，由<b>30多亿年前生活在浅海中的原核生物</b>形成；现代叠层石主要分布在巴哈马群岛和澳大利亚沙克湾（图1-25）。它等于把"太古宙-元古宙的浅海里已有原核生物"这件事用石头记了下来。跳过不影响主干。</div>
+
+<h3>元古宙：陆地冒头，生命升级</h3>
+<p>到了元古宙（教材p34）：现在陆地的位置<b>仍大部被海洋占据</b>，但地壳运动剧烈，<b>元古宙晚期出现了若干大片陆地</b>。海水里的生命活动明显增强：除单细胞生物外，还出现了<b>藻类、海绵等低等的多细胞生物</b>。教材的评语：<mark>从单细胞到多细胞，从原核生物到真核生物，标志着地球进入了一个生命大发展的阶段</mark>。</p>
+
+<div class="try"><span class="tag">试试看 ④</span>（教材p32+p33数据·程序代验）前寒武纪大约经历了多少年？占地球历史的约几成？
+<p><span class="step-tag">算</span>4600−541=4059百万年≈40.6亿年（教材表述"大约40亿年"）；4059÷4600≈88.2%≈<b>近九成</b>。<span class="ans">顺带一句：这段"漫长序幕"里连一只恐龙、一条鱼都没有——最显眼的居民是藻类和叠层石。</span></p></div>
+
+<h2><span class="step-tag">第四步</span>显生宙——三代大戏逐代看</h2>
+
+<p>教材 p34 原话：<mark>显生宙指寒武纪以来的时期。自寒武纪开始，生物逐渐向较高级的发展阶段进化，动物已具有外壳和清晰的骨骼结构</mark>。按早晚顺序，显生宙依次划分为<b>古生代、中生代和新生代</b>。下面先把"目录"摆出来，再逐代看戏。</p>
+
+<table class="geo">
+<tr class="cap"><th>宙</th><th>代</th><th>纪</th><th>距今年龄/百万年（纪的开始）</th><th>动物界</th><th>植物界</th></tr>
+<tr><td rowspan="12">显生宙</td><td rowspan="3">新生代</td><td>第四纪</td><td class="hl">2.58</td><td>人类时代</td><td rowspan="3">被子植物时代</td></tr>
+<tr><td>新近纪</td><td class="hl">23.03</td><td rowspan="2">哺乳动物时代</td></tr>
+<tr><td>古近纪</td><td class="hl">66.0</td></tr>
+<tr><td rowspan="3">中生代</td><td>白垩纪</td><td class="hl">145.0</td><td rowspan="3">爬行动物时代（恐龙繁生）</td><td rowspan="3">裸子植物时代</td></tr>
+<tr><td>侏罗纪</td><td class="hl">201.3±0.2</td></tr>
+<tr><td>三叠纪</td><td class="hl">252.17±0.06</td></tr>
+<tr><td rowspan="6">古生代</td><td>二叠纪</td><td class="hl">298.9±0.15</td><td rowspan="2">两栖动物时代（末期大灭绝）</td><td rowspan="4">蕨类植物时代</td></tr>
+<tr><td>石炭纪</td><td class="hl">358.9±0.4</td></tr>
+<tr><td>泥盆纪</td><td class="hl">419.2±3.2</td><td rowspan="2">鱼形动物时代</td></tr>
+<tr><td>志留纪</td><td class="hl">443.8±1.5</td></tr>
+<tr><td>奥陶纪</td><td class="hl">485.4±1.9</td><td rowspan="2">无脊椎动物时代</td><td rowspan="2">藻菌时代</td></tr>
+<tr><td>寒武纪</td><td class="hl">541.0±1.0</td></tr>
+<tr><td rowspan="2">元古宙</td><td>—</td><td>震旦纪（埃迪卡拉纪）</td><td class="hl">541.0±1.0 以前</td><td>生命现象开始出现</td><td>藻菌时代</td></tr>
+<tr><td>—</td><td>（早中期·未分纪）</td><td class="hl">2500 起</td><td>多细胞生物（藻类、海绵）大发展</td><td>原核→真核</td></tr>
+<tr><td>太古宙</td><td>—</td><td>（未分纪）</td><td class="hl">4000 起</td><td>最原始生物出现（太古宙中期）</td><td>原核生物（叠层石）</td></tr>
+<tr><td>冥古宙</td><td>—</td><td>（未分纪）</td><td class="hl">4600 起</td><td colspan="2">初生地球阶段</td></tr>
+</table>
+
+<p class="small">表来源=教材p33"地质年代简表"逐格照录（15个界线值已用程序复核：自老到新严格递减✓；三代时长66.0+186.17+288.83=541.0自洽✓）。"距今年龄"列指该纪<b>开始</b>距今的百万年数；动植物"时代"两列沿教材简表行块归并排布（教材原图"人类时代"标在第四纪行、"藻菌时代"跨震旦纪至寒武—奥陶段）；元古宙、太古宙、冥古宙在教材表中不再细分代，本表以"—"如实照录。</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="显生宙放大时间轴：纪界线与生物时代">
+  <text x="370" y="20" fill="#b0bcc8" font-size="14" font-weight="bold" text-anchor="middle">显生宙放大条（541→0百万年·x坐标python精确换算）</text>
+  <rect x="30" y="34" width="69.9" height="40" fill="#5a6a3a" opacity="0.8"/><rect x="99.9" y="34" width="52.3" height="40" fill="#5a6a3a" opacity="0.8"/>
+  <rect x="152.2" y="34" width="30.9" height="40" fill="#3a7a5f" opacity="0.85"/><rect x="183.1" y="34" width="75.8" height="40" fill="#3a7a5f" opacity="0.85"/><rect x="258.9" y="34" width="75.4" height="40" fill="#3a7a5f" opacity="0.85"/>
+  <rect x="334.3" y="34" width="58.7" height="40" fill="#8a5a2a" opacity="0.85"/><rect x="393.0" y="34" width="64.0" height="40" fill="#8a5a2a" opacity="0.85"/><rect x="457.0" y="34" width="70.7" height="40" fill="#8a5a2a" opacity="0.85"/>
+  <rect x="527.7" y="34" width="99.3" height="40" fill="#4a9eff" opacity="0.85"/><rect x="627.0" y="34" width="54.1" height="40" fill="#4a9eff" opacity="0.85"/><rect x="681.1" y="34" width="28.9" height="40" fill="#4a9eff" opacity="0.9"/>
+  <text x="91" y="58" fill="#eef4da" font-size="11" text-anchor="middle">寒武·奥陶</text>
+  <text x="243" y="58" fill="#d8f0e4" font-size="11" text-anchor="middle">志留·泥盆·石炭</text>
+  <text x="431" y="58" fill="#f5e6d4" font-size="11" text-anchor="middle">三叠·侏罗·白垩</text>
+  <text x="619" y="58" fill="#dcecfb" font-size="11" text-anchor="middle">古近·新近·第四纪</text>
+  <text x="160" y="90" fill="#b9c4a8" font-size="11" text-anchor="middle">↑古生代早期海生无脊椎动物空前繁盛</text>
+  <line x1="30" y1="100" x2="30" y2="108" stroke="#7d8a99"/><line x1="99.9" y1="100" x2="99.9" y2="108" stroke="#7d8a99"/><line x1="183.1" y1="100" x2="183.1" y2="108" stroke="#7d8a99"/><line x1="258.9" y1="100" x2="258.9" y2="108" stroke="#7d8a99"/><line x1="393.0" y1="100" x2="393.0" y2="108" stroke="#7d8a99"/><line x1="527.7" y1="100" x2="527.7" y2="108" stroke="#7d8a99"/><line x1="627.0" y1="100" x2="627.0" y2="108" stroke="#7d8a99"/><line x1="681.1" y1="100" x2="681.1" y2="108" stroke="#7d8a99"/><line x1="710" y1="100" x2="710" y2="108" stroke="#7d8a99"/>
+  <text x="30" y="120" fill="#7d8a99" font-size="10" text-anchor="middle">541</text><text x="99.9" y="120" fill="#7d8a99" font-size="10" text-anchor="middle">485.4</text><text x="183.1" y="120" fill="#7d8a99" font-size="10" text-anchor="middle">419.2</text><text x="258.9" y="120" fill="#7d8a99" font-size="10" text-anchor="middle">358.9</text><text x="393.0" y="120" fill="#7d8a99" font-size="10" text-anchor="middle">252.17</text><text x="527.7" y="120" fill="#7d8a99" font-size="10" text-anchor="middle">145.0</text><text x="627.0" y="120" fill="#7d8a99" font-size="10" text-anchor="middle">66.0</text><text x="681.1" y="120" fill="#7d8a99" font-size="10" text-anchor="middle">23.03</text><text x="710" y="120" fill="#7d8a99" font-size="10" text-anchor="middle">0</text>
+  <rect x="30" y="132" width="228.9" height="26" fill="#26333f"/><rect x="258.9" y="132" width="134.1" height="26" fill="#26333f"/><rect x="393.0" y="132" width="234.0" height="26" fill="#26333f"/><rect x="627.0" y="132" width="83.0" height="26" fill="#26333f"/>
+  <text x="144" y="149" fill="#8fd4ff" font-size="11" text-anchor="middle">无脊椎→鱼形动物时代</text>
+  <text x="326" y="149" fill="#8fd4ff" font-size="11" text-anchor="middle">两栖动物时代</text>
+  <text x="510" y="149" fill="#8fd4ff" font-size="11" text-anchor="middle">爬行动物时代</text>
+  <text x="668" y="149" fill="#8fd4ff" font-size="10" text-anchor="middle">哺乳→人类时代</text>
+  <text x="370" y="186" fill="#7d8a99" font-size="12" text-anchor="middle">这张图在说什么：把上一张图最右边的窄条放大到全宽——生物界的主角按"无脊椎→鱼→两栖→爬行（恐龙）→哺乳→人类"接力，</text>
+  <text x="370" y="204" fill="#7d8a99" font-size="12" text-anchor="middle">每一棒的交接点附近，常伴随一次环境剧变与灭绝事件（见下一步的60%与50%）。</text>
+</svg>
+</div>
+
+<h3>1. 古生代：海里开花，登陆造煤，末年大劫</h3>
+<p>教材 p34-35：古生代是<b>地壳发生剧烈变动的时期</b>，许多地方反复上升和下沉；到了<b>中后期，陆地面积大大增加，欧亚大陆和北美大陆的雏形基本形成，我国东北、华北抬升成陆地</b>。生物线分三步走：<b>早期</b>是海生无脊椎动物空前繁盛的时代，海水中出现许多种动物（如三叶虫、珊瑚等，图1-26）；<b>中期</b>出现了脊椎动物——鱼类（图1-27）；<b>后期</b>一部分鱼类逐渐演化成两栖类，<b>动物从海洋向陆地发展</b>。植物这边，中后期陆地上出现大片植物，特别是<b>蕨类植物</b>繁生，从海滨到大陆内部万木参天、郁郁葱葱——所以<b>古生代后期是重要的造煤时期</b>。</p>
+
+<div class="note-red">古生代<b>末期</b>：发生了<b>地球历史上最大的灭绝事件</b>——<b>60%以上的海生无脊椎动物</b>种类灭绝了，脊椎动物中的<b>原始鱼类和古老的两栖类也全部灭绝</b>，蕨类植物明显衰退。（教材p35原文·这个"60%+海生无脊椎"要原样记牢，别和下一步中生代的"50%"搞混。）</div>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材p35"阅读"栏·<b>寒武纪大爆发</b>：寒武纪早期，地球海洋中的生物快速发展，进化出大量不同种类的生物，古生物学家称之为"寒武纪大爆发"。论证依据主要是<b>云南寒武纪早期澄江生物群化石</b>——在此之前元古宙末期的各类动物中，极少见到与澄江生物群这些动物有直接亲缘关系的生物，因此它的突然出现成了生物进化史上的重大事件。从寒武纪开始，大量海生无脊椎动物出现在地球表层，揭开了欣欣向荣的生物系统演化进程的序幕。跳过不影响主干。</div>
+
+<h3>2. 中生代：恐龙的天下，裸子植物的煤</h3>
+<p>教材 p35-36：中生代<b>陆地面积空前扩大</b>；<b>环太平洋地带地壳运动剧烈，形成高大山系，也带来了丰富的金属矿产</b>。生物线：<b>爬行动物盛行，大大小小的恐龙繁生</b>（图1-28）；后来空中出现了<b>始祖鸟</b>，爬行动物的一支开始向鸟类发展。植物线：<b>裸子植物</b>迅速发展，苏铁纲、银杏纲、松杉纲等是主要代表——所以<b>中生代也是一个重要的造煤时期</b>。对话栏还有一句中国地理味很浓的：从中生代<b>侏罗纪</b>开始，我国基本结束了"南海北陆"的分布格局，形成一片宽广的大陆环境。</p>
+
+<div class="note-red">中生代<b>末期</b>：盛极一时的<b>恐龙</b>从地球上突然销声匿迹，海洋中<b>50%以上的无脊椎动物</b>种类也灭绝了。（教材p35原文。注意两个数字的分工：<b>60%↔古生代末期↔海生无脊椎动物</b>；<b>50%↔中生代末期↔海洋无脊椎动物</b>——这是本节最高频的"数字张冠李戴"考点。）</div>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材p36"阅读"栏·<b>恐龙灭绝的证据——陨石</b>：世界上许多地方的中生代末期地层内，<b>铱元素含量异常，高出相邻岩层平均值的30倍左右</b>——这成为支持"小行星撞击地球"假说的证据（铱在地球表面并不常见，陨石里却常有）。经计算，地层里那些铱需要一颗<b>直径大约10千米</b>的小行星撞击才能产生；在美洲<b>尤卡坦半岛</b>北部海岸，地质学家发现了一个部分淹没在海水中的<b>陨石坑，直径180~200千米</b>——这是中生代小行星毁灭性撞击地球最可能发生的地点。科学家推测：撞击引发强烈爆炸并造成超级火山喷发，烟尘弥漫天空，太阳光难以到达地表，植物无法进行光合作用，大气中氧气含量变得极低——多因素综合，造成了恐龙的灭绝。跳过不影响主干。</div>
+
+<h3>3. 新生代：造山、哺乳动物与人类登场</h3>
+<p>教材 p37：新生代发生了一次<b>规模巨大的造山运动</b>，现在世界上的许多高山都是在这次运动中造成的——由此形成<b>现代地貌格局及海陆分布</b>。生物线：<b>哺乳动物和被子植物大发展，出现了灵长类</b>。<b>第四纪</b>进入地质历史上最新的一次大冰期——<b>第四纪大冰期</b>：气候变冷、陆地冰川覆盖面积增大、<b>海面下降100多米</b>，许多大陆架变成了大陆间人和动物来往的通道；对话栏补充：大冰期分为若干<b>冰期</b>，两个冰期之间是<b>间冰期</b>，这时气候转暖、海面上升、海水淹没若干低洼之地。教材的收束句要划重点：<mark>第四纪出现了人类，这是生物演化史上的重大飞跃</mark>。全节的哲学落点也在此页：地球有悠久的过去，生物的出现和进化只是其中的一段，人类的历史更是短暂的一瞬间——地球演化史有力地证实了"自然界总是不断发展的"这一真理，证明了新陈代谢是宇宙万物的普遍规律。</p>
+
+<div class="try"><span class="tag">试试看 ⑤</span>（教材p38活动第1问改编·练大冰期）地质时期地球表面经历过哪几次大冰期？相邻两次大冰期大约相隔多久？
+<p><span class="step-tag">答</span><b>震旦纪大冰期、石炭—二叠纪大冰期、第四纪大冰期</b>三次；教材p38活动原文：大冰期之间相隔<b>2亿~3亿年</b>，为大间冰期。（记忆出路：三次大冰期正好对应简表里的元古宙末、古生代中后段和最右边第四纪。）</p></div>
+
+<div class="try"><span class="tag">试试看 ⑥</span>（自编·易错变形）"中生代末期，60%以上的海生无脊椎动物种类灭绝了。"这句话对吗？
+<p><span class="step-tag">答</span><b>不对，张冠李戴</b>。60%以上属于<b>古生代末期</b>的大灭绝（教材p35）；中生代末期的数字是<b>50%以上的海洋无脊椎动物种类</b>（教材p35-36），主角还有恐龙消失。判断题最爱这样对调代际——先对"代"，再对"数字"。</p></div>
+
+<div class="pit"><span class="tag">坑</span>三个最常踩的：<br>① <b>前寒武纪不是"一个宙"</b>：它是寒武纪以前所有时期的统称，内部依次分冥古宙、太古宙、元古宙——别把它和"元古宙"混为一谈。<br>② <b>两个灭绝数字各归各位</b>：60%/海生无脊椎/古生代末；50%/海洋无脊椎+恐龙消失/中生代末。<br>③ <b>造煤期有两个</b>：古生代<b>后期</b>（蕨类）和中生代（裸子植物）——只答一个不完整；而"形成铁矿的重要时代"是<b>太古宙</b>，别和造煤混。</div>
+
+<h2><span class="step-tag">串场</span>把46亿年的故事一口气讲完（自编时间线复盘）</h2>
+<p>冥古宙（初生地球，发育成型）→太古宙（海洋世界、攒铁矿、中期冒出最原始生物）→元古宙（晚期大片陆地冒头、藻类海绵等多细胞登场）→古生代（无脊椎繁盛→鱼类→两栖登陆；蕨类森林造煤；欧亚北美雏形；末年最大灭绝）→中生代（恐龙天下、始祖鸟起飞、裸子植物造煤、环太平洋成山带矿；末年恐龙谢幕）→新生代（造山塑现代地貌、哺乳动物被子植物大发展、灵长类出现；第四纪大冰期海退又海进；<b>人类登场</b>）。一条主线贯穿始终：<b>生物从简单到复杂、从低级到高级，从水到陆</b>——这正是第二步里"用化石定年代"的底层逻辑。</p>
+
+<div class="try"><span class="tag">试试看 ⑦</span>（教材p32活动原题·开放题示范）为什么说，孢粉化石对于推测古地理环境和古气候具有重要价值？
+<p><span class="ans">示例（三步答法）：①来源广、数量大——植物开花散粉是普遍现象，一棵山毛榉一年就能撒4亿粒花粉；②保存久——孢粉在与空气隔绝的土层、泥炭层中可长期存留，一层层对应一个个时期；③能"认亲"——根据孢粉形态可判别母体植物种属，而每种植物各有自己的冷暖干湿偏好（如桦树喜冷耐旱），于是孢粉组合就成了当时植被和气候的"快照"。（开放题言之有理即可·对应教材p32活动第2问）</span></p></div>
+
+<div class="key"><span class="tag">收口 · 合上页能复述的三句话</span>
+<p><b>①</b> 地球的历史写在<b>地层</b>这套"书页"里：正常层序<b>下老上新</b>，但自然界常颠倒、缺失，所以要请<b>化石</b>对答案——含三叶虫、大羽羊齿→古生代，含恐龙→中生代；岩层与化石还能报环境（红=氧化、黑页岩含黄铁矿=还原、珊瑚=清澈温暖浅海、破碎贝壳=滨海）。</p>
+<p><b>②</b> <b>地质年代</b>按"宙→代→纪"编目：冥古宙→太古宙（铁矿+最原始生物）→元古宙（多细胞）是占近九成时长的<b>前寒武纪</b>；显生宙里<b>古生代</b>（无脊椎→鱼→两栖，蕨类造煤）→<b>中生代</b>（恐龙、始祖鸟，裸子植物造煤）→<b>新生代</b>（造山、哺乳动物，第四纪出现人类）。</p>
+<p><b>③</b> 两次大灭绝数据各归各位：<b>古生代末期60%以上海生无脊椎动物种类灭绝</b>（地球历史上最大灭绝事件），<b>中生代末期恐龙消失+海洋中50%以上无脊椎动物种类灭绝</b>——生物演化的主线是"从简单到复杂、从低级到高级、从海洋到陆地"。</p>
+</div>
+
+<h2><span class="step-tag">自测</span>五连——合上页做，再回来对答案</h2>
+
+<div class="try"><span class="tag">自测①</span>地层和化石分别是什么？用一句话各说清。
+<p class="ans">地层=地壳上部呈带状展布的层状岩石或堆积物，是记录地球历史的"书页"；化石=保存在地层中的古生物遗体（贝壳、骨骼，多数）或活动遗迹（足印、粪便，少数）。</p></div>
+
+<div class="try"><span class="tag">自测②</span>一套水平岩层，"下老上新"一定成立吗？不成立时怎么办？
+<p class="ans">不一定——自然界地层往往错综复杂，有的层序颠倒、有的缺失；此时根据地层中保存的化石来定时代和顺序（不同时代的地层一般含不同化石，相同时代的地层保存相同或近似化石）。</p></div>
+
+<div class="try"><span class="tag">自测③</span>把"寒武纪、白垩纪、二叠纪、第四纪、奥陶纪"按从老到新排序，并写出各纪的距今年龄（百万年）。
+<p class="ans">诀窍先记：<b>越老的纪，距今年龄数字越大</b>（寒武纪约541百万年前，第四纪才2.58百万年前）。从老到新排：寒武纪（541.0±1.0）→奥陶纪（485.4±1.9）→二叠纪（298.9±0.15）→白垩纪（145.0）→第四纪（2.58）。易错点：五选一最容易把寒武纪和奥陶纪排反——寒武纪是这五个里<b>最老</b>的，"寒"字辈打头阵；数值上541>485.4，用数字一验就对。</p></div>
+
+<div class="try"><span class="tag">自测④</span>前寒武纪指哪段时期？内部怎么分？为什么说它是"生命酝酿的漫长序幕"？
+<p class="ans">指古生代寒武纪以前的时期，约40亿年（4600→541百万年·占地球历史约88%）；按早晚顺序分冥古宙、太古宙、元古宙。序幕说：太古宙中期才出现最原始的生物（从无到有=第一次飞跃），元古宙才完成"单细胞→多细胞、原核→真核"的大发展，整个前寒武纪连一条鱼都没有。</p></div>
+
+<div class="try"><span class="tag">自测⑤</span>古生代末期与中生代末期各发生什么灭绝事件？数据各是多少？新生代最重要的事件是什么？
+<p class="ans">古生代末期=地球历史上最大的灭绝事件，60%以上海生无脊椎动物种类灭绝+原始鱼类和古老两栖类全灭+蕨类衰退；中生代末期=恐龙销声匿迹+海洋中50%以上无脊椎动物种类灭绝。新生代=第四纪出现人类，生物演化史上的重大飞跃（另：造山运动塑造现代地貌格局）。</p></div>
+
+<p class="small"><b>练什么题：</b>教材p32活动（孢粉两问·本件⑦已示范第2问）+p38活动（读图1-30地质时期的气候变化：标大冰期、推测古生代/中生代末期气候、归纳气候变化特点——从图1-30还能读出教材对话那句结论：第四纪以来绝大多数时间比现在寒冷，但整个地质时期看绝大多数时间比现在温暖）+p39活动（读图1-31生物进化与环境演变螺旋图·议一议科学家为何要多角度探讨致变因素——开放题，答"系统性+前瞻性"即算入门）。</p>
+
+<div class="box"><span class="tag">高考怎么考</span>
+<p>本节是"地层化石判代+地质年代排序"型考点：①给岩层剖面+化石判<b>新老与环境</b>（选择题·对应自测②与试试看③）；②<b>地质年代与生物演化阶段对应</b>（排序/连线·对应简表与自测③⑤）。具体真题锚候采不代拟（本件未取得卷源）。</p>
+</div>
+
+<h2><span class="step-tag">下一站</span></h2>
+<p>第一章的"宇宙—太阳—圈层—演化"四件套集齐了：地球有位置（1.1）、有能量来源（1.2）、有结构（1.3）、有历史（本节）。接下来镜头从46亿年切回"此时此地"——山水沟谷从哪来？<b>第二章 地球表面形态</b>（教材p40起）从地貌是地球演化的结果讲起。</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：宇宙中的地球模块中，1.4地球的演化所处位置">
+  <defs><marker id="arrC" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4a9eff"/></marker></defs>
+  <rect x="18" y="40" width="130" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="83" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">1.1 宇宙环境</text>
+  <rect x="168" y="40" width="140" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="238" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">1.2 太阳的影响</text>
+  <rect x="328" y="40" width="140" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="398" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">1.3 圈层结构</text>
+  <rect x="488" y="40" width="140" height="40" rx="6" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <text x="558" y="58" fill="#e8ecf2" font-size="14" font-weight="bold" text-anchor="middle">1.4 地球的演化</text>
+  <text x="558" y="74" fill="#8fd4ff" font-size="11" text-anchor="middle">（本件）</text>
+  <rect x="648" y="40" width="80" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c" stroke-dasharray="5,3"/>
+  <text x="688" y="64" fill="#8fa3b8" font-size="12" text-anchor="middle">第2章 地貌</text>
+  <line x1="148" y1="60" x2="164" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <line x1="308" y1="60" x2="324" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <line x1="468" y1="60" x2="484" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <line x1="628" y1="60" x2="644" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <text x="370" y="108" fill="#5a6a7a" font-size="11" text-anchor="middle">这张图在说什么：本件是第一章的收官节——把"地球从哪来"讲完后，第二章开始回答"地表长什么样、怎么变"。</text>
+</svg>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2产出）· 事实层素材源：湘教版《普通高中教科书·地理 必修 第一册》p30-39 官方影印逐页对照（湖南教育出版社·智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a·ts=1754905526079（详情API实时重取）·影印图存席位私有目录 geo14_jc/gNN.jpg·图号→印刷页 N−6 映射·节界实锚：p30第四节节题页至p39活动2末页·p40=第二章"地球表面形态"章题页（下一章界标亲验）·p30-39直读锚定：探究色诺芬尼与两化石图p30/地层定义与书页说p30-31/对话层序与颠倒缺失p31/化石遗体遗迹与定代口诀p31/古生物化石的形成三条件p31/沉积环境四对应与孢粉活动p32/演化史划分依据与宙代纪与前寒武纪太古宙p32/地质年代简表全表p33/叠层石与元古宙与显生宙古生代p34/古生代末期大灭绝与寒武纪大爆发与中生代p35/恐龙灭绝陨石证据p36/新生代与第四纪大冰期与收束段p37/大冰期活动与图1-30p38/生物进化环境演变活动与图1-31p39）<br>
+出品席：并行搜索员C（队7席）· 设计标准：零预设 · 一次一步 · 随读随验×7 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源 · 数值程序代验留痕（geo14_calc.py输出已存档） · 图示必配（时间轴x坐标python精确换算）
+</div>
+
+</div>
+</body>
+</html>

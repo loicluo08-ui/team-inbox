@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学3.1 函数的概念及其表示 · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#16233a}
+h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
+h3{color:#2c5f8f;margin-top:1.6em}
+.station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
+.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
+.mark{background:#fff176;padding:0 4px;border-radius:3px}
+.uline{border-bottom:2px solid #4a90d9;padding-bottom:1px}
+.note-red{color:#c0392b;border:1px solid #e6b0aa;background:#fdf2f0;border-radius:8px;padding:8px 14px;margin:10px 0}
+.try{background:#e8f6ef;border-left:4px solid #27ae60;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.try .ans{color:#1e7e4e;font-weight:bold}
+.alt{background:#f6f2fb;border-left:4px solid #8e5cb8;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0;color:#4a3568}
+.alt .tag{font-size:.8em;color:#8e5cb8;font-weight:bold}
+.selftest{background:#fdf6ec;border:1px solid #e2c48d;border-radius:10px;padding:14px 18px;margin:16px 0}
+.kaowei{background:#eaf3ea;border:2px solid #3d8b5f;border-radius:10px;padding:12px 16px;margin:16px 0}
+.kaowei .kw-title{font-weight:bold;color:#2d6a45}
+.figure{text-align:center;margin:16px 0}
+.figure svg{max-width:100%;height:auto}
+.figcap{font-size:.88em;color:#5a6b7d;margin-top:6px}
+.walk{background:#eef7ee;border-radius:8px;padding:10px 16px;margin:12px 0}
+.walk li{margin:5px 0}
+table.cmp{border-collapse:collapse;width:100%;margin:12px 0}
+table.cmp th,table.cmp td{border:1px solid #b8c8d8;padding:8px 12px;text-align:center}
+table.cmp th{background:#e3edf6;color:#1e3a5f}
+.sub{font-size:.85em;color:#5a6b7d}
+.detail{color:#3d6a9e;font-size:.95em}
+@media print{
+ body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
+ .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
+ .station-title{background:#333!important;color:#fff!important}
+ h1{font-size:1.35em}h2{font-size:1.15em}
+ .formula{background:#f2f2f2!important}
+ a{color:#000;text-decoration:none}
+ .no-print{display:none}
+}
+</style>
+</head>
+<body>
+<h1>数学 3.1 函数的概念及其表示 <span class="sub">人教A版 必修第一册 · 零基础首学版 v1.0 · 2026-10-31</span></h1>
+<p><strong>开场一句话：</strong>初中我们说"y 是 x 的函数"靠的是<span class="mark">"变量说"</span>——一个量变，另一个量跟着变。这一章要给它装上第一章学的<span class="mark">集合语言</span>，升级成"对应说"：函数＝<span class="uline">数集到数集的一个确定对应</span>。教材开场问：正方形的周长 l=4x 是 x 的函数，它和正比例函数 y=4x 相同吗？y=x 与 y=x²/x 呢？（p60）——读完这节你就能一锤定音。</p>
+<div class="check">
+<p><strong>读完这节你能：</strong></p>
+<ul>
+<li>用"<span class="mark">任意一个 x，唯一确定的 y</span>"三句话背出函数定义，并说出<span class="uline">定义域、对应关系、值域</span>三要素；</li>
+<li>判断"两个函数是否同一个函数"，并解释为什么 <span class="uline">s=350t（列车）和 w=350d（工资）不是同一个函数</span>；</li>
+<li>用<span class="uline">区间</span>写定义域，并用"根式≥0＋分式≠0"双查法求出例2 那种定义域；</li>
+<li>认得<span class="mark">分段函数</span>，能读懂个人所得税的七段计税公式，并画出 y=|x| 的图象。</li>
+</ul>
+</div>
+<div class="station">
+<p class="station-title">第 0 站 · 预备块：初中的变量说 + 第一章的集合语言</p>
+<p><strong>旧工具一（初中函数）：</strong>正比例、一次、二次、反比例函数都见过，知道"对于每一个确定的 x 都有唯一的 l 与之对应"（p60 原句）。<strong>旧工具二（第一章）：</strong>集合表示 {x|0≤x≤0.5}、子集、交并——本节把它们拼成函数定义。</p>
+</div>
+<div class="station">
+<p class="station-title">第 1 站 · 四个问题，一个共同特征</p>
+<p>教材用四个真实情境把"对应"摆上台面（p60-62）：</p>
+<table class="cmp">
+<tr><th>问题</th><th>对应关系</th><th>A（自变量范围）</th><th>B（因变量范围）</th></tr>
+<tr><td>① 复兴号匀速半小时</td><td>s=350t</td><td>{t|0≤t≤0.5}</td><td>{s|0≤s≤175}</td></tr>
+<tr><td>② 维修工工资 350 元/天</td><td>w=350d</td><td>{1,2,3,4,5,6}</td><td>{350,700,1050,1400,1750,2100}</td></tr>
+<tr><td>③ 某日 AQI 曲线（图3.1-1）</td><td>图象曲线</td><td>{t|0≤t≤24}</td><td>{I|0&lt;I&lt;150}</td></tr>
+<tr><td>④ 恩格尔系数 r=食物支出/总支出×100%（表3.1-1）</td><td>年份数据表</td><td>{2012,…,2021}</td><td>{r|0&lt;r≤1}</td></tr>
+</table>
+<p>教材归纳（p62）共同特征：<strong>(1)</strong> 都包含<span class="mark">两个非空数集</span> A、B；<strong>(2)</strong> 都有<span class="mark">一个对应关系</span>；<strong>(3)</strong> 对于 A 中的<span class="uline">任意一个数 x</span>，按照对应关系，在 B 中都有<span class="uline">唯一确定的数 y</span> 和它对应。</p>
+<div class="try"><p><strong>验一验①（p61 思考框）：</strong>问题①和问题②对应关系都是"×350"，它们是同一个函数吗？——<span class="ans">不是。函数是"数集到数集的对应"，A₁={t|0≤t≤0.5} 是实数区间，A₂={1,2,3,4,5,6} 是六个整数——<span class="mark">定义域不同，函数就不同</span>。这也是"y=4x 的正方形周长函数与正比例函数不相同吗"的答案（p60 设问）。</span></p>
+<p><strong>易错变形（p60 设问）：</strong>y=x 与 y=x²/x 相同吗？<span class="ans">不同——后者的 x≠0，定义域缩水了，"对应关系相同但定义域不同＝不同函数"。</span></p></div>
+</div>
+<div class="station">
+<p class="station-title">第 2 站 · 函数定义（背诵级）+ 区间：给定义域换上专业写法</p>
+<div class="formula" style="font-family:inherit;font-size:1em;text-align:left">一般地，设 <strong>A，B 是非空的实数集</strong>，如果对于集合 A 中的<strong>任意一个数 x</strong>，按照某种确定的对应关系 f，在集合 B 中都有<strong>唯一确定的数 y</strong> 和它对应，那么就称 <strong>f：A→B</strong> 为从集合 A 到集合 B 的一个<strong>函数</strong>（function），记作 <strong>y=f(x)，x∈A</strong>。（p62 原文）</div>
+<p>其中，x 叫做<span class="uline">自变量</span>，x 的取值范围 A 叫做函数的<span class="mark">定义域</span>（domain）；与 x 的值相对应的 y 值叫做<span class="mark">函数值</span>，函数值的集合 {f(x)|x∈A} 叫做函数的<span class="mark">值域</span>（range）。（p62）</p>
+<div class="note-red"><strong>三条红线（考试判分点）：</strong>① 值域是集合 B 的<span class="mark">子集</span>（问题④中值域 C₄={0.32,0.301,0.3,0.297,0.293,0.286,0.277,0.276,0.292} 是 B₄={r|0&lt;r≤1} 的真子集——2017 与 2021 年都是 28.6，集合去重只剩 9 个值）；② f(x) 表示"x 对应的函数值"，<span class="mark">不是 f 乘 x</span>（p65 边注）；③ 定义域和对应关系<span class="mark">双相同</span>才是同一函数。</div>
+<p><strong>区间（p64-65）：</strong>设 a＜b：满足 <span class="mark">a≤x≤b</span> 的实数集叫<span class="uline">闭区间 [a,b]</span>；满足 <span class="mark">a&lt;x&lt;b</span> 叫<span class="uline">开区间 (a,b)</span>；满足 a≤x&lt;b 或 a&lt;x≤b 叫<span class="uline">半开半闭区间 [a,b)、(a,b]</span>；a、b 叫端点，数轴上实心点=含、空心点=不含（表3.1-2）。x≥a、x&gt;a、x≤b、x&lt;b 分别写作 [a,+∞)、(a,+∞)、(−∞,b]、(−∞,b)（表3.1-3）；R=(−∞,+∞)，∞ 读"无穷大"。</p>
+<div class="try"><p><strong>验一验②（p63 例1）：</strong>试构建一个问题情境，使变量关系可用 y=x(10−x) 描述。——<span class="ans">把 y=x(10−x) 看成二次函数：定义域 R，值域 {y|y≤25}（顶点 x=5 时 y=25）。若限制 x∈{x|0&lt;x&lt;10}，构建"长方形周长 20，设一边长 x，面积 y"，则 A={x|0&lt;x&lt;10}，B={y|0&lt;y≤25}——同一解析式，<span class="mark">定义域变了就是不同的函数</span>，这正是例1 的教学点。</span></p></div>
+</div>
+<div class="station">
+<p class="station-title">第 3 站 · 定义域双查法（例2）+ 函数值代换</p>
+<p><strong>教材例2（p65）：</strong>已知函数 f(x)=√(x+3) + 1/(x+2)。(1) 求定义域；<br>
+<span class="detail"><strong>解：</strong>只给解析式没指明定义域时，定义域＝使式子<span class="mark">有意义</span>的实数集合。使 √(x+3) 有意义：{x|x≥−3}；使 1/(x+2) 有意义：{x|x≠−2}。取交集：</span></p>
+<div class="formula">{x|x≥−3 且 x≠−2} = [−3,−2) ∪ (−2,+∞)</div>
+<p>(2) 求 f(−3)、f(2/3)：<span class="detail">f(−3)=√0+1/(−1)=<span class="mark">−1</span>；f(2/3)=√(11/3)+3/8=<span class="mark">3/8+√33/3</span>（p65 原答案）。</span><br>
+(3) 当 a＞0 时：f(a)=√(a+3)+1/(a+2)；f(a−1)=√(a−1+3)+1/(a−1+2)=<span class="mark">√(a+2)+1/(a+1)</span>——把"括号里"整体代进解析式即可。</p>
+<div class="try"><p><strong>验一验③（p67 练习1）：</strong>求定义域：(1) f(x)=1/(4x+7)——<span class="ans">{x|x≠−7/4}；(2) f(x)=√(1−x)+√(x+3)−1——1−x≥0 且 x+3≥0，得 {x|−3≤x≤1}=[−3,1]。<span class="mark">双查口诀：根式≥0、分式≠0，两条都得满足取交集。</span></span></p>
+<p><strong>验一验④（p67 练习2，奇偶伏笔）：</strong>f(x)=3x³+2x，求 f(2)+f(−2) 与 f(a)+f(−a)。——<span class="ans">f(−x)=3(−x)³+2(−x)=−f(x)，所以 f(2)+f(−2)=0，f(a)+f(−a)=0——"代入相加互相抵消"，这是第三章 3.2.2 奇函数的引子。</span></p></div>
+</div>
+<div class="station">
+<p class="station-title">第 4 站 · 三种表示法 + 分段函数（3.1.2）</p>
+<p><strong>三种表示法（p67）：</strong><span class="uline">解析法</span>（用解析式，如问题①②）、<span class="uline">列表法</span>（列表格，如问题④）、<span class="uline">图象法</span>（用图象，如问题③）。</p>
+<p><strong>教材例4（p67）：</strong>笔记本单价 5 元，买 x（x∈{1,2,3,4,5}）本需要 y 元。解析法：y=5x，x∈{1,2,3,4,5}；列表法：x=1..5 对应 y=5,10,15,20,25；图象法：五个离散点（图3.1-2）。教材边栏追问：<span class="uline">函数图象既可以是光滑曲线，也可以是直线、折线、离散的点等</span>——判断一个图形是不是函数图象，依据是"任意一条垂直于 x 轴的直线与图象至多一个交点"（唯一性）。</p>
+<p><strong>教材例5（p68）：分段函数登场。</strong>画 y=|x| 的图象：由绝对值概念 y={−x, x&lt;0；x, x≥0}，图象是 V 形折线（图3.1-3）。像这样的函数称为<span class="mark">分段函数</span>。出租车计费、个人所得税纳税额都是分段函数的现实原型（p68 原句）。</p>
+<div class="figure">
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图3.1-7复刻：个人所得税七段分段函数图象，横轴全年应纳税所得额t，纵轴个税税额y，折线斜率从0.03逐段升到0.45">
+<line x1="70" y1="255" x2="600" y2="255" stroke="#1a2332" stroke-width="2"/>
+<line x1="70" y1="255" x2="70" y2="30" stroke="#1a2332" stroke-width="2"/>
+<text x="604" y="268" font-size="14" fill="#1a2332">t</text>
+<text x="52" y="28" font-size="14" fill="#1a2332">y</text>
+<text x="56" y="272" font-size="12" fill="#5a6b7d">O</text>
+<polyline points="70,255 130,251 190,240 250,224 310,203 370,177 430,146 490,110 550,69" fill="none" stroke="#c0392b" stroke-width="2.6"/>
+<line x1="130" y1="251" x2="130" y2="255" stroke="#8a9bb0" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="96" y="272" font-size="12" fill="#5a6b7d">36 000</text>
+<line x1="250" y1="224" x2="250" y2="255" stroke="#8a9bb0" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="212" y="272" font-size="12" fill="#5a6b7d">300 000</text>
+<line x1="370" y1="177" x2="370" y2="255" stroke="#8a9bb0" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="332" y="272" font-size="12" fill="#5a6b7d">660 000</text>
+<line x1="490" y1="110" x2="490" y2="255" stroke="#8a9bb0" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="452" y="272" font-size="12" fill="#5a6b7d">960 000</text>
+<text x="200" y="60" font-size="13" fill="#7a4b1f">折线越陡＝税率越高（0.03→0.45）</text>
+<text x="120" y="292" font-size="12.5" fill="#5a6b7d">图 3.1-7 个税分段函数图象（依教材 p71 复刻·关键点 11 880/43 080/73 080/145 080/250 080）</text>
+</svg>
+<p class="figcap">个税七段折线（例8）：每段斜率＝该级税率 0.03→0.10→0.20→0.25→0.30→0.35→0.45，"收入越高、涨得越快"一眼可见。</p>
+</div>
+<p><strong>教材例8（p70-71）个人所得税：</strong>2019 年 1 月 1 日起个税税额=应纳税所得额×税率−速算扣除数（式①）；应纳税所得额=综合所得收入额−基本减免费用（免征额 60 000 元/年）−专项扣除−专项附加扣除−其他扣除（式②）；税率与速算扣除数见<span class="uline">表3.1-5 七级表</span>（[0,36000] 税率3% 速算0；（36000,144000] 10% 2520；（144000,300000] 20% 16920；（300000,420000] 25% 31920；（420000,660000] 30% 52920；（660000,960000] 35% 85920；（960000,+∞) 45% 181920）。(1) 设全年应纳税所得额 t，应缴个税 y=f(t)：七段解析式（式③，段界处用 0.1×36000−0=3600=0.03×36000 检验衔接；如 0.1t−2520 在 t=36000 时=3600 与前段吻合——<span class="mark">衔接不断，函数连续</span>）；(2) 小王全年综合所得 117 600 元，社保公积金 8%+2%+1%+9%，专项附加扣除 9 600 元、其他扣除 560 元：<span class="detail">t=117600−60000−117600×20%−9600−560=0.8×117600−70160=<span class="mark">23 920</span>，代入③第一段 y=0.03×23920=<span class="mark">717.6 元</span>（p71 原答案）。</span></p>
+<p><strong>教材例6（p68）取大函数：</strong>f(x)=x+1，g(x)=(x+1)²，M(x)=max{f(x),g(x)}。联立 (x+1)²=x+1 得 x(x+1)=0，x=−1 或 0（交点），结合图象得 <span class="detail">M(x)={(x+1)²，x&lt;−1 或 x&gt;0；x+1，−1≤x≤0}</span>——"图象取上包络"是 max 型新函数的标准画法。</p>
+<div class="try"><p><strong>验一验⑤（p74 习题13·取整函数）：</strong>f(x)=[x] 表示不超过 x 的最大整数，如 [−3.5]=−4，[2.1]=2。当 x∈(−2.5,3] 时写解析式。——<span class="ans">七段常数：y={−3（−2.5≤x<−2）；−2；−1；0；1；2；3（2≤x≤3）}——图象是一串"阶梯"，每段左闭右开（除最右段闭）。取整函数是"离散型分段"经典。</span></p></div>
+<div class="alt"><span class="tag">（拓展 · 可跳过）</span>习题17（p74）探究存在性：(1) 定义域、值域都相同但对应关系不同的函数存在吗？——存在，如 y=x 与 y=x³ 在定义域 [−1,1]、值域 [−1,1] 上对应关系不同；(2) 值域相同、对应关系相同但定义域不同的函数也存在（如 y=1 于 R 与 y=1 于 [0,1]）。反过来验证了"定义域+对应关系"二者共同确定函数。</div>
+<div class="alt"><span class="tag">（拓展 · 可跳过）</span>习题18（p74）：圆周率 π 小数点后第 n 位数字 y 是 n 的函数吗？——是：定义域 {1,2,…,200}，值域 {0,1,…,9}，对应关系由 π 的展开确定——"对应关系"不必写成公式，规则本身就算数。</div>
+</div>
+<div class="station">
+<p class="station-title">收口站 · 三句话带走 + 自测四连</p>
+<ul class="walk">
+<li>① 函数=f：A→B，<span class="mark">A 中任意 x → B 中唯一确定的 y</span>；三要素=定义域、对应关系、（值域是 B 的子集）；</li>
+<li>② <span class="mark">定义域或对应关系不同＝不同函数</span>（s=350t 与 w=350d 不是同一个；y=x 与 y=x²/x 不是同一个）；求定义域双查：根式≥0、分式≠0；</li>
+<li>③ 表示法三种（解析/列表/图象）；<span class="uline">分段函数</span>各段各自成立（|x|、个税七段、取整[x]），图象逐段衔接。</li>
+</ul>
+<div class="selftest">
+<p><strong>自测四连（全部取自教材本节域）：</strong></p>
+<ol>
+<li><strong>p64 练习3：</strong>集合 A，B 与对应关系 f 如图（A、B 各含 1~5），f：A→B 是否为函数？——<span class="detail">逐点查"A 中每个元素是否都唯一对应"：若 A 中每个数都恰好引出一条箭线且无多箭，是函数；只要有一个 x 引出两条线（或无线）就<b>不是</b>——"任意+唯一"双条件（p64 图实锚）。</span></li>
+<li><strong>p63 练习1：</strong>炮弹 h=130t−5t²，26 s 落地、射高 845 m，求定义域与值域。——<span class="detail">h(26)=3380−3380=0（落地验证✓）；对称轴 t=13，h(13)=1690−845=845（顶点=射高✓）。定义域 [0,26]，值域 [0,845]。</span></li>
+<li><strong>p67 练习3(1)：</strong>h=130t−5t²（炮弹，0≤t≤26）与 y=130x−5x²（二次函数，x∈R）是同一函数吗？——<span class="detail">不是：解析式同形但<span class="mark">定义域不同</span>（[0,26] vs R）。</span></li>
+<li><strong>p67 练习3(2)：</strong>f(x)=1 与 g(x)=x⁰ 是同一函数吗？——<span class="detail">不是：g(x)=x⁰ 的定义域是 {x|x≠0}，f 定义域 R，定义域不同。</span></li>
+</ol>
+</div>
+<div class="kaowei">
+<p class="kw-title">高考怎么考 · 考位锚（T11）</p>
+<p>· 高频考位：<strong>函数定义三要素判同一/求定义域（根式+分式双查）+分段函数求值与图象</strong>；<br>
+· 分段函数多以"个税/出租车/取整"为情境出中档解答题，重点查<span class="mark">段界取值与衔接</span>；<br>
+· <span class="sub">真题锚申报：真题锚池内未录"数学3.1"专行，候采不代拟（宁缺毋编·沿 2.2 件同口径）。</span></p>
+</div>
+<div class="figure">
+<svg viewBox="0 0 640 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="位置图：第三章函数的概念与性质三节谱系，当前在3.1函数的概念及其表示">
+<rect x="8" y="20" width="118" height="44" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>
+<text x="16" y="38" font-size="13" fill="#1a2332">第三章章题页</text>
+<text x="16" y="56" font-size="11" fill="#5a6b7d">p5x 候锚（章页未取）</text>
+<rect x="240" y="14" width="160" height="56" rx="10" fill="#fff3cd" stroke="#c0392b" stroke-width="2.4"/>
+<text x="252" y="36" font-size="13.5" font-weight="bold" fill="#c0392b">3.1 函数的概念及其表示</text>
+<text x="252" y="56" font-size="11" fill="#7a4b1f">本节 p60-75 ← 你在这里</text>
+<rect x="414" y="20" width="118" height="44" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>
+<text x="422" y="38" font-size="13" fill="#1a2332">3.2 函数的基本性质</text>
+<text x="422" y="56" font-size="11" fill="#5a6b7d">p76 起（节题页实锚）</text>
+<rect x="546" y="20" width="84" height="44" rx="8" fill="#f0f0f0" stroke="#b8b8b8"/>
+<text x="554" y="38" font-size="13" fill="#5a6b7d">3.3/3.4</text>
+<text x="554" y="56" font-size="11" fill="#9a9a9a">候锚</text>
+<line x1="126" y1="42" x2="240" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="400" y1="42" x2="414" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="532" y1="42" x2="546" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+</svg>
+<p class="figcap">位置图：3.1 是第三章地基（概念+表示），3.2 单调性奇偶性全靠本节语言；节界 p60-75，p76=3.2 节题页（影印实锚），第三章章题页未取影印如实标候锚。</p>
+</div>
+<p class="sub" style="text-align:center">—— 本件节界：3.1 全节 p60-75（p60 节题页·p76=3.2 节题页边界·与 v18 原册口径 p60-75 吻合），影印 17 页全 200 实取、11 页亲目检（p60/61/62/63/64/65/67/68/70/71/74），ts=1787023173400 实测复取。</p>
+<div class="no-print" style="text-align:center;color:#8a9bb0;font-size:.85em;margin-top:18px">并行搜索员B · 队2席 · 承群管理员15:35:52继续转产令（硬闸17:37·认领行dd250e7·心跳#1=86cffe4）· 标准v2.3@82ccb4b · 产出走分支候并不直推main</div>
+</div>
+</body>
+</html>

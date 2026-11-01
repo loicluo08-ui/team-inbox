@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜函数的应用（二）｜真题锚×易错收口（双段版）</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .ans{font-weight:700; color:var(--accent-deep); white-space:nowrap;}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第四章 指数函数与对数函数</span>
+    </div>
+    <h1>4.5 函数的应用（二）</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 4.5 节重制件正本同名在案 · 第4章簇-节对位表）</div>
+  </div>
+
+  <div class="body">
+
+    <section><h2>讲法锚</h2><div class="slice"><p><b>讲法锚实锚×2：</b>①一数（BV1fX4y1L7ih·275.9万）50→320s——"根和零比"双路径同解互证：韦达代数路径（x₁·x₂<0⟺常数项为负直接定参）×画图几何路径（看f(0)符号），先代数后图象互证。②一数（BV1wv7W6EEWh·127.8万）15→300s——"双化一次型"分式函数凑分母分离常数一步定形：(2x+3)/(x-1)=2+5/(x-1)，渐近线三步平移链跟走。</p><p><b>用锚顺序：</b>先做本卡真题锚位，卡壳再看对应片，最后回易错收口。</p></div></section>
+    <section><h2>讲法锚点 · 缺料豁免注记</h2><div class="slice"><p>本节讲法锚：未取得（如实标注）。</p></div></section>
+
+    <section><h2>高考真题锚</h2><div class="slice"><p><b>本节真题锚：待采（如实标注）</b>——真题槽位已留装，卷源采到即入；先按教材正文与串联图推进，不受影响。</p></div></section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · "f(x)的零点是(2,0)"——零点是数不是点</span>
+        <p><b class="punch">零点≡f(x)=0的实数根≡实数——异号连续保一个，"有几个"另请单调性。</b>症状：把零点写成坐标点(2,0)。错因结构："点"字字面负迁移＋图象上零点位置的视觉捆绑——零点是让f(x)=0的自变量取值x₀，在图象上是交点的横坐标，不是那个点。</p>
+        <p><b>钉死动作</b>：口诀"零点是数不是点，异号连续保一个"；叙述零点用"x₀是f(x)的零点"不用坐标式；个数问题两步收网——零点存在定理锁存在（f(a)·f(b)&lt;0＋图象连续两要件缺一不可），单调性锁唯一。本节另有高频条目同源正本在案（"两端异号就恰有一个解"——存在定理只保"至少一个"，唯一性必须单调性另证／"两端同号就没零点"——x²−1在[−2,2]两端同号藏两个，定理只是单向保证／二分法不验连续与异号就开跑），考前一并过。</p>
+        <p class="src">源：在库 4.5 节重制件正本易错卡表首行（本节表形态·翻车现场/错因结构/处置动作三列首行·照录——同 3.4 卡表形态取首行先例）。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 4.5 节重制件正本"零点存在定理：什么时候一定有解"节——两要件（f(a)f(b)&lt;0＋图象连续）缺一不可；"定理的三个不管"过堂：不管唯一、不管内部、不管端点是否为零点。</li>
+        <li>个数两步收网自测（正本例1教材实锚）：lnx+2x−6=0的实数解个数——对应值表f(2)&lt;0、f(3)&gt;0异号锁存在，lnx增+2x增=增锁唯一，两步收网答"恰一个"；教材边栏两问（为什么f(2)·f(3)&lt;0还不能说明只有一个？你能证明增函数吗？）必须答得出。</li>
+        <li>二分法过堂：跑前两句自检——这段连续吗？两端异号吗？步数公式2ⁿ&gt;(b−a)/ε一步算死（2的幂背到1024：2¹⁰=1024），正本例2"二分法求√5"四段式走一遍；每砍一次区间减半，精确度ε定步数。</li>
+        <li>回 4.2/3.2 节件：零点是4.1-4.4全部函数工具的出口——2ˣ+x=4自测（f(1)=−1、f(2)=2异号且2ˣ+x增⟹恰一解·同类自测在正本例1）；参数范围零点个数题数形结合，工具在3.2单调性与4.2图象变换。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">源注：本卡内容依据B站公开课程视频与教材整理；部分切片与真题锚待采（如实标注），先学已采内容不受影响。</div>
+</div>
+</body>
+</html>

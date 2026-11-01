@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理2.1 流水地貌 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1a212b; border-left: 4px solid #8fa3b8; padding: 12px 16px; margin: 14px 0; font-size: 15px; }
+  .talk b { color: #9fd0ff; }
+  .check { background: #16241a; border: 1px solid #2e5c3a; padding: 14px 18px; margin: 18px 0; }
+  .check .tag { font-weight: bold; color: #7fe29a; }
+  .check li { margin: 6px 0 6px 22px; }
+  .key { background: #1a2433; border: 1px solid #3a5a8a; padding: 14px 18px; margin: 18px 0; }
+  .key .tag { font-weight: bold; color: #8fd4ff; }
+  .try { background: #18202c; border-left: 4px solid #4a9eff; padding: 12px 16px; margin: 16px 0; font-size: 16px; }
+  .try .tag { font-weight: bold; color: #8fd4ff; }
+  .try .ans, .ans { color: #9fe0b8; }
+  .pit { background: #241a1c; border: 1px solid #5c3a40; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .pit .tag { font-weight: bold; color: #ff9aa5; }
+  .note-yellow { background: #262115; border-left: 4px solid #d4b949; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .note-red { background: #241619; border-left: 4px solid #c05a66; padding: 12px 16px; margin: 16px 0; font-size: 15px; font-family: "Kaiti SC", "KaiTi", "STKaiti", serif; }
+  .note-green { background: #16221a; border-left: 4px solid #4a9e6a; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .alt { background: #1c2318; border: 1px dashed #6a8a4a; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .box { background: #1e1a2b; border: 1px solid #6a5aa0; padding: 12px 16px; margin: 16px 0; font-size: 15px; }
+  .box .tag { font-weight: bold; color: #c5b3ff; }
+  .fig { background: #10151c; border: 1px solid #2a3542; padding: 14px; margin: 18px 0; overflow-x: auto; }
+  .fig p { color: #8fa3b8; font-size: 14px; margin-top: 8px; }
+  .fig svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  .m { color: #ffd97a; }
+  .big { font-size: 19px; color: #fff; }
+  mark { background: #4a3a10; color: #ffe98a; padding: 1px 4px; border-radius: 3px; }
+  .uline { border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  .small { font-size: 14px; color: #8fa3b8; }
+  table.geo { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15px; }
+  table.geo th, table.geo td { border: 1px solid #3a4a5c; padding: 7px 9px; text-align: center; }
+  table.geo th { background: #1c2530; }
+  table.geo td.hl { color: #8fd4ff; font-weight: bold; }
+  table.geo tr.cap th { background: #16241a; color: #7fe29a; }
+  .foot { border-top: 1px solid #2a3542; margin-top: 50px; padding-top: 16px; color: #6a7a8a; font-size: 13px; line-height: 1.7; }
+  @media print {
+    body { background: #ffffff !important; color: #1a1a1a !important; }
+    .page { padding: 10mm 8mm; }
+    h1, h2, h3, b { color: #111111 !important; }
+    h2 { border-left-color: #1a5fb4 !important; }
+    .m, .ans { color: #0b5394 !important; }
+    .big { color: #111111 !important; }
+    .talk { background: #f2f4f7 !important; border-color: #c9d1d9 !important; color: #333333 !important; }
+    .check { background: #eef7f0 !important; border-color: #9fd4ae !important; color: #222222 !important; }
+    .try { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .box { background: #f3effc !important; border-color: #9a8ac0 !important; color: #222222 !important; }
+    .note-yellow { background: #fdf8e3 !important; color: #222222 !important; }
+    .note-green { background: #eef7f0 !important; color: #222222 !important; }
+    .note-red { background: #fdf0f0 !important; color: #222222 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    table.geo th { background: #e8edf2 !important; color: #111111 !important; }
+    table.geo td.hl { background: #eaf3fc !important; color: #0b5394 !important; }
+    table.geo tr.cap th { background: #eef7f0 !important; color: #1a5c30 !important; }
+    table.geo th, table.geo td { border-color: #9aa5b1 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+    .uline { border-bottom-color: #1a5fb4 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>地理 2.1 流水地貌</h1>
+<div class="sub">湘教版《普通高中教科书·地理 必修 第一册》第二章 地球表面形态 · 第一节 · 零基础首学版 v1.0 · 事实层全部锚定教材 p41-51 官方影印</div>
+
+<div class="talk"><b>开场 · 一个"反常识"的码头故事：</b>四川南充的嘉陵江边有个青居镇，镇南北各有一个码头。奇怪的是：青居人去曲水镇赶场，去时从上码头坐船是顺水，回来在<b>同一个方向的</b>下码头上岸也是顺水——"来也顺水，去也顺水"，船走一整天，人步行一支烟的工夫就能走到（旧说"行船走一天，步行一袋烟"）。你肯定猜到了：江水在这里绕了一个<b>近乎360°的大圈</b>（教材图2-1的遥感影像里，曲流围出一个大半岛）。这条江为什么会长成这样？——这就是本节的主角：<b>流水，把大地刻出来的样子</b>。</div>
+
+<div class="check"><span class="tag">✓ 读完这节你能：</span>
+<li><b>说清</b>流水侵蚀地貌（V形谷、河漫滩、河流阶地）和流水堆积地貌（冲积扇、冲积平原、三角洲）各长什么样、在哪出现；</li>
+<li><b>看图识别</b>河谷横剖面的三件套（河床/河漫滩/阶地）和牛轭湖的形成四步；</li>
+<li><b>记住</b>两组最常考的对比数据（阶地为什么宜居；冲积扇从扇顶到扇缘怎么变）；</li>
+<li><b>说清</b>滑坡和泥石流是什么、怎么躲——这是本节的灾害应用题。</li></div>
+
+<p class="small"><b>本件属于"地球表面形态"模块（第二章）</b>：第一章讲完了地球的宇宙环境和演化史，现在把镜头从46亿年拉近到你脚下的地面——地表的"样貌"是被外力一刀一刀刻出来的。本章三节=流水（本节）→风（2.2）→喀斯特、海岸和冰川（2.3）。没读过第一章？不影响：本节只需要"重力会让水往低处流"这一条常识。</p>
+
+<h2><span class="step-tag">预备步</span>两个词先把路铺平：侵蚀 vs 堆积</h2>
+
+<p>先建立全节的总框架，教材 p42 开头一句话：<mark>流水是地表常见的外力作用形式。流水塑造的地貌，称为流水地貌。一般来说，流水地貌可分为流水侵蚀地貌和流水堆积地貌</mark>。翻译一下：<b>水冲走东西=侵蚀（刻刀），水放下东西=堆积（运输队卸货）</b>。水流得快、劲头足，就在刻（上游山区）；水流得慢、驮不动了，就往下卸（山口、中下游、入海口）。整节就按这两大类展开，最后加一段"刻过头会出事"的灾害（滑坡、泥石流）。</p>
+
+<div class="try"><span class="tag">试试看 ①</span>（自编·10秒自验）同一条河，上游山区水流急，下游平原水流慢。问：刻刀（侵蚀）主要在__游，卸货（堆积）主要在__游。
+<p><span class="step-tag">答</span>刻刀主要在<b>上</b>游（下切刻出深谷），卸货主要在<b>下</b>游（堆出平原三角洲）。记住这个"上刻下堆"，整节的地图就有了。</p></div>
+
+<h2><span class="step-tag">第一步</span>流水侵蚀地貌——V形谷、河漫滩与河流阶地</h2>
+
+<p><b>V形谷。</b>教材 p42：<mark>在湿润或半湿润山区，流水侵蚀切割地面形成峡谷，河谷横断面大多呈V字形。流水下切作用强烈的地区，往往形成深邃的峡谷</mark>。为什么是V字形？水往低处流，劲头全用在<b>往下切</b>上，谷底越切越深、两壁越垮越陡——就刻出一个"V"。教材对话框补了细节：V字形河谷<b>两壁险峻陡峭，谷底几乎全部被河床占据，谷地狭窄，深度通常大于宽度</b>。数据感受一下教材的例子（p42 图2-3）：金沙江虎跳峡，位于玉龙雪山与哈巴雪山之间，山岭高出江面达<b>3000米以上</b>，中间江面宽仅<b>30-60米</b>——三千米的高山夹着几十米的激流，"深邃"两个字就是这么来的。</p>
+
+<p><b>河漫滩与河流阶地。</b>教材 p42 原文：<mark>河谷中枯水期出露、洪水期淹没的部分称为河漫滩。在河谷两侧常分布有洪水不能淹没的阶梯状地形，称为河流阶地。河流阶地地面平坦，组成物质颗粒较细，土质较为肥沃</mark>。三个词不要混：<span class="uline">河床=常年有水；河漫滩=枯水期露出来、洪水期被淹掉；河流阶地=洪水再也淹不到的台阶</span>。看图（对教材图2-2重绘）：</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="河谷横剖面结构示意：河床河漫滩河流阶地">
+  <rect x="0" y="0" width="740" height="300" fill="#10151c"/>
+  <text x="370" y="24" fill="#e8ecf2" font-size="14" font-weight="bold" text-anchor="middle">河谷横剖面结构示意（对教材图2-2重绘）</text>
+  <polyline points="60,118 150,128 230,148 230,150 310,222 312,225 345,248 360,250" fill="none" stroke="#8a6a45" stroke-width="3"/>
+  <polyline points="380,250 400,248 428,225 430,222 510,150 512,148 590,128 680,118" fill="none" stroke="#8a6a45" stroke-width="3"/>
+  <path d="M360,250 L380,250 L380,258 L360,258 Z" fill="#2a5a8a"/>
+  <rect x="150" y="150" width="530" height="100" fill="none" stroke="none"/>
+  <line x1="205" y1="205" x2="535" y2="205" stroke="#4a9eff" stroke-width="2" stroke-dasharray="8,5"/>
+  <text x="700" y="209" fill="#4a9eff" font-size="12" text-anchor="end">洪水位</text>
+  <line x1="300" y1="245" x2="440" y2="245" stroke="#8fd4ff" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="700" y="249" fill="#8fd4ff" font-size="12" text-anchor="end">枯水位</text>
+  <line x1="370" y1="130" x2="370" y2="248" stroke="#5a6a7a" stroke-width="1.5" stroke-dasharray="3,4"/>
+  <line x1="285" y1="150" x2="285" y2="240" stroke="#5a6a7a" stroke-width="1.5" stroke-dasharray="3,4"/>
+  <line x1="455" y1="150" x2="455" y2="240" stroke="#5a6a7a" stroke-width="1.5" stroke-dasharray="3,4"/>
+  <text x="370" y="272" fill="#d8b06a" font-size="12" text-anchor="middle">1 河床（常年有水）</text>
+  <text x="285" y="272" fill="#9fd0ff" font-size="12" text-anchor="end">2 河漫滩</text>
+  <text x="455" y="272" fill="#9fd0ff" font-size="12" text-anchor="start">（枯水露出·洪水淹没）</text>
+  <text x="230" y="140" fill="#a8e6b8" font-size="12" text-anchor="middle">3 阶地（洪水淹不到）</text>
+  <text x="510" y="140" fill="#a8e6b8" font-size="12" text-anchor="middle">3 阶地</text>
+  <text x="370" y="292" fill="#7d8a99" font-size="11" text-anchor="middle">这张图在说什么：从谷底往上看一层比一层高——河床常湿、河漫滩"两栖"、阶地已经"上岸"。枯水位/洪水位两条虚线就是分界尺。</text>
+</svg>
+</div>
+
+<div class="talk"><b>教材对话（p43）：</b>"为什么人们常选择河流阶地作为居住和耕作的场所？"——答案就藏在定义里：①<b>地面平坦</b>，好盖房好耕种；②<b>组成物质颗粒较细、土质较为肥沃</b>（那是河搬来的细泥沙）；③<b>洪水不能淹没</b>，住得安心。教材图2-4澜沧江峡谷的照片里，白房子和田地整整齐齐码在阶地上——平原稀缺的山区，阶地就是"天然楼盘"。</div>
+
+<h3>曲流、裁弯取直与牛轭湖（教材p43阅读·与开场之谜直接挂钩）</h3>
+
+<p>平原地区地形软、坡度缓，河流不再拼命下切，改成<b>左右摇摆地侧向侵蚀</b>，越摆越弯。教材 p43：<mark>当河床弯曲愈来愈大时，河流的上下河段愈来愈接近，曲流呈"Ω"形，出现狭窄的曲流颈。洪水期，曲流颈可能被冲开，河流不经过曲流而直接进入下一河段，这种现象称为裁弯取直。裁弯取直后，弯曲河道被废弃，形如牛轭，称为牛轭湖</mark>。看四步演化（对教材图2-6重绘）：</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="牛轭湖形成四步示意">
+  <rect x="0" y="0" width="740" height="190" fill="#10151c"/>
+  <text x="370" y="22" fill="#e8ecf2" font-size="14" font-weight="bold" text-anchor="middle">牛轭湖形成四步（对教材图2-6重绘）</text>
+  <g>
+    <text x="100" y="52" fill="#8fd4ff" font-size="12" text-anchor="middle">① 摆着弯</text>
+    <path d="M20,100 C55,60 85,60 105,100 C125,140 155,140 185,100" fill="none" stroke="#4a9eff" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g>
+    <text x="280" y="52" fill="#8fd4ff" font-size="12" text-anchor="middle">② 弯成Ω·曲流颈变窄</text>
+    <path d="M205,100 C235,55 275,55 300,95 C310,110 310,115 305,118 M340,100 C330,75 315,65 305,115" fill="none" stroke="#4a9eff" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g>
+    <text x="460" y="52" fill="#ffd97a" font-size="12" text-anchor="middle">③ 洪水冲开曲流颈</text>
+    <path d="M385,100 C415,55 455,55 480,95 M455,100 C445,85 435,78 430,76 M470,98 C462,84 452,77 436,77" fill="none" stroke="#4a9eff" stroke-width="6" stroke-linecap="round"/>
+    <line x1="430" y1="72" x2="470" y2="100" stroke="#ffd97a" stroke-width="2.5"/>
+  </g>
+  <g>
+    <text x="640" y="52" fill="#a8e6b8" font-size="12" text-anchor="middle">④ 旧弯废弃=牛轭湖</text>
+    <path d="M565,100 C590,68 630,68 655,100 C675,125 690,130 720,125" fill="none" stroke="#4a9eff" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="596" cy="118" rx="26" ry="15" fill="#2a5a8a"/>
+  </g>
+  <text x="370" y="175" fill="#7d8a99" font-size="11" text-anchor="middle">这张图在说什么：河道越弯→"脖子"越细→洪水一冲直接抄近道→旧弯被甩下，形如牛轭（牛拉犁套在脖子上的那个弯木）。</text>
+</svg>
+</div>
+
+<div class="note-yellow">回到开场之谜：青居镇所在的嘉陵江段就是一条深度弯曲的曲流，河道绕了近乎一整圈——所以"上码头"和"下码头"其实在河道的几乎同一点上，坐船绕圈反而要走一整天。教材把这段故事放在节首，就是在问：水明明走直线最快，河为什么偏偏长成弯的？（答案：平原/丘陵区河水劲头不够下切，就横向摆；两岸软硬不均，摆着摆着就弯了——这是流水侧向侵蚀的成果展示。）</div>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材p44活动给了流水侵蚀地貌的"顶配样本"：<b>雅鲁藏布大峡谷</b>——在西藏自治区东南部、雅鲁藏布江深切喜马拉雅山转折处，是<b>世界最大的峡谷</b>：长<b>504.6千米</b>，高峰与谷底相对高差达<b>6009米</b>，江面最狭处仅<b>35米</b>（图2-7）。教材活动还留了个思考钩子：把第一章新生代"喜马拉雅造山运动"的知识接上——地壳抬升（地面隆起）+水流下切（刻刀不停）+降水丰沛（刻刀够大），三者叠出来的就是这类超级峡谷。跳过不影响主干。</div>
+
+<h2><span class="step-tag">第二步</span>流水堆积地貌——冲积扇、冲积平原、三角洲</h2>
+
+<p><b>冲积扇与洪积扇。</b>教材 p44：<mark>河流自山地流至山麓，因地形急剧变缓，流速剧减，所挟带物质在沟谷出口处不断堆积而成的扇状堆积体，称为冲积扇。暂时性河流在山谷出口处因水流分散而形成的扇状堆积体，称为洪积扇。洪积扇多分布于干旱、半干旱地区</mark>。两个"扇"是亲兄弟：差别只在"谁的水"——<span class="uline">常年流的河=冲积扇；一下雨才来水（暂时性河流）=洪积扇，且多在干旱半干旱区</span>。教材对话框给了看图口诀：<mark>冲（洪）积扇外形似张开的折扇，自扇顶至扇缘，地面逐渐降低，堆积物由粗到细</mark>——大石头搬不远，先卸在扇顶；细泥沙能漂很远，铺到扇缘。</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="冲积扇剖面与颗粒分带示意">
+  <rect x="0" y="0" width="740" height="280" fill="#10151c"/>
+  <text x="370" y="22" fill="#e8ecf2" font-size="14" font-weight="bold" text-anchor="middle">冲（洪）积扇：自扇顶到扇缘怎么变（对教材p44对话重绘）</text>
+  <path d="M120,80 L245,154.6 L370,189.3 L495,216.6 L620,240 L120,240 Z" fill="#3a4a3a" opacity="0.55"/>
+  <path d="M120,80 L245,154.6 L370,189.3 L370,240 L120,240 Z" fill="#6a5a3a" opacity="0.6"/>
+  <path d="M120,80 L245,154.6 L200,240 L120,240 Z" fill="#8a7a5a" opacity="0.7"/>
+  <line x1="60" y1="240" x2="680" y2="240" stroke="#8a6a45" stroke-width="3"/>
+  <circle cx="150" cy="95" r="7" fill="#c8b088"/><circle cx="185" cy="112" r="5.5" fill="#c8b088"/><circle cx="215" cy="132" r="4" fill="#c8b088"/>
+  <circle cx="330" cy="180" r="3" fill="#d8c8a8"/><circle cx="390" cy="198" r="2.4" fill="#d8c8a8"/><circle cx="450" cy="212" r="2" fill="#d8c8a8"/>
+  <circle cx="540" cy="228" r="1.5" fill="#e8dcc8"/><circle cx="590" cy="234" r="1.2" fill="#e8dcc8"/>
+  <text x="120" y="66" fill="#ffd97a" font-size="12" text-anchor="middle">扇顶（山口·粗）</text>
+  <text x="370" y="175" fill="#d8e8d8" font-size="12" text-anchor="middle">扇中</text>
+  <text x="620" y="262" fill="#a8e6b8" font-size="12" text-anchor="middle">扇缘（细）</text>
+  <text x="90" y="130" fill="#c8b088" font-size="12">砾石</text>
+  <text x="300" y="165" fill="#d8c8a8" font-size="12">砂</text>
+  <text x="545" y="222" fill="#e8dcc8" font-size="12">黏土细泥</text>
+  <text x="370" y="278" fill="#7d8a99" font-size="11" text-anchor="middle">这张图在说什么：水一出山口撒腿就慢，驮不动大石头——大粒的在扇顶先下车，细粒的坐到扇缘才下车；地面也从高到低铺开成折扇。</text>
+</svg>
+</div>
+
+<p><b>再往下游走，卸的货更多：</b>教材 p45：<mark>在河流的中下游，或河流流经盆地时，常形成沙洲和地形平坦的冲积平原，如我国的华北平原、东北平原、长江中下游平原等。当河流挟带较多的泥沙入海时，泥沙在河口大量沉积，常形成三角洲，如黄河三角洲、尼罗河三角洲等</mark>。一句话记位置：<b>山口=扇；中下游/盆地=平原；入海口=三角洲</b>。教材配了图2-10尼罗河三角洲（2010年卫星影像，那个"荷叶"形的绿洲探进地中海）。</p>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材p46"阅读"栏·<b>江心洲</b>：河流中的沙洲，由河流挟带的泥沙沉积而成，多位于河流中下游或流速相对缓慢的宽谷段；有的平时出露水面、洪水泛滥时顶部没入水中继续加积，有的则长期出露、洪水期也不没入。江心洲四面环水，常形成独特的自然和人文环境——长江口<b>崇明岛</b>、湘江<b>橘子洲</b>都是（图2-11）。跳过不影响主干。</div>
+
+<div class="try"><span class="tag">试试看 ②</span>（自编·易错变形）同样是"山谷口的一把折扇"，怎么判断它是冲积扇还是洪积扇？
+<p><span class="step-tag">答</span>看水：<b>常年有水的河流</b>搬出来的是<b>冲积扇</b>；<b>暂时性河流</b>（平时是干沟，下雨才有水）撒出来的是<b>洪积扇</b>，且洪积扇多分布于<b>干旱、半干旱地区</b>（教材p44原文）。判别词就两个："常年 vs 暂时""湿润 vs 干旱半干旱"。</p></div>
+
+<div class="try"><span class="tag">试试看 ③</span>（自编·对轴）河漫滩、河流阶地，谁会被洪水淹没？
+<p><span class="step-tag">答</span><b>河漫滩=洪水期淹没</b>（枯水期才出露）；<b>河流阶地=洪水不能淹没</b>（教材p42原文对轴）。分界就一句话："洪水够不够得着"。</p></div>
+
+<h2><span class="step-tag">第三步</span>滑坡和泥石流——刻过头，就出事</h2>
+
+<p>教材 p47 转场一句话点透：<mark>在流水侵蚀强烈的山区，尤其是峡谷地区，山高谷深，坡陡流急，遭遇暴雨时容易发生滑坡、泥石流等自然灾害</mark>。前两步的"刻刀"刻出美景，这一步看它刻出危险。</p>
+
+<h3>（一）滑坡</h3>
+
+<p>教材 p47 定义：<mark>滑坡是大量山体物质在重力的作用下，沿滑动面整体滑动的现象。滑坡可以掩埋农田和村庄，阻断道路，淤塞河道，导致人员伤亡和财产损失</mark>。抓两个部件（教材图2-13）：<b>滑动面</b>（山体顺着它滑的那道"斜坡轨道"）和<b>滑坡体</b>（滑下来的那坨整体）。"整体"二字是关键——不是散沙滚落，是一大块一起动。</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="典型滑坡示意：滑动面与滑坡体">
+  <rect x="0" y="0" width="740" height="250" fill="#10151c"/>
+  <text x="370" y="22" fill="#e8ecf2" font-size="14" font-weight="bold" text-anchor="middle">典型滑坡示意（对教材图2-13重绘）</text>
+  <path d="M100,60 L330,60 L330,95 C300,95 280,110 260,130 L210,190 L560,190 L560,60 L660,60 L660,210 L100,210 Z" fill="#4a5a3a" opacity="0.5"/>
+  <path d="M330,95 C300,95 280,110 260,130 L210,190 L480,190 C470,160 460,130 455,95 Z" fill="#8a6a45" opacity="0.75"/>
+  <line x1="330" y1="95" x2="210" y2="190" stroke="#ffd97a" stroke-width="2.5" stroke-dasharray="7,4"/>
+  <text x="600" y="92" fill="#a8e6b8" font-size="12">滑坡体（整体下滑的那一块）</text>
+  <text x="215" y="212" fill="#ffd97a" font-size="12">滑动面（斜坡"轨道"）</text>
+  <path d="M300,140 L250,178" stroke="#ff9aa5" stroke-width="3" marker-end="url(#arr)"/>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#ff9aa5"/></marker></defs>
+  <text x="370" y="238" fill="#7d8a99" font-size="11" text-anchor="middle">这张图在说什么：整块山体沿着"轨道"（滑动面）出溜下来——掩埋农田村庄、阻断道路、淤塞河道（教材原文三连）。</text>
+</svg>
+</div>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材p48"阅读"栏·<b>中小型滑坡的治理</b>：四川境内319国道一处路堑（从原地面向下开挖而成的路基形式）滑坡——长约<b>160米</b>，厚<b>6~8米</b>，滑坡前缘至滑坡后壁最远距离<b>52米</b>，滑坡体体积约<b>2.6万立方米</b>（本件程序量级复核：160×52×3≈2.5万m³，同量级✓）。开挖形成临空面+遇降雨，滑坡体每天滑移<b>35~40厘米</b>；治理=修筑<b>抗滑挡墙</b>支撑+<b>分段开挖砌筑</b>，辅以<b>排水和减重</b>措施，滑坡体基本稳定（图2-14道路边坡加固）。教材p49活动又给了真实案例：<b>2015年11月13日浙江丽水特大型滑坡</b>（地形陡峻、地质构造复杂、岩石风化破碎+降雨长期作用下形成），追问滑坡危害与多发区特征、防范措施。跳过不影响主干。</div>
+
+<h3>（二）泥石流</h3>
+
+<p>教材 p49 定义：<mark>泥石流是山地沟谷中含有大量固体碎屑物和水的混合体，在重力作用下，沿着沟床向下流动的特殊流体。泥石流是一种严重的自然灾害，往往给工农业生产、交通运输、城市建设和人民生命财产等带来很大危害</mark>。定义拆成三要素背：<span class="uline">山地沟谷（地形）+ 固体碎屑物和水混合（材料）+ 沿沟床向下流动（方式）</span>——它是"流体"，不是"水流"，因为一半以上是泥沙石块。</p>
+
+<div class="note-red"><b>保命题（教材p49图2-16避灾四招，红批必背）：</b>①连续降雨或暴雨时，<b>不要在沟谷中逗留</b>；②<b>不要躲在沟谷中的大树上</b>，大树可能会被冲倒；③向<b>泥石流沟两侧</b>迅速躲避，<b>不要顺沟往下跑</b>（你跑不过流体）；④发现泥石流后要<b>及时报告</b>，以便下游和沟口的居民及时撤离。考试写"向高处、向沟两侧跑"。</div>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材p50活动·<b>2010年8月7日甘肃舟曲特大泥石流</b>：受特大暴雨影响，舟曲县城北面三眼峪和罗家峪暴发特大泥石流，造成重大生命财产损失（图2-17）；教材追问我国泥石流分布广的原因（频繁地质构造活动+陡峻地形+短时强降雨+人类生产活动）与预防措施（防治以预防为主）。另，黄土高原冲沟也值得一读（p50活动2）：<b>水对地表的侵蚀始于坡面</b>——降水汇流冲刷出细沟，细沟下切加深成冲沟；黄土高原冲沟长度可达<b>数千米或数十千米</b>、深度达<b>数十米至百余米</b>（图2-18）；国家治理三板斧=<b>植树造林种草保水土、坡耕地改水平梯田、沟里建坝拦蓄泥沙（打坝淤地）</b>。跳过不影响主干。</div>
+
+<h2><span class="step-tag">串场</span>一条河的地貌之旅——从山口走到海口（自编复盘）</h2>
+
+<div class="fig">
+<svg viewBox="0 0 740 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="沿河地貌之旅：山口到海口的地貌接力">
+  <rect x="0" y="0" width="740" height="300" fill="#10151c"/>
+  <text x="370" y="22" fill="#e8ecf2" font-size="14" font-weight="bold" text-anchor="middle">一条河的地貌之旅（自编·把全节串成一条线）</text>
+  <polyline points="20,55.0 70,89.1 120,117.3 170,140.5 220,159.6 270,175.5 320,188.5 370,199.3 420,208.1 470,215.5 520,221.5 570,226.5 620,230.6 670,234.0 720,236.8" fill="none" stroke="#4a9eff" stroke-width="3.5"/>
+  <line x1="0" y1="252" x2="740" y2="252" stroke="#2a5a8a" stroke-width="5"/>
+  <text x="700" y="246" fill="#4a9eff" font-size="11" text-anchor="end">海平面</text>
+  <text x="34" y="46" fill="#ffd97a" font-size="11">山口</text>
+  <text x="120" y="108" fill="#8fd4ff" font-size="11">V形谷（上刻）</text>
+  <text x="255" y="150" fill="#8fd4ff" font-size="11">冲积扇（山口卸货）</text>
+  <text x="420" y="192" fill="#8fd4ff" font-size="11">河漫滩·阶地（中下游）</text>
+  <text x="560" y="208" fill="#8fd4ff" font-size="11">冲积平原</text>
+  <text x="690" y="222" fill="#8fd4ff" font-size="11">三角洲</text>
+  <text x="370" y="282" fill="#7d8a99" font-size="11" text-anchor="middle">这张图在说什么：河从山口奔向大海，坡越来越缓、劲越来越小——上段刻（V形谷）、山口撒（冲积扇）、中游铺（平原）、海口堆（三角洲）。</text>
+</svg>
+</div>
+
+<p class="big">一句话收全节：<b>上游是刻刀，下游是运输队——速度决定它干哪行</b>。速度由坡度决定，所以"地貌随坡度接力"，这就是流水地貌的全部剧本。</p>
+
+<h2><span class="step-tag">自测</span>五连——合上页做，再回来对答案</h2>
+
+<div class="try"><span class="tag">自测①</span>流水地貌分哪两大类？各举两个代表。
+<p class="ans">流水侵蚀地貌（V形谷/峡谷、河漫滩、河流阶地）与流水堆积地貌（冲积扇、洪积扇、冲积平原、三角洲）。判据：水在"刻"还是"卸"。</p></div>
+
+<div class="try"><span class="tag">自测②</span>V形谷长什么样、长在哪？教材哪个例子数据最震撼？
+<p class="ans">两壁险峻陡峭、谷底几乎全被河床占据、谷地狭窄、<b>深度通常大于宽度</b>（教材p42对话）；长在<b>湿润或半湿润山区</b>（下切强烈）。例子=金沙江虎跳峡：山岭高出江面<b>3000米以上</b>，江面宽仅<b>30-60米</b>（p42图2-3）。</p></div>
+
+<div class="try"><span class="tag">自测③</span>河漫滩、河流阶地怎么区分？阶地为什么宜居？
+<p class="ans">河漫滩=<b>枯水期出露、洪水期淹没</b>；河流阶地=<b>洪水不能淹没</b>的阶梯状地形。宜居三答（教材p43对话）：地面平坦+颗粒较细土质肥沃+洪水淹不到。</p></div>
+
+<div class="try"><span class="tag">自测④</span>冲积扇和洪积扇怎么区分？从扇顶到扇缘，地面和堆积物各怎么变？
+<p class="ans">冲积扇=常年河流在山口堆积；洪积扇=<b>暂时性河流</b>形成、多分布于<b>干旱半干旱地区</b>（教材p44）。共同规律（对话框）：外形似张开的折扇，自扇顶至扇缘<b>地面逐渐降低</b>、堆积物<b>由粗到细</b>。</p></div>
+
+<div class="try"><span class="tag">自测⑤</span>滑坡和泥石流的定义各抓哪几个词？泥石流来了往哪跑？
+<p class="ans">滑坡=大量山体物质在<b>重力</b>作用下沿<b>滑动面</b><b>整体</b>滑动（p47）；泥石流=<b>山地沟谷</b>中含大量固体碎屑物和水的<b>混合体</b>，重力作用下<b>沿沟床向下流动</b>的特殊<b>流体</b>（p49）。避灾：暴雨不在沟谷逗留、不躲沟中大树上、<b>向沟两侧迅速躲避（不要顺沟往下跑）</b>、及时报告（p49图2-16）。</p></div>
+
+<p class="small"><b>练什么题：</b>教材p44活动（雅鲁藏布大峡谷三问：地貌特点/形成因素/景观介绍）+p46-47模拟实验（可升降水槽：α=20°倒水至B面成扇→加快倒水→α调25°，记录侵蚀沟深宽与堆积物多少颗粒分布——两次改变参数=控制变量，探究<b>流速与坡度</b>对侵蚀、堆积的影响；野外观察：大雨初晴从小沟追踪侵蚀路径到堆积区）+p50-51黄土高原活动（冲沟成因与治理三问）+p51树龄等值线活动（1968年美国小密苏里河：在图上标记两个废弃曲流、推测上游曲流裁弯取直的时间——树龄越老离现河道越远=河道摆动的"年轮"）。</p>
+
+<div class="box"><span class="tag">高考怎么考</span>本节两大考向：①<b>地貌判读</b>——给等高线/景观图判V形谷、阶地、冲积扇、三角洲并说成因（对应自测②④与"河谷横剖面""冲积扇"两图）；②<b>灾害应用</b>——滑坡泥石流的成因条件与避险措施（对应自测⑤，"向沟两侧躲避"是高频得分点）。具体真题锚候采不代拟（本件未取得卷源）。</div>
+
+<h2><span class="step-tag">下一站</span></h2>
+
+<p>流水刻完湿润区，下一节换干旱区的"雕刻师"——<b>2.2 风成地貌</b>（教材p52节题页起）：风蚀地貌（雅丹、风蚀蘑菇）和风积地貌（沙丘）长什么样、黄土高原的黄土又是谁搬来的。刻刀从"水"换成"风"，剧本还是"侵蚀+堆积"同一套——带着这一节的框架去看，会省一半力气。</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第二章三节中的2.1流水地貌">
+  <defs><marker id="arrC" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4a9eff"/></marker></defs>
+  <rect x="18" y="40" width="130" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="83" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">第一章 收官</text>
+  <rect x="168" y="40" width="140" height="40" rx="6" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <text x="238" y="58" fill="#e8ecf2" font-size="14" font-weight="bold" text-anchor="middle">2.1 流水地貌</text>
+  <text x="238" y="74" fill="#8fd4ff" font-size="11" text-anchor="middle">（本件）</text>
+  <rect x="328" y="40" width="140" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="398" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">2.2 风成地貌</text>
+  <rect x="488" y="40" width="160" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c" stroke-dasharray="5,3"/>
+  <text x="568" y="64" fill="#8fa3b8" font-size="12" text-anchor="middle">2.3 喀斯特·海岸·冰川</text>
+  <line x1="148" y1="60" x2="164" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <line x1="308" y1="60" x2="324" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <line x1="468" y1="60" x2="484" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <text x="370" y="108" fill="#5a6a7a" font-size="11" text-anchor="middle">这张图在说什么：第二章按"水→风→喀斯特/海岸/冰川"三种雕刻师排布，本件是第二章第一棒。</text>
+</svg>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2产出）· 事实层素材源：湘教版《普通高中教科书·地理 必修 第一册》p41-51 官方影印逐页对照（湖南教育出版社·智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a·ts=1754905526079（详情API实时重取）·影印图存席位私有目录 geo21_jc/gNN.jpg·图号→印刷页 N−6 映射·节界实锚：p41第一节节题页至p51活动末页·p52=第二节"风成地貌"节题页（下一节界标亲验）·p41-51直读锚定：探究嘉陵江青居镇与图2-1p41/流水地貌两分与V形谷与虎跳峡与图2-2河床河漫滩阶地p42/图2-4澜沧江阶地与裁弯取直牛轭湖阅读与图2-6p43/雅鲁藏布大峡谷活动与冲积扇洪积扇定义p44/图2-8冲积扇图2-9洪积扇与冲积平原三角洲与图2-10尼罗河三角洲p45/江心洲阅读与模拟实验用品与图2-12p46/实验步骤与记录表与滑坡定义p47/图2-13典型滑坡与319国道滑坡治理阅读p48/丽水滑坡活动与泥石流定义与图2-16避灾四招p49/舟曲泥石流活动与黄土冲沟与图2-18p50/黄土治理三问与树龄等值线活动与图2-19p51）<br>
+出品席：并行搜索员C（队7席）· 设计标准：零预设 · 一次一步 · 随读随验×5+自测×5 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源 · 数值程序代验留痕（geo21_calc.py输出已存档） · 图示必配（剖面/波形/纵曲线x坐标python精确换算）
+</div>
+
+</div>
+</body>
+</html>

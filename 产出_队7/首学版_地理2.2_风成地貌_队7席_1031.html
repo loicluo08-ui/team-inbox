@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理2.2 风成地貌 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1a212b; border: 1px solid #2e3a4a; border-radius: 10px; padding: 14px 18px; margin: 16px 0; color: #c8d4e0; }
+  .talk b { color: #ffd479; }
+  .try { background: #14202e; border: 1px dashed #3d6a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .try .tag { display: inline-block; background: #1f5c8f; color: #eaf4ff; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .ans, .try .step-tag { font-size: 13px; }
+  .try p { margin: 8px 0 0; }
+  .step-tag.ans { background: #2e7d52; color: #eafff3; }
+  .pit { background: #241a1e; border: 1px solid #5a3a44; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .pit .tag { display: inline-block; background: #8f3a4d; color: #ffe8ee; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .key { background: #1c2a3d; border: 1px solid #3d6a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .key .tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .alt { background: #1e2620; border: 1px solid #3d5a44; border-radius: 10px; padding: 12px 18px; margin: 16px 0; color: #c9d8cd; }
+  .alt b { color: #9fd4ae; }
+  .check { background: #1c2a3d; border: 1px solid #3d6a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .check .tag { display: inline-block; background: #9fd4ae; color: #10241a; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .box { background: #221e30; border: 1px solid #6a5a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .box .tag { display: inline-block; background: #9d7fe8; color: #17102a; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .note-red { background: #2a1a1c; border-left: 4px solid #d46a7a; padding: 10px 16px; margin: 16px 0; color: #f0d8dc; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; }
+  .note-yellow { background: #2a2418; border-left: 4px solid #d4b04a; padding: 10px 16px; margin: 16px 0; color: #efe6c8; }
+  .uline { border-bottom: 3px solid #4a9eff; }
+  .fig { background: #101620; border: 1px solid #26303e; border-radius: 12px; padding: 14px 10px; margin: 18px 0; text-align: center; }
+  .fig p { color: #8fa3b8; font-size: 13px; margin: 8px 0 0; }
+  .small { color: #8fa3b8; font-size: 14px; }
+  mark { background: #4a5a20; color: #f5f0d8; padding: 0 3px; border-radius: 3px; }
+  .foot { border-top: 1px solid #2e3a4a; margin-top: 50px; padding-top: 16px; color: #5a6a7a; font-size: 13px; line-height: 1.7; }
+  @media print {
+    body { background: #ffffff !important; color: #1a1a1a !important; }
+    .page { padding: 10mm 8mm; }
+    h1, h2, h3, b { color: #111111 !important; }
+    h2 { border-left-color: #1a5fb4 !important; }
+    .talk { background: #f2f4f7 !important; border-color: #c9d1d9 !important; color: #333333 !important; }
+    .check { background: #eef7f0 !important; border-color: #9fd4ae !important; color: #222222 !important; }
+    .try { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .box { background: #f3effc !important; border-color: #b6a8d4 !important; color: #222222 !important; }
+    .note-red { background: #fdf2f4 !important; border-left-color: #d46a7a !important; color: #333333 !important; }
+    .note-yellow { background: #fdf8e3 !important; color: #222222 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+    .uline { border-bottom-color: #1a5fb4 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>地理2.2 风成地貌 · 零基础首学版</h1>
+<div class="sub">湘教版《高中地理·必修第一册》第二章 第二节（教材p52-58）· 零基础首学版 · 读完约35分钟</div>
+
+<div class="talk"><b>先看一个怪现象：</b>打开黄土高原的地图（教材图2-20），黄土的颗粒<b>自西北向东南越来越细</b>——西北部是粗的"沙黄土带"，中间是"典型黄土带"，东南部是细的"黏黄土带"，像被一只手从西北向东南<b>筛过一遍</b>（图上还能看到腾格里沙漠与毛乌素沙地——半湿润、半干旱地区受自然及人为因素综合影响形成的类似沙漠的景观，教材叫<b>沙地</b>）。是谁在筛？答案：<b>风</b>。这一节就看这位干旱、半干旱地区地表的"雕刻师"，是怎么<b>刻</b>（风蚀）和<b>堆</b>（风积）的。</div>
+
+<div class="check"><span class="tag">读完这节你能</span><br>① 说清风蚀作用的两种方式，报出五种风蚀地貌的名字和长相；<br>② 看图识别新月形沙丘，并用<b>两翼指向</b>判断当时的主导风向；<br>③ 说清风沙活动怎么害人、防沙"四件套"各干什么活；<br>④ 记住两组数据（草方格寿命、青藏铁路沙害段），会用"风成地貌不只长在干旱区"纠正一个常见误解。</div>
+
+<p class="small"><b>本件位置：</b>第二章"地球表面形态"三种雕刻师之第二棒。<u class="uline">没读过2.1？不影响</u>——只需要一条常识：水往低处流，风往"空"处跑；本节的剧本和2.1一样是"侵蚀+堆积"，只是主角从水换成了风。</p>
+
+<h2><span class="step-tag">预备步</span>30秒分清两种"破坏"：吹蚀和磨蚀</h2>
+
+<p>教材p52-53原话：<mark>地面物质在风力作用下脱离原地，称为风蚀作用</mark>。它分两招：<mark>吹蚀作用</mark>——风直接<b>带走</b>地表的细颗粒（吹走沙尘，像吸尘器）；<mark>磨蚀作用</mark>——风<b>挟带着沙粒</b>吹过地面物体时，风中运动的沙粒对经过的物体进行<b>打磨</b>（像砂纸，风是纸、沙是砂粒）。记住一个关键：干磨蚀的"工具"是<b>贴着地面跑的沙粒</b>——所以近地面那一层磨得最狠。这个细节马上要用来解释风蚀蘑菇。</p>
+
+<h2><span class="step-tag">第一步</span>风蚀地貌——被砂纸磨出来的五件套</h2>
+
+<p>由风蚀作用形成的地表形态，叫作风蚀地貌。被风长期吹蚀的岩石或土体，呈现出千姿百态的形态（教材p53），主要有五种：</p>
+
+<div class="key"><span class="tag">五件套 · 一句话认脸</span><br>① <b>风蚀蘑菇</b>——上宽大、下狭小，像个蘑菇；② <b>风蚀壁龛</b>——陡峭岩壁上大小不等、形状各异的凹坑，呈<b>蜂窝状</b>；③ <b>风蚀柱</b>——垂直裂隙发育的岩石或土体被磨成形态各异的石柱或土柱；④ <b>风蚀残丘</b>、⑤ <b>风蚀沟槽</b>——成片的风蚀台地和相间的沟槽（两者组合起来就是雅丹，见下）。（图2-21/2-22/2-23）</div>
+
+<div class="try"><span class="tag">试试看 ①</span>（自编·抓原理）风蚀蘑菇为什么<b>上宽大、下狭小</b>？提示：想想预备步里"砂纸"贴着哪里跑。
+<p><span class="ans">因为<b>含沙的气流主要在近地面活动</b>，磨蚀作用集中在<b>下部</b>——尤其中下部磨得最快，于是岩柱下部越来越细、上部相对保留得多，最后成"头大脚细"的蘑菇形。易错提醒：不是因为"上面的岩石更硬"——主因是<b>磨蚀强度上弱下强</b>（裂隙发育的不太坚实的岩石更容易被雕成蘑菇）。</span></p></div>
+
+<div class="fig">
+<svg viewBox="0 0 740 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="风蚀蘑菇成型四阶段示意">
+  <text x="370" y="22" fill="#b0bcc8" font-size="14" font-weight="bold" text-anchor="middle">风蚀蘑菇成型：砂纸只够得着"脚"（柄宽变化python换算）</text>
+  <g stroke-width="2" fill="none">
+    <path d="M40,200 Q40,120 60,100 Q105,78 150,100 Q170,120 170,200" stroke="#c98d5a"/>
+    <path d="M240,200 Q245,130 258,112 Q295,92 332,112 Q345,130 350,200" stroke="#c98d5a"/>
+    <path d="M440,200 Q448,140 462,124 Q495,108 528,124 Q542,140 550,200" stroke="#c98d5a"/>
+    <path d="M610,200 Q618,150 638,138 Q665,126 692,138 Q712,150 720,200" stroke="#c98d5a"/>
+  </g>
+  <rect x="20" y="200" width="710" height="8" fill="#8a6a42" opacity="0.6"/>
+  <text x="105" y="228" fill="#8fa3b8" font-size="12" text-anchor="middle">①岩柱</text>
+  <text x="295" y="228" fill="#8fa3b8" font-size="12" text-anchor="middle">②下部渐细</text>
+  <text x="495" y="228" fill="#8fa3b8" font-size="12" text-anchor="middle">③蘑菇初成</text>
+  <text x="665" y="228" fill="#8fa3b8" font-size="12" text-anchor="middle">④头大脚细</text>
+  <text x="370" y="60" fill="#7d8a99" font-size="12" text-anchor="middle">这张图在说什么：风+沙的"砂纸"只在近地面打磨——柄越磨越细，盖相对保留，蘑菇就出来了。</text>
+</svg>
+</div>
+
+<div class="talk"><b>雅丹地貌（教材p54"阅读"）：</b>"雅丹"来自维吾尔语"雅尔当"，原意是<b>"陡壁的小丘"</b>，现在泛指干旱地区的一种风蚀地貌——土状堆积物组成的地面，经<b>风化、流水冲刷和风蚀</b>等作用，形成<b>相间排列</b>的风蚀柱、风蚀残丘和风蚀沟槽的地貌组合。它最初命名于我国<b>新疆罗布泊</b>地区；有些外观如同古城堡，俗称<b>"魔鬼城"</b>（图2-24）。——注意"流水冲刷"也在功劳簿上：干旱区的雅丹常是风、水接力雕出来的。</div>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材p54活动·<b>柴达木盆地边缘的戈壁</b>：柴达木位于青藏高原、阿尔金山脉/祁连山脉/昆仑山脉之间，属高山高原气候，以干旱为主要特点，<b>年降水量在200毫米以下</b>，大风日数多、春季尤其频繁。盆地与昆仑山过渡地带，河流和洪水先把碎屑物堆成<b>冲积扇和洪积扇</b>（2.1的存货！），<b>大风再把扇面细颗粒吹走，留下粗大砾石覆盖地面——戈壁</b>（图2-25）。活动两问：边缘为何多戈壁（山前扇体+大风分选）/盆地中还可能出现哪些风蚀地貌（蘑菇、壁龛、雅丹等）。跳过不影响主干。</div>
+<h2><span class="step-tag">第二步</span>风积地貌——新月形沙丘，会"指路"的沙堆</h2>
+
+<p>风中挟带的沙粒，在<b>风速降低</b>时沉降在地面所形成的各种地表形态，就是风积地貌（教材p55）。风积地貌主要以各种形式的沙丘呈现，其中<b>新月形沙丘是基本形态</b>——因平面形态如一弯新月而得名。</p>
+
+<div class="key"><span class="tag">新月形沙丘 · 三个部件+一个方向</span>（图2-26原文）<br>① <b>迎风坡</b>：坡形<b>微凸而平缓</b>（风从这边推沙上来）；② <b>背风坡</b>：坡形<b>下凹、坡度较陡</b>（沙从脊上滑落）；③ <b>两翼</b>：两侧近似对称的两个尖角。<mark>两翼延伸方向指向下风向</mark>——所以<b>看两翼反着指，就是来风的方向</b>；背风坡在哪侧，风就从对面来。</div>
+
+<div class="fig">
+<svg viewBox="0 0 740 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="新月形沙丘剖面：迎风坡缓凸背风坡陡凹">
+  <text x="370" y="22" fill="#b0bcc8" font-size="14" font-weight="bold" text-anchor="middle">新月形沙丘剖面（迎风坡凸缓/背风坡凹陡·坐标python换算）</text>
+  <line x1="40" y1="195" x2="700" y2="195" stroke="#7d8a99" stroke-width="1.5"/>
+  <polygon points="60,195 100,110 120,95 145,88 170,84 195,80 210,80 235,95 255,120 275,150 295,175 315,192 320,195" fill="#c9a15a" opacity="0.85"/>
+  <path d="M60,190 Q100,105 205,80 M205,80 Q240,100 260,135 Q285,165 315,190" fill="none" stroke="#e8d49a" stroke-width="2.5"/>
+  <line x1="120" y1="60" x2="180" y2="74" stroke="#7ec8ff" stroke-width="3" marker-end="url(#windA)"/>
+  <line x1="70" y1="48" x2="140" y2="62" stroke="#7ec8ff" stroke-width="3" marker-end="url(#windA)"/>
+  <defs><marker id="windA" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 Z" fill="#7ec8ff"/></marker></defs>
+  <text x="95" y="40" fill="#7ec8ff" font-size="13" text-anchor="middle">风向</text>
+  <text x="140" y="228" fill="#a8d8b0" font-size="13" text-anchor="middle">迎风坡：缓、凸</text>
+  <text x="272" y="228" fill="#f0b8b8" font-size="13" text-anchor="middle">背风坡：陡、凹</text>
+  <text x="370" y="248" fill="#7d8a99" font-size="11" text-anchor="middle">这张图在说什么：风把沙一路推上缓坡，过了脊"撒手"，沙滑落成陡坡——坡陡的一侧背风，两翼指着风的去向。</text>
+</svg>
+</div>
+
+<div class="try"><span class="tag">试试看 ②</span>（教材p55图2-26注改造）野外见到一弯新月形沙丘：两翼指向东南。判断当地当时的<b>主导风向</b>，并说依据。
+<p><span class="ans">风从<b>西北</b>吹向<b>东南</b>（主导风向=西北风）。依据：图2-26注原文——<b>两翼延伸方向指向下风向</b>；两翼指东南=下风向在东南=风从西北来。再交叉验证：缓坡（迎风坡）朝西北、陡坡（背风坡）朝东南，同样指向西北风。</span></p></div>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材p55"阅读"·<b>沙丘家族</b>：沙丘=风力作用下沙粒堆积而成的丘状或垄状地貌；受风力大小、地表形态变化以及植被、沙源等条件影响，形态多种多样。自然界中<b>单独的新月形沙丘并不多见</b>，其他形态的沙丘基本上都可以看成新月形沙丘的<b>变形</b>：新月形沙丘链（新月形连成一排）、沙垄（拉成长条）、格状沙丘（网格状）、金字塔形沙丘（多向风造出的尖塔）（图2-27）。p56活动还给了<b>灌丛沙丘</b>——风沙流通过灌丛植物时，大量沙粒堆积在植物根部附近而成；<b>绿洲边缘或草地中出现灌丛沙丘，表明这些地方发生了土地退化</b>（对话原文），所以它多出现在绿洲边缘。跳过不影响主干。</div>
+
+<h2><span class="step-tag">第三步</span>风沙活动的危害与防治——"四件套"怎么干活</h2>
+
+<p>教材p56原话：<mark>风沙在运动过程中，往往破坏建筑物，降低土壤肥力，掩埋房屋、农田、道路等</mark>，使当地人民正常的生产生活受到影响，严重时还会造成生命财产的损失。因此必须采取针对性的防沙措施。</p>
+
+<div class="key"><span class="tag">防沙的总原理 + 四件套</span><br><b>总原理</b>（一句话）：通过<u class="uline">设置障蔽或植树种草来增大地面的粗糙度，以降低风速</u>，削弱风沙的破坏作用，从而达到<b>阻沙和固沙</b>的目的。<br><b>四件套</b>：<b>草方格</b>（麦草扎进沙里的矮草沙障·图2-29包兰铁路沙坡头段）、<b>石方格</b>（石头摆的方格·图2-31）、<b>高立式沙障</b>（立起来的高栅栏·图2-32）、<b>防护林带</b>（种树挡风·图2-30）。</div>
+
+<div class="note-red">保命题·草方格怎么扎（图2-29图注原文）：将麦草呈方格状铺在沙上→用工具<b>轧进沙中</b>→留麦草的<b>三分之一到一半竖立</b>在四边→把方格中心的沙子拨向四周麦草根部，使麦草牢牢竖立，形成<b>矮草沙障</b>。考试考工艺顺序时按"铺→轧→留→拨"四步写全。</div>
+
+<div class="try"><span class="tag">试试看 ③</span>（自编·抓原理）风沙流集中在近地面<b>20~30厘米</b>高度内（教材p57青藏铁路材料），为什么矮矮的草方格能拦住大半流沙？
+<p><span class="ans">因为<b>流沙贴地跑</b>——携沙气流集中在近地面20~30厘米这一薄层；草方格露出地面十几厘米，正好横在这一层的必经之路上，同时增大了地面粗糙度、降低近地面风速，沙就地沉积。所以"矮"不是缺点，<b>恰好够用</b>；高立式沙障和防护林则是负责更高的风沙流和更远的屏障。</span></p></div>
+
+<div class="alt"><b>想多走一步？（可选）</b>教材p57"阅读"·<b>防护林防沙</b>：草方格防沙效果较好，但<b>每隔3~5年就要重新铺设</b>（麦草会朽）；防护林有更好的固沙和阻沙效果——<b>穿越塔克拉玛干沙漠的石油公路</b>要经过<b>400多千米</b>流沙区，公路两厢防护林带<b>宽度30~50米</b>，栽种<b>梭梭、沙拐枣、红柳</b>等耐旱树种，用<b>滴灌技术</b>灌溉，长势良好（图2-30）。p57活动·<b>青藏铁路</b>：2006年通车，格拉段全长<b>1142千米</b>，世界平均海拔最高铁路；沙害路段<b>200余千米</b>、其中严重沙害<b>43千米</b>（主要在沱沱河、错那湖等沙源丰富路段），冬春季风力强劲、年平均大风（≥8级）日数多，采用了<b>石方格、高立式沙障</b>等工程措施。p58活动·<b>决口扇与豫东沙地</b>：河堤被洪水冲垮，河流沿决口改道，形成大范围<b>决口扇</b>（河流泥沙在决口处堆积的扇状地貌，以粉沙为主）；洪水退后，扇上沙粒被风吹扬，形成<b>风成沙丘和沙地</b>——我国<b>豫东地区</b>就有大面积沙地沙丘。教材对话喊出本节最重要的一句纠偏：<b>"我还以为风成地貌仅仅分布在干旱、半干旱地区，原来不是这么一回事！"</b>——湿润区只要<b>有沙源+有风</b>（比如黄河决口留下粉沙），也能长出沙丘。跳过不影响主干。
+</div>
+<h2><span class="step-tag">串场</span>风的"工作日志"一句话复盘</h2>
+<p>风在干旱半干旱区当"雕刻师"：<b>上风头吹蚀</b>——吹走细颗粒留下粗砾（戈壁）、把岩石磨成蘑菇壁龛柱（雅丹=柱+丘+槽的相间组合）；<b>下风头堆积</b>——风速一降沙就落，堆成以新月形沙丘为基本形态的各式沙丘（两翼指着风的方向）；<b>人类防它</b>——总原则"增大粗糙度、降低风速"，四件套分工：草方格/石方格固沙于贴地层，高立式沙障挡高风沙流，防护林带做长线屏障。回头看开头的黄土三带：风从西北搬来黄土，粗颗粒先落（沙黄土带）、细颗粒飘得远（黏黄土带）——<b>风还是那位分选师</b>，这节的地貌全是它"刻与堆"的流水账（不是流水，是风的账）。</p>
+
+<div class="key"><span class="tag">收口 · 合上页能复述的三句话</span><br>① 风蚀=吹蚀（吹走）+磨蚀（沙打磨），五件套：蘑菇/壁龛/柱/残丘/沟槽，雅丹=它们相间排列的组合。<br>② 风积=风速降低沙沉降，基本形态是<b>新月形沙丘</b>：迎风坡缓凸、背风坡陡凹、<b>两翼指向下风向</b>。<br>③ 防沙总原理=增大地面粗糙度降低风速（阻沙+固沙），四件套=草方格/石方格/高立式沙障/防护林带；风成地貌<b>不只</b>在干旱区（豫东决口扇沙地）。</div>
+
+<h2><span class="step-tag">自测</span>五连——合上页做，再回来对答案</h2>
+
+<div class="try"><span class="tag">自测①</span>风蚀作用的两种方式分别是什么？五种风蚀地貌一口气报出来。
+<p class="ans">吹蚀作用（风直接带走细颗粒，造成地面破坏）+磨蚀作用（挟沙风吹过物体时沙粒打磨）；五件套：风蚀蘑菇、风蚀壁龛、风蚀柱、风蚀残丘、风蚀沟槽。</p></div>
+
+<div class="try"><span class="tag">自测②</span>风蚀蘑菇"头大脚细"的主要原因是什么？
+<p class="ans">含沙气流集中在近地面，<b>磨蚀作用下强上弱</b>（多发生在1米以下高度），下部岩石被磨掉得多，久而久之呈上部宽大、下部狭小的蘑菇状——与"上硬下软"无关。</p></div>
+
+<div class="try"><span class="tag">自测③</span>描述新月形沙丘的形态特点，并说明野外怎么用它判断主导风向。
+<p class="ans">形态（p55原文）：迎风坡坡形<b>微凸而平缓</b>，背风坡坡形<b>下凹、坡度较陡</b>，两侧有近似对称的两个尖角=两翼。判断：两翼延伸方向<b>指向下风向</b>——两翼指向哪侧，风就吹向哪侧；坡缓一侧迎风、坡陡一侧背风，可交叉验证。</p></div>
+
+<div class="try"><span class="tag">自测④</span>风沙活动有哪些危害？防治措施"四件套"是哪些？共同原理一句话？
+<p class="ans">危害：破坏建筑物、降低土壤肥力、掩埋房屋/农田/道路，严重时造成生命财产损失。四件套：草方格、石方格、高立式沙障、防护林带。原理：通过设置障蔽或植树种草<b>增大地面粗糙度、降低风速</b>，达到阻沙和固沙目的。</p></div>
+
+<div class="try"><span class="tag">自测⑤</span>"风成地貌只分布在干旱、半干旱地区"——对吗？举教材案例。
+<p class="ans">不对。湿润半湿润区只要有<b>沙源+风力</b>也能形成：我国<b>豫东地区</b>的大面积沙地沙丘，源于黄河决口形成的<b>决口扇</b>（粉沙为主）被洪水退后的大风吹扬而成（p58活动2）；另外半湿润半干旱区受自然及人为因素综合影响形成类似沙漠的景观叫<b>沙地</b>（如毛乌素沙地，p52对话）。</p></div>
+
+<p class="small"><b>练什么题：</b>教材p54活动（柴达木盆地边缘为何多戈壁+推测盆地中可能的风蚀地貌）+p56活动（描述新月形沙丘形态特点并说明如何判断主导风向；灌丛沙丘的环境特点与"为何多在绿洲边缘"——答"绿洲边缘植被相对多，风沙流受灌丛阻滞、沙粒在根部堆积；灌丛沙丘出现=土地退化信号"）+p57-58活动（青藏铁路：风沙危害+石方格与高立式沙障各起什么作用——石方格固沙贴地层/高立式沙障拦更高风沙流；豫东决口扇沙地成因与治理建议）。</p>
+
+<div class="box"><span class="tag">高考怎么考</span>本节两大考向：①<b>形态判读与风向判断</b>——给沙丘图判迎/背风坡、两翼定风向，给风蚀景观图辨蘑菇/雅丹（对应自测②③与"沙丘剖面""蘑菇成型"两图）；②<b>防沙措施与原理</b>——草方格四步工艺、四件套分工、总原理一句话（对应自测④与"练什么题"青藏铁路材料）。具体真题锚候采不代拟（本件未取得卷源）。</div>
+
+<h2><span class="step-tag">下一站</span></h2>
+
+<p>风刻完了干旱区，第三棒回到"水"——但换了三种形态：<b>2.3 喀斯特、海岸和冰川地貌</b>（教材p59节题页起）：溶蚀的水雕出石林溶洞，拍岸的浪磨出海滩海崖，冰封的冰川刨出U形谷角峰。三种"水"各有一套侵蚀+堆积的剧本——延续本节"先认工具、再认作品"的读法即可。</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第二章地球表面形态模块中，2.2风成地貌所处位置">
+  <defs><marker id="arrC" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4a9eff"/></marker></defs>
+  <rect x="18" y="40" width="130" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="83" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">1.4 地球的演化</text>
+  <rect x="168" y="40" width="140" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="238" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">2.1 流水地貌</text>
+  <rect x="328" y="40" width="140" height="40" rx="6" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <text x="398" y="58" fill="#e8ecf2" font-size="14" font-weight="bold" text-anchor="middle">2.2 风成地貌</text>
+  <text x="398" y="74" fill="#8fd4ff" font-size="11" text-anchor="middle">（本件）</text>
+  <rect x="488" y="40" width="170" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="573" y="64" fill="#8fa3b8" font-size="12" text-anchor="middle">2.3 喀斯特·海岸·冰川</text>
+  <line x1="148" y1="60" x2="164" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <line x1="308" y1="60" x2="324" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <line x1="468" y1="60" x2="484" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <text x="370" y="108" fill="#5a6a7a" font-size="11" text-anchor="middle">这张图在说什么：第二章三种雕刻师接力——本件是第二棒，把"干旱区的风"讲完后，第三棒回到"水"的三种形态。</text>
+</svg>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2产出）· 事实层素材源：湘教版《普通高中教科书·地理 必修 第一册》p52-58 官方影印逐页对照（湖南教育出版社·智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a·ts=1754905526079（详情API实时重取）·影印图存席位私有目录 geo22_jc/gNN.jpg·图号→印刷页 N−6 映射·节界实锚：p52第二节节题页至p58活动2末页·p59=第三节"喀斯特、海岸和冰川地貌"节题页（下一节界标亲验）·p52-58直读锚定：探究黄土三带与图2-20与沙地对话p52/风蚀作用吹蚀磨蚀与风蚀五形态与图2-21/22/23p53/雅丹地貌阅读与图2-24与柴达木戈壁活动与图2-25p54/风积地貌与新月形沙丘与图2-26与沙丘阅读与图2-27p55/活动沙丘判风向与灌丛沙丘与图2-28与风沙危害与防治措施与图2-29草方格p56/防护林防沙阅读与图2-30与青藏铁路活动p57/图2-31石方格图2-32高立式沙障与决口扇豫东活动p58）<br>
+出品席：并行搜索员C（队7席）· 设计标准：零预设 · 一次一步 · 随读随验×3+自测×5 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源 · 数值程序代验留痕（geo22_calc.py输出已存档） · 图示必配（沙丘剖面与蘑菇轮廓坐标python精确换算） · 环境坑实录：首写平台压缩截断正文丢失→unlink+四段heredoc重建三连复验（承队6化学1.2同坑先例）
+</div>
+
+</div>
+</body>
+</html>

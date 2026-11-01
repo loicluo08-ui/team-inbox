@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物2.2 细胞中的无机物 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: 2px; }
+  .talk { background: #1c2129; border: 1px solid #2c3542; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .talk .src { color: #7d8a99; font-size: 13px; margin-top: 8px; }
+  .try { background: #16231c; border: 1px solid #2a4a35; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .try .t { color: #6fd68f; font-weight: bold; }
+  .pit { background: #291818; border: 1px solid #5c3030; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .pit .t { color: #ef7d7d; font-weight: bold; }
+  .alt { background: #26211a; border: 1px solid #5a4a2a; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .alt .t { color: #e8b64c; font-weight: bold; }
+  .key { background: #232a36; border-left: 4px solid #4a9eff; border-radius: 6px; padding: 14px 16px; margin: 16px 0; }
+  .m { color: #4a9eff; }
+  .big { font-size: 19px; color: #f0f3f7; font-weight: bold; }
+  .detail { color: #93a1b3; font-size: 15px; }
+  .small { color: #7d8a99; font-size: 13.5px; }
+  .wrong { color: #ef7d7d; text-decoration: line-through; }
+  .fig { background: #171b22; border: 1px solid #262e3a; border-radius: 10px; padding: 14px; margin: 18px 0; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 10px; }
+  mark.nb { background: linear-gradient(180deg, transparent 55%, #ffe24d 55%); color: inherit; padding: 0 2px; }
+  .ul-blue { text-decoration: underline; text-decoration-color: #3f7fd6; text-decoration-thickness: 2.5px; text-underline-offset: 5px; }
+  .note-red { font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; color: #ff9b9b; font-size: 14.5px; }
+  .check { background: #1a2330; border: 1px solid #2f4258; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .check .t { color: #8fc6ff; font-weight: bold; }
+  .box { background: #20242c; border: 1px dashed #4a5a70; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  table.tt { border-collapse: collapse; margin: 14px 0; width: 100%; font-size: 15px; }
+  table.tt th { background: #1f2937; color: #cfe0f5; padding: 7px 9px; border: 1px solid #3a4658; text-align: left; }
+  table.tt td { padding: 6px 9px; border: 1px solid #2e3949; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 0; max-width: none; }
+    .talk, .try, .pit, .fig, .check, .box, .alt { background: #fafafa; border-color: #bbb; }
+    h1, h2, h3, .big, .step-tag .t { color: #000; }
+    .talk .src, .small, .figcap, .detail, .sub { color: #444; }
+    .key { background: #eef4ff; border-left-color: #2465b8; }
+    mark.nb { color: #000; }
+    .note-red { color: #c03434; }
+    .step-tag { background: #2465b8; color: #fff; }
+    .try .t { color: #1c6b3a; }
+    .pit .t { color: #b02a2a; }
+    .alt .t { color: #9a7a1c; }
+    table.tt th { background: #e8eef6; color: #000; }
+  }
+  .foot { margin-top: 60px; padding-top: 18px; border-top: 1px solid #2a3140; color: #64748b; font-size: 12.5px; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>细胞这块"湿地"里，水凭什么占九成？</h1>
+<div class="sub">生物必修一（人教2019）· 第2章组成细胞的分子 · 第2节 细胞中的无机物 · 零基础首学版 v1.0 · 前置只有一课——2.1说过"细胞由元素和化合物组成"，没读过也不怕，这句话够用。配套教材：p20-22（对照教材影印逐页写成，原文引用都标了页码；p19=上一节练习页、p23=下一节题页已实锚）。</div>
+
+<h2><span class="step-tag">预备</span>读完这节你能</h2>
+<div class="check">
+<p><b>①</b> <b>说出</b>水在细胞里的含量地位和四大作用，并举出至少两个生活例子。</p>
+<p><b>②</b> <b>解释</b>水为什么是"好溶剂"——用"极性分子"四个字讲给爸妈听。</p>
+<p><b>③</b> <b>区分</b>自由水和结合水，并用它们的比值判断"代谢旺"还是"抗逆强"。</p>
+<p><b>④</b> <b>配对</b>常见离子与它的"岗位"：Mg→叶绿素、Fe→血红素、Ca²⁺→抽搐、Na⁺→肌肉无力。</p>
+</div>
+
+<div class="talk"><p>教材p20"本节聚焦"两问（原题照录）：①水在细胞中以什么形式存在？具有哪些重要作用？②为什么细胞中的无机盐含量很少，作用却很重要？——这两问就是本节的路线图：第一、二、三步答①，第四步答②。</p><p class="src">——p20栏目原文（照录）</p></div>
+
+<div class="key"><span class="big">30秒立好地基</span>（初中都有，对个账）<br>
+<span class="detail">✔ 溶液＝溶质＋溶剂（初中化学）；✔ 百分比浓度；✔ 蒸发晒干会跑掉的是"水"。本节新词就地解释：<b>鲜重</b>＝细胞活着时的总质量（水都不挤掉）；<b>比热容</b>＝物质"升温费劲程度"的指标，比热容大＝温度不容易变；<b>极性分子</b>＝一头略带负电、一头略带正电的分子（像小磁铁）；<b>离子</b>＝带电的原子或原子团（右上角写电荷）。</span></div>
+
+<h2><span class="step-tag">第一步</span>先看总量：水是活细胞里的"含量冠军"</h2>
+<p>生命从水里来——教材p20原话：地球上最早的生命孕育在海洋中，生命从一开始就离不开水。今天也一样：每当你感到渴，你都能体会到生命对水的依赖。生物体的含水量<b>随种类不同</b>有所差别，<mark class="nb">一般为60%~95%，水母的含水量达到97%</mark>。所以教材给水两个头衔：<span class="ul-blue">水是构成细胞的重要成分，也是活细胞中含量最多的化合物</span>（p20原句）。</p>
+
+<div class="fig">
+<svg viewBox="0 0 970 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="不同生物含水量对比示意">
+  <rect x="0" y="0" width="970" height="300" fill="#171b22"/>
+  <text x="485" y="30" fill="#cfe0f5" font-size="17" text-anchor="middle" font-weight="bold">几类生物（或生物体）的含水量（教材p20口径·区间示意重绘）</text>
+  <g font-size="14" fill="#d8dee6">
+    <text x="150" y="75" text-anchor="middle">水母</text><rect x="230" y="60" width="680" height="22" fill="#4a9eff"/><text x="920" y="77" fill="#8fc6ff">97%</text>
+    <text x="150" y="115" text-anchor="middle">一般区间上限</text><rect x="230" y="100" width="665" height="22" fill="#3f7fd6"/><text x="905" y="117" fill="#8fc6ff">95%</text>
+    <text x="150" y="155" text-anchor="middle">一般区间下限</text><rect x="230" y="140" width="420" height="22" fill="#3f7fd6"/><text x="660" y="157" fill="#8fc6ff">60%</text>
+  </g>
+  <text x="485" y="255" fill="#5c6b80" font-size="13" text-anchor="middle">横条＝含水质量占比（自编示意·非精确比例）；97%与60%~95%两数照录p20。</text>
+</svg>
+<p class="figcap">这张图在说什么：含水量差距巨大但都"以水为主"——记住两个数就够：一般60%~95%、水母97%。条形为自编示意图（已标"示意"），不是教材原图。</p>
+</div>
+
+<h3>教材p20"问题探讨"：一瓶运动员饮料（原题照录+试答）</h3>
+<p>教材右侧给了一张<b>运动员饮料的化学成分表</b>（质量浓度单位 g·L⁻¹），讨论两问。表格九行数值照录如下：</p>
+<table class="tt">
+<tr><th>成分</th><th>质量浓度/(g·L⁻¹)</th><th>属于哪类</th></tr>
+<tr><td>蔗糖</td><td>30</td><td>糖类（有机物）</td></tr>
+<tr><td>其他糖类</td><td>10</td><td>糖类（有机物）</td></tr>
+<tr><td>柠檬酸</td><td>10</td><td>有机物</td></tr>
+<tr><td>柠檬香精</td><td>0.8</td><td>有机物</td></tr>
+<tr><td>氯化钠</td><td>1.0</td><td><b>无机盐</b></td></tr>
+<tr><td>氯化钾</td><td>0.1</td><td><b>无机盐</b></td></tr>
+<tr><td>磷酸二氢钠</td><td>0.1</td><td><b>无机盐</b></td></tr>
+<tr><td>磷酸二氢钾</td><td>0.1</td><td><b>无机盐</b></td></tr>
+<tr><td>碳酸氢钠</td><td>0.1</td><td><b>无机盐</b></td></tr>
+</table>
+<div class="box"><b>讨论两问（p20原题）+参考讨论（本件试答·教材不印标准答案）</b><br>
+<b>问1</b> 水在细胞中起什么作用？——答：本节主线问题，四步讲完，先记一句：水既是<b>最好的溶剂</b>，又是<b>反应的参与者</b>和<b>运输的工具</b>。<br>
+<b>问2</b> 表中哪些成分属于无机盐？为什么要添加？——答：五种氯化物/磷酸盐/碳酸氢盐（上表已标）都是无机盐。运动员大量出汗，汗液带走了水和无机盐，只补水不补盐会"越喝越渴"、肌肉没劲——这就引出本节第二主角：无机盐（第四步细讲）。</div>
+
+<div class="try"><span class="t">验一验①（先答，再看答案）</span><br>
+<b>1.</b> 活细胞中含量最多的化合物是____。<br>
+<b>2.</b> 判断：含水量97%的水母，几乎"浑身是水"，所以水母体内没有别的化合物了。（　）<br>
+<span class="detail"><b>答案</b>：1. 水（教材p20原句："也是活细胞中含量最多的化合物"）。2. <span class="wrong">错</span>——97%说明还有约3%的其他物质，而且正是这些物质（糖类、蛋白质、无机盐等）配合着水一起构成生命；"含量最多"≠"含量唯一"。</span><br>
+<span class="pit" style="margin-top:10px"><span class="t">易错变形</span>：把"活细胞中含量最多的化合物是水"说成"细胞中含量最多的元素是氧"就换赛道了——那是2.1的干重口径（元素≠化合物）。两个"最多"：元素层面看干重C最多、化合物层面看鲜重水最多，别混。</span></div>
+
+<h2><span class="step-tag">第二步</span>水为什么是好溶剂？——分子结构说了算</h2>
+<p>教材p20连问两个"为什么"：水为什么能成为细胞内良好的溶剂？它又为什么具有支持生命的独特性质？答：这是由它的<span class="ul-blue">分子结构</span>决定的（p20原句）。拆开看三小步：</p>
+<p><b>小步1·怎么连：</b>水分子由<span class="m">2个氢原子和1个氧原子</span>构成，氢原子以<span class="m">共用电子对</span>与氧原子结合（p20）。</p>
+<p><b>小步2·为什么不公平：</b>氧吸引共用电子的能力比氢强，共用电子对偏向氧这边——于是<span class="m">氧的一端稍带负电荷，氢的一端稍带正电荷</span>（p20）。水分子的空间结构加上电子的不对称分布，使水分子成为一个<b>极性分子</b>。</p>
+<p><b>小步3·所以能拉朋友：</b>带有正电荷或负电荷的分子（或离子）都容易与水结合——<mark class="nb">因此，水是良好的溶剂</mark>（p20-21原句）。这就是"相似相容"的初中升级版：带电的"糖、盐、氨基酸"都能被水分子围住抱走。</p>
+
+<div class="fig">
+<svg viewBox="0 0 970 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="水分子极性与氢键示意（重绘）">
+  <rect x="0" y="0" width="970" height="330" fill="#171b22"/>
+  <text x="485" y="28" fill="#cfe0f5" font-size="16" text-anchor="middle" font-weight="bold">一个水分子的"电荷地图"＋两个水分子之间的"握手"（自绘示意）</text>
+  <g>
+    <circle cx="380" cy="130" r="52" fill="#c0392b"/><text x="380" y="138" fill="#fff" font-size="18" text-anchor="middle" font-weight="bold">O</text>
+    <circle cx="318" cy="72" r="30" fill="#ecf0f1"/><text x="318" y="79" fill="#111" font-size="15" text-anchor="middle" font-weight="bold">H</text>
+    <circle cx="442" cy="72" r="30" fill="#ecf0f1"/><text x="442" y="79" fill="#111" font-size="15" text-anchor="middle" font-weight="bold">H</text>
+    <text x="278" y="46" fill="#8fc6ff" font-size="14">δ＋（略带正电）</text>
+    <text x="470" y="46" fill="#8fc6ff" font-size="14">δ＋（略带正电）</text>
+    <text x="440" y="185" fill="#ff9b9b" font-size="14">δ−（略带负电）</text>
+    <text x="380" y="215" fill="#7d8a99" font-size="13" text-anchor="middle">共用电子对偏向氧→电荷分布不对称→极性分子</text>
+  </g>
+  <g>
+    <circle cx="700" cy="150" r="44" fill="#c0392b"/><text x="700" y="157" fill="#fff" font-size="16" text-anchor="middle" font-weight="bold">O</text>
+    <circle cx="752" cy="112" r="24" fill="#ecf0f1"/><text x="752" y="118" fill="#111" font-size="13" text-anchor="middle" font-weight="bold">H</text>
+    <circle cx="700" cy="252" r="44" fill="#c0392b"/><text x="700" y="259" fill="#fff" font-size="16" text-anchor="middle" font-weight="bold">O</text>
+    <circle cx="748" cy="228" r="24" fill="#ecf0f1"/><text x="748" y="234" fill="#111" font-size="13" text-anchor="middle" font-weight="bold">H</text>
+    <line x1="722" y1="204" x2="712" y2="196" stroke="#e8b64c" stroke-width="2" stroke-dasharray="5,4"/>
+    <text x="770" y="185" fill="#e8b64c" font-size="14">氢键（虚线）</text>
+    <text x="620" y="310" fill="#7d8a99" font-size="13" text-anchor="middle">一个水分子的氧端（负）靠近另一个的氢端（正）→静电吸引＝氢键</text>
+  </g>
+  <text x="485" y="322" fill="#5c6b80" font-size="12.5" text-anchor="middle">示意图为自绘（"示意"标注），结构关系照录教材p20-21文字描述。</text>
+</svg>
+<p class="figcap">这张图在说什么：左边=一个水分子自带"南北极"；右边=两个水分子靠"氢键"轻轻握手。教材p21配图"水分子之间靠氢键结合示意图"的同款逻辑重绘。</p>
+</div>
+
+<h3>氢键：水的"性格"从哪来（p21）</h3>
+<p>由于水分子的极性，一个水分子的氧端（负电性区）靠近另一个水分子的氢端（正电性区）时，静电吸引形成一种弱的引力——<span class="ul-blue">氢键</span>（p21定义句照录）。氢键的性格三个字：<b>弱、快、多</b>——比较弱、易被破坏、只能维持极短时间，这样氢键不断地断裂又不断地形成（p21）。结果两条：</p>
+<p>① <mark class="nb">使水在常温下能够维持液体状态，具有流动性</mark>；② <mark class="nb">水具有较高的比热容——温度相对不容易发生改变</mark>，这种特性对维持生命系统的稳定性十分重要（p21原句）。白天湖水温吞、夜里凉得慢，人发烧靠"多喝水"散热缓冲，背后都是这条。</p>
+
+<div class="try"><span class="t">验一验②（先答，再看答案）</span><br>
+<b>1.</b> 水分子中，稍带负电荷的一端是____端，稍带正电荷的是____端。<br>
+<b>2.</b> 判断：氢键很牢固，一旦形成就非常稳定，所以水不容易被烧开。（　）<br>
+<span class="detail"><b>答案</b>：1. 氧（O）端带负电、氢（H）端带正电（p20）。2. <span class="wrong">错</span>——氢键"比较弱、易被破坏、只能维持极短时间"（p21），它是"不断断裂又不断形成"的动态握手，不是牢固的化学键；水比热容大带来的"温度稳定"才是烧不开锅的"慢"。</span><br>
+<span class="pit" style="margin-top:10px"><span class="t">易错变形</span>："水的高比热容意味着水很难升温"只对了一半——完整的说法是"温度<b>相对不容易发生改变</b>"：升温慢，降温也慢。两头的"慢"共同维持生命系统稳定（p21）。</span></div>
+
+<div class="alt"><span class="t">卡住了？（可选出路）</span><br>
+"极性分子"想象不出来的话：把水分子想成一枚<b>小磁铁</b>——红色大头（氧）是S极略带负电，两个白色小球（氢）是N极略带正电。磁铁吸铁钉、水分子"吸"带电的盐粒，一个道理。<br>
+"氢键"听着像化学键吓人的话：把它降级理解成<b>分子之间的微弱握手</b>——握手松、松得快、但排队握手的分子特别多，群体效果就大（液态+比热容高）。想更深一步：化学里"氢键"的正式讲解在化学教科书，教材p20"学科交叉"栏就是这么指路的（照录）。</div>
+
+<h2><span class="step-tag">第三步</span>一滴水的两种"身份证"：自由水与结合水</h2>
+<p>本节聚焦第①问"水以什么形式存在"，教材p21给的定义句（加粗照录）：<mark class="nb">水在细胞中以两种形式存在，绝大部分的水呈游离状态，可以自由流动，叫作自由水；一部分水与细胞内的其他物质相结合，叫作结合水。</mark></p>
+<div class="key"><span class="big">两种水·一张对账表</span>
+<table class="tt">
+<tr><th>项目</th><th>自由水</th><th>结合水</th></tr>
+<tr><td>存在状态</td><td>游离状态，可以自由流动</td><td>与其他物质相结合</td></tr>
+<tr><td>主要岗位</td><td>细胞内良好的溶剂（还能参与运输）</td><td>细胞结构的重要组成部分（约<b>4.5%</b>）</td></tr>
+<tr><td>和谁结合</td><td>不结合，到处跑</td><td>主要与蛋白质、多糖等物质结合，失去流动性和溶解性</td></tr>
+<tr><td>功能关键词</td><td>溶剂、运输、反应介质</td><td>构造成员（"砖"不是"河"）</td></tr>
+</table>
+<p class="detail">数据照录p21："结合水……大约占细胞内全部水分的4.5%""细胞内结合水的存在形式主要是水与蛋白质、多糖等物质结合"。</p>
+</div>
+<h3>比值是"旋钮"：代谢旺不旺，抗不抗冻，看比例（p21）</h3>
+<p>教材p21原句：<mark class="nb">在正常情况下，细胞内自由水所占的比例越大，细胞的代谢就越旺盛；而结合水越多，细胞抵抗干旱和寒冷等不良环境的能力就越强。</mark>两个教材例子背下来：</p>
+<p><b>例1·晒种子：</b>将种子晒干就是减少了其中<b>自由水</b>的量而使其代谢水平降低，便于储藏（p21）。</p>
+<p><b>例2·冬小麦：</b>北方冬小麦在冬天来临前，自由水的比例会逐渐降低，而结合水的比例会逐渐上升，以避免气温下降时自由水过多导致结冰而损害自身（p21）。</p>
+
+<div class="fig">
+<svg viewBox="0 0 970 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="自由水结合水比值与状态对比示意">
+  <rect x="0" y="0" width="970" height="260" fill="#171b22"/>
+  <text x="485" y="28" fill="#cfe0f5" font-size="16" text-anchor="middle" font-weight="bold">同一个"比值旋钮"拧两头（自编示意·对应p21规律）</text>
+  <g font-size="14">
+    <text x="240" y="70" text-anchor="middle" fill="#6fd68f">拧向"自由水多"</text>
+    <rect x="120" y="90" width="240" height="26" fill="#4a9eff"/><text x="240" y="108" text-anchor="middle" fill="#0b0e13" font-weight="bold">自由水（代谢旺盛）</text>
+    <rect x="120" y="124" width="40" height="26" fill="#e8b64c"/><text x="240" y="142" text-anchor="middle" fill="#d8dee6">结合水少</text>
+    <text x="240" y="180" text-anchor="middle" fill="#8fc6ff">状态：种子萌发、幼苗生长、夏天生长季</text>
+    <text x="730" y="70" text-anchor="middle" fill="#e8b64c">拧向"结合水多"</text>
+    <rect x="610" y="90" width="90" height="26" fill="#4a9eff"/><text x="655" y="108" text-anchor="middle" fill="#d8dee6" font-size="12">自由水少</text>
+    <rect x="710" y="124" width="170" height="26" fill="#e8b64c"/><text x="795" y="142" text-anchor="middle" fill="#0b0e13" font-weight="bold">结合水（抗逆强）</text>
+    <text x="730" y="180" text-anchor="middle" fill="#8fc6ff">状态：晒干储藏、冬小麦越冬</text>
+  </g>
+  <text x="485" y="232" fill="#5c6b80" font-size="13" text-anchor="middle">条块长度为示意（非精确比例）；规律与两例照录p21。</text>
+</svg>
+<p class="figcap">这张图在说什么：自由水/结合水像一根旋钮——拧向左"生长模式"，拧向右"越冬模式"。种子晒干、冬小麦入冬，都是把旋钮向右拧。</p>
+</div>
+
+<div class="try"><span class="t">验一验③（先答，再看答案）</span><br>
+<b>1.</b> 填空：结合水大约占细胞内<b>全部水分</b>的____%；它主要与____、____等物质结合。<br>
+<b>2.</b> 判断：种子的结合水越少，越有利于储藏。（　）<br>
+<span class="detail"><b>答案</b>：1. 4.5%（p21）；蛋白质、多糖（p21）。2. <span class="wrong">错</span>——储藏要减少的是<b>自由水</b>（晒干减少自由水使代谢水平降低，p21原句）；结合水是细胞结构的组成部分，拿掉它结构就坏了。"减少自由水"和"减少总水量"两个动作别偷换成"减少结合水"。</span><br>
+<span class="pit" style="margin-top:10px"><span class="t">易错变形</span>：4.5%的"分母"是什么？是<b>细胞内全部水分</b>（p21），不是细胞鲜重、也不是全部干重——分母换人，数字全错。类似的坑：说"自由水越多越好"也错，正常情况下两种水各有岗位，比值只是随状态移动（越冬期间自由水过多会结冰损害自身，p21）。</span></div>
+
+<h2><span class="step-tag">第四步</span>含量最少的无机盐，凭什么重要？</h2>
+<p>教材p21开场很生活化：<span class="ul-blue">当你点燃一粒小麦种子，待它烧尽时可见到一些灰白色的灰烬，这些灰烬主要是无机盐</span>（p21原句）。人和动物体内也含有无机盐。</p>
+<p><b>存在形式：</b><mark class="nb">细胞中大多数无机盐以离子的形式存在</mark>（p21加粗句照录）——含量较多的阳离子有 <b>Na⁺、K⁺、Ca²⁺、Mg²⁺、Fe²⁺、Fe³⁺</b> 等，阴离子有 <b>Cl⁻、SO₄²⁻、PO₄³⁻、HCO₃⁻</b> 等（p21清单照录）。</p>
+<p><b>含量地位：</b>与水不同，<span class="ul-blue">无机盐是细胞中含量很少的无机物，仅占细胞鲜重的1%~1.5%</span>（p21原句）。但"少"不等于"次要"——往下看它干的三件大事。</p>
+
+<h3>教材p22"思考·讨论"：无机盐的作用（栏目原题照录+试答）</h3>
+<p><b>资料1</b>：教材给出"一种叶绿素分子（局部）"与"血红素分子（局部）"结构简图，中心分别是 <span class="m">Mg</span> 与 <span class="m">Fe</span>（p22图照录口径）。<b>资料2</b>：植物缺乏N、P、K等营养物质时会出现各种症状，例如玉米缺P，植株就会特别矮小，根系发育差，叶片小且呈暗绿偏紫色。</p>
+<div class="box"><b>讨论三问（p22原题）+参考讨论（本件试答）</b><br>
+<b>问1</b> 植物体缺Mg会影响光合作用，为什么？——答：Mg是构成<b>叶绿素</b>的元素（p22原句）；缺Mg叶绿素合成受阻，吸收光能的"天线"少了，光合作用随之减弱。<br>
+<b>问2</b> 为什么缺Fe会导致贫血？——答：Fe是构成<b>血红素</b>的元素（p22原句），血红素是血红蛋白的核心配件；缺Fe则运氧能力下降，即缺铁性贫血症。<br>
+<b>问3</b> 植物体缺P常表现为生长发育不正常，这说明什么？——答：说明无机盐（P）参与构建细胞内的重要物质——P是组成<b>细胞膜、细胞核</b>的重要成分，也是细胞必不可少的许多化合物的成分（p22原句）；缺P则这些"构件"造不出来，生长自然出问题。</div>
+
+<h3>离子的三个"岗位"（p22正文照录归纳）</h3>
+<div class="fig">
+<svg viewBox="0 0 970 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="常见无机盐离子功能定位示意">
+  <rect x="0" y="0" width="970" height="300" fill="#171b22"/>
+  <text x="485" y="28" fill="#cfe0f5" font-size="16" text-anchor="middle" font-weight="bold">离子"岗位卡"（对应关系照录p22·症状为教材原句归纳）</text>
+  <g font-size="13.5">
+    <rect x="30" y="55" width="285" height="100" rx="10" fill="#1c2129" stroke="#2c3542"/>
+    <text x="172" y="82" text-anchor="middle" fill="#8fc6ff" font-weight="bold" font-size="15">岗位一·构件元素</text>
+    <text x="172" y="108" text-anchor="middle">Mg → 叶绿素</text>
+    <text x="172" y="130" text-anchor="middle">Fe → 血红素</text>
+    <text x="172" y="150" text-anchor="middle">P → 细胞膜、细胞核等</text>
+    <rect x="345" y="55" width="285" height="100" rx="10" fill="#1c2129" stroke="#2c3542"/>
+    <text x="487" y="82" text-anchor="middle" fill="#8fc6ff" font-weight="bold" font-size="15">岗位二·维持生命活动</text>
+    <text x="487" y="108" text-anchor="middle">Na⁺缺乏→神经、肌肉细胞兴奋性降低</text>
+    <text x="487" y="130" text-anchor="middle">→肌肉酸痛、无力；大量出汗后应多喝淡盐水</text>
+    <text x="487" y="150" text-anchor="middle">血液Ca²⁺太低→动物出现抽搐等症状</text>
+    <rect x="660" y="55" width="285" height="100" rx="10" fill="#1c2129" stroke="#2c3542"/>
+    <text x="802" y="82" text-anchor="middle" fill="#8fc6ff" font-weight="bold" font-size="15">岗位三·稳环境</text>
+    <text x="802" y="108" text-anchor="middle">某些离子必须保持一定的量</text>
+    <text x="802" y="130" text-anchor="middle">→维持细胞的酸碱平衡（p22）</text>
+    <text x="802" y="150" text-anchor="middle">（如HCO₃⁻这类离子参与"缓冲"）</text>
+  </g>
+  <text x="485" y="212" text-anchor="middle" fill="#e8b64c" font-size="14" font-weight="bold">收口句（p22原句）：</text>
+  <text x="485" y="236" text-anchor="middle" fill="#f0f3f7" font-size="14.5">"许多种无机盐对于维持细胞和生物体的生命活动都有重要作用。"</text>
+  <text x="485" y="278" fill="#5c6b80" font-size="12.5" text-anchor="middle">岗位三括注里HCO₃⁻举例为自编延伸（教材p22只述"某些离子……酸碱平衡"），已标"延伸"。</text>
+</svg>
+<p class="figcap">这张图在说什么：无机盐的"少"和"重要"不矛盾——有的当构件（Mg/Fe/P），有的当"开关"（Na⁺/Ca²⁺浓度），有的当"稳定器"（酸碱平衡）。</p>
+</div>
+
+<div class="try"><span class="t">验一验④（先答，再看答案）</span><br>
+<b>1.</b> 连线：把离子和它的"缺了会怎样"连起来——Na⁺缺乏 / 血液Ca²⁺太低 ↔ 肌肉酸痛无力 / 抽搐。<br>
+<b>2.</b> 判断：哺乳动物血液中Ca²⁺含量越高，动物越兴奋，所以补钙越多越好。（　）<br>
+<span class="detail"><b>答案</b>：1. Na⁺缺乏→神经、肌肉细胞兴奋性降低→肌肉酸痛、无力；血液中Ca²⁺含量太低→动物出现抽搐等症状（p22两句照录）。2. <span class="wrong">错</span>——教材说的是"必须含有<b>一定量</b>"，太少抽搐，但不等于"越多越好"；维持"一定的量"才是关键（p22）。</span><br>
+<span class="pit" style="margin-top:10px"><span class="t">易错变形</span>："大量出汗后为什么要多喝淡盐水？"——汗液带走了<b>水和无机盐</b>，只补水不补盐，Na⁺不足→神经、肌肉细胞兴奋性降低→肌肉酸痛、无力（p22场景原句照录）。答"补水"只得一半分，答"水+盐一起补"才是整分。</span></div>
+
+<div class="alt"><span class="t">卡住了？（可选出路）</span><br>
+离子符号右上角的小数字看不懂？右上角"数字+正负号"＝带几个单位的电荷：Na⁺带1个正电荷、Ca²⁺带2个、Cl⁻带1个负、SO₄²⁻带2个负（初中化学里就叫"离子"，本节只当"带电的小粒子"用）。<br>
+结合水4.5%的"分母"又忘了？口诀：<b>"四点五，水里分"</b>——4.5%是全部水分里的占比（p21原句"占细胞内全部水分的4.5%"），不是鲜重的占比。</div>
+
+<h2><span class="step-tag">第五步</span>教材练习与应用（p22）要点速览</h2>
+<div class="box"><b>一、概念检测（题干照录·答案为本件试答并显式标注）</b><br>
+（1）"细胞内的自由水和结合水都是良好的溶剂，都能参与物质运输和化学反应。"——<span class="wrong">表述不正确</span>：只有自由水是良好溶剂（p21"自由水是细胞内良好的溶剂"）；结合水已"失去流动性和溶解性"（p21），是结构成分。<br>
+（2）"同一株植物中，老叶细胞比幼叶细胞中自由水的含量高。"——<span class="wrong">表述不正确</span>：幼叶代谢更旺盛，按"自由水比例越大代谢越旺盛"（p21）反推，应是幼叶自由水占比更高。<br>
+（3）"将作物秸秆充分晒干后，其体内剩余的物质主要是无机盐。"——<span class="wrong">表述不正确</span>：晒干去掉的主要是自由水，剩下的"干重"主要是糖类、蛋白质、脂质等<b>有机物</b>；无机盐仅占鲜重1%~1.5%（p21），是"灰烬"那部分，不是干重大头。<br>
+<b>二、拓展应用（要点试答）</b><br>
+1. 生理盐水——质量分数为0.9%的氯化钠溶液（p22题干照录）；含义：浓度与人体内环境"合拍"的盐溶液，用细胞的话说就是"细胞泡在里面不胀不瘪"；使用场景：病人无法进食时输液、皮肤伤口冲洗、作药物的稀释溶剂等。<br>
+2. 火星推测——题干两条件照录：火星两极有<b>固态水</b>、土壤含生命必需的Mg、Na、K等元素，还发现过<b>流动水的痕迹</b>。为什么据此推测火星可能有生命？——因为"水+生命必需元素"正是本节与2.1给出的两条底线条件：生命离不开水（p20），必需元素参与构成细胞（p22）；条件齐了，科学家自然追问"会不会真有生命"。</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<div class="key">
+<p><span class="big">带走三句</span></p>
+<p><mark class="nb">① 水＝活细胞含量最多的化合物：溶剂、反应参与者、运输工、浸润环境，四岗一肩挑。</mark></p>
+<p><mark class="nb">② 水有两种身份证：自由水（溶剂·代谢旺）、结合水（结构·抗逆强，约占全部水分4.5%）——比值是旋钮。</mark></p>
+<p><mark class="nb">③ 无机盐＝离子形式+含量很少（鲜重1%~1.5%）+岗位三大件：构件（Mg/Fe/P）、开关（Na⁺/Ca²⁺）、稳压器（酸碱平衡）。</mark></p>
+</div>
+<div class="box"><b>高考怎么考（考位锚·三行内）</b><br>
+① 自由水/结合水的判断与比值应用——选择题判断常客（晒干/越冬场景二选一）。<br>
+② 无机盐离子功能配对（Mg–叶绿素、Fe–血红素、Ca²⁺–抽搐、Na⁺–肌无力）——元素-结构-症状三连线。<br>
+③ 结合水4.5%与鲜重1%~1.5%的"分母陷阱"——区分"全部水分/鲜重"两个口径。<br>
+<span class="small">本节真题卷源池暂无对口行，按标准v2.3纪律如实标注"候采"，不代拟（T11纪律）。</span></div>
+<div class="box"><b>自测四连（答案就地展开）</b><br>
+<b>1.</b>（教材p22概念检测改编自测）北方冬小麦入冬前，自由水比例____、结合水比例____，目的是避免自由水过多____而损害自身。——答：降低/上升/结冰（p21原句）。<br>
+<b>2.</b>（自编·已标注）某细胞鲜重200g，按无机盐占鲜重1%~1.5%计算，无机盐质量范围是____g~____g。——答：2~3（1%×200=2、1.5%×200=3；本例为自编算例，sympy代验通过留痕见随件附件2）。<br>
+<b>3.</b>（自编·已标注）四离子对号入座：叶绿素核心元素____；血红素核心元素____；缺____肌肉酸痛无力；血液中____太低会抽搐。——答：Mg/Fe/Na⁺/Ca²⁺。<br>
+<b>4.</b>（教材p22拓展应用2要点自测）科学家推测火星曾有生命的两条证据底线是什么？——答：存在水（固态水+流动水痕迹）与生命必需元素（Mg、Na、K等）。</div>
+
+<div class="check"><span class="t">课外 · 想多走一步？（可选·显式标注自编，不冒充教材内容）</span><br>
+① "小分子团水"广告能信吗？——本节只支持一个判断：水的作用由它的分子结构（极性+氢键）决定，氢键"不断断裂又不断形成"（p21），商家宣称的"稳定小分子团"与教材描述的氢键性格对不上号。消费判断题交给批判性思维。<br>
+② 比热容为什么大？——氢键"拉帮结派"让水升温要额外能量去拆"握手"，物理解释见物理教科书（教材p21"学科交叉"栏指路·照录）。<br>
+③ 烧过的种子为什么有灰？——有机物变成CO₂和水蒸气跑掉了，留下烧不走的无机盐（p21"点燃小麦种子"场景的化学补充，自编延伸）。</div>
+
+<h2><span class="step-tag">下一站</span>2.2在本章的位置</h2>
+<div class="fig">
+<svg viewBox="0 0 970 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图">
+  <rect x="0" y="0" width="970" height="210" fill="#171b22"/>
+  <g font-size="13">
+    <rect x="20" y="80" width="130" height="56" rx="10" fill="#1c2129" stroke="#2c3542"/><text x="85" y="103" text-anchor="middle" fill="#7d8a99">1.1 细胞是生命</text><text x="85" y="122" text-anchor="middle" fill="#7d8a99">活动的基本单位</text>
+    <rect x="170" y="80" width="120" height="56" rx="10" fill="#1c2129" stroke="#2c3542"/><text x="230" y="103" text-anchor="middle" fill="#7d8a99">1.2 细胞的多样性</text><text x="230" y="122" text-anchor="middle" fill="#7d8a99">和统一性</text>
+    <rect x="310" y="80" width="130" height="56" rx="10" fill="#1c2129" stroke="#2c3542"/><text x="375" y="103" text-anchor="middle" fill="#7d8a99">2.1 元素和化合物</text><text x="375" y="122" text-anchor="middle" fill="#7d8a99">（总清单）</text>
+    <rect x="460" y="66" width="150" height="84" rx="10" fill="#22354d" stroke="#4a9eff" stroke-width="2.5"/><text x="535" y="92" text-anchor="middle" fill="#8fc6ff" font-weight="bold">2.2 细胞中的无机物</text><text x="535" y="112" text-anchor="middle" fill="#d8dee6">水＋无机盐</text><text x="535" y="132" text-anchor="middle" fill="#e8b64c" font-weight="bold">（你在）</text>
+    <rect x="630" y="80" width="130" height="56" rx="10" fill="#1c2129" stroke="#2c3542"/><text x="695" y="103" text-anchor="middle" fill="#7d8a99">2.3 糖类和脂质</text><text x="695" y="122" text-anchor="middle" fill="#7d8a99">（能源与储备）</text>
+    <rect x="780" y="80" width="170" height="56" rx="10" fill="#1c2129" stroke="#2c3542"/><text x="865" y="103" text-anchor="middle" fill="#7d8a99">2.4 蛋白质 / 2.5 核酸</text><text x="865" y="122" text-anchor="middle" fill="#7d8a99">（主角与遗传）</text>
+    <line x1="150" y1="108" x2="170" y2="108" stroke="#3a4658" stroke-width="2"/>
+    <line x1="290" y1="108" x2="310" y2="108" stroke="#3a4658" stroke-width="2"/>
+    <line x1="440" y1="108" x2="460" y2="108" stroke="#4a9eff" stroke-width="2"/>
+    <line x1="610" y1="108" x2="630" y2="108" stroke="#3a4658" stroke-width="2"/>
+    <line x1="760" y1="108" x2="780" y2="108" stroke="#3a4658" stroke-width="2"/>
+  </g>
+  <text x="485" y="188" fill="#5c6b80" font-size="13" text-anchor="middle">第2章叙事线：先总清单（2.1）→再从"最简单的成员"开始拆——水与无机盐是最轻的两块，下一节上"主菜"糖类和脂质。</text>
+</svg>
+<p class="figcap">这张图在说什么：2.1给了细胞"配方总清单"，本节先把清单里最简单的两项（水+无机盐）讲透——含量冠军和含量垫底的一对，正好说明"多少不重要，作用才重要"。</p>
+</div>
+
+<div class="foot">零基础首学版 v1.0（标准v2.3条款落地：节首清单＋预备块＋五步推进＋SVG示意图×5全带"这张图在说什么"＋验一验×4含易错变形×4＋alt卡住出路×2＋收口三句＋自测四连＋考位锚块＋位置图＋@media print打印层；正文答案就地展开，自编内容全部显式标注） · 事实层素材源：人教2019必修一p20-22官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=9d522562-b529-446c-9b5b-084812beee6e·印刷页20-22=图29-31·ts=1787291655029·图N→印刷页N-9映射沿本册定标·影印图存席位私有目录p12_jc/·原件不入仓） · 节界实锚=2.2全节p20-22（p20节题页含问题探讨与本节聚焦·p21水的结构/氢键/自由水结合水/无机盐存在形式·p22思考讨论/离子作用/练习与应用·p23=2.3节题页止锚实读核定；p19=2.1练习页首锚沿2.1件在案锚） · 含水量60%~95%/97%、结合水4.5%、鲜重1%~1.5%、饮料表九行数值、离子清单六阳四阴、叶绿素Mg/血红素Fe/P组成细胞膜细胞核、Na⁺缺乏与Ca²⁺过低症状句均p20-22影印逐字锚定 · 教材原题（p20问题探讨/p22思考讨论/p22练习与应用）题干照录、答案为本件试答并显式标注；自编例（含算例2~3g、示意图、"小分子团水"辨析等）全部显式标注"自编/自绘/延伸"；本节为含量与结构分类型节，自编算例2处经sympy机器代验通过（留痕见随件附件2） · 设计标准：零预设 · 一次一步 · 随读随验×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源</div>
+</div>
+</body>
+</html>

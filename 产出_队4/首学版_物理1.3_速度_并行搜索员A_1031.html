@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理1.3 速度 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: 2px; }
+  .talk { background: #1b2029; border: 1px solid #2a3442; border-radius: 10px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #16211c; border: 1px solid #274434; border-left: 4px solid #35c26e; border-radius: 8px; padding: 10px 16px; margin: 16px 0; }
+  .try .q { color: #7fe0a8; font-weight: bold; }
+  .try .a { color: #a9c7b5; margin-top: 6px; }
+  .pit { background: #241718; border: 1px solid #52303a; border-left: 4px solid #e05a6a; border-radius: 8px; padding: 10px 16px; margin: 16px 0; }
+  .pit .tag { color: #ff8c9a; font-weight: bold; }
+  .key { background: #1c2231; border: 1px solid #34466b; border-radius: 8px; padding: 12px 18px; margin: 16px 0; }
+  .alt { background: #221f2b; border: 1px dashed #6b5a8f; border-radius: 8px; padding: 10px 16px; margin: 16px 0; }
+  .alt .tag { color: #b9a3e8; font-weight: bold; }
+  .check { background: #1b2029; border: 1px solid #2a3442; border-radius: 10px; padding: 12px 18px; margin: 14px 0; }
+  .check .tag { color: #7db4ff; font-weight: bold; }
+  .box { background: #1f242e; border: 1px solid #3a4458; border-radius: 8px; padding: 12px 18px; margin: 18px 0; }
+  .box b { color: #f0c674; }
+  .fig { background: #171b22; border: 1px solid #262f3c; border-radius: 10px; padding: 14px; margin: 16px 0; overflow-x: auto; }
+  .figcap { color: #7d8a99; font-size: 13.5px; text-align: center; margin-top: 8px; }
+  .formula { text-align: center; font-size: 21px; color: #fff; font-family: "Georgia", serif; margin: 16px 0; letter-spacing: 1px; }
+  .note-red { background: #241718; border-left: 4px solid #e05a6a; border-radius: 6px; padding: 8px 14px; margin: 12px 0; font-size: 15px; }
+  .note-red .tag { color: #ff8c9a; font-weight: bold; }
+  mark.nb { background: #2b3b57; color: #cfe2ff; padding: 1px 5px; border-radius: 4px; }
+  .small { font-size: 14px; color: #8b98a8; }
+  .ans { display: inline-block; background: #16211c; border: 1px solid #274434; color: #a9c7b5; border-radius: 6px; padding: 1px 8px; margin: 2px 4px 2px 0; }
+  table.tb { border-collapse: collapse; margin: 12px auto; width: 96%; }
+  table.tb th, table.tb td { border: 1px solid #33405280; padding: 6px 10px; text-align: center; font-size: 15px; }
+  table.tb th { background: #1c2231; color: #9fc2ff; }
+  table.tb td { background: #171c25; }
+  @media print {
+    body { background: #fff; color: #111; font-size: 13.5px; line-height: 1.7; }
+    .page { max-width: 100%; padding: 0 6mm; }
+    h1 { color: #000; font-size: 20px; } h2 { color: #000; border-left-color: #333; } h3 { color: #111; }
+    .sub, .figcap, .small { color: #444; }
+    .talk, .check, .fig, .key, .try, .pit, .alt, .box, .note-red { background: #fff !important; border-color: #999 !important; color: #111; }
+    .try { border-left: 3px solid #2e7d4f; } .pit, .note-red { border-left: 3px solid #b04; } .alt { border-left: 3px solid #66c; }
+    .try .q, .try .a { color: #14532d; } .pit .tag, .note-red .tag { color: #901; }
+    .alt .tag { color: #339; } .check .tag { color: #126; } .box b { color: #740; }
+    .step-tag { background: #4a9eff; color: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    mark.nb { background: #dce8ff; color: #000; }
+    .ans { background: #f2f7f2; border-color: #9c9; color: #14351f; }
+    table.tb th, table.tb td { background: #fff; color: #111; border-color: #888; }
+    .formula { color: #000; }
+    svg text { fill: #222 !important; }
+    svg [fill="#1b2029"] { fill: #999; }
+    svg [fill="#5a6a7a"], svg [fill="#8fa3b8"], svg [fill="#8b98a8"] { fill: #888; }
+    svg [stroke="#2a3442"] { stroke: #888; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>速度：把"挪得快不快"算成一次除法</h1>
+<div class="sub">物理1.3 · "描述运动"模块第三件（第一章 运动的描述）· 前面已学：1.1 质点与参考系（先选"相对谁"）、1.2 时间与位移（Δx＝末减初，打点计时器每 0.02 s 打一个点）· 零基础首学版 v1.0 · 前置：会小数除法、会用 1.2 的 Δx 就够 · 预计40分钟</div>
+
+<h2><span class="step-tag">开场</span>同样 100 m，为什么裁判不看路程，只看秒表？</h2>
+<div class="talk">
+<p>1.2 里你已经会算位移 Δx 了——它只回答"挪了多少、朝哪边挪"，完全不回答<strong>挪得快不快</strong>。百米赛跑里，每个运动员的位移都是 100 m，位移分不出名次；名次是<strong>秒表</strong>排出来的：谁用的时间短，谁快。</p>
+<p>教材一开篇就问（p21 问题框）：生活和科学研究中经常需要知道物体运动的<strong>快慢和方向</strong>，初中你用过"速度"这个词，运动员在比赛的不同时段，运动的快慢一样吗？——这一节就两件事：①把"快慢"算出来；②把"这一段的快慢"和"这一瞬的快慢"分开。</p>
+</div>
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 用 v＝Δx/Δt 算速度，并说出单位 m/s 与 km/h 怎么换算；② 说出"速度是矢量"的方向由谁决定；③ 分清<strong>平均速度、瞬时速度、速率</strong>三个词，知道汽车速度计的示数其实是哪一个；④ 看懂打点计时器纸带"取计数点→算平均速度→逼近瞬时速度"的全过程，看懂 v-t 图像。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒接上1.2的工具（已会的跳过）</h2>
+<div class="talk">
+<p>① 位移：Δx = x₂ − x₁，<mark class="nb">末减初</mark>，负号表示方向反向（1.2 学的）；② 时间：打点计时器接 50 Hz 交流电，每 <mark class="nb">0.02 s</mark> 打一个点——这条等会儿算纸带要用（1.2 学的）。就这两件，工具已经全在手上。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>速度＝位移÷时间，一句话把"快慢"变成数</h2>
+<p>教材定义（p21，逐字锚）：物理学中用<strong>位移与发生这段位移所用时间之比</strong>表示物体运动的快慢，这就是<strong>速度（velocity）</strong>。通常用字母 <em>v</em> 表示：如果在时间 Δt 内物体的位移是 Δx，它的速度就是</p>
+<div class="formula">v = Δx / Δt</div>
+<p>单位（p21）：国际单位制中，速度的单位是<strong>米每秒</strong>，符号 m/s 或 m·s⁻¹；常用的还有<strong>千米每时</strong>（km/h 或 km·h⁻¹）、厘米每秒（cm/s）等。换算关系要记牢一步：<mark class="nb">1 m/s = 3.6 km/h</mark>（因为 1 m/s ＝ 3600 m/h ＝ 3.6 km/h）。</p>
+<p><strong>方向从哪来？（p21）</strong>速度是<strong>矢量</strong>——既有大小又有方向，<mark class="nb">速度 v 的方向与 Δt 内位移 Δx 的方向相同</mark>。位移是末减初，正负号带着方向，一除，方向信息原封不动传给 v：Δx 是负的，v 就是负的，表示物体朝 x 轴负方向运动。</p>
+<div class="note-red"><span class="tag">教材旁批（p21）：</span>"这里的速度和初中所学的速度含义不完全相同。"——初中算的是<strong>路程÷时间</strong>，不管方向；高中速度是<strong>位移÷时间</strong>，带方向、带正负。同一个人跑 400 m 跑道跑一圈回到起点：初中口径"速度＝400 m÷时间"有数值；高中口径位移 Δx＝0，<strong>平均速度就是 0</strong>。两个口径都对，只是问的问题不同——从这一节起，默认你说的"速度"是带方向的高中口径。</div>
+<div class="try"><span class="q">验一验（30秒）：</span>一位骑手 72 km/h，换成 m/s 是多少？<div class="a">→ 72 ÷ 3.6 ＝ <strong>20 m/s</strong>。口诀：<mark class="nb">km/h 化 m/s 除以 3.6</mark>（反之乘 3.6）。</div></div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="速度定义示意：同样的位移100米，用时不同，速度不同">
+  <defs>
+    <marker id="aA" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4a9eff"/></marker>
+    <marker id="aB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#35c26e"/></marker>
+  </defs>
+  <text x="400" y="24" fill="#9fb3c8" font-size="14" text-anchor="middle">同样的位移 Δx＝100 m（自编情境），秒表说话：</text>
+  <line x1="70" y1="70" x2="510" y2="70" stroke="#4a9eff" stroke-width="3" marker-end="url(#aA)"/>
+  <line x1="70" y1="64" x2="70" y2="76" stroke="#4a9eff" stroke-width="3"/><line x1="510" y1="64" x2="510" y2="76" stroke="#4a9eff" stroke-width="3"/>
+  <text x="290" y="55" fill="#7db4ff" font-size="13.5" text-anchor="middle">Δx＝100 m（两人相同·终点同一处）</text>
+  <text x="80" y="102" fill="#8fa3b8" font-size="13">甲：用时 12.5 s → v＝100/12.5＝8 m/s　（sympy验·100/12.5=8）</text>
+  <text x="80" y="126" fill="#8fa3b8" font-size="13">乙：用时 20 s　 → v＝100/20＝5 m/s　　（sympy验·100/20=5）</text>
+  <rect x="70" y="150" width="440" height="2" fill="#2a3442"/>
+  <line x1="180" y1="196" x2="180" y2="158" stroke="#35c26e" stroke-width="2" marker-end="url(#aB)"/>
+  <line x1="290" y1="196" x2="290" y2="158" stroke="#35c26e" stroke-width="4" marker-end="url(#aB)"/>
+  <text x="180" y="216" fill="#5a6a7a" font-size="12.5" text-anchor="middle">5 m/s</text>
+  <text x="290" y="216" fill="#5a6a7a" font-size="12.5" text-anchor="middle">8 m/s</text>
+  <text x="400" y="216" fill="#5a6a7a" font-size="12.5" text-anchor="start">箭头越长＝除出来越大＝越快；方向都朝右</text>
+</svg>
+<p class="figcap">图A 速度就是把"位移账"除以"时间账"：位移相同，用时短者除出来的数大。两个速度都带方向（与 Δx 同向）。</p>
+</div>
+
+<h2><span class="step-tag">第二步</span>平均速度：一段路记一本"总账"</h2>
+<p>慢着——运动员起跑慢、途中快、冲刺又慢，"运动的快慢"一路在变，一个数怎么概括？教材的做法（p21末-p22）：先退一步，用<strong>某段时间的总位移 ÷ 总时间</strong>，得到这段里的<strong>平均快慢程度</strong>，叫作<strong>平均速度（average velocity）</strong>。它照样是矢量，方向取这段总位移的方向。</p>
+<div class="key"><p>平均速度＝<mark class="nb">总位移 ÷ 总时间</mark>（不是"速度的平均"！）。教材 p26 第 3 题是现成的算术场：</p>
+<table class="tb">
+<tr><th>时间段</th><th>每1s走的距离</th><th>平均速度＝距离和÷时间</th></tr>
+<tr><td>前 1 s</td><td>9 m</td><td>9÷1＝<strong>9 m/s</strong></td></tr>
+<tr><td>前 2 s</td><td>再 7 m（共16）</td><td>16÷2＝<strong>8 m/s</strong></td></tr>
+<tr><td>前 3 s</td><td>再 5 m（共21）</td><td>21÷3＝<strong>7 m/s</strong></td></tr>
+<tr><td>前 4 s</td><td>再 3 m（共24）</td><td>24÷4＝<strong>6 m/s</strong></td></tr>
+<tr><td>全程 5 s</td><td>再 1 m（共25）</td><td>25÷5＝<strong>5 m/s</strong></td></tr>
+</table>
+<p class="small">（sympy验·9/1=9、16/2=8、21/3=7、24/4=6、25/5=5，全部通过）</p></div>
+<div class="pit"><span class="tag">大坑：平均速度 ≠ 把几段速度"加起来除以几"。</span>注意上表：随着把"慢的尾巴"越包越多，平均值一路 9→8→7→6→5 往下掉——平均速度由<strong>总位移和总时间共同决定</strong>，不是各段速度的算术平均。自编反例（标"自编"）：去程 60 km/h、原路返回 40 km/h，若按"两速度平均"得 (60+40)/2＝50 km/h；按定义算总路程÷总时间＝2s÷(s/60+s/40)＝<strong>48 km/h</strong>（sympy验·往返平均=48≠50）。用时长的那一段"权重"更大——所以<mark class="nb">先算总账，再除</mark>，别对速度求平均。</div>
+<div class="try"><span class="q">验一验（30秒·教材p26题3原数）：</span>上题汽车<strong>最后 2 s</strong>（走 3 m 和 1 m 那两秒）的平均速度是多少？<div class="a">→ (3+1) m ÷ 2 s ＝ <strong>2 m/s</strong>（sympy验·4/2=2）。只把最后 2 s 的位移加总、除以 2 s——范围一变，"总账"就变。</div></div>
+
+<h2><span class="step-tag">第三步</span>瞬时速度：把 Δt 压到"非常非常小"</h2>
+<p>平均速度只报一段时间的总账，报不出"某一瞬到底多快"。教材 p22「思考与讨论」直接把问题摆出来：平均速度描述物体在<strong>一段时间内</strong>运动的平均快慢程度及方向，那么<strong>某一时刻</strong>的快慢怎么描述？</p>
+<p>教材的思路（p22，逐字锚）：取<strong>从时刻 t 到 t＋Δt</strong> 的一小段，用这一小段的平均速度代替时刻 t 的速度；Δt 取小一些，差异就不太大；<mark class="nb">Δt 越小，差异越小；当 Δt 非常非常小时，差异可忽略</mark>——这时就把这一小段的 Δx/Δt 叫作物体在时刻 t 的<strong>瞬时速度（instantaneous velocity）</strong>。方向自然就是那一瞬位移的方向。</p>
+<p>两个直接推论（p22 原文锚）：①<strong>匀速直线运动是瞬时速度保持不变的运动</strong>——每一瞬都一样快，所以匀速直线运动里<mark class="nb">平均速度＝瞬时速度</mark>，除一次就够用；②瞬时速度的<strong>大小</strong>通常叫作<strong>速率（speed）</strong>。</p>
+<div class="pit"><span class="tag">大坑：汽车速度计的示数是"速率"，不是"速度"。</span>教材 p22 原文：汽车速度计<strong>不能显示车辆运动的方向</strong>，它的示数实际是汽车的<strong>速率</strong>（图1.3-1）。日常口语里"高速上开到 100 的速度"其实是速率（只报大小）。教材提醒：日常生活中说到的"速度"，有时指速率，<mark class="nb">要根据上下文判断</mark>。</div>
+<div class="try"><span class="q">验一验（10秒·易错变形）：</span>速度计读 72 km/h（＝20 m/s，sympy验·72/3.6=20）。它告诉你方向了吗？<div class="a">→ 没有。20 m/s 只是<strong>速率</strong>（大小）。车往南开还是往北开，速度计一概不知——方向得看车头。</div></div>
+<div class="alt"><span class="tag">卡住了？换个说法（自编类比）：</span>把运动想成一段旅程。<strong>平均速度</strong>是"录像的总账"——整段录下来，总位移除以总时长；<strong>瞬时速度</strong>是"连拍照片"——把某瞬间前后剪得越来越短（Δt→非常小），短到这一小段里"快慢变化"来不及发生，照片上的快慢就是那一瞬的快慢。照片剪得越短，越接近"那一瞬"——教材说"Δt 非常非常小时差异可忽略"，就是这个意思。</div>
+
+<h2><span class="step-tag">第四步</span>纸带实验：三步从"一堆点"算到"每一点的快慢"</h2>
+<p>1.2 你见过打点计时器在纸带上打点（每 0.02 s 一个点）。现在把纸带真正用起来——教材 p22-24 的实验"测量纸带的平均速度和瞬时速度"，全程三步：</p>
+<h3>① 先算"大间隔"的平均速度（p22-23）</h3>
+<p>纸带上打了一串点（图1.3-2）。想算 D、G 两点间的平均速度：只需测出 D、G 间的位移 Δx 和所用时间 Δt，代入 v＝Δx/Δt。时间是点数×0.02 s 堆出来的：<mark class="nb">每 5 个间隔取一个计数点，间隔就是 0.1 s</mark>（sympy验·0.02×5=0.1）。教材要求"每隔 0.1 s（或更短）计算一次平均速度"，并把 x、Δx、Δt、v 逐列记进表1。</p>
+<h3>② 再"逼近"瞬时速度（p23-24）</h3>
+<p>E 点的瞬时速度怎么测？教材的办法：包含 E 的间隔取得越小，算出的平均速度越接近 E 点的瞬时速度——例如改取 0.06 s 间隔（图1.3-3，每 3 个间隔取一个计数点，sympy验·0.02×3=0.06），用 D、F 间平均速度代表 E 点瞬时速度，就精确一些；<strong>D、F 离 E 越近，越精确</strong>。教材按此把各计数点的"瞬时速度"算进表2，并注明：Δx 和 Δt 算出的速度值可以代表<strong>在 Δx 这一区间内任意一点</strong>的瞬时速度。</p>
+<div class="pit"><span class="tag">教材旁批（p23）提醒：</span>"D、F 两点间距离过小，测量误差会增大"——间隔不是越小越好：太小了位移量不出准数，测量的相对误差反而变大。所以实际测量要<mark class="nb">根据仪器情况在测点附近选取合适的间隔</mark>。"逼近"思想对，但要带着误差意识逼近。</div>
+<h3>③ 最后画 v-t 图像（p24）</h3>
+<p>以时间 t 为横轴、速度 v 为纵轴，把表2算出的每一点 (t, v) 描进坐标系——这就是<strong>速度—时间图像（v-t 图像）</strong>。教材用某同学手拉纸带的实测数据做了示范（图1.3-4）：先描点（甲），点子的走向已能大致看出"速度先升后缓"的规律；再用一条<strong>平滑曲线</strong>连接（乙），曲线反映的情况与实际比较接近。注意教材的说法：<mark class="nb">描点是"实测"，连线是"走向判断"</mark>——曲线要顺着点的走势画，不是把点用直线段连成折线。</p>
+<div class="fig">
+<svg width="100%" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="v-t图像：描点与平滑曲线">
+  <defs>
+    <marker id="aC" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#8b98a8"/></marker>
+  </defs>
+  <line x1="70" y1="250" x2="470" y2="250" stroke="#8b98a8" stroke-width="2" marker-end="url(#aC)"/>
+  <line x1="70" y1="250" x2="70" y2="40" stroke="#8b98a8" stroke-width="2" marker-end="url(#aC)"/>
+  <text x="480" y="255" fill="#8b98a8" font-size="13">t/s</text>
+  <text x="40" y="45" fill="#8b98a8" font-size="13">v/(m·s⁻¹)</text>
+  <g stroke="#243040" stroke-width="1">
+    <line x1="70" y1="203" x2="470" y2="203"/><line x1="70" y1="156" x2="470" y2="156"/><line x1="70" y1="109" x2="470" y2="109"/><line x1="70" y1="62" x2="470" y2="62"/>
+    <line x1="152" y1="250" x2="152" y2="40"/><line x1="235" y1="250" x2="235" y2="40"/><line x1="317" y1="250" x2="317" y2="40"/><line x1="400" y1="250" x2="400" y2="40"/>
+  </g>
+  <text x="62" y="254" fill="#5a6a7a" font-size="11" text-anchor="end">0</text>
+  <text x="62" y="207" fill="#5a6a7a" font-size="11" text-anchor="end">0.05</text>
+  <text x="62" y="160" fill="#5a6a7a" font-size="11" text-anchor="end">0.10</text>
+  <text x="62" y="113" fill="#5a6a7a" font-size="11" text-anchor="end">0.15</text>
+  <text x="62" y="66" fill="#5a6a7a" font-size="11" text-anchor="end">0.20</text>
+  <text x="152" y="266" fill="#5a6a7a" font-size="11" text-anchor="middle">1</text>
+  <text x="235" y="266" fill="#5a6a7a" font-size="11" text-anchor="middle">2</text>
+  <text x="317" y="266" fill="#5a6a7a" font-size="11" text-anchor="middle">3</text>
+  <text x="400" y="266" fill="#5a6a7a" font-size="11" text-anchor="middle">4</text>
+  <g fill="#7db4ff" stroke="#7db4ff">
+    <circle cx="70" cy="199.4" r="3.5"/><circle cx="104" cy="199.4" r="3.5"/><circle cx="139" cy="184.2" r="3.5"/><circle cx="173" cy="171.9" r="3.5"/><circle cx="207" cy="167.2" r="3.5"/><circle cx="242" cy="158.8" r="3.5"/><circle cx="276" cy="150.4" r="3.5"/><circle cx="310" cy="146.6" r="3.5"/><circle cx="345" cy="142.8" r="3.5"/><circle cx="379" cy="150.4" r="3.5"/>
+  </g>
+  <path d="M 70,200 C 110,199 140,186 175,172 C 205,161 225,166 245,159 C 270,151 295,147 320,146 C 340,145 355,143 379,150" fill="none" stroke="#e05a8a" stroke-width="2.5"/>
+  <text x="260" y="120" fill="#8fa3b8" font-size="12.5">点：教材图1.3-4甲的走向（0.07→0.14 m/s 先升后缓·sympy验·min=0.07/max=0.14/跨度3.6s）</text>
+  <text x="260" y="98" fill="#e05a8a" font-size="12.5">平滑曲线：教材图1.3-4乙（顺点走势·不连折线）</text>
+</svg>
+<p class="figcap">图B v-t 图像两步走：先描点（看清走向），再顺走势画平滑曲线。坐标点序列按教材图1.3-4走向程序生成。</p>
+</div>
+<div class="try"><span class="q">验一验（30秒）：</span>看图B：大约在哪个时刻之后，纸带的速度就基本"涨不动"了？<div class="a">→ 约 2.5～3 s 之后，点子和曲线都趋平（0.135→0.14→回落 0.13）——"曲线趋平"在 v-t 图上的意思就是<strong>速度基本不变</strong>，这正是 1.4 要正面研究的对象。</div></div>
+
+<div class="alt"><span class="tag">想多走一步？（可选·不影响主干）</span>教材 p25「拓展学习：借助传感器与计算机测速度」：用"位移传感器"把位移、时间转成电信号，计算机自动算速度、自动画 v-t 图像。常见一套是发射器 A（装在运动物体上）与接收器 B（固定）配对：A 同时发红外脉冲和超声波脉冲，B 收到红外开始计时、收到超声波停止计时，用时差和声速算距离（红外传播时间可忽略）；Δt 通常设置为 0.02 s——很短，所以 Δx/Δt 就能代表此刻的瞬时速度。另有一种单盒 C 方案：向被测物体 D 发超声波、靠反射回收，同样能测出距离变化与速度。所有操作不到 1 s 自动完成——纸带三步的人工版，就是它的原理底稿。</div>
+
+<h2><span class="step-tag">收口</span>三句话带走＋自测四连</h2>
+<div class="key">
+<p><strong>三句话带走</strong></p>
+<p>1. <mark class="nb">速度 v＝Δx/Δt</mark>：位移除以时间，单位 m/s（1 m/s＝3.6 km/h），方向与 Δx 相同——它是矢量，跟初中"路程÷时间"的口径不同（跑道一圈平均速度为 0 的例子想得起来吗？）。<br>
+2. <mark class="nb">平均速度＝总位移÷总时间</mark>，范围一变结果就变，不是各段速度的平均；<mark class="nb">瞬时速度＝Δt 压到非常非常小</mark>那一刻的平均速度；瞬时速度的大小叫<mark class="nb">速率</mark>——速度计只报速率。<br>
+3. 纸带三步：<strong>0.1 s 大间隔算平均速度 → 缩到 0.06 s 逼近瞬时速度（间隔别过小，误差会增大）→ 描点画平滑 v-t 曲线</strong>。</p>
+</div>
+<p><strong>自测四连</strong>（1、2 改编自教材 p26 练习与应用第 1、2 题，3、4 为教材 p26 第 3 题原题原问；先自己算/说，再看答案）：</p>
+<p>①（改编·图1.3-8 纸带）重物拉纸带下落打出点迹，纸带一端点距明显更大：哪端与重物相连？想在打 A 点处测重物瞬时速度，怎么办？</p>
+<p>②（改编·教材第 2 题图像问法）甲的 v-t 图是离 t 轴一段距离的水平直线，乙是"从 0 升—平—降回 0"的梯形：分别说出它们的初速度（是否从静止出发）、速度大小怎么变、方向变没变。</p>
+<p>③（教材 p26 第 3 题原问）汽车制动 5 s 停下，每 1 s 前进 9、7、5、3、1 m。求前 1、2、3、4 s 和全程的平均速度；哪个最接近刚制动时的瞬时速度？比它略大还是略小？</p>
+<p>④（教材 p26 第 3 题原问）汽车运动的最后 2 s 平均速度是多少？</p>
+<p class="small">答案：<span class="ans">① 点距大的一端连重物（下落越来越快·后打的点疏）；A 点瞬时速度＝取 A 点附近一小段 Δx/Δt，间隔取得越小越精确（这是"平均速度逼近瞬时速度"的直接应用）</span> <span class="ans">② 甲：有初速度、大小不变（匀速）、方向不变；乙：从静止出发、先加速再匀速再减速、方向始终未反（v 没有变负）</span> <span class="ans">③ 9、8、7、6、5 m/s；前 1 s 的 9 m/s 最接近刚制动时的瞬时速度，且比它略小——每一秒内车还在减速，第 1 s 开头那一瞬比"第 1 s 的平均"更快</span> <span class="ans">④ (3+1)÷2＝2 m/s（sympy验·4/2=2）</span></p>
+<div class="box"><b>高考怎么考（考位锚）：</b>本节三处高频——① v-t 图像判读（水平/倾斜/折线的含义·选择题常客，1.5 还会专攻）；② 平均速度定义题（给分段路程求平均，专考"总位移÷总时间"有没有被"速度平均"坑到）；③ 实验题里的纸带处理（数间隔换时间·算计数点速度），与 1.2 打点计时器、1.4 加速度一脉相承。具体真题锚候采（卷源在库·宁缺毋编不代拟）。</div>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 800 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：1.1质点参考系→1.2时间位移→1.3速度（你在）→1.4加速度→第二章匀变速直线运动">
+  <defs>
+    <marker id="aD" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4a9eff"/></marker>
+  </defs>
+  <rect x="60" y="38" width="120" height="46" rx="8" fill="#1b2029" stroke="#2a3442"/>
+  <text x="120" y="60" fill="#8fa3b8" font-size="13.5" text-anchor="middle">1.1 质点 参考系</text><text x="120" y="78" fill="#5a6a7a" font-size="11" text-anchor="middle">描述谁·相对谁</text>
+  <line x1="182" y1="61" x2="232" y2="61" stroke="#5a6a80" stroke-width="2" marker-end="url(#aD)"/>
+  <rect x="235" y="38" width="120" height="46" rx="8" fill="#1b2029" stroke="#2a3442"/>
+  <text x="295" y="60" fill="#8fa3b8" font-size="13.5" text-anchor="middle">1.2 时间 位移</text><text x="295" y="78" fill="#5a6a7a" font-size="11" text-anchor="middle">何时·挪多少</text>
+  <line x1="357" y1="61" x2="407" y2="61" stroke="#5a6a80" stroke-width="2" marker-end="url(#aD)"/>
+  <rect x="410" y="30" width="130" height="62" rx="8" fill="#1c2231" stroke="#4a9eff" stroke-width="2"/>
+  <text x="475" y="55" fill="#cfe2ff" font-size="14.5" text-anchor="middle" font-weight="bold">1.3 速度（你在）</text><text x="475" y="76" fill="#7db4ff" font-size="11" text-anchor="middle">挪多快·v=Δx/Δt</text>
+  <line x1="542" y1="61" x2="592" y2="61" stroke="#5a6a80" stroke-width="2" marker-end="url(#aD)"/>
+  <rect x="595" y="38" width="120" height="46" rx="8" fill="#1b2029" stroke="#2a3442"/>
+  <text x="655" y="60" fill="#8fa3b8" font-size="13.5" text-anchor="middle">1.4 加速度</text><text x="655" y="78" fill="#5a6a7a" font-size="11" text-anchor="middle">快慢怎么变</text>
+  <text x="400" y="118" fill="#5a6a7a" font-size="11.5" text-anchor="middle">这张图在说什么：1.2 会算"挪了多少"，本件学会"挪多快"；下一件回答"快慢本身怎么变"。</text>
+</svg>
+<p class="small" style="text-align:center">这张图在说什么：描述运动的工具箱，本件装进第三格"v＝Δx/Δt"。</p>
+</div>
+<p class="small">下一站：1.4 加速度——汽车 10 s 从 0 到 100 km/h，火车 300 s 也从 0 到 100 km/h（教材 p27 问题框）："速度大"和"速度变化大"不是一回事，快慢的"变化"也要用一个数来量。</p>
+
+<div class="foot">
+零基础首学版 v1.0（批2·标准v2.3条款落地：节首清单＋预备块＋四站推进＋速度定义对照图/程序生成v-t图像（描点＋平滑）/位置图＋考位锚块＋@media print打印层；正文"验一验"×4含易错变形×1，节末自测四连，答案直接可见；sympy代验13验点全过·留痕＝席位私有sympy_验点_物理1.3_1031午后.py：9/1=9·16/2=8·21/3=7·24/4=6·25/5=5·4/2=2·72/3.6=20·0.02×5=0.1·0.02×3=0.06·往返平均48≠50·100/12.5=8·100/20=5·描点min0.07/max0.14/跨度3.6s） · 事实层素材源：人教2019必修第一册p21-26官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=708256b6-6f06-4d14-89c7-4df16dfe3b81·印刷页21-26＝图26-31·ts=1787023183495·图N→印刷页N−5映射沿本册定标·影印图存席位私有目录p13_jc/·原件不入仓）· **节界实锚＝1.3全节p21-26**（p21节题+速度定义+单位+矢量/p22平均速度+思考与讨论+瞬时速度+匀速+速率+实验起/p23图1.3-2+步骤1-4+表1+逼近法+图1.3-3/p24步骤1-4+表2+速度—时间图像+图1.3-4/p25拓展学习位移传感器/p26练习与应用1-3题·p27＝1.4加速度节题页·目录实锚吻合队4席1.1附件1与1.2件节界链）· 速度/平均速度/瞬时速度/速率定义、v=Δx/Δt、单位系列、0.1s与0.06s计数点口径、表1表2栏目、传感器0.02s设置、练习题面均影印逐字锚定 · 自编例全部显式标注"自编/改编"，教材原题标注页码来源（p21问题框与旁批/p22思考与讨论/p23旁批/p24图1.3-4/p25拓展学习/p26练习1-3）· 设计标准：零预设 · 一次一步 · 随读随验×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源
+</div>
+</div>
+</body>
+</html>

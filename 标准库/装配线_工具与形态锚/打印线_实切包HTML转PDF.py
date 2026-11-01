@@ -10,6 +10,7 @@
 #   3.SVG反色：DOM级fill/stroke/background色值映射（CSS filter打印管线不可靠），目检导图白底深字
 #   4.全页深色占比机检：<1%为净（pdftoppm转图+PIL统计）
 #   5.表格断行：tr/td page-break-inside:avoid，抽查页界
+#   6.课间分页（10/24 22:13逸翔核心规则）：每课完结当页留白，下一课推新页——JS给非首个"课时开篇页"h2注入break-before:page；单节件自然不触发
 #   6.荧光mark：浅底加粗可读
 #   7.页数汇报：输出页数给逸翔（省纸让位于舒适，10/18不偏离原目的）
 import sys, re
@@ -38,7 +39,44 @@ INVERT_JS = """
   document.querySelectorAll('svg').forEach(svg=>{
     svg.style.background='#fff';
     svg.style.border='0.6pt solid #aaa';
+    // fill full-invert branch (v1.2, 2026-10-24 admin-approved): dark shape fills -> near-white; light text -> dark
+    svg.style.setProperty('background','#fff','important');
+    const pe=svg.parentElement;
+    if(pe&&pe.tagName!=='BODY'){pe.style.setProperty('background','#fff','important');}
+    svg.querySelectorAll('rect,circle,ellipse,polygon,polyline').forEach(el=>{
+      const v=el.getAttribute('fill')||'#000';
+      if(v){
+        const n=invColor(v);
+        if(n){
+          const m=n.match(/(\d+),/);
+          if(m){
+            const g2=parseInt(m[1]);
+            if(g2<110){
+              const wv=243+Math.round(g2*0.04);
+              el.setAttribute('fill','rgb('+wv+','+wv+','+wv+')');
+            }
+          }
+        }
+      }
+    });
+    svg.querySelectorAll('text,tspan').forEach(el=>{
+      const v=el.getAttribute('fill');
+      if(v){
+        const n=invColor(v);
+        if(n){
+          const m=n.match(/(\d+),/);
+          if(m){
+            const g2=parseInt(m[1]);
+            if(g2>140){
+              const dv=Math.max(24,Math.round(255-g2*0.55));
+              el.setAttribute('fill','rgb('+dv+','+dv+','+dv+')');
+            }
+          }
+        }
+      }
+    });
     svg.querySelectorAll('*').forEach(el=>{
+      if(el.hasAttribute('data-no'))return;
       ['fill','stroke'].forEach(attr=>{
         const v=el.getAttribute(attr);
         if(v){const n=invColor(v); if(n) el.setAttribute(attr,n);}
@@ -63,7 +101,8 @@ h2{color:#000 !important;font-size:14pt !important;margin:14px 0 6px !important;
    border-bottom:.6pt solid #888 !important;padding-bottom:3px !important;page-break-after:avoid;break-after:avoid;}
 h3{color:#1a1a1a !important;font-size:12pt !important;margin:10px 0 4px !important;page-break-after:avoid;}
 p{margin:6px 0 !important;}
-table{font-size:9.5pt !important;margin:7px 0 !important;line-height:1.5 !important;}
+table{font-size:9.5pt !important;margin:7px 0 !important;line-height:1.5 !important;
+      page-break-inside:avoid !important;break-inside:avoid !important;} /* 10/24夜 C5表格断页修复：table级防裂（队6三章包QC伤1：3.1易错卡①跨P10/P11·3.3易错卡②跨P31/P32·页首无表头重复），整表推新页，超高表best-effort仍可续分 */
 tr,td,th{page-break-inside:avoid;}
 th,td{padding:4px 6px !important;border:.5pt solid #777 !important;}
 th{background:#e8e8e8 !important;color:#000 !important;}
@@ -85,6 +124,12 @@ with sync_playwright() as p:
     pg=b.new_page()
     pg.goto(f"file://{SRC}", wait_until="networkidle")
     pg.evaluate(INVERT_JS)
+    # 课间分页（逸翔核心规则22:13）：非首个"课时开篇页"h2前强制分页
+    pg.evaluate("""() => {
+      const hs = [...document.querySelectorAll('h2')].filter(h => h.textContent.includes('课时开篇页'));
+      hs.slice(1).forEach(h => { h.style.breakBefore = 'page'; h.style.pageBreakBefore = 'always'; });
+      return hs.length;
+    }""")
     pg.add_style_tag(content=PRINT_CSS)
     pg.emulate_media(media="print")
     pg.pdf(path=OUT, format="A4", print_background=True,

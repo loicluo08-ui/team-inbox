@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理2.1 实验：探究小车速度随时间变化的规律 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: 2px; }
+  .talk { background: #1b2029; border: 1px solid #2a3342; border-radius: 10px; padding: 14px 18px; margin: 14px 0; }
+  .check { background: #16202b; border: 1px solid #274257; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .tag { display: inline-block; background: #2d4a63; color: #cfe6ff; font-size: 12.5px; padding: 1px 8px; border-radius: 4px; margin-right: 6px; }
+  .try { background: #20262f; border-left: 3px solid #f0b429; border-radius: 6px; padding: 10px 14px; margin: 14px 0; }
+  .try .q { color: #f0c85a; font-weight: bold; }
+  .try .a { color: #9fd0a0; display: block; margin-top: 6px; }
+  .detail { color: #9fd0a0; }
+  .pit { background: #2a1d20; border: 1px solid #5c3238; border-radius: 10px; padding: 12px 16px; margin: 14px 0; }
+  .pit b { color: #ff8f95; }
+  .note-red { background: #2a1d20; border-left: 3px solid #e05c66; border-radius: 6px; padding: 10px 14px; margin: 14px 0; font-size: 15.5px; }
+  .note-red b { color: #ff8f95; }
+  .key { background: #16242e; border: 1px solid #2c566e; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .alt { background: #1d2430; border: 1px dashed #3d5a7a; border-radius: 10px; padding: 12px 16px; margin: 16px 0; font-size: 15.5px; }
+  .box { background: #1f242e; border: 1px solid #3a4458; border-radius: 10px; padding: 12px 16px; margin: 16px 0; font-size: 15.5px; }
+  mark.nb { background: #35506b; color: #eaf6ff; padding: 0 5px; border-radius: 4px; }
+  .formula { background: #0f1319; border: 1px solid #34435c; border-radius: 8px; padding: 12px 16px; margin: 14px auto; text-align: center; font-size: 21px; color: #ffffff; font-family: Georgia, "Times New Roman", serif; }
+  .fig { margin: 18px 0; text-align: center; }
+  .figcap { font-size: 14px; color: #8fa0b3; margin-top: 8px; }
+  table.tb { border-collapse: collapse; margin: 14px auto; width: 100%; font-size: 15px; }
+  table.tb th, table.tb td { border: 1px solid #3a4458; padding: 6px 10px; text-align: center; }
+  table.tb th { background: #202a37; color: #dce8f5; }
+  .small { font-size: 14px; color: #8fa0b3; }
+  .m { font-family: Georgia, serif; color: #eaf2fb; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3 { color: #000; }
+    .talk, .check, .try, .pit, .key, .alt, .box, .note-red { background: #f6f8fa !important; border-color: #999 !important; color: #111; }
+    .formula { background: #fff; color: #000; }
+    mark.nb { background: #d9e8f5; color: #000; }
+    .try .q { color: #7a5c00; } .try .a, .detail { color: #1c5c20; }
+    .pit b, .note-red b { color: #a02025; }
+    .figcap, .small, .sub { color: #444; }
+    .step-tag { background: #e8f0fa; color: #000; border: 1px solid #789; }
+    .tag { background: #dde8f2; color: #000; }
+    table.tb th { background: #eef2f6; color: #000; }
+    .m { color: #000; }
+    svg text { fill: #222 !important; }
+    svg [fill="#1d2733"] { fill: #999; }
+    svg [fill="#5a6a7a"], svg [fill="#8fa0b3"] { fill: #888; }
+    svg [stroke="#31465e"] { stroke: #888; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>实验：探究小车速度随时间变化的规律——亲手测出第一条 v-t 图线</h1>
+<div class="sub">物理2.1 · 第二章"匀变速直线运动的研究"开篇（学生必做实验节）· 前面已学：1.2 时间与位移（打点计时器·纸带记位移）、1.3 速度（纸带测速法）· 零基础首学版 v1.0 · 前置：会乘除法、会用刻度尺就够 · 预计40分钟</div>
+
+<div class="check">
+<span class="tag">读完这节你能</span><br>
+① 说全实验装置的五个部件和三步操作顺序；② 会用"0.1 s 计数点"处理纸带；③ 会用 1.3 的纸带测速法算出各计数点的瞬时速度并填进表1；④ 会描点作出 v-t 图像并说出小车速度的规律；⑤ 会用数表软件自动画出趋势线（教材"做一做"）。
+</div>
+
+<h2><span class="step-tag">开场</span>找规律的第一步：不是背公式，是先动手测</h2>
+<div class="talk">
+<p>第二章章首页（教材p35·照录大意）：世界上第一条商业运行的磁悬浮列车——"上海磁浮"，已于2003年10月1日正式运营。据报道，上海磁浮线路总长 33 km，一次试车时全程行驶了约 7 min 30 s，其中以 430 km/h 的最高速度行驶约 30 s。教材留给你一个问题：磁悬浮列车的行驶速度比汽车快得多，是不是它的加速度也会很大？——学过这一章后，你要能自己估算它。</p>
+<p>教材p36把这章的"规矩"写在节首（原话照录）：<b>"物理定律不能单靠'思维'来获得，还应致力于观察和实验。"</b>——普朗克①（脚注①照录：普朗克（Max Karl Ernst Ludwig Planck，1858—1947），德国物理学家，量子论的奠基人。1900年，他在黑体辐射研究中引入能量量子，因此于1918年获诺贝尔物理学奖。）</p>
+<p>所以第一章和第二章的分工是：<b>第一章在"造工具"</b>（位移、速度、加速度——纸上谈兵）；<b>第二章开始"用工具找规律"</b>——而找规律的第一课不是公式，是一门手艺：把小车跑动的真实数据测出来。这一节我们研究小车在重物牵引下的运动，看看小车的速度是怎样随时间变化的（教材p36节引言）。</p>
+</div>
+
+<h2><span class="step-tag">预备</span>30秒搬齐三块砖（1.2和1.3已学·这里全用上）</h2>
+<div class="talk">
+<p>① <b>打点计时器</b>（1.2学的）：每隔 <span class="m">0.02 s</span> 在纸带上打一个点——纸带就是"会记时间的行车记录仪"；② <b>纸带记位移</b>（1.2学的）：相邻点、隔几点的距离，就是小车在那段时间里挪过的位移；③ <b>纸带测速</b>（1.3学的）：用一小段的平均速度，代表这段中间时刻的瞬时速度。新词只有一个：<mark class="nb">计数点</mark>——不是每个点都量，每5个打点间隔取一个"计数的点"，点距变宽10倍，刻度尺量起来省事又准。</p>
+</div>
+
+<h2><span class="step-tag">第一步</span>实验思路与装置——把"速度怎么变"变成"纸带上的点"</h2>
+<div class="talk">
+<p>教材p36实验思路（照录白话）：要研究小车速度随时间变化的规律，就要想办法测量小车在<b>不同时刻的瞬时速度</b>，而打点计时器具有此功能。装置照教材p36图2.1-1搭：<b>一端带有滑轮的长木板</b>平放在实验桌上，木板上放一个可以左右移动的<b>小车</b>，小车一端连接穿过<b>打点计时器</b>的<b>纸带</b>，另一端连接绕过滑轮系有<b>槽码</b>的细绳。小车在槽码的牵引下运动，通过研究纸带上的信息，就可以知道小车运动的速度是怎样随时间变化的。</p>
+<p>一句话记住分工：<b>槽码出力、小车跑路、纸带记账、计时器打点</b>。</p>
+</div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="实验装置示意图：打点计时器、小车、纸带、滑轮、槽码、长木板（自绘重排教材p36图2.1-1部件关系）">
+  <defs><marker id="e21" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <rect x="30" y="96" width="700" height="14" fill="#1d2733" stroke="#31465e"/>
+  <text x="380" y="130" fill="#5a6a7a" font-size="12">长木板（平放实验桌上）</text>
+  <rect x="560" y="74" width="86" height="22" rx="4" fill="#25384d" stroke="#4a9eff"/>
+  <text x="603" y="90" fill="#cfe0f0" font-size="12.5" text-anchor="middle">打点计时器</text>
+  <circle cx="70" cy="70" r="16" fill="none" stroke="#f0b429" stroke-width="3"/>
+  <text x="70" y="48" fill="#f0b429" font-size="12.5" text-anchor="middle">滑轮</text>
+  <rect x="330" y="72" width="70" height="26" rx="5" fill="#25384d" stroke="#4a9eff"/>
+  <circle cx="345" cy="72" r="4" fill="#f0b429"/><circle cx="385" cy="72" r="4" fill="#f0b429"/>
+  <text x="365" y="60" fill="#cfe0f0" font-size="12.5" text-anchor="middle">小车</text>
+  <line x1="86" y1="76" x2="330" y2="76" stroke="#8fa0b3" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#e21)"/>
+  <line x1="86" y1="76" x2="60" y2="120" stroke="#f0b429" stroke-width="1.4"/>
+  <rect x="46" y="120" width="30" height="16" rx="2" fill="#3a4458" stroke="#8fa0b3"/>
+  <text x="61" y="152" fill="#5a6a7a" font-size="12" text-anchor="middle">槽码（牵引）</text>
+  <line x1="400" y1="85" x2="560" y2="85" stroke="#6fc2ff" stroke-width="2"/>
+  <text x="480" y="76" fill="#6fc2ff" font-size="12.5">纸带→穿过计时器</text>
+  <line x1="240" y1="60" x2="240" y2="30" stroke="#8fa0b3" stroke-width="1.2" marker-end="url(#e21)"/>
+  <text x="250" y="26" fill="#8fa0b3" font-size="12.5">运动方向</text>
+  <text x="380" y="172" fill="#5a6a7a" font-size="11.5" text-anchor="middle">槽码出力·小车跑路·纸带记账·计时器打点（自绘部件关系图·对应教材p36图2.1-1实验装置照片）</text>
+</svg>
+<p class="figcap" style="text-align:center">这张图在说什么：五部件各司其职——你要研究的"小车的速度"，全记在那条纸带上。</p>
+</div>
+<div class="talk">
+<p>操作三步（教材p37"进行实验"照录）：①把小车停在<b>靠近打点计时器</b>的位置；②<b>启动计时器，然后放开小车</b>，让它拖着纸带运动。于是，打点计时器在纸带上打下一行小点。随后，<b>立即关闭电源</b>。③增减所挂的槽码（或在小车上放置重物），更换纸带，<b>再做两次实验</b>——三条纸带对应表1里的 v₁、v₂、v₃ 三行。</p>
+</div>
+<div class="try"><span class="q">验一验（30秒·自编说理）：</span>为什么顺序必须是"先启动计时器，再放开小车"，反过来不行吗？<div class="a">→ 反过来的话：小车已经跑出去一截，计时器才开始打点——<b>开头那段最宝贵的过程记录就丢了</b>，而且刚启动时打点还不够稳定。先开机、后放车，点才打得全（自编说理）。</div></div>
+
+<h2><span class="step-tag">第二步</span>数据记录——舍、取、量、算，四字处理纸带</h2>
+<div class="talk">
+<p><b>舍</b>（教材p37照录）：为了便于测量，<mark class="nb">舍掉纸带开头一些过于密集的点</mark>，找一个适当的点作为计时起点。<b>取</b>：可选择<b>相隔 0.1 s（或更短）</b>的若干计数点进行测量——0.1 s＝打点间隔 0.02 s × 5 个间隔（sympy核验：0.02×5=0.1✓）。<b>量</b>：用刻度尺量出相邻计数点间的距离。<b>算</b>：利用第一章第3节所学的方法得出各计数点的瞬时速度——1.3纸带法：某计数点的瞬时速度≈<b>包含它的一小段的平均速度</b>。同理，计算增减槽码后两次实验的速度，分别填入表1中标有"v₂"和"v₃"的两行（教材p37照录）。</p>
+</div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 760 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="纸带处理示意图：舍掉过密段，每5个打点间隔取一个计数点（自绘示意）">
+  <rect x="20" y="52" width="720" height="30" rx="4" fill="#1d2733" stroke="#31465e"/>
+  <g fill="#f0b429">
+    <circle cx="50" cy="67" r="2.2"/><circle cx="62" cy="67" r="2.2"/><circle cx="74" cy="67" r="2.2"/><circle cx="86" cy="67" r="2.2"/><circle cx="98" cy="67" r="2.2"/><circle cx="110" cy="67" r="2.2"/><circle cx="122" cy="67" r="2.2"/><circle cx="134" cy="67" r="2.2"/>
+  </g>
+  <text x="92" y="100" fill="#ff8f95" font-size="12" text-anchor="middle">过密段→舍掉</text>
+  <g fill="#6fc2ff">
+    <circle cx="170" cy="67" r="3.2"/><circle cx="220" cy="67" r="3.2"/><circle cx="270" cy="67" r="3.2"/><circle cx="320" cy="67" r="3.2"/><circle cx="370" cy="67" r="3.2"/><circle cx="420" cy="67" r="3.2"/><circle cx="470" cy="67" r="3.2"/>
+  </g>
+  <text x="320" y="36" fill="#6fc2ff" font-size="12.5">计数点0…6（每5个打点间隔取一个·间隔0.1 s）</text>
+  <line x1="165" y1="67" x2="175" y2="67" stroke="#6fc2ff" stroke-width="1"/>
+  <text x="170" y="100" fill="#8fa0b3" font-size="12" text-anchor="middle">计时起点O</text>
+  <text x="380" y="132" fill="#5a6a7a" font-size="11.5" text-anchor="middle">小车越跑越快，纸带上点距越来越宽（自绘示意·对应教材p37"数据记录"处理法）</text>
+</svg>
+<p class="figcap" style="text-align:center">这张图在说什么：舍开头、定起点、每5个间隔取一个计数点——刻度尺只量7个大间隔，省事且准。</p>
+</div>
+<table class="tb">
+  <tr><th>位置编号</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>…</td></tr>
+  <tr><th>时间 t/s</th><td>0</td><td>0.1</td><td>0.2</td><td>0.3</td><td>0.4</td><td>0.5</td><td>0.6</td><td>…</td></tr>
+  <tr><th>v₁/(m·s⁻¹)</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><th>v₂/(m·s⁻¹)</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><th>v₃/(m·s⁻¹)</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<p class="small" style="text-align:center">表1 小车在几个时刻的瞬时速度（教材p37表格照录·三行留白＝你的实验数据自己填，教材给的是"结构"不是"答案"）</p>
+<div class="try"><span class="q">易错变形（30秒·自编）：</span>表1从位置0到位置6，实验经历了多长时间？相邻两个计数点之间有几个打点间隔？<div class="a">→ 0.6 s（sympy核验：6×0.1=0.6✓）——<b>七个计数点之间只有6个间隔</b>，"点数减一"才是间隔数；每段间隔里有5个打点间隔（sympy核验：0.1÷0.02=5✓）。</div></div>
+
+<h2><span class="step-tag">第三步</span>数据分析——描点作图，让图说话</h2>
+<div class="talk">
+<p>教材p37"数据分析"（照录白话）：你能否从表格中的数据看出小车速度随时间变化的定量关系？如果不能，怎么办？——可以考虑用 <b>v-t 图像</b>分析速度 v 与时间 t 的定量关系：以时间 t 为横轴、速度 v 为纵轴建立直角坐标系，根据表1中的 v、t 数据在坐标系中<b>描点</b>，作出 v-t 图像。</p>
+<p>描点之后怎么连线？教材p37旁栏批注（照录）：<mark class="nb">"如果有些点难以落在曲线上，应该使它们大致均匀地分布在曲线两侧。这样曲线就更符合实际的规律。"</mark>——不许把点挨个用直线段连成"心电图"。</p>
+<p>图线长什么样？实验结论：小车的 v-t 图线<b>近似一条倾斜的直线</b>——速度随时间<b>大致均匀增加</b>。（给下一节埋个伏笔：这种"加速度不变"的运动，教材2.2节会给它正式命名——匀变速直线运动。）</p>
+</div>
+<div class="fig">
+<svg width="100%" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="v-t图像描点示意：数据点分布在拟合直线两侧（自绘示意教材p37数据分析思想）">
+  <defs><marker id="e22" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#8fa0b3"/></marker></defs>
+  <line x1="80" y1="200" x2="650" y2="200" stroke="#8fa0b3" stroke-width="1.6" marker-end="url(#e22)"/>
+  <line x1="80" y1="200" x2="80" y2="30" stroke="#8fa0b3" stroke-width="1.6" marker-end="url(#e22)"/>
+  <text x="658" y="216" fill="#8fa0b3" font-size="13">t/s</text>
+  <text x="30" y="34" fill="#8fa0b3" font-size="13">v/(m·s⁻¹)</text>
+  <line x1="80" y1="190" x2="600" y2="70" stroke="#f0b429" stroke-width="2.4"/>
+  <g fill="#6fc2ff">
+    <circle cx="130" cy="178" r="4"/><circle cx="210" cy="164" r="4"/><circle cx="290" cy="146" r="4"/><circle cx="370" cy="128" r="4"/><circle cx="450" cy="110" r="4"/><circle cx="530" cy="90" r="4"/>
+  </g>
+  <circle cx="210" cy="152" r="4" fill="none" stroke="#ff8f95" stroke-width="1.6"/>
+  <circle cx="450" cy="120" r="4" fill="none" stroke="#ff8f95" stroke-width="1.6"/>
+  <text x="250" y="150" fill="#ff8f95" font-size="12">点不在直线上？正常！</text>
+  <text x="430" y="70" fill="#f0b429" font-size="13">让点大致均匀分布在直线两侧</text>
+  <text x="360" y="226" fill="#5a6a7a" font-size="11.5" text-anchor="middle">描点→找"两侧均匀穿过"的那条线→小车速度随时间大致均匀增加（自绘示意·教材p37数据分析＋旁栏批注）</text>
+</svg>
+<p class="figcap" style="text-align:center">这张图在说什么：连线不是"过山车"——画的是"最懂这堆点"的那条平滑线。</p>
+</div>
+<div class="talk">
+<p><b>做一做：用计算机绘制 v-t 图像</b>（教材p38照录白话）：借助常用的数表软件，可以迅速、准确地根据表中的数据作出 v-t 图像，甚至能够写出图像所代表的公式。以 WPS 表格软件为例：在某一列依次输入测量时间，相邻一列输入对应的速度值（图2.1-2）；用鼠标选中这些数据，按照"插入"→"图表"的提示，一步步得到所画的图像（图2.1-3）；图表类型选<b>"平滑散点图"</b>；在"添加趋势线"对话框的"类型"标签里选<b>"线性"</b>——因为这个实验的数据几乎分布在一条直线上。教材图2.1-3里 WPS 自动写出的趋势线公式照录：</p>
+<div class="formula">y ＝ 2.0833x ＋ 0.35</div>
+<p>（趋势线是<b>拟合近似线</b>——不必逐点过线，教材示例照录；sympy核验：y(0)=0.35✓、y(0.6)≈1.6✓。）</p>
+</div>
+<div class="try"><span class="q">验一验（60秒·自编小数据代验"直线图线斜率恒定"）：</span>自编某次实验前三个计数点：(0, 0.50)、(0.1, 0.69)、(0.2, 0.88) m/s。每0.1 s速度增量多大？图线的斜率（预告：就是加速度）多大？<div class="a">→ 每段 Δv＝0.19 m/s（sympy核验：0.69−0.50=0.19✓、0.88−0.69=0.19✓）——增量恒定；斜率＝(0.88−0.50)÷0.2＝<b>1.9 m/s²</b>（sympy核验：0.38/0.2=1.9✓）。点全在一条直线上＝斜率处处相同＝加速度不变——这就是2.2节"匀变速"的直觉底子。</div></div>
+
+<h2><span class="step-tag">第四步</span>练习与应用：剪贴法做图 + 列车速度表（教材p38两题照录代验）</h2>
+<div class="talk">
+<p><b>题1（照录）</b>：为研究实验小车沿斜面向下运动的规律，把打点计时器纸带的一端固定在小车上，小车拖动纸带运动时，纸带上打出的点如图2.1-4所示。（1）某同学用以下方法绘制了小车运动的 v-t 图像：<mark class="nb">先把纸带每隔 0.1 s 剪断</mark>，得到若干短纸条；再把这些纸条并排贴在一张纸上，使这些纸条<b>下端对齐</b>，作为时间坐标轴，标出时间；最后将纸条<b>上端中心连起来</b>，于是得到 v-t 图像。请你按以上办法绘制这个 v-t 图像。（2）这样做有道理吗？说说你的看法。</p>
+<p><b>道理（自编说理）</b>：每条纸条的长度＝小车在这 0.1 s 里跑过的位移；位移÷0.1 s＝这一段的平均速度≈中间时刻的瞬时速度（1.3的老方法）。所以<mark class="nb">纸条越长＝速度越大</mark>，"下端对齐＋上端中心连线"画出来的，正是以"纸条长"为纵坐标的 v-t 图像——剪贴法就是纸带测速的几何化身。</p>
+<p><b>题2（照录）</b>：列车沿长直坡路向下行驶。开始时速度表上的示数是 54 km/h，以后每 5 s 读取一次数据，见表2。（1）在表2中填写以 m·s⁻¹ 为单位表示的速度值。（2）作出列车速度与时间关系的 v-t 图像。</p>
+</div>
+<table class="tb">
+  <tr><th>时间 t/s</th><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td></tr>
+  <tr><th>速度 v/(km·h⁻¹)</th><td>54</td><td>59</td><td>65</td><td>70</td><td>76</td><td>81</td><td>86</td></tr>
+  <tr><th>速度 v/(m·s⁻¹)</th><td>15.00</td><td>16.39</td><td>18.06</td><td>19.44</td><td>21.11</td><td>22.50</td><td>23.89</td></tr>
+</table>
+<p class="small" style="text-align:center">表2 列车速度表（教材p38照录·换算行＝km/h÷3.6保留两位小数·sympy逐点代验：54→15✓·59→16.39✓·65→18.06✓·70→19.44✓·76→21.11✓·81→22.5✓·86→23.89✓）</p>
+<div class="talk">
+<p>题2（2）作图后你会发现：7个点几乎落在一条直线上——列车也在做"速度随时间大致均匀增加"的运动。相邻 5 s 的速度增量（km/h）依次为 5、6、5、6、5、5（和为32，sympy核验✓），换算成加速度约 0.28～0.33 m/s²（sympy核验：5/18≈0.28✓·6/18≈0.33✓）——每段近似相等，直线图线的又一印证。</p>
+</div>
+
+<div class="pit"><b>大坑警报（本节四个高频坑）：</b>①<b>计时起点≠纸带上第一个点</b>——开头过密的点要先舍掉，计时起点是后选的"适当的点"；②<b>0.1 s 计数点</b>是"每5个打点间隔取一个"，不是"数到第5个点"（间隔数＝点数−1）；③<b>描点连线不许"心电图"</b>——教材p37原话：让点大致均匀地分布在曲线两侧；④<b>"匀速"错觉</b>——表2列车加速度约0.28~0.33 m/s²，数值虽小但<b>不是0</b>：图线微微上斜≠水平线，"变得慢"和"没在变"是两本账（1.4伞兵/侦察机的老辨析在这里再用一次）。</div>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选）</span><br>
+<b>①趋势线里的"拟合"思想</b>：趋势线＝找一条"总体上离所有点最近"的线，让数据自己说话——不逐点强迁，也不手画凭感觉。以后物理、化学实验处理数据都用这一招（自编白话）。<br>
+<b>②为什么"相隔0.1 s"可以"或更短"</b>：计数点取密些＝每段位移短些＝平均速度更接近瞬时速度（1.3"极限思想"的回声）；取疏些＝刻度尺量起来误差小——两难取平衡，教材给了0.1 s这个常用档位（自编说理）。<br>
+<b>③章首磁浮问题的钥匙</b>：430 km/h≈119.4 m/s（sympy核验：430/3.6=1075/9≈119.44✓）。匀速巡航那30 s里速度几乎不变、加速度≈0；起步加速段才有加速度——等学完2.2，你就能按教材章首的要求自己估算它了。
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走＋自测</h2>
+<div class="key">
+<b>三句话带走：</b><br>
+1. <mark class="nb">流程一条线</mark>：装置（小车＋纸带＋打点计时器＋槽码＋滑轮木板）→操作（先开机后放车·打完即断电·增减槽码做三次）→纸带四字诀（舍、取、量、算）→填表1→描点作 v-t 图。<br>
+2. <mark class="nb">图像一句话</mark>：小车 v-t 图线近似倾斜直线＝速度随时间大致均匀增加；描点要"均匀分布在曲线两侧"，不连线成折。<br>
+3. <mark class="nb">数据有外挂</mark>：WPS 平滑散点图＋线性趋势线，公式自动写出（教材示例 y＝2.0833x＋0.35 照录）——趋势线不必过每个点。
+</div>
+<p class="small"><b>自测四连</b>（先自己想再看答案）：</p>
+<p>①（流程问·自编）实验操作三步的顺序里，"先启动计时器、后放开小车"是为了什么？</p>
+<p>②（教材表1结构）打点计时器每 0.02 s 打一个点、计数点相隔 0.1 s——相邻计数点间有几个打点间隔？从位置0到位置6经历了多久？</p>
+<p>③（教材p38题2）54 km/h＝？m/s；86 km/h＝？m/s（保留两位小数）。</p>
+<p>④（教材p38题1）"每隔 0.1 s 剪断纸带、下端对齐、上端中心连线"，为什么连出来的就是 v-t 图像？</p>
+<div class="detail">
+<p class="small"><b>答案：</b><span class="ans">① 防止纸带开头段丢点＋避开刚启动打点不稳的阶段，保证运动全程都有均匀的"打卡记录"（自编说理）</span>　<span class="ans">② 5个间隔（sympy核验：0.1÷0.02=5✓）；0.6 s（sympy核验：6×0.1=0.6✓）</span>　<span class="ans">③ 54÷3.6＝15.00 m/s（sympy核验：15✓）；86÷3.6≈23.89 m/s（sympy核验：86/3.6=215/9≈23.89✓）</span>　<span class="ans">④ 每条纸条长＝0.1 s内位移，位移÷0.1 s＝该段平均速度≈中间时刻瞬时速度；纸条越长速度越大，上端中心连线＝以纸条长为"高度"的速度-时间图像（自编说理·sympy核验：v∝Δx/0.1✓）</span></p>
+</div>
+<div class="box"><b>高考怎么考（考位锚）：</b>①纸带处理三步（舍点/定计数点/用1.3法算瞬时速度）——实验题的年年必经之路；②v-t图像描点作图规范与"两侧均匀分布"（作图题采分点）；③打点周期0.02 s与计数点间隔0.1 s的换算（含"点数−1＝间隔数"）；④km/h↔m/s换算（隐含单位坑·题2同型）。具体真题锚候采（卷源在库·宁缺毋编不代拟）。</div>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 820 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第一章四节→2.1实验（你在·第二章开工）→2.2匀变速v-t">
+  <defs><marker id="e23" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a9eff"/></marker></defs>
+  <rect x="16" y="38" width="118" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="75" y="58" fill="#cfe0f0" font-size="12.5" text-anchor="middle">1.1质点 参考系</text><text x="75" y="76" fill="#5a6a7a" font-size="11" text-anchor="middle">立规矩</text>
+  <line x1="134" y1="61" x2="162" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#e23)"/>
+  <rect x="164" y="38" width="118" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="223" y="58" fill="#cfe0f0" font-size="12.5" text-anchor="middle">1.2 时间 位移</text><text x="223" y="76" fill="#5a6a7a" font-size="11" text-anchor="middle">打点计时器</text>
+  <line x1="282" y1="61" x2="310" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#e23)"/>
+  <rect x="312" y="38" width="118" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="371" y="58" fill="#cfe0f0" font-size="12.5" text-anchor="middle">1.3 速度</text><text x="371" y="76" fill="#5a6a7a" font-size="11" text-anchor="middle">纸带测速法</text>
+  <line x1="430" y1="61" x2="458" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#e23)"/>
+  <rect x="460" y="38" width="118" height="46" rx="8" fill="#1d2733" stroke="#31465e"/>
+  <text x="519" y="58" fill="#cfe0f0" font-size="12.5" text-anchor="middle">1.4 加速度</text><text x="519" y="76" fill="#5a6a7a" font-size="11" text-anchor="middle">造完工具</text>
+  <line x1="578" y1="61" x2="606" y2="61" stroke="#4a9eff" stroke-width="2" marker-end="url(#e23)"/>
+  <rect x="608" y="30" width="128" height="62" rx="8" fill="#25384d" stroke="#4a9eff" stroke-width="2"/>
+  <text x="672" y="52" fill="#ffffff" font-size="12.5" text-anchor="middle" font-weight="bold">2.1 实验（你在）</text><text x="672" y="72" fill="#f0b429" font-size="11" text-anchor="middle">第二章开工·先测数据</text>
+  <line x1="672" y1="92" x2="672" y2="112" stroke="#4a9eff" stroke-width="2" marker-end="url(#e23)"/>
+  <text x="410" y="124" fill="#5a6a7a" font-size="11.5" text-anchor="middle">这张图在说什么：第一章工具集齐→第二章第一课先动手实测——你亲手画的第一条v-t图线，下一节就给它"命名"。</text>
+</svg>
+<p class="small" style="text-align:center">下一站：2.2 匀变速直线运动的速度与时间的关系——把你刚画的那条倾斜直线正式命名为"匀变速直线运动"，并给它配上公式 v＝v₀＋at。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2·标准v2.3条款落地：节首清单＋预备块＋四站推进＋实验装置图/纸带处理示意/描点示意/位置图SVG＋考位锚块＋@media print打印层；正文"验一验"×4含易错变形×1（点数减一），节末自测四连，答案直接可见；sympy代验29验点全过·留痕＝席位私有p13_jc/sympy_验点_物理2.1_1031午后.py（实验节扩验点：自编等差三点Δv=0.19/斜率1.9·磁浮430km/h=1075/9）·事实层素材源：人教2019必修第一册p36-38官方影印逐页对照（国家中小学智慧教育平台·transcode直链·印刷页36-38＝图m41-m43·影印图存席位私有目录p13_jc/·原件不入仓）· **节界实锚＝2.1全节p36-38**（p36节题页+普朗克引言及脚注①+实验思路+图2.1-1/p37进行实验+数据记录+表1+数据分析+旁栏批注"均匀分布在曲线两侧"/p38做一做WPS图2.1-2图2.1-3趋势线y=2.0833x+0.35照录+练习与应用题1图2.1-4题2表2（54/59/65/70/76/81/86 km/h照录·换算行sympy七点代验）——**p35＝第二章章首页（章级栏目）·p39＝2.2节题页（右界夹逼）·第二章共4节·2.1为首节**）·图2.1-2为WPS工作簿截图·示例数据不作逐格数值转录（像素分辨率不足以逐格确证·宁缺毋编·成稿零数值引用）·自编例全部显式标注"自编/自编说理"，教材原句标注页码来源（p35章首/p36引言脚注实验思路/p37进行实验数据记录表1数据分析旁栏/p38做一做练习与应用题1题2）·设计标准：零预设 · 一次一步 · 随读随验×4 · 卡住有出路 · 收口能复述
+</div>
+</div>
+</body>
+</html>

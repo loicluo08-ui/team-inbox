@@ -1,0 +1,27 @@
+== VERIFY-COMMIT de2e992 HEAD=2e6e6d5 时点=2026-10-25T13:01:38 改动件=16 ==
+NOTE-管理层文件	claim_队7.md	增删行含工序词系申报语（不计射程外）
+WORDS-DELTA	claim_队7.md	{'队6': 1, '席': 1, '工作单': 2, '首件': 2, '队3': 1, '队1': 3, '队7': 3, '实切包': 1}
+SHA	claim_队7.md	old=f558d4d1025b8f4d new=b5a4644aa7204c32
+WORDS-DELTA	产出_队1/B2章_实切包_生物第2章_队1_1023.html	{'实切包': -2}
+SHA	产出_队1/B2章_实切包_生物第2章_队1_1023.html	old=f5e2a46e742911be new=32a05c60b4e2a4a1
+WORDS-DELTA	产出_队3/装配_化学必修一_第1章_1024.html	{'实切包': -2}
+SHA	产出_队3/装配_化学必修一_第1章_1024.html	old=c5ee6aaa18d96c75 new=9e6f8ca00bda8c99
+SKIP(二进制)	产出_队3/装配_化学必修一_第1章_1024.pdf	oldblob=1c3263736b06451e newblob=4d9635e942bdea59（PDF重出件·blob sha1留痕）
+WORDS-DELTA	产出_队3/装配_化学必修一_第2章_1024.html	{'实切包': -1}
+SHA	产出_队3/装配_化学必修一_第2章_1024.html	old=2ce83e72aab427bb new=410adf9066ff6e38
+SKIP(二进制)	产出_队3/装配_化学必修一_第2章_1024.pdf	oldblob=ce9d9acb902a9f79 newblob=c83a6e06f68f67a5（PDF重出件·blob sha1留痕）
+WORDS-DELTA	产出_队3/装配_化学必修一_第3章_1024.html	{'工作单': -1, '实切包': -1}
+SHA	产出_队3/装配_化学必修一_第3章_1024.html	old=3f4eafc0a25c8e54 new=6e665f97cdb28969
+SKIP(二进制)	产出_队3/装配_化学必修一_第3章_1024.pdf	oldblob=d3d538f9d5ae249a newblob=5fce0575fdb5eed4（PDF重出件·blob sha1留痕）
+SKIP(新文件)	产出_队7/tool_净面实切包自称修复_队7块_1025.py
+SKIP(新文件)	产出_队7/修复工作单_净面队7块_并行搜索员C_1025午.md
+WORDS-DELTA	产出_队7/装配_地理必修一前三章_第1章_1024.html	{'实切包': -2}
+SHA	产出_队7/装配_地理必修一前三章_第1章_1024.html	old=52b746de7cc2eb55 new=3da35960012b8dd6
+SKIP(二进制)	产出_队7/装配_地理必修一前三章_第1章_1024.pdf	oldblob=ceaf62303a24baa2 newblob=61d11fde4ed4ec24（PDF重出件·blob sha1留痕）
+WORDS-DELTA	产出_队7/装配_地理必修一前三章_第2章_1024.html	{'实切包': -2}
+SHA	产出_队7/装配_地理必修一前三章_第2章_1024.html	old=5f5d9ec91245e375 new=a7dd76793071b98a
+SKIP(二进制)	产出_队7/装配_地理必修一前三章_第2章_1024.pdf	oldblob=2950b12019cfeeb7 newblob=f551942af77ebfdd（PDF重出件·blob sha1留痕）
+WORDS-DELTA	产出_队7/装配_地理必修一前三章_第3章_1024.html	{'实切包': -2}
+SHA	产出_队7/装配_地理必修一前三章_第3章_1024.html	old=76b1831142fa6b86 new=831c94ce29a49a77
+SKIP(二进制)	产出_队7/装配_地理必修一前三章_第3章_1024.pdf	oldblob=56195e0bfe70c849 newblob=b89231aa9f1dfc6e（PDF重出件·blob sha1留痕）
+VERDICT	PASS	commit=de2e992

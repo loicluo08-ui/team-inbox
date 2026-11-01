@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>数学 4.2 指数函数 · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#16233a}
+h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
+h3{color:#2c5f8f;margin-top:1.6em}
+.station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
+.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
+.mark{background:#fff176;padding:0 4px;border-radius:3px}
+.uline{border-bottom:2px solid #4a90d9;padding-bottom:1px}
+.note-red{color:#c0392b;border:1px solid #e6b0aa;background:#fdf2f0;border-radius:8px;padding:8px 14px;margin:10px 0}
+.try{background:#e8f6ef;border-left:4px solid #27ae60;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.try .ans{color:#1e7e4e;font-weight:bold}
+.alt{background:#f6f2fb;border-left:4px solid #8e5cb8;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0;color:#4a3568}
+.alt .tag{font-size:.8em;color:#8e5cb8;font-weight:bold}
+.selftest{background:#fdf6ec;border:1px solid #e2c48d;border-radius:10px;padding:14px 18px;margin:16px 0}
+.kaowei{background:#eaf3ea;border:2px solid #3d8b5f;border-radius:10px;padding:12px 16px;margin:16px 0}
+.kaowei .kw-title{font-weight:bold;color:#2d6a45}
+.figure{text-align:center;margin:16px 0}
+.figure svg{max-width:100%;height:auto}
+.figcap{font-size:.88em;color:#5a6b7d;margin-top:6px}
+.walk{background:#eef7ee;border-radius:8px;padding:10px 16px;margin:12px 0}
+.walk li{margin:5px 0}
+table.cmp{border-collapse:collapse;width:100%;margin:12px 0}
+table.cmp th,table.cmp td{border:1px solid #b8c8d8;padding:8px 12px;text-align:center}
+table.cmp th{background:#e3edf6;color:#1e3a5f}
+.sub{font-size:.85em;color:#5a6b7d}
+.detail{color:#3d6a9e;font-size:.95em}
+.foot{font-size:.82em;color:#7a8a99;border-top:1px dashed #c5d2dd;margin-top:28px;padding-top:10px}
+@media print{
+ body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
+ .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
+ .station-title{background:#333!important;color:#fff!important}
+ h1{font-size:1.35em}h2{font-size:1.15em}
+ .formula{background:#f2f2f2!important}
+ a{color:#000;text-decoration:none}
+ .no-print{display:none}
+}
+</style>
+</head>
+<body>
+
+<h1>数学 4.2 指数函数 <span class="sub">零基础首学版 v1.0 · 队2席 · 1031晚 · 教材节域p111-121</span></h1>
+
+<div class="check">
+<span class="tag">读完这节你能做到</span>
+<p>① 用<b>做除法</b>从增长数据里挖出"年增长率是常数"这个暗号，说出它就是<span class="mark">指数增长</span>的身份证；</p>
+<p>② 写出指数函数的定义 <b>y=aˣ（a＞0，且a≠1）</b>，说清"a为什么不能取负数、不能取1"，并认出定义域是 R；</p>
+<p>③ 用描点法画出 y=2ˣ 与 y=(1/2)ˣ 的图象，并说清<b>底数互为倒数的两个指数函数图象关于 y 轴对称</b>；</p>
+<p>④ 背下性质表：两类图象分<span class="mark">0＜a＜1 递减、a＞1 递增</span>，都过定点 (0,1)，值域都是 (0,+∞)；</p>
+<p>⑤ 用"同底看单调、异底垫个1"三招比较两个幂值的大小；</p>
+<p>⑥ 用 y=N(1+p)ˣ 模型处理增长率问题，会从图象上读出<span class="mark">倍增期</span>。</p>
+</div>
+
+<div class="station">
+<span class="station-title">出发前清点行囊</span>
+<ul class="walk">
+<li><b>实数指数幂</b>（4.1）：aˣ 里的 x 已经从整数扩到实数，a＞0 时 aˣ 对每个实数 x 都有意义；</li>
+<li><b>函数单调性</b>（3.2）：x₁＜x₂ 时 f(x₁)＜f(x₂) 叫增函数——本节要用它比较大小；</li>
+<li><b>研究一类函数的路线图</b>（3.3 幂函数走过的路）：定义 → 图象 → 性质 → 应用，本节原路再走一遍。</li>
+</ul>
+</div>
+
+<h2>第一站 · 两个真实变化：一个疯长，一个慢衰</h2>
+
+<p><b>问题1（景区游客）</b>：A、B 两地景区自 2001 年起采取不同应对措施——A 地提高门票价格，B 地取消门票。教材表 4.2-1 记录了 2001-2015 年两地游客人次：<b>A 地</b>从 600 万次涨到 743 万次，每年增加量大致相等（9、11、10、11…万次，约 10 万次）；<b>B 地</b>从 278 万次涨到 1 244 万次，每年增加量从 31 万一路涨到 126 万，越涨越快。</p>
+<div class="figure">
+<svg width="640" height="240" viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图4.2-1与图4.2-2复刻：A地散点近似直线，B地散点下弯上翘">
+<rect x="0" y="0" width="640" height="240" fill="#ffffff"/>
+<line x1="55" y1="200" x2="290" y2="200" stroke="#333" stroke-width="1.5"/><line x1="70" y1="30" x2="70" y2="200" stroke="#333" stroke-width="1.5"/>
+<text x="18" y="24" font-size="11" fill="#555">人次/万次</text>
+<circle cx="76" cy="176" r="3" fill="#c2185b"/><circle cx="104" cy="173" r="3" fill="#c2185b"/><circle cx="132" cy="170" r="3" fill="#c2185b"/><circle cx="160" cy="168" r="3" fill="#c2185b"/><circle cx="188" cy="165" r="3" fill="#c2185b"/><circle cx="216" cy="162" r="3" fill="#c2185b"/><circle cx="244" cy="159" r="3" fill="#c2185b"/><circle cx="272" cy="157" r="3" fill="#c2185b"/>
+<line x1="72" y1="175" x2="276" y2="157" stroke="#3d7ab0" stroke-width="1.4" stroke-dasharray="5,4"/>
+<text x="120" y="150" font-size="12" fill="#333">A地：近似直线上升（图4.2-1）</text>
+<text x="64" y="224" font-size="11" fill="#555">2001</text><text x="252" y="224" font-size="11" fill="#555">2015</text>
+<line x1="360" y1="200" x2="600" y2="200" stroke="#333" stroke-width="1.5"/><line x1="375" y1="30" x2="375" y2="200" stroke="#333" stroke-width="1.5"/>
+<circle cx="381" cy="192" r="3" fill="#c2185b"/><circle cx="402" cy="184" r="3" fill="#c2185b"/><circle cx="423" cy="174" r="3" fill="#c2185b"/><circle cx="444" cy="161" r="3" fill="#c2185b"/><circle cx="465" cy="145" r="3" fill="#c2185b"/><circle cx="486" cy="124" r="3" fill="#c2185b"/><circle cx="507" cy="97" r="3" fill="#c2185b"/><circle cx="528" cy="62" r="3" fill="#c2185b"/><circle cx="549" cy="40" r="3" fill="#c2185b"/>
+<text x="430" y="55" font-size="12" fill="#333">B地：越来越陡（图4.2-2）</text>
+<text x="369" y="224" font-size="11" fill="#555">2001</text><text x="558" y="224" font-size="11" fill="#555">2015</text>
+</svg>
+<div class="figcap">图A（依教材图4.2-1/4.2-2复刻·p112）：左=A地散点近似直线；右=B地散点弯曲上翘</div>
+</div>
+<p>A 地像直线，B 地像曲线——怎么给 B 地的变化找到数学暗号？教材的<span class="mark">探究</span>给出妙招：<b>别再做减法了，改做除法</b>——</p>
+<div class="formula">309/278 ≈ 1.11，344/309 ≈ 1.11，…，1 244/1 118 ≈ 1.11</div>
+<p>相邻两年的人次之比几乎都是 1.11！于是年增长率 ≈ 1.11−1 = 0.11，是个<span class="mark">常数</span>。教材定义：<b>增长率为常数的变化方式，我们称为指数增长</b>。按这个规律，B 地游客人次从 2001 年算起：1 年后是 2001 年的 1.11¹ 倍，2 年后是 1.11² 倍，x 年后是 1.11ˣ 倍，即</p>
+<div class="formula">y = 1.11ˣ（x∈[0,+∞））　…①</div>
+<div class="note-red"><b>别混两个量</b>（教材边框提示）：做<b>减法</b>得年<b>增加量</b>，做<b>除法</b>得年<b>增长率</b>——增加量、增长率是刻画事物变化规律的两个很重要的量。A 地增加量≈常数（线性增长），B 地增长率≈常数（指数增长）。</div>
+
+<p><b>问题2（碳14测年）</b>：生物死亡后，体内碳14含量按确定的比率衰减，大约<span class="mark">每经过 5 730 年衰减为原来的一半</span>（半衰期）。设年衰减率为 p，把刚死亡时的含量看成 1 个单位：死亡 1 年后剩 (1−p)¹，2 年后剩 (1−p)²……5 730 年后剩 (1−p)⁵⁷³⁰=1/2，解出 p=1−(1/2)^(1/5730)。于是死亡 x 年后碳14含量</p>
+<div class="formula">y = ((1/2)^(1/5730))ˣ（x∈[0,+∞））　…②　→ <b>指数衰减</b>（衰减率为常数）</div>
+
+<div class="try">
+<b>课堂即时练</b>：湖泊蓝细菌每天以 6.25% 的增长率呈指数增长，30 天后变为原来的多少倍？（教材p115练习3原题·可用计算工具）<br>
+<span class="ans">答：y=1.0625³⁰≈6.2（倍）。sympy 复算 6.1641，与"约6.2倍"吻合。</span>
+</div>
+
+<h2>第二站 · 抽出共同骨架：指数函数登场</h2>
+<p>把①②两式放在一起看：y=1.11ˣ 与 y=((1/2)^(1/5730))ˣ——都是"<b>常数ˣ</b>"的形状。用字母 a 代替底数，教材给出定义：</p>
+<div class="formula"><b>一般地，函数 y=aˣ（a＞0，且 a≠1）叫做<span class="mark">指数函数</span>（exponential function），其中指数 x 是自变量，定义域是 R。</b></div>
+<p><b>为什么要 a＞0 且 a≠1？（零基础也要讲透的限制条款）</b></p>
+<ul class="walk">
+<li><b>a＞0</b>：若允许 a=−2，则 x=1/2 时 (−2)^(1/2)=√(−2) 在实数范围内无意义——图象会断片，研究不了；</li>
+<li><b>a≠1</b>：若 a=1，则 y=1ˣ=1 恒为常数，没有"变化"可研究，单调性、增长衰减全都无从谈起。</li>
+</ul>
+<div class="note-red"><b>形态三条对照</b>（辨析用）：y=2·3ˣ（多个系数2，不是）、y=3ˣ+1（尾巴加1，不是）、y=(−4)ˣ（底数为负，不是）——<b>只有干净地写成 aˣ 且 0＜a≠1 才是</b>。（本条为课堂辨析自编，形态口径依据定义原文）</div>
+<div class="try">
+<b>例1（教材p114原题）</b>：已知指数函数 f(x)=aˣ（a＞0，且a≠1），且 f(3)=π，求 f(0)、f(1)、f(−3)。<br>
+<span class="ans">答：a³=π → a=π^(1/3)，f(x)=π^(x/3)。f(0)=π⁰=1，f(1)=π^(1/3)=³√π，f(−3)=π⁻¹=1/π。</span>
+</div>
+
+<h2>第三站 · 画图象、找性质：底数把家族分成两队</h2>
+<p><b>描点画 y=2ˣ</b>（教材表4.2-2）：x=−2,−1.5,−1,−0.5,0,0.5,1,1.5,2 对应 y=0.25, 0.35, 0.5, 0.71, 1, 1.41, 2, 2.83, 4（教材给出 0.35/0.71/1.41/2.83 四个值，其余留白自填——sympy 复算九点全对，见附件2）。</p>
+<div class="figure">
+<svg width="640" height="250" viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图4.2-4与图4.2-5复刻：y=2^x上升曲线；y=2^x与y=(1/2)^x关于y轴对称">
+<rect x="0" y="0" width="640" height="250" fill="#ffffff"/>
+<line x1="40" y1="205" x2="290" y2="205" stroke="#333" stroke-width="1.5"/><line x1="110" y1="25" x2="110" y2="225" stroke="#333" stroke-width="1.5"/>
+<path d="M 45 203 C 90 200 130 190 165 160 C 190 138 205 100 220 50" fill="none" stroke="#1e7e4e" stroke-width="2.5"/>
+<circle cx="110" cy="160" r="3" fill="#333"/>
+<text x="196" y="42" font-size="12" fill="#333">y=2ˣ（图4.2-4）</text>
+<text x="60" y="224" font-size="11" fill="#555">x轴是渐近线方向·过(0,1)</text>
+<line x1="350" y1="205" x2="610" y2="205" stroke="#333" stroke-width="1.5"/><line x1="480" y1="25" x2="480" y2="225" stroke="#333" stroke-width="1.5"/>
+<path d="M 355 203 C 400 200 440 190 475 160 C 500 138 515 100 530 50" fill="none" stroke="#1e7e4e" stroke-width="2.5"/>
+<path d="M 605 203 C 560 200 520 190 485 160 C 460 138 445 100 430 50" fill="none" stroke="#c2185b" stroke-width="2.5"/>
+<line x1="430" y1="160" x2="530" y2="160" stroke="#8a9aa9" stroke-width="1.2" stroke-dasharray="4,3"/>
+<circle cx="480" cy="160" r="3" fill="#333"/>
+<text x="532" y="46" font-size="12" fill="#1e7e4e">y=2ˣ</text><text x="392" y="46" font-size="12" fill="#c2185b">y=(1/2)ˣ</text>
+<text x="368" y="224" font-size="11" fill="#555">图4.2-5：P(x,y)与P₁(−x,y)关于y轴对称</text>
+</svg>
+<div class="figcap">图B（依教材图4.2-4/4.2-5复刻·p116）：左=y=2ˣ描点曲线；右=底数互为倒数的两图象关于y轴对称</div>
+</div>
+<p><b>教材探究的对称发现</b>：因为 y=(1/2)ˣ=2⁻ˣ，点 (x,y) 与点 (−x,y) 关于 y 轴对称，所以 y=2ˣ 图象上任意一点 P(x,y) 关于 y 轴的对称点 P₁(−x,y) 都在 y=(1/2)ˣ 的图象上，反之亦然——<b>底数互为倒数的两个指数函数的图象关于 y 轴对称</b>。据此用一个图象就能画出另一个。</p>
+<p><b>多画几个底数</b>（教材探究+图4.2-6）：取 y=2ˣ, 3ˣ, 4ˣ 与 y=(1/2)ˣ, (1/3)ˣ, (1/4)ˣ 画在同一直角坐标系，发现图象按底数分成 <b>0＜a＜1 与 a＞1 两队</b>。一般地，指数函数的图象和性质如教材表4.2-3：</p>
+<table class="cmp">
+<tr><th>项目</th><th>0＜a＜1</th><th>a＞1</th></tr>
+<tr><td>图象</td><td>下降曲线（左图y=aˣ过(0,1)，右侧贴x轴）</td><td>上升曲线（左下贴x轴，右侧上翘）</td></tr>
+<tr><td>定义域</td><td colspan="2">R</td></tr>
+<tr><td>值域</td><td colspan="2">(0,+∞)</td></tr>
+<tr><td rowspan="2">性质</td><td colspan="2">(1) 过定点 (0,1)，即 x=0 时 y=1</td></tr>
+<tr><td>(2) 减函数</td><td>(2) 增函数</td></tr>
+</table>
+<p><b>例3（教材p117-118原题）比较大小三招</b>：</p>
+<ul class="walk">
+<li><b>(1) 1.7^2.5 与 1.7³</b>——同底 1.7＞1 是增函数，2.5＜3，所以 1.7^2.5＜1.7³；</li>
+<li><b>(2) 0.8^(−√2) 与 0.8^(−√3)</b>——底 0＜0.8＜1 是减函数，−√2＞−√3，所以 0.8^(−√2)＜0.8^(−√3)；</li>
+<li><b>(3) 1.7^0.3 与 0.9^3.1</b>——<span class="mark">垫1法</span>：不能看作同一个指数函数的两个函数值，就借"1"当桥：1.7^0.3＞1.7⁰=1，0.9^3.1＜0.9⁰=1，所以 1.7^0.3＞0.9^3.1。</li>
+</ul>
+<div class="try">
+<b>课堂即时练</b>（教材p118练习2）：比较 (1) 6^√2 与 7^√2；(2) 0.3^(−3.5) 与 0.3^(−2.3)；(3) 1.2^0.5 与 0.5^1.2。<br>
+<span class="ans">答：(1) 同指数不同底——借幂函数 y=x^√2 在 (0,+∞) 上递增（3.3方法），6^√2＜7^√2；(2) 底0.3∈(0,1)递减，−3.5＜−2.3，故 0.3^(−3.5)＞0.3^(−2.3)；(3) 垫1法：1.2^0.5＞1＞0.5^1.2。</span>
+</div>
+
+<h2>第四站 · 模型落地：谁先反超，多久翻番</h2>
+<p><b>例2（教材p114原题·指数模型的正面交锋）</b>：</p>
+<ul class="walk">
+<li><b>(1)</b> 问题1中，平均每位游客出游一次给当地带来 1 000 元收入（不含门票），A 地门票 150 元。设经过 x 年，A、B 两地收入 f(x)=1 150×(10x+600)，g(x)=1 000×278×1.11ˣ。计算工具得：x=0 时 f(0)−g(0)=412 000（A 领先 41.2 亿元）；<b>x≈10.22 时 f≈g</b>（sympy 精确交点 x₀=10.2178，教材取两位小数）；结合图4.2-3：x＜10.22 时 f(x)＞g(x)，x＞10.22 时 f(x)＜g(x)；x=14 时 g(14)−f(14)≈347 303（万元）。<b>结论照教材</b>：2001 年 A 比 B 多 412 000 万元；约 2011 年 3 月某个时刻两者持平；此后 B 反超，2015 年 B 已比 A 多约 347 303 万元——线性在前面领跑，指数在后面反超，<span class="mark">这就是"指数增长 eventually 赢"的第一次正面目击</span>。</li>
+<li><b>(2)</b> 问题2中，生物死亡 10 000 年后碳14含量 h(x)=((1/2)^(1/5730))ˣ，h(10 000)=(1/2)^(10000/5730)≈0.30——衰减为原来的约 30%。</li>
+</ul>
+<p><b>模型总结（教材p114末段）</b>：设原有量为 N，每次增长率为 p，经过 x 次增长到 y，则 <b>y=N(1+p)ˣ（x∈N）</b>；形如 <b>y=kaˣ（k∈R 且 k≠0；a＞0 且 a≠1）</b>的函数是刻画指数增长或指数衰减变化规律的非常有用的函数模型。</p>
+<p><b>例4（教材p118原题·读图找倍增期）</b>：图4.2-7 某城市人口呈指数增长。(1) 读图：经过 20 年约 10 万人，经过 40 年约 20 万人——由 10 万到 20 万用时约 20 年，即<b>倍增期约 20 年</b>；(2) 从 80 万人开始，每过 20 年翻一番，20 年后约 <b>160 万人</b>。</p>
+<div class="figure">
+<svg width="560" height="230" viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图4.2-7复刻：人口指数增长曲线，20年约10万，40年约20万，80年上穿80万">
+<rect x="0" y="0" width="560" height="230" fill="#ffffff"/>
+<line x1="50" y1="195" x2="520" y2="195" stroke="#333" stroke-width="1.5"/><line x1="70" y1="20" x2="70" y2="195" stroke="#333" stroke-width="1.5"/>
+<text x="14" y="18" font-size="11" fill="#555">y/万人</text><text x="524" y="212" font-size="11" fill="#555">x/年</text>
+<path d="M 70 192 C 150 188 260 178 350 140 C 420 108 470 60 495 25" fill="none" stroke="#c2185b" stroke-width="2.5"/>
+<circle cx="230" cy="183" r="3" fill="#333"/><circle cx="390" cy="136" r="3" fill="#333"/>
+<text x="196" y="206" font-size="11" fill="#555">20年≈10万</text><text x="356" y="158" font-size="11" fill="#555">40年≈20万</text>
+<text x="428" y="44" font-size="11" fill="#c2185b">80万→再过20年≈160万</text>
+</svg>
+<div class="figcap">图C（依教材图4.2-7复刻·p118）：同一条指数曲线上，10万→20万与80万→160万用时相同（倍增期）</div>
+</div>
+
+<div class="walk"><b>下一站预告</b>：y=1.11ˣ 顺着算很顺——可反过来"经过多少年游客人次是 2001 年的 2 倍"（2=1.11ˣ 求 x），指数当未知数解不动，怎么办？<b>4.3 对数</b>就是为这个"反着问"发明的工具。</div>
+
+<div class="alt"><span class="tag">拓展A · 教材p115阅读与思考《放射性物质的衰减》</span>
+<p>碳14之外，铀235、锶90、碘131、铯137、镭226 也都是放射性物质。半衰期 h 的物质经时间 t 剩 Q(t)=Q₀(1/2)^(t/h)。<b>连续两个半衰期不是"全衰期"</b>：衰减为 (1/2)²=1/4，永远在乘 1/2，质量不会归零。指数增长一侧的对偶概念叫<b>倍增期</b>——增长为原来两倍所用的时间，对同一函数它是定长（例4的20年）。</p></div>
+
+<div class="alt"><span class="tag">拓展B · 教材p120-121信息技术应用《探究指数函数的性质》</span>
+<p>用信息技术把底数 a 做成一端固定在 y 轴上的水平线段 PA 的长度，拖动点 A（0＜x_A＜1）：a 越接近 1，图象越贴近直线 y=1；x_A=1 时图象就是直线 y=1（这就是 a≠1 的直观理由）；x_A＞1 后图象换队上翘。图1/图2 两组曲线族共同印证表4.2-3 的两类性质。</p></div>
+
+<div class="alt"><span class="tag">拓展C · 课堂体感（自编·显式标注）</span>
+<p>指数增长有多凶：一张纸对折 1 次厚 2 层，对折 x 次厚 2ˣ 层。对折 30 次≈2³⁰≈10.7 亿层，按 0.1mm/层叠出约 107 km——已出大气层。底数只是 2，指数却把数字推上天空，这就是"增长率是常数"的复利威力。</p></div>
+
+<div class="selftest">
+<b>自测四连</b>（先自己动笔，再对答案；来源逐题标注）
+<ol>
+<li>说出 y=2ˣ 与 y=(1/3)ˣ 的单调区间与值域。（改编自教材p118练习1）<br><span class="ans">答：y=2ˣ 底＞1，在 R 上递增；y=(1/3)ˣ 底∈(0,1)，在 R 上递减；两者值域都是 (0,+∞)，图象关于 y 轴对称（底数互为倒数）。</span></li>
+<li>比较 6^√2 与 7^√2 的大小。（教材p118练习2(1)原题）<br><span class="ans">答：同指数不同底，考察幂函数 y=x^√2（x＞0 递增）：6＜7，故 6^√2＜7^√2。</span></li>
+<li>求 y=0.7^(1/x) 的定义域。（教材p118习题4.2复习巩固1(4)原题）<br><span class="ans">答：指数含分母 1/x，须 x≠0；定义域为 {x|x≠0}。（(1)(2)(3)小题指数为多项式，定义域均 R）</span></li>
+<li>某城市人口呈指数增长、倍增期约 20 年，从 40 万人起步，再过 20 年人口约多少？再过 60 年呢？（改编自教材p118例4）<br><span class="ans">答：每过一个倍增期翻一番：20 年后约 80 万人；60 年=3 个倍增期，40×2³=320 万人。</span></li>
+</ol>
+</div>
+
+<div class="kaowei">
+<span class="kw-title">高考怎么考 · 考位锚（真题锚候采·考向考位如下）</span>
+<ul>
+<li><b>指数函数定义辨析</b>＝概念判断小题：a＞0 且 a≠1、y=aˣ 形态纯净度（第二站辨析三条对照即原型）。</li>
+<li><b>比较大小</b>＝高频考点：同底用单调性、异底垫1法、同指数借幂函数（例3+练习2两套模板）。</li>
+<li><b>图象过定点(0,1)与两类曲线</b>＝图象题常客：给图识底数范围、给解析式选图。</li>
+<li><b>指数增长/衰减模型</b>＝应用题常客：y=N(1+p)ˣ 求增长、半衰期/倍增期读图与计算（例2/例4模式，碳14测年即真实背景）。</li>
+<li class="detail">真题锚：真题池内暂未录"数学4.2指数函数"专行，本件按宁缺毋编原则不代拟，候哨兵线扩池补录。</li>
+</ul>
+</div>
+
+<div class="figure">
+<svg width="100%" viewBox="0 0 800 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：4.1指数（底座·指数扩到实数）→4.2指数函数（你在·aˣ落地成函数）→4.3对数（反着问求指数）→4.4对数函数→章末小结">
+<rect x="0" y="0" width="800" height="170" fill="#ffffff" stroke="#d7e3ee" rx="8"/>
+<rect x="24" y="42" width="150" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="99" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">4.1 指数</text>
+<text x="99" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">底座：指数扩到实数</text>
+<line x1="178" y1="75" x2="212" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="212,69 224,75 212,81" fill="#8a9aa9"/>
+<rect x="226" y="34" width="176" height="82" rx="8" fill="#fffbe8" stroke="#ffd94a" stroke-width="2.5"/>
+<text x="314" y="66" font-size="15" font-weight="bold" text-anchor="middle" fill="#8a6d1a">4.2 指数函数（你在）</text>
+<text x="314" y="90" font-size="11.5" text-anchor="middle" fill="#8a6d1a">y=aˣ(a＞0且a≠1)·两类性质</text>
+<line x1="406" y1="75" x2="440" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="440,69 452,75 440,81" fill="#8a9aa9"/>
+<rect x="454" y="42" width="150" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="529" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">4.3 对数</text>
+<text x="529" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">反着问：已知幂求指数</text>
+<line x1="608" y1="75" x2="642" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="642,69 654,75 642,81" fill="#8a9aa9"/>
+<rect x="656" y="42" width="120" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="716" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">4.4 对数函数</text>
+<text x="716" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">→ 章末小结</text>
+</svg>
+<div class="figcap">本节位置图：4.1→<b>4.2（你在）</b>→4.3→4.4（浅线稿·打印安全）</div>
+</div>
+
+<div class="foot">版本链：v1.0 · 1031晚 · 队2席（搜索规划师）· 影印直读p111-121（图118-128）· 节界双端实锚（左界p110=习题4.1尾亲读·右界p122=4.3节名页亲读）· 认领行10b51e5·硬闸21:25 · 分支dui2_42_1031候并禁直推main · 事实簇锚源=人教A必修一影印（6e764703·ts=1787023173400·图N→印刷页N-7）</div>
+
+</body>
+</html>

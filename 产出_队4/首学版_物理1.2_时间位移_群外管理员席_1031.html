@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理1.2 时间 位移 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  .detail { color: #a8b4c4; font-size: 15px; }
+  .big { font-size: 19px; color: #f0f3f7; }
+  .m { font-family: "Times New Roman", Georgia, serif; font-style: italic; color: #e8ecf2; }
+  mark.nb { background: #f7e08c; color: #14171c; padding: 0 5px; border-radius: 3px; font-weight: bold; }
+  .ul-blue { color: #6cc3ff; border-bottom: 2px solid #4a9eff; padding-bottom: 1px; font-weight: bold; }
+  .note-red { background: #2a1a1e; border-left: 3px solid #e07050; padding: 8px 14px; margin: 14px 0; color: #f0c4b4; font-size: 15.5px; border-radius: 0 6px 6px 0; }
+  .talk { background: #1a2230; border: 1px solid #2a3140; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .key { background: #20242c; border-left: 4px solid #d4a017; border-radius: 8px; padding: 12px 18px; margin: 16px 0; }
+  .box { background: #20242c; border: 1px dashed #4a5a70; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .check { background: #14201a; border: 1px solid #2a4a35; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .check .tag, .talk .tag, .box .tag { display: inline-block; background: #2f7d5c; color: #d9f2e6; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 6px; font-weight: bold; }
+  .try { background: #20283a; border: 1px solid #3a4a6a; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .try .t { color: #8fc6ff; font-weight: bold; font-size: 15.5px; }
+  .alt { background: #231f2a; border: 1px dashed #6a5a8a; border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
+  .alt .tag { display: inline-block; background: #5c4a8a; color: #e2d9f2; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-bottom: 6px; font-weight: bold; }
+  .fig { background: #10141b; border: 1px solid #2a3140; border-radius: 10px; padding: 12px; margin: 16px 0; }
+  .figcap { color: #7d8a99; font-size: 13.5px; text-align: center; margin-top: 8px; }
+  .small { color: #8fa3b8; font-size: 14px; }
+  table { border-collapse: collapse; margin: 14px auto; width: 100%; }
+  th, td { border: 1px solid #3a4a5c; padding: 7px 10px; font-size: 15px; text-align: center; }
+  th { background: #1c2530; color: #e8ecf2; }
+  .foot { border-top: 1px solid #2a3140; margin-top: 40px; padding-top: 14px; color: #5f6b7a; font-size: 12.5px; line-height: 1.7; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .box, .check, .alt, .try, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .try { background: #eef3fa !important; }
+    h1, h2, h3, b, .m, .big { color: #111; }
+    .sub, .small, .foot, .detail { color: #444; }
+    .step-tag { background: #d8e8ff; }
+    .note-red { background: #fdf0ec; color: #7a3020; }
+    mark.nb { background: #ffe98c; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>物理1.2 时间 位移</h1>
+<div class="sub">零基础首学版 v1.0 · 人教2019必修第一册 p15-20 · 第二章前必修 · 1031</div>
+
+<div class="talk">
+<span class="tag">开场：一句话看懂本节</span>
+<p>上一节你学会了描述"物体在哪里"（质点+参考系）。这一节回答两个更细的问题：<b>什么时候</b>（时间），以及<b>位置变了多少</b>（位移）。学完它，"物体怎么动"这句话的前半段工具就齐了。</p>
+<p>先想教材p15的问题框：要准确说出一辆行驶在北京长安街上的汽车的位置，用什么方法？你对"时间"是怎样认识的？——带着这两个问题读。</p>
+</div>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 把一句话里的"时刻"和"时间间隔"分出来，在时间数轴上用点和线段表示；</p>
+<p>② 用一维坐标描述直线运动物体的位置，会算位移 <span class="m">Δx = x₂ − x₁</span> 并判断方向；</p>
+<p>③ 分清<b>路程</b>和<b>位移</b>、<b>标量</b>和<b>矢量</b>这两对概念，能各举一个例子；</p>
+<p>④ 说出打点计时器怎么用（50 Hz电源每隔多久打一个点？）。</p>
+</div>
+
+<div class="talk">
+<span class="tag">预备块（30秒立好地基）</span>
+<p>初中你已经在数学课用过<b>数轴</b>：一条线，原点、正方向、单位长度，三件套。本节所有"位置、时刻"都画在数轴上——没有新数学。物理上新东西只有两对词：<b>时刻vs时间间隔</b>、<b>位移vs路程</b>。别慌，都是"生活里早就会、物理里才说清"的东西。</p>
+</div>
+
+<h2><span class="step-tag">第①站</span>时刻和时间间隔——点和线段</h2>
+
+<p>"上午8时上课、8时45分下课"——"8时""8时45分"指的是这节课<b>开始和结束的<mark class="nb">时刻</mark></b>，两个时刻之间的"45 min"，是<b>时间间隔</b>（教材p15·图1.2-1）。</p>
+
+<p>教材p15给你一把尺子，一个字都不用改地记住：</p>
+<div class="key">
+<p>在表示时间的数轴上，<mark class="nb">时刻用点表示，时间间隔用线段表示</mark>。</p>
+</div>
+
+<p>麻烦在于：生活里的"时间"一词两用。"您等了多久？""8点开始。"——前一个是时间间隔，后一个是时刻。教材原话："我们平时说的'时间'，有时指的是时刻，有时指的是时间间隔，要根据上下文认清它的含义。"（p15）</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 720 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="时间数轴：8时与8时45分两个红点为时刻，之间45分钟蓝线段为时间间隔">
+  <rect x="0" y="0" width="720" height="120" fill="#10141b" rx="8"/>
+  <line x1="60" y1="70" x2="660" y2="70" stroke="#5a6a7a" stroke-width="1.6"/>
+  <polygon points="660,65 674,70 660,75" fill="#5a6a7a"/>
+  <circle cx="100" cy="70" r="5" fill="#e07050"/><circle cx="250" cy="70" r="5" fill="#e07050"/>
+  <line x1="100" y1="82" x2="250" y2="82" stroke="#4a9eff" stroke-width="4"/>
+  <text x="100" y="34" fill="#e8a590" font-size="12.5" text-anchor="middle">8时（点）</text>
+  <text x="250" y="34" fill="#e8a590" font-size="12.5" text-anchor="middle">8时45分（点）</text>
+  <text x="175" y="102" fill="#8fc6ff" font-size="12.5" text-anchor="middle">45 min（线段）</text>
+  <text x="640" y="90" fill="#8fa3b8" font-size="12">t/h</text>
+  <text x="380" y="20" fill="#5a6a7a" font-size="11" text-anchor="middle">依据教材p15图1.2-1重绘（示意）</text>
+</svg>
+<p class="figcap">这张图在说什么：两个红点是两个"时刻"（一张照片），蓝线段是"时间间隔"（一段录像）。点无穷短，线段有长度。</p>
+</div>
+
+<div class="try"><span class="t">验一验①（先答，再看答案）</span><br>
+<p>判一判（教材p19练习1同族改编，标"改编·教材p19"）："第3 s末""前3 s""最后3 s""第3 s内"——哪个是时刻？哪些是时间间隔？</p>
+<p><b>答案：</b>"第3 s末"是<b>时刻</b>（一个点：3秒那一瞬间）；"前3 s""最后3 s""第3 s内"都是<b>时间间隔</b>（都有长度：3秒、3秒、1秒）。一句话：带"末/初/时"的多半是点，带"内/前/后/最后"的是段。</p>
+<p><b>易错变形：</b>"火车8时42分到站，停车8分"（教材p19练习1原题）——"8时42分"是时刻，"8分"是时间间隔。一句话里两样都占，分着看。</p>
+</div>
+
+<h2><span class="step-tag">第②站</span>位置和位移——"变了多少"怎么说</h2>
+
+<p><b>先说"位置"怎么说。</b>教材p15：定量描述位置，需要在参考系上建立适当的<b>坐标系（coordinate system）</b>。地面上的点用平面直角坐标系；<b>直线运动就简单了——一条x轴就够</b>：选直线为x轴，任选一点为原点，规定正方向和单位长度。</p>
+
+<p>教材p16的例子：长安街上一辆车，沿东西方向建一维坐标系，x轴正方向指<b>东</b>，路上某交通岗亭为原点O——坐标<span class="m">x</span>=30 m表示车在岗亭以东30 m；坐标<span class="m">x</span>=−20 m表示在岗亭以西20 m（图1.2-2）。<b>负号不是"小"，是"方向反着"</b>。</p>
+
+<p><b>再说"位置变了"怎么说。</b>教材p16-17的例子：从北京去重庆，可以坐火车、坐飞机、或者先火车到武汉再轮船沿长江而上——路线不同（图1.2-3），走过的<b>路程（path）</b>——物体运动轨迹的长度——也不同。但是：无论怎么走，你总是从北京到了西南方向、直线距离约1 300 km的重庆，<mark class="nb">位置的变化是相同的</mark>。</p>
+
+<p>物理就用<b>位移（displacement）</b>来描述"位置的变化"：从<b>初位置指向末位置的有向线段</b>，用<span class="m">l</span>表示（图1.2-4）。只要初、末位置确定，这个有向线段就确定——<b>它不因路径不同而改变</b>。</p>
+
+<div class="key">
+<p>教材p17定义钉死：<b>矢量</b>=既有大小又有方向的物理量（位移）；<b>标量</b>=只有大小没有方向的物理量（温度、路程）。</p>
+</div>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 720 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="路程与位移对照图：北京到重庆三种路线的轨迹长度各不同，但位移都是同一条由北京指向重庆的有向线段约1300千米">
+  <rect x="0" y="0" width="720" height="190" fill="#10141b" rx="8"/>
+  <circle cx="150" cy="60" r="10" fill="#4a9eff"/><text x="150" y="40" fill="#8fc6ff" font-size="13" text-anchor="middle">北京（初位置）</text>
+  <circle cx="570" cy="150" r="10" fill="#e07050"/><text x="570" y="175" fill="#e8a590" font-size="13" text-anchor="middle">重庆（末位置）</text>
+  <path d="M 150 60 C 280 20, 420 40, 570 150" fill="none" stroke="#3a5a7a" stroke-width="2" stroke-dasharray="6,4"/>
+  <path d="M 150 60 C 200 140, 420 190, 570 150" fill="none" stroke="#3a5a7a" stroke-width="2" stroke-dasharray="2,4"/>
+  <line x1="150" y1="60" x2="562" y2="147" stroke="#e07050" stroke-width="3.5"/>
+  <polygon points="562,147 546,138 552,152" fill="#e07050"/>
+  <text x="360" y="70" fill="#8fa3b8" font-size="12" text-anchor="middle">路线甲：路程a（轨迹长）</text>
+  <text x="360" y="140" fill="#8fa3b8" font-size="12" text-anchor="middle">路线乙：路程b≠a</text>
+  <text x="300" y="108" fill="#f0c4b4" font-size="13">位移l：同一条有向线段（约1300 km·指向西南）</text>
+  <text x="380" y="185" fill="#5a6a7a" font-size="11" text-anchor="middle">依据教材p16图1.2-3/1.2-4重绘（示意·不按比例）</text>
+</svg>
+<p class="figcap">这张图在说什么：路程是"脚印的总长"（走哪条线算哪条），位移是"从起点直指终点的箭"（只认起点终点）。三个字：位移<b>认两头，不认路</b>。</p>
+</div>
+
+<div class="try"><span class="t">验一验②（先答，再看答案）</span><br>
+<p>①田径场跑道周长400 m（教材p19练习3原题）：百米赛跑在直道上跑，路程是多少？位移大小是多少？②出租汽车按"每千米1.20元"收费（教材p19练习2），这个"千米"是路程还是位移？</p>
+<p><b>答案：</b>①路程=100 m（脚印总长）；位移大小=100 m（直道起点到终点，恰好同一条线——直道上两者才相等）。②<b>路程</b>。车按实际走的路收费，拐弯绕路都算钱——出租车认脚印，不认箭。</p>
+<p><b>易错变形：</b>那什么时候位移大小恰好等于路程？——<b>只走直线不回头</b>时。只要拐弯或折返，路程>位移大小。</p>
+</div>
+
+<h2><span class="step-tag">第③站</span>直线运动的位移——一个减法算式</h2>
+
+<p>直线运动最省事：把位移画在x轴上。教材p17（图1.2-5）：初位置<span class="m">x₁</span>、末位置<span class="m">x₂</span>，位移就是由<span class="m">x₁</span>指向<span class="m">x₂</span>的有向线段，大小等于坐标之差<span class="m">x₂ − x₁</span>。常用<span class="m">Δx</span>表示，记为：</p>
+
+<p class="big" style="text-align:center"><mark class="nb">Δx = x₂ − x₁</mark></p>
+
+<p>教材原话："若两坐标之差为正，则位移的方向指向x轴的正方向；若两坐标之差为负，则位移的方向指向x轴的负方向。"（p17）——<b>正负号就是方向，不是大小</b>。</p>
+
+<div class="note-red">红笔旁批：减法<b>永远"末减初"</b>。写反了（x₁−x₂），大小对、方向全反——高考选择题最爱在"方向"上埋雷。</div>
+
+<div class="try"><span class="t">验一验③（先答，再看答案·教材p17思考与讨论原题）</span><br>
+<p>某物体从A点运动到B点，坐标<span class="m">x_A</span>为5 m，<span class="m">x_B</span>为2 m，位移大小等于多少？方向如何？</p>
+<p><b>答案：</b>Δx = x_B − x_A = 2 − 5 = <b>−3 m</b>。大小3 m；负号→方向指向<b>x轴负方向</b>。（sympy核验：2−5=−3✓）</p>
+<p><b>易错变形：</b>若它再从B（2 m）回到A（5 m）？——Δx = 5 − 2 = +3 m，大小3 m，正方向。一来一回总位移=0 m（回到原点），但总路程=6 m——<b>位移可以抵消，路程不会</b>。</p>
+</div>
+
+<h3>位移—时间图像（x-t图像）</h3>
+<p>教材p17：以时刻<span class="m">t</span>为横轴、位置<span class="m">x</span>为纵轴画出的图线，是<b>位置—时间图像</b>；若把初始位置选作原点O，则位置与位移大小相等（<span class="m">x</span>=<span class="m">Δx</span>），它就成为<b>位移—时间图像</b>，又称<span class="m">x-t</span>图像。从<span class="m">x-t</span>图像能直观看出物体在不同时间内的位移。<span class="detail">（本站只需认得"横轴t纵轴x"；图像怎么"读出运动"，1.4节以后专门练。）</span></p>
+
+<h2><span class="step-tag">第④站</span>位移和时间的测量——打点计时器</h2>
+
+<p>实验室怎么同时记录"位置+时间"？教材p18：<b>打点计时器</b>——跟着物体走的"自动盖章机"。</p>
+
+<table>
+<tr><th></th><th>电磁打点计时器（图1.2-7）</th><th>电火花计时器</th></tr>
+<tr><td><b>电源</b></td><td>交流电源，工作电压约8 V</td><td>220 V交流（p18图1.2-8）</td></tr>
+<tr><td><b>打点方式</b></td><td>振针+复写纸</td><td>电火花+墨粉</td></tr>
+<tr><td><b>共同点</b></td><td colspan="2">计时原理相同：按<b>相同时间间隔</b>在纸带上连续打点</td></tr>
+</table>
+
+<div class="key">
+<p>考点数字钉死：电源频率<b>50 Hz</b>时，每隔<b>0.02 s</b>打一次点（教材p18原话）。纸带上各点间的距离=相应时间间隔内物体的位移大小。</p>
+</div>
+
+<div class="try"><span class="t">验一验④（先答，再看答案）</span><br>
+<p>纸带上数出从起始点到第<span class="m">n</span>个点共<span class="m">n</span>个间隔（实验框第4步口径），时间<span class="m">t</span>等于多少？50 Hz下数30个间隔？</p>
+<p><b>答案：</b><span class="m">t</span> = n × 0.02 s。30个间隔=0.6 s。<b>易错变形：</b>"数出n个点"和"n个间隔"差1——4个点之间只有3个间隔（教材实验框第4步口径"数出n个点，算出从起始点到第n个点的运动时间"，间隔数=点数−1，做题先数间隔）。</p>
+</div>
+
+<div class="alt">
+<span class="tag">卡住了？（三个最容易卡的地方，就地给出路）</span>
+<p>· <b>"位移"和"路程"总混？</b>——回看第②站那张图：路程=脚印总长（认路），位移=起点到终点的箭（认两头）。说"多远"要先问自己：问的是"走了多少路"还是"挪了多少位置"。</p>
+<p>· <b>"矢量""标量"记不住？</b>——箭头有方向=矢量；光秃秃的数=标量。本节新认识的矢量只有位移一个，标量你早认识一大堆（温度、质量、时间、路程）。</p>
+<p>· <b>Δx的正负号干什么用？</b>——正负号在物理里常表示方向（1.1的坐标已经用过一次）。Δx>0往正方向挪，Δx<0往负方向挪。大小看绝对值，方向看符号。</p>
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<div class="key">
+<p><span class="big">1.</span> 时间数轴上：<mark class="nb">时刻是点，时间间隔是线段</mark>——生活说"时间"两义，物理先拆开。</p>
+<p><span class="big">2.</span> 位移=从初位置指向末位置的有向线段（<mark class="nb">矢量</mark>），直线运动里 <mark class="nb">Δx = x₂ − x₁</mark>，正负号即方向；路程是轨迹长（<mark class="nb">标量</mark>），只有不回头时两者才相等。</p>
+<p><span class="big">3.</span> 打点计时器：50 Hz交流电，每 <mark class="nb">0.02 s</mark> 打一个点——纸带是"会记账的运动档案"。</p>
+</div>
+
+<p><b>自测四连（先自己答，再对答案；答案直接给你）：</b></p>
+<p>①（自编）"第2 s内"和"2 s末"，哪个是时刻？<br><span class="detail"><b>答案：</b>"2 s末"是时刻（点）；"第2 s内"是1 s长的时间间隔（第1秒末到第2秒末那段线）。</span></p>
+<p>②（教材p20练习4原题）物体从P（<span class="m">x_P</span>=3 m）运动到Q（<span class="m">x_Q</span>=−2 m），位移大小多少？方向？<br><span class="detail"><b>答案：</b>Δx = −2 − 3 = −5 m，大小5 m，方向指向x轴负方向。（sympy核验：−2−3=−5✓）</span></p>
+<p>③（自编·易错）绕400 m跑道跑一整圈回到起点：路程？位移？<br><span class="detail"><b>答案：</b>路程400 m；位移0（初末位置重合，有向线段缩成一个点）——"跑了一大圈，位移等于零"不是笑话，是定义。</span></p>
+<p>④（教材p20练习6同族·数值代验）从高出地面3 m处竖直上抛小球，上升5 m后落回地面（图1.2-12）。以地面为原点、向上为正：抛出点坐标？最高点坐标？从抛出点到落地点的位移？<br><span class="detail"><b>答案：</b>抛出点+3 m；最高点+8 m；落地点0 m。从抛出点到落地点位移=0−3=<b>−3 m</b>（向下3 m）。以抛出点为原点则抛出点0、最高点+5、落地点−3，位移仍是−3 m——<mark class="nb">原点选哪都行，位移不变</mark>（sympy核验：0−3=−3✓）。</span></p>
+
+<p><b>练什么题：</b>教材p19练习1（时刻/间隔判别）+p19练习2/3（路程位移情境）+p20练习4/6（Δx计算与抛体表格）全过一遍；p18"练习使用打点计时器"实验框五步读熟（2.3节起实验要用）。时间紧先做自测②③——Δx的方向和"绕圈位移为零"是最容易翻车的两处。</p>
+
+<div class="box"><b>高考怎么考</b>（三行以内·真题锚候采）<br>
+· 时刻/时间间隔、路程/位移的判别与计算，选择题常客；<br>
+· Δx=x₂−x₁的正负号判方向，常与x-t图像结合成中档题；<br>
+· 真题锚：候采——本件暂未采到带卷源的1.2专题，不代拟；后续件随卷源补锚。<br>
+</div>
+
+<p class="small">下一站：1.3 速度——位移你会算了，"多快"就是"位移除以时间"，工具已经全在手上。</p>
+
+<div class="fig">
+<svg width="100%" viewBox="0 0 800 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：1.1质点参考系→1.2时间位移（你在）→1.3速度→1.4加速度→第二章匀变速直线运动">
+  <rect x="0" y="0" width="800" height="130" fill="#10141b" rx="8"/>
+  <rect x="40" y="38" width="150" height="52" rx="8" fill="#1a2230" stroke="#3a4a5c"/>
+  <text x="115" y="60" fill="#8fa3b8" font-size="13.5" text-anchor="middle">1.1 质点 参考系</text><text x="115" y="79" fill="#5a6a7a" font-size="11" text-anchor="middle">立规矩：简化+看齐</text>
+  <rect x="330" y="30" width="160" height="66" rx="8" fill="#1c3048" stroke="#4a9eff" stroke-width="2"/>
+  <text x="410" y="54" fill="#8fc6ff" font-size="14" text-anchor="middle">1.2 时间 位移（你在）</text><text x="410" y="76" fill="#b8cfe8" font-size="11" text-anchor="middle">装上"何时""挪多少"</text>
+  <rect x="540" y="38" width="110" height="52" rx="8" fill="#1a2230" stroke="#3a4a5c"/>
+  <text x="595" y="60" fill="#8fa3b8" font-size="13.5" text-anchor="middle">1.3 速度</text><text x="595" y="79" fill="#5a6a7a" font-size="11" text-anchor="middle">挪多快</text>
+  <rect x="680" y="38" width="100" height="52" rx="8" fill="#1a2230" stroke="#3a4a5c"/>
+  <text x="730" y="60" fill="#8fa3b8" font-size="13.5" text-anchor="middle">1.4 加速度</text><text x="730" y="79" fill="#5a6a7a" font-size="11" text-anchor="middle">变多快</text>
+  <line x1="190" y1="64" x2="326" y2="64" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE6)"/>
+  <line x1="490" y1="64" x2="536" y2="64" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE6)"/>
+  <line x1="650" y1="64" x2="676" y2="64" stroke="#5a6a80" stroke-width="2" marker-end="url(#aE6)"/>
+  <text x="380" y="118" fill="#5a6a7a" font-size="11" text-anchor="middle">这张图在说什么：1.1立规矩，1.2装"何时+挪多少"，1.3/1.4装"快不快"——描述运动的工具箱本章集齐。</text>
+  <defs><marker id="aE6" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#5a6a80"/></marker></defs>
+</svg>
+<p class="figcap">这张图在说什么：本件位置——第一章"描述运动"的工具箱第二格；下两节装"速度与加速度"，第二章开始算。</p>
+</div>
+
+<div class="foot">
+零基础首学版 v1.0（批2·标准v2.3条款落地：节首清单＋预备块＋四站推进＋时间数轴/路程位移对照图/位置图＋考位锚块＋@media print打印层；正文"验一验"×4含易错变形×4，节末自测四连，答案直接可见；sympy代验3验点全过·留痕=席位私有sympy留痕脚本1031午后：2−5=−3/−2−3=−5/0−3=−3） · 事实层素材源：人教2019必修第一册p15-20官方影印逐页对照（国家中小学智慧教育平台·transcode直链·contentId=708256b6-6f06-4d14-89c7-4df16dfe3b81·印刷页15-20=图20-25·ts=1787023183495·图N→印刷页N−5映射沿本册定标·影印图存席位私有目录p12_jc/·原件不入仓）· **节界实锚=1.2全节p15-20**（p15节题+时刻时间间隔+位置位移起/p16位移矢量标量/p17Δx公式+x-t图像/p18打点计时器+实验框/p19科学漫步北斗+练习/p20练习4-6含抛体表格·p21=1.3速度节题页·目录实锚吻合队4席1.1附件1）· 时刻时间间隔定义/路程位移定义/矢量标量定义/Δx公式/50Hz-0.02s-8V数据/电磁与电火花对比/实验框五步/练习题面均影印逐字锚定 · 自编题全部显式标注"自编/改编"，教材原题标注页码来源（p17思考与讨论/p19练习1-3/p20练习4-6）· 设计标准：零预设 · 一次一步 · 随读随验×4 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源
+</div>
+
+</div>
+</body>
+</html>

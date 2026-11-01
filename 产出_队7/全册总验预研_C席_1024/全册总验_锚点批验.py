@@ -12,9 +12,10 @@ def audit_html(path):
     ids = re.findall(r'<h2 id="([^"]+)"', s)
     dup = {x for x in ids if ids.count(x) > 1}
     r['h2锚'] = f'{len(ids)}个' + (f'·重复{sorted(dup)}' if dup else '')
+    allids = set(re.findall(r'id="([^"]+)"', s))
     hrefs = re.findall(r'href="#([^"]+)"', s)
-    orphan = [h for h in set(hrefs) if h not in ids]
-    r['toc链接'] = f'{len(hrefs)}条' + (f'·悬空{orphan}' if orphan else '')
+    orphan = [h for h in set(hrefs) if h not in allids]
+    r['toc链接'] = f'{len(hrefs)}条/全体id{len(allids)}' + (f'·悬空{orphan}' if orphan else '')
     defs = set(re.findall(r'<(?:marker|linearGradient|radialGradient|pattern)[^>]*\bid="([^"]+)"', s))
     refs = set(re.findall(r'url\(#([^)]+)\)', s))
     dangling = refs - defs

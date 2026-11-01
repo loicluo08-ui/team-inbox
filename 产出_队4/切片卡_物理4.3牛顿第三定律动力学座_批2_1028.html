@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜4.3 牛顿第三定律（动力学座）｜讲法锚点</title>
+<style>
+  :root{
+    --ink:#1f242b; --sub:#5b6773; --line:#d5dce2; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#2b5a8c; --accent-soft:#e7eef6; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#edeff1; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:800px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(31,36,43,.08);}
+  .head{background:linear-gradient(135deg,#24486e 0%,#2b5a8c 55%,#3a6da3 100%); color:#fff; padding:20px 28px 16px;}
+  .head .kicker{font-size:12px; letter-spacing:2px; opacity:.85;}
+  .head h1{font-size:22px; margin-top:4px; letter-spacing:.5px;}
+  .head .meta{margin-top:8px; font-size:12.5px; opacity:.92; line-height:1.7;}
+  .badge{display:inline-block; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35);
+         border-radius:999px; padding:1px 10px; margin:2px 4px 2px 0; font-size:11.5px;}
+  section{padding:18px 28px 6px;}
+  section+section{border-top:1px dashed var(--line);}
+  h2{font-size:16.5px; color:var(--accent); margin-bottom:10px;}
+  .note{background:var(--wash); border-left:3px solid var(--accent); border-radius:6px;
+        padding:10px 14px; font-size:13.5px; color:var(--sub); margin:8px 0 12px;}
+  .quote{background:var(--accent-soft); border-radius:8px; padding:10px 14px; font-size:14px; margin:10px 0;}
+  table{width:100%; border-collapse:collapse; margin:6px 0 14px; font-size:13.8px;}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--wash); color:var(--ink); white-space:nowrap;}
+  .svgwrap{background:#fbfcfd; border:1px solid var(--line); border-radius:10px; padding:12px; overflow-x:auto;}
+  .src{font-size:12.5px; color:var(--sub);}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 16px;
+        font-size:12px; color:var(--sub); line-height:1.8;}
+  .tag{display:inline-block; background:#fff; border:1px solid var(--line); border-radius:6px;
+       padding:2px 8px; margin:0 6px 6px 0; font-size:12.5px;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="head">
+    <div class="kicker">切片卡｜物理线·批2｜S8五段同构×双段卡口径</div>
+    <h1>4.3 牛顿第三定律（动力学座）· 讲法锚点</h1>
+    <div class="meta">
+      <span class="badge">装配页 §4.3 节标</span><span class="badge">v18 簇14域（158666→170438）</span><span class="badge">双座实况：3.3立概念·本节管现场</span>
+      <br>装配层既定设计照录：牛三双座承载——3.3（相互作用章座）立概念五关键词与平衡力辨析；本节（4.3动力学章座）管"用"：等大不随工况、读数链、切换研究对象三件事。
+    </div>
+  </div>
+
+  <section>
+    <h2>一图读懂：读数链身份闸（牛二算大小 → 牛三给身份 → 重力钉死）</h2>
+    <div class="svgwrap">
+      <svg viewBox="0 0 740 178" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="读数链身份三步闸">
+        <defs>
+          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2b5a8c"/>
+          </marker>
+        </defs>
+        <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+          <rect x="10"  y="34" width="216" height="96" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="262" y="34" width="216" height="96" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <rect x="514" y="34" width="216" height="96" rx="12" fill="#e7eef6" stroke="#2b5a8c" stroke-width="1.5"/>
+          <line x1="228" y1="82" x2="258" y2="82" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <line x1="480" y1="82" x2="510" y2="82" stroke="#2b5a8c" stroke-width="2" marker-end="url(#ar)"/>
+          <text x="10" y="24" font-size="13" fill="#1f242b" font-weight="bold">① 大小链（牛二管）</text>
+          <text x="262" y="24" font-size="13" fill="#1f242b" font-weight="bold">② 身份链（牛三管）</text>
+          <text x="514" y="24" font-size="13" fill="#1f242b" font-weight="bold">③ 钉死（重力不背锅）</text>
+          <text x="26" y="60" font-size="12.5" fill="#1f242b">对对象列 F合 = ma</text>
+          <text x="26" y="80" font-size="12.5" fill="#1f242b">超重 N = m(g+a)·失重 N = m(g−a)</text>
+          <text x="26" y="100" font-size="12.5" fill="#5b6773">算出支持力 N 的大小</text>
+          <text x="26" y="120" font-size="12.5" fill="#5b6773">（看 a 不看 v）</text>
+          <text x="278" y="60" font-size="12.5" fill="#1f242b">读数 = 你对秤的压力</text>
+          <text x="278" y="80" font-size="12.5" fill="#1f242b">＝ N 的反作用力（牛三对）</text>
+          <text x="278" y="100" font-size="12.5" fill="#5b6773">换对象·同性质（弹力对弹力）</text>
+          <text x="278" y="120" font-size="12.5" fill="#5b6773">仪器读你的力·你读它的支持</text>
+          <text x="530" y="60" font-size="12.5" fill="#1f242b">mg 全程一分没变</text>
+          <text x="530" y="80" font-size="12.5" fill="#1f242b">变的是"维持状态需要的支持力"</text>
+          <text x="530" y="100" font-size="12.5" fill="#5b6773">N 与 mg 同体不同性质——</text>
+          <text x="530" y="120" font-size="12.5" fill="#5b6773">不是牛三对，合力账归牛二</text>
+          <text x="10" y="160" font-size="12.5" fill="#8a6d1f" font-weight="bold">口诀（v18照录）：读数链三步——牛二算N、牛三给身份、重力钉死；先答关系（永远等大），再算大小（牛二）。</text>
+        </g>
+      </svg>
+    </div>
+    <div class="note"><b>怎么读这张图：</b>视重题三步各司其职不越位——①先走大小链：对人说牛二算N；②再走身份链：读数天生是"你对仪器的力"（N的反作用），秤只能感受压在它身上的力；③最后钉死：mg不变。两链一句话打通："秤读的是你压它多狠，不是地球拽你多狠——两件事。"（v18原话）</div>
+  </section>
+
+  <section>
+    <h2>讲法锚点 · 视频切片（双段卡 · 缺段豁免注记）</h2>
+    <div class="quote">
+      北大学长跳跳《【高中物理必修1系统课】42.牛顿第三定律》
+      BV1RG4y1b7uS<br>
+      <span class="src">
+        全片1151s（19:11）｜播放472,864（页面实测@2026-10-28）｜双座互证：同件系3.3概念座池候选（B站probe实测2026-10-28）｜probe实测：CC字幕轨0条（player api subCount=0，cid 884188240／aid 817257461）
+      </span>
+    </div>
+    <div class="note">
+      <b>缺段豁免注记（双段卡口径）：</b>本件按双段卡口径出品——CC字幕轨实测0条，引文照录不可得（无音频转写工具链，同批2三卡实况）；秒窗与逐句引文均不虚标。补段条件：该BV字幕轨上线或whisper转写线接入后，按引文照录口径回填秒窗段，不代拟。
+    </div>
+    <table>
+      <tr><th style="width:110px">池候选登记</th><th>probe实测（@2026-10-28）</th></tr>
+      <tr><td>北大学长跳跳（应用版语境）</td><td>《【高中物理一轮复习系统课】3.1 牛顿三定律｜终于开始复习牛二律啦》BV1hm421V796｜播放355,806｜全片1513s（25:13）｜CC字幕轨0条（cid 1597956014）——一轮复习语境，贴本节"管现场"分工；应用版引文如需另采另报</td></tr>
+      <tr><td>实采规模留痕</td><td>1次搜索（"牛顿第三定律 高中"）＋3次probe（跳跳42集／跳跳一轮3.1／李永乐3.8牛三·注销号1348播放仅登记不推）·限速错峰≥30s·零熔断</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>高考接口（册内速览卡"怎么考"行照录）</h2>
+    <div class="quote">
+      不设独立命题格，以工具身份混编进牛二大题：辨析题（3.3档概念）、视重题"读数是谁对谁的力"、省力机理说理、"等大为何还能加速"陷阱选项——答对牛三题＝先答关系（等大）再算大小（牛二）。
+    </div>
+    <table>
+      <tr><th style="width:150px">考位</th><th>接口行</th></tr>
+      <tr><td>卡①真题口径</td><td>2021广东卷C/D双项迷思（"匀速小·加速大"）——真题判断面已由3.5卡③承载，本卡钉动力学同步账（跨节承载如实注记·v18原话口径）</td></tr>
+      <tr><td>例1定级</td><td>★★★ 加速升降机里的双重等大账（牛二×牛三合用）——三问三把尺：①②问"多大"用牛二，③问"关系"用牛三</td></tr>
+      <tr><td>例2定级</td><td>★★☆ 读数链身份题（"读数=重力"当堂拆弹）——甲两处错：身份错＋大小链错，逐条拆</td></tr>
+      <tr><td>连接体出口</td><td>整体法内力成对自消、隔离法暴露内力，两本账靠牛三对齐——合法性在本节，全题演练归4.5</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>易错收口（四卡）</h2>
+    <div class="tag">卡①（主卡）等大不随工况变</div>
+    <div class="quote">
+      <b>症状：</b>"匀速前进时耕索对犁的拉力小，加速前进时拉力大——所以加速时两力不相等。"<br>
+      <b>错因：</b>把"拉力大小随工况变"偷换为"作用与反作用不相等"——工况变的是相互作用本身，两侧面同步变。<br>
+      <b>维持机制：</b>先答关系（永远等大），再算大小（牛二）——两步分开，答题第一句就锁死"等大"。<br>
+      <b>钉死（v18原话）：</b>作用反作用，等大共生死，加速匀速都不改。
+    </div>
+    <div class="tag">卡② 读数链身份错</div>
+    <div class="quote">
+      <b>症状：</b>"秤上显示60kg，说明我重力就是600N，电梯一超重就变650N了——重力变了。"<br>
+      <b>错因：</b>读数是人对秤的压力（N的反作用），不是重力本身；mg全程不变，变的是N。<br>
+      <b>维持机制：</b>读数链三步——牛二算N、牛三给身份、重力钉死（三步各司其职不越位）。<br>
+      <b>钉死（v18原话）：</b>读数是支持力的反作用（人对秤的压力），不是重力本身。
+    </div>
+    <div class="tag">卡③ 「省力」的身份错</div>
+    <div class="quote">
+      <b>症状：</b>"曲辕犁省力，所以牛拉犁的拉力比直辕犁小——牛三说的等大在省力时不灵了。"<br>
+      <b>错因：</b>拉力与反作用永远等大（牛三管关系）；省的是分力结构——横向分力小、竖直分力大（牛三与分力账各管各层，不冲突）。<br>
+      <b>维持机制：</b>把"省力"翻译成"分力巧"再答题——关系归牛三、分摊归分力账（计算面3.5）。<br>
+      <b>钉死（v18口诀后半）：</b>「省力」省在分力巧，不是拉力真的小。
+    </div>
+    <div class="tag">卡④ N与mg硬配牛三对——配对纪律错</div>
+    <div class="quote">
+      <b>症状：</b>"人受的支持力N和人的重力mg等大反向，正好一对作用力与反作用力。"<br>
+      <b>错因：</b>牛三对必须换对象、同性质——N（秤对人·弹力）的反作用是人对秤的压力（弹力）；mg（地球对人·引力）的反作用是人吸地球（引力）；N与mg同体且性质不同，是同一人身上的两个力（合力账归牛二），不是牛三对。<br>
+      <b>维持机制：</b>找反作用力口诀——"换对象、同性质"：谁给的找谁收，什么力找什么力。<br>
+      <b>钉死（v18原话口径）：</b>性质同名：弹力对弹力、摩擦对摩擦；N与mg配对是超失重题最高频的身份翻车点。
+    </div>
+    <div class="quote">
+      快问快答摘录（v18照录·考前60秒）：加速时作用反作用还等大吗？——永远等大（与工况无关），变的是两力同步变大变小——"共生死"的"共"字。弹簧秤、体重秤、拉力传感器的读数身份一样吗？——一样：都是"对象对仪器的力"，换仪器不换身份链。
+    </div>
+  </section>
+
+  <section>
+    <h2>怎么用这张卡</h2>
+    <table>
+      <tr><th style="width:70px">步骤</th><th>用法</th></tr>
+      <tr><td>① 先看图</td><td>读数链身份闸走一遍：大小链／身份链／钉死三步对号入座；能复述"秤读的是你压它多狠，不是地球拽你多狠"。</td></tr>
+      <tr><td>② 再过卡</td><td>四张易错卡各读一遍症状，能对上号的打勾；卡①先答关系再算大小，卡④"换对象、同性质"口诀背下来。</td></tr>
+      <tr><td>③ 三题自测</td><td>升降机支持力vs压力两工况（永远等大·同步变）；弹簧秤5N→7N两问（重力没变·读数是对挂钩的拉力）；牛拉犁"反过来拽牛"（等大不假·牛看自己账上的合力）——先做再看答案。</td></tr>
+      <tr><td>④ 费曼检验</td><td>装配层插桩照录（2分钟）：给同桌讲清作用反作用"四同两不同"（等大／反向／共线／同性质·异体／同存亡），以及它与平衡力的判据分界（平衡力同体·作用反作用异体）；照妖镜："等大反向＝平衡力"——错；卡壳路由：卡在"马拉车谁拉谁"→回例1异体分析。</td></tr>
+      <tr><td>⑤ 接前后</td><td>向前接：3.3概念座（五关键词·平衡力辨析）与3.5正交分解（分力账）；向后接：4.4超重失重（视重=支持力·看a不看v）、4.5连接体（换对象桥梁全题演练）。</td></tr>
+    </table>
+  </section>
+
+  <div class="foot">
+    源注汇总：册内照录＝v18原册_物理.html 簇14域（158666→170438·至附录）＋物理-4.3节件字段块（速览卡"怎么考"行／正文§分工账·§读数链／常见误解三条／易错卡四卡／例1例2／三题自测／快问快答）照录＋装配层4.3费曼插桩块照录；讲法锚段缺段申报与池候选登记详见随件池候选登记单（B站probe实测2026-10-28·1次搜索+3次probe·三件CC字幕轨均0条）；双座实况注记：牛三在装配页两座承载（3.3相互作用章座·4.3动力学章座），本卡承4.3座——3.3座系并行线在办件零触碰；本卡与4.4卡衔接：本节管"力的相互作用合法性"（等大关系·读数身份），4.4管"视重怎么算"（N=m(g±a)·看a不看v）。
+  </div>
+</div>
+</body>
+</html>

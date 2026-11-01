@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切片卡｜幂函数｜真题锚×易错收口（双段版）</title>
+<style>
+  :root{
+    --ink:#24292e; --sub:#5f6b76; --line:#dce1e6; --paper:#ffffff; --wash:#f4f6f8;
+    --accent:#8b5cf6; --accent-deep:#6d3fd4; --accent-soft:#efe9fc; --gold:#8a6d1f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif; color:var(--ink);
+       background:#eef0f3; line-height:1.75; font-size:15px; padding:24px 12px;}
+  .card{max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+        border-radius:14px; overflow:hidden; box-shadow:0 2px 14px rgba(36,41,46,.08);}
+  .head{background:linear-gradient(135deg,#6d3fd4 0%,#8b5cf6 55%,#a07af8 100%); color:#fff; padding:22px 28px 18px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;}
+  .chip{font-size:12px; letter-spacing:.06em; padding:3px 12px; border:1px solid rgba(255,255,255,.55);
+        border-radius:999px; opacity:.95;}
+  .head h1{font-size:25px; font-weight:700; letter-spacing:.02em;}
+  .head .kicker{font-size:14px; margin-top:6px; opacity:.94;}
+  .head .anchor-line{margin-top:12px; font-size:12px; opacity:.85; border-top:1px dashed rgba(255,255,255,.35); padding-top:10px;}
+  .body{padding:22px 28px 26px;}
+  section{margin-bottom:26px;}
+  h2{font-size:17px; color:var(--accent-deep); border-left:4px solid var(--accent); padding-left:10px;
+     margin-bottom:12px; letter-spacing:.03em;}
+  h2 .en{font-weight:400; color:var(--sub); font-size:12px; margin-left:8px;}
+  figure{background:var(--wash); border:1px solid var(--line); border-radius:10px; padding:14px 14px 10px; margin-bottom:6px;}
+  figcaption{font-size:12.5px; color:var(--sub); margin-top:6px; line-height:1.6;}
+  figcaption b{color:var(--accent-deep);}
+  .slice{border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:12px; background:var(--paper);}
+  .slice .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--accent);
+              border-radius:6px; padding:2px 10px; margin-bottom:6px; letter-spacing:.05em;}
+  .slice p{margin:4px 0;}
+  .slice .meta{font-size:12.5px; color:var(--sub); margin-top:6px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  th{background:var(--accent-soft); color:var(--accent-deep); font-weight:700; text-align:left;
+     padding:8px 10px; border:1px solid var(--line); white-space:nowrap;}
+  td{padding:8px 10px; border:1px solid var(--line); vertical-align:top;}
+  tr:nth-child(even) td{background:var(--wash);}
+  .ans{font-weight:700; color:var(--accent-deep); white-space:nowrap;}
+  .src{font-size:12.5px; color:var(--sub); margin-top:8px;}
+  .errcard{border:1px solid #e3d9bd; background:#fdfaf2; border-radius:10px; padding:14px 16px;}
+  .errcard .tag{display:inline-block; font-size:12px; font-weight:700; color:#fff; background:var(--gold);
+                border-radius:6px; padding:2px 10px; margin-bottom:8px; letter-spacing:.05em;}
+  .errcard p{margin:4px 0;}
+  .errcard .punch{font-weight:700; color:#7a5c14;}
+  ol.steps{counter-reset:s; list-style:none;}
+  ol.steps li{counter-increment:s; position:relative; padding:6px 0 6px 40px; border-bottom:1px dashed var(--line);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:8px; width:24px; height:24px;
+      background:var(--accent); color:#fff; border-radius:50%; text-align:center; line-height:24px;
+      font-size:13px; font-weight:700;}
+  .foot{background:var(--wash); border-top:1px solid var(--line); padding:12px 28px 14px;
+        font-size:11.5px; color:var(--sub); line-height:1.7;}
+  .foot b{color:var(--ink); font-weight:600;}
+  @media print{
+    body{background:#fff; padding:0;}
+    .card{border:none; box-shadow:none; max-width:100%;}
+    .head{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="head">
+    <div class="chips">
+      <span class="chip">数学</span><span class="chip">人教A版 · 必修第一册</span><span class="chip">第三章 函数的概念与性质</span>
+    </div>
+    <h1>3.3 幂函数</h1>
+    <div class="kicker">切片卡 · 双段版 —— 高考真题锚 · 易错收口（</div>
+    <div class="anchor-line">节名照录：人教A版《普通高中教科书 · 数学 · 必修 第一册》目录（在库 3.3 节补构件正本同名在案）</div>
+  </div>
+
+  <div class="body">
+
+    <section><h2>讲法锚</h2><div class="slice"><p><b>本节讲法锚：未取得（如实标注）</b>——先按教材正文与串联图推进，不受影响。</p></div></section>
+    <section><h2>讲法锚点 · 缺料豁免注记</h2><div class="slice"><p>本节讲法锚：未取得（如实标注）。</p></div></section>
+
+    <section><h2>高考真题锚</h2><div class="slice"><p><b>本节真题锚：待采（如实标注）</b>——真题槽位已留装，卷源采到即入；先按教材正文与串联图推进，不受影响。</p></div></section>
+
+    <section>
+      <h2>易错收口<span class="en">本节最高频 · 考前扫一眼</span></h2>
+      <div class="errcard">
+        <span class="tag">易错卡 · 系数不是1也当幂函数</span>
+        <p><b class="punch">判型只认"形式三查"，逐项过——形状像不算数，系数恰为1才算数。</b>症状：见 y=2x³、y=(1/2)x³+1 图象与幂函数"神似"，判型时放行。错因：形式三查第一查失守——系数必须恰为1，2x³ 过 (1,2)，"恒过(1,1)"的家族性质对它失效。</p>
+        <p><b>钉死动作</b>：判型只认形式三查，逐项过（系数=1？变量在底？单项式？）。不修会怎样：双参数题里漏"系数=1"这条方程→m漏解→整题报废；恒过定点小题直接答错。维持机制："形状像"覆盖"形式查"——第一象限里 2x³ 与 x³ 只是竖直拉伸，视觉相似度极高，"查系数"无动作感，天然被跳过。</p>
+        <p class="src">源：在库 3.3 节补构件正本易错卡卡①（本节最高频6张之首·照录）。本节另有高频卡②（与指数函数镜像混淆：y=2ˣ 误判幂函数、增长阶指数＞幂）同源正本在案，考前一并过。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>怎么用这张卡</h2>
+      <ol class="steps">
+        <li>读在库 3.3 节补构件正本正文，把"形式三查"（系数=1？变量在底？单项式？）写在草稿顶端——判型只认形式，不认形状。</li>
+        <li>自测真题位（2025新高考Ⅰ卷单选8同型）：指对幂三族同场比大小——先判型归类，再借单调性排序；"同指异底"用幂函数臂（同指异底画图象比升降，不必硬算数值）。</li>
+        <li>易错三问过堂：系数是1吗？变量在底还是在指数？恒过(1,1)对它成立吗？——三查全过才放行。</li>
+        <li>回 3.2 节件单调性定义：比大小"先归类再借序"的序就从那里来——幂函数是 3.2 判定工具的实习场，第四章指数对数是第三轮重跑。</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="foot">源注：本卡内容依据B站公开课程视频与教材整理；部分切片与真题锚待采（如实标注），先学已采内容不受影响。</div>
+
+</div>
+</body>
+</html>

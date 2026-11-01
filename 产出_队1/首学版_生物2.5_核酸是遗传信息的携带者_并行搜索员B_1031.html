@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物2.5 核酸是遗传信息的携带者 · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #5f3a8a;padding-bottom:8px;color:#2d1a4a}
+h2{font-size:1.32em;color:#5f3a8a;border-left:5px solid #7a4fa8;padding-left:10px;margin-top:2.2em}
+h3{color:#6a4a92;margin-top:1.6em}
+.station{background:#f7f4fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #e3d9ef}
+.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#7a4fa8,#9468bd);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.mark{background:#fff176;padding:0 4px;border-radius:3px}
+.uline{border-bottom:2px solid #8a63b8;padding-bottom:1px}
+.note-red{color:#c0392b;border:1px solid #e6b0aa;background:#fdf2f0;border-radius:8px;padding:8px 14px;margin:10px 0}
+.try{background:#eef4f8;border-left:4px solid #4a7fb5;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.try .ans{color:#2a5d8f;font-weight:bold}
+.alt{background:#f6f2fb;border-left:4px solid #8e5cb8;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0;color:#4a3568}
+.alt .tag{font-size:.8em;color:#8e5cb8;font-weight:bold}
+.selftest{background:#fdf6ec;border:1px solid #e2c48d;border-radius:10px;padding:14px 18px;margin:16px 0}
+.kaowei{background:#eaf3ea;border:2px solid #3d8b5f;border-radius:10px;padding:12px 16px;margin:16px 0}
+.kaowei .kw-title{font-weight:bold;color:#2d6a45}
+.figure{text-align:center;margin:16px 0}
+.figure svg{max-width:100%;height:auto}
+.figcap{font-size:.88em;color:#5a6b7d;margin-top:6px}
+.walk{background:#f0eaf7;border-radius:8px;padding:10px 16px;margin:12px 0}
+.walk li{margin:5px 0}
+table.cmp{border-collapse:collapse;width:100%;margin:12px 0}
+table.cmp th,table.cmp td{border:1px solid #c8b8d8;padding:8px 12px;text-align:center}
+table.cmp th{background:#ece4f4;color:#4a2a6a}
+.sub{font-size:.85em;color:#5a6b7d}
+.detail{color:#5d4a8a;font-size:.95em}
+@media print{
+ body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
+ .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
+ .station-title{background:#333!important;color:#fff!important}
+ h1{font-size:1.35em}h2{font-size:1.15em}
+ a{color:#000;text-decoration:none}
+ .no-print{display:none}
+}
+</style>
+</head>
+<body>
+<h1>生物 2.5 核酸是遗传信息的携带者 <span class="sub">人教版 必修1·第2章 第5节 · 零基础首学版 v1.0 · 2026-10-31</span></h1>
+<p><strong>开场一句话：</strong>警匪片里，刑侦人员从案发现场的一滴血、一根头发里提取 DNA，就能锁定嫌疑人（p34 问题探讨）——靠的是本章压轴登场的<span class="mark">核酸</span>：细胞里唯一"存着遗传信息"的大分子。它为什么这么神？看完这节你就懂了。</p>
+<div class="check">
+<p><strong>读完这节你能：</strong></p>
+<ul>
+<li>说出核酸的两大类（<span class="uline">DNA／RNA 全名</span>）及各自在真核细胞中的分布；</li>
+<li>拆开核苷酸：一分子<span class="uline">碱基＋五碳糖＋磷酸</span>，并说出按五碳糖分出的两种核苷酸；</li>
+<li>填出图2-16 韦恩图：DNA 与 RNA 的<span class="mark">碱基种类异同</span>（5 种碱基怎么分家）；</li>
+<li>用"单体→多聚体"说出为什么<span class="uline">生物大分子以碳链为骨架</span>，并评析核酸保健品广告的逻辑漏洞。</li>
+</ul>
+</div>
+<div class="station">
+<p class="station-title">第 0 站 · 预备块：你已备好的两件旧知识</p>
+<p><strong>旧知识一：</strong>"DNA、基因、亲子鉴定"这些词你在新闻里听过——本节告诉你它们背后的分子是什么。<strong>旧知识二：</strong>上一节结尾说"生物大分子由许多单体连成多聚体"（p35-36），蛋白质的单体是氨基酸——本节给核酸找它的"单体"。</p>
+</div>
+<div class="station">
+<p class="station-title">第 1 站 · 核酸是什么、在哪里：从细胞核里提取的酸性物质</p>
+<p>"核酸"，顾名思义，就是<span class="mark">从细胞核中提取的具有酸性的物质</span>（p34 原文）。核酸（nucleic acid）包括两大类（p34）：一类是<span class="uline">脱氧核糖核酸</span>（deoxyribonucleic acid），简称 <span class="mark">DNA</span>；另一类是<span class="uline">核糖核酸</span>（ribonucleic acid），简称 <span class="mark">RNA</span>。</p>
+<p><strong>分布（p34 原句）：</strong>真核细胞的 <span class="mark">DNA 主要分布在细胞核中</span>，线粒体、叶绿体内也含有少量的 DNA；<span class="mark">RNA 主要分布在细胞质中</span>。</p>
+<div class="try"><p><strong>验一验①：</strong>"核酸只分布在细胞核中，所以叫核'酸'"——<span class="ans">错。名字的由来是历史原因（从细胞核提取得名），但 RNA 主要分布在<span class="mark">细胞质</span>中；线粒体、叶绿体里还有少量 DNA（p34）。这正是教材 p36 练习第1(2)题设的坑。</span></p></div>
+</div>
+<div class="station">
+<p class="station-title">第 2 站 · 拆开核苷酸：碱基＋五碳糖＋磷酸的三合体</p>
+<p>核酸同蛋白质一样，也是<span class="uline">生物大分子</span>。<span class="mark">核苷酸是核酸的基本组成单位</span>，每个核酸分子是由<span class="uline">几十个乃至上亿个</span>核苷酸连接而成的长链（p34·图2-14）。一个核苷酸由三件套构成（p34）：</p>
+<div class="formula" style="font-family:inherit;font-size:1em">一分子<strong>含氮的碱基</strong> ＋ 一分子<strong>五碳糖</strong> ＋ 一分子<strong>磷酸</strong></div>
+<p>根据<span class="uline">五碳糖的不同</span>，核苷酸分为<span class="mark">脱氧核糖核苷酸</span>（简称脱氧核苷酸）和<span class="mark">核糖核苷酸</span>（p34·图2-15 对比：脱氧核糖 2 号碳上连的是 H，核糖连的是 OH——就差这一个原子团，名字和命运全变了）。</p>
+<div class="try"><p><strong>验一验②：</strong>"DNA 的基本组成单位是核苷酸"对不对？——<span class="ans">对，但要更精确：DNA 的单体是<span class="mark">脱氧核苷酸</span>（脱氧核糖核苷酸），RNA 的单体是核糖核苷酸（p34 原句+p36 练习1(1)(3)）。"核苷酸"是两类核苷酸的总称。</span></p></div>
+</div>
+<div class="station">
+<p class="station-title">第 3 站 · DNA 与 RNA 对比：5 种碱基怎么分家（本节最考点）</p>
+<p>DNA 和 RNA <span class="mark">各含 4 种碱基</span>，但组成二者的碱基种类有所不同（p35·图2-16）：</p>
+<table class="cmp">
+<tr><th>对比项</th><th>DNA</th><th>RNA</th><th>共同拥有</th></tr>
+<tr><td>五碳糖</td><td>脱氧核糖</td><td>核糖</td><td>磷酸</td></tr>
+<tr><td>碱基</td><td>A、G、C、<span class="mark">T（胸腺嘧啶）</span></td><td>A、G、C、<span class="mark">U（尿嘧啶）</span></td><td><span class="mark">A、G、C</span></td></tr>
+<tr><td>链数（一般情况下·p35）</td><td><strong>两条</strong>脱氧核苷酸链</td><td><strong>一条</strong>核糖核苷酸链</td><td>—</td></tr>
+</table>
+<div class="figure">
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2-16复刻：DNA与RNA在化学组成上的异同，DNA独有脱氧核糖和T，RNA独有核糖和U，共同有磷酸AGC">
+<ellipse cx="185" cy="165" rx="165" ry="95" fill="#bfe0ef" opacity="0.85"/>
+<ellipse cx="375" cy="165" rx="165" ry="95" fill="#f2e6b8" opacity="0.85"/>
+<text x="80" y="52" font-size="17" font-weight="bold" fill="#1a5a8a">DNA</text>
+<text x="462" y="52" font-size="17" font-weight="bold" fill="#8a6a1a">RNA</text>
+<text x="52" y="132" font-size="14.5" fill="#1a2332">脱氧核糖</text>
+<text x="52" y="158" font-size="14.5" fill="#1a2332">胸腺嘧啶（T）</text>
+<text x="440" y="132" font-size="14.5" fill="#1a2332">核糖</text>
+<text x="448" y="158" font-size="14.5" fill="#1a2332">尿嘧啶（U）</text>
+<text x="243" y="120" font-size="14.5" font-weight="bold" fill="#3a5a3a">磷酸</text>
+<text x="222" y="145" font-size="14.5" font-weight="bold" fill="#3a5a3a">腺嘌呤（A）</text>
+<text x="228" y="170" font-size="14.5" font-weight="bold" fill="#3a5a3a">鸟嘌呤（G）</text>
+<text x="230" y="195" font-size="14.5" font-weight="bold" fill="#3a5a3a">胞嘧啶（C）</text>
+<text x="250" y="272" font-size="13" fill="#5a6b7d">图 2-16 DNA 与 RNA 在化学组成上的异同（依教材 p35 复刻）</text>
+</svg>
+<p class="figcap">韦恩图记忆法：<span class="mark">交集=磷酸+A、G、C</span>；DNA 独有的"两样东西"=脱氧核糖+T；RNA 独有=核糖+U。细菌（原核）与真核细胞都同时含 DNA 和 RNA——所以<span class="uline">细胞生物的核酸共有 5 种碱基</span>；而一种病毒只含一种核酸，碱基只有 4 种。</p>
+</div>
+<p><strong>为什么 DNA 能当"身份证"（p35·问题探讨回扣）：</strong>组成 DNA 的脱氧核苷酸虽然只有 <span class="mark">4 种</span>，但如果数量不限，在连成长链时<span class="uline">排列顺序就是极其多样的</span>（教材算过账：20 种、500 个氨基酸组成的蛋白质排列顺序可能有 20⁵⁰⁰ 种——p33 生物科学史话）。脱氧核苷酸的排列顺序储存着生物的遗传信息，DNA 分子是储存、传递遗传信息的生物大分子；<span class="uline">部分病毒的遗传信息储存在 RNA 中</span>，如 HIV（人类免疫缺陷病毒）、SARS（严重急性呼吸综合征）病毒等（p35）。知识链接：DNA 和 RNA 在生物遗传中的作用及联系，参见必修 2《遗传与进化》第 3 章和第 4 章（p35）。</p>
+<p class="note-red"><strong>本节最重要的一句（p35 加粗原文）：</strong>核酸是细胞内<span class="mark">携带遗传信息</span>的物质，在生物体的<span class="mark">遗传、变异和蛋白质的生物合成</span>中具有极其重要的作用。</p>
+<div class="try"><p><strong>验一验③（p36 练习4 原题）：</strong>豌豆叶肉细胞中的核酸，含有的碱基种类是？A.1 种 B.4 种 C.5 种 D.8 种——<span class="ans">C。豌豆是真核生物，细胞里<span class="mark">既有 DNA 又有 RNA</span>：碱基=A、G、C（共用）+T（DNA 独有）+U（RNA 独有）=5 种。若是"豌豆叶肉细胞的 DNA"，才是 4 种。</span></p></div>
+</div>
+<div class="station">
+<p class="station-title">第 4 站 · 收口：生物大分子以碳链为骨架（第2章总收束）</p>
+<p>细胞是由多种元素和化合物构成的。在构成细胞的化合物中，<span class="mark">多糖、蛋白质、核酸都是生物大分子</span>（p35-36）：组成多糖的基本单位是单糖，组成蛋白质的基本单位是氨基酸，组成核酸的基本单位是核苷酸——这些基本单位称为<span class="mark">单体</span>；每一个单体都以若干个相连的碳原子构成的<span class="uline">碳链为基本骨架</span>；由单体连接成的多聚体（图2-17）也就以碳链为基本骨架。正因为如此，科学家说"<span class="mark">碳是生命的核心元素</span>""没有碳，就没有生命"（p36）。</p>
+<p>学科交叉（p36）：碳原子性质不活泼，最外层有 4 个电子，不易失去或得到电子而形成离子；碳原子之间可以形成共价键，多个碳原子可以相互结合形成<span class="uline">稳定的碳链</span>。以碳链为骨架的多糖、蛋白质、核酸等生物大分子，构成<span class="uline">细胞生命大厦的基本框架</span>；糖类和脂质提供了生命活动的重要能源；水和无机盐与其他物质一起，共同承担着构建细胞、参与细胞生命活动等重要功能——细胞中的这些化合物，含量和比例处在不断变化之中，但又保持相对稳定（p36·本章总结段）。</p>
+<div class="try"><p><strong>验一验④（p36 拓展应用原题）：</strong>核酸保健品广告说"一切疾病都与基因受损有关；基因是核酸片段；补充某些特定的核酸，可增强基因的修复能力"——请评析。<span class="ans">逻辑漏洞三连：①"一切疾病"绝对化，疾病成因多样；②"基因是核酸片段"正确，但②推不出③——口服的核酸经消化会被分解成核苷酸/更小分子，<span class="mark">不能以"基因片段"形态直接进入细胞修复基因</span>；③人体细胞可自行合成核苷酸，不需要靠吃补。这是教材用"细胞不能直接利用外源核酸"的原理设计的一次科学思维实战（要点自组·拓展标注）。</span></p></div>
+</div>
+<div class="station">
+<p class="station-title">收口站 · 三句话带走 + 自测四连</p>
+<ul class="walk">
+<li>① 核酸两大类：<span class="mark">DNA（脱氧核糖核酸）主要在细胞核</span>（线粒体叶绿体少量）、<span class="mark">RNA（核糖核酸）主要在细胞质</span>；</li>
+<li>② 核苷酸=碱基+五碳糖+磷酸；按五碳糖分<span class="uline">脱氧核苷酸（DNA单体）/核糖核苷酸（RNA单体）</span>；碱基分家：共用 A、G、C，DNA 独有 T，RNA 独有 U——细胞生物 5 种碱基；</li>
+<li>③ <span class="uline">排列顺序=信息</span>：4 种字母无限排列储存遗传信息；核酸在遗传、变异和蛋白质生物合成中作用极其重要；多糖/蛋白质/核酸=单体→多聚体，<span class="mark">碳链为骨架</span>。</li>
+</ul>
+<div class="selftest">
+<p><strong>自测四连（全部取自教材 p36 练习与应用）：</strong></p>
+<ol>
+<li>DNA 和 RNA 的基本组成单位是核苷酸。（<span class="detail">√——两类核苷酸各归各的单体（p34）</span>）</li>
+<li>核酸是生物的遗传物质，仅存在于细胞核中。（<span class="detail">×——RNA 主要分布在<span class="mark">细胞质</span>，线粒体叶绿体还有少量 DNA；"仅"字必错（p34）</span>）</li>
+<li>构成 DNA 的单体是脱氧核苷酸。（<span class="detail">√（p34 原句）</span>）</li>
+<li>下列物质中，不是核苷酸组成成分的是（ ）A.碱基 B.核糖 C.甘油 D.磷酸——<span class="detail">C。核苷酸三件套=碱基+五碳糖+磷酸；甘油是脂肪（三酰甘油）的成分（p26），别串门。</span></li>
+</ol>
+</div>
+<div class="kaowei">
+<p class="kw-title">高考怎么考 · 考位锚（T11）</p>
+<p>· 高频考位：<strong>碱基种类计数</strong>（细胞 5 种/病毒 4 种/某一种核酸 4 种）与<strong>DNA·RNA 分布判断</strong>；<br>
+· <strong>核苷酸三成分拆装+单体多聚体碳链骨架</strong>常与 2.3/2.4 串联出概念图题；<br>
+· <span class="sub">真题锚申报：真题锚池内未录"生物2.5"专行，候采不代拟（宁缺毋编·沿本席 2.2/2.3 件同口径）。</span></p>
+</div>
+<div class="figure">
+<svg viewBox="0 0 640 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="位置图：第2章组成细胞的分子五节谱系，当前在2.5核酸，本节收束全章">
+<rect x="6" y="20" width="108" height="44" rx="8" fill="#e9e2f2" stroke="#9a86bd"/>
+<text x="14" y="38" font-size="13" fill="#1a2332">2.1 元素和化合物</text>
+<text x="14" y="56" font-size="11" fill="#5a6b7d">p16-19（已入池）</text>
+<rect x="128" y="20" width="104" height="44" rx="8" fill="#e9e2f2" stroke="#9a86bd"/>
+<text x="136" y="38" font-size="13" fill="#1a2332">2.2 细胞中的无机物</text>
+<text x="136" y="56" font-size="11" fill="#5a6b7d">p20-22（已入池）</text>
+<rect x="246" y="20" width="104" height="44" rx="8" fill="#e9e2f2" stroke="#9a86bd"/>
+<text x="254" y="38" font-size="13" fill="#1a2332">2.3 糖类和脂质</text>
+<text x="254" y="56" font-size="11" fill="#5a6b7d">p23-27（已入池）</text>
+<rect x="364" y="20" width="104" height="44" rx="8" fill="#e9e2f2" stroke="#9a86bd"/>
+<text x="372" y="38" font-size="13" fill="#1a2332">2.4 蛋白质</text>
+<text x="372" y="56" font-size="11" fill="#5a6b7d">p28-33（已入池）</text>
+<rect x="482" y="14" width="126" height="56" rx="10" fill="#fff3cd" stroke="#c0392b" stroke-width="2.4"/>
+<text x="490" y="36" font-size="13.5" font-weight="bold" fill="#c0392b">2.5 核酸</text>
+<text x="490" y="56" font-size="11" fill="#7a4b1f">本节 p34-36 ← 你在这里</text>
+<line x1="114" y1="42" x2="128" y2="42" stroke="#9a86bd" stroke-width="2"/>
+<line x1="232" y1="42" x2="246" y2="42" stroke="#9a86bd" stroke-width="2"/>
+<line x1="350" y1="42" x2="364" y2="42" stroke="#9a86bd" stroke-width="2"/>
+<line x1="468" y1="42" x2="482" y2="42" stroke="#9a86bd" stroke-width="2"/>
+<text x="486" y="86" font-size="11" fill="#8a6a2a">p37=本章小结（右界界标·第2章收束）</text>
+</svg>
+<p class="figcap">位置图：2.5 是第2章末节，碳链骨架小节顺带收束全章五类化合物；节界 p34-36，p33=2.4 尾页（生物科学史话）、p37=本章小结（影印实锚双界）。</p>
+</div>
+<p class="sub" style="text-align:center">—— 本件节界：2.5 全节 p34-36（p34 节题页·p36 练习与应用整页收尾·p37=本章小结边界），影印 5 页全亲目检（m42-m46），ts=1787291655029 实测复取（图32-48 全 200）。</p>
+<div class="no-print" style="text-align:center;color:#8a9bb0;font-size:.85em;margin-top:18px">并行搜索员B · 队1席 · 承群管理员15:35:52继续转产令（硬闸17:37·认领行dd250e7）· 节界实锚沿2.1含p19练习页先例口径（本节p36练习与应用整页在域）· 标准v2.3@82ccb4b · 产出走分支候并不直推main</div>
+</div>
+</body>
+</html>

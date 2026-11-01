@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理3.1 大气的组成与垂直分层 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1a212b; border: 1px solid #2e3a4a; border-radius: 10px; padding: 14px 18px; margin: 16px 0; color: #c8d4e0; }
+  .talk b { color: #ffd479; }
+  .try { background: #14202e; border: 1px dashed #3d6a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .try .tag { display: inline-block; background: #1f5c8f; color: #eaf4ff; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .ans, .try .step-tag { font-size: 13px; }
+  .try p { margin: 8px 0 0; }
+  .step-tag.ans { background: #2e7d52; color: #eafff3; }
+  .pit { background: #241a1e; border: 1px solid #5a3a44; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .pit .tag { display: inline-block; background: #8f3a4d; color: #ffe8ee; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .key { background: #1c2a3d; border: 1px solid #3d6a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .key .tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .alt { background: #1e2620; border: 1px solid #3d5a44; border-radius: 10px; padding: 12px 18px; margin: 16px 0; color: #c9d8cd; }
+  .alt b { color: #9fd4ae; }
+  .check { background: #1c2a3d; border: 1px solid #3d6a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .check .tag { display: inline-block; background: #9fd4ae; color: #10241a; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .box { background: #221e30; border: 1px solid #6a5a9e; border-radius: 10px; padding: 12px 18px; margin: 16px 0; }
+  .box .tag { display: inline-block; background: #9d7fe8; color: #17102a; font-weight: bold; font-size: 13px; padding: 1px 10px; border-radius: 4px; margin-right: 6px; }
+  .note-red { background: #2a1a1c; border-left: 4px solid #d46a7a; padding: 10px 16px; margin: 16px 0; color: #f0d8dc; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; }
+  .note-yellow { background: #2a2418; border-left: 4px solid #d4b04a; padding: 10px 16px; margin: 16px 0; color: #efe6c8; }
+  .uline { border-bottom: 3px solid #4a9eff; }
+  .fig { background: #101620; border: 1px solid #26303e; border-radius: 12px; padding: 14px 10px; margin: 18px 0; text-align: center; }
+  .fig p { color: #8fa3b8; font-size: 13px; margin: 8px 0 0; }
+  .small { color: #8fa3b8; font-size: 14px; }
+  mark { background: #4a5a20; color: #f5f0d8; padding: 0 3px; border-radius: 3px; }
+  .foot { border-top: 1px solid #2e3a4a; margin-top: 50px; padding-top: 16px; color: #5a6a7a; font-size: 13px; line-height: 1.7; }
+  @media print {
+    body { background: #ffffff !important; color: #1a1a1a !important; }
+    .page { padding: 10mm 8mm; }
+    h1, h2, h3, b { color: #111111 !important; }
+    h2 { border-left-color: #1a5fb4 !important; }
+    .talk { background: #f2f4f7 !important; border-color: #c9d1d9 !important; color: #333333 !important; }
+    .check { background: #eef7f0 !important; border-color: #9fd4ae !important; color: #222222 !important; }
+    .try { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #222222 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .box { background: #f3effc !important; border-color: #b6a8d4 !important; color: #222222 !important; }
+    .note-red { background: #fdf2f4 !important; border-left-color: #d46a7a !important; color: #333333 !important; }
+    .note-yellow { background: #fdf8e3 !important; color: #222222 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+    .uline { border-bottom-color: #1a5fb4 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>地理3.1 大气的组成与垂直分层 · 零基础首学版</h1>
+<div class="sub">湘教版《高中地理·必修第一册》第三章 第一节（教材p70-76）· 零基础首学版 · 读完约35分钟</div>
+
+<div class="talk"><b>先看一个怪现象：</b>雷阵雨过后，你有时会闻到一股<b>刺鼻的气味</b>——那是臭氧的味道（教材p70探究）。这股怪味的主人住在大约<b>15~35千米</b>的高空，可它要是"变薄"了，千里之外的智利海伦娜岬角，居民出门半小时皮肤就会被晒成粉红色，羊群患上白内障几乎全盲（教材p70）。地面上的怪事，根子却在<b>几十千米高空</b>——想看懂这种"高空管地面"的剧本，就得先把这层包裹地球的"被子"看清楚：它<b>由什么组成</b>、<b>分几层</b>。这就是本节的两站行程。</div>
+
+<div class="check"><span class="tag">读完这节你能</span><br>① 报出低层大气三部分（干洁空气、水汽、杂质）和干洁空气两大主力的体积分数，说清氮、氧、二氧化碳、臭氧各干什么活；<br>② 按教材口径说出分层的<b>依据</b>（温度、密度、运动状况的垂直差异）与<b>三层名</b>（对流层→平流层→高层大气），并解释每层"<b>温度怎么变</b>→<b>运动怎么做</b>→<b>天气怎么过</b>"的因果链；<br>③ 用"逆温"解释雾霾天污染加重、用"臭氧空洞"数据回答探究两问；<br>④ 记住三组数据（氮78%/氧21%、400 ppm、0.6℃/100米），会用气温垂直分布曲线图定位"飞机在哪层晴空万里、雨丝打窗发生在哪层"。</div>
+
+<p class="small"><b>本件位置：</b>第二章的两位"雕刻师"（流水、风）谢幕后，镜头从<b>地表</b>抬起、转向<b>天上</b>——第三章"地球上的大气"首节。<u class="uline">没读过前两章也不影响</u>，只需一条常识：你生活在大气圈的"底部"，头顶这层空气随时在影响你。</p>
+
+<h2><span class="step-tag">预备步</span>30秒分清"空气"和"大气"，再记三件套</h2>
+
+<p>教材p70原话：<mark>包围地球的空气称为大气</mark>。大气为地球生命的繁衍和人类的发展提供了必要条件——人类生活在大气圈<b>底部</b>，大气的物理状态和组成成分的变化，时刻影响我们。往下看之前先立一个框架：<mark>低层大气主要由干洁空气、水汽和杂质三部分组成</mark>。"干洁空气"=把水汽和杂质扣除后剩下的<b>干干净净的混合气体</b>——它是大气里最稳定的部分，下一站先拆它。</p>
+
+<h2><span class="step-tag">第一步</span>大气的组成——两大主力扛99%，微量选手管大事</h2>
+
+<p>大气是多种气体的混合物（教材p70）。其中<b>干洁空气的主要成分是氮气和氧气</b>：<mark>氮气和氧气的体积分数分别约为78%、21%，两者合占99%</mark>（图3-1饼图：氮气78%、氧气21%、其他气体仅1%）。</p>
+
+<div class="key"><span class="tag">四种气体 · 各自的工作证</span>（教材p70-71原文）<br>① <b>氮气</b>——是<b>地球上生物体的基本成分</b>（你身体里的蛋白质就离不开氮）；<br>② <b>氧气</b>——人类和其他<b>好氧生物</b>维持生命活动必需的物质，并<b>参与有机物的燃烧、腐败和分解过程</b>；<br>③ <b>二氧化碳</b>——绿色植物进行<b>光合作用的基本原料</b>，又对地面起着<b>保温作用</b>；<br>④ <b>臭氧</b>——能<b>强烈吸收太阳紫外线</b>：臭氧层保护地球生物免受过量紫外线伤害，而穿透大气到达地面的<b>少量</b>紫外线，又有<b>杀菌</b>作用。</div>
+
+<div class="pit"><span class="tag">易错</span>二氧化碳、臭氧在大气中<b>含量虽少</b>，但对自然环境和生命活动具有<b>重要作用</b>——考试最爱在这里设坑："含量小=不重要"是错的。臭氧是"微量选手管大事"的典型：多了不行（污染），少了更不行（紫外线失控）。</div>
+
+<div class="talk"><b>教材阅读栏目·二氧化碳浓度突破400 ppm（p71）：</b>自工业革命以来，由于人类大量使用<b>化石燃料</b>，全球大气CO₂浓度上升了<b>120 ppm</b>（1 ppm=百万分之一），其中<b>一半的增长出现在1980年以后</b>；<b>2015年3月</b>，全球大气二氧化碳月均浓度<b>首次突破400 ppm</b>。结论原话：CO₂等温室气体排放量的增加，是导致<b>全球变暖</b>的一个重要原因。——这个数字是本节最常考的"数据锚"，记"2015·3·首破400 ppm"。</div>
+
+<p><b>另外两件套（水汽和杂质）的分布规律</b>（教材p71-72，考试爱考"谁多谁少"）：<b>水汽</b>——水平方向上，<mark>海洋上空高于陆地上空、湿润地区上空高于干旱地区上空</mark>；垂直方向上，一般<mark>自地面向高空逐渐减少</mark>。<b>杂质</b>——含量随时间、地点、天气条件而变化；通常在近地面大气中，<mark>陆上多于海上、城市多于乡村、冬季多于夏季</mark>。</p>
+
+<div class="try"><span class="tag">试试看 ①</span>（自编·抓因果）水汽和杂质含量很少，凭什么说它们"对天气变化影响很大"？
+<p><span class="ans">看本领不看体量：在大气温度变化的范围内，<b>水汽可发生固、液、气三态的转化</b>，产生<b>云、雾、雨、雪</b>等一系列天气现象；<b>杂质会使大气能见度变差</b>，但作为<b>凝结核</b>，又是<b>成云致雨的必要条件</b>（教材p72原话）。一句话：水汽是"天气演员"，杂质是"舞台核"，没有凝结核，水汽再饱和也难成形。</span></p></div>
+
+<div class="alt"><b>想多走一步？（可选）教材p72活动·雾和霾不是一回事：</b>雾=空气中水汽多于当时温度条件下的饱和水汽量、且有足够凝结核时，多余水汽凝结成小水滴或冰晶悬浮——<b>水平能见度低于1千米</b>称雾；霾（又称"灰霾"）=悬浮在大气中的大量<b>微小尘粒、烟粒或盐粒</b>等的集合体，使空气浑浊、水平能见度降低到<b>10千米以下</b>——组成粒子极小、肉眼不可分辨，一天中任何时候可出现；霾天气是一种<b>大气污染状态</b>，<b>PM2.5（直径小于或等于2.5微米的颗粒物）被认为是造成霾天气的"元凶"</b>。对比记法：雾是"水汽型·1千米"，霾是"颗粒型·10千米"。我国不少地区把两者合并预警，统称"雾霾天气"，但教材明确：它们是<b>两种截然不同的天气现象</b>。</div>
+
+<h2><span class="step-tag">第二步</span>大气的垂直分层——先立依据，再看对流层"最闹腾"</h2>
+
+<p>分层依据必须整句背下（教材p72）：<mark>根据大气的温度、密度和运动状况在垂直方向上的差异，可将大气分为三层，自下而上依次是对流层、平流层和高层大气</mark>。三个判据（温度怎么变、密度多大、怎么运动）对应三层的三种"性格"——后面每层都按这个顺序过一遍。</p>
+
+<div class="fig">
+<svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="大气垂直分层示意：三层结构与气温垂直分布曲线">
+  <text x="380" y="26" fill="#b0bcc8" font-size="15" font-weight="bold" text-anchor="middle">大气垂直分层示意（教材图3-3复刻·曲线坐标python换算）</text>
+  <!-- 坐标轴 -->
+  <line x1="150" y1="480" x2="700" y2="480" stroke="#7d8a99" stroke-width="1.5"/>
+  <line x1="150" y1="480" x2="150" y2="60" stroke="#7d8a99" stroke-width="1.5"/>
+  <text x="712" y="484" fill="#8fa3b8" font-size="12">温度/℃</text>
+  <text x="60" y="50" fill="#8fa3b8" font-size="12">高度/千米</text>
+  <!-- x轴刻度 -->
+  <g fill="#7d8a99" font-size="11" text-anchor="middle">
+    <text x="183" y="496">-100</text><text x="239" y="496">-90</text><text x="295" y="496">-80</text><text x="351" y="496">-70</text>
+    <text x="407" y="496">-60</text><text x="463" y="496">-50</text><text x="519" y="496">-40</text><text x="575" y="496">-30</text>
+    <text x="631" y="496">-20</text><text x="659" y="496">-10</text><text x="687" y="496">0</text>
+  </g>
+  <!-- 高度分界线：12km 与 50km -->
+  <line x1="150" y1="432" x2="700" y2="432" stroke="#d8dee6" stroke-width="1.8" stroke-dasharray="1 0"/>
+  <line x1="150" y1="280" x2="700" y2="280" stroke="#d8dee6" stroke-width="1.8"/>
+  <text x="156" y="448" fill="#d8dee6" font-size="12">12</text>
+  <text x="156" y="296" fill="#d8dee6" font-size="12">50</text>
+  <!-- 层名（左侧竖排） -->
+  <text x="96" y="470" fill="#e8ecf2" font-size="14" font-weight="bold">对流层</text>
+  <text x="96" y="372" fill="#e8ecf2" font-size="14" font-weight="bold">平</text>
+  <text x="96" y="392" fill="#e8ecf2" font-size="14" font-weight="bold">流</text>
+  <text x="96" y="412" fill="#e8ecf2" font-size="14" font-weight="bold">层</text>
+  <text x="96" y="180" fill="#e8ecf2" font-size="14" font-weight="bold">高</text>
+  <text x="96" y="204" fill="#e8ecf2" font-size="14" font-weight="bold">层</text>
+  <text x="96" y="228" fill="#e8ecf2" font-size="14" font-weight="bold">大</text>
+  <text x="96" y="252" fill="#e8ecf2" font-size="14" font-weight="bold">气</text>
+  <!-- 高层大气的配景：人造卫星/极光/流星/宇宙火箭 -->
+  <g>
+    <circle cx="470" cy="105" r="16" fill="#c9a15a"/>
+    <rect x="452" y="88" width="36" height="8" fill="#8a6a42" transform="rotate(-25 470 92)"/>
+    <text x="500" y="108" fill="#8fa3b8" font-size="12">人造卫星</text>
+    <path d="M300,128 q6,-14 12,0 q6,14 -6,18 q-14,6 -18,-6 q8,-2 12,-12" fill="#e8ecf2" opacity="0.9"/>
+    <text x="330" y="140" fill="#8fa3b8" font-size="12">极光</text>
+    <g stroke="#e8ecf2" stroke-width="2" opacity="0.9">
+      <line x1="240" y1="130" x2="252" y2="156"/><line x1="266" y1="126" x2="274" y2="152"/><line x1="292" y1="132" x2="298" y2="156"/>
+    </g>
+    <text x="252" y="172" fill="#8fa3b8" font-size="12">流星</text>
+    <g transform="rotate(42 420 96)">
+      <rect x="400" y="90" width="40" height="10" rx="5" fill="#d8dee6"/>
+      <path d="M400,90 l-12,5 l12,5 z" fill="#c98d5a"/>
+      <rect x="436" y="92" width="8" height="6" fill="#d46a3a"/>
+    </g>
+    <text x="392" y="132" fill="#8fa3b8" font-size="12">宇宙火箭</text>
+  </g>
+  <!-- 平流层配景：飞机 -->
+  <g>
+    <path d="M520,392 l46,-6 l14,6 l-14,6 l-46,-6 l0,-6 l10,6 l-10,6 z" fill="#d8dee6"/>
+    <path d="M536,386 l8,-12 l6,0 l-4,12 z M536,398 l8,12 l6,0 l-4,-12 z" fill="#8fa3b8"/>
+    <text x="520" y="372" fill="#8fa3b8" font-size="12">飞机（平流层底部晴空飞行）</text>
+  </g>
+  <!-- 对流层配景：雪山与云 -->
+  <path d="M150,480 L215,430 L255,455 L300,415 L340,445 L380,430 L420,465 L460,440 L500,480 Z" fill="#3a4a5e"/>
+  <path d="M300,415 L322,432 L312,434 Z M215,430 L228,440 L222,442 Z" fill="#e8ecf2"/>
+  <ellipse cx="560" cy="455" rx="52" ry="16" fill="#c9d4e0" opacity="0.85"/>
+  <ellipse cx="600" cy="442" rx="38" ry="13" fill="#d8dee6" opacity="0.8"/>
+  <text x="560" y="430" fill="#8fa3b8" font-size="12">云（对流层内）</text>
+  <!-- 气温垂直分布曲线 -->
+  <polyline fill="none" stroke="#ffd479" stroke-width="3"
+    points="545.3,480 507.5,472 433.6,460 363.1,448 315.0,440 287.5,432 294.4,416 315.0,400 342.5,380 376.9,360 411.2,340 445.6,320 476.6,300 493.8,280 452.5,260 407.8,240 363.1,220 321.9,200 280.6,180 239.4,160 194.7,140 218.8,120 287.5,100 356.2,80"/>
+  <circle cx="545.3" cy="480" r="4" fill="#ffd479"/>
+  <circle cx="287.5" cy="432" r="4" fill="#ffd479"/>
+  <circle cx="493.8" cy="280" r="4" fill="#ffd479"/>
+  <circle cx="194.7" cy="140" r="4" fill="#ffd479"/>
+  <text x="560" y="500" fill="#ffd479" font-size="12">气温垂直分布曲线：-60℃(12km)→0℃(50km)→-87℃(85km)→回升</text>
+  <text x="380" y="530" fill="#7d8a99" font-size="12">三层记忆口诀：温度"降→升→先降后升"，运动"乱→稳→稀"，天气"闹→晴→空"</text>
+</svg>
+<p>复刻自教材图3-3"大气垂直分层示意"（p73）：横轴温度（-100~60℃）、纵轴高度（千米），黄色曲线=气温垂直分布。两个"折点"是分层界标：12千米附近（对流层顶，全曲线最冷段之一，约-60℃）与50千米（平流层顶，约0℃）。配景飞行器已按原图归位：飞机在平流层，流星/极光/人造卫星/宇宙火箭在高层大气。</p>
+</div>
+
+<h3>对流层——大气圈的"菜市场"</h3>
+
+<p>教材p72-73：对流层是<b>贴近地面的大气最低层</b>。<mark>整个大气质量的3/4和几乎全部的水汽、杂质，都集中在这一层</mark>。它的两个"性格参数"都在变：<b>高度随纬度、季节而变化</b>——就纬度而言，<b>低纬17~18千米、中纬10~12千米、高纬仅8~9千米</b>；就季节而言，任何纬度<b>夏季较厚而冬季较薄</b>，中纬度尤其明显。</p>
+
+<p><b>温度</b>：<mark>对流层气温随高度的增加而递减</mark>——因为<b>地面是对流层大气主要的直接热源</b>（热源在"脚下"不在"头顶"），平均每上升100米约降0.6℃（教材p75活动给的数据）。<b>运动</b>：对流层"上部冷、下部热"，空气就会产生对流；随着空气的对流运动，近地面的水汽和杂质向上空输送，在上升过程中随着气温的降低，<mark>容易成云致雨</mark>。<b>天气</b>：对流层天气现象复杂多变，云、雾、雨、雪等天气现象都发生在这一层——<b>对流层与人类的关系最为密切</b>。</p>
+
+<div class="pit"><span class="tag">易错</span>①"为什么高度低纬高、高纬低？"——对流旺盛程度由<b>地面温度</b>决定：低纬地面热、对流强，大气能被"顶"得更高；②对流层顶的温度<b>不是全球统一值</b>，图3-3上的"12千米"是<b>中纬度的代表值</b>，低纬对流层顶可达17~18千米；③"递减"记成"递增"是最常见的失分点——想"热源在地面"即可防呆。</div>
+
+<div class="key"><span class="tag">逆温 · 教材气泡原文（p72）</span>在一定条件下，对流层<b>下部</b>会出现<b>气温随高度升高而增加</b>的逆温现象。<b>逆温层可以阻碍空气对流运动的发展，使污染物难以扩散</b>。——正常"上冷下热"时污染物能随对流向上跑；逆温一来，"盖子"扣上，城市污染物在近地面越积越多，这正是雾霾天雪上加霜的机制（p76活动2也要你答这个）。</div>
+
+<div class="try"><span class="tag">试试看 ②</span>（自编·用原图气泡）坐飞机遇到颠簸起降时雨丝打窗，巡航时却晴空万里——为什么？（教材p73女孩气泡原问）
+<p><span class="ans">起飞、降落阶段飞机还在<b>对流层</b>内——云、雾、雨、雪全在这一层，自然遇雨；巡航高度一般进入<b>平流层底部</b>，那里<b>水汽、杂质含量稀少，天气现象少见，大气平稳</b>，所以晴空万里。一句话：天气的"舞台"只设在最底层。</span></p></div>
+
+<h2><span class="step-tag">第三步</span>平流层与高层大气——"稳"与"空"的两层</h2>
+
+<h3>平流层——名字里就写着运动方式</h3>
+
+<p>教材p73-74：<mark>自对流层顶向上至50~55千米高度的范围为平流层</mark>。<b>温度</b>：气温随高度的增加而<b>上升</b>——该层大气主要<b>靠臭氧吸收太阳紫外线增温</b>（热源在"头顶"的臭氧层！与对流层正好相反）。<mark>臭氧集中在15~35千米的气层中，形成臭氧层</mark>；臭氧层以上臭氧含量逐渐减少，但太阳紫外线辐射仍然强烈，气温随高度增加<b>迅速上升</b>。<b>运动</b>：平流层<b>上部热、下部冷</b>，大气稳定，不易形成对流，大气以<b>水平运动</b>为主——"平流"二字由此得名。<b>天气</b>：该层中水汽、杂质含量稀少，天气现象少见；大气平稳、天气晴朗，<b>有利于航空飞机飞行</b>。</p>
+
+<div class="talk"><b>教材阅读栏目·臭氧洞（p74）：</b>20世纪70年代，科学家发现南极地区上空的臭氧量下降严重，出现了"<b>南极臭氧洞</b>"。这是形象说法——指南极上空出现了<b>全球臭氧量最低值（低于全球臭氧平均值的30%~40%）</b>，相对其他地区像一个空洞。<b>2006年，南极臭氧洞面积已经超过北美洲</b>（图3-5：1979年10月16日 vs 2015年10月4日对比）。注释卡：量臭氧用什么单位？<b>多布森单位（Dobson Unit，DU）</b>——度量大气中臭氧<b>柱尺度</b>的单位，1 DU=标准大气压状态下<b>千分之一厘米</b>臭氧层的厚度；<b>当臭氧层厚度低于220 DU时，臭氧层便出现空洞</b>。→ 回看p70探究的数据链：臭氧每减1%，到达地面的紫外线增2%——这就是"保护伞"变薄的具体代价。</div>
+
+<h3>高层大气——电离层在这里上班</h3>
+
+<p>教材p75：<mark>平流层顶以上的大气，统称高层大气</mark>。气压很低、密度很小。在<b>60~500千米</b>的高空，有若干<b>电离层</b>：在太阳紫外线和宇宙射线的作用下，大气分子被分解为离子，大气处于高度电离状态，所以称为电离层。<mark>电离层能反射无线电波，对远距离无线电通信有重要作用</mark>。</p>
+
+<div class="key"><span class="tag">三层总表 · 一图带走</span><br><b>对流层</b>（地面~对流层顶）：温度<b>递减</b>（地面是直接热源）｜运动：<b>对流</b>旺盛｜天气：云雾雨雪全在此·与人类关系最密切｜考点数据：低纬17~18/中纬10~12/高纬8~9千米，每百米降0.6℃。<br><b>平流层</b>（对流层顶~50~55千米）：温度<b>递增</b>（臭氧吸紫外线，热源在层内臭氧层15~35千米）｜运动：<b>水平运动</b>为主·大气稳定｜天气：水汽杂质稀少·晴朗·利航空。<br><b>高层大气</b>（平流层顶以上）：气压低密度小｜<b>电离层60~500千米反射无线电波</b>｜流星、极光在此层可见。</div>
+
+<div class="try"><span class="tag">试试看 ③</span>（自编·抓对比）"气温随高度增加而递减"与"气温随高度增加而上升"分别出现在哪层？各由谁决定？
+<p><span class="ans">对流层<b>递减</b>——热源是<b>地面</b>（离地越远越冷）；平流层<b>上升</b>——热源是层内的<b>臭氧吸收紫外线</b>（越靠近紫外线强区越热，上部迅速升温）。判层口诀：<b>看温度曲线拐弯</b>——曲线左弯（变冷）在对流层，右弯（变热）在平流层，50千米折点再往左是高层大气的降温段。</span></p></div>
+
+<div class="alt"><b>想多走一步？（可选）教材p75-76活动：</b>①<b>避暑：贵阳为什么是"中国避暑之都"</b>——对流层每上升100米气温约降0.6℃，读图3-7（我国5城市7月/8月平均气温：贵阳23.9/23.6℃·重庆28.1/28.4℃·武汉28.7/28.2℃·长沙28.6/28.1℃·上海28.0/27.8℃）：同纬度带上贵阳<b>海拔高</b>（云贵高原），气温明显低于重庆、武汉、长沙等平原/盆地城市，7、8月凉快，故打造"避暑经济"。②<b>林芝桃花："雪域江南"</b>——每年3月西藏大部分地区隆冬未结束，林芝桃花竞相开放（图3-8/3-9）：林芝地处<b>雅鲁藏布江谷地</b>，海拔相对较低、气温高；谷地开口使暖湿气流可深入，冬季相对温暖——垂直方向上"谷地暖、山地寒"的本节原理直接落地。③<b>逆温两问</b>——(1)逆温时污染物难以扩散，近地面空气质量变差；(2)20世纪世界八大公害事件中，马斯河谷烟雾事件、多诺拉烟雾事件、伦敦烟雾事件等都与逆温有关（自查拓展）。跳过不影响主干。</div>
+
+<div class="box"><span class="tag">高考怎么考</span>本节两大考向：①<b>组成与微量气体</b>——干洁空气两大主力体积分数、"含量少作用大"的CO₂/O₃功能配对（对应自测①与"四种气体工作证"）；②<b>分层因果链</b>——分层依据原文、三层"温度→运动→天气"链条、对流层高度随纬度季节变化、每百米0.6℃计算、平流层利航空与臭氧层15~35千米、逆温与污染物扩散情境题（对应自测②③④与"三层总表"与图3-3复刻）。具体真题锚候采不代拟（本件未取得卷源）。</div>
+
+<div class="check"><span class="tag">读完自查 · 四连</span><br>1. 低层大气三部分是哪三样？干洁空气中谁占78%、谁占21%？（口答：干洁空气/水汽/杂质；氮78%、氧21%）<br>2. 大气垂直分层的依据一句话是什么？三层自下而上依次是？（温度、密度、运动状况的垂直差异；对流层/平流层/高层大气）<br>3. 对流层气温为什么随高度递减？平流层气温为什么反而上升？（地面是对流层直接热源；臭氧吸收紫外线增温）<br>4. 电离层在哪？干什么用？（60~500千米高空；反射无线电波、服务远距离无线电通信）</div>
+
+<p class="small"><b>下一站预告：</b>3.2《大气受热过程》——本节你已埋好两个伏笔："CO₂对地面保温""太阳紫外线被臭氧吸收"，下一节把"太阳给地面加热、地面再烤热大气"的转账链路讲清楚；而"平流层晴朗、对流层闹腾"的天气分野，也将在受热过程里得到更深一层的解释。</p>
+
+<div class="fig">
+<svg viewBox="0 0 740 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第三章地球上的大气模块中，3.1大气的组成与垂直分层所处位置">
+  <defs><marker id="arrC" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4a9eff"/></marker></defs>
+  <rect x="28" y="40" width="150" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="103" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">第二章 地表形态三节</text>
+  <rect x="198" y="40" width="220" height="40" rx="6" fill="#1c2530" stroke="#4a9eff" stroke-width="2"/>
+  <text x="308" y="58" fill="#e8ecf2" font-size="14" font-weight="bold" text-anchor="middle">3.1 大气的组成与垂直分层</text>
+  <text x="308" y="74" fill="#8fd4ff" font-size="11" text-anchor="middle">（本件）</text>
+  <rect x="438" y="40" width="130" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="503" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">3.2 大气受热过程</text>
+  <rect x="588" y="40" width="120" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="648" y="64" fill="#8fa3b8" font-size="13" text-anchor="middle">3.3 大气热力环流</text>
+  <line x1="178" y1="60" x2="194" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <line x1="418" y1="60" x2="434" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <line x1="568" y1="60" x2="584" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arrC)"/>
+  <text x="370" y="108" fill="#5a6a7a" font-size="11" text-anchor="middle">这张图在说什么：镜头从地表抬向天空——第三章"地球上的大气"三节接力：先认"被子"（本件），再讲"怎么盖"（受热），最后讲"怎么流动"（环流）。</text>
+</svg>
+</div>
+
+<div class="foot">零基础首学版 v1.0（批3产出）· 事实层素材源：湘教版《普通高中教科书·地理 必修 第一册》p70-76 官方影印逐页对照（湖南教育出版社·智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a·ts=1754905526079（transcode直链21/21实时验活同值）·影印图存席位私有目录 geo31_jc/gNN.jpg（g65-g85）·图号→印刷页 N−6 映射四点复核（g70=p64/g72=p66/g76=p70/g83=p77）·节界实锚：p70第一节节题页至p76活动续页·p69=第三章"地球上的大气"章题页（上节界标亲验）·p77=第二节"大气受热过程"节题页（下一节界标亲验）·p70-76直读锚定：探究臭氧层破坏与海伦娜岬角与干洁空气三部分与图3-1饼图p70/CO2O3作用与400ppm阅读与图3-2浓雾p71/三态转化与雾霾活动与垂直分层依据与对流层高度气温与逆温气泡p72/天气现象与图3-3与平流层起p73/图3-4与平流层得名与臭氧洞阅读与图3-5多布森注p74/高层大气电离层与气象气球阅读与图3-6与避暑活动p75/图3-7五城气温与林芝桃花图3-8/3-9与逆温活动p76）<br>
+出品席：并行搜索员C（队7席）· 设计标准：零预设 · 一次一步 · 随读随验×3+自测四连 · 卡住有出路 · 收口能复述 · 自编例全部显式标注 · 教材原题标注来源 · 数值程序代验留痕（geo31_calc.py输出已存档） · 图示必配（图3-3复刻曲线坐标python精确换算） · 交件纪律：七件制+QC单随件推分支dui7_31_1031候终读·禁直推main
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地理4.1 水循环 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
+  .step-tag.ans { background: #67c23a; }
+  .talk { background: #1a212b; border: 1px solid #2e3a4a; border-left: 4px solid #4a9eff; padding: 14px 16px; border-radius: 6px; margin: 18px 0; }
+  .check { background: #16211c; border: 1px solid #2e5a3a; padding: 14px 16px; border-radius: 6px; margin: 18px 0; }
+  .check .tag { background: #67c23a; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; }
+  .try { background: #1a1f2b; border: 1px solid #3a4a6a; padding: 14px 16px; border-radius: 6px; margin: 18px 0; }
+  .try .tag { background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; }
+  .pit { background: #2b1a1e; border: 1px solid #6a3a42; padding: 14px 16px; border-radius: 6px; margin: 18px 0; }
+  .pit .tag { background: #e05a6a; color: #fff; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; }
+  .key { background: #1a242b; border: 1px solid #3a5a6a; padding: 14px 16px; border-radius: 6px; margin: 18px 0; }
+  .key .tag { background: #4ac9e0; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; }
+  .alt { background: #20241a; border: 1px solid #5a6a3a; padding: 14px 16px; border-radius: 6px; margin: 18px 0; }
+  .alt .tag { background: #b6c79a; color: #222; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; }
+  .box { background: #201a2b; border: 1px solid #5a4a6a; padding: 14px 16px; border-radius: 6px; margin: 18px 0; }
+  .note-red { background: #2b1416; border-left: 4px solid #d46a7a; padding: 12px 14px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+  .fig { background: #12181f; border: 1px solid #2e3a4a; border-radius: 8px; padding: 16px; margin: 20px 0; }
+  .fig p { color: #8fa3b8; font-size: 14px; text-align: center; margin-top: 8px; }
+  .small { color: #8fa3b8; font-size: 15px; }
+  table.cmp { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+  table.cmp th { background: #1c2a3d; color: #c8d4e0; padding: 8px 10px; border: 1px solid #2e3a4a; text-align: left; }
+  table.cmp td { padding: 8px 10px; border: 1px solid #2e3a4a; vertical-align: top; }
+  mark { background: #4a3a10; color: #ffd966; padding: 0 3px; border-radius: 3px; }
+  .self { background: #141a24; border: 1px dashed #4a6a8a; padding: 14px 16px; border-radius: 6px; margin: 18px 0; }
+  .self .tag { background: #3a5a7a; color: #fff; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; }
+  .foot { margin-top: 50px; padding-top: 20px; border-top: 1px solid #2e3a4a; color: #5a6a7a; font-size: 12.5px; line-height: 1.7; }
+  @media print {
+    body { background: #ffffff !important; color: #111111 !important; }
+    .page { max-width: 100%; padding: 0; }
+    h1, h2, h3 { color: #000000 !important; }
+    .talk { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .check { background: #f0faf0 !important; border-color: #2a7a3a !important; color: #111111 !important; }
+    .try { background: #f5f8ff !important; border-color: #3a5a8a !important; color: #111111 !important; }
+    .self { background: #f7faff !important; border-color: #5a7a9a !important; color: #111111 !important; }
+    .pit { background: #fdf0f0 !important; border-color: #d4a0a6 !important; color: #222222 !important; }
+    .key { background: #f0f6ff !important; border-color: #1a5fb4 !important; color: #111111 !important; }
+    .alt { background: #f4f7ee !important; border-color: #b6c79a !important; color: #333333 !important; }
+    .box { background: #f3effc !important; border-color: #b6a8d4 !important; color: #222222 !important; }
+    .note-red { background: #fdf2f4 !important; border-left-color: #d46a7a !important; color: #333333 !important; }
+    .fig { background: #ffffff !important; border-color: #c9d1d9 !important; }
+    .fig p { color: #555555 !important; }
+    .small, .sub, .foot { color: #555555 !important; }
+    .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
+    mark { background: #ffe98a !important; color: #111111 !important; }
+    .uline { border-bottom-color: #1a5fb4 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>地理4.1 水循环 · 零基础首学版</h1>
+<div class="sub">湘教版《高中地理·必修第一册》第四章 第一节（教材p89-97）· 零基础首学版 · 读完约38分钟</div>
+
+<div class="talk"><b>先看三个"水珠"：</b>如果把地球上<b>全部的水</b>汇成一个水珠，直径约<b>1 384千米</b>；只算沼泽、河流、湖泊和地下水里的<b>液态淡水</b>，水珠缩到<b>273千米</b>；再只算河流和湖泊里的淡水，只剩<b>56千米</b>——三个水珠挂在这颗直径12 742千米的星球旁边，小得像三滴汗（教材p89探究·图4-1）。可就是这颗"水的行星"，靠一套<b>永无休止的循环运动</b>让最后一滴小水珠"用不完"——这套循环怎么转、有什么用、坏了怎么办，就是本节三站行程。</div>
+
+<div class="check"><span class="tag">读完这节你能</span><br>① 报出水圈"户口本"三组数据（海洋水97%/陆地水体不足3%/人类常用淡水约占淡水储量0.3%），说清冰川是地球淡水的主体；<br>② 画出<b>海陆间循环</b>七环节（蒸发→水汽输送→降水→地表径流/下渗→地下径流→回海），并区分三类循环的<b>发生空间</b>与<b>意义差异</b>；<br>③ 按"纽带—平衡—气候—地貌"四条说出水循环的地理意义，并用<b>黄河输沙造陆</b>数据链验证"塑造地表形态"；<br>④ 分清<b>洪水灾害</b>与<b>雨涝灾害</b>，各说出工程措施与非工程措施至少两条，会用"下渗减少→地表径流增多"的循环原理解释城市内涝与鱼鳞坑保水。</div>
+
+<p class="small"><b>本件位置：</b>第三章"地球上的大气"三节封账后，镜头从<b>天上</b>落回<b>地面</b>——第四章"地球上的水"首节。水循环与上一章的大气受热、热力环流共用同一个"发动机"（太阳能），只是主角从空气换成了水。</p>
+
+<h2><span class="step-tag">预备步</span>先背水圈的"户口本"——97%与0.3%的悬殊</h2>
+<p>地球约有<mark>71%的表面覆盖着水</mark>，从太空看是名副其实的<b>"水的行星"</b>（教材p89）。地球上的水呈固态、液态、气态，分布于海洋、陆地和大气之中，形成各种水体，共同组成<b>水圈</b>。户口本三行背牢：<mark>海洋水约97%</mark>是主体；陆地各种水体（河水、湖泊水、沼泽水、地下水、冰川等）<mark>还不足3%</mark>；其中<mark>冰川是地球淡水的主体</mark>，主要分布在两极地区和中低纬高山地区，水量占全球淡水储量的<mark>2/3以上</mark>——而我们人类利用较多的淡水（河水、淡水湖泊水、浅层地下水）<mark>只占全球淡水储量的0.3%</mark>。大气层里也有少量水，基本以水汽形态存在（教材p89）。</p>
+<div class="pit"><span class="tag">易错</span>"地球缺水吗"要分两层答：<b>水不少</b>（97%覆盖·水的行星），<b>但人类能直接用的淡水极少</b>（0.3%）。教材p89探究第2问"大量取用会不会枯竭"的钥匙就在下文：因为水循环让水资源<b>不断更新</b>——这是本节最重要的一条伏笔。</div>
+
+<h2><span class="step-tag">第一步</span>水循环怎么转——定义、七环节与三种"跑法"</h2>
+<p><b>定义先立住：</b>水循环是指<mark>自然界的水在地理环境中的移动，以及与之相伴的状态变化</mark>。在<mark>太阳能和地球重力</mark>的作用下，水在陆地、海洋、大气之间，通过吸收或释放热量，<b>固、液、气三态转化</b>，形成了永无休止的循环运动（教材p90）。</p>
+<div class="box"><span class="tag">教材实验翻译</span>p90活动"水循环主要环节模拟"：烧瓶里的水<b>酒精灯加热→蒸发</b>，水蒸气顺玻璃导管爬升（<b>水汽输送</b>），遇到放冰块的玻璃板<b>冷却凝结</b>成水滴，<b>降水</b>落到托盘——一个小烧瓶跑完了"蒸发→输送→降水→径流"全流程。托盘里的水多了还是少了？调火候（蒸发量）、挪冰块（降水量）、堵导管（输送）都能改——这正是实验思考第2问的答案方向（显式试答·以小组实验为准）。</div>
+<p>自然界的水循环时刻都在进行，主要发生于<mark>海洋与陆地之间、陆地与陆地上空之间、海洋与海洋上空之间</mark>（教材p91）——这句话直接给出三种"跑法"的空间范围。看图4-3把七个环节连成一张网：</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="100%">
+  <rect x="0" y="0" width="720" height="340" fill="#0f1520"/>
+  <defs><marker id="a1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#e0975a"/></marker><marker id="a2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#6a9adf"/></marker><marker id="a3" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#67c23a"/></marker></defs>
+  <text x="360" y="26" fill="#d8dee6" font-size="15" text-anchor="middle">水循环示意（教材图4-3要义复刻）</text>
+  <rect x="40" y="200" width="300" height="90" fill="#3d5a3d" rx="10"/><text x="190" y="250" fill="#c8d4e0" font-size="16" text-anchor="middle">陆 地</text>
+  <rect x="440" y="200" width="240" height="90" fill="#1d3a5f" rx="10"/><text x="560" y="250" fill="#c8d4e0" font-size="16" text-anchor="middle">海 洋</text>
+  <line x1="120" y1="196" x2="120" y2="120" stroke="#e0975a" stroke-width="2.5" marker-end="url(#a1)"/><text x="128" y="140" fill="#e8b98a" font-size="13">水汽蒸发</text>
+  <line x1="170" y1="196" x2="170" y2="130" stroke="#e0975a" stroke-width="2.5" marker-end="url(#a1)"/><text x="120" y="188" fill="#e8b98a" font-size="12">植物蒸腾</text>
+  <path d="M560,196 C560,120 470,96 400,96" fill="none" stroke="#6a9adf" stroke-width="2.5" marker-end="url(#a2)"/><text x="465" y="88" fill="#9ab8e0" font-size="13">水汽输送</text>
+  <line x1="180" y1="70" x2="180" y2="150" stroke="#9ab8e0" stroke-width="2.5" stroke-dasharray="5 3"/><text x="60" y="70" fill="#9ab8e0" font-size="13">降水</text><line x1="86" y1="78" x2="86" y2="150" stroke="#9ab8e0" stroke-width="2.5"/>
+  <path d="M140,204 C180,220 220,214 260,206" fill="none" stroke="#67c23a" stroke-width="2.5" marker-end="url(#a3)"/><text x="150" y="232" fill="#a8d48a" font-size="13">地表径流（汇入江河湖泊→入海）</text>
+  <line x1="200" y1="204" x2="200" y2="250" stroke="#67c23a" stroke-width="2.5" stroke-dasharray="4 3"/><text x="206" y="272" fill="#a8d48a" font-size="13">下渗→地下径流</text>
+  <path d="M210,282 C330,300 430,296 470,282" fill="none" stroke="#67c23a" stroke-width="2.5" marker-end="url(#a3)"/>
+  <line x1="560" y1="196" x2="560" y2="120" stroke="#e0975a" stroke-width="2.5" marker-end="url(#a1)"/><text x="568" y="140" fill="#e8b98a" font-size="13">水汽蒸发</text>
+  <line x1="600" y1="70" x2="600" y2="150" stroke="#9ab8e0" stroke-width="2.5"/><text x="608" y="100" fill="#9ab8e0" font-size="13">降水</text>
+  <text x="360" y="326" fill="#5a6a7a" font-size="12" text-anchor="middle">图中仅示主要环节与方向·完整立体形态见教材图4-3（p91）</text>
+</svg><p>图A · 七环节一张网：蒸发/蒸腾↑·水汽输送→·降水↓·地表径流与下渗→地下径流→回海</p></div>
+
+<p><b>三种"跑法"对号入座（教材p92）：</b>先看三类的空间范围，再对表入座：</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" width="100%">
+  <rect x="0" y="0" width="720" height="240" fill="#0f1520"/>
+  <defs><marker id="b1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#6a9adf"/></marker><marker id="b2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#67c23a"/></marker><marker id="b3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#e0975a"/></marker></defs>
+  <text x="360" y="26" fill="#d8dee6" font-size="15" text-anchor="middle">三类水循环的空间范围（p92定义要义）</text>
+  <rect x="40" y="60" width="200" height="120" rx="10" fill="#1d3a5f" opacity="0.85"/><text x="140" y="130" fill="#c8d4e0" font-size="15" text-anchor="middle">海 洋</text>
+  <rect x="480" y="60" width="200" height="120" rx="10" fill="#3d5a3d" opacity="0.85"/><text x="580" y="130" fill="#c8d4e0" font-size="15" text-anchor="middle">陆 地</text>
+  <path d="M240,95 C330,55 390,55 480,95" fill="none" stroke="#6a9adf" stroke-width="3" marker-end="url(#b1)"/>
+  <path d="M480,150 C390,190 330,190 240,150" fill="none" stroke="#6a9adf" stroke-width="3" marker-end="url(#b1)"/>
+  <text x="360" y="48" fill="#9ab8e0" font-size="13" text-anchor="middle">海陆间循环（大循环）·跨海陆</text>
+  <path d="M520,80 C560,60 600,60 640,80" fill="none" stroke="#67c23a" stroke-width="2.5" marker-end="url(#b2)"/>
+  <path d="M640,165 C600,185 560,185 520,165" fill="none" stroke="#67c23a" stroke-width="2.5" marker-end="url(#b2)"/>
+  <text x="580" y="205" fill="#a8d48a" font-size="12" text-anchor="middle">陆地内循环（补给较少）</text>
+  <path d="M80,80 C120,60 160,60 200,80" fill="none" stroke="#e0975a" stroke-width="2.5" marker-end="url(#b3)"/>
+  <path d="M200,165 C160,185 120,185 80,165" fill="none" stroke="#e0975a" stroke-width="2.5" marker-end="url(#b3)"/>
+  <text x="140" y="205" fill="#e8b98a" font-size="12" text-anchor="middle">海上内循环</text>
+  <text x="360" y="228" fill="#5a6a7a" font-size="11" text-anchor="middle">判据：看水汽最终落在哪——海→陆→海=海陆间 · 陆→陆=陆地内 · 海→海=海上内</text>
+</svg><p>图B · 三类循环空间范围对比（自绘示意·非教材图·依据p92三段定义）</p></div>
+<table class="cmp">
+<tr><th>类型</th><th>发生空间</th><th>教材关键句（p92直读）</th></tr>
+<tr><td><b>海陆间循环</b>（又称大循环）</td><td>海洋↔陆地</td><td>海洋表面蒸发→水汽被输送到大陆上空→凝结形成降水→到达地表的降水一部分蒸发/蒸腾返回大气，一部分形成<mark>地表径流</mark>汇入江河湖泊最终汇入海洋，一部分渗入地下成为土壤水或<mark>地下径流</mark>排入江河湖泊最终汇入海洋——<mark>海陆间循环是地表水的主要循环方式</mark>，通过这样的循环运动，陆地上的水得到持续补充，<b>水资源得以再生</b></td></tr>
+<tr><td><b>陆地内循环</b></td><td>陆地↔陆地上空</td><td>降落到大陆上的水，部分或全部通过陆面、水面蒸发和植物蒸腾形成水汽，被气流带到上空，冷却凝结形成降水，仍降落到大陆上；由陆地内循环运动补给陆地水体的水量<mark>较少</mark>（外流区也存在陆地内循环·p92泡泡）</td></tr>
+<tr><td><b>海上内循环</b></td><td>海洋↔海洋上空</td><td>海洋表面的水蒸发成水汽，进入大气后在海洋上空凝结，形成降水，又降落到海洋表面</td></tr>
+</table>
+<div class="key"><span class="tag">判据句</span>判断某环节属于哪类循环，只看<b>水汽最终落在哪</b>：海→陆→海=海陆间；陆→陆=陆地内；海→海=海上内。备考最爱把"内陆湖泊的蒸发降水"考成陆地内循环、"湿润区台风登陆降水"考成海陆间输送——先圈空间再套名。</div>
+
+<h2><span class="step-tag">第二步</span>水循环图什么——地理意义四条+黄河的账本</h2>
+<p>水循环把<mark>大气圈、水圈、岩石圈和生物圈</mark>有机地联系起来，构成一个庞大的系统（教材p93）。地理意义按四条记：</p>
+<p><b>① 更新水资源，维持动态平衡：</b>水在系统中连续不断地运动、转化，使地球上各种水体处于<b>不断更新状态</b>，形成了人类赖以生存的水资源；水循环还<mark>维持了全球水的动态平衡</mark>——总体看，海洋水、陆地水、大气水不会增多也不会减少。教材给了一组轮换周期：<mark>大气中的水汽平均每8天多轮换一次</mark>，<mark>全球的河水平均每16天多轮换一次</mark>（p93泡泡）。所以"取之不尽、用之不竭"的说法要修正：<b>水资源可以永续利用的前提是水循环正常运转</b>——这是p93泡泡里那位同学的反思点。</p>
+<p><b>② 影响全球气候：</b>水循环深入大气系统内部，深刻影响全球气候变化——它是<mark>大气系统能量的主要传输、储存和转化者</mark>，通过对地表太阳辐射的重新分配，使不同纬度热量收入与支出的不平衡矛盾得以缓解；水循环的强弱及路径，直接影响各地的天气过程乃至区域的基本气候特征；其强弱变化，往往引发区域性的洪涝、干旱等自然灾害（教材p93）。</p>
+<p><b>③ 海陆间联系的主要纽带：</b>陆地径流源源不断地向海洋输送大量的<mark>泥沙、有机物和无机盐类</mark>（教材p93）。</p>
+<p><b>④ 塑造地表形态：</b>在水循环的驱动下，地表物质被<mark>侵蚀、搬运和堆积</mark>，地貌得到发育、演化，形成了多彩的地表形态（教材p93）。</p>
+<div class="box"><span class="tag">教材阅读·黄河输沙造陆（p94·意义③④的数据账本）</span>黄河以高含沙量闻名，流经黄土高原带来大量泥沙：每年从中游带入下游的泥沙约<mark>16亿吨</mark>，其中<mark>4亿吨</mark>淤积在下游河床，其余12亿吨输入渤海，在入海口形成黄河三角洲；1954—1982年，黄河造陆面积达<mark>1 100平方千米</mark>，平均每年造陆约<mark>39平方千米</mark>，三角洲一带海岸线平均每年外延<mark>470米</mark>（图4-6给出1979与2012年卫星影像对比）。而1999年以来黄土高原退耕还林（草）等水土保持工程使植被覆盖率由31.6%提高到约65%，土壤侵蚀强度大幅下降，<b>年入黄河泥沙量显著减少</b>——人类活动正在改写这本账。</div>
+
+<h2><span class="step-tag">第三步</span>循环"过载"怎么办——洪涝灾害防治+原理实战</h2>
+<p>洪涝灾害是我国主要的自然灾害之一，发生频率高、影响范围广，对经济社会发展和人民生命财产安全构成严重威胁（教材p94）。两个概念分清：<mark>洪水灾害</mark>=由于暴雨或冰雪融化以及水利工程失事等引起的江河湖泊水量迅猛增加、水位急剧上涨、水流冲出天然水道或人工堤坝所造成的灾害；<mark>雨涝灾害</mark>=由于大雨、暴雨或持续降雨等使低洼地区积水、淹没的现象（教材p94）。</p>
+<p><b>防治两手抓（教材p95）：</b>防御洪涝灾害，需要<mark>工程措施与非工程措施相结合</mark>——工程措施有<b>修筑堤坝、整治河道、修建水库和分洪区（或滞洪区、蓄洪区）、完善排涝设施</b>等；非工程措施主要是<b>加强洪泛区的建设管制、建立洪水预警机制、落实居民撤离应急预案、推行防洪保险</b>等。利用气象卫星对强降雨天气、水情进行监测，能够有效防御洪涝灾害，提高强降雨天气预报的准确率，可以减轻洪涝灾害的损失。教材图4-7给出六条自救要领（室外积水漫进屋内及时切断电源防触电/向山坡高地进洪台就近转移或爬上屋顶楼房高层大树暂避/低洼地带居民备沙袋挡水板砌防水门槛/会游泳也尽量避免下水防暗流漩涡/水位续涨用救生器材或门板桌椅木床泡沫塑料扎筏逃生/不可攀爬带电电线杆铁塔泥坯墙屋顶·高压线铁塔倾斜电线断头下垂迅速远避）。</p>
+<div class="try"><span class="tag">试一试 1</span>教材p96活动原题（显式试答·原理表述以教材为准）：鱼鳞坑是黄土高原常用的生态整地方式——较陡山坡上有序挖掘半月形坑穴，呈品字形交错排列，状若鱼鳞。它有一定的蓄水能力，加上植树造林，可保土、保水、保肥。试从水循环的角度想一想，鱼鳞坑为什么能保土、保水、保肥？<p><span class="step-tag ans">试答</span>坑穴<b>拦截地表径流</b>→径流速度减慢，<b>下渗增加</b>（土壤水增多）、<b>地表径流对坡面的侵蚀减弱</b>（保土）；坑内蓄水供树苗生长（保水），枯枝落叶与有机质随拦截的径流就地沉积并被植被固定（保肥）——一句话：鱼鳞坑把"跑得快"的地表径流改成"渗得深"的土壤水，改写了局部水循环的路径分配。</p></div>
+<div class="try"><span class="tag">试一试 2</span>教材p97活动原题（显式试答·以教材图4-9为准）：1998年长江流域特大洪水时，气象卫星对洞庭湖区实时监测，对比5月21日与8月22日两幅多光谱合成遥感图像（红色部分=洪水新淹没范围），获得受灾区域分布及面积。（1）从水循环角度，分析长江流域易发生洪涝灾害的原因；（2）遥感技术与传统水文资料收集相比，在洪水分析方面有哪些显著优势？<p><span class="step-tag ans">试答</span>（1）亚热带季风气候降水集中且多暴雨（降水环节短时间内"进货"过猛）→水系庞大汇水面积广，干流与众多支流洪峰叠加→地势低平段泄流慢（地表径流环节"出货"不畅）→若植被破坏使下渗减少、地表径流占比更高，洪涝风险进一步放大——降水与径流两个环节的"进多出慢"是洪涝的根本原因。（2）遥感<b>大范围同步监测</b>（一次成像覆盖整个湖区）、<b>动态对比</b>（不同时相影像叠加即得新淹没范围）、<b>快速获取受灾面积</b>辅助抗洪救灾与减灾决策——传统水文站点只能"点"上测量，遥感是"面"上成像（结合教材p97"洪水分析是抗洪救灾与减灾决策的重要依据"口径）。</p></div>
+<div class="alt"><span class="tag">alt·课堂外延</span>把"城市内涝"也放回这张循环网上：城市地面硬化（水泥、沥青）使<b>下渗环节被堵</b>→同等降雨下<b>地表径流增多、汇集更快</b>→低洼处积水成涝；而绿地、透水砖、下凹式绿地（海绵城市）的本质，就是人工把"下渗"环节加回来——用本节原理读城市新闻，一读一个准。</div>
+
+<h2><span class="step-tag">验一验</span>四连自测（答案显式标注·先盖住再看）</h2>
+<div class="self"><span class="tag">自测 1</span>水循环的原动力是哪两个？（教材p90定义直读）<p><span class="step-tag ans">答</span><b>太阳能</b>（驱动蒸发与三态转化·吸收或释放热量）与<b>地球重力</b>（驱动降水、径流与下渗）。</p></div>
+<div class="self"><span class="tag">自测 2</span>为什么说海陆间循环是"地表水的主要循环方式"？（p92原句锚）<p><span class="step-tag ans">答</span>因为通过海陆间循环，<b>陆地上的水得到持续补充，水资源得以再生</b>——陆地水体正是靠这条循环"进货"的。</p></div>
+<div class="self"><span class="tag">自测 3</span>黄河每年16亿吨泥沙，4亿吨淤积下游，输入渤海多少吨？这部分泥沙在入海口形成什么？<p><span class="step-tag ans">答</span>16−4=<b>12亿吨</b>输入渤海，在入海口形成<b>黄河三角洲</b>（geo41_calc.py代验·p94阅读数据直读）。</p></div>
+<div class="self"><span class="tag">自测 4</span>修水库、分洪区属于哪类防治措施？建立洪水预警机制、推行防洪保险呢？<p><span class="step-tag ans">答</span>前者=<b>工程措施</b>（修筑堤坝、整治河道、修建水库和分洪区、完善排涝设施）；后者=<b>非工程措施</b>（洪泛区建设管制、洪水预警机制、居民撤离应急预案、防洪保险）——教材p95原口径。</p></div>
+
+<h2><span class="step-tag">高考怎么考</span>两考向速览（考向概括·卷源候补）</h2>
+<p><b>考向一：水循环环节的判读与人类影响。</b>给情境（城市化、植树造林、水库、跨流域调水、硬化地面）判"改变了哪个环节、后果是什么"——母型=教材p90模拟实验思考+本节城市内涝逻辑；答题模板=指认环节（下渗/地表径流/蒸发/水汽输送）→说因果→落到水资源或灾害。</p>
+<p><b>考向二：三类循环的空间判断+地理意义组合。</b>给区域图判循环类型（内陆湖=陆地内循环/外流河海陆间），或用"四条意义"解释现象（河流塑造地貌/湿地调节气候/水资源再生）——母型=教材p92三类型表+p93四条意义+p94黄河账本。</p>
+
+<h2><span class="step-tag">下一站</span>4.2 海水的性质和运动——回到占97%的那盆水</h2>
+<p>水循环讲完了"水怎么在全球跑"，下一节（教材p98起·第二节《海水的性质和运动》）回到那盆占全球水储量97%的海洋水——2016年"雪龙"号第七次北极科考投放<b>温盐仪</b>观测海水温度、盐度（p98探究·图4-10），海水的温度、盐度、密度怎么分布、洋流怎么跑，下一站拆解。</p>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" width="100%" role="img" aria-label="本节位置图：第四章两节次序与本节所在">
+  <rect x="0" y="0" width="720" height="150" fill="#0f1520"/>
+  <text x="360" y="30" fill="#d8dee6" font-size="15" text-anchor="middle">第四章 地球上的水 · 节位图</text>
+  <rect x="40" y="58" width="300" height="52" rx="8" fill="#1c3d2a" stroke="#3d9e5a"/>
+  <text x="190" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">4.1 水循环（p89-97）</text><text x="190" y="98" fill="#8fa3b8" font-size="11" text-anchor="middle">← 本件（四小节+两组活动）</text>
+  <rect x="400" y="58" width="280" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
+  <text x="540" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">4.2 海水的性质和运动（p98起）</text><text x="540" y="98" fill="#8fa3b8" font-size="11" text-anchor="middle">下一站·节名页已亲验</text>
+  <text x="360" y="136" fill="#5a6a7a" font-size="11" text-anchor="middle">p98 = 第二节"海水的性质和运动"节名页（右界界标·已亲验）· 节界双端实锚见附件1</text>
+</svg><p>图D · 本件在第四章中的位置：先懂"水怎么循环"，再懂"海水什么性质"</p></div>
+
+<div class="foot">零基础首学版 v1.0（批3产出·队7席）· 事实层素材源：湘教版《普通高中教科书·地理 必修 第一册》p89-97 官方影印逐页对照（湖南教育出版社·智慧教育平台 contentId=31bcd4b6-a640-4f86-8611-e2e42c9e5e5a·ts=1754905526079（同值链路·fig95-105十一图实测全200·影印原件席位私有 geo41_jc/h96-h105.jpg+geo32_jc/g95.jpg 零入仓）·图号→印刷页N−6映射复核（g95=p89/h96=p90/h99=p93/h103=p97/h104=p98）·节界实锚：p89第一节"水循环"节名页（左界·第四章章首p88界标互证）至p97活动续页（域内末页·下半页空白）·p98=第二节"海水的性质和运动"节名页（右界界标亲验）·p89-97直读锚定：探究三水珠1384/273/56km与一、水的行星71% 97% 3% 冰川2/3 0.3% p89/二、自然界的水循环定义与模拟实验图4-2 p90/图4-3七环节与图4-4象群 p91/降水三分支与海陆间大循环与庐山云雾图4-5与陆地内循环海上内循环 p92/活动读图4-3两问与三、水循环的地理意义四圈联系动态平衡8天16天泡泡气候能量纽带侵蚀搬运堆积 p93/阅读黄河输沙造陆16亿吨4亿吨1100平方千米39平方千米470米图4-6植被31.6%→65%与四、洪涝灾害防治洪水雨涝定义 p94/工程非工程措施与图4-7自救六条 p95/活动意义看法与鱼鳞坑与1998洞庭湖遥感 p96-97）<br>
+<br>本件为候验产出：走 dui7_41_1031 分支候终读，禁直推main。自测/试答块均已显式标注，数据与表述以教材影印为准。宁缺毋编：真题卷源未获取（本节无在库直读件·候补），高考怎么考为考向概括（foot已声明）；试一试1/2与自测答案为显式试答口径，候验方对教材活动口径复核。(并行搜索员C·队7席·dui7@team7.local)</div>
+
+</div>
+</body>
+</html>
