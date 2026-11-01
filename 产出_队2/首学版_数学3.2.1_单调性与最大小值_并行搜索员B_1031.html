@@ -10,7 +10,6 @@ h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#162
 h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
 h3{color:#2c5f8f;margin-top:1.6em}
 .station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
-.station-title{font-weight:bold;color:#fff;background:linear-gradient(90deg,#2c5f8a,#3d7ab0);display:inline-block;padding:3px 14px;border-radius:14px;font-size:.95em}
 .check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
 .check li{margin:4px 0}
 .formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
@@ -37,12 +36,14 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 @media print{
  body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
  .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
- .station-title{background:#333!important;color:#fff!important}
  h1{font-size:1.35em}h2{font-size:1.15em}
  .formula{background:#f2f2f2!important}
  a{color:#000;text-decoration:none}
  .no-print{display:none}
 }
+<!-- v15.3第一波重排·黄金样板step-tag落位(并行搜索员B) -->
+.step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle}
+@media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}.mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -58,7 +59,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 </ul>
 </div>
 <div class="station">
-<p class="station-title">第 0 站 · 预备块：从"看得见的升降"到"说得清的升降"</p>
+<h2><span class="step-tag">预备</span>预备块：从"看得见的升降"到"说得清的升降"</h2>
 <p><strong>初中的你：</strong>画 f(x)=x² 的图象，指着说"左边下降、右边上升"。这叫<span class="mark">视觉级</span>掌握——眼睛看不出曲线在 x=0.001 处是否还在涨，也没法证明。</p>
 <p><strong>高中第一步：先盯着一个函数把话说全。</strong>教材 p76 用 f(x)=x² 演示怎么把"下降"翻译成符号语言：图象在 y 轴左侧从左到右是下降的，也就是说，当 x≤0 时，y 随 x 的增大而减小。用符号语言描述，就是<span class="mark">任意取 x₁，x₂∈(−∞,0]，得到 f(x₁)=x₁²，f(x₂)=x₂²，那么当 x₁&lt;x₂ 时，有 f(x₁)&gt;f(x₂)</span>。这时我们就说函数 f(x)=x² 在区间 (−∞,0] 上是<span class="uline">单调递减</span>的。</p>
 <div class="figure">
@@ -78,7 +79,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <div class="try"><p><strong>验一验①（p77 思考）：</strong>函数 f(x)=|x|，f(x)=−x² 各有怎样的单调性？<span class="ans">f(x)=|x| 在 (−∞,0] 单调递减、在 [0,+∞) 单调递增（x&lt;0 时 |x|=−x，x 增大 |x| 反而变小）；f(x)=−x² 恰好反过来：在 (−∞,0] 单调递增、在 [0,+∞) 单调递减。</span>三道题都只动用"图象观察+特殊值抽验"——严格证明等学完定义法再做。</p></div>
 </div>
 <div class="station">
-<p class="station-title">第 1 站 · 单调性定义：把"升降"变成可证明的判据（p77）</p>
+<h2><span class="step-tag">第一步</span>单调性定义：把"升降"变成可证明的判据（p77）</h2>
 <div class="formula">一般地，设函数 f(x) 的定义域为 D，区间 I⊆D：<br>如果 <strong>∀x₁，x₂∈I，当 x₁&lt;x₂ 时，都有 f(x₁)&lt;f(x₂)</strong>，那么就称函数 f(x) 在区间 I 上<strong>单调递增</strong>（图3.2-3(1)）；<br>如果 <strong>∀x₁，x₂∈I，当 x₁&lt;x₂ 时，都有 f(x₁)&gt;f(x₂)</strong>，那么就称函数 f(x) 在区间 I 上<strong>单调递减</strong>（图3.2-3(2)）。</div>
 <p><strong>三个配套词（p77 原文）：</strong>①特别地，当函数 f(x) 在它的<span class="mark">定义域上</span>单调递增时，我们就称它是<span class="uline">增函数</span>（increasing function）——注意"定义域上"四个字，是"全程递增"才配叫增函数；②同理有<span class="uline">减函数</span>（decreasing function）；③如果函数 y=f(x) 在区间 I 上单调递增或单调递减，那么就说函数 y=f(x) 在这一区间具有<span class="mark">（严格的）单调性</span>，区间 I 叫做 y=f(x) 的<span class="uline">单调区间</span>。</p>
 <div class="figure">
@@ -111,7 +112,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <div class="alt"><p><span class="tag">思考 · p77 教材原文</span> <strong>(1)</strong> 设 A 是区间 I 上某些自变量的值组成的集合，而且 ∀x₁,x₂∈A，当 x₁&lt;x₂ 时都有 f(x₁)&lt;f(x₂)，我们能说函数 f(x) 在区间 I 上单调递增吗？<span class="detail">——不能。定义要求"任意"，A 只是 I 的一部分，没抽查到的点不受判据约束（如 f(x)=x²，在 A={0,2,4,…} 上"递增"，但在整个 R 上不单调）。</span> <strong>(2)</strong> 你能举出在整个定义域内单调递增的函数例子吗？在定义域内的某些区间上单调递增、在另一些区间上单调递减的例子呢？<span class="detail">——前者如 f(x)=2x+1（增函数）；后者如 f(x)=x²（左减右增）。</span></p></div>
 </div>
 <div class="station">
-<p class="station-title">第 2 站 · 定义法证明三连：例1一次函数 · 例2玻意耳定律 · 例3对勾函数（p78-79）</p>
+<h2><span class="step-tag">第二步</span>定义法证明三连：例1一次函数 · 例2玻意耳定律 · 例3对勾函数（p78-79）</h2>
 <p><strong>例1（p78）根据定义，研究函数 f(x)=kx+b（k≠0）的单调性。</strong></p>
 <div class="walk"><ul>
 <li><strong>分析：</strong>根据单调性定义，需考察当 x₁&lt;x₂ 时 f(x₁)&lt;f(x₂) 还是 f(x₁)&gt;f(x₂)。根据实数大小关系的基本事实，只要考察 <span class="mark">f(x₁)−f(x₂) 与 0 的大小</span>——"作差法"从此上岗；</li>
@@ -147,7 +148,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <div class="alt"><p><span class="tag">升维 · 方法论（承黄金样本工具一）</span> 单调性是"把看起来显然翻译成任意性判据"的完整样板：图象"上升"是视觉直觉，定义把它升级为"<span class="mark">任意两点保序</span>"的可执行判据——从此"上升"可以被证明或证伪。之后数列极限的 ε-N 语言是同一套路（直觉→任意性判据）。自检标准："我背熟了"与"我随便抽一段区间都能默写证明"是两种掌握，后者才有资格上场。</p></div>
 </div>
 <div class="station">
-<p class="station-title">第 3 站 · 最大值与最小值：给函数量"天花板"和"地板"（p79-81）</p>
+<h2><span class="step-tag">第三步</span>最大值与最小值：给函数量"天花板"和"地板"（p79-81）</h2>
 <p><strong>从图象引入（p79 末）：</strong>再观察 f(x)=x² 的图象：有一个最低点 (0,0)，即 <strong>∀x∈R，都有 f(x)≥f(0)</strong>。当一个函数 f(x) 的图象有最低点时，我们就说函数 f(x) 有<span class="uline">最小值</span>。</p>
 <p><strong>思考（p80）：你能以函数 f(x)=−x² 为例说明函数 f(x) 的最大值的含义吗？</strong>——−x² 图象有最高点 (0,0)：∀x∈R，f(x)≤f(0)=0，0 就是 −x² 的最大值。</p>
 <div class="formula">最大值定义（p80 原文）：一般地，设函数 y=f(x) 的定义域为 D，如果<span class="mark">存在实数 M</span> 满足：<br>(1) <strong>∀x∈D，都有 f(x)≤M</strong>；　(2) <strong>∃x₀∈D，使得 f(x₀)=M</strong>。<br>那么，我们称 M 是函数 y=f(x) 的<span class="strong">最大值</span>（maximum value）。</div>
@@ -191,7 +192,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 </div>
 </div>
 <div class="station">
-<p class="station-title">第 4 站 · 考位：这一小节在考试里坐哪几把椅子</p>
+<h2><span class="step-tag">第四步</span>考位：这一小节在考试里坐哪几把椅子</h2>
 <div class="kaowei">
 <p class="kw-title">考位锚（T11·承节域p76-81影印直读+常规考法锚定）</p>
 <ul>
@@ -202,7 +203,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <li><span class="detail"><b>真题锚（在库可引）</b>：2025 年新高考Ⅰ卷·单选8"对数比大小压轴"（设公共值＋可行域交集判"不可能"·答案B）已采锚在库，其比大小动作的底层正是本小节单调性判据——幂/指/对三者单调性是第3-4章比大小题的通用引擎。</span></li>
 </ul>
 </div>
-</div>
+</div> <p><b>下一站：</b>3.2.2 奇偶性（p82 起·本节位置图实锚）——单调性判据在手，函数基本性质还差对称的半张图。</p>
 <div class="figure">
 <svg viewBox="0 0 660 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：3.2节拆件谱系，当前3.2.1，右侧3.2.2奇偶性">
 <rect x="8" y="20" width="120" height="50" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>

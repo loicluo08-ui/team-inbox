@@ -1,0 +1,6 @@
+PASS implies_truth_table
+PASS x2_eq_1_two_roots
+PASS x2_not_suff_for_x1
+PASS x1_suff_for_x2
+PASS 逆否_等价性
+5/5 ALL PASS

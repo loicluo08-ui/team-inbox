@@ -1,0 +1,6 @@
+PASS p65_sqrt_id
+PASS p71_income
+PASS p71_tax
+PASS 函数对应唯一性
+PASS 分段函数口径
+5/5 ALL PASS

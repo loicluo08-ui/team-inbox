@@ -1,0 +1,7 @@
+PASS eq_solve_12
+PASS sqrt2_irrational
+PASS half_not_integer
+PASS 0_in_N0
+PASS 确定性_比大小样例C
+PASS 描述法_准入门
+6/6 ALL PASS
