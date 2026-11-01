@@ -44,6 +44,23 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <!-- v15.3第一波重排·黄金样板step-tag落位(并行搜索员B) -->
 .step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle}
 @media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}.mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  @media print {
+
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -221,7 +238,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <line x1="472" y1="45" x2="494" y2="45" stroke="#8fa8bf" stroke-width="2"/>
 <line x1="574" y1="45" x2="590" y2="45" stroke="#8fa8bf" stroke-width="2"/>
 </svg>
-<p class="figcap">位置图：3.2 节按 v11.1 拆节制分两件——3.2.1（本件·p76-81）先交"增减与最值"两件工具，3.2.2（p82-88·节题页 p82 直读）后交"对称"体检；整节件（dui2_32_1031）维持候验不动，件型取舍候群外管理员席终裁。p87-88 信息技术应用（GeoGebra 绘图）为章内选学构件，归 3.2.2 域但不占本件。</p>
+<p class="figcap">位置图：3.2 节按 v11.1 拆节制分两件——3.2.1（本件·p76-81）先交"增减与最值"两件工具，3.2.2（p82-88·节题页 p82 直读）后交"对称"体检。p87-88 信息技术应用（GeoGebra 绘图）为章内选学构件，归 3.2.2 域但不占本件。</p>
 </div>
 <p class="meta">产出信息｜数学3.2.1《单调性与最大（小）值》零基础首学版 v1.0｜队2席·并行搜索员B·1031夜23:1x-23:4x会话｜影印实取13页（图83-95·r1通道200·ts=1787023173400详情API实时复核同值）·本件节界p76-81六页亲目检（左界=p76 3.2节题页直读·右界=p82 3.2.2节题页直读）·拆件节界修正申报：3.2.2起p82（非账面p84）｜例1-例5与练习/习题题干影印逐句转录·sympy独立复核（验点留痕随件）｜黄金样本对照：重制件v1.4"任意性判据/区间绑定"两工具升维沿用·标注自编教法候选定性｜宁缺毋编：p85-88习题3.2横跨拆件界（复习巩固1-5归3.2.1域·综合运用起归3.2.2域申报）·真题锚卷源在库申报不代拟。</p>
 <div class="foot"><div class="no-print" style="text-align:center;color:#8a9bb0;font-size:.85em;margin-top:18px">并行搜索员B · 队2席 · 承管理员23:07:15段2真增量派单（3.2拆件2/2分件先后交·认领行dui2_321_1031首commit）· 标准v2.3 · 产出走dui2_321_1031分支禁直推main · 随件四附件并单+QC单六项自验+print层同步（见随件md与PDF）</div></div>

@@ -58,6 +58,21 @@
     th { background: #f0f0f0; color: #111; }
     th, td { border-color: #bbb; }
     .box { color: #222; }
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+
   }
 </style>
 </head>
@@ -173,7 +188,7 @@
   <line x1="632" y1="87" x2="652" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG5)"/>
   <rect x="653" y="55" width="100" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="703" y="82" font-size="12" fill="#9fb2c8" text-anchor="middle">6 超重和失重</text><text x="703" y="103" font-size="11" fill="#7d8a99" text-anchor="middle">p109·节名页实锚</text>
 </svg>
-<div class="figcap">图G（本节位置图）｜第四章六节串联（1-5节节名页p83/p88/p94/p99/p104目检·6《超重和失重》p109=图114节名页实锚·dui4_44_1031勘误行9259046联动）：本节是定律"上岗干活"的一节。</div>
+<div class="figcap">图G（本节位置图）｜第四章六节串联（1-5节节名页p83/p88/p94/p99/p104目检·6《超重和失重》p109=图114节名页实锚·）：本节是定律"上岗干活"的一节。</div>
 </div>
 
 <h3>考位锚（T11）·高考怎么考</h3>

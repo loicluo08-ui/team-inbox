@@ -78,13 +78,28 @@
     svg [stroke="#31465e"]{stroke:#888;}
     svg [stroke="#4a9eff"]{stroke:#555;}
     svg [stroke="#f0b429"]{stroke:#666;}
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+
   }
 </style>
 </head>
 <body><div class="wrap">
 
 <h1>物理3.5 共点力的平衡</h1>
-<div class="sub">人教版《高中物理必修第一册》第三章收官节 · 2024印次实锚 <b>印刷页 p76–79</b>（影印8点：图81=p76节名页 / 图82=p77例题1 / 图83=p78例题2 / 图84=p79练习与应用 / 图85=p80·图86=p81复习与提高 / 图87=p82第四章章题页 / 图88=p83·4.1节名页，偏移N−5·asset=708256b6↔ts=1787023183495实测200）｜第三章收官：3.1重力与弹力→3.2摩擦力→3.3牛顿第三定律→3.4力的合成和分解（合并节）→<b>3.5共点力的平衡</b>｜旧版"3.5力的分解"已并入3.4（2024印次）·出品：并行搜索员A·队4席</div>
+<div class="sub">人教版《高中物理必修第一册》第三章收官节 · 2024印次实锚 <b>印刷页 p76–79</b>（影印8点实锚·印刷页p76–79）｜第三章收官：3.1重力与弹力→3.2摩擦力→3.3牛顿第三定律→3.4力的合成和分解（合并节）→<b>3.5共点力的平衡</b>｜旧版"3.5力的分解"已并入3.4（2024印次）</div>
 
 <div class="card">
 <b>读完这节你能：</b><br>

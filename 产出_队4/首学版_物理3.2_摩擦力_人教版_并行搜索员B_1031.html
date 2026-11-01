@@ -63,6 +63,21 @@
     th { background: #f0f0f0; color: #111; }
     th, td { border-color: #bbb; }
     .box { color: #222; }
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+
   }
 </style>
 </head>
@@ -262,7 +277,7 @@
 </div>
 
 <h3>考位锚（T11）·高考怎么考</h3>
-<p class="small">· 考什么：滑动/静摩擦力的<b>有无与方向判断</b>（"相对"两个字是命题眼）、F<sub>f</sub> = μF<sub>N</sub> 计算、静摩擦力的被动力属性（0＜F≤F<sub>max</sub>）、最大静摩擦与滑动摩擦的大小关系、摩擦力与二力平衡/牛顿定律的组合。<br>· 怎么考：选择题判断摩擦力方向与大小（传送带/斜面/手握瓶情境——教材练习第2、3题同款）、实验题（探究静摩擦/滑动摩擦、力传感器F-t图像——教材"演示"栏目的直改）、大题第一问受力分析打底，后续与牛顿第二定律深度组合。<br>· 真题锚：候采——对证源卷源池（v2.8-v2.11）暂未录入 3.2 对口卷源，不代拟；候池内补录后回填。</p>
+<p class="small">· 考什么：滑动/静摩擦力的<b>有无与方向判断</b>（"相对"两个字是命题眼）、F<sub>f</sub> = μF<sub>N</sub> 计算、静摩擦力的被动力属性（0＜F≤F<sub>max</sub>）、最大静摩擦与滑动摩擦的大小关系、摩擦力与二力平衡/牛顿定律的组合。<br>· 怎么考：选择题判断摩擦力方向与大小（传送带/斜面/手握瓶情境——教材练习第2、3题同款）、实验题（探究静摩擦/滑动摩擦、力传感器F-t图像——教材"演示"栏目的直改）、大题第一问受力分析打底，后续与牛顿第二定律深度组合。<br>· 真题锚：候采——本节暂未收录对口真题，候补。</p>
 
 <div class="alt">
 <span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① <b>"被动力"这个词</b>：静摩擦力与支持力都属"被动力"——它们不主动定值，随外力/形变"应变"（静摩擦随外力，支持力随压紧程度）；而重力这种"主动性"的力不看谁的脸色。② <b>F<sub>max</sub> ≈ μF<sub>N</sub> 的近似</b>：很多题目把最大静摩擦力近似取成滑动摩擦力（图C尖峰→平台落差很小），但教材第3题特意给了 35 vs 30 让你看出差别——审题时看清给的是哪个数。③ <b>测μ的实验思想</b>：匀速拉动时拉力=摩擦力（二力平衡），读出拉力、称出重力，μ = F/mg 一把出——"平衡法测摩擦"是后续实验题的常客。④ <b>增大与减小摩擦</b>：鞋底花纹/轮胎纹（增大粗糙程度）、刹车捏闸（增大压力）都是增大有益摩擦；滚动轴承（滚动代滑动）、加润滑油（润滑）、气垫船磁浮列车（接触面分离——回链科学漫步500 km/h）都是减小有害摩擦。

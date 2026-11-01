@@ -62,6 +62,21 @@
     th { background: #f0f0f0; color: #111; }
     th, td { border-color: #bbb; }
     .box { color: #222; }
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+
   }
 </style>
 </head>
@@ -274,7 +289,7 @@
 </div>
 
 <h3>考位锚（T11）·高考怎么考</h3>
-<p class="small">· 考什么：x = v₀t + ½at² 与 v²−v₀² = 2ax 的直接计算（三知求一、选对公式）、刹车"停了不再走"陷阱（先算停止时间）、v-t图像面积＝位移的读图题。<br>· 怎么考：运动学小题（航母/动车/航天情境给三个量求第四个量——教材这节六个练习全是同款情境）＋大题第一问铺垫，常与2.4自由落体、后续牛顿定律组合。<br>· 真题锚：候采——对证源卷源池（v2.8-v2.11）暂未录入 2.3 对口卷源，不代拟；候池内补录后回填。</p>
+<p class="small">· 考什么：x = v₀t + ½at² 与 v²−v₀² = 2ax 的直接计算（三知求一、选对公式）、刹车"停了不再走"陷阱（先算停止时间）、v-t图像面积＝位移的读图题。<br>· 怎么考：运动学小题（航母/动车/航天情境给三个量求第四个量——教材这节六个练习全是同款情境）＋大题第一问铺垫，常与2.4自由落体、后续牛顿定律组合。<br>· 真题锚：候采——本节暂未收录对口真题，候补。</p>
 
 <div class="alt">
 <span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① <b>选公式口诀</b>：题目含t用前两条、不含t用 v²−v₀² = 2ax；给v₀、v、x求a也是它最快。② <b>平均速度视角</b>：匀变速任意一段时间内 x = ½(v₀+v)t ＝ 平均速度×时间（教材例题1(2)的 ½v₀t 就是它的特例）——有时比套两条公式都快。③ <b>675 vs 674 的舍入链</b>：例题2若先算 a ≈ −0.167 再代回，675被舍成674；先写符号式 x₂ = v<sub>M</sub>²·3x₁/(v₀²−v<sub>M</sub>²) 最后一步才代数，就绕开中间舍入。考试时保留中间量位数，是数值稳定的老习惯。④ <b>x₀ ≠ 0 的完整式</b>：x − x₀ = v₀t + ½at²（教材脚注①）——若题目说"从距O点x₀处出发"，用完整式最稳。

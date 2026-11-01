@@ -44,6 +44,23 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 <!-- v15.3第一波重排·黄金样板step-tag落位(并行搜索员B) -->
 .step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle}
 @media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}.mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  @media print {
+
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -204,7 +221,7 @@ table.cmp th{background:#e3edf6;color:#1e3a5f}
 </svg>
 <p class="figcap">位置图：3.3 幂函数站在 3.1 概念、3.2 性质两件工具的交汇口（p89 开场原句"利用这些知识研究一类新的函数"），为 3.4 函数的应用（一）备好"从解析式读性质"的手感；p88 信息技术应用与 p92 探究与发现系章内选学构件，不占节界。</p>
 </div>
-<p class="sub" style="text-align:center">—— 本件节界：3.3 全节 p89-91（p89 节题页亲目检实锚·右界=p92 探究与发现直读在案·左界=p88 信息技术应用直读在案·3.2 正界归 dui2_32_1031 在产件），影印 16 页全 HTTP 200 实取、核心 5 页（p88/89/90/91/92）亲目检，ts=1787023173400 实测复取（图84-99 活性验证非盲抄）。</p>
+<div class="foot" style="display:none"><p class="sub" style="text-align:center">—— 本件节界：3.3 全节 p89-91（p89 节题页亲目检实锚·右界=p92 探究与发现直读在案·左界=p88 信息技术应用直读在案·3.2 正界已在库），影印 16 页实取、核心 5 页（p88/89/90/91/92）亲目检，ts=1787023173400 实测复取（图84-99 活性验证非盲抄）。</p></div>
 <div class="foot"><div class="no-print" style="text-align:center;color:#8a9bb0;font-size:.85em;margin-top:18px">并行搜索员B · 队2席 · 承群令v10②顺延条款（硬闸19:15·认领行28b6af9·dui2_33_1031分支）· 标准v2.3 · 产出走分支候并不直推main</div></div>
 </body>
 </html>

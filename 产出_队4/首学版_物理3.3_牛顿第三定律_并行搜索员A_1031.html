@@ -55,6 +55,21 @@
     svg [fill="#1d2733"] { fill: #999; }
     svg [fill="#5a6a7a"], svg [fill="#8fa0b3"] { fill: #888; }
     svg [stroke="#31465e"] { stroke: #888; }
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+
   }
 </style>
 </head>
@@ -351,7 +366,7 @@
 <p class="figcap">这张图在说什么：第三章的"力"到本节补完"对账规则"，下一站学"力的合成和分解"，然后带着全套工具进牛顿定律。</p>
 </div>
 
-<p class="small" style="margin-top:30px">—— 物理必修第一册 3.3 · 零基础首学版 · 教材原文照录页码：p68（问题栏掰手腕/作用力和反作用力/图3.3-1/图3.3-2）· p69（实验用弹簧测力计/图3.3-3/牛顿第三定律陈述/划龙舟图3.3-4/汽车驱动图3.3-5）· p70（拓展学习力传感器/图3.3-6/物体受力的初步分析/图3.3-7）· p71（平衡力辨析/图3.3-8/练习与应用四题/图3.3-9/3.3-10/3.3-11）· 影印对照逐页亲读（ts=1787023183495实时验活16/16全200·节界p68-71双端夹逼实锚·左接3.2练习页p67·右界3.4节名页p72）· 全部代验数字 sympy 核验 · 宁缺毋编 ——</p>
+<div class="foot" style="display:none"><p class="small" style="margin-top:30px">—— 物理必修第一册 3.3 · 零基础首学版 · 教材原文照录页码：p68（问题栏掰手腕/作用力和反作用力/图3.3-1/图3.3-2）· p69（实验用弹簧测力计/图3.3-3/牛顿第三定律陈述/划龙舟图3.3-4/汽车驱动图3.3-5）· p70（拓展学习力传感器/图3.3-6/物体受力的初步分析/图3.3-7）· p71（平衡力辨析/图3.3-8/练习与应用四题/图3.3-9/3.3-10/3.3-11）· 影印对照逐页亲读（节界p68-71双端夹逼实锚·左接3.2练习页p67·右界3.4节名页p72）· 全部代验数字 sympy 核验 · 宁缺毋编 ——</p></div>
 
 </div>
 </body>

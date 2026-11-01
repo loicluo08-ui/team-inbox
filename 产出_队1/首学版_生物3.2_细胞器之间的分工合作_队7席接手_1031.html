@@ -60,6 +60,21 @@
     .step-tag, .check .tag, .try .tag, .pit .tag, .key .tag, .box .tag { background: #dce3ea !important; color: #111111 !important; }
     mark { background: #ffe98a !important; color: #111111 !important; }
     .uline { border-bottom-color: #1a5fb4 !important; }
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+
   }
 </style>
 </head>
@@ -185,7 +200,7 @@
   <text x="360" y="30" fill="#d8dee6" font-size="15" text-anchor="middle">第三章 细胞的基本结构 · 节位图（人教版必修1）</text>
   <rect x="40" y="58" width="200" height="52" rx="8" fill="#1c2a3d" stroke="#3d6a9e"/>
   <text x="140" y="80" fill="#c8d4e0" font-size="13" text-anchor="middle">3.1 细胞膜的结构和功能</text>
-  <text x="140" y="98" fill="#7d95ad" font-size="11" text-anchor="middle">p40-46 · 已交付（dui1_31）</text>
+  <text x="140" y="98" fill="#7d95ad" font-size="11" text-anchor="middle">p40-46 · 已交付</text>
   <rect x="260" y="50" width="200" height="68" rx="8" fill="#274b66" stroke="#4a9eff" stroke-width="2.5"/>
   <text x="360" y="76" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">3.2 细胞器之间的分工合作</text>
   <text x="360" y="95" fill="#a8d4ff" font-size="11.5" text-anchor="middle">p47-53 · 本件 · 接手件候验中</text>

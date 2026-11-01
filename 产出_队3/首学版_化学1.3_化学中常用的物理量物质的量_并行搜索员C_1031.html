@@ -36,6 +36,23 @@ table.tb th{background:#eef4fb;border:1.5px solid #1565c0;padding:6px 8px;font-s
 table.tb td{border:1px solid #9db9d8;padding:6px 8px;text-align:center;font-size:14.5px;}
 footer,.foot{margin-top:40px;border-top:1px solid #ccc;padding-top:12px;font-size:13px;color:#555;}
 @media print{body{background:#fff;color:#000;font-size:12pt;max-width:100%;}h1,h2,h3{color:#000;}h1,h2{border-color:#000;}h3{color:#000;}b{color:#000;}.station{background:#e0e0e0!important;color:#000!important;}.step-tag{background:#1565c0!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}h2{background:#f2f2f2!important;border-color:#000!important;color:#000!important;}.note-yellow,.note-red,.try,.stuck,.closing,.exambox,.alt,.ans,.check,.figcap,.eq,.safety,table.tb th{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.qmark{color:#000;}}
+  @media print {
+
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+  }
 </style>
 </head>
 <body>

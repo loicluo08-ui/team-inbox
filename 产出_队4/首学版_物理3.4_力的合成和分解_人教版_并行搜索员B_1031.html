@@ -10,10 +10,10 @@
   .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
   h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
   .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
-  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #1B4F72; }
   h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
   p { margin: 12px 0; }
-  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .step-tag { display: inline-block; background: #1B4F72; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
   .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
   .talk .tag { color: #6ec6ff; font-weight: bold; }
   .key { background: #14202b; border: 1px solid #274a63; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
@@ -35,7 +35,7 @@
   .fig { margin: 18px 0; text-align: center; }
   .fig svg { max-width: 100%; background: #fafafa; border-radius: 8px; }
   .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
-  .ul-blue { border-bottom: 2.5px solid #4a9eff; padding-bottom: 1px; }
+  .ul-blue { border-bottom: 2.5px solid #1B4F72; padding-bottom: 1px; }
   .note-red { color: #d64541; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15.5px; }
   b { color: #f0f3f7; }
   .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 16px; line-height: 1.7; }
@@ -50,7 +50,19 @@
   @media print {
     body { background: #fff; color: #111; }
     .page { padding: 16px 10px; max-width: 100%; }
-    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { background: #fafafa; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    .foot { display: none; }
+    h2 { border-left-color: #1B4F72; }
     h1, h2, h3, b, .m, .big { color: #111; }
     p, .talk, .key, .pit, .detail, .figcap { color: #222; }
     .sub, .small, .foot { color: #444; }
@@ -64,6 +76,21 @@
     th { background: #f0f0f0; color: #111; }
     th, td { border-color: #bbb; }
     .box { color: #222; }
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+
   }
 </style>
 </head>
@@ -224,7 +251,7 @@
   <line x1="254" y1="87" x2="274" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
   <rect x="276" y="55" width="104" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="328" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">3.3 牛顿第三定律</text><text x="328" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">压力=支持力·p68</text>
   <line x1="380" y1="87" x2="400" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
-  <rect x="402" y="48" width="150" height="78" rx="7" fill="#14202b" stroke="#4a9eff" stroke-width="2"/><text x="477" y="74" font-size="13.5" fill="#cfe4ff" text-anchor="middle" font-weight="bold">本节 3.4 力的合成和分解</text><text x="477" y="96" font-size="12" fill="#9fc3e8" text-anchor="middle">平行四边形定则·p72</text><text x="477" y="114" font-size="12" fill="#9fc3e8" text-anchor="middle">矢量/标量上户口</text>
+  <rect x="402" y="48" width="150" height="78" rx="7" fill="#14202b" stroke="#1B4F72" stroke-width="2"/><text x="477" y="74" font-size="13.5" fill="#cfe4ff" text-anchor="middle" font-weight="bold">本节 3.4 力的合成和分解</text><text x="477" y="96" font-size="12" fill="#9fc3e8" text-anchor="middle">平行四边形定则·p72</text><text x="477" y="114" font-size="12" fill="#9fc3e8" text-anchor="middle">矢量/标量上户口</text>
   <line x1="552" y1="87" x2="572" y2="87" stroke="#2266aa" stroke-width="2" marker-end="url(#arG)"/>
   <rect x="574" y="55" width="150" height="64" rx="7" fill="#1b202a" stroke="#2a3140"/><text x="649" y="82" font-size="12.5" fill="#9fb2c8" text-anchor="middle">3.5 共点力的平衡</text><text x="649" y="103" font-size="11.5" fill="#7d8a99" text-anchor="middle">合力为0·p76</text>
 </svg>
@@ -232,7 +259,7 @@
 </div>
 
 <h3>考位锚（T11）·高考怎么考</h3>
-<p class="small">· 考什么：平行四边形/三角形图解法与合力范围 |F₁−F₂|≤F≤F₁+F₂、作图口径vs计算口径、力的分解按效果分（斜面正交分解是全家福）、矢量标量概念判断。<br>· 怎么考：选择题考"合力可能值/夹角变化趋势/矢量标量识别"（教材练习1、5题同款）、作图题考标度-邻边-对角线全流程（例题同款）、实验题考"等效法"思想（橡皮条+小圆环——教材"实验"栏目的直改），后续第4章与牛顿定律组合成大题。<br>· 真题锚：候采——对证源卷源池（v2.8-v2.11）暂未录入 3.4 对口卷源，不代拟；候池内补录后回填。</p>
+<p class="small">· 考什么：平行四边形/三角形图解法与合力范围 |F₁−F₂|≤F≤F₁+F₂、作图口径vs计算口径、力的分解按效果分（斜面正交分解是全家福）、矢量标量概念判断。<br>· 怎么考：选择题考"合力可能值/夹角变化趋势/矢量标量识别"（教材练习1、5题同款）、作图题考标度-邻边-对角线全流程（例题同款）、实验题考"等效法"思想（橡皮条+小圆环——教材"实验"栏目的直改），后续第4章与牛顿定律组合成大题。<br>· 真题锚：本节暂未收录对口真题，候补。</p>
 
 <div class="alt">
 <span class="tag">想多走一步？（可选·跳过不损失主干）</span>　① <b>三角形法首秀</b>：把F₂平移到F₁箭端，首尾相接，从起点直连终点就是合力——教材图3.4-3丁已经是它的雏形，图D的位移平移就是它的正规演出，下一节平衡问题里它是主力画法。② <b>合力范围的"三段式"</b>：同向最大F₁+F₂、反向最小|F₁−F₂|、垂直时√(F₁²+F₂²)——练习1、3全在这把尺子上。③ <b>例题两口径的根源</b>：图解法精度=标度的最小刻度（1cm=10N时读数误差±1N量级），计算法才谈"精确值"——考卷问"作图求"就别交勾股数，问"计算求"就别交刻度尺。④ <b>为什么"效果相同"能定义合力</b>：这是物理学"等效替代"思想的又一次亮相（2.1实验的小车、3.2的测力计示数都是同族），第4章"合力改变运动状态"将让F真正上岗。
