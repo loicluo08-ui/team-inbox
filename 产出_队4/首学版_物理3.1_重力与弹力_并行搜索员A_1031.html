@@ -123,7 +123,7 @@
 <span class="big">G = mg</span>
 <p>其中 <span class="m">g</span> 是<b>自由落体加速度</b>。通过第二章的学习我们知道，没有空气阻力时，由静止下落的物体做自由落体运动，而做自由落体运动的物体<b>只受到重力</b>的作用——所以 <span class="m">g</span> 在这里"一鱼两吃"：它既是 2.4 节里下落快慢的"加速度 g"，也是本节称重时的"换算系数 g"。<span class="pg">p57</span></p>
 <div class="note"><span class="lab">旁批（照录）</span>g 的单位既可以是 N/kg，又可以是 m/s²，而且 <b>1 N/kg = 1 m/s²</b>。<br><span style="font-size:13.5px">为什么相等：N 就是 kg·m/s²（牛顿的定义），除以 kg 剩下 m/s²。同一系数，用 <span class="m">G=mg</span> 称重时读作 N/kg，用 <span class="m">v=gt</span> 算下落时读作 m/s²。<span class="pg">p57旁栏·自编解读已标</span></span></div>
-<details class="try"><summary>✍ 验一验 ①（60秒）体重60 kg的人在g取10 N/kg处受多大重力？施力物体是谁？</summary><div class="ans">G = mg = 60×10 = 600 N；施力物体是地球。（数值换算＝sympy验点8口径·g10m）</div></details>
+<details class="try"><summary>✍ 验一验 ①（60秒）体重60 kg的人在g取10 N/kg处受多大重力？施力物体是谁？</summary><div class="ans">G = mg = 60×10 = 600 N；施力物体是地球。（数值换算＝复算核验验点8口径·g10m）</div></details>
 
 <div class="alt-box"><span class="lab">想多走一步？（可选）g 用 9.8 还是 10？</span><br>精确计算用 g=9.8 N/kg（p49脚注①默认值），估算用 10 N/kg——本节练习题题面都直接给了 g=10 N/kg，照题用即可；考试没给就用 9.8。跳过本块不损失主干。<span class="pg">自编导航·p49脚注承托</span></div>
 
@@ -132,7 +132,7 @@
 <h3>重心在哪：两条线索</h3>
 <p>① <b>质量均匀分布</b>的物体，重心位置只跟<b>形状</b>有关；形状规则的均匀物体容易确定——<b>均匀细直棒的重心在棒的中点，均匀球体的重心在球心，均匀圆柱体的重心在轴线的中点</b>（图3.1-1）。<span class="pg">p58</span></p>
 <p>② 质量分布不均匀时，重心除跟形状有关外，还跟<b>质量分布</b>有关——载重汽车的重心随着装货多少和装载位置而变化（图3.1-2甲空载、乙满载，重心位置C不同）。<span class="pg">p58</span></p>
-<div class="demo"><span class="lab">实验（照录逻辑）</span><b>悬挂法找不规则薄板的重心</b>（图3.1-3）：先在 A 点把物体悬挂起来，过 A 画一条竖直线 AB——由于 A 点悬线的拉力跟薄板的重力<b>二力平衡</b>，重心必定在 AB 连线上；再选另一处 D 点悬挂，过 D 画竖直线 DE——重心必在 DE 上。于是 <b>AB 与 DE 的交点 C，就是薄板的重心</b>。<span class="pg">p58</span><br><span style="font-size:13.5px">两次悬挂的逻辑＝两条"必经之路"，它们的交点唯一（sympy验点7）。为什么必须挂两次？一条线只能说"重心在线上"，说不清"在哪一点"。</span></div>
+<div class="demo"><span class="lab">实验（照录逻辑）</span><b>悬挂法找不规则薄板的重心</b>（图3.1-3）：先在 A 点把物体悬挂起来，过 A 画一条竖直线 AB——由于 A 点悬线的拉力跟薄板的重力<b>二力平衡</b>，重心必定在 AB 连线上；再选另一处 D 点悬挂，过 D 画竖直线 DE——重心必在 DE 上。于是 <b>AB 与 DE 的交点 C，就是薄板的重心</b>。<span class="pg">p58</span><br><span style="font-size:13.5px">两次悬挂的逻辑＝两条"必经之路"，它们的交点唯一（复算核验验点7）。为什么必须挂两次？一条线只能说"重心在线上"，说不清"在哪一点"。</span></div>
 <svg viewBox="0 0 700 270" role="img" aria-label="悬挂法找重心自编示意图：不规则薄板先在A点悬挂，过A画板内竖直线AB；再把薄板转过角度后在D点悬挂，过D画板内竖直线DE；AB与DE的交点C就是重心">
   <rect x="0" y="0" width="700" height="270" fill="#1b2029"/>
   <line x1="200" y1="14" x2="200" y2="90" stroke="#7d8ea3" stroke-width="2"/>
@@ -182,7 +182,7 @@
 <tr><th>弹力 F=mg/N（g取10 N/kg）</th><td>0</td><td>0.3</td><td>0.6</td><td>0.9</td><td>1.2</td><td>1.5</td></tr>
 <tr><th>伸长量 x=(l−6.0)/cm</th><td>0</td><td>1.2</td><td>2.3</td><td>3.5</td><td>4.6</td><td>5.8</td></tr>
 </table>
-<p>各点 F/x 比值在 25.0–26.1 N/m 间小幅波动（真实数据带实验误差·教材原貌），首尾两点得 k=(1.5−0.3)/(0.058−0.012)≈<b>26.1 N/m</b>，过原点最小二乘拟合 k≈<b>25.9 N/m</b>——作 F–x 图像应得一条<b>过原点的直线</b>，斜率即 k。<span class="pg">p62 T6·sympy验点3-5支撑（p31_calc.py 16/16 PASS）</span></p>
+<p>各点 F/x 比值在 25.0–26.1 N/m 间小幅波动（真实数据带实验误差·教材原貌），首尾两点得 k=(1.5−0.3)/(0.058−0.012)≈<b>26.1 N/m</b>，过原点最小二乘拟合 k≈<b>25.9 N/m</b>——作 F–x 图像应得一条<b>过原点的直线</b>，斜率即 k。<span class="pg">p62 T6·复算核验验点3-5支撑（p31_calc.py 16/16 PASS）</span></p>
 <svg viewBox="0 0 700 300" role="img" aria-label="F-x图像自编示意图：横轴伸长量x/cm，纵轴弹力F/N；T6六组数据描点，过原点直线穿过全部误差带内，直线斜率即劲度系数k约26N/m">
   <rect x="0" y="0" width="700" height="300" fill="#1b2029"/>
   <line x1="80" y1="260" x2="672" y2="260" stroke="#7d8ea3" stroke-width="2"/>
