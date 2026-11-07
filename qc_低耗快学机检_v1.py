@@ -57,8 +57,27 @@ def scan(path):
     for w in 铺垫黑名单:
         if w in plain:
             hits.append((w, '无信息铺垫'))
-    # D. 叙述层长句
-    longs = [s for s in re.split(r'[。！？]', plain) if len(s.strip()) > 75 and 'BV' not in s and 'http' not in s]
+    # D. 叙述层长句（v2·1107夜件型纯度修正：条款本意=叙述层长句，表格/列表/标题/引用行系信息密集区非叙述——
+    #    剔出长句计数。1107深度对证实证：候定性1073处抽样8/8全为卡片头/地图/口令行=非叙述误报，死库存机理即此）
+    narr_src = body
+    narr_src = re.sub(r'<table[^>]*>.*?</table>', ' ', narr_src, flags=re.S)
+    narr_src = re.sub(r'<ul[^>]*>.*?</ul>', ' ', narr_src, flags=re.S)
+    narr_src = re.sub(r'<(h\d)[^>]*>.*?</\1>', ' ', narr_src, flags=re.S)
+    narr_lines = []
+    for ln in narr_src.split('\n'):
+        s = ln.strip()
+        if s.startswith('|') or s.startswith('#') or s.startswith('>') or re.match(r'^[-*•·◦]\s', s):
+            continue
+        narr_lines.append(ln)
+    narr = [re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', ln)).strip() for ln in narr_lines]
+    longs = []
+    for p in narr:
+        # v2.1：逐行判句（行=语义单元·不跨行合并）——压平跨行合并会把分立条目"③x④y"粘成假长句
+        # 漏报方向注记：html内<br>硬切的长叙述可能被拆行漏计；D类本就不自动退回，漏报方向安全
+        for s in re.split(r'[。！？]', p):
+            s = s.strip()
+            if len(s) > 75 and 'BV' not in s and 'http' not in s:
+                longs.append(s)
     if len(longs) >= 3:
         hits.append((f'长句≥3处(实测{len(longs)})', longs[0][:60]))
     # E. 装饰冗余

@@ -58,6 +58,22 @@ def main():
     已总 = 盘总 - len(缺全部)
     print(f'=== 总账：{已总}/{盘总} = {round(已总/盘总*100,1)}% · 缺{len(缺全部)}节 ===')
     print('判定：' + ('✅全量达成' if not 缺全部 else f'⏳未达成·缺{len(缺全部)}节'))
+    # v2第二判据（1107夜·深度对证报告P3修复）：节位齐≠学完——读感回填计数并判
+    # 回填文件约定：C组读感回填_逸翔.md，每行格式「节号｜一句话读感」（如「生物1.1｜口令卡好使，例2跳步」）
+    import glob as _g
+    回填文件 = [f for f in _g.glob('C组读感回填_逸翔*.md')]
+    已读 = set()
+    for f in 回填文件:
+        for ln in open(f, encoding='utf-8'):
+            m = re.match(r'\s*[-*]?\s*(数学|物理|化学|生物|地理)(\d+(?:\.\d+)*)', ln.strip())
+            if m:
+                已读.add(m.group(1)+m.group(2))
+    if 已总 == 盘总 and 盘总 > 0:
+        print(f'=== 第二判据·读感回填：{len(已读)}/{盘总}节（C组实测环·逸翔亲读） ===')
+        if len(已读) >= 盘总:
+            print('终判：✅全量达成且全量读毕（双判据闭合）')
+        else:
+            print(f'终判：⏳工程侧达成，学会侧{盘总-len(已读)}节待读感回填——79/79节位齐≠学完（10/10形态纪律防火墙）')
     json.dump({'已总':已总,'盘总':盘总,'缺':缺全部}, open('/tmp/ti_全量判定.json','w'), ensure_ascii=False)
 
 if __name__ == '__main__':
