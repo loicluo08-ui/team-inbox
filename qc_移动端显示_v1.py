@@ -24,11 +24,11 @@ def scan_html(path):
     # M1 viewport
     if not re.search(r'<meta[^>]+name=["\']viewport["\']', txt, re.I):
         issues.append(('M1视口缺失', '无viewport meta→手机按桌面980px渲染'))
-    # M2 SVG/宽元素溢出防线
+    # M2 SVG/宽元素溢出防线（v1.1·1107夜首跑自证修正：①width正则锚闭合引号——"100%"的100曾被误判固定像素②has_cap放宽为任意max-width约束——760px等像素上限同为有效防线）
     svgs = re.findall(r'<svg[^>]*>', txt)
     if svgs:
-        has_cap = bool(re.search(r'max-width\s*:\s*(100%|96%|94%|92%)', txt)) or bool(re.search(r'svg\s*\{[^}]*max-width', txt))
-        fixed_wide = [s for s in svgs if re.search(r'width\s*=\s*["\']?(\d{3,})', s)]
+        has_cap = bool(re.search(r'max-width\s*:', txt))
+        fixed_wide = [s for s in svgs if re.search(r'width\s*=\s*["\'](\d{3,})["\']', s)]
         if not has_cap and fixed_wide:
             issues.append(('M2溢出防线缺', f'{len(fixed_wide)}个SVG固定像素宽且无max-width约束→窄屏截断风险'))
     # M3 对比度（提取成对 color/bgcolor）
