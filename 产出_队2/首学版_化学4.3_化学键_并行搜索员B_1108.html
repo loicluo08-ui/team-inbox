@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化学4.2 元素周期律 · 零基础首学版 v1.0（队2席）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .key { background: #1b2836; border: 1px solid #2c6e9e; border-left: 4px solid #4a9eff; padding: 14px 18px; margin: 18px 0; border-radius: 4px; }
+  .key .tag { color: #4a9eff; font-weight: bold; margin-right: 6px; }
+  .pit { background: #2a1a1a; border: 1px solid #6e2c2c; border-left: 4px solid #e05555; padding: 12px 16px; margin: 16px 0; border-radius: 4px; }
+  .note-red { color: #ff8888; }
+  .try { background: #16202c; border: 1px dashed #3a6a8f; padding: 12px 16px; margin: 16px 0; border-radius: 4px; }
+  .box { background: #1a2027; border: 1px solid #333c46; padding: 12px 16px; margin: 16px 0; border-radius: 4px; }
+  .check { background: #1a2027; border: 2px solid #4a9eff; padding: 14px 18px; margin: 20px 0; border-radius: 4px; }
+  .alt { background: #1c1f24; border: 1px solid #3a3f47; padding: 12px 16px; margin: 16px 0; border-radius: 4px; color: #aab4c0; }
+  .alt .tag { color: #8a97a5; font-weight: bold; }
+  .fig { text-align: center; margin: 20px 0; }
+  .figcap { font-size: 13px; color: #8a97a5; margin-top: 6px; text-align: center; }
+  .small { font-size: 14px; color: #9aa5b1; }
+  table { border-collapse: collapse; margin: 14px auto; font-size: 14px; color: #d8dee6; }
+  th, td { border: 1px solid #3a4a5a; padding: 5px 10px; text-align: center; }
+  th { background: #1e2c3a; color: #b8d0e8; }
+  mark { background: #ffe66b; color: #1a2027; padding: 0 3px; border-radius: 2px; }
+  .ans { color: #4a9eff; font-weight: bold; }
+  @media print {
+    body { background: #fff !important; color: #1a2530 !important; font-size: 12pt; }
+    .page { max-width: 100%; padding: 0 2mm; }
+    h1 { color: #1B4F72 !important; }
+    h2 { border-left-color: #1B4F72; color: #1B4F72 !important; border-bottom: 1px solid #b7cfe3; }
+    h3 { color: #1B4F72 !important; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; color: #1a2530 !important; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 3px solid #b03a2e; color: #1a2530 !important; }
+    .try { background: #f0f6fa; border: 1px dashed #b7cfe3; color: #1a2530 !important; }
+    .box { background: #f5f5f5; border: 1px solid #ddd; color: #1a2530 !important; }
+    .check { background: #fff; border: 2px solid #1B4F72; color: #1a2530 !important; }
+    .alt { background: #fafafa; border: 1px solid #ccc; color: #4a5560 !important; }
+    .step-tag { background: #1B4F72 !important; color: #fff !important; }
+    .key .tag, .ans { color: #1B4F72 !important; }
+    mark { background: #ffe66b; color: #1a2530 !important; }
+    .sub, .small, .figcap { color: #4a5560 !important; }
+    p, li, td, th { color: #1a2530 !important; }
+    th { background: #dce9f4; color: #1B4F72 !important; }
+    .note-red { color: #b03a2e !important; }
+    .foot { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>化学4.3 化学键 · 零基础首学版</h1>
+<p class="sub">人教版《化学 必修 第一册》第四章第三节（p113–117）· 预计40分钟 · v1.0（1108晚）</p>
+
+<p>一百多种元素的原子，构成的物质已超过1亿种（教材p113开篇照录）。原子之间到底<b>通过什么作用</b>牵手成物质？答案只有两种握手方式：<mark>离子键</mark>和<mark>共价键</mark>。</p>
+
+<div class="key"><span class="tag">读完这节你能</span>
+<p>①用电子式写出NaCl、HCl等形成过程；②判断一种物质含离子键还是共价键（并分极性/非极性）；③说出化学反应的实质。</p></div>
+
+<h2>第一站 离子键：一送一收的握手</h2>
+<p><span class="step-tag">1</span>钠原子（2,8,1）要达到8电子稳定结构，需<b>失去</b>1个电子；氯原子（2,8,7）需<b>得到</b>1个电子。钠与氯气反应时，钠最外层的1个电子转移到氯原子最外层上，形成带正电荷的钠离子和带负电荷的氯离子——带相反电荷的两种离子通过静电作用结合，形成与单质钠和氯气性质完全不同的氯化钠（p113照录）。</p>
+<div class="key"><span class="tag">定义·离子键（p113，逐字背）</span> <b>带相反电荷离子之间的相互作用叫做离子键。</b>像氯化钠这样，由离子键构成的化合物叫做<b>离子化合物</b>。例如KCl、MgCl₂、CaCl₂、ZnSO₄、NaOH等都是离子化合物。通常，<mark>活泼金属与活泼非金属形成离子化合物</mark>。</div>
+<p>离子化合物的形成用<b>电子式</b>表示（p113资料卡片照录：在元素符号周围用"·"或"×"表示原子的最外层电子，如Na×、<b>:Cl·</b>（周围7点）、×Mg×、:S:等）。氯化钠的形成过程：</p>
+<div class="fig"><svg width="700" height="160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="氯化钠形成过程电子式图：钠提供1个最外层电子给氯，形成钠离子与带中括号电荷的氯离子静电结合"><rect x="0" y="0" width="700" height="160" fill="#ffffff"/><text x="40" y="35" font-size="13" fill="#1a2530" font-weight="bold">Na×（最外层1个电子）</text><text x="40" y="58" font-size="13" fill="#1a2530" font-weight="bold">:Cl·（周围7个点）</text><line x1="95" y1="40" x2="150" y2="40" stroke="#555" stroke-width="2"/><polygon points="150,40 142,36 142,44" fill="#555"/><text x="60" y="42" font-size="10" fill="#b03a2e">失1e⁻→</text><text x="160" y="42" font-size="10" fill="#1B4F72">→得1e⁻</text><rect x="180" y="70" width="480" height="42" rx="5" fill="#dce9f4" stroke="#1B4F72"/><text x="200" y="96" font-size="13" fill="#1a2530">Na× + :Cl·（7点） ⟶ Na⁺ [ :Cl:（8点）]⁻</text><text x="40" y="145" font-size="11" fill="#4a5560">左：钠失电子成阳离子；右：氯得电子成阴离子（中括号+电荷）；两者静电结合=离子键（p113原式复刻）</text></svg><p class="figcap">图1 NaCl形成过程（电子式·p113原式复刻：Na×+周围7点Cl→Na⁺[周围8点Cl]⁻）</p></div>
+<div class="try"><span class="tag" style="font-weight:bold;color:#4a9eff">自验①</span> 镁原子（2,8,2）和氯原子（2,8,7）怎么握手？<p class="small">答案：Mg失去2个电子→Mg²⁺；2个Cl各得1个电子→2个Cl⁻；形成<span class="ans">MgCl₂</span>（教材p117练习7(1)要求用电子式表示其形成过程）。核对：Mg²⁺核外10电子，Cl⁻核外18电子，都达成8电子稳定结构。</p></div>
+<div class="pit"><span class="tag" style="font-weight:bold;color:#e05555">易错</span> ①离子键是"带相反电荷<b>离子之间</b>"的作用，不是"原子之间"；②ZnSO₄、NaOH里虽然含非金属，但都是离子化合物（含离子键）——别只看元素种类；③电子式里阳离子只写符号（Na⁺），阴离子要加中括号和电荷（[:Cl:]⁻）。</div>
+
+<h2>第二站 共价键：合伙出股份的握手</h2>
+<p><span class="step-tag">2</span>你可能问：为什么2个氢原子结合成氢分子，而不是3个、4个（p114开篇照录）？以氯分子为例：氯原子最外层7个电子，都要"得1个"，两个氯原子<b>谁也不肯给</b>——于是各提供1个电子，<mark>共用</mark>这一对电子，双方都凑齐8电子稳定结构（p114照录）：两个带7点电子式的Cl一左一右，中间共用1对电子。</p>
+<div class="key"><span class="tag">定义·共价键（p114，逐字背）</span> <b>原子间通过共用电子对所形成的相互作用叫做共价键。</b>像HCl这样，以共用电子对形成分子的化合物叫做<b>共价化合物</b>，例如H₂O、CO₂等。不同种非金属元素化合时，原子之间也能形成共价键（H×+周围7点Cl→H与Cl间共用1对）。</div>
+<div class="fig"><svg width="480" height="150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="氢分子形成示意图：两个氢原子各提供1个电子形成共用电子对，各达2电子稳定结构"><rect x="0" y="0" width="480" height="150" fill="#ffffff"/><circle cx="180" cy="70" r="16" fill="#7fb2dd" stroke="#1B4F72"/><text x="180" y="75" font-size="12" fill="#1a2530" text-anchor="middle">H</text><circle cx="320" cy="70" r="16" fill="#7fb2dd" stroke="#1B4F72"/><text x="320" y="75" font-size="12" fill="#1a2530" text-anchor="middle">H</text><ellipse cx="250" cy="70" rx="26" ry="12" fill="none" stroke="#b03a2e" stroke-width="2"/><text x="250" y="48" font-size="11" fill="#b03a2e" text-anchor="middle">共用电子对(各出1个)</text><text x="120" y="110" font-size="11" fill="#4a5560">每个H：1+1=2个电子（He式稳定）→电子式H:H，结构式H—H</text><text x="120" y="132" font-size="11" fill="#4a5560">同种原子→共用对不偏向=非极性键；HCl中偏向Cl→极性键（p114-115）</text></svg><p class="figcap">图2 H₂形成示意：两个H原子共用1对电子，各达2电子稳定结构（He式）</p></div>
+<p>书写常用"一根短线表示1对共用电子"——这种图示叫做<b>结构式</b>（p114提示块照录，如氯分子Cl—Cl）。教材表4-6五种分子（p114–115照录）：</p>
+<table>
+<tr><th>分子</th><th>电子式</th><th>结构式</th><th>分子空间结构</th></tr>
+<tr><td>H₂</td><td>H:H（H中间共用对）</td><td>H—H</td><td>直线形（双球模型）</td></tr>
+<tr><td>HCl</td><td>H:Cl（Cl周围8点）</td><td>H—Cl</td><td>直线形</td></tr>
+<tr><td>CO₂</td><td>O:C:O（各O周围8点）</td><td>O=C=O（双键）</td><td>直线形</td></tr>
+<tr><td>H₂O</td><td>H:O:H（O周围8点）</td><td>H—O—H（折线）</td><td>V形</td></tr>
+<tr><td>CH₄</td><td>C周围4对共用</td><td>四个H—C单键</td><td>正四面体形</td></tr>
+</table>
+<p class="small">分子具有一定的空间结构：CO₂直线形、H₂O呈V形、CH₄正四面体形；现代实验手段（如X射线衍射法等）可以测定某些分子的结构（p114照录）。</p>
+<div class="key"><span class="tag">极性与非极性（p115，逐字口径）</span> <b>同种原子形成共价键，共用电子对不偏向任何一个原子，叫做非极性共价键（如H₂、Cl₂中的键）。</b><b>不同种原子形成共价键，共用电子对偏向吸引电子能力强的一方（HCl中偏向Cl，Cl一方相对显负电性、H一方相对显正电性），叫做极性共价键；H₂O、CO₂中的共价键也是极性键。</b></div>
+<div class="try"><span class="tag" style="font-weight:bold;color:#4a9eff">自验②（易错变形）</span> NaOH里有什么键？<p class="small">答案：Na⁺与OH⁻之间是<span class="ans">离子键</span>，O与H之间是<span class="ans">极性共价键</span>——教材p117练习2照录"只含非极性共价键的是C（H₂）"，NaOH两种键都有，不能算"只含共价键"。一种物质可以<b>同时含两种键</b>。</p></div>
+<div class="fig"><svg width="710" height="210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="化学键分类树：化学键分为离子键与共价键，共价键再分极性键与非极性键"><rect x="0" y="0" width="710" height="210" fill="#ffffff"/><rect x="250" y="20" width="150" height="36" rx="6" fill="#1B4F72"/><text x="325" y="44" font-size="13" fill="#fff" text-anchor="middle">化学键</text><rect x="100" y="90" width="160" height="36" rx="6" fill="#2C6E9E"/><text x="180" y="114" font-size="12" fill="#fff" text-anchor="middle">离子键(阴阳离子间)</text><rect x="390" y="90" width="160" height="36" rx="6" fill="#2C6E9E"/><text x="470" y="114" font-size="12" fill="#fff" text-anchor="middle">共价键(共用电子对)</text><rect x="330" y="160" width="170" height="36" rx="6" fill="#7fb2dd"/><text x="415" y="184" font-size="12" fill="#1a2530" text-anchor="middle">极性键(偏向一方)</text><rect x="520" y="160" width="170" height="36" rx="6" fill="#7fb2dd"/><text x="605" y="184" font-size="12" fill="#1a2530" text-anchor="middle">非极性键(不偏向)</text><line x1="325" y1="56" x2="180" y2="86" stroke="#555" stroke-width="2"/><polygon points="180,90 186,80 190,88" fill="#555"/><line x1="325" y1="56" x2="470" y2="86" stroke="#555" stroke-width="2"/><polygon points="470,90 464,80 460,88" fill="#555"/><line x1="470" y1="126" x2="415" y2="156" stroke="#555" stroke-width="2"/><polygon points="415,160 421,150 425,158" fill="#555"/><line x1="470" y1="126" x2="600" y2="156" stroke="#555" stroke-width="2"/><polygon points="600,160 604,150 596,150" fill="#555"/></svg><p class="figcap">图3 化学键分类树：化学键分离子键与共价键，共价键再分极性与非极性</p></div>
+
+<h2>第三站 化学键与化学反应的实质</h2>
+<p><span class="step-tag">3</span><mark>相邻的原子（或离子）之间强烈的相互作用叫做化学键</mark>（p115词条；化学键的形成与原子结构有关，主要通过原子的价电子的转移来实现。一般的化学物质主要由离子键或共价键结合而成）。化学反应表面上"原子重新组合"，其实包含两步（p115–116照录）：H₂和Cl₂中的化学键（<b>旧化学键</b>）断裂，生成H和Cl；H和Cl结合成HCl，形成了新的H—Cl化学键（<b>新化学键</b>）。</p>
+<div class="key"><span class="tag">本节金句（p116，逐字背）</span> <b>化学反应的过程，本质上就是旧化学键断裂和新化学键形成的过程。</b></div>
+<div class="try"><span class="tag" style="font-weight:bold;color:#4a9eff">自验③</span> 稀有气体分子为什么不是双原子分子？（教材p117练习6照录）<p class="small">答案：稀有气体原子最外层已是8电子（He为2）稳定结构，<span class="ans">不需要共用或转移电子</span>，以单原子形式存在，原子间不形成化学键。</p></div>
+
+<div class="alt"><span class="tag">想多走一步？（可选）</span> 分子间作用力（p116资料卡片）：分子之间还存在的把分子聚集在一起的作用力。荷兰物理学家范德华（J. D. van der Waals，1837—1923）最早研究，最初称范德华力——比化学键弱得多，对物质的熔点、沸点等有影响（NH₃、Cl₂、CO₂降温加压能凝结）。<b>氢键</b>也是分子间作用力，比化学键弱、比范德华力强；冰中水分子以氢键排成有空隙的晶体，体积膨胀、密度减小，所以冰浮在水面上；DNA的结构也与氢键有关。跳过本块不损失主干。</div>
+
+<div class="check"><span class="tag" style="font-weight:bold;color:#4a9eff">节末自测（先做再看答案）</span>
+<p>①教材p117练习2照录：下列物质中，只含有非极性共价键的是（ ）。A.NaOH B.NaCl C.H₂ D.H₂S</p>
+<p class="small">答案：<span class="ans">C</span>（同种原子间的共价键才是非极性键；NaOH含离子键+极性键；NaCl纯离子键；H₂S极性键）。</p>
+<p>②教材p117练习3照录：含有极性共价键的是（ ）。A.单质碘 B.氯化镁 C.溴化钾 D.水</p>
+<p class="small">答案：<span class="ans">D</span>（H与O不同种原子共价结合；A单质是非极性键，B/C是离子化合物）。</p>
+<p>③教材p117练习4照录：不正确的是（ ）。A.化学键是一种作用力 B.化学键可以使离子相结合也可以使原子相结合 C.化学反应过程中反应物分子内化学键断裂、产物分子中化学键形成 D.非极性键不是化学键</p>
+<p class="small">答案：<span class="ans">D</span>——非极性共价键<b>是</b>化学键的一种（共价键分极性/非极性两支）。</p>
+<p>④教材p117练习8照录：F₂、O₂、NH₃、CH₄、CO₂中哪些以极性键结合、哪些以非极性键结合？</p>
+<p class="small">答案：非极性键——<span class="ans">F₂、O₂</span>（同种原子）；极性键——<span class="ans">NH₃、CH₄、CO₂</span>（不同种原子）。</p>
+<p>⑤自编：NaF、MgCl₂、CaO各含什么键？<p class="small">答案：都是<span class="ans">离子化合物、含离子键</span>（活泼金属+活泼非金属；MgCl₂见教材p113例举，NaF/CaO同法判——自编延伸）。</p></p>
+</div>
+
+<div class="box"><span class="tag" style="font-weight:bold;color:#4a9eff">高考怎么考</span>
+<p>考什么：化学键类型判断（离子键/共价键、极性/非极性）、电子式书写、反应实质。怎么考：给一组物质选"只含××键"；给电子式找错（阴离子忘中括号/忘标电荷）；结合反应判断键成键。真题锚：本节暂未收录对口真题，候补。</p></div>
+
+<div class="fig"><svg width="660" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：4.1认原子4.2立规律已学，本节化学键两种握手方式，下一站第四章整理与提升位构性总图"><rect x="0" y="0" width="660" height="140" fill="#ffffff"/><rect x="20" y="40" width="180" height="56" rx="6" fill="#2C6E9E"/><text x="110" y="60" font-size="12" fill="#fff" text-anchor="middle">4.1 认原子 · 4.2 立规律</text><text x="110" y="80" font-size="11" fill="#eef4f9" text-anchor="middle">(已学)</text><rect x="240" y="40" width="180" height="56" rx="6" fill="#4a9eff"/><text x="330" y="64" font-size="12" fill="#0b0e13" font-weight="bold" text-anchor="middle">4.3 化学键</text><text x="330" y="82" font-size="11" fill="#0b0e13" text-anchor="middle">(本节·两种握手)</text><rect x="460" y="40" width="180" height="56" rx="6" fill="#9db8cf"/><text x="550" y="64" font-size="12" fill="#1a2530" text-anchor="middle">整理与提升 p118</text><text x="550" y="82" font-size="11" fill="#1a2530" text-anchor="middle">(位构性总图)</text><line x1="200" y1="68" x2="240" y2="68" stroke="#555" stroke-width="2"/><polygon points="240,68 232,64 232,72" fill="#555"/><line x1="420" y1="68" x2="460" y2="68" stroke="#555" stroke-width="2"/><polygon points="460,68 452,64 452,72" fill="#555"/><text x="330" y="125" font-size="12" fill="#1a2530" text-anchor="middle">化学反应实质=旧键断裂+新键形成（本节金句）</text></svg><p class="figcap">图4 节末位置图：4.1认原子→4.2立规律→本节看原子间作用（化学键两握手）——第四章三节齐，物质结构视角闭合</p></div>
+
+<p class="small">➡ 下一站：第四章"整理与提升"（p118起）——把位—构—性关系与周期律连成一张总图（本件图3/图4已预演其骨架）。</p>
+
+<div class="foot">
+  <p>本件为人教版《普通高中教科书·化学 必修 第一册》第四章第三节（p113–117）零基础首学版学习笔记。节界实锚：4.3节名页=印刷页113（图118亲读实锚）·右界=第四章整理与提升起=印刷页118（图123亲读实锚）·节域p113–117共5页闭合；影印偏移=图N=印刷页N-5（图118页脚113/图122页脚117/图123页脚118三点以上实测）。影印源=智慧教育平台contentId=5cd19072-e40d-4a73-8580-7b7ada5d4005·ts=1787023188651·sha256留痕见随件。事实点均影印直读并附来源页码；电子式在本件以文字描述+p113/114原式照录锚定（影印原式逐字可回溯）；四附件+QC单+print渲染pdf+sympy验点log随commit同链。队2席·并行搜索员B线·1108放量令承办·候批禁直推main。</p>
+</div>
+</div>
+</body>
+</html>
