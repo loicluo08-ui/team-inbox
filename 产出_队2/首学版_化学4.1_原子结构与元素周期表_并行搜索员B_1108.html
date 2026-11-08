@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化学4.1 原子结构与元素周期表 · 零基础首学版 v1.0（队2席）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .key { background: #1d2a38; border-left: 4px solid #4a9eff; padding: 12px 16px; margin: 16px 0; border-radius: 4px; }
+  .key .tag { color: #4a9eff; font-weight: bold; margin-right: 6px; }
+  .pit { background: #2a1d20; border-left: 4px solid #e06c5a; padding: 12px 16px; margin: 16px 0; border-radius: 4px; }
+  .pit .tag { color: #e06c5a; font-weight: bold; margin-right: 6px; }
+  .try { background: #1a222b; border: 1px dashed #3a506b; padding: 12px 16px; margin: 16px 0; border-radius: 4px; }
+  .try .tag { color: #7fd1ae; font-weight: bold; margin-right: 6px; }
+  .box { background: #1a2028; border: 1px solid #2c3440; padding: 12px 16px; margin: 16px 0; border-radius: 4px; }
+  .check { background: #16202b; border: 2px solid #4a9eff; padding: 14px 18px; margin: 20px 0; border-radius: 4px; }
+  .check .tag { color: #4a9eff; font-weight: bold; }
+  .alt { background: #1a1e24; border: 1px solid #2c3440; padding: 12px 16px; margin: 16px 0; border-radius: 4px; color: #9aa5b1; }
+  .alt .tag { color: #9aa5b1; font-weight: bold; margin-right: 6px; }
+  .note-red { color: #ff8f7e; }
+  .ans { color: #6cc3ff; font-weight: bold; }
+  mark { background: #ffe66b; color: #1a1e24; padding: 0 3px; border-radius: 2px; }
+  .small { font-size: 13px; color: #7d8a99; }
+  table { border-collapse: collapse; margin: 14px auto; width: 100%; max-width: 640px; }
+  th, td { border: 1px solid #34404e; padding: 7px 10px; text-align: center; font-size: 15px; }
+  th { background: #1d2a38; color: #e8ecf2; }
+  .fig { margin: 18px 0; text-align: center; background: #f5f7fa; border-radius: 6px; padding: 10px; }
+  .figcap { font-size: 13px; color: #626d7a; margin-top: 6px; text-align: center; }
+  .foot { margin-top: 50px; border-top: 1px solid #2c3440; padding-top: 14px; font-size: 12px; color: #5d6875; }
+  .blue-line { color: #6cc3ff; border-bottom: 2px solid #4a9eff; padding-bottom: 1px; }
+  @media print {
+    body { background: #fff !important; color: #1a2530 !important; font-size: 12pt; line-height: 1.7; }
+    .page { max-width: 100%; padding: 0 2mm; }
+    h1 { color: #1B4F72 !important; font-size: 20pt; }
+    h2 { border-left-color: #1B4F72; color: #1B4F72 !important; font-size: 15pt; border-bottom: 1px solid #b7cfe3; padding-bottom: 3px; }
+    h3 { color: #1B4F72 !important; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .key .tag { color: #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 3px solid #b03a2e; }
+    .pit .tag { color: #b03a2e; }
+    .try { background: #f0f6fa; border: 1px dashed #b7cfe3; }
+    .try .tag { color: #2C6E9E; }
+    .box { background: #f5f5f5; border: 1px solid #ddd; }
+    .check { background: #fff; border: 2px solid #1B4F72; }
+    .check .tag { color: #1B4F72; }
+    .alt { background: #fafafa; border: 1px solid #ccc; color: #555; }
+    .alt .tag { color: #555; }
+    .step-tag { background: #1B4F72 !important; color: #fff !important; }
+    mark { background: #ffe66b; color: #1a2530 !important; }
+    .note-red { color: #b03a2e !important; }
+    .ans { color: #1B4F72 !important; }
+    .blue-line { color: #1B4F72 !important; border-bottom-color: #1B4F72; }
+    p, li, td, th, .figcap { color: #1a2530 !important; }
+    th { background: #dce9f4; }
+    td { background: #fff; }
+    .sub, .small { color: #4a5560 !important; }
+    .fig { background: #fff; border: 1px solid #e3e8ee; }
+    .foot { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>化学4.1 原子结构与元素周期表</h1>
+<p class="sub">人教版《化学 必修 第一册》第四章第一节（p92–106）· 零基础首学版 v1.0 · 40分钟独立读懂</p>
+
+<p>一百多种元素搭起了整个物质世界：你呼出的二氧化碳、喝的水、身上的衣服，拆到最底层都是原子。可原子长什么样？一百多种元素凭什么排出一张"全家福"表格？这一节我们钻进原子内部，再看懂那张大名鼎鼎的<b>元素周期表</b>。</p>
+
+<div class="check"><span class="tag">读完这节你能</span>
+<p>① 看到 <span class="blue-line">A/Z/N</span> 这类符号就能算出原子里各种粒子的数目；② 画出1–20号元素的原子结构示意图，并把它"对号入座"放进周期表；③ 分清<b>核素</b>和<b>同位素</b>这两个最容易被搞混的概念。</p>
+</div>
+
+<h2><span class="step-tag">第0步</span>预备：原子里到底有什么</h2>
+<p>原子不是实心小球。它的中心是一个很小但很重的<b>原子核</b>，核外有一群质量几乎可以忽略的<b>电子</b>在高速运动；原子核又由两种更小的粒子组成：<b>质子</b>和<b>中子</b>。你可以把原子想象成一栋楼：原子核是楼里的承重柱（几乎承担全部重量），电子是很轻的住户（决定这栋楼"对外怎么打交道"）。</p>
+<p>每个质子带1个单位正电荷，电子带1个单位负电荷，中子不带电。所以——</p>
+<div class="key"><span class="tag">判据</span>原子不显电性时：<mark>核电荷数 = 质子数 = 核外电子数</mark>（p93原话：原子序数=核电荷数=质子数=核外电子数）。质子数决定了它是哪种元素：质子数变了，元素就"换人"了。</div>
+
+<h2><span class="step-tag">第1站</span>原子结构：给原子"报户口"</h2>
+
+<h3>1. 质量数：原子核的"体重"</h3>
+<p>质子和中子的质量很接近，电子的质量大约只有它们的1/1836，可以忽略。于是化学里用<b>质量数</b>给原子核"称重"：</p>
+<div class="key"><span class="tag">定义</span><mark>质量数(A) = 质子数(Z) + 中子数(N)</mark>（p92原话：以"¹²C原子质量的1/12"作标准相比较所得的近似整数值）。</div>
+<p>课本用 <b>A/Z X</b> 这种符号记一种原子：左上角A是质量数，左下角Z是质子数，X是元素符号。看懂它，原子核里的"户口"就齐了。</p>
+<div class="try"><span class="tag">随读自验①</span>¹²C（碳-12）：A=12，Z=6，中子数N=12−6=<span class="ans">6</span>。易错变形：¹⁴N的质量数也是14，但Z=7，所以N=<span class="ans">7</span>——<span class="note-red">质量数相同≠同一种原子</span>，判身份只看质子数。</div>
+
+<h3>2. 电子分层：楼梯间的规矩</h3>
+<p>核外电子不是乱跑的，它们按能量高低分层"住"：离核最近的叫第1层（也叫K层），往外依次是第2层（L层）、第3层（M层）……第7层（Q层）。层数越靠外，电子能量越高。</p>
+<p>课本用稀有气体原子（电子排布最稳定的"样板房"）总结出两条硬规矩（p93思考与讨论）：</p>
+<div class="key"><span class="tag">判据</span>① 第n层最多容纳 <mark>2n²</mark> 个电子；② 最外层电子数<mark>不超过8个</mark>（K层为最外层时不超过2个）。填电子时先填离核近的内层，一层满了再往外填。</div>
+<div class="fig"><svg width="360" height="210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="电子层容量示意图：每层最多容纳2n²个电子，n为1至7层"><line x1="25" y1="180" x2="325" y2="180" stroke="#999"/><line x1="25" y1="180" x2="25" y2="20" stroke="#999"/><polyline points="40.0,177.0 85.0,168.0 130.0,153.0 175.0,132.0 220.0,105.0 265.0,72.0 310.0,33.0" fill="none" stroke="#1B4F72" stroke-width="2"/><circle cx="40.0" cy="177.0" r="4" fill="#1B4F72"/>
+<circle cx="85.0" cy="168.0" r="4" fill="#1B4F72"/>
+<circle cx="130.0" cy="153.0" r="4" fill="#1B4F72"/>
+<circle cx="175.0" cy="132.0" r="4" fill="#1B4F72"/>
+<circle cx="220.0" cy="105.0" r="4" fill="#1B4F72"/>
+<circle cx="265.0" cy="72.0" r="4" fill="#1B4F72"/>
+<circle cx="310.0" cy="33.0" r="4" fill="#1B4F72"/><text x="40.0" y="169.0" font-size="11" fill="#1B4F72" text-anchor="middle">2</text>
+<text x="85.0" y="160.0" font-size="11" fill="#1B4F72" text-anchor="middle">8</text>
+<text x="130.0" y="145.0" font-size="11" fill="#1B4F72" text-anchor="middle">18</text>
+<text x="175.0" y="124.0" font-size="11" fill="#1B4F72" text-anchor="middle">32</text>
+<text x="220.0" y="97.0" font-size="11" fill="#1B4F72" text-anchor="middle">50</text>
+<text x="265.0" y="64.0" font-size="11" fill="#1B4F72" text-anchor="middle">72</text>
+<text x="310.0" y="25.0" font-size="11" fill="#1B4F72" text-anchor="middle">98</text><text x="40.0" y="196" font-size="11" fill="#4a5560" text-anchor="middle">第1层</text>
+<text x="85.0" y="196" font-size="11" fill="#4a5560" text-anchor="middle">第2层</text>
+<text x="130.0" y="196" font-size="11" fill="#4a5560" text-anchor="middle">第3层</text>
+<text x="175.0" y="196" font-size="11" fill="#4a5560" text-anchor="middle">第4层</text>
+<text x="220.0" y="196" font-size="11" fill="#4a5560" text-anchor="middle">第5层</text>
+<text x="265.0" y="196" font-size="11" fill="#4a5560" text-anchor="middle">第6层</text>
+<text x="310.0" y="196" font-size="11" fill="#4a5560" text-anchor="middle">第7层</text><text x="30" y="15" font-size="11" fill="#4a5560">最多电子数2n²</text></svg><p class="figcap">图1 每层电子的"容量上限"2n²（n=1~7）——第1层最多2个、第2层最多8个</p></div>
+<p>把这两条规矩用起来，就能画出<b>原子结构示意图</b>：圆圈里写"核电荷数+"，弧线上标每层电子数。例如钠（11号）：核内11个质子，电子排布 <b>2、8、1</b>。</p>
+<div class="try"><span class="tag">随读自验②</span>氧（8号）：2、<span class="ans">6</span>。易错变形：钾（19号）= 2、8、8、1——<span class="note-red">不是2、8、9！</span>当第3层是最外层时最多装8个，第19个电子必须进第4层。</div>
+<div class="box"><span class="step-tag">30秒机器比喻</span>把电子填层想成楼下停车：先停地库1层（最多2个车位），满了上2层（最多8个）……但"临街门面层"（最外层）最多只挂8块牌照，哪怕这层其实还有空位。</div>
+
+<h2><span class="step-tag">第2站</span>元素周期表：给一百多种元素"排座位"</h2>
+<p>一百多种元素如果随便堆在一起，查找、比较都无从谈起。1869年门捷列夫把当时已知的元素按规律排成表（p94科学史话），这就是元素周期表的起点；后来人们发现，排序的真正依据是<b>核电荷数</b>，于是定义：<b>原子序数 = 核电荷数</b>，按原子序数从小到大排列。</p>
+
+<h3>1. 横行叫"周期"，纵列叫"族"</h3>
+<p>周期表有<b>7个横行</b>，每个横行是一个<b>周期</b>；有<b>18个纵列</b>，其中第8、9、10这三个纵列共同组成一个族，叫<b>第Ⅷ族</b>，所以一共<b>16个族</b>。</p>
+<div class="key"><span class="tag">判据</span><mark>周期序数 = 该周期元素原子的电子层数</mark>。第1周期只有2种元素（最短），第2、3周期各8种；1–3周期合称<b>短周期</b>，其余叫<b>长周期</b>。族的记号：主族标A，副族标B；第18列即<b>0族</b>（稀有气体）。</div>
+<div class="fig"><svg width="605" height="270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="周期表骨架结构图：7周期18列网格，含Ⅷ族括线与主族0族标注"><rect x="0" y="0" width="605" height="270" fill="#ffffff"/><rect x="55" y="30" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><text x="68.0" y="47.0" font-size="10" fill="#fff" text-anchor="middle">H</text><rect x="565" y="30" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><text x="578.0" y="47.0" font-size="10" fill="#fff" text-anchor="middle">He</text><rect x="55" y="60" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="85" y="60" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="415" y="60" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="445" y="60" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="475" y="60" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="505" y="60" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="535" y="60" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="565" y="60" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="55" y="90" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="85" y="90" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="415" y="90" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="445" y="90" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="475" y="90" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="505" y="90" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="535" y="90" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="565" y="90" width="26" height="26" rx="3" fill="#7fb2dd" stroke="#b7cfe3"/><rect x="55" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="85" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="115" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="145" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="175" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="205" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="235" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="265" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="295" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="325" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="355" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="385" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="415" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="445" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="475" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="505" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="535" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="565" y="120" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="55" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="85" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="115" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="145" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="175" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="205" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="235" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="265" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="295" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="325" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="355" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="385" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="415" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="445" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="475" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="505" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="535" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="565" y="150" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="55" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="85" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="115" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="145" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="175" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="205" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="235" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="265" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="295" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="325" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="355" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="385" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="415" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="445" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="475" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="505" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="535" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="565" y="180" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="55" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="85" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="115" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="145" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="175" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="205" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="235" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="265" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="295" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="325" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="355" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="385" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="415" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="445" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="475" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="505" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="535" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><rect x="565" y="210" width="26" height="26" rx="3" fill="#2C6E9E" stroke="#b7cfe3"/><line x1="265" y1="24" x2="351" y2="24" stroke="#b03a2e" stroke-width="2"/><text x="308" y="20" font-size="11" fill="#b03a2e" text-anchor="middle">Ⅷ族(8,9,10列)</text><text x="37" y="47.0" font-size="11" fill="#1a2530" text-anchor="middle">1</text><text x="37" y="77.0" font-size="11" fill="#1a2530" text-anchor="middle">2</text><text x="37" y="107.0" font-size="11" fill="#1a2530" text-anchor="middle">3</text><text x="37" y="137.0" font-size="11" fill="#1a2530" text-anchor="middle">4</text><text x="37" y="167.0" font-size="11" fill="#1a2530" text-anchor="middle">5</text><text x="37" y="197.0" font-size="11" fill="#1a2530" text-anchor="middle">6</text><text x="37" y="227.0" font-size="11" fill="#1a2530" text-anchor="middle">7</text><text x="13" y="112" font-size="11" fill="#1a2530">周期</text><text x="68.0" y="246" font-size="10" fill="#1a2530" text-anchor="middle">ⅠA</text><text x="98.0" y="246" font-size="10" fill="#1a2530" text-anchor="middle">ⅡA</text><text x="428.0" y="246" font-size="10" fill="#1a2530" text-anchor="middle">ⅢA</text><text x="458.0" y="246" font-size="10" fill="#1a2530" text-anchor="middle">ⅣA</text><text x="488.0" y="246" font-size="10" fill="#1a2530" text-anchor="middle">ⅤA</text><text x="518.0" y="246" font-size="10" fill="#1a2530" text-anchor="middle">ⅥA</text><text x="548.0" y="246" font-size="10" fill="#1a2530" text-anchor="middle">ⅦA</text><text x="578.0" y="246" font-size="10" fill="#1a2530" text-anchor="middle">0族</text></svg><p class="figcap">图2 周期表骨架示意图（浅蓝=短周期·深蓝=长周期·第8/9/10列合为Ⅷ族·最右列=0族）</p></div>
+<p>族的读法举例：第1列除氢外叫<b>第ⅠA族（碱金属元素）</b>，第17列叫<b>第ⅦA族（卤族元素）</b>。周期表里每个方格登记四样信息：原子序数、元素符号、元素名称、相对原子质量。</p>
+<div class="try"><span class="tag">随读自验③</span>铝（13号）：排布2、8、3，共3层→第<span class="ans">3</span>周期，最外层3个→第<span class="ans">ⅢA</span>族。易错变形：数列时第8、9、10三列<mark>合并</mark>占Ⅷ族一个位置，别按18列直数。</div>
+
+<h2><span class="step-tag">第3站</span>核素与同位素：一种元素其实有很多"款"</h2>
+<p>元素的定义是<b>质子数相同的一类原子的总称</b>（p96）。但同一种元素的原子，中子数不一定相同！以氢为例（教材表4-1）：</p>
+<table>
+<tr><th>名称</th><th>符号</th><th>质子数Z</th><th>中子数N</th><th>质量数A</th></tr>
+<tr><td>氕（piē）</td><td>¹H</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>氘（dāo）</td><td>²H（记作D）</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>氚（chuān）</td><td>³H（记作T）</td><td>1</td><td>2</td><td>3</td></tr>
+</table>
+<div class="key"><span class="tag">定义</span><b>核素</b>：具有一定数目质子和一定数目中子的一种原子（p96原话）。上表的¹H、²H、³H就是氢元素的三种核素。<b>同位素</b>：质子数相同、中子数不同的同一元素的不同原子，互称同位素（p96原话）。"同位"的意思是：它们在周期表里<mark>占同一个位置</mark>。</div>
+<p>那"元素的相对原子质量"（周期表方格里那个数）怎么来的？课本p97原话：<mark>按各种核素所占的一定百分比计算出的平均值</mark>。所以它通常不是整数——氯是35.45，因为³⁵Cl和³⁷Cl按约3:1混合取平均。</p>
+<div class="try"><span class="tag">随读自验④</span>（自编例）按约3:1取整算（75%和25%）：35×0.75+37×0.25=<span class="ans">35.5</span>，与周期表上的35.45非常接近（实际百分比更精确）。</div>
+<div class="pit"><span class="tag">坑点</span>同位素是"<b>原子和原子</b>之间"的关系：¹²C与¹⁴C互为同位素（Z都=6，N=6/8）；¹⁴C与¹⁴N质量数相同但质子数不同（6≠7），<b>不是</b>同位素。另外，单个原子的质量数一定是整数，元素的相对原子质量通常是平均值——两个数别混用。</div>
+<div class="alt"><span class="tag">想多走一步？（可选）</span>同位素很有用：¹⁴C含量随年代衰减，可给文物测年龄（p97化学与职业，Libby因此获1960年诺贝尔化学奖）；²H、³H可用于制造氢弹；放射性同位素还能用于疾病诊断治疗。脚注小知识：碱金属中的钫、卤素中的砹和Ts（鿬，117号）都具有放射性，中学不讨论（p99/p102脚注）；1989年IUPAC建议用1~18列的记法替代主族/副族（p95脚注）。</div>
+
+<h2><span class="step-tag">第4站</span>原子结构决定元素性质：碱金属与卤素的"家族像"</h2>
+<p>金属元素最外层电子一般<b>少于4个</b>，容易失去电子，表现<b>金属性</b>；非金属元素最外层电子一般<b>多于4个</b>，容易得到电子，表现<b>非金属性</b>（p98原话）。同一族的元素最外层电子数相同，所以"长得像"；又因为从上到下电子层数依次增多、原子半径逐渐增大，失电子越来越容易——家族像但脾气递变。</p>
+
+<h3>1. 碱金属：越往下越"暴"</h3>
+<p>碱金属（Li、Na、K、Rb、Cs）最外层都是1个电子，化学性质非常相似：都能与氧气、水剧烈反应，产物中都是+1价。例如 4Li+O₂<sup>Δ</sup>=2Li₂O、2Na+O₂<sup>Δ</sup>=Na₂O₂、2Na+2H₂O=2NaOH+H₂↑、2K+2H₂O=2KOH+H₂↑（p101）。</p>
+<div class="key"><span class="tag">判据</span>从锂到铯：<mark>电子层数增多→原子半径增大→失电子能力增强→金属性增强</mark>。实验事实同步升级：钠比锂剧烈，钾比钠剧烈，铷、铯遇空气立即燃烧、遇水爆炸（p101原话）。</div>
+<div class="fig"><svg width="410" height="215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="碱金属元素趋势图：锂至铯原子半径递增与熔点递减双折线"><line x1="40" y1="185" x2="390" y2="185" stroke="#999"/><line x1="40" y1="185" x2="40" y2="30" stroke="#999"/><polyline points="60,172.1 130,135.5 200,91.3 270,68.7 340,50.4" fill="none" stroke="#1B4F72" stroke-width="2"/><circle cx="60" cy="172.1" r="3.5" fill="#1B4F72"/><circle cx="130" cy="135.5" r="3.5" fill="#1B4F72"/><circle cx="200" cy="91.3" r="3.5" fill="#1B4F72"/><circle cx="270" cy="68.7" r="3.5" fill="#1B4F72"/><circle cx="340" cy="50.4" r="3.5" fill="#1B4F72"/><polyline points="60,52.8 130,120.9 200,149.1 270,169.4 340,178.1" fill="none" stroke="#b03a2e" stroke-width="2"/><circle cx="60" cy="52.8" r="3.5" fill="#b03a2e"/><circle cx="130" cy="120.9" r="3.5" fill="#b03a2e"/><circle cx="200" cy="149.1" r="3.5" fill="#b03a2e"/><circle cx="270" cy="169.4" r="3.5" fill="#b03a2e"/><circle cx="340" cy="178.1" r="3.5" fill="#b03a2e"/><text x="50" y="40" font-size="11" fill="#1B4F72">原子半径nm(蓝)</text><text x="230" y="40" font-size="11" fill="#b03a2e">熔点℃(红)</text><text x="60" y="165.1" font-size="10" fill="#1B4F72" text-anchor="middle">0.152</text>
+<text x="130" y="128.5" font-size="10" fill="#1B4F72" text-anchor="middle">0.186</text>
+<text x="200" y="84.3" font-size="10" fill="#1B4F72" text-anchor="middle">0.227</text>
+<text x="270" y="61.7" font-size="10" fill="#1B4F72" text-anchor="middle">0.248</text>
+<text x="340" y="43.4" font-size="10" fill="#1B4F72" text-anchor="middle">0.265</text><text x="60" y="66.8" font-size="10" fill="#b03a2e" text-anchor="middle">180.5</text>
+<text x="130" y="134.9" font-size="10" fill="#b03a2e" text-anchor="middle">97.79</text>
+<text x="200" y="163.1" font-size="10" fill="#b03a2e" text-anchor="middle">63.65</text>
+<text x="270" y="183.4" font-size="10" fill="#b03a2e" text-anchor="middle">38.89</text>
+<text x="340" y="192.1" font-size="10" fill="#b03a2e" text-anchor="middle">28.4</text><text x="60" y="200" font-size="12" fill="#1a2530" text-anchor="middle">Cs</text>
+<text x="130" y="200" font-size="12" fill="#1a2530" text-anchor="middle">Cs</text>
+<text x="200" y="200" font-size="12" fill="#1a2530" text-anchor="middle">Cs</text>
+<text x="270" y="200" font-size="12" fill="#1a2530" text-anchor="middle">Cs</text>
+<text x="340" y="200" font-size="12" fill="#1a2530" text-anchor="middle">Cs</text></svg><p class="figcap">图3 碱金属从Li到Cs：原子半径逐个增大（0.152→0.265nm），熔点逐个降低（180.5→28.4℃）——递变看得见</p></div>
+<div class="try"><span class="tag">随读自验⑤</span>把Li、Na、K按与水反应剧烈程度排序：<span class="ans">K &gt; Na &gt; Li</span>（金属性越强越剧烈）。</div>
+
+<h3>2. 卤素：越往下越"温和"</h3>
+<p>卤族（F、Cl、Br、I）最外层都是7个电子，典型的非金属元素，自然界都以化合态存在。它们都能与氢气化合，但"火力"逐级下降（教材表4-4）：H₂+F₂=2HF暗处剧烈化合爆炸、很稳定；H₂+Cl₂=2HCl需光照或点燃、较稳定；H₂+Br₂<sup>Δ</sup>=2HBr不如HCl稳定；H₂+I₂⇌2HI不断加热缓慢反应，生成的HI还会分解。它们单质间还能互相"抢位"（置换）：2NaBr+Cl₂=2NaCl+Br₂；实验4-1用氯水、溴水依次置换溴、碘，验证氧化性强弱顺序：<mark>F₂&gt;Cl₂&gt;Br₂&gt;I₂</mark>（氧化性逐渐减弱）。</p>
+<div class="key"><span class="tag">收口判据</span><mark>元素的性质主要由原子结构决定，其中最外层电子数是关键</mark>：同主族从上到下，电子层数依次增多→原子半径逐渐增大→失电子能力逐渐增强、得电子能力逐渐减弱→金属性逐渐增强、非金属性逐渐减弱（p104原话）。</div>
+<div class="pit"><span class="tag">坑点</span>0族的"0"指稀有气体通常不发生化学反应、化合价被定为0（p95原话），不是"它们没有化合价"。另外"金属性增强"说的是<mark>失电子</mark>能力，不是"更硬更闪"——柔软、低熔点、密度小是物理性质，另一码事（p101原话：碱金属都比较柔软，有延展性，密度较小，熔点较低）。</div>
+
+<div class="check"><span class="tag">收口复述（先自答再看括号）</span>
+<p>① 原子序数等于什么？（=核电荷数=质子数=核外电子数）② 周期表的横行、纵列各叫什么、数各多少？（7个周期，18列16族）③ ¹H、²H、³H互为什么关系？各自叫什么？（互为同位素；都是氢元素的核素：氕、氘、氚）④ 同主族从上到下金属性、非金属性怎么变？（金属性增强、非金属性减弱）——四问全对，本节收口。</p></div>
+
+<h2><span class="step-tag">第5站</span>节末自测（先做，答案就在后面）</h2>
+<div class="box">
+<p><b>①</b>（教材p106练习1原题）⁶Li、⁷Li、²³Na、²⁴Mg、¹⁴C、¹⁴N中，互为同位素的是？</p>
+<p class="small">答案：<span class="ans">⁶Li与⁷Li</span>（质子数都是3，中子数3和4）。¹⁴C与¹⁴N质量数虽同为14，但质子数6≠7，不是同位素。</p>
+<p><b>②</b>（教材p106练习2原题）碳的一种核素¹⁴C，原子核中含有几个中子？</p>
+<p class="small">答案：A=14，Z=6，N=<span class="ans">8</span>个。</p>
+<p><b>③</b>（自编）画出钾（19号）的原子结构示意图，并判断³⁵Cl与³⁷Cl是否互为同位素。</p>
+<p class="small">答案：+19）2、8、8、1；Z都是17、N分别是18和20，<span class="ans">互为同位素</span>，氯的相对原子质量35.45就是按两者比例算的平均值。</p>
+<p><b>④</b>（自编）镁（12号）在周期表中位于第几周期、第几族？</p>
+<p class="small">答案：排布2、8、2，3层最外2个→<span class="ans">第3周期、第ⅡA族</span>。</p>
+</div>
+
+<div class="box"><span class="tag" style="font-weight:bold;color:#4a9eff">高考怎么考</span>
+<p>考什么：A/Z/N粒子数计算、1–20号原子结构示意图、周期表定位、同位素判断——都是选择题高频基础点。怎么考：给"A/Z X"符号算中子数；给排布图定周期和族；给一组核素选"互为同位素"的组合（陷阱常是质量数相同、质子数不同）。真题锚：本节暂未收录对口真题，候补。</p></div>
+
+<div class="fig"><svg width="660" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第四章三节串联，4.1原子结构与元素周期表至4.2元素周期律至4.3化学键"><rect x="0" y="0" width="660" height="140" fill="#ffffff"/><rect x="20" y="40" width="180" height="56" rx="6" fill="#1B4F72"/><text x="110" y="64" font-size="12" fill="#fff" text-anchor="middle">4.1 原子结构与元素周期表</text><text x="110" y="82" font-size="11" fill="#eef4f9" text-anchor="middle">(本节·已学)</text><rect x="240" y="40" width="180" height="56" rx="6" fill="#2C6E9E"/><text x="330" y="64" font-size="12" fill="#fff" text-anchor="middle">4.2 元素周期律</text><text x="330" y="82" font-size="11" fill="#eef4f9" text-anchor="middle">(下一站)</text><rect x="460" y="40" width="180" height="56" rx="6" fill="#9db8cf"/><text x="550" y="64" font-size="12" fill="#fff" text-anchor="middle">4.3 化学键</text><text x="550" y="82" font-size="11" fill="#eef4f9" text-anchor="middle">(再下一站)</text><line x1="200" y1="68" x2="240" y2="68" stroke="#555" stroke-width="2"/><polygon points="240,68 232,64 232,72" fill="#555"/><line x1="420" y1="68" x2="460" y2="68" stroke="#555" stroke-width="2"/><polygon points="460,68 452,64 452,72" fill="#555"/><text x="340" y="125" font-size="12" fill="#1a2530" text-anchor="middle">前置已学：2.2离子反应 · 3.1-3.2金属与非金属</text></svg><p class="figcap">图4 节末位置图·本节在第四章中的位置：先认原子（本节）→再找规律（4.2元素周期律）→最后看原子怎么牵手成键（4.3化学键）</p></div>
+
+<p class="small">➡ 下一站 4.2《元素周期律》（p107起）：本节的"家族像"升级成精确的规律——同一周期从左到右、同一主族从上到下，性质到底怎么变？</p>
+
+<div class="foot">
+  <p>本件为人教版《普通高中教科书·化学 必修 第一册》（人民教育出版社2019年第1版）第四章第一节（p92–106）零基础首学版学习笔记。节界实锚：4.1节名页=印刷页92（图97亲读实锚）·右界=4.2节名页=印刷页107（图112亲读实锚）·节域p92–106共15页闭合；影印偏移=图N=印刷页N-5（图98页脚93、图111页脚106、图112页脚107三点以上实测）。影印源=智慧教育平台asset contentId=5cd19072-e40d-4a73-8580-7b7ada5d4005·ts=1787023188651（详情API现场实取）·sha256留痕见随件。事实点均影印直读并附来源页码；四附件（教材原话族清单/事实点自验表/条款自检T1-T12/通读卡点）+QC单+print渲染pdf+sympy验点log随commit同链。队2席·并行搜索员B线·1108开工令承办·首件检验制遵行·候批禁直推main。</p>
+</div>
+</div>
+</body>
+</html>
