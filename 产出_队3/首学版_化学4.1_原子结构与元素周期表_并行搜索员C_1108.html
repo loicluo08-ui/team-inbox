@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化学4.1 原子结构与元素周期表 · 零基础首学版 v1.0（队3席C线）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  b { color: #f0f3f7; }
+  .talk { background: #1c2230; border: 1px solid #2c3a4e; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .q { color: #4a9eff; font-weight: bold; }
+  .check { background: #182430; border-left: 4px solid #4a9eff; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .check .tag, .try .tag, .pit .tag, .alt .tag { display: inline-block; background: #324358; color: #cfe4ff; font-size: 13px; font-weight: bold; padding: 2px 10px; border-radius: 4px; margin-bottom: 6px; }
+  .box { background: #1a222e; border: 1px solid #33445a; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
+  .key { background: #223047; border-left: 4px solid #ffc94d; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .try { background: #1b242f; border: 1px dashed #3d5573; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit { background: #2a1f22; border-left: 4px solid #ff7a6e; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit .tag { background: #5a3038; color: #ffd6d0; }
+  .wrong { color: #ff8f84; font-weight: bold; }
+  .ans { color: #7ee2a8; font-weight: bold; }
+  .alt { background: #20283a; border: 1px solid #354764; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .m { font-family: "SF Mono", Consolas, monospace; background: #0f1420; color: #9ecbff; padding: 1px 6px; border-radius: 4px; font-size: 0.95em; }
+  .big { font-size: 19px; color: #fff; }
+  .detail { color: #9aa7b8; font-size: 15px; }
+  .small { color: #8a97a8; font-size: 14px; }
+  .fig { text-align: center; margin: 18px 0; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 6px; }
+  mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.35) 55%); color: #eaf2ff; padding: 0 2px; }
+  .note-red { color: #ff9a90; font-size: 14px; }
+  ul.blue { padding-left: 22px; } ul.blue li { margin: 6px 0; }
+  table { border-collapse: collapse; margin: 14px 0; width: 100%; }
+  th, td { border: 1px solid #33445a; padding: 7px 10px; font-size: 15px; text-align: center; }
+  th { background: #1c2530; color: #cfe4ff; }
+  .foot { border-top: 1px solid #2c3644; margin-top: 48px; padding-top: 16px; color: #67737f; font-size: 13px; line-height: 1.7; }
+  .box.kao { border-left: 4px solid #ffc94d; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 10mm 8mm; }
+    .page b, .page h1, .page h3, .page .m, .page .big, .page .detail, .page .try .q, .page .ans, .page .wrong, .page .q { color: #111; }
+    .page .talk, .page .box, .page .try, .page .check, .page .key, .page .pit, .page .alt { background: #f5f5f5 !important; border-color: #999 !important; }
+    .page th { background: #e8ecf2 !important; color: #111 !important; }
+    .page .key { background: #fff8e0 !important; }
+    .page .pit { background: #fdeeee !important; }
+    .page .step-tag { background: #d8e8ff !important; color: #111 !important; }
+    .page .tag { background: #e8ecf2 !important; color: #111 !important; }
+    .page mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.30) 55%) !important; color: #111 !important; }
+    .page .foot { color: #444; }
+    .page .small, .page .figcap, .page .note-red { color: #333 !important; }
+    .page h2 { color: #111; border-left-color: #2b6cb0; }
+    .page .note-red { color: #b03020 !important; }
+    .page .fig rect { fill: #f2f4f8 !important; stroke: #666 !important; }
+    .page .fig text { fill: #111 !important; }
+    .page .fig line, .page .fig path, .page .fig polyline { stroke: #666 !important; }
+    .page .fig circle { fill: #7aa5d8 !important; }
+    .page .fig marker path { fill: #666 !important; }
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+    .page .m { background: #eef2f7 !important; color: #111 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>化学4.1 原子结构与元素周期表</h1>
+<div class="sub">人教版《化学 必修 第一册》第四章第一节 · 印刷页p92–106 · 零基础首学版 v1.0 · 预计40分钟</div>
+
+<p>前几章你学的是"物质怎么分、反应怎么发生"：分散系把混合物分类，氧化还原用化合价升降看清电子转移。但你有没有想过一个问题——<b>同样是单质，钠扔进水里炸出火花，铜扔进水里却什么反应都没有；同样是跟氢气反应，氟在暗处就能爆炸，碘却怎么加热都慢吞吞</b>。性质差别这么大，根源在哪里？<mark class="nb">答案藏在原子内部：原子核外的电子怎么排、元素在周期表里站哪个位置，几乎决定了它的一切化学表现</mark>。这一节我们就把原子"拆开"看个清楚，再认识化学里最重要的"地图"——元素周期表。</p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<ul class="blue">
+<li>用<b>质量数 = 质子数 + 中子数</b>这个式子，算出任意原子核里有几个质子、几个中子；</li>
+<li>画出1~20号元素的<b>原子结构示意图</b>，并说出核外电子排布的三条规律；</li>
+<li>说清元素周期表<b>7个横行、18个纵列</b>是怎么排出来的，并从一个方格里读出元素的四种基本信息；</li>
+<li>分清<b>核素</b>和<b>同位素</b>两个词，正确称呼像 ¹H、²H、³H 这样"同一家族"的原子；</li>
+<li>以<b>碱金属</b>和<b>卤族</b>为例，完成一条推理链：<b>位置 → 结构 → 性质</b>，解释同一族元素为什么性质相似、又有规律地变化。</li>
+</ul>
+</div>
+
+<h2><span class="step-tag">STEP 1</span>拆开原子：质量数 A = Z + N</h2>
+
+<p>初中你已经知道：原子由<b>原子核</b>和<b>核外电子</b>构成，原子核由<b>质子</b>和<b>中子</b>构成。现在补一个关键事实——<mark class="nb">原子的质量几乎全部集中在原子核上</mark>（电子太轻，几乎可以忽略）。教材p92是这样定量描述的：</p>
+
+<div class="talk">
+<p>质子和中子的相对质量都近似为1。如果忽略电子的质量，把核内所有质子和中子的相对质量取近似整数值相加，所得的数值叫做<b>质量数（A）</b>。用符号记：<b>Z = 质子数</b>，<b>N = 中子数</b>。</p>
+<p class="big" style="text-align:center"><b>质量数（A）＝ 质子数（Z）＋ 中子数（N）</b></p>
+<p class="small">（教材p92原式照录。质子数Z决定了它是哪种元素——这就是第二章说过的"元素是具有相同质子数的一类原子的总称"。）</p>
+</div>
+
+<div class="try">
+<span class="tag">随读随验①</span>
+<p>考古测年用的碳原子记作 <span class="m">¹⁴₆C</span>（左上角是质量数A，左下角是质子数Z）。它的核内有几个质子、几个中子？</p>
+<p>做法：Z 直接读左下角 = 6；N = A − Z = 14 − 6 = <span class="ans">8</span>。</p>
+<p class="small">这道题就是教材p106"练习与应用"第2题的原题（答案选B），学完这节你要能30秒内做对它。</p>
+</div>
+
+<p>记住这一步的分工：<b>质子数决定"这是谁"（哪种元素），中子数只影响"它多重"</b>。这个分工后面讲同位素时会反复用到。</p>
+
+<h2><span class="step-tag">STEP 2</span>电子层：核外电子的"楼层"</h2>
+
+<p>原子核外有很多电子时，它们不是乱挤在一起的，而是在<b>能量不同的区域内</b>运动。教材p92把这些区域简化成不连续的<b>壳层</b>，就叫<b>电子层</b>——可以想象成一栋楼：离地（原子核）越近的楼层，电子能量越低；越远的楼层能量越高。</p>
+
+<div class="box">
+<p><b>楼层编号</b>：从内到外共7层，两套记号等价——数字 <span class="m">n = 1,2,3,4,5,6,7</span>，或字母 <span class="m">K L M N O P Q</span>（K=第1层，L=第2层……）。</p>
+<p><b>入住规则</b>（教材p93原文，三条）：</p>
+<ul class="blue">
+<li><b>先内后外</b>：一般先从内层排起，一层充满后再填充下一层；</li>
+<li><b>第n层最多住 2n² 个</b>：K层2、L层8、M层18、N层32……；</li>
+<li><b>最外层不超过8个</b>（若最外层就是K层，则不超过2个）。最外层住满8个电子（K层为最外层时2个）的结构是<b>相对稳定结构</b>。</li>
+</ul>
+</div>
+
+<div class="fig">
+<svg width="360" height="260" viewBox="0 0 360 260" role="img" aria-label="钠原子电子层模型示意图">
+  <circle cx="180" cy="130" r="105" fill="none" stroke="#3d5573" stroke-width="1.5"/>
+  <circle cx="180" cy="130" r="72" fill="none" stroke="#3d5573" stroke-width="1.5"/>
+  <circle cx="180" cy="130" r="40" fill="none" stroke="#3d5573" stroke-width="1.5"/>
+  <circle cx="180" cy="130" r="16" fill="#7aa5d8"/>
+  <text x="180" y="136" fill="#f0f3f7" font-size="13" text-anchor="middle" font-weight="bold">+11</text>
+  <circle cx="180" cy="97" r="5" fill="#e8b74a"/><circle cx="212" cy="112" r="5" fill="#e8b74a"/>
+  <text x="238" y="94" fill="#8fa3b8" font-size="12">K：2</text>
+  <circle cx="222" cy="185" r="5" fill="#e8b74a"/><circle cx="180" cy="202" r="5" fill="#e8b74a"/><circle cx="138" cy="185" r="5" fill="#e8b74a"/>
+  <circle cx="108" cy="130" r="5" fill="#e8b74a"/><circle cx="120" cy="75" r="5" fill="#e8b74a"/><circle cx="240" cy="75" r="5" fill="#e8b74a"/>
+  <circle cx="252" cy="130" r="5" fill="#e8b74a"/><circle cx="228" cy="160" r="5" fill="#e8b74a"/>
+  <text x="262" y="205" fill="#8fa3b8" font-size="12">L：8</text>
+  <circle cx="180" cy="25" r="5" fill="#e8b74a"/>
+  <text x="180" y="14" fill="#f0f3f7" font-size="12" text-anchor="middle">M：1</text>
+  <text x="38" y="130" fill="#7d8a99" font-size="12">Na</text>
+</svg>
+<p class="figcap">钠原子（11号）的核外电子排布：2、8、1（对位教材图4-1/4-2重绘）</p>
+</div>
+
+<p>排布规律可以从稀有气体原子的"满员"排布里看得最清楚（教材p93表）：</p>
+
+<table>
+<tr><th>元素</th><th>核电荷数</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th></tr>
+<tr><td>氦 He</td><td>2</td><td>2</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>氖 Ne</td><td>10</td><td>2</td><td>8</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>氩 Ar</td><td>18</td><td>2</td><td>8</td><td><b>8</b></td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>氪 Kr</td><td>36</td><td>2</td><td>8</td><td>18</td><td>8</td><td>—</td><td>—</td></tr>
+<tr><td>氙 Xe</td><td>54</td><td>2</td><td>8</td><td>18</td><td>18</td><td>8</td><td>—</td></tr>
+<tr><td>氡 Rn</td><td>86</td><td>2</td><td>8</td><td>18</td><td>32</td><td>18</td><td>8</td></tr>
+</table>
+<p class="small">看点：M层明明能住18个，Ar却只住8个就"关门"了——因为此时M层是最外层，受"最外层≤8"约束。稀有气体正是最外层满员（8或2），化学性质才格外不活泼。</p>
+
+<div class="try">
+<span class="tag">随读随验②</span>
+<p>不查答案，先自己画：17号元素氯（Cl）的核外电子排布是？</p>
+<p>提示：17 = 2 + 8 + 7。前三层依次住满：K层2个、L层8个，剩下7个进M层（最外层7个≤8，合法）。</p>
+<p>答案：<span class="ans">2、8、7</span>。顺手验证一下：2×1²+2×2²+2×3² = 2+8+18，M层容量18确实够住7个。</p>
+</div>
+
+<div class="pit">
+<span class="tag">易踩坑</span>
+<p><span class="wrong">坑：把"第n层最多2n²"当成每层实际住满2n²。</span>2n²只是<b>容量上限</b>，实际住几个要同时满足"先内后外"和"最外层≤8"。比如Ar的M层容量18，实际只住8个。</p>
+<p class="note-red">自验口令：画完示意图，把各层电子数加起来，总和必须等于核电荷数（原子不带电）。加起来不对，一定是排错了。</p>
+</div>
+
+<h2><span class="step-tag">STEP 3</span>元素周期表：给118种元素安家</h2>
+
+<p>1869年，俄国化学家<b>门捷列夫</b>把当时已知的元素按<b>相对原子质量</b>由小到大排列、性质相似的放在一起，制出了第一张元素周期表。后来原子结构的奥秘被揭示，排序依据改成了<b>原子的核电荷数</b>，逐渐演变成今天通用的形式（教材p94）。按顺序给元素编号，就得到<b>原子序数</b>：</p>
+
+<div class="key">
+<p class="big" style="text-align:center"><b>原子序数 ＝ 核电荷数 ＝ 质子数 ＝ 核外电子数</b></p>
+<p class="small">四个数对原子（不带电时）永远是同一个数——这是全节最重要的"万能换算"，考题里反复让你来回换算。</p>
+</div>
+
+<p>周期表的排法只有两句话（教材p95原文）：</p>
+<ul class="blue">
+<li><b>横行 → 周期</b>：把<b>电子层数相同</b>的元素，按原子序数递增<b>从左到右</b>排成一行。共<b>7个周期</b>；<b>周期序数 = 该周期元素的电子层数</b>。第1周期只有2种元素，第2、3周期各8种——这三个周期叫<b>短周期</b>，其余（4~7）叫<b>长周期</b>。</li>
+<li><b>纵列 → 族</b>：把<b>最外层电子数相同</b>的元素，按电子层数递增<b>从上到下</b>排成一列。共<b>18个纵列</b>；其中8、9、10三个纵列共同组成<b>第Ⅷ族</b>。主族（族序数后标A）由短周期和长周期元素共同构成；副族（标B，除Ⅷ族）完全由长周期元素构成。稀有气体化学性质极不活泼、化合价定为0，叫<b>0族</b>。有些族有专名：<b>第ⅠA族（除氢）叫碱金属元素</b>，<b>第ⅦA族叫卤族元素</b>。</li>
+</ul>
+
+<div class="fig">
+<svg width="520" height="300" viewBox="0 0 520 300" role="img" aria-label="元素周期表骨架示意图">
+  <rect x="40" y="30" width="30" height="30" fill="#2b4a6d" stroke="#3d5573"/><text x="55" y="50" font-size="11" text-anchor="middle" fill="#fff">H</text>
+  <rect x="430" y="30" width="30" height="30" fill="#274052" stroke="#3d5573"/><text x="445" y="50" font-size="11" text-anchor="middle" fill="#fff">He</text>
+  <rect x="40" y="70" width="30" height="30" fill="#2b4a6d" stroke="#3d5573"/><text x="55" y="90" font-size="11" text-anchor="middle" fill="#fff">Li</text>
+  <rect x="100" y="70" width="30" height="30" fill="#6d4a2b" stroke="#3d5573"/><text x="115" y="90" font-size="11" text-anchor="middle" fill="#fff">Be</text>
+  <rect x="430" y="70" width="30" height="30" fill="#274052" stroke="#3d5573"/><text x="445" y="90" font-size="11" text-anchor="middle" fill="#fff">Ne</text>
+  <rect x="40" y="110" width="30" height="30" fill="#2b4a6d" stroke="#3d5573"/><text x="55" y="130" font-size="11" text-anchor="middle" fill="#fff">Na</text>
+  <rect x="100" y="110" width="30" height="30" fill="#6d4a2b" stroke="#3d5573"/><text x="115" y="130" font-size="11" text-anchor="middle" fill="#fff">Mg</text>
+  <rect x="430" y="110" width="30" height="30" fill="#274052" stroke="#3d5573"/><text x="445" y="130" font-size="11" text-anchor="middle" fill="#fff">Ar</text>
+  <rect x="40" y="150" width="30" height="30" fill="#2b4a6d" stroke="#3d5573"/><text x="55" y="170" font-size="11" text-anchor="middle" fill="#fff">K</text>
+  <rect x="430" y="150" width="30" height="30" fill="#274052" stroke="#3d5573"/><text x="445" y="170" font-size="11" text-anchor="middle" fill="#fff">Kr</text>
+  <rect x="40" y="190" width="30" height="30" fill="#2b4a6d" stroke="#3d5573"/><text x="55" y="210" font-size="11" text-anchor="middle" fill="#fff">Rb</text>
+  <rect x="430" y="190" width="30" height="30" fill="#274052" stroke="#3d5573"/><text x="445" y="210" font-size="11" text-anchor="middle" fill="#fff">Xe</text>
+  <rect x="40" y="230" width="30" height="30" fill="#2b4a6d" stroke="#3d5573"/><text x="55" y="250" font-size="11" text-anchor="middle" fill="#fff">Cs</text>
+  <rect x="430" y="230" width="30" height="30" fill="#274052" stroke="#3d5573"/><text x="445" y="250" font-size="11" text-anchor="middle" fill="#fff">Rn</text>
+  <rect x="100" y="230" width="30" height="30" fill="#6d4a2b" stroke="#3d5573"/><text x="115" y="250" font-size="11" text-anchor="middle" fill="#fff">Ba</text>
+  <rect x="160" y="230" width="30" height="30" fill="#4a4a4a" stroke="#3d5573"/><text x="175" y="250" font-size="10" text-anchor="middle" fill="#fff">副族区</text>
+  <rect x="340" y="230" width="30" height="30" fill="#6d2b3f" stroke="#3d5573"/><text x="355" y="250" font-size="11" text-anchor="middle" fill="#fff">F</text>
+  <rect x="400" y="230" width="30" height="30" fill="#6d2b3f" stroke="#3d5573"/><text x="415" y="250" font-size="11" text-anchor="middle" fill="#fff">Cl</text>
+  <rect x="340" y="190" width="30" height="30" fill="#6d2b3f" stroke="#3d5573"/><text x="355" y="210" font-size="11" text-anchor="middle" fill="#fff">Br</text>
+  <rect x="340" y="150" width="30" height="30" fill="#6d2b3f" stroke="#3d5573"/><text x="355" y="170" font-size="11" text-anchor="middle" fill="#fff">I</text>
+  <rect x="340" y="110" width="30" height="30" fill="#6d2b3f" stroke="#3d5573"/>
+  <text x="90" y="280" font-size="12" fill="#8fa3b8">← ⅠA（碱金属，除氢）</text>
+  <text x="330" y="280" font-size="12" fill="#8fa3b8">ⅦA（卤族）→</text>
+  <text x="465" y="280" font-size="12" fill="#8fa3b8">0族（稀有气体）</text>
+  <text x="200" y="20" font-size="12" fill="#7d8a99">7个横行=7个周期（1~3为短周期）｜18个纵列=18个族</text>
+</svg>
+<p class="figcap">周期表骨架示意（只画族边缘和本节主角：蓝=ⅠA碱金属、红=ⅦA卤族、灰绿=0族稀有气体）</p>
+</div>
+
+<p>再看教材p96的<b>方格</b>。周期表里每个方格一般标四种信息，以氢为例：<b>原子序数1、元素符号H、元素名称氢、相对原子质量1.008</b>。会读方格，周期表就是你的"元素身份证库"。</p>
+
+<div class="try">
+<span class="tag">随读随验③</span>
+<p>第3周期、第ⅦA族的元素是谁？它原子核外怎么排布？</p>
+<p>推理链：第3周期 → 电子层数3；ⅦA → 最外层7个。核电荷数 = 2+8+7 = 17，正是<span class="ans">氯（Cl）</span>。你看——只凭"地址"（周期和族）就倒推出了"户型"（电子排布），这就是周期表的威力。</p>
+</div>
+
+<h2><span class="step-tag">STEP 4</span>核素与同位素：同一元素的"孪生兄弟"</h2>
+
+<p>有了 A = Z + N，就能解释一个新现象：同一种元素（Z相同）的原子，<b>中子数不一定相同</b>。氢就有三种（教材p96表4-1）：</p>
+
+<table>
+<tr><th>原子名称</th><th>原子符号（ᴬZ X）</th><th>质子数Z</th><th>中子数N</th></tr>
+<tr><td>氕（piē）</td><td><span class="m">¹₁H</span></td><td>1</td><td>0</td></tr>
+<tr><td>氘（dāo）</td><td><span class="m">²₁H 或 D</span></td><td>1</td><td>1</td></tr>
+<tr><td>氚（chuān）</td><td><span class="m">³₁H 或 T</span></td><td>1</td><td>2</td></tr>
+</table>
+
+<div class="talk">
+<p><b>两个定义（教材p96原文）：</b></p>
+<ul class="blue">
+<li>把<b>具有一定数目质子和一定数目中子的一种原子</b>叫做<b>核素</b>。¹H、²H、³H就各为一种核素。</li>
+<li><b>质子数相同而中子数不同的同一元素的不同原子</b>互称<b>同位素</b>（即同一元素的不同核素互称同位素）。</li>
+</ul>
+<p>"同位"的意思：它们质子数相同，在元素周期表中<b>占有同一个位置</b>——所以叫"同"位。</p>
+</div>
+
+<p>记号 <span class="m">ᴬZ X</span> 统一读法：<b>左上角质量数A、左下角质子数Z</b>。比如教材p106提到的117号元素Ts（2016年由IUPAC命名，中文名生僻字在文本层显示不全，以"音tián"如实照录、原字以影印页为准），中子数176，写成 <span class="m">²⁹³₁₁₇Ts</span>（A = 117+176 = 293）。</p>
+
+<div class="pit">
+<span class="tag">易踩坑</span>
+<p><span class="wrong">坑一：以为"中子数不同就是不同元素"。</span>错。决定元素身份的只有<b>质子数</b>。¹²C、¹³C、¹⁴C的Z都是6，它们是<b>同一种元素（碳）</b>的三种核素。</p>
+<p><span class="wrong">坑二：以为"质量数相同就是同位素"。</span>同位素先看<b>Z是否相同</b>。¹⁴₆C和¹⁴₇N质量数都是14，但Z一个是6一个是7，是两种元素，谈不上同位素（这正是教材p106练习1(2)的考点）。</p>
+</div>
+
+<p>同位素到处都是：氧有 ¹⁶O、¹⁷O、¹⁸O 三种核素；碳有 ¹²C、¹³C、¹⁴C 等；铀有 ²³⁴U、²³⁵U、²³⁸U 等（教材p97）。天然存在的同位素相互间保持一定比率，所以——</p>
+
+<div class="key">
+<p><b>元素的相对原子质量 = 按该元素各种核素所占的百分比（丰度）计算出来的平均值</b>（教材p97口径，与第一章"相对原子质量"初中已知数据相衔接）。</p>
+<p class="small"><b>自编例（非教材原题·本席自拟用于演练加权平均）</b>：氯有两种主要核素 ³⁵Cl（相对原子质量34.969，丰度约75.8%）和 ³⁷Cl（36.966，约24.2%）。平均 = 34.969×0.758 + 36.966×0.242 ≈ <span class="ans">35.45</span>——正好落在35和37之间，也解释了方格里Cl标"35.45"这个"非整数"。</p>
+</div>
+
+<p>同位素不只是考试概念，它在真实世界里很重要（教材p97）：考古用 ¹⁴C 测定文物年代；²H 和 ³H 用于制造氢弹；放射性同位素释放的射线可以<b>育种、给金属探伤、诊断和治疗疾病</b>。比如美国科学家利比发明了¹⁴C断代法（利用死亡生物体中¹⁴C不断衰变测定年代），因此获1960年诺贝尔化学奖（教材p98"化学与职业"栏目）。</p>
+
+<div class="try">
+<span class="tag">随读随验④</span>
+<p>¹⁴C 测年为什么测的是"死物"？（提示结合正文一句话即可）</p>
+<p>答案要点：<span class="ans">¹⁴C会不断衰变</span>。生物活着时与外界交换物质，体内¹⁴C比例与大气一致；死亡后不再交换，¹⁴C只衰变不补充，比例随时间下降——比较剩余比例就能倒推死亡年代（教材p98"利用死亡生物体中¹⁴C不断衰变的原理对文物进行年代测定"）。</p>
+</div>
+
+<h2><span class="step-tag">STEP 5</span>同族找规律：碱金属与卤族</h2>
+
+<p>先立一个总纲（教材p98）：<b>金属元素的原子最外层电子一般少于4个，反应中容易失去电子，具有金属性；非金属元素的原子最外层电子一般多于4个，容易得到电子，具有非金属性——原子结构决定元素的性质</b>。同族元素最外层电子数相同，所以化学性质相似；从上到下电子层数增多，所以性质又规律地变化。教材选了两族代表来验证。</p>
+
+<h3>5.1 碱金属（第ⅠA族，除氢）：Li → Na → K → Rb → Cs</h3>
+
+<table>
+<tr><th>元素</th><th>核电荷数</th><th>电子排布</th><th>最外层电子数</th><th>原子半径/nm</th></tr>
+<tr><td>锂 Li</td><td>3</td><td>2、1</td><td>1</td><td>0.152</td></tr>
+<tr><td>钠 Na</td><td>11</td><td>2、8、1</td><td>1</td><td>0.186</td></tr>
+<tr><td>钾 K</td><td>19</td><td>2、8、8、1</td><td>1</td><td>0.227</td></tr>
+<tr><td>铷 Rb</td><td>37</td><td>2、8、18、8、1</td><td>1</td><td>0.248</td></tr>
+<tr><td>铯 Cs</td><td>55</td><td>2、8、18、18、8、1</td><td>1</td><td>0.265</td></tr>
+</table>
+<p class="small">（教材p99表，核电荷数与排布经sympy逐项验算：各层之和=核电荷数，5/5过，留痕见随件附件2。）</p>
+
+<p><b>相似性</b>：最外层都只有1个电子，都容易失去1个电子，产物中化合价都是<b>+1价</b>。都能与氧气、水反应：</p>
+<div class="box">
+<p class="m">4Li + O₂ =<span class="small">（加热）</span>= 2Li₂O　　2Na + O₂ =<span class="small">（加热）</span>= Na₂O₂</p>
+<p class="m">2Na + 2H₂O = 2NaOH + H₂↑　　2K + 2H₂O = 2KOH + H₂↑</p>
+<p class="small">（教材p101原式照录。注意：钠加热生成的是过氧化钠Na₂O₂，不是氧化钠。）</p>
+</div>
+
+<p><b>递变性</b>：从锂到铯，核电荷数增加 → <b>电子层数增多、原子半径增大</b> → 原子核对最外层电子的引力减弱 → <b>失电子能力增强，金属性增强</b>。表现：与水反应一个比一个剧烈——钠比锂剧烈、钾比钠剧烈，铷、铯遇空气或水立即燃烧，遇水甚至会爆炸（教材p101）。物理性质也有规律：熔点从Li的180.5℃一路降到Cs的28.40℃（教材p101表4-2）。</p>
+
+<h3>5.2 卤族（第ⅦA族）：F → Cl → Br → I</h3>
+
+<table>
+<tr><th>单质</th><th>颜色（常态）</th><th>状态</th></tr>
+<tr><td>F₂</td><td>淡黄绿色</td><td>气体</td></tr>
+<tr><td>Cl₂</td><td>黄绿色</td><td>气体</td></tr>
+<tr><td>Br₂</td><td>深红棕色</td><td>液体</td></tr>
+<tr><td>I₂</td><td>紫黑色</td><td>固体</td></tr>
+</table>
+<p class="small">（教材p102表4-3。四原子最外层都是7个电子：F 2,7；Cl 2,8,7；Br 2,8,18,7；I 2,8,18,18,7——教材图4-10，sympy验算5/5过。）</p>
+
+<p><b>相似性</b>：最外层都是7个电子，都容易得1个电子，都能与氢气化合生成卤化氢：</p>
+<div class="box">
+<p class="m">H₂ + F₂ = 2HF　暗处剧烈化合并爆炸，HF很稳定</p>
+<p class="m">H₂ + Cl₂ =<span class="small">光照或点燃</span>= 2HCl　反应较易，HCl较稳定</p>
+<p class="m">H₂ + Br₂ =<span class="small">加热</span>= 2HBr　加热至一定温度才反应，HBr不如HCl稳定</p>
+<p class="m">H₂ + I₂ =<span class="small">不断加热</span>= 2HI　缓慢反应，HI不稳定，同条件下同时分解（可逆反应，第五章介绍）</p>
+<p class="small">（教材p103表4-4照录：条件越来越苛刻、产物越来越不稳定。）</p>
+</div>
+
+<p><b>递变性</b>——看一个能"当场分胜负"的反应：<b>置换</b>。实验4-1（教材p104）：向KBr溶液和KI溶液中加氯水、向KI溶液中加溴水，能看到卤素"以强换弱"：</p>
+<div class="box">
+<p class="m">2NaBr + Cl₂ = 2NaCl + Br₂（教材p103照录）　　Cl₂ + 2KI = 2KCl + I₂</p>
+<p class="small">谁把谁换出来，谁的单质就更强。结论（教材p104）：<b>氧化性 F₂ ＞ Cl₂ ＞ Br₂ ＞ I₂</b>，逐渐减弱。</p>
+</div>
+
+<div class="key">
+<p class="big">同主族元素，从上到下：电子层数依次增多 → 原子半径逐渐增大 → <b>失电子能力逐渐增强（金属性↑），得电子能力逐渐减弱（非金属性↓）</b>。</p>
+<p class="small">碱金属（最外层1，易失）验证了"金属性增强"半句；卤素（最外层7，易得）验证了"非金属性减弱"半句。合成一句：<b>位置（同族上下）→ 结构（层数、半径）→ 性质（得失电子能力）</b>。</p>
+</div>
+
+<div class="try">
+<span class="tag">随读随验⑤</span>
+<p>教材p102"方法导引"教了一招叫<b>预测</b>：铷（Rb）与钠、钾同属ⅠA族，预测铷能否与水反应？</p>
+<p>答案：<span class="ans">能，而且比钾更剧烈</span>。推理链：同族最外层都是1个电子 → 性质相似（都能与水反应）；铷在钾下方 → 金属性更强 → 反应更剧烈。教材原文的例子正是"根据位置—结构预测铷也能与水反应"。</p>
+</div>
+
+<h2>收口：三句话带走这一节</h2>
+<div class="key">
+<p><b>第一句</b>：原子 = 原子核（质子Z+中子N）+ 核外电子；A = Z + N，原子序数 = 核电荷数 = Z = 核外电子数。</p>
+<p><b>第二句</b>：核外电子按层排布（先内后外、第n层最多2n²、最外层≤8）；周期表把电子层数相同的排成行（7个周期），最外层电子数相同的排成列（18个族），周期序数=电子层数。</p>
+<p><b>第三句</b>：同种元素的不同核素（Z同N不同）互为同位素；同主族从上到下，金属性增强、非金属性减弱——<b>位置、结构、性质是一条推理链</b>。</p>
+</div>
+
+<h2>自测：合上书做完再看答案</h2>
+<div class="check">
+<p><b>①</b> ²⁴₁₂Mg 的中子数是？它的最外层电子数是？</p>
+<p><b>②（自编·含教材p106练习1素材）</b> 下列各组互为同位素的是：A. ¹⁴₆C 与 ¹⁴₇N　B. ⁶₃Li 与 ⁷₃Li　C. Na⁺ 与 Na　D. ¹⁶₈O 与 ¹⁸₈O（可多选）</p>
+<p><b>③</b> 19号钾的电子排布是 2、8、8、1，为什么M层住8个就停，不住满18个？</p>
+<p><b>④（自编变式·依教材p102方法导引"预测"套路）</b> 砹At在ⅦA族I的下方。预测：At₂ 与 H₂ 的反应条件比I₂更苛刻还是更宽松？At的非金属性比I强还是弱？</p>
+<p><b>⑤</b> 写出K与水反应的化学方程式，并指出产物中钾的化合价。</p>
+</div>
+<div class="try">
+<span class="tag">参考答案（先做完再看）</span>
+<p>① <span class="ans">N = 24−12 = 12；最外层2、8、2中的2个</span>。</p>
+<p>② <span class="ans">B、D</span>（Z相同、N不同才叫同位素；A的Z不同是两种元素；C是同种元素的离子和原子）。</p>
+<p>③ <span class="ans">M层是K的最外层，最外层最多8个</span>；2n²=18只是容量上限。</p>
+<p>④ <span class="ans">更苛刻（在I下方，非金属性更弱，得电子能力更差）；非金属性比I弱</span>。</p>
+<p>⑤ <span class="ans">2K + 2H₂O = 2KOH + H₂↑；KOH中K为+1价</span>。</p>
+</div>
+
+<div class="box kao">
+<p><b>高考怎么考（考位锚·考纲级）</b></p>
+<p>本节在高考与合格考中的常规落点：①用 A = Z + N 做粒子数换算（选择题高频）；②判断两原子是否互为同位素（常与"质量数相同""电子数相同"设置陷阱）；③由周期表位置写原子结构示意图、再由最外层电子数推性质（位置—结构—性质三联推断）；④同主族递变比较（金属性/非金属性/氢化物稳定性/单质氧化性强弱排序）。</p>
+<p class="small"><b>真题锚申报：候采</b>——本节写作时真题锚池内无化学4.1的已录卷源实锚，按"宁缺毋编·候采明示"纪律不代拟具体真题，落点描述仅为考纲级概括，不指向任何具体卷题；卷源实锚候后续直读工序补录。</p>
+</div>
+
+<h2>下一站</h2>
+<p>这一节你已经会"看地图找地址、按地址推性质"了。但还有一个更大的规律没说破：整个周期表<b>从左到右</b>（而不只是同族上下）也藏着周期性的变化——这就是下一节的主题：<b>4.2 元素周期律</b>。届时"金属性、非金属性、化合价"会呈现出教科书级的循环规律。</p>
+
+<div class="fig">
+<svg width="560" height="120" viewBox="0 0 560 120" role="img" aria-label="本节位置图：本节在知识线上的串联">
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a9eff"/></marker></defs>
+  <rect x="20" y="40" width="110" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="75" y="65" fill="#d8dee6" font-size="13" text-anchor="middle">2.3 氧化还原</text>
+  <rect x="170" y="40" width="130" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="235" y="58" fill="#d8dee6" font-size="13" text-anchor="middle">4.1 原子结构与</text>
+  <text x="235" y="74" fill="#d8dee6" font-size="13" text-anchor="middle">元素周期表（本节）</text>
+  <rect x="340" y="40" width="100" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="390" y="65" fill="#8fa3b8" font-size="13" text-anchor="middle">4.2 元素周期律</text>
+  <rect x="480" y="40" width="70" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="515" y="65" fill="#8fa3b8" font-size="13" text-anchor="middle">4.3 化学键</text>
+  <line x1="130" y1="60" x2="168" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="300" y1="60" x2="338" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="440" y1="60" x2="478" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="235" y="105" fill="#5a6a7a" font-size="11" text-anchor="middle">化合价升降（2.3）的根源 = 电子得失（本节）→ 规律化（4.2）→ 成键方式（4.3）</text>
+</svg>
+<p class="small" style="text-align:center">这张图在说什么：2.3记过"化合价升降=电子转移"，本节说清电子在哪儿、怎么排；下一节把得失电子的难易变成全表规律。</p>
+</div>
+
+<div class="alt">
+<span class="tag">想多走一步？（可选）</span>
+<p><b>原子结构模型的演变</b>（教材p94"科学史话"）：人类对原子的认识是一步步修正的——道尔顿模型（1803年）：原子是不可再分的实心球；汤姆孙模型（1904年）：正电荷球体里镶嵌电子；卢瑟福模型（1911年）：中心有一个带正电的核，电子绕核运转如行星绕太阳；玻尔模型（1913年）：电子在一定轨道上绕核高速圆周运动；电子云模型（1926~1935年）：电子没有确定轨道。教材提醒：人类认识原子的过程"是漫长的，也是无止境的"。</p>
+<p><b>周期表也有"抢发明权"的故事</b>（教材p98"科学史话"）：德国化学家迈尔1864年就指出相对原子质量的规律性，还画过与门捷列夫十分相似的表，但1880年他坦言："我没有足够的勇气作出像门捷列夫那样深信不疑的预言。"门捷列夫敢给未知元素留空位并预言其性质——胆识也是科学的一部分。1913年莫塞莱证明原子序数=核电荷数，周期表才有了今天的牢固地基。</p>
+</div>
+
+<div class="foot">
+<p>对证源：人教版《普通高中教科书·化学 必修 第一册》（2019年版·人民教育出版社）第四章第一节，印刷页p92–106逐页对照。影印资产：官方整册PDF（sha256前16=101c079d2a6cc8e9，全值见切页台账）切页17张（pdf页96~112，映射=pdf页N→印刷页N+5，p92/p96对位目验在案），入库目录：产出_队3/影印fetch_化学41_1108/（抓取时间2026-11-08 18:23–18:44，URL与sha256台账随附件1）。</p>
+<p>本节影印域：4.1《原子结构与元素周期表》=印刷页p92–106（p92章首节名页、p93思考与讨论稀有气体表、p94门捷列夫/原子序数、p95周期与族、p96方格/表4-1氢核素、p97同位素应用、p98科学史话、p99碱金属表、p100探究、p101表4-2与方程式、p102表4-3/方法导引、p103表4-4、p104实验4-1、p105研究与实践、p106练习与应用8题）；右界锚=印刷页p107起"第二节 元素周期律"。</p>
+<p>底本口径：人教版2019必修第一册（队3席1108裁决沿e747bca申报·规划师清单T1鲁科版标注作废——鲁科版2019必修一实为3章无第4章）。术语对齐：元素定义/分散系/氧化还原/化合价/物质的量沿化学1–3章已定稿口径，未重定义。宁缺毋编声明：自编例2处显式标注（氯平均相对原子质量加权演算、随读随验④要点归纳）；T11真题锚候采不代拟；p105"研究与实践"为活动任务按节界如实标注不代做；Ts中文名生僻字在文本层显示不全、以"音tián"照录（原字以影印页为准）。</p>
+<p>队3席（并行搜索员C·agent 6a9cf5659142687cba2de6b9）·1108·承管理员1108 19:16接管令（B席超时让渡，沿用claim ec9c66e+分支dui3_chem41_1108）·分支候批禁直推main。版本链：v1.0（1108首版：T12节首清单/T11考位锚候采/节末位置图/print V2.2层随件）。sympy验点43/43 ALL PASS（py+log随commit，含接管复跑留痕）。</p>
+</div>
+
+</div>
+</body>
+</html>

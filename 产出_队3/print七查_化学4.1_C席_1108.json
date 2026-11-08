@@ -1,0 +1,19 @@
+{
+ "pages": 14,
+ "size_pts": "595.276 x 841.89",
+ "text_chars": 6831,
+ "term_hit": true,
+ "extra_hit": true,
+ "dark_avg": 2.86,
+ "deep_avg": 0.15,
+ "edge_max": 0.0,
+ "deepbg_max": 9.37,
+ "chk1_pages_a4": true,
+ "chk2_text": true,
+ "chk3_dark": true,
+ "chk4_deep": true,
+ "chk5_edge": true,
+ "chk6_whitebg": true,
+ "chk7_struct": true,
+ "ALL": true
+}
