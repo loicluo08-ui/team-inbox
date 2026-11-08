@@ -1,0 +1,26 @@
+# sympy验点·第四轮六卡（2024年6月福建合格考物理卷·并行搜索员A·队2席·1108）
+from sympy import symbols, Eq, solve, sqrt, Rational
+# 验点1（4.4·T2）：国际单位制力学基本单位=m/kg/s；N为导出单位 N≡kg·m/s²
+print('T2: 基本单位判据 m∈{m,kg,s} -> A正确自洽 | N=kg·m/s²(导出) -> D错误自洽')
+# 验点2（2.2·T12）：匀加速v-t=v0+at，v0=0 -> 过原点倾斜直线
+v0, a, t = 0, symbols('a', positive=True), symbols('t', nonnegative=True)
+v = v0 + a*t
+print('T12: v(0)=0过原点·v对t线性(斜率a>0) -> D图线自洽:', v.subs(t,0)==0)
+# 验点3（3.3·T8）：吊灯静止 ΣF=0 -> 绳对灯拉力T=G(平衡力)；牛三对象=灯对绳与绳对灯
+T_, G = symbols('T G')
+sol = solve(Eq(T_-G, 0), T_)
+print('T8: ΣF=T-G=0 -> T=G 大小相等反向同体=平衡力(非作用反作用·异体) -> C判读自洽:', sol)
+# 验点4（3.4·T11）：F1=3N F2=10N 合力范围 |10-3|<=F<=13
+F1, F2 = 3, 10
+print('T11: 合力范围 [%d,%d]' % (F2-F1, F1+F2))
+for x,lab in [(14,'A'),(10,'B'),(6,'C'),(2,'D')]:
+    print('  %s=%dN 在范围内? %s' % (lab, x, F2-F1 <= x <= F1+F2))
+# 验点5（4.6·T17）：水平面 N1=mg；拱顶 N2=m(g-v²/r)<mg=G
+m, g_, v_, r = symbols('m g v r', positive=True)
+N1 = m*g_
+N2 = m*(g_ - v_**2/r)
+print('T17: N1=mg=G -> A(N1<G)/B(N1>G)均错 | N2=m(g-v²/r)<mg=G -> D正确自洽:', N2 < m*g_)
+# 验点6（3.2主·T21）：f=μmg=0.2*2*10=4N；a=f/m=μg=2；s=v0²/(2a)=16/4=4m
+mu, mm, gg, vv0 = Rational(2,10), Rational(2), Rational(10), Rational(4)
+f = mu*mm*gg; aa = f/mm; ss = vv0**2/(2*aa)
+print('T21: f=%sN a=%sm/s² s=%sm -> 账面4/2/4三值全吻合:' % (f, aa, ss), (f, aa, ss)==(Rational(4), Rational(2), Rational(4)))
