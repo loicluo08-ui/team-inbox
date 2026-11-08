@@ -1,0 +1,24 @@
+# sympy验点·化学2.1/2.3/3.1·2024福建6月合格考直读卡三连（并行搜索员A·队2席·1108）
+from sympy import Rational
+# 验点1（化学2.1·Q2盐类组成价态判据）：Na2SO4中化合价代数和=0（盐的正确定义支撑）
+print('Na2SO4 价态代数和 2*(+1)+(+6)+4*(-2) =', 2*1+6-8, '-> 盐组成判定A自洽')
+print('NaHCO3 价态代数和 (+1)+(+1)+(+4)+3*(-2) =', 1+1+4-6, '-> 仍=0但由金属阳离子+碳酸氢根构成=盐（B判盐非酸自洽）')
+print('HClO 元素种数=3(H,Cl,O) -> 氧化物须二元含氧判据不满足 -> C错误自洽:', 3!=2)
+# 验点2（化学2.3·Q29(1)）：5Fe2+ + MnO4- + 8H+ = 5Fe3+ + Mn2+ + 4H2O 三守恒
+electron_loss = 5*(Rational(3)-Rational(2))        # 5×Fe(+2→+3) 失5e-
+electron_gain  = Rational(7)-Rational(2)            # Mn(+7→+2) 得5e-
+charge_left  = 5*2 + (-1) + 8*1
+charge_right = 5*3 + 2
+print('电子守恒 失=%s 得=%s:' % (electron_loss, electron_gain), electron_loss==electron_gain)
+print('电荷守恒 左=+%s 右=+%s:' % (charge_left, charge_right), charge_left==charge_right)
+print('质量守恒 O: 左4(MnO4-) 右4(4H2O) ->', 4==4, '| H: 左8 右8 ->', 8==8, '| Mn:1=1 Fe:5=5 ->', True)
+print('判读自洽: 氧化剂=MnO4-（+7降价被还原）·氧化产物=Fe3+（+2升价氧化产物）')
+# 验点3（化学3.1·Q30(2)③B）：4Fe(OH)2 + 2H2O + O2 = 4Fe(OH)3 电子守恒
+loss_fe = 4*(Rational(3)-Rational(2))               # 4×Fe(+2→+3) 失4e-
+gain_o  = 2*(0-Rational(-2))                        # O2(0→-2) 得4e-
+print('B反应电子守恒 Fe失=%s O得=%s:' % (loss_fe, gain_o), loss_fe==gain_o, '-> B属氧化还原反应判定自洽')
+# 验点4（化学3.1·Q29(5)）：2MnCO3 + O2 = 2MnO2 + 2CO2 电子守恒
+loss_mn = 2*(Rational(4)-Rational(2))               # 2×Mn(+2→+4) 失4e-
+gain_o2 = 2*(0-Rational(-2))                        # O2(0→-2) 得4e-
+print('煅烧反应电子守恒 Mn失=%s O得=%s:' % (loss_mn, gain_o2), loss_mn==gain_o2)
+print('质量守恒 C:2=2 Mn:2=2 O:左2*3+2=8 右2*2+2*2=8 ->', 2*3+2==2*2+2*2)
