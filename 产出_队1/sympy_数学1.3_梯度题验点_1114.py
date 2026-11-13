@@ -35,9 +35,9 @@ check("T7_解答2⑴ a=2时A⊇B成立", sp.Interval(-sp.oo,2).issuperset(sp.Int
 # T8 解答2⑵：A∩B=∅ ⇔ a<−1（a=−1时A∩B={−1}非空）
 check("T8_解答2⑵ a=−1时交={−1}非空→需a<−1", sp.Interval(-sp.oo,-1).intersect(sp.Interval(-1,2)) == sp.EmptySet or sp.Interval(-sp.oo,-1).contains(-1) == sp.true, "a=−1边界仍在B内取到−1→严格a<−1")
 
-# T9 真题①（2024北京T1）：M∪N=(−3,4)（答案C）
-M = sp.Interval.open(-3,1); N = sp.Interval.Ropen(-1,4)
-check("T9_真题① M∪N={x|−3<x<4}（答案C）", M.union(N) == sp.Interval.open(-3,4), "(−3,1)∪[−1,4)=(−3,4)·端点−3开4开")
+# T9 真题①（2024北京T1·1114修正留痕=官方口径M={x|−4<x<1},N={x|−1<x<3}）：M∪N=(−4,3)（答案A）
+M = sp.Interval.open(-4,1); N = sp.Interval.open(-1,3)
+check("T9_真题① M∪N={x|−4<x<3}（答案A·1114裁定修正）", M.union(N) == sp.Interval.open(-4,3), "(−4,1)∪(−1,3)=(−4,3)·卷面直读定谳版")
 
 # T10 真题②（2023新课标ⅠT1）：M∩N={−2}（答案C）
 Mm = {-2,-1,0,1,2}; Nn = sp.solve(sp.Eq(x**2-x-6, 0), x)
