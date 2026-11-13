@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化学1.1分散系及其分类 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+  .try { background: #1a2416; border-left: 3px solid #6cbf4a; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .try .a { color: #8a949f; font-size: 15px; margin-top: 6px; }
+  .pit { background: #2a1a1a; border-left: 3px solid #e05252; padding: 10px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+  .pit .tag { color: #ff7b72; font-weight: bold; }
+  .key { background: #14202b; border: 1px solid #2b5277; border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .alt { background: #17191d; border: 1px solid #262a31; border-left: 3px solid #8fa3b8; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+  .alt .tag { color: #8fa3b8; font-weight: bold; }
+  .alt p { font-size: 15.5px; margin: 8px 0; }
+  .box { background: #1a1f27; border: 1px solid #2a3140; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+  .box .tag { color: #4a9eff; font-weight: bold; }
+  .box.kao { border-color: #2b5277; }
+  .check { background: #171d26; border: 1.5px solid #2b5277; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .check .tag { color: #4a9eff; font-weight: bold; }
+  .why { background: #1a1626; border: 1px solid #3d2b5c; border-left: 4px solid #7c5cd6; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 18px 0; }
+  .why .tag { color: #a98fe8; font-weight: bold; }
+  .fig { margin: 18px 0; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .figcap { color: #7d8a99; font-size: 13.5px; margin-top: 6px; text-align: center; }
+  .small { color: #8a949f; font-size: 14px; }
+  .wrong { color: #ff7b72; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15.5px; }
+  th, td { border: 1px solid #2a3140; padding: 8px 10px; text-align: left; }
+  th { background: #1b2432; color: #f0f3f7; }
+  mark.nb { background: linear-gradient(transparent 42%, #ffe66b 42%, #ffe66b 88%, transparent 88%); color: inherit; padding: 0 2px; font-weight: bold; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 16px 10px; max-width: 100%; }
+    .talk, .key, .pit, .try, .box, .check, .alt, .why, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h2 { color: #111; border-left-color: #1B4F72; }
+    p, .talk, .key, .pit, .small, .figcap, td, th { color: #222; }
+    b, h1, h3 { color: #111; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .why { background: #f4f0fa; border: 1px solid #d9cfec; border-left: 4px solid #5b3fa0; }
+    .why .tag, .check .tag, .box .tag { color: #1B4F72; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    th { background: #dce9f4; }
+    .wrong { color: #c0392b; }
+    .foot { display: none; }
+  }
+  .foot { color: #5a6570; font-size: 12px; margin-top: 50px; border-top: 1px solid #232a34; padding-top: 14px; }
+  b { color: #f0f3f7; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>分散系：把一杯浑水、一杯盐水、一束光柱说清楚</h1>
+<div class="sub">人教2019《化学·必修第一册》第一章第一节 · 分散系及其分类框题 · 零基础首学版 v1.0</div>
+
+<h2><span class="step-tag">开场</span>三杯东西，一张脸谱</h2>
+<div class="talk">
+<p>桌上三杯：一杯<b>盐水</b>，清澈透明；一杯<b>泥水</b>，浑得看不清杯底；还有一杯<b>豆浆</b>——不透明白色，却久放不沉。</p>
+<p>三个问题：①盐溶进水里去哪了？②泥水为什么浑？③豆浆既不像盐水的清，又不像泥水的浑，它是哪类？</p>
+<p>答不上来正常——这就是本节要立的分类。化学做分类，和图书馆放书一个道理：<b>先定标准，再上架</b>。</p>
+</div>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 按粒子大小把混合物归进<b>溶液、胶体、浊液</b>三类；<br>
+② 用<b>丁达尔效应</b>这一条光路，把胶体和溶液当场分开；<br>
+③ 写出<b>氢氧化铁胶体</b>的制备操作，说出三个关键条件为什么不能错。</p>
+</div>
+<p class="small" style="margin:14px 0 0"><b>10秒速览卡：</b>溶液=透光不分层｜胶体=透光能走光柱｜浊液=浑浊分层——<b>分界=分散质粒子直径，1nm和100nm两刀。</b></p>
+</div>
+
+<p class="small" style="margin-top:14px"><b>三件旧装备（读过初中就跳过；正文用到时标出处）：</b>①<b>溶液</b>（初中）：食盐溶于水，均一、稳定、透明；②<b>浊液</b>（初中）：泥水那种浑浊、放一放会分层的东西；③<b>混合物</b>（初中）：两种以上物质混在一起，各自保持自己的性质。</p>
+
+<div class="why"><span class="tag">第一性原理</span> <b>本节三个新概念，一句话说穿：</b><br>
+① <b>分散系</b>——一种物质（分散质）散到另一种物质（分散剂）里形成的混合物：盐水、泥水、豆浆全是。<br>
+② <b>胶体</b>——分散质粒子直径在<b>1~100 nm</b>之间的分散系：比溶液的粒子大、比浊液的粒子小，性质也因此独一档。<br>
+③ <b>丁达尔效应</b>——光束穿过胶体时，会出现一条<b>光亮的通路</b>：胶体的专属身份证，溶液和浊液都没有。<br>
+（本节主线：分类标准是<b>粒子直径</b>——两刀切出三类，胶体居中。）
+</div>
+
+<h2><span class="step-tag">第①站</span>分散系是什么——先给混出来的东西命名</h2>
+<p>食盐撒进水里搅一搅，看不见了——盐没有消失，它以肉眼看不见的粒子（离子）散进了水里。<b>被散进去的叫分散质，容纳它的叫分散剂</b>（盐水里：盐=分散质，水=分散剂）。</p>
+<p>这个"分散质+分散剂"的组合，统称<b>分散系</b>。初中的溶液、泥水，今天的豆浆，全都是分散系——它们被分进一个家族，然后家族内部再分三派。<b>分派的唯一标准：分散质粒子的直径。</b></p>
+<div class="fig">
+<svg viewBox="0 0 740 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="粒子直径尺：溶液小于1nm，胶体1到100nm，浊液大于100nm">
+  <rect width="740" height="170" fill="#10141b" rx="8"/>
+  <text x="370" y="28" fill="#7d8a99" font-size="14" text-anchor="middle">一把尺子切两刀：按分散质粒子直径分三类</text>
+  <line x1="70" y1="110" x2="670" y2="110" stroke="#5a6a7a" stroke-width="2" marker-end="url(#none)"/>
+  <rect x="70" y="92" width="200" height="36" fill="#1d5c3a" opacity="0.85"/>
+  <rect x="270" y="92" width="200" height="36" fill="#155a86" opacity="0.85"/>
+  <rect x="470" y="92" width="200" height="36" fill="#7a3a3a" opacity="0.85"/>
+  <text x="170" y="115" fill="#bfe6cc" font-size="15" font-weight="bold" text-anchor="middle">溶液</text>
+  <text x="370" y="115" fill="#bfe0f5" font-size="15" font-weight="bold" text-anchor="middle">胶体</text>
+  <text x="570" y="115" fill="#f5c9c9" font-size="15" font-weight="bold" text-anchor="middle">浊液</text>
+  <text x="170" y="148" fill="#8a949f" font-size="13" text-anchor="middle">直径 &lt; 1 nm</text>
+  <text x="370" y="148" fill="#8a949f" font-size="13" text-anchor="middle">1 ~ 100 nm</text>
+  <text x="570" y="148" fill="#8a949f" font-size="13" text-anchor="middle">直径 &gt; 100 nm</text>
+  <text x="70" y="80" fill="#5fd39a" font-size="13" font-weight="bold">1 nm（第一刀）</text>
+  <text x="470" y="80" fill="#f5c56b" font-size="13" font-weight="bold">100 nm（第二刀）</text>
+</svg>
+<div class="figcap">图A·分类标准就这一条：分散质粒子的直径。两刀切三段，位置决定性质。</div>
+</div>
+<div class="try"><span class="tag">验一验（10秒）</span>盐水的分散质是盐离子，直径小于 1 nm——它属于三派里的哪一派？<div class="a">溶液（第一段）。会了，往下走。</div></div>
+
+<h2><span class="step-tag">第②站</span>三派各长什么样——大小决定外观</h2>
+<p>同样是"混在水里"，为什么盐水清、泥水浑？答案就在粒子大小：</p>
+<p>溶液里的粒子<b>太小</b>（离子、小分子级别），光撞上去直接穿过去，几乎不挡路——所以透明；浊液的粒子<b>太大</b>（固体小颗粒、小液滴），光全被挡回来——所以浑浊，放久了重力把它们拉下去，分层。胶体粒子<b>不大不小</b>，介于两者之间——于是它拿到独一份的表现，下一站细说。</p>
+<div class="key"><b>三类判据（记这一句就够）：</b>看外观猜大小——<mark class="nb">透明不挡光=溶液，浑浊会分层=浊液，介于中间久放不沉=八成是胶体</mark>。精确判型用直径：1 nm 和 100 nm 两刀切。</div>
+
+<h2><span class="step-tag">第③站</span>胶体特写——一束光就现原形</h2>
+<p>胶体粒子不大不小，光撞上去会发生<b>散射</b>：光被弹到四面八方。于是你在侧面看，光走过的路整个亮起来——<b>一条光柱</b>。这就是<b>丁达尔效应</b>，胶体独有的身份证：</p>
+<div class="fig">
+<svg viewBox="0 0 740 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="丁达尔效应对比：胶体杯内有光路，溶液杯内无光路">
+  <rect width="740" height="240" fill="#10141b" rx="8"/>
+  <text x="370" y="26" fill="#7d8a99" font-size="14" text-anchor="middle">同样的手电筒，从侧面打进两杯液体</text>
+  <rect x="120" y="50" width="150" height="150" rx="6" fill="#14202b" stroke="#3a4a5c" stroke-width="2"/>
+  <polygon points="40,120 120,110 120,135" fill="#f5c56b"/>
+  <polygon points="130,112 255,102 255,140 130,142" fill="#f5c56b" opacity="0.55"/>
+  <text x="195" y="90" fill="#f5c56b" font-size="14" font-weight="bold">光柱 ✓</text>
+  <text x="195" y="215" fill="#bfe0f5" font-size="14" text-anchor="middle" font-weight="bold">胶体（豆浆）</text>
+  <text x="195" y="232" fill="#8a949f" font-size="12" text-anchor="middle">粒子 1~100 nm，散射光</text>
+  <rect x="470" y="50" width="150" height="150" rx="6" fill="#14202b" stroke="#3a4a5c" stroke-width="2"/>
+  <polygon points="390,120 470,110 470,135" fill="#f5c56b"/>
+  <text x="545" y="90" fill="#6a7684" font-size="14" font-weight="bold">无光柱 ✗</text>
+  <text x="545" y="215" fill="#bfe0f5" font-size="14" text-anchor="middle" font-weight="bold">溶液（盐水）</text>
+  <text x="545" y="232" fill="#8a949f" font-size="12" text-anchor="middle">粒子太小，光直穿过去</text>
+</svg>
+<div class="figcap">图B·丁达尔效应：胶体里那条光亮的通路。实验室用激光笔照一下，胶体当场现形——这也是区分胶体和溶液最简便的方法。</div>
+</div>
+<p class="small">生活同款：清晨雾里路灯拖出的光柱（雾是胶体）、舞台烟雾里的光束（气溶胶）。胶体按分散剂还分三小类：雾、云、烟（分散剂是气）、豆浆和氢氧化铁胶体（分散剂是液）、烟水晶和有色玻璃（分散剂是固）——认前两个就够用。</p>
+<p>胶体还有两件事要知道：</p>
+<p>① <b>介稳性</b>——胶体粒子直径小，分散剂分子不停从四面八方撞它，它又吸附了带电的离子，同种电荷互相排斥聚不拢——所以<b>久放不沉</b>（豆浆放一夜还是豆浆）。但这稳定是"较"稳定：一旦条件变了，它就破功。</p>
+<p>② <b>聚沉</b>——破坏这份稳定，胶体粒子抱团沉下来。方法：加电解质（盐）、加热、搅拌。生活应用两连：点豆腐就是往豆浆里加卤水（电解质）让蛋白质聚沉；江河入海口的水是胶体，碰上海水里的大量盐分就地聚沉，泥沙堆成<b>三角洲</b>。</p>
+
+<h2><span class="step-tag">第④站（最容易翻车的坑）</span>氢氧化铁胶体的制备——三个条件就是三条命</h2>
+<p>实验室制氢氧化铁胶体，操作一句话：<b>向沸水里滴加饱和氯化铁溶液，继续煮沸至液体变红褐色，立即停止加热。</b></p>
+<div class="pit">
+<p><span class="tag">坑一·不能搅拌，不能久沸。</span>一搅一煮过头，粒子抱团变大，胶体直接变浊液——红褐色一出现就收手。</p>
+<p><span class="tag">坑二·不能用氢氧化钠代替沸水。</span>往氯化铁里加NaOH溶液，得到的是红褐色<b>沉淀</b>（浊液）——粒子太大，根本不是胶体。"滴进沸水"这一步，就是让粒子慢慢长大到胶体尺寸。</p>
+<p><span class="tag">坑三·"红褐色液体"≠"红褐色沉淀"。</span>胶体是<b>均一透明偏色</b>的液体，写实验现象别写成沉淀。</p>
+</div>
+<div class="alt"><span class="tag">卡住了？（三个最容易卡的地方，就地给出路）</span>
+<p>· <b>卡在"为什么胶体介于中间就性质独一档"</b>——粒子大小决定它跟光、跟重力、跟离子的关系全变了：大粒子挡光（浊液浑），小粒子不挡（溶液清），中间的会散射（光柱）；大粒子扛不住重力（浊液分层），小粒子无所谓（溶液永稳），中间的靠带电相斥撑着（介稳）。</p>
+<p>· <b>卡在"豆浆为什么不是溶液"</b>——蛋白质颗粒直径在 1~100 nm 区间，按尺子归胶体。别用"它看起来像奶"判断，用直径判断。</p>
+<p>· <b>卡在"聚沉之后得到什么"</b>——聚沉=粒子抱团变大到直径超过100 nm，落下来就是沉淀（豆腐的固体、三角洲的泥沙）。聚沉是胶体变浊液，不是胶体变溶液。</p>
+</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测</h2>
+<div class="key">
+<b>三句话：</b><br>
+1. 分散系三派按<mark class="nb">粒子直径</mark>分：溶液&lt;1 nm、胶体 1~100 nm、浊液&gt;100 nm——<mark class="nb">位置决定性质</mark>。<br>
+2. <mark class="nb">丁达尔效应=胶体专属</mark>：光束穿过去有光亮通路，区分胶体与溶液最简便的方法。<br>
+3. 制氢氧化铁胶体：<mark class="nb">沸水+饱和FeCl₃+红褐色即停</mark>——不搅拌、不久沸、不用NaOH。
+</div>
+<p><b>自测四连</b>（先自己答完，再看下一行答案）：</p>
+<p>①雾是哪一类分散系？②豆浆久放不沉，靠的是什么性质？③往豆浆里加卤水得到豆腐，这个过程叫什么？④实验室制备氢氧化铁胶体，能不能把饱和氯化铁溶液滴进氢氧化钠溶液？</p>
+<p class="small"><b>答案：①</b>胶体（气溶胶，分散剂是空气）　<b>②</b>介稳性（粒子带电相斥+分散剂分子撞击）　<b>③</b>聚沉（电解质破坏介稳性，蛋白质聚沉成型）　<b>④</b>不能——得到的是红褐色沉淀（浊液），不是胶体。</p>
+
+<p class="small"><b>三种分散系对账（收口回填，对照图A）：</b></p>
+<table>
+<tr><th>方式</th><th>粒子直径</th><th>外观</th><th>稳定性</th><th>代表物质</th></tr>
+<tr><td>溶液</td><td>&lt; 1 nm</td><td>均一透明</td><td>稳定（永不分层）</td><td>盐水、糖水、碘酒</td></tr>
+<tr><td>胶体</td><td>1 ~ 100 nm</td><td>较均一、有丁达尔光柱</td><td>介稳定（条件变则聚沉）</td><td>豆浆、雾、Fe(OH)₃胶体</td></tr>
+<tr><td>浊液</td><td>&gt; 100 nm</td><td>浑浊不透明</td><td>不稳定（静置分层）</td><td>泥水、油水混合物</td></tr>
+</table>
+<div class="try"><span class="tag">试一试</span> 不翻教材，把这张表口头填一遍：牛奶（不透明白色久放不沉→胶体）、蒸馏水（纯净物，根本不是分散系）、石灰浆刷墙（浑浊分层→浊液）。三个都对，本节过关。</div>
+
+<div class="box"><span class="tag">高考怎么考（考位锚）</span> ①<b>分类判断</b>——给一组物质判溶液/胶体/浊液（选择题高频，按直径两刀切）；②<b>丁达尔效应</b>——现象描述+用它可以区分什么（最简鉴别法）；③<b>制备实验</b>——Fe(OH)₃胶体三条件的选择题（坑一坑二就是选项）。</div>
+
+<h2><span class="step-tag">真题锚</span>两道高考级实题，实打实战场</h2>
+<p><b>题一 · 2025浙江三模（制备辨析）：</b>关于氢氧化铁胶体的制备，下列操作正确的是？A.向沸水中滴加饱和FeCl₃溶液，加热至红褐色 B.向FeCl₃溶液中滴加NaOH溶液 C.向沸水中滴加饱和FeCl₃溶液后搅拌 D.向沸水中滴加饱和FeCl₃溶液，煮沸至红褐色后再煮5分钟<div class="a">A正确。B→红褐色沉淀不是胶体；C→搅拌破坏胶体；D→久沸聚沉。考点：制备三条件逐一对号。</div></p>
+<p><b>题二 · 教材习题组（丁达尔判断五连）：</b>①Fe(OH)₃胶体 ②蒸馏水 ③蔗糖溶液 ④FeCl₃溶液 ⑤云雾——用一束光照射，能出现丁达尔效应的是哪些？<div class="a">①⑤。①胶体有光柱；⑤雾是气溶胶也是胶体；②是纯净物不是分散系；③④都是溶液，无光柱。考点：丁达尔=胶体专属身份证，溶液浊液都不给。</div></p>
+
+<h2><span class="step-tag">对应试题</span>难度梯度自测（易→中→难）</h2>
+<p class="small">三道选择 + 两道填空 + 一道解答，全做完再看块末"答案与解析"。</p>
+<p><b>选择1（易）</b> 下列属于胶体的是（　）<br>A. 食盐水　B. 豆浆　C. 泥水　D. 蒸馏水</p>
+<p><b>选择2（中）</b> 鉴别 Fe(OH)₃ 胶体和 FeCl₃ 溶液，最简便的方法是（　）<br>A. 过滤　B. 观察颜色　C. 用光束照射看有无光路　D. 加热蒸干</p>
+<p><b>选择3（难）</b> 关于 Fe(OH)₃ 胶体的制备，正确的是（　）<br>A. 向沸水中滴加饱和 FeCl₃ 溶液，继续煮沸至红褐色即停<br>B. 向饱和 FeCl₃ 溶液中滴加 NaOH 溶液<br>C. 边加热边搅拌，让反应更充分<br>D. 长时间沸腾，让反应彻底完成</p>
+<p><b>填空1（中）</b> 江河入海口形成三角洲、豆浆里点卤水（含 MgCl₂ 等盐）变豆腐，共同原理都是胶体的______。</p>
+<p><b>填空2（难）</b> Fe(OH)₃ 胶体制备的完整操作：向______中滴加______滴 FeCl₃ 饱和溶液，继续加热至液体呈______色，立即停止加热；全程不能______、不能久沸，原因是______。</p>
+<p><b>解答（难）</b> 有 A、B、C 三瓶无色液体，只知道分别是溶液、胶体、浊液中的一种。设计实验方案把它们区分开（写出操作、现象、结论）。</p>
+<div class="a"><b>答案与解析（先做完再看）：</b><br>
+<b>选择1：B。</b>豆浆的分散质粒子在 1–100nm 之间=胶体。食盐水=溶液（粒子太小）；泥水=浊液（粒子太大）；蒸馏水=纯净物，根本不是分散系。<br>
+<b>选择2：C。</b>丁达尔效应是胶体的专属身份证：胶体有明亮光路，溶液没有。过滤分不开胶体和溶液（胶体粒子能透过滤纸），颜色两者都是黄色（Fe³⁺），加热都会聚沉——都不是"最简便"的判据。<br>
+<b>选择3：A。</b>教材口径操作：向沸水中滴加饱和 FeCl₃ 溶液，继续煮沸至液体呈红褐色即停。B 错：NaOH 让 Fe³⁺ 瞬间全部沉淀成 Fe(OH)₃ <b>浊液</b>（沉淀，不是胶体）；C 错：搅拌破坏胶体形成；D 错：久沸同样破坏胶体——胶体是"小心伺候"才存在的东西。<br>
+<b>填空1：聚沉。</b>海水（电解质）让河水胶体聚沉出三角洲；卤水（电解质）让豆浆蛋白胶体聚沉成豆腐——盐一来，胶体粒子带的电被"中和"，排斥消失，抱团沉降。<br>
+<b>填空2：沸水；几滴；红褐；搅拌（或用玻璃棒搅动）；搅拌和久沸都会破坏胶体（胶体介稳，条件一破坏就聚沉成浊液）。</b><br>
+<b>解答：先用光束照——</b>有明亮光路的是胶体；<b>再静置观察——</b>浑浊且分层的是浊液；剩下透明的是溶液。三步判完。也可加保险：浊液过滤会留滤渣，溶液和胶体都透滤纸——但光束+静置已够判。<b>实验设计题格式：操作→现象→结论，三段写全。</b></div>
+
+<div class="fig">
+<svg viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：物质分类树中分散系所在分支">
+  <rect x="0" y="0" width="560" height="120" fill="#10141b" rx="8"/>
+  <text x="280" y="24" fill="#7d8a99" font-size="13" text-anchor="middle">第一章 物质及其分类——你在这里的位置</text>
+  <rect x="215" y="36" width="130" height="40" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="280" y="60" fill="#8fa3b8" font-size="14" text-anchor="middle">混合物</text>
+  <rect x="215" y="86" width="130" height="26" rx="6" fill="#123a5c" stroke="#4a9eff" stroke-width="2"/>
+  <text x="280" y="104" fill="#4a9eff" font-size="13" font-weight="bold" text-anchor="middle">分散系（本节）</text>
+  <rect x="40" y="86" width="130" height="26" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+  <text x="105" y="104" fill="#8fa3b8" font-size="12" text-anchor="middle">纯净物（另一支）</text>
+  <text x="420" y="100" fill="#8fa3b8" font-size="12" text-anchor="middle">→ 溶液｜胶体｜浊液</text>
+  <line x1="280" y1="76" x2="280" y2="86" stroke="#4a9eff" stroke-width="2"/>
+</svg>
+<div class="figcap">图C·本节位置：混合物家族下的分散系分支，内部再按直径切三派。</div>
+</div>
+
+<div class="foot">锚：人教2019《化学·必修第一册》第一章第一节·分散系及其分类框题（教材原文对照在案）· 暂时样本形态（生物4.2 v1111）· 1111</div>
+</div>
+</body>
+</html>
