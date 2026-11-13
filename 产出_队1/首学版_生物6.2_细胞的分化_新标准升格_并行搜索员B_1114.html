@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生物6.2 细胞的分化 · 零基础首学版 v1.0</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  h3 { font-size: 17px; color: #e8ecf2; margin: 26px 0 10px; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 4px; margin-right: 8px; }
+  b { color: #f0f3f7; }
+  .talk { background: #1c2230; border: 1px solid #2c3a4e; border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+  .q { color: #4a9eff; font-weight: bold; }
+  .check { background: #182430; border-left: 4px solid #4a9eff; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .check .tag, .try .tag, .pit .tag, .alt .tag { display: inline-block; background: #324358; color: #cfe4ff; font-size: 13px; font-weight: bold; padding: 2px 10px; border-radius: 4px; margin-bottom: 6px; }
+  .box { background: #1a222e; border: 1px solid #33445a; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
+  .key { background: #223047; border-left: 4px solid #ffc94d; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .try { background: #1b242f; border: 1px dashed #3d5573; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit { background: #2a1f22; border-left: 4px solid #ff7a6e; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .pit .tag { background: #5a3038; color: #ffd6d0; }
+  .wrong { color: #ff8f84; font-weight: bold; }
+  .ans { color: #7ee2a8; font-weight: bold; }
+  .alt { background: #20283a; border: 1px solid #354764; border-radius: 8px; padding: 14px 18px; margin: 18px 0; }
+  .m { font-family: "SF Mono", Consolas, monospace; background: #0f1420; color: #9ecbff; padding: 1px 6px; border-radius: 4px; font-size: 0.95em; }
+  .big { font-size: 19px; color: #fff; }
+  .detail { color: #9aa7b8; font-size: 15px; }
+  .small { color: #8a97a8; font-size: 14px; }
+  .fig { text-align: center; margin: 18px 0; }
+  .figcap { color: #7d8a99; font-size: 13px; margin-top: 6px; }
+  mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.35) 55%); color: #eaf2ff; padding: 0 2px; }
+  .note-red { color: #ff9a90; font-size: 14px; }
+  ul.blue { padding-left: 22px; } ul.blue li { margin: 6px 0; }
+  .foot { border-top: 1px solid #2c3644; margin-top: 48px; padding-top: 16px; color: #67737f; font-size: 13px; line-height: 1.7; }
+  .box.kao { border-left: 4px solid #ffc94d; }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { max-width: 100%; padding: 10mm 8mm; }
+    .page b, .page h1, .page h3, .page .m, .page .big, .page .detail, .page .try .q, .page .ans, .page .wrong, .page .q { color: #111; }
+    .page .talk, .page .box, .page .try, .page .check, .page .key, .page .pit, .page .alt { background: #f5f5f5 !important; border-color: #999 !important; }
+    .page .key { background: #fff8e0 !important; }
+    .page .pit { background: #fdeeee !important; }
+    .page .step-tag { background: #d8e8ff !important; color: #111 !important; }
+    .page .tag { background: #e8ecf2 !important; color: #111 !important; }
+    .page mark.nb { background: linear-gradient(transparent 55%, rgba(74,158,255,0.30) 55%) !important; color: #111 !important; }
+    .page .foot { color: #444; }
+    .page .small, .page .figcap { color: #333 !important; }
+    .page h2 { color: #111; border-left-color: #2b6cb0; }
+    .page .fig rect { fill: #f2f4f8 !important; stroke: #666 !important; }
+    .page .fig text { fill: #111 !important; }
+    .page .fig line { stroke: #666 !important; }
+    .page .fig circle { fill: #7aa5d8 !important; }
+    .page .fig path { fill: none !important; }
+    .page .fig polygon { fill: #7aa5d8 !important; }
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>细胞的分化：一个基因组写出的"分工学"</h1>
+<div class="sub">生物 6.2 · 人教版《普通高中教科书·生物学 必修1·分子与细胞》第6章 细胞的生命历程 · 正文 p118–122</div>
+
+<p class="small" style="color:#7d8a99">📍 本件属于<b>第6章"细胞的生命历程"第二节</b>，前面已学：6.1细胞的增殖（有丝分裂把染色体均分到两个子细胞·保持遗传稳定性）。本节回答接力问题：<b>分裂出来的细胞都一样，为什么后来会长成完全不同的样子？</b></p>
+
+<div class="talk">
+  <p>看教材p118问题探讨：在人体内，<b>红细胞的寿命为120 d左右，白细胞的寿命为5~7 d</b>，这些血细胞都是<b>失去分裂能力</b>的细胞；而白血病患者的血液中出现大量异常白细胞、正常血细胞明显减少——通过<b>骨髓移植</b>可以有效地治疗白血病。讨论：为什么健康人的血细胞数量不会随着血细胞的死亡而减少？骨髓与血细胞的形成有什么关系？——答案都指向本节主角：<b>分化</b>。</p>
+</div>
+
+<div class="check">
+  <span class="tag">读完这节你能</span>
+  <p>① 说出<b>细胞分化</b>的定义三要素（个体发育中·一个或一种细胞增殖产生的后代·形态结构与生理功能发生<b>稳定性差异</b>），并判断"分化是一种持久性的变化"；</p>
+  <p>② 用<b>基因选择性表达</b>解释"各种细胞遗传信息完全相同、形态功能却大不相同"（红细胞开血红蛋白基因、关抗体基因，B细胞相反）；</p>
+  <p>③ 复述<b>细胞全能性</b>定义两关键词（经<b>分裂和分化后</b>·仍具有产生<b>完整有机体</b>或分化成其他各种细胞的<b>潜能和特性</b>），并讲清1958斯图尔德胡萝卜组织培养与非洲爪蟾核移植两实验各证明什么；</p>
+  <p>④ 说明<b>干细胞</b>与造血干细胞的应用（骨髓移植治白血病·脐带血造血干细胞）与"动物体细胞<b>核</b>具全能性、单个已分化动物体细胞尚未培养成新个体"的证据链（多莉/中中华华）。</p>
+</div>
+
+<h2>先拆掉三个旧印象</h2>
+<p><b>误会一：<span class="wrong">"细胞分化＝遗传物质变了"</span>。</b>就一个个体来说，各种细胞具有<b>完全相同的遗传信息</b>（同一套基因组），差异出在<span class="wrong">→</span><b>基因的选择性表达</b>——不同细胞中遗传信息的<b>表达情况</b>不同（p119原句）。分化改变的是"开了哪些灯"，不是"换了一栋楼"。</p>
+<p><b>误会二：<span class="wrong">"分化程度越高，全能性越强"</span>。</b>方向反了：分化程度越高，表现出来的全能性<b>越弱</b>（p122练习1(2)判"正确"的方向）——受精卵全能性最强，高度分化的植物细胞仍能组织培养成株，但已分化的<b>动物体细胞</b>目前还没有单个培养成新个体的成功记录（p121）。</p>
+<p><b>误会三：<span class="wrong">"动物细胞也和植物细胞一样容易'全能'"</span>。</b>同植物组织培养相比，在动物中做类似的实验要<b>复杂和困难得多</b>（p121）：爪蟾/多莉/中中华华走的都是<b>核移植</b>路线——证明的是<b>细胞核</b>具有全能性，不是整个体细胞。</p>
+
+<div class="box"><span class="tag">名词补齐</span> <b>细胞分化（cell differentiation）</b>：在个体发育中，由一个或一种细胞增殖产生的后代，在形态、结构和生理功能上发生稳定性差异的过程（p119黑体定义）。<b>持久性</b>：分化一般来说将一直保持分化后的状态，直到死亡。<b>专门化</b>：分化使多细胞生物体中的细胞趋向专门化，有利于提高各种生理功能的效率。<b>基因选择性表达</b>：个体发育过程中不同种类的细胞中遗传信息的表达情况不同。<b>细胞的全能性（totipotency）</b>：细胞经分裂和分化后，仍具有产生完整有机体或分化成其他各种细胞的潜能和特性（p121黑体）。<b>干细胞（stem cell）</b>：动物和人体内仍保留着的少数具有分裂和分化能力的细胞。<b>造血干细胞</b>：人骨髓中能通过增殖和分化不断产生红细胞、白细胞和血小板的干细胞。</div>
+
+<h2><span class="step-tag">第1步</span> 四种组织先看"分化的成果"（p118–p119）</h2>
+<p>构成人体的器官有<b>四种组织</b>——上皮组织、肌肉组织、结缔组织和神经组织，它们由形态迥异的细胞构成：教材思考·讨论四图对照——<b>上皮细胞</b>（排列紧密·保护分泌）、<b>骨骼肌细胞</b>（纤维状·能收缩）、<b>软骨细胞</b>（埋在基质中·支持缓冲）、<b>神经细胞</b>（多突起·传导信号）。植物一样分工：<b>叶肉细胞</b>细胞质中有大量叶绿体（光合）、<b>表皮细胞</b>无叶绿体但细胞壁形成明显角质层（保护）、<b>储藏细胞</b>两者皆无而储满营养物质（图6-5）。<mark class="nb">追根溯源，同一植物体的这些细胞也都来自一群彼此相似的早期胚细胞</mark>——起点相同，终点千差万别，这就是分化。</p>
+
+<h2><span class="step-tag">第2步</span> 细胞分化及其意义：定义、持久性、根子在哪（p119）</h2>
+<div class="box kao"><span class="m big">细胞分化＝个体发育中，一个或一种细胞增殖产生的后代，在形态、结构和生理功能上发生<b>稳定性差异</b>的过程</span>　<span class="small">（p119黑体定义·cell differentiation）</span></div>
+<p><b>三层递进</b>：①它是<b>持久性</b>的变化——分化的细胞将一直保持分化后的状态，直到死亡；②它是生物界<b>普遍存在</b>的生命现象，是生物<b>个体发育的基础</b>——仅有增殖没有分化，就不可能形成具有特定形态结构和功能的组织与器官；③分化使细胞趋向<b>专门化</b>，有利于提高生物体各种生理功能的效率。</p>
+<p><b>根子在基因的选择性表达</b>（p119）：在红细胞中，与<b>血红蛋白</b>合成有关的基因处于活动状态，与<b>抗体</b>合成有关的基因处于关闭状态；在<b>B细胞</b>（一种免疫细胞）中则相反。想象空间：如果社会没有职业分工会怎样？——多细胞生物同理：分工＝效率。</p>
+
+<h2><span class="step-tag">第3步</span> 细胞的全能性：两块实验基石＋一条边界线（p120–p121）</h2>
+<p><b>资料1·植物线</b>：1958年，美国科学家<b>斯图尔德（F. C. Steward）</b>取<b>胡萝卜韧皮部</b>的一些细胞，放入含有植物激素、无机盐和糖类等物质的培养液中培养，结果这些细胞旺盛地分裂和生长，形成一个细胞团块，继而分化出根、茎和叶，移栽到花盆后长成了一株新的植株（胡萝卜经组织培养产生完整植株示意图①~⑥）——结论：<b>高度分化的植物细胞仍有全能性</b>。</p>
+<p><b>资料2·动物线</b>：科学家用<b>非洲爪蟾</b>的蝌蚪做实验，将<b>肠上皮细胞的核</b>移植到<b>去核的卵细胞</b>中，结果获得了新的个体（紫外线激发卵·去核·核移植·8细胞胚·蝌蚪）——结论：<b>已分化的动物体细胞的细胞核具有全能性</b>；肠上皮细胞单独培养不能获得新个体。</p>
+<div class="box kao"><span class="m big">细胞的全能性（totipotency）＝细胞经<b>分裂和分化后</b>，仍具有产生<b>完整有机体</b>或<b>分化成其他各种细胞</b>的潜能和特性</span>　<span class="small">（p121黑体定义）</span></div>
+<p><b>全能性名单</b>（p121）：没有分化的细胞如<b>受精卵</b>、动物和人体的<b>早期胚胎细胞</b>、植物体的<b>分生组织细胞</b>也具有全能性。<b>应用</b>：利用植物细胞的全能性，通过<b>植物组织培养</b>快速繁殖花卉和蔬菜、培养微型观赏植株（图6-6）、拯救濒危物种。<b>动物边界线</b>（p121）：1996年诞生的克隆羊"<b>多莉</b>"、我国科学家2017年获得的世界上首批体细胞克隆猴"<b>中中</b>"和"<b>华华</b>"，都是将体细胞移植到去核的卵细胞中培育成的——说明已分化的动物体细胞的<b>细胞核</b>具有全能性；但到目前为止，人们<b>还没有成功地将单个已分化的动物体细胞培养成新的个体</b>。旁问：为什么已分化的动物体细胞的细胞核具有全能性？——因为细胞核里保留着该物种的<b>全套遗传信息</b>。</p>
+<p><b>干细胞与临床</b>（p121–p122）：动物和人体内仍保留着少数具有分裂和分化能力的细胞——<b>干细胞</b>。人的<b>骨髓</b>中有许多<b>造血干细胞</b>，通过增殖和分化不断产生红细胞、白细胞和血小板补充到血液中（图6-7）；<b>脐带血</b>中含有大量干细胞，可培养并分化成人体的各种血细胞，目前脐带血干细胞可用于治疗血液系统疾病。科学·技术·社会（p122专栏）：<b>白血病</b>是一类由骨髓造血干细胞恶性增殖引起的疾病；1956年美国医学家<b>唐纳尔·托马斯</b>发现将正常人的骨髓移植到白血病患者体内可以治疗白血病；骨髓造血干细胞具有很强的增殖能力，<b>捐献造血干细胞可刺激骨髓加速造血，一两周内血液中的血细胞就能恢复到原来的水平</b>，因此捐献不会影响自身健康；由于不同人造血干细胞的<b>HLA（人类白细胞抗原）</b>可能各不相同，只有两人HLA配型相同才能进行造血干细胞移植；我国于<b>2001年</b>正式成立中国造血干细胞捐献者资料库（<b>中华骨髓库</b>），截至<b>2018年3月</b>志愿者入库数据已超过<b>242万人份</b>，捐献造血干细胞人数突破<b>6000例</b>。</p>
+
+<div class="box kao"><span class="tag">考位锚</span> <b>高考考向一①概念辨析判断题</b>——分化vs全能性五连判：受精卵没有分化但<b>有</b>全能性（p122练习1(1)×）；分化程度越高全能性越<b>弱</b>；同一个体各细胞<b>基因组成相同、表达不同</b>（练习2选D·练习3选D）；细胞分化是持久性变化。<b>高考考向二②实验信息题</b>——胡萝卜组织培养证明"高度分化的植物细胞仍具全能性"；爪蟾核移植/多莉/中中华华证明"已分化动物体细胞的<b>细胞核</b>具全能性"，注意设问落到"核"还是"细胞"。<b>高考考向三③社会应用题</b>——干细胞治疗、骨髓移植与HLA配型、植物组织培养产业优势（保持母本优良性状·快速繁殖·拯救濒危物种）。<span class="detail">真题锚已收录：2025年安徽卷T3（胰岛类器官·答案B）——见下方“高考真题实证”逐题0基础拆解。</span></div>
+
+<!-- 真题取证档（学生面不可见）：取证时间=2026-11-14 06:0x（Asia/Shanghai）·取证层级=多源互证（官方卷源PDF未直读·候直读补锚·规程=数学1.1先例）·真题①2025年安徽卷第3题（胰岛类器官干细胞分化·答案B=分化细胞核仍具全能性·3分）四源同指题干全一致：21cnjy 2025安徽全卷23284285（T3·B·解析）＋ytowin 4f3429bb（2025安徽卷3·B·解析）＋xuexitifen 2025安徽解析卷1263（T3·B）＋21cnjy一轮第16讲/课件（同题B）——池6.2行双源取用一致·自编题逻辑全量核验（py/txt随件留痕） -->
+<h2><span class="step-tag">真题锚</span>高考真题实证</h2>
+<p><b>2025年安徽卷·第3题（3分）：</b>胰岛类器官是由干细胞在体外诱导分化形成的具有器官特性的细胞集合体，可模拟胰的结构和功能，具有广泛的应用价值。下列叙述<b>错误</b>的是（　）<br>A. 胰岛类器官中不同细胞在结构和功能上存在差异，这是基因选择性表达的结果　B. 胰岛类器官中胰岛 A 细胞是由干细胞诱导分化而来的，其细胞核不具有全能性　C. 对胰岛类器官中细胞的 mRNA 序列进行分析，可判断其细胞类型　D. 胰岛类器官模型可应用于胰岛发育和糖尿病发病机制等研究<div class="a">答案 B。0基础版拆解：先写依据——分化的“变与不变”：形态功能变（A 对·选择性表达），遗传物质不变。代数——B 错：胰岛 A 细胞核里仍装着<b>全套遗传信息</b>，细胞核的全能性没丢（动物细胞“细胞核具全能性”的定式，核移植技术为证）；C 对：mRNA 差异=表达差异=身份指纹；D 对（应用场景照抄题干）。读答案——选B。“已分化的核不全能”是最高频的老坑。</div></p>
+
+<h2><span class="step-tag">对应试题</span>难度梯度自测（易→中→难）</h2>
+<p class="small">三道选择 + 一道填空 + 一道挑刺 + 一道解答，全做完再看块末“答案与解析”。</p>
+<p><b>选择1（易·自编）</b> 细胞分化的实质是（　）<br>A. 基因丢失　B. 基因的选择性表达　C. 遗传物质发生改变　D. 细胞癌变</p>
+<p><b>选择2（中·自编）</b> 下列关于细胞全能性的叙述，正确的是（　）<br>A. 已分化的动物体细胞能直接发育成完整个体　B. 高度分化的植物细胞仍具有全能性（离体培养条件下可表达）　C. 全能性是指细胞能无限分裂　D. 细胞分化程度越高，全能性越强</p>
+<p><b>选择3（难·自编综合）</b> 同一个人的神经细胞与肝细胞相比较，两者的（　）<br>A. 核 DNA 相同，mRNA 与蛋白质不完全相同　B. 核 DNA 不同，mRNA 相同　C. 核 DNA、mRNA、蛋白质都相同　D. 染色体数目与形态完全不同</p>
+<p><b>填空（中·自编）</b> 骨髓中保留的、具有分裂和分化能力的细胞叫作______细胞。</p>
+<p><b>挑刺（中·自编）</b> 小华复习完说：“①细胞分化后，细胞核中的遗传物质发生了改变；②同一个体的不同细胞，表达的基因完全不同。”请你把两处错都挑出来。</p>
+<p><b>解答1（中·自编）</b> 结合安徽真题的判断逻辑，说明为什么“胰岛 A 细胞已高度分化，但其细胞核仍具有全能性”。</p>
+<div class="a" style="color:#8a949f;font-size:15px;margin-top:6px;"><b>答案与解析（先做完再看）：</b><br>
+<b>选择1：B。</b>分化=“同本 different 岗位说明书”：DNA 一个字不改，读哪段由细胞说了算（选择性表达）。选B。<br>
+<b>选择2：B。</b>全能性三条件：有全套遗传信息+离体+适宜条件；植物细胞全能性易表达（胡萝卜实验），动物体细胞“核”具全能性（核移植）；C 把全能性混成增殖；D 方向反（分化程度越高越难表达）。选B。<br>
+<b>选择3：A。</b>同一个体所有体细胞来自同一受精卵 → 核 DNA 相同；不同岗位读不同段落 → mRNA 与蛋白质不完全相同（管家基因那部分相同）。选A。<br>
+<b>填空：干。</b>干细胞=体内保留的“备件库”：既能自我更新（分裂），又能按需上岗（分化）。<br>
+<b>挑刺：错①遗传物质不动——</b>分化的账本改动只在“读不读”，不在“抄没抄”：DNA 序列不变、染色体组成不变。<b>错②“完全不同”过头——</b>维持基本生存的管家基因（呼吸酶基因等）家家都表达；“不完全相同”才是准话，绝对化表述是设错高发区。<br>
+<b>解答1：</b>先写依据——全能性的本质判定=“是否保留全套遗传信息”。代数——胰岛 A 细胞由干细胞分化而来，分化只改变基因表达谱（mRNA/蛋白质层面），细胞核中该生物全套遗传物质完整保留；细胞核移植实验（如克隆）已证明：已分化细胞的细胞核在合适条件下可指导发育出完整个体。读答案——核的全能性保住了，“核不全能”的选项自然错。<br>
+</div>
+
+
+
+<h2><span class="step-tag">收口</span> 练习与应用（p122）要点全收</h2>
+<p><b>概念检测</b>：1(1)<span class="ans">×（受精卵未分化，但受精卵正是全能性最强的细胞）</span>；1(2)<span class="ans">✓（分化程度越高，表现出来的全能性就越弱）</span>；2选<span class="ans">D</span>（骨髓干细胞与胰岛B细胞<b>基因组成相同、基因表达情况不同</b>——分化=选择性表达）；3选<span class="ans">D</span>（不同细胞形态功能差异＝不同细胞中的<b>基因选择性地表达</b>）。<b>拓展应用</b>：1组培优势=<span class="ans">保持亲本优良性状（无性繁殖）·繁殖速度快·可工厂化生产·利于拯救濒危物种</span>；2干细胞疗法=<span class="ans">既要看到治疗恶性疾病的希望，也要理性看待惨痛教训，思考科学、技术和社会的关系</span>。</p>
+<div class="try"><span class="tag">试一试</span> 不翻书默写两个定义：①细胞分化（抓三要素：个体发育中/一个或一种细胞增殖后代/形态结构生理功能稳定性差异）；②细胞全能性（抓两关键词：经分裂和分化<b>后</b>/产生完整有机体<b>或</b>分化成其他各种细胞的潜能和特性）。再答一问：为什么说"多莉"证明的是细胞核的全能性而不是体细胞的全能性？——因为供出的是<b>细胞核</b>，受体是<b>去核卵细胞</b>，成功离不开了卵细胞质的支撑。</div>
+<div class="key"><span class="tag">本节金句</span> <b>分化不换基因换"开关"：基因组同一套，表达各不同；全能性两要素——分裂分化后仍在、"完整有机体"或"各种细胞"；植物细胞全能性易显，动物体细胞止步于"核"。</b></div>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 170" width="100%" role="img" aria-label="本节位置图：6.1细胞的增殖（有丝分裂均分染色体）→6.2细胞的分化（你在·基因组选择性表达出分工）→6.3细胞的衰老和死亡→本章小结">
+<rect x="0" y="0" width="800" height="170" fill="#ffffff" stroke="#d7e3ee" rx="8"/>
+<rect x="24" y="42" width="180" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="114" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">6.1 细胞的增殖</text>
+<text x="114" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">有丝分裂·染色体均分</text>
+<line x1="208" y1="75" x2="232" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="232,69 244,75 232,81" fill="#8a9aa9"/>
+<rect x="248" y="34" width="190" height="82" rx="8" fill="#fffbe8" stroke="#ffd94a" stroke-width="2.5"/>
+<text x="343" y="66" font-size="15" font-weight="bold" text-anchor="middle" fill="#8a6d1a">6.2 细胞的分化（你在）</text>
+<text x="343" y="90" font-size="11.5" text-anchor="middle" fill="#8a6d1a">基因选择性表达·全能性</text>
+<line x1="442" y1="75" x2="466" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="466,69 478,75 466,81" fill="#8a9aa9"/>
+<rect x="482" y="42" width="196" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="580" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">6.3 细胞的衰老和死亡</text>
+<text x="580" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">自由基·端粒·凋亡</text>
+<line x1="682" y1="75" x2="706" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="706,69 718,75 706,81" fill="#8a9aa9"/>
+<rect x="722" y="42" width="66" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="755" y="70" font-size="13" text-anchor="middle" fill="#5a6b7d">本章</text>
+<text x="755" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">小结</text>
+</svg><div class="figcap">本节位置图：6.1→<b>6.2（你在）</b>→6.3→本章小结（浅线稿）</div></div>
+
+<p class="small" style="margin-top:26px">➡ 下一站 6.3《细胞的衰老和死亡》（p123起）：细胞也会老去——自由基与端粒两学说，以及"由基因决定的程序性死亡"如何为发育善后。</p>
+
+<div class="foot">
+  <p>本件为教材（人教版《生物学 必修1·分子与细胞》第6章第2节·p118–122）零基础首学版学习笔记。节界实锚：6.2节名页=印刷页118（影印图127亲读实锚）·右界=印刷页122练习与应用+STS专栏收束=6.3节名页p123（影印图132亲读夹逼）·节域p118–122共5页闭合；影印偏移=图N=印刷页N+9（contentId 9d522562·ts=1787291655029·21:3x实取8图＋23:0x补取b134–b138五图全200实测）。事实点均影印直读并附来源页码；四件套附件合并卷+三条差距+QC单+print七查PDF+数字自洽留痕log随commit同链。队1线B线·任务包v3承办·认领行2817609·硬闸00:30·候验禁直推main。</p>
+</div>
+</div>
+</body>
+</html>
