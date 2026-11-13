@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>数学 4.5 函数的应用（二） · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#16233a}
+h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
+h3{color:#2c5f8f;margin-top:1.6em}
+.station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0}
+.mark{background:#fff3cd;padding:0 4px;border-radius:3px;font-weight:bold}
+.note-red{background:#fdecea;border-left:4px solid #c0392b;padding:8px 14px;border-radius:6px;margin:10px 0}
+.walk{background:#e8f4ec;border-left:4px solid #3d8b5f;padding:10px 16px;border-radius:6px;margin:14px 0;color:#1d4d33}
+.try{background:#f0f7ff;border:1px solid #b8d4ee;border-radius:8px;padding:10px 16px;margin:12px 0}
+.selftest{background:#f7f4ff;border:1px solid #c9b8ee;border-radius:8px;padding:12px 18px;margin:14px 0}
+.ans{color:#7a5cc9;font-weight:bold}
+.kaowei{background:#fffbe8;border:2px solid #ffd94a;border-radius:10px;padding:14px 18px;margin:20px 0}
+.kw-title{font-weight:bold;color:#8a6d00;font-size:1.1em}
+.cmp{border-collapse:collapse;width:100%;margin:12px 0}
+.cmp th{background:#e4eef6;padding:5px 8px;border:1px solid #b8c8d8}
+.cmp td{padding:5px 8px;border:1px solid #c8d4de;vertical-align:top;text-align:center}
+.sub{color:#6b7a89;font-size:.85em}
+.detail{color:#7a5cc9}
+.alt{background:#fbf7ef;border:1px solid #e0d3b8;border-radius:8px;padding:10px 16px;margin:12px 0}
+.tag{display:inline-block;background:#2c5f8a;color:#fff;border-radius:4px;padding:0 8px;font-size:.8em;margin-right:6px}
+figure{margin:14px 0;text-align:center}
+.figcap{color:#6b7a89;font-size:.9em;margin-top:4px}
+@media print{body{max-width:100%;padding:0;font-size:13px}.station{break-inside:avoid}svg{max-width:100%}.kaowei{border-color:#999}.walk,.try,.selftest,.alt,.note-red{break-inside:avoid}}
+<!-- v15.3第一波重排·黄金样板step-tag落位(并行搜索员B) -->
+.step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle}
+@media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}.mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  @media print {
+
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>4.5 函数的应用（二） <span class="sub">数学 · 人教A必修一第四章末节 · 零基础首学版 v1.0 · 节域p142-157</span></h1>
+
+<div class="check"><b>读完这节你能做到（出发前清点行囊）：</b>
+<ul>
+<li>说清<b>函数零点与方程实数解的等价关系</b>（解⇔零点⇔图象与x轴公共点），并记住零点是<b>实数</b>不是"点"；</li>
+<li>背出<b>函数零点存在定理</b>（连续不断+f(a)f(b)&lt;0⇒(a,b)内至少一个零点），并知道它只保证"存在"不保证"唯一"；</li>
+<li>用<b>二分法四步</b>求方程近似解：定初始区间→取中点→算f(c)定新区间→判精确度ε；</li>
+<li>辨析<b>哪些情形不能用二分法</b>（零点不变号·图象不连续）；</li>
+<li>用马尔萨斯模型、指数衰减模型解反问题（人口达13亿用时、碳14断代），并检验<b>模型适用条件</b>；</li>
+<li>按"三种增长差异"选模型（例5三方案·例6奖金模型），画出<b>建模流程</b>：实际问题→化归→函数模型→运算推理→模型的解→解释说明。</li>
+</ul></div>
+
+<div class="station"><h2><span class="step-tag">第一步</span>零点：方程的解"长"在图象上（4.5.1·p142-144）</h2>
+<p><b>零点定义（p142照录）：</b>对于函数y=f(x)，把使f(x)=0的<b>实数x</b>叫做函数y=f(x)的<span class="mark">零点</span>（zero）。</p>
+<div class="note-red"><b>零点是"数"，不是"点"！</b>零点是使f(x)=0的那个实数x₀，不是坐标(x₀,0)——初学最易混的三字坑，先钉死。<i>（易错话术化·自编显式标注）</i></div>
+<p><b>等价关系（p142照录）：</b>函数y=f(x)的零点就是方程f(x)=0的实数解，也就是函数y=f(x)的图象与x轴的公共点的横坐标。所以：方程f(x)=0有实数解 ⇔ 函数y=f(x)有零点 ⇔ 函数y=f(x)的图象与x轴有公共点。</p>
+<p><b>探究（p143照录）：</b>对于二次函数f(x)=x²-2x-3，观察它的图象（图4.5-1），发现它在区间[2,4]上有零点——图象在零点附近<b>连续不断</b>且"穿过"x轴；函数在端点x=2和x=4的取值异号，即f(2)f(4)&lt;0，f(x)在区间(2,4)内有零点x=3（方程x²-2x-3=0的一个根）；同样地，f(-2)f(0)&lt;0，f(x)在(-2,0)内有零点x=-1（方程的另一个根）。</p>
+<div class="formula"><b>函数零点存在定理（p143照录）：</b>如果函数y=f(x)在区间[a,b]上的图象是一条<b>连续不断</b>的曲线，且有<b>f(a)·f(b)&lt;0</b>，那么函数y=f(x)在区间(a,b)内<b>至少有一个零点</b>，即存在c∈(a,b)，使得f(c)=0，这个c也就是方程f(x)=0的解。</div>
+<div class="note-red"><b>两句话钉牢定理：</b>①"至少一个"只管存在、不管唯一（可能3个5个）；②前提"图象连续不断"少不得——反例：分段跳跃的图象f(a)f(b)&lt;0也可能一个零点都没有（习题4.5第1题④图）。教材思考框原问："为什么由图4.5-2和f(2)f(3)&lt;0还不能说明f(x)=lnx+2x-6只有一个零点？你能证明y=f(x)是增函数吗？"——<b>存在定理+单调性=唯一性</b>，两件套才锁死。</div>
+<p><b>例1（p143照录）求方程lnx+2x-6=0的实数解的个数：</b>设f(x)=lnx+2x-6，借助计算工具列表（表4.5-1：x=1→-4，2→-1.3069，3→1.0986，4→3.3863，5→5.6094，6→7.7918，7→9.9459，8→12.0794，9→14.1972）并画图（图4.5-2）。由表知f(2)&lt;0，f(3)&gt;0，f(2)f(3)&lt;0，由零点存在定理，f(x)在(2,3)内<b>至少有一个零点</b>；又容易证明f(x)在(0,+∞)上是增函数，所以它<b>只有一个零点</b>，即原方程只有一个实数解。</p>
+</div>
+
+<div class="station"><h2><span class="step-tag">第二步</span>二分法：把零点"关进"越来越小的笼子（4.5.2·p144-146）</h2>
+<p><b>逼近演示（p144-145照录）：</b>取(2,3)中点2.5，f(2.5)≈-0.084，f(2.5)f(3)&lt;0⇒零点在(2.5,3)；再取中点2.75，f(2.75)≈0.512⇒零点在(2.5,2.75)……由于(2,3)⊃(2.5,3)⊃(2.5,2.75)⊃…，零点所在范围越来越小。</p>
+<table class="cmp">
+<tr><th>零点所在区间</th><th>中点的值</th><th>中点函数近似值</th></tr>
+<tr><td>(2,3)</td><td>2.5</td><td>-0.084</td></tr>
+<tr><td>(2.5,3)</td><td>2.75</td><td>0.512</td></tr>
+<tr><td>(2.5,2.75)</td><td>2.625</td><td>0.215</td></tr>
+<tr><td>(2.5,2.625)</td><td>2.5625</td><td>0.066</td></tr>
+<tr><td>(2.5,2.5625)</td><td>2.53125</td><td>-0.009</td></tr>
+<tr><td>(2.53125,2.5625)</td><td>2.546875</td><td>0.029</td></tr>
+<tr><td>(2.53125,2.546875)</td><td>2.5390625</td><td>0.010</td></tr>
+<tr><td>(2.53125,2.5390625)</td><td>2.53515625</td><td>0.001</td></tr>
+</table>
+<div class="figcap">表B · 表4.5-2二分法过程表（照录·|2.5390625-2.53125|=0.0078125&lt;0.01，区间内任一点均可作近似值·教材取x=2.53125）</div>
+<div class="formula"><b>二分法（bisection method·p145照录）：</b>对于在区间[a,b]上图象连续不断且f(a)f(b)&lt;0的函数y=f(x)，通过不断地把<b>它的</b>零点所在区间<b>一分为二</b>，使所得区间的两个端点<b>逐步逼近零点</b>，进而得到零点近似值的方法。</div>
+<p><b>给定精确度ε的二分法一般步骤（p145照录）：</b>①确定零点x₀的初始区间[a,b]，验证f(a)f(b)&lt;0；②求区间(a,b)的中点c；③计算f(c)并进一步确定零点所在区间：f(c)=0则c就是零点；f(a)f(c)&lt;0则令b=c；f(c)f(b)&lt;0则令a=c；④判断是否达到精确度ε：若|a-b|&lt;ε，则得到零点近似值a（或b）；否则重复②~④。（精确度口径框·p145照录：为了刻画与准确值的接近程度，这里给出了精确度ε，由|a-b|&lt;ε可知，区间[a,b]中任意一个值都是零点x₀满足精确度ε的近似值（想一想，为什么））</p>
+<p><b>例2（p146照录）用二分法求方程2<sup>x</sup>+3x=7的近似解（精确度0.1）：</b>令f(x)=2ˣ+3x-7。表4.5-3（x=0→-6，1→-2，2→3，3→10，4→21，5→40，6→75，7→142，8→273）与图4.5-4⇒f(1)f(2)&lt;0，x₀∈(1,2)；中点1.5·f(1.5)≈0.33⇒x₀∈(1,1.5)；中点1.25·f(1.25)≈-0.87⇒x₀∈(1.25,1.5)；同理x₀∈(1.375,1.5)，x₀∈(1.375,1.4375)；|1.375-1.4375|=0.0625&lt;0.1⇒<b>近似解可取1.375</b>。由例2可见二分法计算量较大且重复相同步骤——教材给出<b>程序框图（图4.5-5）</b>，可用算法语言编程借助信息技术完成。</p>
+<figure>
+<svg width="62%" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="二分法程序框图复刻（图4.5-5）：开始→定义f(x)→输入ε,a,b→取中点c→按f(a)f(c)与f(c)符号更新区间→判|a-b|与ε→输出解">
+<rect width="360" height="300" fill="#ffffff"/>
+<rect x="150" y="10" width="60" height="24" rx="12" fill="#eef4fa" stroke="#5a6b7d"/><text x="180" y="27" font-size="12" text-anchor="middle">开始</text>
+<line x1="180" y1="34" x2="180" y2="44" stroke="#5a6b7d"/><polygon points="176,44 184,44 180,52" fill="#5a6b7d"/>
+<rect x="120" y="52" width="120" height="22" fill="#f4f8fb" stroke="#b8c8d8"/><text x="180" y="68" font-size="11.5" text-anchor="middle">定义f(x)·输入ε,a,b</text>
+<line x1="180" y1="74" x2="180" y2="84" stroke="#5a6b7d"/>
+<rect x="130" y="84" width="100" height="22" fill="#f4f8fb" stroke="#b8c8d8"/><text x="180" y="100" font-size="11.5" text-anchor="middle">c=(a+b)/2·算f(c)</text>
+<line x1="180" y1="106" x2="180" y2="118" stroke="#5a6b7d"/>
+<polygon points="180,118 250,132 180,146 110,132" fill="#f0f7ff" stroke="#2c5f8a"/><text x="180" y="136" font-size="10.5" text-anchor="middle">f(c)=0？</text>
+<line x1="250" y1="132" x2="290" y2="132" stroke="#5a6b7d"/><text x="266" y="127" font-size="10" fill="#5a6b7d">是</text>
+<rect x="290" y="121" width="60" height="22" fill="#f4f8fb" stroke="#b8c8d8"/><text x="320" y="136" font-size="10.5" text-anchor="middle">c即零点</text>
+<line x1="180" y1="146" x2="180" y2="158" stroke="#5a6b7d"/><text x="168" y="155" font-size="10" fill="#5a6b7d">否</text>
+<polygon points="180,158 258,174 180,190 102,174" fill="#f0f7ff" stroke="#2c5f8a"/><text x="180" y="178" font-size="10.5" text-anchor="middle">f(a)f(c)&lt;0？</text>
+<line x1="102" y1="174" x2="60" y2="174" stroke="#5a6b7d"/><text x="76" y="169" font-size="10" fill="#5a6b7d">是→b=c</text>
+<line x1="258" y1="174" x2="300" y2="174" stroke="#5a6b7d"/><text x="278" y="169" font-size="10" fill="#5a6b7d">否→a=c</text>
+<line x1="60" y1="174" x2="60" y2="206" stroke="#5a6b7d"/><line x1="300" y1="174" x2="300" y2="206" stroke="#5a6b7d"/>
+<line x1="60" y1="206" x2="180" y2="206" stroke="#5a6b7d"/><line x1="300" y1="206" x2="180" y2="206" stroke="#5a6b7d" stroke-dasharray="3"/>
+<line x1="180" y1="206" x2="180" y2="216" stroke="#5a6b7d"/>
+<polygon points="180,216 250,230 180,244 110,230" fill="#f0f7ff" stroke="#2c5f8a"/><text x="180" y="234" font-size="10.5" text-anchor="middle">|a-b|&lt;ε？</text>
+<line x1="110" y1="230" x2="50" y2="230" stroke="#5a6b7d" stroke-dasharray="3"/><text x="66" y="225" font-size="10" fill="#5a6b7d">否→回②</text>
+<line x1="180" y1="244" x2="180" y2="256" stroke="#5a6b7d"/><text x="190" y="254" font-size="10" fill="#5a6b7d">是</text>
+<rect x="130" y="256" width="100" height="22" fill="#f4f8fb" stroke="#b8c8d8"/><text x="180" y="272" font-size="11.5" text-anchor="middle">输出解x=a·结束</text>
+</svg>
+<div class="figcap">图G · 二分法程序框图复刻（教材图4.5-5·浅线稿）</div>
+</figure>
+<div class="try"><span class="tag">try·即时练</span>习题4.5第1题（p155·照录）：下列函数图象与x轴均有交点，其中<b>不能用二分法</b>求其零点的是________（填写所有符合条件的图号）——<span class="ans">③④</span>。判定链逐图过：①开口向下抛物线两翼<b>穿过</b>x轴（两个变号零点）、②直线<b>穿过</b>x轴——图象连续且变号，<b>可以用</b>；③三条波谷谷底均与x轴<b>相切不穿轴</b>（f(x)≥0，f不变号）——破"变号"前提，<b>不能用</b>；④含<b>跳跃间断点</b>（图象不连续）——破"连续"前提，<b>不能用</b>。（判断依据：图象连续不断+区间两端函数值异号，两前提缺一不可）</div>
+</div>
+
+<div class="station"><h2><span class="step-tag">第三步</span>模型解反问题：人口13亿与良渚水坝（4.5.3·p148-150）</h2>
+<p><b>马尔萨斯人口模型（例3·p148照录）：</b>1798年英国经济学家马尔萨斯（T.R.Malthus，1766-1834）提出自然状态下人口增长模型 <b>y=y₀e<sup>rt</sup></b>（t为经过时间·y₀为t=0时人口数·r为增长率常数）。(1)我国1950年末、1959年末人口总数分别为55196万和67207万：设1950年为t=0，则y₀=55196，67 207=55 196·e<sup>9r</sup>⇒<b>r≈0.021876</b>，模型y=55196e<sup>0.021876t</sup>（t∈[0,9]）；(2)计算1951~1958各年并与国家统计局实际数据检验（表4.5-4：计算56417/57665/58940/60243/61576/62938/64330/65753 vs 实际56300/57482/58796/60266/61465/62828/64563/65994·逐行吻合）——模型与实际数据基本吻合（图4.5-6散点图）；(3)将y=130000代入⇒t≈39.16⇒<b>大约1950年后第40年（1990年）我国人口达到13亿</b>。</p>
+<div class="note-red"><b>教材思考框（p149照录）：</b>事实上，我国1990年的人口数为11.43亿，直到2005年才突破13亿——因为人口基数大、增长过快与经济发展产生矛盾，我国从20世纪70年代逐步实施计划生育，这一阶段的增长条件<b>不符合马尔萨斯模型的条件</b>。教材边框：<span class="mark">在用已知的函数模型刻画实际问题时，应注意模型的适用条件</span>。</div>
+<p><b>例4（p149-150照录）碳14断代·良渚水坝：</b>2010年考古学家对良渚古城水利系统中一条水坝建筑材料（草裹泥）上的草茎遗存做碳14年代学检测，碳14残留量约为初始量的55.2%，能否推断水坝大概是什么年代建成的？——指数衰减选y=ka<sup>x</sup>：设初始量k、衰减率p，y=k(1-p)<sup>x</sup>；由半衰期5730年得k(1-p)<sup>5730</sup>=k/2⇒1-p=<sup>5730</sup>√(1/2)⇒y=k(<sup>5730</sup>√(1/2))<sup>x</sup>；令(<sup>5730</sup>√(1/2))<sup>x</sup>=0.552⇒x=log<sub><sup>5730</sup>√(1/2)</sub>0.552≈<b>4912</b>年——2010年之前4912年是公元前2903年，<b>推断此水坝大概是公元前2903年建成的</b>。</p>
+<figure>
+<svg width="70%" viewBox="0 0 560 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="建模流程图复刻（教材归纳框）：实际问题→化归→函数模型→运算·推理→函数模型的解→解释说明→实际问题的解">
+<rect width="560" height="190" fill="#ffffff"/>
+<rect x="30" y="30" width="110" height="34" rx="6" fill="#eef4fa" stroke="#2c5f8a"/><text x="85" y="52" font-size="13" text-anchor="middle">实际问题</text>
+<line x1="140" y1="47" x2="330" y2="47" stroke="#2c5f8a" stroke-width="2"/><polygon points="330,42 342,47 330,52" fill="#2c5f8a"/><text x="236" y="40" font-size="12" fill="#5a6b7d">化归</text>
+<rect x="344" y="30" width="110" height="34" rx="6" fill="#eef4fa" stroke="#2c5f8a"/><text x="399" y="52" font-size="13" text-anchor="middle">函数模型</text>
+<line x1="399" y1="64" x2="399" y2="100" stroke="#2c5f8a" stroke-width="2"/><polygon points="394,100 404,100 399,110" fill="#2c5f8a"/><text x="406" y="78" font-size="11" fill="#5a6b7d">运算·推理</text>
+<rect x="344" y="112" width="110" height="34" rx="6" fill="#eef4fa" stroke="#2c5f8a"/><text x="399" y="134" font-size="12.5" text-anchor="middle">函数模型的解</text>
+<line x1="344" y1="129" x2="152" y2="129" stroke="#2c5f8a" stroke-width="2"/><polygon points="152,124 140,129 152,134" fill="#2c5f8a"/><text x="248" y="122" font-size="12" fill="#5a6b7d">解释说明</text>
+<rect x="30" y="112" width="110" height="34" rx="6" fill="#eef4fa" stroke="#2c5f8a"/><text x="85" y="134" font-size="12.5" text-anchor="middle">实际问题的解</text>
+<line x1="85" y1="64" x2="85" y2="112" stroke="#8a9aa9" stroke-dasharray="4"/><text x="92" y="92" font-size="10.5" fill="#8a9aa9">检验·还原</text>
+</svg>
+<div class="figcap">图H · 用函数建立数学模型解决实际问题的基本过程复刻（教材p154归纳框·浅线稿；图中虚线"检验·还原"注记为自编补强·非教材原框内容）</div>
+</figure>
+<p><b>归纳（p154照录）：</b>这一过程包括分析和理解实际问题的增长情况（是"对数增长""直线上升"还是"指数爆炸"）；根据增长情况选择函数类型构建数学模型，将实际问题化归为数学问题；通过运算、推理求解函数模型；用得到的函数模型描述实际问题的变化规律，解决有关问题。在这一过程中，往往需要利用信息技术帮助画图、运算等。</p>
+</div>
+
+<div class="station"><h2><span class="step-tag">第四步</span>选模型：三种回报与奖金封顶（例5·例6·p150-154）</h2>
+<p><b>例5（p150-152照录）三种投资方案：</b>方案一每天回报40元（y=40，x∈N*）；方案二第一天回报10元、以后每天比前一天多回报10元（y=10x）；方案三第一天回报0.4元、以后每天翻一番（y=0.4×2<sup>x-1</sup>）。表4.5-5：第1~10天方案三依次0.4/0.8/1.6/3.2/6.4/12.8/25.6/51.2/102.4/204.8元，第30天<b>214 748 364.8元</b>。教材分析句（p152照录）：尽管方案一、方案二在第1天所得回报分别是方案三的<b>100倍和25倍</b>，但它们的增长量固定不变，而方案三是"指数增长"，其"增长量"是成倍增加的，从第7天开始，方案三比其他两个方案增长得快得多，这种增长速度是方案一、方案二所无法企及的。从每天所得看：第1~3天方案一最多，第4天方案一与二一样多，第5~8天方案二最多，第9天起方案三遥遥领先；再看<b>累计回报</b>（表4.5-6）：投资1~6天选方案一，投资7天选一或二，投资8~10天选方案二，<b>投资11天（含）以上选方案三</b>。假想情形说明：<b>不同的函数增长模型，增长变化存在很大差异</b>。教材边框：函数图象是分析问题的好帮手，为了便于观察，用虚线连接离散的点。</p>
+<p><b>例6（p152-154照录）奖金模型封顶：</b>公司利润目标1000万元，销售利润达到10万元时按利润发奖金：奖金y（万元）随销售利润x（万元）增加而增加，但<b>奖金总数不超过5万元</b>，同时<b>奖金不超过利润的25%</b>。三个模型y=0.25x、y=log₇x+1、y=1.002<sup>x</sup>哪个符合？——在区间[10,1000]上验证两条要求：①封顶：y=0.25x当x=20时y=5，x&gt;20即超；y=1.002ˣ在(805,806)内有x₀使1.002<sup>x₀</sup>=5，x&gt;x₀即超；y=log₇x+1当x=1000时y≈<b>4.55&lt;5</b>✓；②≤25%：令f(x)=log₇x+1-0.25x，图4.5-9显示f在[10,1000]单调递减，f(x)≤f(10)≈<b>-0.3167&lt;0</b>✓。综上<b>模型y=log₇x+1能符合公司要求</b>。</p>
+<div class="walk"><b>下一站预告（walk·必修一终程）：</b>4.5之后进入<b>第四章小结</b>（p158章名页预告亲读在案）与复习参考题4——本章沿"实际问题→函数概念→图象与性质→应用"的路径走完指数函数与对数函数全程，零点存在定理与二分法正是"应用"段的压轴武器；下一份必修一图纸见！</div>
+</div>
+
+<div class="kaowei"><div class="kw-title">高考怎么考 · 考位锚</div>
+<ul>
+<li><b>零点存在定理判定</b>＝高频小题：连续+异号两前提缺一不可，"至少一个"≠唯一，唯一性要补单调性（例1模式）；</li>
+<li><b>二分法</b>＝中档题常客：定区间/算中点/判精确度三步计算，外加"能否用二分法"辨析（不变号·不连续两雷区·习题1模式）；</li>
+<li><b>零点个数判断</b>＝函数图象与方程综合题主战场：化归为图象交点个数（lnx+2x-6·例1同型放大版）；</li>
+<li><b>函数模型选择与检验</b>＝应用题主赛道：按增长差异选模型（例5三方案/例6封顶）+<b>模型适用条件</b>检验（马尔萨斯·例3思考框口径）；</li>
+<li class="detail">真题锚已收录：2020年新高考Ⅰ卷第6题（指数模型应用·答案B）——见下方“高考真题实证”逐题0基础拆解。</li>
+</ul>
+</div>
+
+<!-- 真题取证档（学生面不可见）：取证时间=2026-11-14 03:5x（Asia/Shanghai）·取证层级=多源互证跨源型（文字汇编+哨兵官方档抽核双轨·官方卷源PDF未直读·候直读补锚·规程=数学1.3修正先例）·真题①2020年新高考Ⅰ卷第6题（R₀=1+rT·R₀=3.28·T=6·I(t)=e^rt·累计感染病例数增加1倍所需时间·答案B=1.8天·5分）三源同指题干全一致：renrendoc 2020全国Ⅰ卷教师版242854425（T6·B·解析r=(3.28−1)/6=0.38·ln2/0.38≈1.8）＋新东方2020新高考山东卷逐题解析PDF（T6·选项A.1.2/B.1.8/C.2.5/D.3.5）＋哨兵v2.33抽核维持行（ln2/0.38≈1.80自洽·官方档三源注记）——池4.5行取用一致·代数核=r=2.28/6=0.38·t=ln2/0.38≈1.82≈1.8✓·自编题数值全量sympy代验（py/txt随件留痕） -->
+<h2><span class="step-tag">真题锚</span>高考真题实证</h2>
+<p><b>2020年新高考Ⅰ卷·第6题（5分）：</b>基本再生数R₀与世代间隔T是新冠肺炎的流行病学基本参数。基本再生数指一个感染者传染的平均人数，世代间隔指相邻两代间传染所需的平均时间。在新冠肺炎疫情初始阶段，可以用指数模型 <span class="m">I(t) = e^(rt)</span> 描述累计感染病例数 I(t) 随时间 t（单位：天）的变化规律，指数增长率 r 与 R₀、T 近似满足 R₀ = 1 + rT。有学者基于已有数据估计出 R₀ = 3.28，T = 6。据此，在新冠肺炎疫情初始阶段，累计感染病例数增加 1 倍需要的时间约为（ln 2 ≈ 0.69）（　）<br>A. 1.2天　B. 1.8天　C. 2.5天　D. 3.5天<div class="a">答案 B。0基础版拆解：先写依据——两步：先由 R₀=1+rT 解出 r，再用 I(t)=e^(rt) 增长 1 倍即 e^(rt)=2；代数——r = (3.28−1)/6 = 2.28/6 = 0.38；e^(rt)=2 两边取对数 → rt = ln2 → t = 0.69/0.38 ≈ 1.8 天；读答案——选B。这题是“指数模型解反问题”的真题落地：模型给的是正向公式，考的是反过来由倍数倒推时间——正是本节第三步“模型解反问题”的动作。</div></p>
+
+<h2><span class="step-tag">对应试题</span>难度梯度自测（易→中→难）</h2>
+<p class="small">三道选择 + 一道填空 + 一道挑刺 + 两道解答，全做完再看块末“答案与解析”。</p>
+<p><b>选择1（易·自编）</b> 函数 f(x) = x² − 3x + 2 的零点是（　）<br>A. −1 和 −2　B. 1 和 2　C. 1　D. 2</p>
+<p><b>选择2（中·自编）</b> 方程 ln x + 2x − 6 = 0 的解所在的区间是（　）<br>A. (1, 2)　B. (2, 3)　C. (3, 4)　D. (4, 5)</p>
+<p><b>选择3（难·自编综合）</b> 已知 f(x) 在区间 (2, 4) 内有一个零点，且 f(2) &lt; 0，f(4) &gt; 0。用二分法：第一次取中点 x = 3，若 f(3) &lt; 0，则第二次应取的中点是（　）<br>A. 2.25　B. 2.5　C. 3.25　D. 3.5</p>
+<p><b>填空（中·自编）</b> 用二分法求方程 x³ − x − 1 = 0 在区间 (1, 1.5) 内的近似解（精确度 0.1），至少需要二分的次数为______次。</p>
+<p><b>挑刺（中·自编）</b> 小华复习完说：“①零点是一个点，在图象上表示那个点 (x₀, 0)；②二分法求 f(x) = x² − 2 的零点：f(1)·f(2) &lt; 0，取中点 1.5，若 f(1.5) &gt; 0，零点就在新区间 (1.5, 2) 内。”请你把两处错都挑出来。</p>
+<p><b>解答1（中·自编）</b> 求函数 f(x) = x³ − 4x 的零点，并说明 f(x) 在区间 (1, 3) 内是否存在零点。</p>
+<p><b>解答2（难·自编综合）</b> 某种电脑病毒传播过程中，累计感染台数 N(t) = 2^t（t 为天数）。⑴ 感染台数首次突破 1000 台大约在第几天（参考：2⁹ = 512，2¹⁰ = 1024）？⑵ 从第 9 天到第 10 天，感染台数增加了多少台？这一组数字说明指数模型的什么增长特征？</p>
+<div class="a" style="color:#3a4a5c;font-size:15px;margin-top:6px;"><b>答案与解析（先做完再看）：</b><br>
+<b>选择1：B。</b>零点 = 使 f(x)=0 的实数：x²−3x+2 = 0 → (x−1)(x−2)=0 → x=1 或 x=2，两个零点，选B。A 把符号做反了——因式分解后是“减 1 减 2”，不是“加”。<br>
+<b>选择2：B。</b>零点存在定理找变号区间：f(2) = ln2 + 4 − 6 ≈ −1.31 &lt; 0，f(3) = ln3 + 6 − 6 ≈ 1.10 &gt; 0 → 端点异号 → 零点在 (2, 3)，选B。（这正是教材 4.5.3 开场那个“公式解不动”的方程——本题把它变成“只找在哪”。）<br>
+<b>选择3：D。</b>二分法的“笼子”规则：f(2)&lt;0、f(4)&gt;0，第一次中点 3 处 f(3)&lt;0 → 零点被关进 (3, 4)；第二次取新笼子的中点 = (3+4)/2 = 3.5，选D。C 是旧区间的错笼——中点永远取“当前笼子”的两端。<br>
+<b>填空：3 次。</b>初始区间长 0.5：每二分一次长度减半 → 0.25 → 0.125 → 0.0625。三次后 0.0625 &lt; 0.1 达到精确度 → 至少 3 次。<br>
+<b>挑刺：错①零点是“数”不是“点”——</b>零点是使 f(x₀)=0 的<b>实数 x₀</b>；图象上那个 (x₀, 0) 是“零点对应的坐标点”。说零点时说数：x₀=2 是零点。(x₀, 0) 是点。<br>
+<b>错②变号区间方向做反——</b>f(1) = −1 &lt; 0，f(1.5) = 0.25 &gt; 0 → 端点异号的区间是 (1, 1.5)，零点在 (1, 1.5) 内，不是 (1.5, 2)（那里 f(1.5)、f(2) 同号）。二分法每一步只认“异号”的半边。<br>
+<b>解答1：</b>先写依据——因式分解求零点 + 零点存在定理判区间。代数——x³−4x = x(x²−4) = x(x−2)(x+2) → 零点 x = −2, 0, 2；f(1) = 1−4 = −3 &lt; 0，f(3) = 27−12 = 15 &gt; 0 → 变号 → (1, 3) 内存在零点（恰为 x=2）。读答案——零点 {−2, 0, 2}；(1, 3) 内存在。<br>
+<b>解答2：</b>⑴ 2⁹ = 512 &lt; 1000，2¹⁰ = 1024 &gt; 1000 → 第 10 天首次突破 1000 台。⑵ 增加 1024 − 512 = 512 台——一天的增量等于之前九天的总量！特征 = <b>指数爆炸</b>：增量的绝对值随时间翻倍，后期增长远超前期（与直线匀速、对数缓慢形成三档差异）——这正是应用题“选模型”的判据。<b>格式示范：建模型 → 算分界点 → 用增量说话。</b><br>
+</div>
+
+
+
+<div class="selftest"><b>自测四连（来源逐题标注）：</b>
+<ol>
+<li>已知y=f(x)图象连续不断，对应值表x=1→136.136，2→15.552，3→-3.92，4→10.88，5→-52.488，6→-232.064——f(x)在哪几个区间内一定有零点？——变号区间<span class="ans">(2,3)、(3,4)、(4,5)</span>三个（习题4.5复习巩固2原题）。</li>
+<li>野兔倍增期21个月，1万只增长到1亿只大约需要多少年？——1万→1亿即×10⁴，10⁴=2<sup>13.29</sup>⇒13.29个倍增期≈279个月≈<span class="ans">23.3年</span>（练习2原题）。</li>
+<li>病毒开机占内存2KB，每3分钟复制一次且复制后翻倍——开机后多少分钟占据64MB内存（1MB=1024KB）？——64×1024÷2=32768=2<sup>15</sup>⇒<span class="ans">45分钟</span>（习题6原题）。</li>
+<li>药在血液中2500mg、每小时20%比例衰减、疗效需保持1500mg以上——最迟何时补充（精确到0.1h）？——2500×0.8<sup>t</sup>=1500⇒t=ln0.6/ln0.8≈<span class="ans">2.3 h</span>（习题10原题）。</li>
+</ol></div>
+
+<div class="alt"><span class="tag">alt·课堂外延1</span><b>阅读与思考《中外历史上的方程求解》（教材p147栏目·照录改写）：</b>约公元50~100年《九章算术》已载开平方开立方；7世纪隋唐<b>王孝通</b>三次方程正根数值解法；11世纪北宋<b>贾宪</b>"开方作法本源图"+"增乘开方法"；13世纪南宋<b>秦九韶</b>"正负开方术"解任意次代数方程正根；国外9世纪<b>花拉子米</b>一元二次一般解法、1541<b>塔尔塔利亚</b>三次、1545<b>卡尔达诺</b>《大术》记<b>费拉里</b>四次；五次及以上根式解悬案——1778<b>拉格朗日</b>猜想、1824<b>阿贝尔</b>证明"没有根式解"、1828<b>伽罗瓦</b>创"伽罗瓦理论"收束全局。超越方程与五次以上代数方程不能代数求解⇒数值解法（二分法/牛顿法/拟牛顿法/弦截法）随计算机大放异彩。</div>
+
+<div class="alt"><span class="tag">alt·课堂外延2</span><b>练习3（p150照录改写）二里头遗址断代：</b>1959年河南洛阳偃师二里头古建筑群样本碳14残余量约62.76%——x=log<sub><sup>5730</sup>√(1/2)</sub>0.6276≈3851年（试答按精确到1年取整口径·题目仅问"大概年代"，量级表述见后）⇒1959-3851≈公元前1892年，即<b>约公元前19世纪（夏纪年早期）</b>（与夏商之际年代学口径相容·试答显式标注）。</div>
+
+<div class="alt"><span class="tag">alt·课堂外延3</span><b>拓广探索13（p156·判错题·照录改写）：</b>"f(x)=24ax²+4x-1在(-1,1)内恰有一个零点，求a"——同学仅用f(-1)f(1)&lt;0得-1/8&lt;a&lt;5/24，<b>漏了三类</b>：①a=0时f(x)=4x-1线性恰一解x=1/4✓；②f(-1)f(1)=0（端点为零）时a=-1/8（端点根x=1系开区间端点不计，另一根x=<b>1/3</b>∈(-1,1)）、a=5/24（端点根x=-1不计，另一根x=1/5∈(-1,1)）也各恰有一个✓；③a=<b>-1/6</b>时Δ=0，f(x)=-4x²+4x-1=-(2x-1)²，零点x=1/2∈(-1,1)（重根不变号）恰有一个✓。正确解答：<span class="ans">a=0或a=-1/6或-1/8≤a≤5/24</span>——零点个数题别忘了"不变号""端点为零"与"重根"三暗桩。习题12体重建模、14耗油模型为开放建模题，解析式口径从略。</div>
+
+<div class="figure">
+<svg width="100%" viewBox="0 0 840 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：4.4对数函数→4.5函数的应用（二）（你在·零点·二分法·建模）→第四章小结→复习参考题4">
+<rect x="0" y="0" width="840" height="170" fill="#ffffff" stroke="#d7e3ee" rx="8"/>
+<rect x="30" y="42" width="160" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="110" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">4.4 对数函数</text>
+<text x="110" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">反着看成长</text>
+<line x1="194" y1="75" x2="228" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="228,69 240,75 228,81" fill="#8a9aa9"/>
+<rect x="244" y="34" width="230" height="82" rx="8" fill="#fffbe8" stroke="#ffd94a" stroke-width="2.5"/>
+<text x="359" y="66" font-size="14.5" text-anchor="middle" fill="#8a6d00">4.5 函数的应用（二）</text>
+<text x="359" y="90" font-size="12" text-anchor="middle" fill="#8a6d00">你在 · 零点·二分法·建模</text>
+<line x1="478" y1="75" x2="512" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="512,69 524,75 512,81" fill="#8a9aa9"/>
+<rect x="528" y="42" width="150" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="603" y="70" font-size="14" text-anchor="middle" fill="#5a6b7d">第四章小结</text>
+<text x="603" y="92" font-size="11.5" text-anchor="middle" fill="#8a9aa9">p158·知识结构图</text>
+<line x1="682" y1="75" x2="716" y2="75" stroke="#8a9aa9" stroke-width="2"/><polygon points="716,69 728,75 716,81" fill="#8a9aa9"/>
+<rect x="732" y="42" width="90" height="66" rx="8" fill="#f4f8fb" stroke="#b8c8d8"/>
+<text x="777" y="70" font-size="13" text-anchor="middle" fill="#5a6b7d">复习参考题4</text>
+<text x="777" y="92" font-size="11" text-anchor="middle" fill="#8a9aa9">必修一终程</text>
+</svg>
+<div class="figcap">本节位置图：4.4→<b>4.5（你在·必修一最后一个编号节）</b>→第四章小结→复习参考题4（浅线稿）</div>
+</div>
+
+<div class="foot">版本链：v1.1 · 1101晚 · B席（并行搜索员B）自修R-1101-37~41（词面3+实质2·影印m149/m150/m152/m157/m158/m159/m162/m163复勘实证：zero括注/习题1判定链③④重写/习题13漏a=-1/6+x=1/3勘正随sympy验点复跑/版本链声称改+11条逐题备查注记/等价关系去坐标改写+探究双口径+二分法"它的"+精确度框"想一想"+图H自编标注+例5百倍廿五倍句+二里头精确度口径）← v1.0 · 1031晚 · 队2席（搜索规划师）· 影印直读p142-157（图149-164）· 节界双端实锚（左界p142=4.5节名页亲读·右界p158=第四章小结标题页亲读·p157=文献阅读与数学写作章级选学栏目域尾注记）· 认领行7e14815·硬闸22:25 · 分支dui2_45_1031候并禁直推main · 事实簇锚源=人教A必修一影印（6e764703·ts=1787023173400·图N→印刷页N-7）· 例1~例6全收录；练习/习题为选录未全收（正文实收：习题1·2·6·10·13＋p150练习3二里头）——未收录逐题备查：p144练习1／p150练习1／p154练习1·2／习题3·4·5·7·8·9·11（共11条·影印直读在库·备查不入正文·如需收录属内容扩容另立工单走四工序全流程·R-1101-40勘正：原声称"全收录"失实）· 习题12/14开放建模留痕备查不入正文· 自编/试答均显式标注 · 宁缺毋编 <br>
+（搜索规划师·队2席·1031晚20:5x会话）</div>
+
+</body>
+</html>
