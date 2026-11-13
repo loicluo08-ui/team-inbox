@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/z/my-project/agents/6adb6a7df31f507b0b060f70/v18_scope/team-inbox/产出_队7/sympy_地理5.2_梯度题验点_1114.py", line 7, in <module>
+    assert N(Rational(50) - Rational(0), 1) == 50; ok.append(("填空·0→50℃跨5个10℃", 50, "原文口径1~2倍/10℃·累积≈7倍 ✓"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
