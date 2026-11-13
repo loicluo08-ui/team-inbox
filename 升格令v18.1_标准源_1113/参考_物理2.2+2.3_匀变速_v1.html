@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理2.2+2.3 匀变速直线运动 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .check { background: #12233a; border: 1px solid #2b4a70; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .why { background: #1a1428; border: 1px solid #4a3a6a; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .key { background: #0f2d18; border: 1px solid #2f6a3f; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
+  .pit { background: #2a1a14; border: 1px solid #6a3a2a; border-radius: 8px; padding: 12px 16px; margin: 12px 0; }
+  .alt { background: #26200f; border: 1px solid #5a5030; border-radius: 8px; padding: 12px 16px; margin: 12px 0; }
+  .box { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 12px 16px; margin: 12px 0; }
+  .box.kao { background: #231b12; border-color: #6a5a3a; }
+  .try { background: #1b202a; border: 1px dashed #3a4a5c; border-radius: 8px; padding: 10px 16px; margin: 12px 0; }
+  .tag { display: inline-block; font-weight: bold; color: #4a9eff; margin-right: 6px; }
+  .a { color: #9fb8cc; background: #141a24; border-radius: 6px; padding: 8px 12px; margin-top: 6px; }
+  .small { font-size: 14px; color: #8fa3b8; }
+  b { color: #f0f3f7; }
+  .figcap { color: #5a6a7a; font-size: 13px; text-align: center; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+  th, td { border: 1px solid #2a3140; padding: 6px 10px; text-align: left; }
+  th { color: #4a9eff; background: #1b202a; }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>匀变速直线运动：一页纸管住"匀加速"</h1>
+<div class="sub">人教2019《物理·必修第一册》第二章2.2+2.3（速度与时间/位移与时间的关系两节合并主件）· 零基础首学版 v1 · 暂时样本形态 · 1111</div>
+
+<div class="talk">
+<p>坐公交车，司机踩油门起步：速度从0慢慢涨，仪表盘指针<b>每秒涨一样多</b>——第一秒末20 km/h，第二秒末40，第三秒末60。涨得"均匀"，这就是本节的主角。<b>整节就干一件事：给"每秒涨一样多"的运动装上三个公式，让它随便问什么都能算。</b></p>
+</div>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 用 <b>v = v₀ + at</b> 求任意时刻的速度；<br>
+② 用 <b>x = v₀t + ½at²</b> 和 <b>v² − v₀² = 2ax</b> 求位移；<br>
+③ 看v-t图像，读出<b>斜率=加速度、面积=位移</b>，并避开刹车题的符号坑。</p>
+</div>
+<p class="small" style="margin:14px 0 0"><b>10秒速览卡：</b>匀变速=a不变｜速度公式v=v₀+at｜位移公式x=v₀t+½at²｜推论v²−v₀²=2ax（不用时间时用）——<b>v-t图：斜率=a，面积=x。</b></p>
+</div>
+
+<p class="small" style="margin-top:14px"><b>三件旧装备（读过第一章就跳过；正文用到时标出处）：</b>
+①<b>加速度 a</b>（1.4）：速度变化的快慢，a = Δv/Δt；②<b>位移 x</b>（1.2）：位置的变化，有方向；③<b>正方向约定</b>：先选定一个正方向，与它同向为正、反向为负。</p>
+
+<div class="why"><span class="tag">第一性原理</span> <b>本节三个新概念，一句话说穿：</b><br>
+① <b>匀变速直线运动</b>——加速度<b>不变</b>的直线运动：速度随时间<b>均匀</b>变（每秒涨一样多/掉一样多）。<br>
+② <b>v-t图像</b>——速度随时间变化的图：<b>斜率=加速度</b>，<b>面积=位移</b>。<br>
+③ <b>三个公式一个家</b>——v=v₀+at、x=v₀t+½at²、v²−v₀²=2ax：任何一个都是"另外两个消去一个量"变出来的。<br>
+（本节主线：先定正方向→选公式→代入统一符号→答案的正负读回方向。）</div>
+
+<h2><span class="step-tag">第①站</span>什么叫"匀"变速：每秒涨一样多</h2>
+<p>1.4学的加速度 a=Δv/Δt，说的是"每秒变多少"。如果这个<b>每秒变多少本身不变</b>——比如每秒都涨2 m/s——那就是<b>匀变速</b>。起步的车：5秒从0涨到10 m/s，每秒涨2，a = 2 m/s²，这是<b>匀加速</b>；刹车：每秒掉一样多，a和速度反向，这是<b>匀减速</b>。共同点：a是定值。</p>
+<div class="try"><span class="tag">验一验（10秒）</span>某车每秒速度+3 m/s，它的加速度是多少？变化吗？<div class="a">a = 3 m/s²，不变化——所以是匀变速。</div></div>
+
+<h2><span class="step-tag">第②站</span>速度公式：v = v₀ + at</h2>
+<p>从a = (v−v₀)/t 变个形就是它：<b>末速度 = 初速度 + 每秒涨的 × 秒数</b>。起步的车（v₀=0，a=2）：3秒末 v = 0 + 2×3 = 6 m/s。整个公式就这一句大白话，没有新东西。</p>
+<div class="key"><span class="tag">公式家族卡</span> 三个公式：①v = v₀ + at　②x = v₀t + ½at²　③v² − v₀² = 2ax。每个都恰好含 v₀、a、t、x 中的<b>三个</b>——<b>题目给哪三个量、求哪个量，就选"正好用上已知量"的那条</b>。不用全背三遍，记①，②由图像面积推出，③由①②消去t得到。</div>
+
+<h2><span class="step-tag">第③站</span>位移公式：x = v₀t + ½at²，从图像里长出来</h2>
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 240" width="700" height="240">
+<rect width="700" height="240" fill="#0f1420"/>
+<line x1="70" y1="200" x2="650" y2="200" stroke="#5a6a7a" stroke-width="1.5"/>
+<line x1="70" y1="200" x2="70" y2="30" stroke="#5a6a7a" stroke-width="1.5"/>
+<text x="660" y="205" fill="#8fa3b8" font-size="13">t</text>
+<text x="55" y="35" fill="#8fa3b8" font-size="13">v</text>
+<line x1="70" y1="160" x2="480" y2="60" stroke="#4a9eff" stroke-width="2.5"/>
+<circle cx="70" cy="160" r="4" fill="#4a9eff"/><circle cx="480" cy="60" r="4" fill="#4a9eff"/>
+<text x="50" y="165" fill="#4a9eff" font-size="13" text-anchor="end">v₀</text>
+<text x="70" y="218" fill="#8fa3b8" font-size="13" text-anchor="middle">0</text>
+<text x="480" y="218" fill="#8fa3b8" font-size="13" text-anchor="middle">t</text>
+<rect x="70" y="160" width="410" height="40" fill="none"/>
+<polygon points="70,160 480,160 480,60" fill="#4a9eff" opacity="0.18"/>
+<rect x="70" y="160" width="410" height="40" fill="#3a8a5f" opacity="0.25"/>
+<text x="240" y="188" fill="#7fd0a0" font-size="13" text-anchor="middle">矩形 = v₀t（匀速那部分）</text>
+<text x="400" y="140" fill="#4a9eff" font-size="13" text-anchor="middle">三角形 = ½·t·at = ½at²</text>
+<text x="300" y="40" fill="#d8dee6" font-size="14" text-anchor="middle">斜线是v-t图：总面积 = 位移 x = v₀t + ½at²</text>
+</svg>
+<div class="figcap">图A·位移=图线下面积：矩形（初速度走完的）+三角形（加速多走的）。</div>
+</div>
+<p>面积法给②；把①代入②消去t，就得到③<b>v² − v₀² = 2ax</b>——<b>题目里没有t、也不想求t时，用它最快</b>。三公式一个家，全部能互相推。</p>
+<p><b>例（完整走一遍）：</b>一辆车以10 m/s行驶，匀加速a = 2 m/s²，5 s末速度多大？<div class="a">v = v₀ + at = 10 + 2×5 = <b>20 m/s</b>。三步：写公式→代数（正方向=运动方向，全正）→读答案。</div></p>
+<div class="try"><span class="tag">验一验（10秒）</span>静止起步（v₀=0），a=2 m/s²，3秒走多远？<div class="a">x = ½×2×3² = 9 m。（一半矩形+三角形：全加速时全是三角形面积。）</div></div>
+
+<p><b>例（完整走一遍）：</b>同一辆车（v₀=10 m/s，a=2 m/s²），6 s内走多远？<div class="a">x = v₀t + ½at² = 10×6 + ½×2×6² = 60 + 36 = <b>96 m</b>。矩形60 m + 三角形36 m，与图像面积法一致——公式法和图像法互为验算。</div></p>
+<h2><span class="step-tag">第④站</span>（最容易翻车的坑）符号与刹车</h2>
+<div class="pit"><b>坑一·减速时a带负号。</b>先定正方向（通常取初速度方向）：匀减速的a是<b>负值</b>，代入公式不能丢负号。丢一次，答案全错。</div>
+<div class="pit"><b>坑二·刹车题先算"停没停"。</b>20 m/s的车以8 m/s²刹车，2.5秒就停死——若问"5秒后速度"，不能直接代t=5（车早停了，不是倒着开）。<b>先算停止时间t = v₀/a，超过它一律按0处理。</b></div>
+<div class="pit"><b>坑三·x-t图是直线≠走直线。</b>位移-时间图像弯曲，只说明<b>速度在变</b>，运动本身还是直线运动。图像弯≠轨迹弯。</div>
+
+<div class="alt"><span class="tag">卡住了？（三个最容易卡的地方，就地给出路）</span>
+<p>· <b>卡在公式太多记不住</b>——只有①是"定义变形"必须记，②③都能推：②=图像面积，③=①②消t。记一个，推两个。</p>
+<p>· <b>卡在½at²的½哪来的</b>——三角形面积=½×底×高：底是时间t，高是t秒里涨出的速度at，½·t·at=½at²。</p>
+<p>· <b>卡在负号什么时候丢</b>——代入前先统一符号（同正方向为正），算出来的负号不是"错了"，是"方向反了"，读回方向即可。</p></div>
+
+<div class="key"><span class="tag">v-t图像双读</span> 斜率 = <b>加速度</b>（越陡a越大，向下斜=减速）；图线与时间轴围的<b>面积 = 位移</b>。一张图两个读数，图像题全靠它。</div>
+
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<div class="key"><span class="tag">三句话</span>
+<p>① 匀变速 = <b>a不变</b>：v = v₀ + at，涨多少每秒一样。<br>
+② 位移看图像面积：x = v₀t + ½at²；不含t的问题直接 v² − v₀² = 2ax。<br>
+③ 刹车题先算停止时间，超过按0；a的负号全程随身。</p></div>
+<div class="box"><span class="tag">自测四连（先自己答完，再看下一行答案）</span> ①静止起步a=2 m/s²，3s末速度多大？②v-t图的斜率代表什么？③20 m/s的车以8 m/s²刹车，刹车距离多长？④x-t图是倾斜直线，物体做什么运动？<br>
+<b>答案：①</b>6 m/s　<b>②</b>加速度　<b>③</b>25 m（v²=v₀²−2ax）　<b>④</b>匀速直线运动（斜率恒定=速度不变）。</div>
+<h2><span class="step-tag">比例结论</span>v₀=0 专属五条比例（必收·真题秒杀工具）</h2>
+<div class="key"><span class="tag">为什么必须收</span> 这五条不是选学内容，是必收品——它们是上面三个公式<b>直接读出来的推论</b>，高考选择题年年拿它们考反应速度（2019全国Ⅰ卷运动员起跳题就用第⑤条）。<b>前提必须 v₀=0</b>（有初速直接作废——比例题第一大坑）。学法：第一遍学老实代公式（比例是公式的影子），刷选择题时再拿出来秒杀。</div>
+<p>初速为零的匀加速五条比例：①1秒末、2秒末、3秒末<b>速度比</b> = 1:2:3（v=at正比）；②前1秒、前2秒、前3秒<b>位移比</b> = 1:4:9（x=½at²平方正比）；③<b>第1秒内、第2秒内、第3秒内</b>位移比 = 1:3:5（连续奇数，相邻差恒定）；④通过前1段、前2段、前3段<b>相等位移所用时间比</b> = 1:√2:√3（x=½at²反解t∝√x）；⑤通过<b>连续相等位移</b>的时间比 = 1:(√2-1):(√3-√2):…（④相邻相减）。<b>前提必须 v₀=0</b>（有初速直接作废）。</p>
+
+<div class="box kao"><span class="tag">高考怎么考（考位锚）</span> ①<b>公式选对</b>——给v₀、a、t、x中三个求第四个，选"正好用上已知量"的公式（基础，每年必见）；②<b>图像题</b>——v-t图斜率面积判读，选择题高频；③<b>追及相遇</b>——两个物体各列方程联立，大题地基（本节只打单物体地基，追及是后话）。</div>
+
+<h2><span class="step-tag">真题锚</span>高考真题实证</h2>
+<p><b>2019海南卷（刹车距离）：</b>汽车以20 m/s行驶，刹车后匀减速，加速度大小8 m/s²，求刹车距离。<div class="a">
+25 m。刹车=匀减速，不用时间t，直接用③：0 − 20² = 2×(−8)×x → x = 400/16 = 25 m。
+<b>考点：不含t的问题选v²−v₀²=2ax；减速a取负号代入。</b>这题同时踩了坑一和考位①③。</div></p>
+<p><b>自编图像训练（非真题·显式标注）：</b>一辆车v-t图是过原点的直线，3秒末速度6 m/s。求3秒内位移和加速度。<div class="a">
+a = 斜率 = 2 m/s²；x = 面积 = ½×3×6 = 9 m——和第③站验一验同题双解：图像法（面积）与公式法（½at²）结果一致。<b>考点：斜率=加速度、面积=位移，两条路随便走，结果应相同。</b></div></p>
+
+<h2><span class="step-tag">对应试题</span>难度梯度自测（易→中→难）</h2>
+<p class="small">三道选择 + 一道填空 + 两道解答，全做完再看块末"答案与解析"。</p>
+<p><b>选择1（易）</b> "加速度 a=3 m/s²" 的含义是（　）<br>A. 每秒位移增加 3 m　B. 每秒速度增加 3 m/s　C. 速度是 3 m/s　D. 每秒走 3 m</p>
+<p><b>选择2（中）</b> 物体以 10 m/s 匀减速运动，4 s 后停下。加速度大小为（　）<br>A. 2.5 m/s²　B. 4 m/s²　C. 10 m/s²　D. 40 m/s²</p>
+<p><b>选择3（难·自编图像）</b> 物体前 2 s 从静止匀加速到 12 m/s，之后 3 s 保持 12 m/s 匀速。这 5 s 内总位移是（　）<br>A. 60 m　B. 48 m　C. 36 m　D. 24 m</p>
+<p><b>填空（中）</b> 静止开始匀加速 a=4 m/s²，<b>第 3 s 内</b>（即第 2 s 末到第 3 s 末这一秒）走的距离是______ m。</p>
+<p><b>解答1（中）</b> 子弹以 100 m/s 水平射入木板，在板内匀减速，加速度大小 5×10⁴ m/s²，板厚 0.1 m。问：子弹能穿出木板吗？请用计算说明。</p>
+<p><b>解答2（难）</b> 汽车以 72 km/h 行驶，刹车后匀减速，加速度大小 8 m/s²。求：⑴ 刹车后 3 s 内汽车走的距离；⑵ 刹车距离（从刹车到完全停下）。<b>注意第⑴问有个坑。</b></p>
+<div class="a"><b>答案与解析（先做完再看）：</b><br>
+<b>选择1：B。</b>加速度=速度变化的快慢：a=3 m/s² 就是"每过 1 秒，速度多 3 m/s"。A/C/D 都是位移或速度本身，不是"变化的快慢"。<br>
+<b>选择2：A。</b>a=Δv/Δt=(0−10)/4=−2.5 m/s²，大小 2.5。负号表示减速方向与运动方向相反——选A。<br>
+<b>选择3：B。</b>两段分开算：前 2 s 匀加速（图像三角形面积）x₁=½×2×12=12 m；后 3 s 匀速（矩形面积）x₂=3×12=36 m；总位移 12+36=48 m。<b>图像面积法分段走，斜率变了就分段。</b><br>
+<b>填空：10 m。</b>第 3 s 内位移=x(3)−x(2)=½×4×3²−½×4×2²=18−8=10 m。坑在"第 3 s 内"≠"前 3 s"——前者是一秒的差，后者是累积。<br>
+<b>解答1：不能穿出，恰好停在板内。</b>设穿出速度 v，用推论：v²−v₀²=2ax，取运动方向为正：v²=100²−2×(5×10⁴)×0.1=10000−10000=0 → v=0，子弹恰好停在木板另一面处（临界）。<b>格式示范：写推论公式→统一符号（a 取负）→代数→读答案。</b><br>
+<b>解答2：</b>先换单位：72 km/h=20 m/s。刹车到停用的时间 t=v₀/a=20/8=2.5 s。<br>
+⑴ <b>坑在这里</b>：3 s&gt;2.5 s，车在 2.5 s 时已经停了！直接代 t=3 s 得 x=20×3−½×8×9=60−36=24 m 是<b>错的</b>（车停了之后公式里"倒回去"了——物理上不可能）。正确做法：刹车距离按实际停止时间算，x=20×2.5−½×8×2.5²=50−25=25 m。⑴ 和 ⑵ 答案都是 <b>25 m</b>——但 ⑴ 的分是给"发现 2.5&lt;3 并砍掉多余时间"这一步的。<b>刹车题永远先算停止时间，再决定代几秒。</b></div>
+
+<div class="fig"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" width="560" height="120">
+<rect width="560" height="120" fill="#0f1420"/>
+<rect x="30" y="38" width="150" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+<text x="105" y="65" fill="#8fa3b8" font-size="13" text-anchor="middle">1.4 加速度a</text>
+<rect x="210" y="30" width="160" height="60" rx="6" fill="#123a5c" stroke="#4a9eff" stroke-width="2"/>
+<text x="290" y="56" fill="#4a9eff" font-size="13" font-weight="bold" text-anchor="middle">本节三公式</text>
+<text x="290" y="76" fill="#8fa3b8" font-size="11" text-anchor="middle">v、x、v² 三个式子一个家</text>
+<rect x="400" y="38" width="150" height="44" rx="6" fill="#1c2530" stroke="#3a4a5c"/>
+<text x="475" y="65" fill="#8fa3b8" font-size="13" text-anchor="middle">2.4 自由落体（特例v₀=0）</text>
+<line x1="180" y1="60" x2="210" y2="60" stroke="#4a9eff" stroke-width="2" marker-end="url(#ar2)"/>
+<line x1="370" y1="60" x2="400" y2="60" stroke="#8fa3b8" stroke-width="2" stroke-dasharray="5,3"/>
+</svg>
+<div class="figcap">图B·本节位置图：左接加速度定义，右通自由落体（v₀=0的特例，公式直接瘦身）。</div>
+</div>
+
+<div class="foot">锚：人教2019《物理·必修第一册》第二章2.2、2.3（教材原文对照在案）· 暂时样本形态（生物4.2 v1111）· 1111</div>
+</div>
+</body>
+</html>

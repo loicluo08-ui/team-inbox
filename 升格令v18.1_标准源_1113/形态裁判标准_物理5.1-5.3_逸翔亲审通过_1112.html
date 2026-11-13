@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理2.2+2.3 匀变速直线运动 · 零基础首学版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #14171c; color: #d8dee6; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.85; font-size: 17px; }
+  .page { max-width: 800px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; color: #f0f3f7; margin: 30px 0 6px; }
+  .sub { color: #7d8a99; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; color: #fff; margin: 44px 0 14px; padding-left: 12px; border-left: 4px solid #4a9eff; }
+  p { margin: 12px 0; }
+  .step-tag { display: inline-block; background: #4a9eff; color: #0b0e13; font-weight: bold; font-size: 13px; padding: 2px 10px; border-radius: 3px; margin-right: 8px; vertical-align: middle; }
+  .talk { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .check { background: #12233a; border: 1px solid #2b4a70; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .why { background: #1a1428; border: 1px solid #4a3a6a; border-radius: 8px; padding: 14px 18px; margin: 16px 0; }
+  .key { background: #0f2d18; border: 1px solid #2f6a3f; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
+  .pit { background: #2a1a14; border: 1px solid #6a3a2a; border-radius: 8px; padding: 12px 16px; margin: 12px 0; }
+  .alt { background: #26200f; border: 1px solid #5a5030; border-radius: 8px; padding: 12px 16px; margin: 12px 0; }
+  .box { background: #1b202a; border: 1px solid #2a3140; border-radius: 8px; padding: 12px 16px; margin: 12px 0; }
+  .box.kao { background: #231b12; border-color: #6a5a3a; }
+  .try { background: #1b202a; border: 1px dashed #3a4a5c; border-radius: 8px; padding: 10px 16px; margin: 12px 0; }
+  .tag { display: inline-block; font-weight: bold; color: #4a9eff; margin-right: 6px; }
+  .a { color: #9fb8cc; background: #141a24; border-radius: 6px; padding: 8px 12px; margin-top: 6px; }
+  .small { font-size: 14px; color: #8fa3b8; }
+  b { color: #f0f3f7; }
+  .figcap { color: #5a6a7a; font-size: 13px; text-align: center; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+  th, td { border: 1px solid #2a3140; padding: 6px 10px; text-align: left; }
+  th { color: #4a9eff; background: #1b202a; }
+</style>
+
+<body>
+<h1>物理 · 第五章 5.1–5.3 首学版<br><span class="small">曲线运动｜运动的合成与分解｜平抛运动（实验+规律）</span></h1>
+
+<p class="small" style="margin:14px 0 0"><b>10秒速览卡：</b>曲线运动=方向一直在变的直线运动｜船过河=两个运动叠成一个｜平抛=水平匀速+竖直自由落体——<b>化曲为直，是这一章全部的打法。</b></p>
+
+<div class="check">
+<span class="tag">读完这节你能</span>
+<p>① 说出曲线运动的速度方向在哪、为什么它一定是变速运动；<br>
+② 把"船过河"式的合运动拆成两个分运动，再把两个分运动合成一个；<br>
+③ 把平抛拆成水平匀速+竖直自由落体，算出飞行时间、水平距离、落地速度；<br>
+④ 说出平抛实验（对比+频闪）在验证什么、初速度怎么算出来。</p>
+</div>
+
+<p class="small" style="margin:14px 0 0"><b>四件旧装备（读过第二章就跳过；正文用到时标出处）：</b>①<b>速度</b>（第一章）：位移变化的快慢，有方向；②<b>加速度 a</b>（1.4）：速度变化的快慢；③<b>匀速直线运动</b>（2.1）：速度不变、走直线；④<b>自由落体</b>（2.4特例兜底，本件现教）：静止开始、只受重力的下落——就是初速为零、加速度为 g=10 m/s² 的匀加速，公式直接用第二章的 v=gt、y=½gt²（g=10 m/s²，本件全按10算）。</p>
+
+<div class="why"><span class="tag">第一性原理</span> <b>本节三个新概念，一句话说穿：</b><br>
+① <b>曲线运动</b>——轨迹是弯的运动。弯=方向一直在变，而速度有方向，所以<b>曲线运动一定是变速运动</b>（哪怕速率恒定）。<br>
+② <b>合运动与分运动</b>——一个实际发生的运动（船走的斜线），可以<b>等效</b>拆成两个同时进行的简单运动（往东开+往南漂）；反过来两个简单运动也能合成一个。合不是加减数，是矢量合成。<br>
+③ <b>平抛运动</b>——只受重力、初速度水平的曲线运动。它是②的实战：一个复杂弯路 = 水平一个匀速 + 竖直一个自由落体，<b>两条简单直线，拼出一条抛物线</b>。</div>
+
+<h2><span class="step-tag">第一站</span>曲线运动：方向在哪、为什么会弯</h2>
+<p><b>为什么需要它：</b>生活里走直线的才是少数——转弯的车、甩起来的链球、抛出去的石子，全是弯的。弯的东西怎么研究？先把两件最基本的事钉死：速度指向哪？为什么它弯？</p>
+<p><b>方向=切线。</b>曲线运动的速度方向，是轨迹上这一点的<b>切线方向</b>——想象曲线是一条弯路，你在某一点的速度就是你"顺着这条路往前开"的方向。链球转着圈，松手的一瞬间它沿切线飞出去（所以链球运动员要在特定位置松手，让切线正对前方）；旋转雨伞甩出去的水滴、砂轮磨刀迸出的火星，全都是沿切线离开的。<b>这一条是第①站全部内容的浓缩。</b></p>
+<p><b>为什么会弯：</b>力是改变运动状态的原因（初中）。若合力方向和速度方向<b>在同一直线上</b>（同向加速、反向减速），只改快慢不改方向——直线；若合力方向和速度方向<b>不在同一直线上</b>，方向就被掰弯了——曲线运动。而且合力永远指向<b>轨迹弯的内侧</b>：弯路把你往弯里拽，你才拐得过来。<b>反过来用就是判断题秒杀：速度沿切线、合力指向弯内侧，两个方向一画，选项立判。</b></p>
+<div class="fig">
+<svg viewBox="0 0 560 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="曲线运动两要素图：速度沿切线，合力指向弯的内侧">
+  <rect x="0" y="0" width="560" height="130" fill="#ffffff"/>
+  <path d="M 60 100 Q 200 20 480 80" fill="none" stroke="#111" stroke-width="2.5"/>
+  <circle cx="240" cy="47" r="5" fill="#111"/>
+  <line x1="240" y1="47" x2="330" y2="26" stroke="#0a6" stroke-width="2"/>
+  <polygon points="330,26 318,25 322,33" fill="#0a6"/>
+  <text x="336" y="26" font-size="12" fill="#0a6" font-weight="bold">速度v：切线方向</text>
+  <line x1="240" y1="47" x2="262" y2="88" stroke="#c00" stroke-width="2"/>
+  <polygon points="262,88 256,77 252,84" fill="#c00"/>
+  <text x="268" y="96" font-size="12" fill="#c00" font-weight="bold">合力F：指向弯内侧</text>
+  <text x="60" y="122" font-size="11" fill="#555">速度沿切线 + 合力指向弯内 = 曲线运动的全部要素</text>
+</svg>
+</div>
+<div class="box pit"><span class="tag">新手必踩的坑</span> <b>"匀速圆周"听着像匀速——但"匀速"在这里只指速率（快慢）不变，方向时刻在变，而速度=速率+方向，方向变了就是变速。</b>曲线运动（哪怕速率恒定）一定是变速运动，必有加速度。考试最爱拿"匀速转圈到底有没有加速度"考人——有，方向时刻变。</div>
+<div class="box alt"><span class="tag">卡住了？出路</span> 如果"切线"不直观：拿一根绳子在桌上摆一条弯路，手指顺着走，走到任何位置你手指的指向就是切线方向。如果"合力指向弯内侧"记不住：想想汽车转弯身体往外甩——座椅把你往弯里推，你才跟着车拐。</div>
+<p class="key-line"><b>一句话收口：曲线运动=方向在变的运动；速度沿切线，合力指向弯的内侧。</b></p>
+
+<h2><span class="step-tag">第二站</span>运动的合成与分解：一个运动=两个简单运动</h2>
+<p><b>事：</b>渡船过河。船头朝正对岸开，但河水往下游流——船实际走的是一条斜线。这条斜线太复杂，但它其实是两件简单事同时发生：船自己往对岸开（一个匀速直线），水带着它往下游漂（另一个匀速直线）。<b>把复杂运动拆成两个简单运动分别研究，再拼回来——这是研究一切曲线运动的通用套路。</b></p>
+<p><b>教材实验（红蜡笔）：</b>玻璃管里装水，管里有个红色蜡笔块。管子竖直往上匀速提，蜡笔跟着管子往上；如果同时把管子水平匀速拉，蜡笔既跟着管子往上、又跟着管子往旁边走——实际走出一条斜线。两个分运动（竖直匀速+水平匀速）叠加成一个合运动（斜线）——每次蜡笔都走同样的斜线，<b>证明分运动互不干扰，各走各的</b>（这叫运动的<b>独立性</b>）。</p>
+<p><b>怎么合成：</b>分运动是速度矢量，合成按<b>平行四边形定则</b>：以两个分速度为邻边画平行四边形，对角线就是合速度。互成直角最简单，直接勾股：v²=v₁²+v₂²。反着用（合速度分解成两个分量）就是<b>分解</b>。</p>
+<div class="fig">
+<svg viewBox="0 0 560 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="平行四边形合成图：两个分速度为邻边，对角线为合速度">
+  <rect x="0" y="0" width="560" height="140" fill="#ffffff"/>
+  <line x1="120" y1="110" x2="300" y2="110" stroke="#0a6" stroke-width="2"/>
+  <polygon points="300,110 289,105 289,115" fill="#0a6"/>
+  <text x="215" y="126" font-size="12" fill="#0a6">分速度v₁（如船动力）</text>
+  <line x1="120" y1="110" x2="120" y2="30" stroke="#c00" stroke-width="2"/>
+  <polygon points="120,30 115,41 125,41" fill="#c00"/>
+  <text x="128" y="36" font-size="12" fill="#c00">分速度v₂（如水流）</text>
+  <line x1="300" y1="110" x2="300" y2="30" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="120" y1="30" x2="300" y2="30" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="120" y1="110" x2="300" y2="30" stroke="#111" stroke-width="2.5"/>
+  <polygon points="300,30 288,32 293,40" fill="#111"/>
+  <text x="308" y="30" font-size="12" font-weight="bold">合速度v：对角线</text>
+  <text x="380" y="100" font-size="11" fill="#555">互成直角：v²=v₁²+v₂²（勾股）</text>
+</svg>
+</div>
+<div class="box pit"><span class="tag">新手必踩的坑</span> <b>合速度不是数值相加！</b>两个互相垂直的分速度各3 m/s，合速度不是6，是√(3²+3²)≈4.2 m/s——速度有方向，不能直接加减数，必须按平行四边形（勾股）合成。第二个坑：<b>合运动的位移同样要矢量合成</b>，两个分位移垂直时勾股求大小。</div>
+<div class="box alt"><span class="tag">卡住了？出路</span> "平行四边形定则"名字唬人，本质就一句：<b>两个箭头头尾搭好画平行四边形，从起点到对角的那根最长线就是合的。</b>画出图来按勾股算就行——本件全程只考互成直角的合成（高考大题里也基本只碰直角），斜角合成到第三章力的合成再深入。</div>
+<div class="key"><span class="tag">分解：合成的反操作</span> 合成把两个分速度拼成合速度；<b>分解反过来</b>——已知合速度和其中一个分量，勾股反解另一个（互成直角时 v₂²=v²−v₁²）。平抛的"分开看"就是分解的实战：把一条抛物线拆成水平匀速+竖直落体，两个分量各管各的、各算各的。<b>按角度拆分量需要三角函数（高一数学后面才学），现在只做直角分解——够解平抛全部基础题。</b></div>
+<p class="key-line"><b>一句话收口：合运动和分运动是等效替代，各分运动互不干扰；合成按平行四边形，直角时勾股。</b></p>
+
+<h2><span class="step-tag">第三站</span>平抛运动：化曲为直的满分示范</h2>
+<p><b>事：</b>水平扔出去的粉笔头。它沿一条弯弯的抛物线掉下去——这条弯路，其实又是两件简单事同时发生：<b>水平方向</b>不受力（忽略空气），速度保持初速度不变——匀速直线；<b>竖直方向</b>只受重力，从静止开始被重力拉着掉——自由落体（=初速0、a=g的匀加速，第二章公式直接用）。<b>一条抛物线 = 一条水平匀速 + 一条竖直落体。这就是"化曲为直"。</b></p>
+<p><b>两个公式（本站全部核心）：</b>设初速度 v₀，抛出后时间 t：<br>
+水平位移 <b>x = v₀t</b>（匀速）；竖直下落 <b>y = ½gt²</b>（自由落体，g=10）。<br>
+飞行时间 <b>t=√(2y/g)</b>——注意：时间只由<b>下落高度</b>决定，跟水平初速度<b>无关</b>（水平方向是匀速的，再快也掉不快）。水平距离 x=v₀t 则由<b>初速度和高度共同</b>决定。<br>
+落地速度是矢量合成：水平 v₀ 不变，竖直 v_y=gt，合速度 v=√(v₀²+v_y²)，方向斜向下。</p>
+<div class="fig">
+<svg viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="平抛分解图：水平匀速与竖直自由落体，频闪点排布与合成速度">
+  <rect x="0" y="0" width="560" height="160" fill="#ffffff"/>
+  <line x1="70" y1="20" x2="70" y2="140" stroke="#999" stroke-width="1"/>
+  <line x1="70" y1="140" x2="500" y2="140" stroke="#999" stroke-width="1"/>
+  <text x="52" y="24" font-size="10" fill="#777">y</text>
+  <text x="500" y="134" font-size="10" fill="#777">x</text>
+  <circle cx="70" cy="20" r="3" fill="#111"/>
+  <circle cx="134" cy="25" r="3" fill="#0a6"/>
+  <circle cx="198" cy="40" r="3" fill="#0a6"/>
+  <circle cx="262" cy="65" r="3" fill="#0a6"/>
+  <circle cx="326" cy="100" r="3" fill="#0a6"/>
+  <circle cx="390" cy="140" r="3" fill="#0a6"/>
+  <path d="M 70 20 Q 250 50 390 140" fill="none" stroke="#0a6" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="134" y1="25" x2="198" y2="25" stroke="#0a6" stroke-width="1"/>
+  <line x1="198" y1="25" x2="262" y2="25" stroke="#0a6" stroke-width="1"/>
+  <line x1="262" y1="25" x2="326" y2="25" stroke="#0a6" stroke-width="1"/>
+  <text x="230" y="18" font-size="10" fill="#0a6">水平：等间距（匀速，x=v₀t）</text>
+  <line x1="134" y1="25" x2="134" y2="40" stroke="#c00" stroke-width="1"/>
+  <line x1="134" y1="40" x2="134" y2="65" stroke="#c00" stroke-width="1"/>
+  <line x1="134" y1="65" x2="134" y2="100" stroke="#c00" stroke-width="1"/>
+  <line x1="134" y1="100" x2="134" y2="140" stroke="#c00" stroke-width="1"/>
+  <text x="142" y="118" font-size="10" fill="#c00">竖直：间距1:3:5…（自由落体）</text>
+  <line x1="390" y1="140" x2="430" y2="112" stroke="#111" stroke-width="2"/>
+  <polygon points="430,112 419,115 425,121" fill="#111"/>
+  <text x="436" y="112" font-size="11" font-weight="bold">落地合速度=矢量合成</text>
+  <text x="70" y="155" font-size="10" fill="#555">频闪照片：水平等距+竖直越落越快——两条直线运动的证据</text>
+</svg>
+</div>
+<p><b>轨迹为什么是抛物线：</b>两式消去 t：x=v₀t → t=x/v₀，代进 y=½gt² → <b>y=gx²/(2v₀²)</b>——y是x的二次函数，数学上就是抛物线（"抛物线"这名字本来就是从抛东西来的）。</p>
+<p><b>教材实验（两招验证）：</b>①<b>平抛竖落仪（对比实验）</b>：两个一样的球，一个平抛出去、一个同时松手自由下落——听声音：<b>两球同时落地</b>。说明平抛的竖直方向就是自由落体，水平速度一点没抢时间。②<b>频闪照相法</b>：等时间间隔拍下一串位置——水平间距相等（匀速证据）+竖直间距1:3:5:…（自由落体证据，第二章比例结论①直接用）。数据处理时用 x=v₀t 和 y=½gt² 反推初速度 v₀=x√(g/2y)。</p>
+<div class="box pit"><span class="tag">新手必踩的坑</span> <b>三大坑：</b>①"抛得快=落地晚"——错，时间只由高度决定，v₀再大也同时落地；②竖直方向乱用带v₀的公式——竖直是自由落体，v₀=0，公式是 v_y=gt、y=½gt²，别混进水平初速；③落地速度直接 v₀+gt 数值相加——第二站的坑，矢量要勾股。</div>
+<div class="box alt"><span class="tag">卡住了？出路</span> 想不出"两个运动同时进行"：拿两支笔在纸上同时画——一支从左往右匀速画横线、一支从上往下越画越快画竖线，纸上留下的痕迹就是抛物线。飞行时间公式记不住：就记<b>"掉多久只看多高"</b>——√(2y/g) 从 y=½gt² 反解而来。</div>
+<div class="key"><span class="tag">判据句·平抛三件套</span> ①时间：<b>t=√(2y/g)</b>，只看高度；②水平：<b>x=v₀t</b>；③竖直：<b>v_y=gt，y=½gt²</b>。落地（任意时刻）合速度勾股合成。所有平抛题都从这三条出发——先算时间（谁定时间找高度），再用时间串起水平竖直。</div>
+<div class="box"><span class="tag">一分钟直觉实验（硬币版）</span> 两枚一样的硬币放在桌边：一枚用手指<b>水平弹出</b>桌外，另一枚同时用手掌<b>从桌边拍落</b>——听落地声：<b>两枚几乎同时着地</b>。弹得再快也只影响飞多远，不影响掉多快。"时间只看高度"不是背出来的结论，是自己听出来的——桌上做，一分钟。</div>
+<p class="key-line"><b>一句话收口：平抛=水平匀速+竖直自由落体；时间由高度定，水平距离由v₀和时间定，合速度勾股。</b></p>
+
+<h2><span class="step-tag">对账</span>三节对一张表</h2>
+<table>
+<tr><th>对比项</th><th>曲线运动</th><th>合成分解</th><th>平抛运动</th></tr>
+<tr><td>是什么</td><td>轨迹是弯的运动</td><td>研究的等效替代法</td><td>只受重力+初速水平的曲线</td></tr>
+<tr><td>核心结论</td><td>速度沿切线；合力指向弯内</td><td>独立性+平行四边形合成</td><td>水平匀速+竖直自由落体</td></tr>
+<tr><td>关键词</td><td>方向在变=变速</td><td>化繁为简</td><td>化曲为直</td></tr>
+<tr><td>常用公式</td><td>——（定性）</td><td>直角勾股 v²=v₁²+v₂²</td><td>x=v₀t；y=½gt²；t=√(2y/g)</td></tr>
+<tr><td>新手大坑</td><td>匀速率≠匀速</td><td>数值直接相加</td><td>时间与v₀无关记反</td></tr>
+</table>
+
+<div class="box kao"><span class="tag">高考怎么考（考位锚）</span> ①<b>曲线运动条件判断</b>——给轨迹和力选"可能/不可能"，速度切线+合力弯内两招秒杀（选择题常客）；②<b>合成分解</b>——船过河/蜡笔实验变式，直角勾股求合速度（基础计算）；③<b>平抛基本量</b>——给高度和v₀求时间/水平距离/落地速度，三件套直接代（年年必见）；④<b>平抛+斜面/竖直墙</b>——结合几何关系列位移方程（大题地基）。</div>
+
+<h2><span class="step-tag">真题锚</span>高考真题实证</h2>
+<p><b>2021全国Ⅲ卷第17题：</b>在一斜面顶端，将甲、乙两个小球分别以 v 和 v/2 的速度沿同一方向水平抛出，两球都落在该斜面上。甲球落至斜面时的速率是乙球落至斜面时速率的（　）<br>A. 2倍　B. 4倍　C. 6倍　D. 8倍<div class="a">答案 A。0基础版拆解：两球都从斜面顶端抛出又都落回斜面——各自的位移方向都沿着斜面，所以<b>位移与水平方向的夹角相同</b>（都等于斜面倾角）。位移夹角=竖直位移/水平位移：½gt²/(v₀t)=gt/2v₀——夹角相同→t/v₀相同→时间与初速度成正比。甲的v₀是乙的2倍→甲飞行时间也是乙的2倍→甲的水平速度、竖直速度都各是乙的2倍→落地合速率是乙的2倍。选A。这题考的不是背公式，是"分解位移+几何夹角"的用法——平抛大题的典型思路。</div></p>
+
+<h2><span class="step-tag">对应试题</span>难度梯度自测（易→中→难）</h2>
+<p class="small">三道选择 + 一道填空 + 两道解答，全做完再看块末"答案与解析"。</p>
+<p><b>选择1（易）</b> 物体做曲线运动时，某一点的速度方向是（　）<br>A. 指向轨迹弯曲的内侧　B. 轨迹上这一点的切线方向　C. 从起点指向该点的连线方向　D. 无法确定</p>
+<p><b>选择2（中）</b> 平抛运动的物体，在水平方向上的运动性质是（　）<br>A. 越来越快的加速运动　B. 匀速直线运动　C. 匀加速直线运动　D. 先加速后匀速</p>
+<p><b>选择3（难·自编综合）</b> 从同一高度、以不同初速度同时水平抛出两个小球（不计空气阻力），下列说法正确的是（　）<br>A. 初速度大的先落地　B. 初速度大的水平飞得远，所以后落地　C. 两球同时落地，初速度大的水平距离远　D. 两球同时落地，水平距离也相同</p>
+<p><b>填空（中）</b> 以 v₀=5 m/s 水平抛出一球，抛出后 1 s 内：水平飞出______ m，竖直下落______ m（g=10 m/s²）。</p>
+<p><b>挑刺（中）</b> 下面这段话有<b>两处错</b>，都找出来：<br>"小明说：平抛运动的物体速度越来越大，所以它水平方向也在加速；我用 5 m/s 抛的球比 2 m/s 抛的球重，重的落得快，所以先落地。"</p>
+<p><b>解答1（中）</b> 飞机在 500 m 高空以 72 m/s 水平匀速飞行，投下一物资（不计空气阻力，g=10 m/s²）。求：⑴ 物资落地时间；⑵ 落地点距投出点的水平距离。</p>
+<p><b>解答2（难）</b> 以 v₀=6 m/s 水平抛出一球，问抛出后经过多长时间，球的合速度大小恰为 10 m/s？（g=10 m/s²）</p>
+<div class="a"><b>答案与解析（先做完再看）：</b><br>
+<b>选择1：B。</b>速度沿切线——砂轮火星、链球松手都沿切线飞。A错在那是合力方向（弯的内侧），不是速度方向；C是位移方向，不是此刻速度方向。<br>
+<b>选择2：B。</b>水平方向不受力（只受重力且重力竖直向下）→水平速度保持v₀不变→匀速直线。加速只发生在竖直方向。<br>
+<b>选择3：C。</b>落地时间 t=√(2y/g) 只由高度决定——同一高度，同时落地，跟v₀无关（A/B错）。水平距离 x=v₀t，时间相同，v₀大的飞得远（C对D错）。<br>
+<b>填空：5 m；5 m。</b>水平 x=v₀t=5×1=5 m；竖直 y=½gt²=½×10×1=5 m。两个都是5纯属g=10和1秒的巧合，别记成"一样"——t=2s时是10 m和20 m。<br>
+<b>解答1：</b>⑴ 高度定时间：t=√(2y/g)=√(2×500/10)=√100=10 s。⑵ 水平距离 x=v₀t=72×10=720 m。<b>格式示范：先写依据（t由高度定）→代数→读答案。先算时间，时间串起水平和竖直。</b><br>
+<b>解答2：</b>合速度是矢量合成：v²=v_x²+v_y²=v₀²+(gt)²。代入：10²=6²+(10t)² → 100=36+100t² → t²=0.64 → t=0.8 s。<b>坑提示：别写成 10=6+gt 直接解——速度合成是勾股不是加法（第二站的坑）。</b><br><b>挑刺答案：两处错。</b>错①"水平方向也在加速"——水平方向不受力，速度保持 v₀ 不变，是匀速；速度越来越大指的是<b>合速度</b>，增长全部来自竖直方向（gt 在变大）。错②"重的落得快"——落体快慢与质量无关（自由落体对所有东西一样，伽利略的两球论证），且落地时间只由高度决定 t=√(2y/g)，两个球同时落地——跟轻重、跟 v₀ 都无关。</div>
+
+<div class="fig">
+<svg viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="本节位置图：第五章抛体运动中，三节所学所处的位置">
+  <rect x="0" y="0" width="560" height="120" fill="#ffffff"/>
+  <rect x="30" y="30" width="150" height="50" rx="6" fill="#eee" stroke="#111"/>
+  <text x="105" y="60" font-size="13" text-anchor="middle" fill="#111">已学：匀变速直线运动</text>
+  <rect x="230" y="30" width="150" height="50" rx="6" fill="#ffe9a8" stroke="#111" stroke-width="2"/>
+  <text x="305" y="52" font-size="13" text-anchor="middle" fill="#111" font-weight="bold">本件：曲线/合成分解/平抛</text>
+  <text x="305" y="72" font-size="11" text-anchor="middle" fill="#555">直线运动→曲线运动的桥</text>
+  <rect x="430" y="30" width="110" height="50" rx="6" fill="#eee" stroke="#111"/>
+  <text x="485" y="60" font-size="12" text-anchor="middle" fill="#111">圆周运动（后话）</text>
+  <line x1="180" y1="55" x2="228" y2="55" stroke="#111" stroke-width="1.5"/>
+  <polygon points="228,55 220,51 220,59" fill="#111"/>
+  <line x1="380" y1="55" x2="428" y2="55" stroke="#111" stroke-width="1.5"/>
+  <polygon points="428,55 420,51 420,59" fill="#111"/>
+  <text x="280" y="105" font-size="11" text-anchor="middle" fill="#555">平抛是"直线运动公式"第一次在曲线里落地——化曲为直</text>
+</svg>
+</div>
+<p class="foot">物理·第五章 5.1–5.3 首学版（实测件）·人教必修第二册口径·g取10 m/s²·2026/11/12</p>
+</body>
+</html>
