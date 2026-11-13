@@ -1,0 +1,10 @@
+sympy 1.14.0 · 数学2.3升格梯度题验点 · 9/9 全过·exit0
+[PASS] T1_选择1 解集(1,2) | Interval.open(1, 2)
+[PASS] T2_选择2 解集(−∞,−1]∪[3,∞) | Union(Interval(-oo, -1), Interval(3, oo))
+[PASS] T3_选择3 max(x²−2x)在[0,1]=0（x=0）→m>0 | max=0.0·x=1处=−1
+[PASS] T4_填空 解集(1,2) | Interval.open(1, 2)
+[PASS] T5_挑刺① 解集(−∞,2)∪(3,∞) | Union(Interval.open(-oo, 2), Interval.open(3, oo))
+[PASS] T6_挑刺② x²+1最小值1>0恒成立 | 顶点(0,1)·全实数成立
+[PASS] T7_解答1 解集[−1,5]·整数解{−1..5}共7个 | Interval(-1, 5)·[-1, 0, 1, 2, 3, 4, 5]
+[PASS] T8_解答2 定价区间[15,20] | Interval(15, 20)·发行量70000−2000×20=30000>0✓
+[PASS] T9_真题① N域=(−∞,−2]∪[3,∞)·M∩N={−2}（答案C） | M中落域者=[-2]

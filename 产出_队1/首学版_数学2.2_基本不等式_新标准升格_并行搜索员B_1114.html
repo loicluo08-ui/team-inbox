@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学2.2 基本不等式 · 零基础首学版</title>
+<style>
+body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.85;color:#1a2332;font-size:16px}
+h1{font-size:1.7em;border-bottom:3px solid #1e3a5f;padding-bottom:8px;color:#16233a}
+h2{font-size:1.32em;color:#1e3a5f;border-left:5px solid #2c5f8a;padding-left:10px;margin-top:2.2em}
+h3{color:#2c5f8f;margin-top:1.6em}
+.station{background:#f4f8fb;border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid #d7e3ee}
+.check{background:#fffbe8;border:1px dashed #c9b458;border-radius:8px;padding:10px 16px}
+.check li{margin:4px 0}
+.formula{background:#eef4fa;border-radius:8px;padding:10px 18px;text-align:center;font-size:1.12em;margin:12px 0;font-family:"Cambria Math",Georgia,serif}
+.mark{background:#fff176;padding:0 4px;border-radius:3px}
+.uline{border-bottom:2px solid #4a90d9;padding-bottom:1px}
+.note-red{color:#c0392b;border:1px solid #e6b0aa;background:#fdf2f0;border-radius:8px;padding:8px 14px;margin:10px 0}
+.try{background:#e8f6ef;border-left:4px solid #27ae60;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0}
+.try .ans{color:#1e7e4e;font-weight:bold}
+.alt{background:#f6f2fb;border-left:4px solid #8e5cb8;padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0;color:#4a3568}
+.alt .tag{font-size:.8em;color:#8e5cb8;font-weight:bold}
+.selftest{background:#fdf6ec;border:1px solid #e2c48d;border-radius:10px;padding:14px 18px;margin:16px 0}
+.kaowei{background:#eaf3ea;border:2px solid #3d8b5f;border-radius:10px;padding:12px 16px;margin:16px 0}
+.kaowei .kw-title{font-weight:bold;color:#2d6a45}
+.box3{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.box3>div{flex:1;min-width:220px;background:#fff;border:1px solid #cfdbe6;border-radius:8px;padding:10px 14px}
+.figure{text-align:center;margin:16px 0}
+.figure svg{max-width:100%;height:auto}
+.figcap{font-size:.88em;color:#5a6b7d;margin-top:6px}
+.walk{background:#eef7ee;border-radius:8px;padding:10px 16px;margin:12px 0}
+.walk li{margin:5px 0}
+table.cmp{border-collapse:collapse;width:100%;margin:12px 0}
+table.cmp th,table.cmp td{border:1px solid #b8c8d8;padding:8px 12px;text-align:center}
+table.cmp th{background:#e3edf6;color:#1e3a5f}
+.sub{font-size:.85em;color:#5a6b7d}
+.detail{color:#3d6a9e;font-size:.95em}
+@media print{
+ body{max-width:100%;padding:0 12px;font-size:12.5px;line-height:1.72}
+ .station,.try,.alt,.selftest,.kaowei,.check{background:#fff!important;border:1.2px solid #333!important;break-inside:avoid}
+ h1{font-size:1.35em}h2{font-size:1.15em}
+ .formula{background:#f2f2f2!important}
+ a{color:#000;text-decoration:none}
+ .no-print{display:none}
+}
+@media screen and (prefers-color-scheme:dark){/*no-op 保持浅色两态统一*/}
+<!-- v15.3第一波重排·黄金样板step-tag落位(并行搜索员B) -->
+.step-tag{display:inline-block;background:#4a9eff;color:#0b0e13;font-weight:bold;font-size:13px;padding:2px 10px;border-radius:3px;margin-right:8px;vertical-align:middle}
+@media print{.step-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}.mark{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  @media print {
+
+    /* print渲染V2.2标准（Alex定稿1101·单主色系+泄漏防护） */
+    .talk, .key, .pit, .try, .box, .check, .alt, .fig svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .talk { background: #fff; border: 1px solid #e3e8ee; border-left: 3px solid #2C6E9E; }
+    .key { background: #dce9f4; border: 1px solid #b7cfe3; border-left: 4px solid #1B4F72; border-top: 2px solid #1B4F72; }
+    .pit { background: #fdf1f0; border: 1px solid #f0d5d3; border-left: 4px solid #b03a2e; }
+    .try { background: #f0f6fa; border: 1px solid #d8e3ec; border-left: 4px solid #1B4F72; }
+    .check { background: #fff; border: 1.5px solid #1B4F72; }
+    .alt { background: #f7f7f8; border: 1px solid #e2e2e5; border-left: 3px solid #9aa3ad; }
+    .box { background: #f5f6f7; border: 1px solid #e0e2e5; }
+    .fig svg { background: #fafafa; }
+    .step-tag { background: #1B4F72; color: #fff; }
+    mark.nb { background: #ffe66b; }
+    h2 { border-left-color: #1B4F72; }
+    .foot { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>数学 2.2 基本不等式 <span class="sub">人教A版 必修第一册 · 零基础首学版 v1.0 · 2026-10-31</span></h1>
+<p><strong>开场一句话：</strong>上一节我们用不等式的性质做"比较大小"，这一节要认识一条<span class="mark">大名鼎鼎的公式级不等式</span>——它长得很像乘法公式的"不等号亲戚"，是高中求最大值、最小值的<span class="mark">第一把钥匙</span>。教材原话："是否也有一些不等式，它们在解决不等式问题时有着与乘法公式类似的重要作用呢？"（p44）</p>
+<div class="check">
+<p><strong>读完这节你能：</strong></p>
+<ul>
+<li>从完全平方公式出发，<span class="uline">亲手推出</span>基本不等式，并说清"当且仅当 a=b"的含义；</li>
+<li>用<span class="uline">半圆几何图</span>解释 √ab ≤ (a+b)/2 为什么成立；</li>
+<li>背出并会查"最值双引擎"：<span class="mark">积定和最小、和定积最大</span>；</li>
+<li>解出教材例1、例3、例4 这一类的最值题，并<span class="uline">验证等号取得到</span>。</li>
+</ul>
+</div>
+<div class="station">
+<h2><span class="step-tag">预备</span>预备块：你初中就有两件旧工具</h2>
+<p><strong>旧工具一（完全平方公式）</strong>：(a±b)² = a² ± 2ab + b²，展开永远不错位。</p>
+<p><strong>旧工具二（平方非负）</strong>：任何实数的平方不小于 0，即 <span class="formula" style="display:inline-block;padding:2px 10px">x² ≥ 0</span>，等号当且仅当 x=0。就这两件，本节全靠它们起家。</p>
+</div>
+<div class="station">
+<h2><span class="step-tag">第一步</span>重要不等式：从 (a−b)² 里长出来的不等号</h2>
+<p>把平方非负用在 (a−b) 上：(a−b)² ≥ 0。展开：</p>
+<div class="formula">a² − 2ab + b² ≥ 0&nbsp;&nbsp;⟹&nbsp;&nbsp;<span class="mark">a² + b² ≥ 2ab</span></div>
+<p>当且仅当 a=b 时（此时 (a−b)²=0），等号成立。教材称它为<span class="uline">重要不等式</span>（p44，∀a，b∈R）。</p>
+<div class="try"><p><strong>验一验①：</strong>取 a=3，b=5：a²+b²=34，2ab=30，34≥30 ✓；取 a=b=2：8=8，等号成立 ✓。<span class="ans">对号入座：左边减右边=(a−b)²，永远非负。</span></p>
+<p><strong>易错变形：</strong>"a²+b²≥2ab"对<span class="note-red">所有实数</span>都成立，别只记正数情形。</p></div>
+<p>特别地，如果 a＞0，b＞0，用 √a、√b 分别代替上式中的 a、b（教材原句），得：</p>
+<div class="formula">√ab ≤ (a+b)/2&nbsp;&nbsp;（1）&nbsp;&nbsp;<span class="mark">当且仅当 a=b 时等号成立</span></div>
+<p>教材 p44：通常称不等式(1)为<span class="uline">基本不等式</span>（basic inequality）。</p>
+</div>
+<div class="station">
+<h2><span class="step-tag">第二步</span>两个平均数：算 ≥ 几，外加一张半圆图</h2>
+<p>基本不等式里的两个"主角"（p44 原文定义）：</p>
+<table class="cmp">
+<tr><th>名字</th><th>式子</th><th>一句话</th></tr>
+<tr><td>算术平均数</td><td>(a+b)/2</td><td>加起来除以 2（平常说的"平均"）</td></tr>
+<tr><td>几何平均数</td><td>√ab</td><td>乘起来开平方</td></tr>
+</table>
+<p>所以基本不等式读作：<span class="mark">两个正数的算术平均数不小于它们的几何平均数</span>（p44 原句）。</p>
+<div class="figure">
+<svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图2.2-1 半圆中的几何解释：直径AB被C分成a和b，半弦CD等于几何平均数，小于等于半径">
+<circle cx="240" cy="150" r="150" fill="#eaf2fa" stroke="#1e3a5f" stroke-width="2"/>
+<line x1="90" y1="150" x2="390" y2="150" stroke="#1e3a5f" stroke-width="2.4"/>
+<line x1="240" y1="150" x2="240" y2="0" stroke="#c0392b" stroke-width="2.2" stroke-dasharray="6 4"/>
+<line x1="90" y1="150" x2="240" y2="0" stroke="#2c7a4b" stroke-width="1.8"/>
+<line x1="240" y1="0" x2="390" y2="150" stroke="#2c7a4b" stroke-width="1.8"/>
+<text x="70" y="168" font-size="17" fill="#1a2332">A</text>
+<text x="398" y="168" font-size="17" fill="#1a2332">B</text>
+<text x="232" y="176" font-size="16" fill="#c0392b">C</text>
+<text x="232" y="14" font-size="17" fill="#c0392b">D</text>
+<text x="232" y="262" font-size="17" fill="#2c7a4b">E</text>
+<text x="152" y="146" font-size="16" fill="#2c5f8a">a</text>
+<text x="306" y="146" font-size="16" fill="#2c5f8a">b</text>
+<line x1="96" y1="144" x2="228" y2="144" stroke="#2c5f8a" stroke-width="1"/>
+<line x1="252" y1="144" x2="384" y2="144" stroke="#2c5f8a" stroke-width="1"/>
+<text x="98" y="108" font-size="14.5" fill="#1a2332">半径 r=(a+b)/2</text>
+<text x="252" y="66" font-size="14.5" fill="#c0392b">CD=√ab</text>
+<text x="196" y="242" font-size="13.5" fill="#5a6b7d">图 2.2-1（依教材 p45 复刻）</text>
+</svg>
+<p class="figcap">半圆几何解释：AB 是直径，C 在 AB 上，AC=a，BC=b，过 C 作 AB 的垂线交半圆于 D。可证 △ACD ∽ △DCB，于是 CD=√ab；而 CD ≤ 半径=(a+b)/2。<span class="mark">当且仅当 C 与圆心重合（a=b）时，CD 恰好等于半径，等号成立。</span>（p45 原文逻辑）</p>
+</div>
+<p><strong>分析法证明（教材 p44 五步链，倒着读就是"显然成立"）：</strong>要证 √ab ≤ (a+b)/2（①），只要证 2√ab ≤ a+b（②），只要证 2√ab − a − b ≤ 0（③），只要证 −(√a−√b)² ≤ 0（④），只要证 (√a−√b)² ≥ 0（⑤）。⑤显然成立，当且仅当 a=b 时⑤中的等号成立。<span class="detail">每一步"只要证"都是可逆的等价变形，所以链条成立。</span></p>
+</div>
+<div class="station">
+<h2><span class="step-tag">第三步</span>最值双引擎：积定和最小，和定积最大</h2>
+<p>教材例2（p45-46）给出一对"发动机"，考试九成最值题由它们变形而来：</p>
+<table class="cmp">
+<tr><th>发动机</th><th>条件</th><th>结论（当 x=y 时等号成立）</th></tr>
+<tr><td>① 积定 → 和最小</td><td>xy = P（定值）</td><td>x+y 有最小值 <strong>2√P</strong></td></tr>
+<tr><td>② 和定 → 积最大</td><td>x+y = S（定值）</td><td>xy 有最大值 <strong>S²/4</strong></td></tr>
+</table>
+<p><strong>证明骨架（①）：</strong>(x+y)/2 ≥ √xy = √P，所以 x+y ≥ 2√P；等号当且仅当 x=y。<strong>（②）同理</strong>：√xy ≤ (x+y)/2 = S/2，所以 xy ≤ S²/4。</p>
+<div class="note-red"><strong>用引擎前必查"一正二定三相等"：</strong>①字母全为<span class="mark">正</span>；②积或和确实<span class="mark">是定值</span>；③等号能<span class="mark">取到</span>（x=y 在允许范围内有解）。三查缺一，结论报废。</div>
+<p>教材例1（p45）：已知 x＞0，求 x + 1/x 的最小值。解：x + 1/x ≥ 2√(x·1/x)=2，当且仅当 x=1/x 即 x=1 时等号成立，最小值为 2。教材"想一想"追问：<span class="uline">当 y₀＜2 时，x+1/x ≥ y₀ 恒成立，但 y₀ 不是最小值——因为 2 这个值确实取得到，而 y₀＜2 取不到。</span>这就是"三相等"要查的原因。</p>
+<div class="try"><p><strong>验一验②（负数不能用引擎）：</strong>x＜0 时，x + 1/x 有最大值还是最小值？<span class="ans">x+1/x = −[(−x)+(−1/x)] ≤ −2，最大值 −2（x=−1 时取到）。引擎只对正数有效，负数要提出负号再造。</span></p>
+<p><strong>易错变形（和没定）：</strong>x + 4/x（x＞0）最小值是 2√4=4？✓（x=2 取到）；但 <span class="note-red">x + 4/x² 想套"积定"就没那么直接——x·(4/x²)=4/x 不是定值，引擎失效，不能硬套。</span></p>
+<p><strong>验一验③（升幂变形）：</strong>x＞0 时 x² + 1/x² 的最小值？<span class="ans">配成 (x+1/x)² − 2 ≥ 2² − 2 = 2，当 x=1 时取到（教材 p46 练习3）。</span></p>
+<p><strong>验一验④（等号取不到的经典）：</strong>x∈(0, 4)，求 x + 16/x 的最小值。<span class="ans">若硬套得 8（x=4 取到），但 x=4 不在开区间内！真最小值在 x→4⁻ 处逼近 8 却取不到，此题无最小值——"三相等"第三查就是防这个。</span></p></div>
+<div class="alt"><span class="tag">（拓展 · 可跳过）</span>综合运用4（p49）：x，y，z 都是正数，(x+y)(y+z)(z+x) ≥ 8xyz。骨架：x+y ≥ 2√xy，y+z ≥ 2√yz，z+x ≥ 2√zx，三式连乘即得，等号当 x=y=z。这是"双引擎"的连乘放大版。</div>
+<div class="alt"><span class="tag">（拓展 · 可跳过）</span>拓广探索7（p49）天平称黄金：不等臂天平两次各称得 a g、b g，顾客实得 √ab g，由 √ab ≤ (a+b)/2 = 5 g 知总重 <strong>小于</strong> 10 g——几何平均数严格小于算术平均数（a≠b 时），顾客吃亏。</div>
+</div>
+<div class="station">
+<h2><span class="step-tag">第四步</span>实战两例：把引擎装到应用题上</h2>
+<p><strong>教材例3（p46-47）矩形菜园。</strong>（1）用篱笆围一个面积为 100 m² 的矩形菜园，边长多少时篱笆最短？设两边 x，y（m），xy=100，篱笆长 2(x+y) ≥ 2×2√(xy) = 40，当且仅当 x=y=10 时等号成立——<span class="mark">边长 10 m 的正方形，最短篱笆 40 m</span>。这里是"积定和最小"。</p>
+<p>（2）用一段长为 36 m 的篱笆围矩形菜园，边长多少时面积最大？2(x+y)=36，xy ≤ ((x+y)/2)² = 81，当且仅当 x=y=9 等号成立——<span class="mark">边长 9 m 的正方形，最大面积 81 m²</span>。"和定积最大"。（教材 p47 解答逐句锚定）</p>
+<p><strong>教材例4（p47-48）无盖贮水池。</strong>容积 4800 m³、深 3 m，池底造价 150 元/m²，池壁 120 元/m²。设底面两边 x，y（m），总造价 z = 150×(4800/3) + 120(2×3x+2×3y) = 240000 + 720(x+y)；由 3xy=4800 得 xy=1600，所以 z ≥ 240000 + 720×2×40 = 297600，当且仅当 x=y=40 时等号成立——<span class="mark">池底设计成边长 40 m 的正方形，最低总造价 297600 元</span>（p48 解答逐句锚定）。</p>
+<div class="try"><p><strong>验一验⑤（教材 p48 练习1）：</strong>用 20 cm 铁丝折面积最大的矩形：周长定 20，和定积最大，x=y=5，最大面积 25 cm²。<span class="ans">两问同构：一边靠墙（练习2）时 "30−2x ≤ 18" 的墙长限制要单独检查，x=7.5 合法，最大面积 112.5 m²。</span></p></div>
+</div>
+<div class="station">
+<h2><span class="step-tag">收口</span>三句话带走 + 自测四连</h2>
+<p><strong>三句话带走：</strong></p>
+<ul class="walk">
+<li>① (a−b)²≥0 ⇒ <span class="mark">a²+b²≥2ab</span>；换元得 <span class="mark">√ab ≤ (a+b)/2</span>（a,b＞0，当且仅当 a=b 等号成立）；</li>
+<li>② 半圆图里：半弦 CD=√ab 永不高于半径 (a+b)/2，C 与圆心重合时相等；</li>
+<li>③ 求最值先查<span class="uline">一正二定三相等</span>：积定→和最小 2√P；和定→积最大 S²/4。</li>
+</ul>
+<div class="selftest">
+<p><strong>自测四连（先做再看答案，全部取自教材本节域）：</strong></p>
+<ol>
+<li><strong>判断结构：</strong>∀a,b∈R，"a²+b²≥2ab"等号成立条件？<span class="detail">答：a=b（p44 原句）。</span></li>
+<li><strong>教材 p48 练习3：</strong>x 取何值时 x²+1/x² 最小？<span class="detail">答：x=1 时最小值 2（x²+1/x²=(x+1/x)²−2≥4−2=2）。</span></li>
+<li><strong>教材 p48 习题2.2 复习巩固1(1)：</strong>x＞1，求 x + 1/(x−1) 的最小值。<span class="detail">答：拆 (x−1)+1/(x−1)+1 ≥ 2+1 = 3，当 x=2 时取到。</span></li>
+<li><strong>教材 p48 习题2.2 复习巩固1(2)：</strong>求 √(x(10−x)) 的最大值。<span class="detail">答：x(10−x) ≤ ((x+10−x)/2)² = 25（0＜x＜10），最大值 5，x=5 时取到。</span></li>
+</ol>
+</div>
+<div class="kaowei">
+<p class="kw-title">高考怎么考 · 考位锚（T11）</p>
+<p>· 基本不等式最值是高考小题常客：<strong>正数条件下的"和定积最大/积定和最小"+ 三相等检验</strong>；<br>
+· 多以"分式代数式最值、实际应用（篱笆/造价/材料）"形态出现；<br>
+· <span class="sub">真题锚已收录：2020年新高考Ⅰ卷第11题（多选·答案ABD）——见下方“高考真题实证”逐题0基础拆解。</span></p>
+
+<!-- 真题取证档（学生面不可见）：取证时间=2026-11-14 03:10（Asia/Shanghai）·取证层级=多源互证（官方卷源PDF未直读·如实标注不谎称直读·规程=数学1.1先例·候卷源直读补锚）·真题①2020年新高考Ⅰ卷第11题（多选·a+b=1四判断·答案ABD）四源同指题干全一致（选项B=2^(a−b)>1/2）：renrendoc 2020全国Ⅰ卷教师版242854425＋21cnjy考点五学案12016707（选ABD全解析）＋21cnjy 2014-2023真题专题汇编17266974（2020新高考Ⅰ,11·ABD）＋21cnjy《直通名校》汇编25014294考点四——池2.2行（yeyulingfeng 59977＋21cnjy 7980616双源）取用一致·自编题数值全量sympy代验（py/txt随件留痕） -->
+<h2><span class="step-tag">真题锚</span>高考真题实证</h2>
+<p><b>2020年新高考Ⅰ卷·第11题（多选·5分）：</b>已知 <span class="m">a &gt; 0，b &gt; 0，且 a + b = 1</span>，则（　）<br>A. a² + b² ≥ 1/2　B. 2<sup>a−b</sup> &gt; 1/2　C. log₂a + log₂b ≥ −2　D. √a + √b ≤ √2<div class="a" style="color:#3a4a5c;font-size:15px;margin-top:6px;">选ABD。0基础版拆解：A——a²+b² ≥ (a+b)²/2 = 1/2（平方和≥和的一半·代 a²+b²−1/2=(a−b)²/2≥0 恒成立）✓；B——a−b = a−(1−a) = 2a−1，a∈(0,1) → 2a−1 &gt; −1 → 2^(a−b) &gt; 2^(−1) = 1/2 ✓；C——log₂a+log₂b = log₂(ab) ≤ log₂(1/4) = −2（和定积有上界·a=b=1/2 时恰好等于 −2，一般时更小）→ "≥−2" 方向反了 ✗；D——(√a+√b)² = a+b+2√(ab) ≤ 1 + (a+b) = 2 → √a+√b ≤ √2 ✓。读答案——A/B/D 恒真，C 方向写反，选ABD。这题把"和定积有上界"的方向感考了个遍：C 是最经典的"方向陷阱"。</div></p>
+
+<h2><span class="step-tag">对应试题</span>难度梯度自测（易→中→难）</h2>
+<p class="small">三道选择 + 一道填空 + 一道挑刺 + 两道解答，全做完再看块末“答案与解析”。</p>
+<p><b>选择1（易·自编）</b> 已知 x &gt; 0，则 x + 4/x 的最小值为（　）<br>A. 2　B. 4　C. 8　D. 16</p>
+<p><b>选择2（中·自编）</b> 已知 x &gt; 1，则 x + 1/(x−1) 的最小值为（　）<br>A. 2　B. 3　C. 4　D. 2√2</p>
+<p><b>选择3（难·自编综合）</b> 已知 x &gt; 0，y &gt; 0，且 x + 2y = 4，则 xy 的最大值为（　）<br>A. 1　B. 2　C. 4　D. 8</p>
+<p><b>填空（中·自编）</b> 已知 x &gt; 3，则 x + 9/(x−3) 的最小值为 ______。</p>
+<p><b>挑刺（中·自编）</b> 小华复习完说：“①因为 x + 1/x ≥ 2 对 x &gt; 0 成立，均值不等式是普适的，所以对全体实数 x 也成立；②若 x &gt; 0，y &gt; 0 且 x + y = 1，则 xy ≥ 1/4——和一定，积越大越好。”请你把两处错都挑出来。</p>
+<p><b>解答1（中·自编）</b> 已知 x &gt; 0，y &gt; 0，且 2x + y = 2，求 xy 的最大值，并指出取等条件。</p>
+<p><b>解答2（难·自编综合）</b> 已知 x &gt; 0，y &gt; 0，且 x + 2y = 2，求 1/x + 2/y 的最小值。</p>
+<div class="a" style="color:#3a4a5c;font-size:15px;margin-top:6px;"><b>答案与解析（先做完再看）：</b><br>
+<b>选择1：B。</b>x + 4/x ≥ 2√(x·4/x) = 4，当 x = 4/x 即 x = 2 时取等。0基础版：一正（x&gt;0✓）二定（积 4 是定值✓）三相等（x=2 达得到✓）——三查全过。<br>
+<b>选择2：B。</b>x + 1/(x−1) = (x−1) + 1/(x−1) + 1 ≥ 2√1 + 1 = 3，当 x−1 = 1 即 x = 2 时取等。关键动作：把 x 拆成 (x−1)+1，凑出"积为定值"的结构。<br>
+<b>选择3：B。</b>配凑：x + 2y ≥ 2√(2xy) → √(2xy) ≤ 2 → xy ≤ 2，当 x = 2y 即 x = 2，y = 1 时取等（验：2+2=4✓）。0基础版：想用均值先造"积定"——2√(2xy) 把 xy 挂进根号，两边平方收尾。<br>
+<b>填空：9。</b>x + 9/(x−3) = (x−3) + 9/(x−3) + 3 ≥ 2·3 + 3 = 9，当 x−3 = 3 即 x = 6 时取等。<br>
+<b>挑刺：错①丢了"一正"前提——</b>x &lt; 0 时 x·(1/x) = 1 虽为定值，但 x 与 1/x 同负：x = −1 时 x + 1/x = −2，比 2 小得多——负数域里均值不等式给出的界方向相反（x + 1/x ≤ −2）。"一正二定三相等"三查，查一少一个就翻车。<b>错②方向反了——</b>和定积有<b>上界</b>：xy ≤ ((x+y)/2)² = 1/4，a = b = 1/2 时取等。"积越大越好"说反了方向，正确结论是 xy ≤ 1/4、最大值 1/4。<br>
+<b>解答1：</b>先写依据——xy ≤ ((2x+y)/2)²/2（由 2x+y ≥ 2√(2xy) 两边平方）。代数——2x+y = 2 → √(2xy) ≤ 1 → xy ≤ 1/2；取等 ⇔ 2x = y，联立 2x+y = 2 → x = 1/2，y = 1。读答案——xy 最大值 1/2，当 x = 1/2，y = 1 时取得。<b>格式示范：造积定 → 均值 → 取等条件回验。</b><br>
+<b>解答2：</b>先写依据——"1 的代换"：1/x + 2/y = [(1/x + 2/y)(x+2y)]/2（因为 x+2y = 2）。代数——(1/x + 2/y)(x+2y) = 1 + 2y/x + 2x/y + 4 ≥ 5 + 2·2√(y/x·x/y) = 9，故 1/x + 2/y ≥ 9/2；取等 ⇔ y/x = x/y 即 x = y，联立 x+2y = 2 → x = y = 2/3（验：1/(2/3) + 2/(2/3) = 3/2 + 3 = 9/2✓）。读答案——最小值 9/2。<br>
+</div>
+
+
+</div>
+<p><b>下一站：</b>2.3 二次函数与一元二次方程、不等式——本节磨好的最值引擎，下一站装到二次函数身上（p50 起）。</p>
+<div class="figure">
+<svg viewBox="0 0 640 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="位置图：第二章五节谱系，当前在2.2基本不等式">
+<rect x="8" y="20" width="110" height="44" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>
+<text x="16" y="38" font-size="13" fill="#1a2332">第二章章题页</text>
+<text x="16" y="56" font-size="11" fill="#5a6b7d">p36 一元二次函数、方程和不等式</text>
+<rect x="132" y="20" width="98" height="44" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>
+<text x="140" y="38" font-size="13" fill="#1a2332">2.1 等式性质</text>
+<text x="140" y="56" font-size="11" fill="#5a6b7d">与不等式性质 p37-43</text>
+<rect x="244" y="14" width="122" height="56" rx="10" fill="#fff3cd" stroke="#c0392b" stroke-width="2.4"/>
+<text x="254" y="36" font-size="13.5" font-weight="bold" fill="#c0392b">2.2 基本不等式</text>
+<text x="254" y="56" font-size="11" fill="#7a4b1f">本节 p44-49 ← 你在这里</text>
+<rect x="380" y="20" width="132" height="44" rx="8" fill="#e3edf6" stroke="#8fa8bf"/>
+<text x="388" y="38" font-size="13" fill="#1a2332">2.3 二次函数与一元二次</text>
+<text x="388" y="56" font-size="11" fill="#5a6b7d">方程、不等式 p50 起</text>
+<rect x="526" y="20" width="104" height="44" rx="8" fill="#f0f0f0" stroke="#b8b8b8"/>
+<text x="534" y="38" font-size="13" fill="#5a6b7d">章小结/复习</text>
+<text x="534" y="56" font-size="11" fill="#9a9a9a">p6x（页码续核）</text>
+<line x1="118" y1="42" x2="132" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="230" y1="42" x2="244" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="366" y1="42" x2="380" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+<line x1="512" y1="42" x2="526" y2="42" stroke="#8fa8bf" stroke-width="2"/>
+</svg>
+<p class="figcap">位置图：2.2 是承上（2.1 不等式性质）启下（2.3 二次不等式）的工具节；节界 p44-49，p50=2.3 节题页。</p>
+</div>
+<p class="sub" style="text-align:center">—— 本件节界：2.2 全节 p44-49（p44 节题页·p49 习题2.2 拓广探索尾·p50=2.3 节题页边界）。</p>
+<div class="no-print" style="text-align:center;color:#8a9bb0;font-size:.85em;margin-top:18px">并行搜索员B · 队2席 · 承群管理员14:23:16批2改派批复（1.5被群外席70988bc先落池避让顺延2.2）· 基于claim_board fdc27fa认领行 · 标准v2.3@82ccb4b · 产出走分支候并不直推main</div>
+</div>
+</body>
+</html>
