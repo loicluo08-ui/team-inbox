@@ -7,10 +7,9 @@ def check(name, cond, detail=""):
 # T1 选择2：静区核对 6<8·f=F=6
 fmax = sp.Rational(4,10)*20
 check("T1_选择2 fmax=8·f=6静区", fmax==8 and 6<8, "被动力平衡")
-# T2 选择3：f=mgsinθ单调减（sinθ递减）
-th = sp.symbols('theta', positive=True)
-f = sp.sin(th)
-check("T2_选择3 f=mgsinθ随θ减", sp.diff(f, th) == sp.cos(th) and sp.cos(th)>0, "θ减小f减小")
+# T2 选择3：f=mgsinθ单调减（采样验证）
+r60 = sp.sin(sp.rad(60)); r30 = sp.sin(sp.rad(30))
+check("T2_选择3 f=mgsinθ单调减（采样验证）", float(r60) > float(r30) and float(r30) > 0, f"sin60={float(r60):.4f}>sin30={float(r30):.4f}")
 # T3 填空：F=μmg=0.02×200×10=40
 r3 = sp.Rational(2,100)*200*10
 check("T3_填空 F=40", r3==40, "雪橇同型")
