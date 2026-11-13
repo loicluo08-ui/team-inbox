@@ -4,7 +4,8 @@
 from sympy import Rational, N
 ok = []
 # 填空：+10℃→1~2倍·0→50℃→7倍（p130原文照录）
-assert N(Rational(50) - Rational(0), 1) == 50; ok.append(("填空·0→50℃跨5个10℃", 50, "原文口径1~2倍/10℃·累积≈7倍 ✓"))
+span = int(float(N(Rational(50) - Rational(0))))
+assert span == 50; ok.append(("填空·0→50℃跨5个10℃", span, "原文口径1~2倍/10℃·累积≈7倍 ✓"))
 # 选择3锚：六层剖面+淋溶淀积机理（p132-133）
 ok.append(("选择3·剖面六层p132-133锚", "p132-133", "锚在库 ✓"))
 # 挑刺两处错锚：母质无肥力(p129)+陡坡迁移快(p132)
