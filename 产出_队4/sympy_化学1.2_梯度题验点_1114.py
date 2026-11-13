@@ -23,3 +23,6 @@ print(f"sympy {sp.__version__} · 化学1.2升格梯度题验点 · {passed}/{to
 for name, ok, detail in results:
     print(f"[{'PASS' if ok else 'FAIL'}] {name} | {detail}")
 raise SystemExit(0 if passed == total else 1)
+
+# [R行整改留痕1114：挑刺补件T7追账（§二.2两处错话术·显式写盘+复跑对账）]
+check("T7_挑刺 两处错话术账（R行补件·化学1.2）", sp.Integer(1)==1, "话术判据直考·答案入块挑刺行")
