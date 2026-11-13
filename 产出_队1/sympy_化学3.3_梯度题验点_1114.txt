@@ -1,0 +1,9 @@
+sympy 1.14.0 · 化学3.3升格梯度题验点 · 8/8 全过·exit0
+[PASS] T1_解答1 1t NH₃→HNO₃ 3.71t | 精确值=63/17t≈3.71t（两位）
+[PASS] T2_真题A项 O原子0.1N_A（A对） | NO 1个O·N₂O 1个O·无论比例皆0.1N_A
+[PASS] T3_真题C项 0.4N_A（C错核·非0.6） | N −1→+3失4e
+[PASS] T4_真题D项 价电子1N_A（D错核·非0.6） | N原子5个价电子×2
+[PASS] T5_选择3 3NO₂+H₂O=2HNO₃+NO四守恒 | NO₂歧化+4→+5/+2
+[PASS] T6_考向二 NH₃催化氧化失5e/mol | 4NH₃+5O₂=4NO+6H₂O
+[PASS] T7_考位锚既有 5N_A复跑 | HNO₃→N₂每N得5e
+[PASS] T8_选择3 D项核 1.5mol NO₂/HNO₃ | 3NO₂+H₂O=2HNO₃+NO·3:2
