@@ -1,0 +1,6 @@
+sympy 1.14.0 · 物理4.4真件梯度题验点 · 5/5 全过·exit0
+[PASS] T1_72km/h÷3.6=20 m/s | v₀=20
+[PASS] T2_v=20+2×5=30 m/s | v=30
+[PASS] T3_F=ma量纲组装数值核=6N | N=kg·m/s²
+[PASS] T4_J量纲=kg·m²/s² | 功=力×位移
+[PASS] T5_a单位=(kg·m/s²)/kg=m/s² | 化简=m/s**2

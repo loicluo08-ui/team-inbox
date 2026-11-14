@@ -1,0 +1,6 @@
+sympy 1.14.0 · 物理4.3真件梯度题验点 · 5/5 全过·exit0
+[PASS] T1_a=4N/2kg=2 m/s² | a=2
+[PASS] T2_a=8N/2kg=4 m/s²（正比翻倍） | a=4
+[PASS] T3_上抛上升段a=(mg+f)/m=11 m/s² | a=11
+[PASS] T4_电梯加速上升N=m(g+a)=660 N | N=660
+[PASS] T5_超重差量ΔN=ma=60 N | ΔN=60
