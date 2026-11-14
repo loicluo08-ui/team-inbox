@@ -1,0 +1,6 @@
+sympy 1.14.0 · 物理4.5真件梯度题验点 · 5/5 全过·exit0
+[PASS] T1_整体a=10/5=2 m/s² | a=2
+[PASS] T2_内力N=m2a=6 N | N=6
+[PASS] T3_匀速下滑f=mg·sin30°=10 N | f=10
+[PASS] T4_斜面下滑a=g(sin−μcos)=2 m/s² | a=2
+[PASS] T5_2s末v=4 m/s | v=4
